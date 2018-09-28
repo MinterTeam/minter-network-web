@@ -1,6 +1,5 @@
 import $ from 'jquery';
 import Cookies from 'js-cookie';
-import {setLanguage} from './popular-questions';
 import {LANGUAGE_COOKIE_KEY} from './variables';
 const locales = process.env.LOCALES;
 
@@ -9,7 +8,6 @@ export default function initActiveLocale() {
     // check that url segment is locale segment, otherwise it's default locale
     const currentLocalePrefix = locales[localeUrlSegment] ? localeUrlSegment : '';
     const currentLocale = Object.keys(locales).find((code) => locales[code].prefix === currentLocalePrefix);
-    setLanguage(currentLocale);
 
     $('[data-dropdown]').each(function () {
         const $dropdown = $(this);

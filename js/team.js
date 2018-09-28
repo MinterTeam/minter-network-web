@@ -16,13 +16,13 @@ $win.on('resize', debounce(() => {
     // reinit slider to apply options from `breakpoint` prop
     if (newSliderSize !== lastSliderSize) {
         useCasesSlider.destroy();
-        $('[data-use-cases-slider] .swiper-wrapper').css({height: ''});
+        $('[data-team-slider] .swiper-wrapper').css({height: ''});
         useCasesSlider = initSlider();
         lastSliderSize = newSliderSize;
     }
 }, 200));
 function initSlider() {
-    return new Swiper('[data-use-cases-slider]', {
+    return new Swiper('[data-team-slider]', {
         prevButton: '[data-swiper-prev]',
         nextButton: '[data-swiper-next]',
         // pagination: '[data-swiper-pagination]',
@@ -35,6 +35,12 @@ function initSlider() {
         autoHeight: false,
         breakpoints: {
             699: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+                autoHeight: true,
+            },
+            449: {
+                slidesPerView: 1,
                 spaceBetween: 20,
                 autoHeight: true,
             },

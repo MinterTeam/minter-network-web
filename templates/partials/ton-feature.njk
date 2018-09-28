@@ -1,7 +1,7 @@
 {% macro feature(title, descriptions, imageSrc) %}
     <section class="ton__feature">
         <h2 class="u-h3">{{ title | safe }}</h2>
-        <hr class="hr--left hr--main hr--short">
+        <hr class="hr--left-medium hr--main hr--short">
         {% for item in descriptions %}
             <p>{{ item }}</p>
         {% endfor %}
