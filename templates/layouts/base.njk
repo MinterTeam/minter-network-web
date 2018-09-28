@@ -1,0 +1,43 @@
+{% set localePrefix = '' if __locale__ === 'en' else '/' + __locale__ %}
+
+<!doctype html>
+<html lang="{{ __locale__ }}">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    {# seo #}
+    <title>{{ page_title | default("Minter") }}</title>
+    <meta name="description" content="{{ page_description | default("We mint coins") }}">
+    <meta property="og:title" content="{{ page_title | default("Minter") }}">
+    <meta property="og:description" content="{{ page_description | default("We mint coins") }}">
+    <meta property="og:image" content="{{ page_social_image | default("/social-share.png") }}">
+    <link rel="icon" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    {# styles #}
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:500&amp;subset=cyrillic" rel="stylesheet">
+    <link href="/css/style.min.css" rel="stylesheet">
+</head>
+<body class="{{ body_class }}">
+
+<div class="main-wrap">
+    {% block body %}{% endblock %}
+</div>
+
+{% block scripts %}
+    <script src="/js/vendor.min.js"></script>
+    <script src="/js/common.min.js"></script>
+{% endblock %}
+
+{% include 'layouts/_seo-gtag.njk' %}
+{% include 'layouts/_seo-ym.njk' %}
+{% include 'layouts/_seo-fb.njk' %}
+{% include 'layouts/_seo-vk.njk' %}
+{% include 'layouts/_seo-tw.njk' %}
+</body>
+</html>
+
+
+
+
+

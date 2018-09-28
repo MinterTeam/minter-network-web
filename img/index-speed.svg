@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="394px" height="343px" viewBox="0 0 394 343" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 11</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="7.36458333%" x2="50%" y2="99.5898438%" id="linearGradient-1">
+            <stop stop-color="#FFC32D" offset="0%"></stop>
+            <stop stop-color="#D12222" offset="100%"></stop>
+        </linearGradient>
+        <polygon id="path-2" points="0 24 33 0 66 24 66 300 0 300"></polygon>
+        <linearGradient x1="50%" y1="9.80879934%" x2="50%" y2="87.7278646%" id="linearGradient-4">
+            <stop stop-color="#2DC3FF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#BD1ADA" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-5" x="0" y="0" width="66" height="380"></rect>
+        <path d="M0,0 L66,0 L66,138 L0,138 L0,0 Z" id="path-7"></path>
+        <mask id="mask-8" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="66" height="138" fill="white">
+            <use xlink:href="#path-7"></use>
+        </mask>
+        <mask id="mask-10" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="66" height="138" fill="white">
+            <use xlink:href="#path-7"></use>
+        </mask>
+    </defs>
+    <g id="Landing-3.0" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Landing/minter-landing-3-en" transform="translate(-472.000000, -2028.000000)">
+            <g id="3" transform="translate(0.000000, 1663.000000)">
+                <g id="Group-14" transform="translate(122.000000, 328.000000)">
+                    <g id="Group-11" transform="translate(350.000000, 0.000000)">
+                        <rect id="Rectangle-5" fill="#F7931A" x="0" y="378" width="66" height="2"></rect>
+                        <rect id="Rectangle-5-Copy" fill="#62688F" x="82" y="376" width="66" height="4"></rect>
+                        <g id="Group-13" transform="translate(246.000000, 80.000000)">
+                            <mask id="mask-3" fill="white">
+                                <use xlink:href="#path-2"></use>
+                            </mask>
+                            <use id="Rectangle-5-Copy-2" fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+                            <path d="M5.74573243,244.679451 C28.5310327,258.286003 34.7026608,273.924695 24.2606169,291.595525 C13.8185731,309.266354 16.2184186,324.900867 31.4601534,338.499063 C22.4387958,312.893283 22.4387958,300.090393 31.4601534,300.090393 C40.481511,300.090393 42.1967808,308.831791 36.6059625,326.314589 C47.4240704,320.155496 47.9411584,306.243566 38.1572266,284.578797 C23.4813288,252.081644 49.2507545,231.853767 54.1367187,243.709024 C59.022683,255.564281 55.1257545,260.159707 49.8601295,268.847696 C44.5945045,277.535684 46.9842845,291.961142 59.8791013,300.090393 C52.9960854,290.18424 54.4080281,275.704731 63.2135355,275.704731 C72.019043,275.704731 66.2143555,286.325723 63.2135355,289.661929 C70.6147461,288.479532 76.0668141,273.757202 65.0961914,254.094278 C57.7824429,240.985662 63.5218635,227.064795 82.3144531,212.331678 L78.8421288,168 L-6,185.792006 L5.74573243,244.679451 Z" id="Path-2" fill="#D12222" mask="url(#mask-3)" transform="translate(38.157227, 253.249531) rotate(-180.000000) translate(-38.157227, -253.249531) "></path>
+                        </g>
+                        <g id="Group-13-Copy-2" transform="translate(328.000000, 0.000000)">
+                            <mask id="mask-6" fill="white">
+                                <use xlink:href="#path-5"></use>
+                            </mask>
+                            <use id="Rectangle-5-Copy-2" fill="url(#linearGradient-4)" xlink:href="#path-5"></use>
+                        </g>
+                        <g id="Group-13-Copy" transform="translate(164.000000, 242.000000)">
+                            <mask id="mask-9" fill="white">
+                                <use xlink:href="#path-7"></use>
+                            </mask>
+                            <g id="Rectangle-5-Copy-2" stroke="#D15C22" mask="url(#mask-8)" stroke-width="6" stroke-linejoin="round" stroke-dasharray="6,4">
+                                <use mask="url(#mask-10)" xlink:href="#path-7"></use>
+                            </g>
+                        </g>
+                        <text id="10" font-family="Roboto-Bold, Roboto" font-size="16" font-weight="bold" letter-spacing="0.25" fill="#FFFFFF">
+                            <tspan x="24" y="362">10</tspan>
+                        </text>
+                        <text id="25" font-family="Roboto-Bold, Roboto" font-size="16" font-weight="bold" letter-spacing="0.25" fill="#FFFFFF">
+                            <tspan x="106.070312" y="362">25</tspan>
+                        </text>
+                        <text id="2,000" font-family="Roboto-Bold, Roboto" font-size="16" font-weight="bold" letter-spacing="0.25" fill="#FFFFFF">
+                            <tspan x="257.953125" y="362">2,000</tspan>
+                        </text>
+                        <text id="1,000" font-family="Roboto-Bold, Roboto" font-size="16" font-weight="bold" letter-spacing="0.25" fill="#FFFFFF">
+                            <tspan x="175.953125" y="362">1,000</tspan>
+                        </text>
+                        <text id="10,000" font-family="Roboto-Bold, Roboto" font-size="16" font-weight="bold" letter-spacing="0.25" fill="#FFFFFF">
+                            <tspan x="335.238281" y="362">10,000</tspan>
+                        </text>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

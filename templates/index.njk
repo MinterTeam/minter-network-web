@@ -1,0 +1,255 @@
+{% extends "layouts/default.njk" %}
+{% set page_title = "Minter – We mint coins." %}
+{% set page_description = "Imagine a blockchain that would allow you to create your own coin and transfer it or exchange it for all of the other coins issued in the network—as well as Bitcoin, Ether, and even USD—in an instant, limitless manner. Imagine the next-generation cryptocurrencies."|i18n('hero-lead')|safe %}
+
+{% from "partials/ton-feature.njk" import feature as tonFeature %}
+
+{% block content %}
+    <article>
+        <section class="hero u-section">
+            <div class="u-container">
+                <div class="hero__content">
+                    <img class="hero__logo" src="/img/minter-logo-white.svg" width="213" height="67" alt="Minter">
+                    <h1 class="u-h2 hero__title">{{ "Bitcoin was invented a decade ago. Isn’t it time for the next step?"|i18n('hero-title')|safe }}</h1>
+                    <p>{{ "Imagine a blockchain that would allow you to create your own coin and transfer it or exchange it for all of the other coins issued in the network—as well as Bitcoin, Ether, and even USD—in an instant, limitless manner. Imagine the next-generation cryptocurrencies."|i18n('hero-description')|safe }}</p>
+                    <p><strong>{{ "That’s Minter."|i18n('hero-minter')|safe }}</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="index-features u-section">
+            <div class="u-container">
+
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+        {# Team #}
+        <div class="index-team__skew"></div>
+        <section class="u-section u-container u-text-center">
+            <h2 class="u-h2">{{ "Team"|i18n('team-title') }}</h2>
+            <hr class="hr--main hr--short">
+            <p class="index-team__lead">{{ "To date, the Minter team consists of 20 people, among whom are blockchain developers and experienced front-end/back-end professionals. From the very beginning, we strive to build stylish, sophisticated applications for mobile users, so&nbsp;we have recruited accomplished designers and iOS/Android experts with the enormous expertise to join us."|i18n('team-description')|safe }}</p>
+            <div class="use-cases__slider-wrap">
+                <div class="swiper-container use-cases__slider" data-use-cases-slider>
+                    <div class="swiper-wrapper">
+                        <div class="index-team__cell swiper-slide">
+                            <img class="index-team__avatar" src="/img/team-gordeev.svg" height="200" alt="" role="presentation">
+                            <p class="index-team__name">{{ "Eugene Gordeev"|i18n('team-owner-name') }} <br>
+                                {{ "Product Owner"|i18n('team-owner') }}</p>
+                            <p class="index-team__description">{{ "Visionary, advocate for user-friendly products. Venture investor, Bitcoin evangelist since 2013, founder of many projects at the earliest stage of markets—online advertising, mobile applications, Big Data, and currently blockchain."|i18n('team-owner-xxxxxx')|safe }}</p>
+                        </div>
+                        <div class="index-team__cell swiper-slide">
+                            <img class="index-team__avatar" src="/img/team-lashin.svg" height="200" alt="" role="presentation">
+                            <p class="index-team__name">{{ "Daniil Lashin"|i18n('team-lashin-name') }} <br>
+                                {{ "Blockchain"|i18n('team-blockchain') }}</p>
+                            <p class="index-team__description">{{ "In charge of the Minter core. Blockchain wunderkind, total dev experience is seven years, with three of them in blockchain. Age:&nbsp;21. "|i18n('team-owner-xxxxxx')|safe }}</p>
+                        </div>
+                        <div class="index-team__cell swiper-slide">
+                            <img class="index-team__avatar" src="/img/team-malyavin.svg" height="200" alt="" role="presentation">
+                            <p class="index-team__name">{{ "Vasiliy Malyavin"|i18n('team-malyavin-name') }} <br>
+                                {{ "Blockchain"|i18n('team-blockchain') }}</p>
+                            <p class="index-team__description">{{ "Systematizes Minter integration with off-chain world. Developer with eight years of experience in mobile, CRM, and e-commerce application projects. Realized decentralization was the next big thing before it was too late."|i18n('team-owner-xxxxxx')|safe }}</p>
+                        </div>
+                        <div class="index-team__cell swiper-slide">
+                            <img class="index-team__avatar" src="/img/team-dulin.svg" height="200" alt="" role="presentation">
+                            <p class="index-team__name">{{ "Daniil Dulin"|i18n('team-dulin-name') }} <br>
+                                {{ "Back-End"|i18n('team-backend') }}</p>
+                        </div>
+                        <div class="index-team__cell swiper-slide">
+                            <img class="index-team__avatar" src="/img/team-kamil.svg" height="200" alt="" role="presentation">
+                            <p class="index-team__name">{{ "Kamil Mukhametzyanov"|i18n('team-kamil-name') }} <br>
+                                {{ "Back-End"|i18n('team-backend') }}</p>
+                        </div>
+                        <div class="index-team__cell swiper-slide">
+                            <img class="index-team__avatar" src="/img/team-eybog.svg" height="200" alt="" role="presentation">
+                            <p class="index-team__name">{{ "Nikita Eybog"|i18n('team-eybog-name') }} <br>
+                                {{ "Front-End"|i18n('team-frontend') }}</p>
+                        </div>
+                        <div class="index-team__cell swiper-slide">
+                            <img class="index-team__avatar" src="/img/team-maximovich.svg" height="200" alt="" role="presentation">
+                            <p class="index-team__name">{{ "Eduard Maximovich"|i18n('team-maximovich-name') }} <br>
+                                {{ "Android"|i18n('team-android') }}</p>
+                        </div>
+                        <div class="index-team__cell swiper-slide">
+                            <img class="index-team__avatar" src="/img/team-sidorov.svg" height="200" alt="" role="presentation">
+                            <p class="index-team__name">{{ "Alexey Sidorov"|i18n('team-sidorov-name') }} <br>
+                                {{ "iOS"|i18n('team-ios') }}</p>
+                        </div>
+                        <div class="index-team__cell swiper-slide">
+                            <img class="index-team__avatar" src="/img/team-davidov.svg" height="200" alt="" role="presentation">
+                            <p class="index-team__name">{{ "Ariil Davydov"|i18n('team-designer-name') }} <br>
+                                {{ "Designer"|i18n('team-designer') }}</p>
+                        </div>
+                        {% for use_case in use_case_list %}
+                            <div class="swiper-slide use-cases__slide">
+                                <div class="use-cases__item">
+                                    <img class="use-cases__icon" src="{{ use_case.icon }}" width="110" height="110" alt="" role="presentation">
+                                    <div class="use-cases__content">
+                                        <h3 class="use-cases__title">{{ use_case.title }}</h3>
+                                        <p class="use-cases__description">{{ use_case.description }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="swiper-button-prev" data-swiper-prev></div>
+                <div class="swiper-button-next" data-swiper-next></div>
+            </div>
+        </section>
+
+        
+        {# TON #}
+        <div class="index-ton">
+            <div class="ton__skew"></div>
+            <section class="u-section">
+                <div class="u-container">
+                    <h1 class="u-h2">{{ "Integration With Telegram Open Network"|i18n('ton-title')|safe }}</h1>
+                    <hr class="hr--left hr--main hr--short">
+
+                    <div class="u-grid u-grid--vertical-margin u-grid--align-center">
+                        <div class="u-cell u-cell--medium--4-10">
+                            <p>{{ "We have been closely watching various technologies and blockchains for the past few years and waited carefully for the moment when we could definitely say in what we believe and with whom we would like to integrate. Our choice fell on Telegram Open Network (TON)."|i18n('ton-description')|safe }}</p>
+                        </div>
+                        <div class="u-cell u-cell--medium--6-10 u-text-center">
+                            <img src="/img/index-ton.svg" alt="" role="presentation">
+                        </div>
+                    </div>
+
+
+                    <p class="ton__feature-list-description">{{ "We link our future to TON and believe that with this network, we will be able to implement all of our ideas to the fullest. Below is a step-by-step approach we will take in 2019 to integrate Minter with TON:"|i18n('ton-description-fetures')|safe }}</p>
+
+                    <div class="ton__feature-list">
+                        {{ tonFeature(
+                            title = "Transfer of Any Minter-Issued Coin to&nbsp;TON"|i18n('ton-feature-transfer-title')|safe,
+                            descriptions = [
+                                "One will be able to transfer any coin from the Minter blockchain to that of TON. Minter network’s validators will initiate the transfer automatically. Once the transaction is accepted by TON’s validators, the coins will be available for use within the Telegram Open Network. The transfer of coins from TON to Minter will also be automatic (available only for those created in&nbsp;Minter)."|i18n('ton-feature-transfer-description')|safe
+                            ],
+                            imageSrc = '/img/ton-transfer.svg'
+                        ) }}
+
+                        {{ tonFeature(
+                            title = "TON Storage for&nbsp;User&nbsp;Data"|i18n('ton-feature-storage-title')|safe,
+                            descriptions = [
+                                "Minter users will be able to store their data on the TON blockchain, benefitting from its security and immutability."|i18n('ton-feature-storage-description')|safe
+                            ],
+                            imageSrc = '/img/ton-storage.svg'
+                        ) }}
+
+                        {{ tonFeature(
+                            title = "TON for Micropayments"|i18n('ton-feature-payments-title')|safe,
+                            descriptions = [
+                                "With TON Payments, users will be able to send and receive micropayments in Minter-based coins with the help of the Lightning Network. It will be very useful for services that have to often transact in small amounts (for instance, an ad service charging for each view)."|i18n('ton-feature-payments-description')|safe
+                            ],
+                            imageSrc = '/img/ton-payments.svg'
+                        ) }}
+
+                        {{ tonFeature(
+                            title = "Exchange of Coins"|i18n('ton-feature-exchange-title')|safe,
+                            descriptions = [
+                                "WWe will become the world’s first-ever project to reach the exchangeability of its native digital coin (in our case, BIP) and TON’s base coin (GRAM). That is the reason why we have been actively working out the way to integrate with Telegram and also the reason behind our decision to conduct the KYC/AML procedure for all of our users. If BIP can be exchanged for GRAM (and the other way round), so can any other coin issued in the Minter network!"|i18n('ton-feature-exchange-description')|safe
+                            ],
+                            imageSrc = '/img/ton-exchange.svg'
+                        ) }}
+
+                        {{ tonFeature(
+                            title = "Smart Contracts"|i18n('ton-feature-contracts-title')|safe,
+                            descriptions = [
+                                "The coin transfer feature will enable us to use the Telegram Open Network’s smart contracts. Everyone is doing their job to&nbsp;the best of their ability—we mint coins that can later be implemented in the TON’s smart contract environment, one of&nbsp;the most advanced ever."|i18n('ton-feature-contracts-description')|safe
+                            ],
+                            imageSrc = '/img/ton-contract.svg'
+                        ) }}
+
+                        {{ tonFeature(
+                            title = "Decentralized Username Registration"|i18n('ton-feature-username-title')|safe,
+                            descriptions = [
+                                "Once TON DNS launches, users will be able to use it for registering and managing usernames in the Minter network. Users will receive total control over their data in a trustless network."|i18n('ton-feature-username-description')|safe
+                            ],
+                            imageSrc = '/img/ton-username.svg'
+                        ) }}
+                    </div>
+                </div>
+            </section>
+
+            <section class="ton__join u-section">
+                <div class="u-container u-container--small u-text-center">
+                    <h2 class="u-h3">{{ "Join Minter!"|i18n('ton-join-title')|safe }}</h2>
+                    <hr class="hr--main hr--short">
+                    <p>{{ "If you are willing to become one of the first Minter network users, you may start the signup process via Telegram Passport."|i18n('ton-join-description')|safe }}</p>
+                    <div class="button-group">
+                        <a class="button button--tg ton__social-link--tg" href="https://bot.minternetwork.com{{ '/ru' if __locale__ === 'ru' }}" target="_blank" rel="nofollow noopener">
+                            <img class="button__icon" src="/img/icon-soc-telegram.svg" width="24" height="24" alt="" role="presentation">
+                            {{ "Sign in with Telegram"|i18n('ton-telegram-button') }}
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="u-section">
+                <div class="u-container u-container--small">
+                    <h2 class="u-h3">{{ "Follow Us on&nbsp;Social&nbsp;Media"|i18n('ton-social-title')|safe }}</h2>
+                    <hr class="hr--left hr--main hr--short">
+                    <div class="ton__social-grid">
+                        <div class="ton__social-cell">
+                            <strong class="ton__social-caption">{{ "Social Networks"|i18n('ton-social-caption-networks')|safe }}</strong>
+                            <div class="ton__social-group">
+                                <a class="button ton__social-link ton__social-link--tg" href="https://tele.click/{{ 'MinterNetwork' if __locale__ === 'ru' else 'MinterTeam' }}" target="_blank" rel="nofollow noopener">
+                                    <img class="ton__social-link-icon" src="/img/icon-soc-telegram.svg" width="24" height="24" alt="" aria-label="Telegram Channel">
+                                </a>
+                                <a class="button ton__social-link ton__social-link--tw" href="https://twitter.com/MinterTeam" target="_blank" rel="nofollow noopener">
+                                    <img class="ton__social-link-icon" src="/img/icon-soc-tw.svg" width="24" height="24" alt="" aria-label="Twitter">
+                                </a>
+                                <a class="button ton__social-link ton__social-link--li" href="https://www.linkedin.com/company/minternetwork/" target="_blank" rel="nofollow noopener">
+                                    <img class="ton__social-link-icon" src="/img/icon-soc-linkedin.svg" width="24" height="24" alt="" aria-label="LinkedIn">
+                                </a>
+                                {% if __locale__ === 'ru' %}
+                                    <a class="button ton__social-link ton__social-link--vk" href="https://vk.com/MinterNetwork" target="_blank" rel="nofollow noopener">
+                                        <img class="ton__social-link-icon" src="/img/icon-soc-vk.svg" width="24" height="24" alt="" aria-label="VK">
+                                    </a>
+                                {% endif %}
+                                <a class="button ton__social-link ton__social-link--fb" href="https://www.facebook.com/MinterNetwork" target="_blank" rel="nofollow noopener">
+                                    <img class="ton__social-link-icon" src="/img/icon-soc-fb.svg" width="24" height="24" alt="" aria-label="facebook">
+                                </a>
+                                <a class="button ton__social-link ton__social-link--gh" href="https://github.com/MinterTeam" target="_blank" rel="nofollow noopener">
+                                    <img class="ton__social-link-icon" src="/img/icon-soc-github.svg" width="24" height="24" alt="" aria-label="Github">
+                                </a>
+                                <a class="button ton__social-link ton__social-link--mm" href="https://medium.com/@MinterTeam" target="_blank" rel="nofollow noopener">
+                                    <img class="ton__social-link-icon" src="/img/icon-soc-medium.svg" width="24" height="24" alt="" aria-label="Medium">
+                                </a>
+                                <a class="button ton__social-link ton__social-link--rd" href="https://www.reddit.com/r/Minter/" target="_blank" rel="nofollow noopener">
+                                    <img class="ton__social-link-icon" src="/img/icon-soc-reddit.svg" width="24" height="24" alt="" aria-label="Reddit">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ton__social-cell">
+                            <strong class="ton__social-caption">{{ "Telegram Chat"|i18n('ton-social-caption-chat')|safe }}</strong>
+                            <div class="ton__social-group">
+                                <a class="button ton__social-link ton__social-link--tg" href="https://tele.click/joinchat/{{ 'EafyEVD-HEOxDcv8YyaqNg' if __locale__ === 'ru' else 'EafyERJSJZJ-nwH_139jLQ' }}"  target="_blank" rel="nofollow noopener">
+                                    <img class="ton__social-link-icon" src="/img/icon-soc-telegram.svg" width="24" height="24" alt="" aria-label="Telegram Chat">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </article>
+{% endblock %}
+
+
+{% block scripts %}
+    {{ super() }}
+
+    <script src="/js/main.min.js"></script>
+    <script src="/js/use-cases.min.js"></script>
+{% endblock %}

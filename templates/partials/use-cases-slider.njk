@@ -1,0 +1,48 @@
+{% set use_case_list = [
+    {
+        'icon': '/img/use-case-youtube.svg',
+        'title': 'YouTube Channel'|i18n('case-item-1-title'),
+        'description': "Imagine a new monetization model that would allow video bloggers to accept payments for various interactive activities in their own cryptocurrency. One example of such an activity is voting for the next video. Instead of simply participating in a poll, subscribers will now provide real funding and back their own preferences by their own money. Another interesting case is Patreon, a membership platform. For example, Andreas Antonopoulos long ago offered his followers an option to pay for early access to his videos. Or maybe you would like to buy some blogger’s merch and pay with their coin? Not a problem. There will be no more need to adapt to different payment systems across the world."|i18n('case-item-1-description')
+    },
+    {
+        'icon': '/img/use-case-news.svg',
+        'title': 'Popular News Website'|i18n('case-item-2-title'),
+        'description': "For a long time, websites have been seeking a new way to make money that would balance between the growth of traffic and revenues. It is a known fact that drawing users to paid subscriptions is no easy task. It is not easy to increase paywall conversion, either. Minter will offer websites a completely different monetization model. By watching ads and generating traffic for free pages, users will be able to stack coins and later use them to get access to paid content. It will all happen automatically; users will not have to put any of their efforts in. If there are insufficient funds in a user’s account, you can always suggest them topping up their balance or completing some tasks, such as sharing the article with friends to earn money on their visits. The effect will be even greater if the websites unite into a single big network."|i18n('case-item-2-description')
+    },
+    {
+        'icon': '/img/use-case-gaming.svg',
+        'title': 'Mobile Game'|i18n('case-item-3-title'),
+        'description': "The Freemium model has become commonplace and no longer surprises anyone. Thanks to such a model and modern distribution technologies, hundreds of millions of players enjoy the games to the fullest even despite the “free version” status and start paying if they like them. Along with that come the incentive to become the first owner of the coins of a potential hit—which will later be played by millions—and the opportunity to earn not just some virtual game points but real liquid capital from inviting friends. Publishers of game series will benefit the most as they will be able to direct the audience from one game to another, keeping them balanced and stimulating new activity."|i18n('case-item-3-description')
+    },
+    {
+        'icon': '/img/use-case-shopping.svg',
+        'title': 'Mall'|i18n('case-item-4-title'),
+        'description': "Shops, cafes, and entertainment venues that are located on the same site can help one another increase sales. It is much more interesting to offer not just a discount on goods but specific coins that clients could spend at the next-door cafe. Blockchain’s security and fault tolerance allow all parties to safely deposit and withdraw coins and be confident that no one will receive the extra money. At the same time, the transaction fee will always be close to the lowest in the market—a couple of cents and not percent as it is usually the case with cards and banks."|i18n('case-item-4-description')
+    },
+    {
+        'icon': '/img/use-case-fan.svg',
+        'title': 'Fan Club'|i18n('case-item-5-title'),
+        'description': "Perhaps, one of the most exciting cases is related to people’s love and passion for an artist, project, or topic. The coin can become a means of support—i.e., donations—or a way to cast votes, or an option to obtain the club membership. People can use it to buy pieces of art, both digital and physical. Most importantly, this will mark the first time that communication will be built directly, without intermediaries and restrictions. The more popular the topic, the more followers it has. Imagine if Michael Jackson or U2 had had their coins all these years? Or a soccer player, for instance, Lionel Messi? Artists and photographers, scientists and architects, writers and musicians—from now on, they all will be able to not only communicate directly with their fans but also build long-term economic relations, not limited by anyone or anything…"|i18n('case-item-5-description')
+    }
+] %}
+
+<div class="use-cases__slider-wrap">
+    <div class="swiper-container use-cases__slider" data-use-cases-slider>
+        <div class="swiper-wrapper">
+            {% for use_case in use_case_list %}
+                <div class="swiper-slide use-cases__slide">
+                    <div class="use-cases__item">
+                        <img class="use-cases__icon" src="{{ use_case.icon }}" width="110" height="110" alt="" role="presentation">
+                        <div class="use-cases__content">
+                            <h3 class="use-cases__title">{{ use_case.title }}</h3>
+                            <p class="use-cases__description">{{ use_case.description }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="swiper-pagination" data-swiper-pagination></div>
+    </div>
+    <div class="swiper-button-prev" data-swiper-prev></div>
+    <div class="swiper-button-next" data-swiper-next></div>
+</div>

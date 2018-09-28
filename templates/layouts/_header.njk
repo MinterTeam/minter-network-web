@@ -1,0 +1,22 @@
+<header class="header header--float" data-header>
+    <div class="header__container u-container u-container--large" data-header-container>
+        <a class="header__logo" href="#intro" data-header-logo data-section-link="intro">
+            {# размеры у лого заданы чтобы сразу правильно расчиталось в js #}
+            <img class="header__logo-image" src="/img/minter-logo-circle.svg" alt="Minter" width="36" height="36">
+        </a>
+        <div class="header__menu" data-header-menu>
+            <a class="header__link is-active" href="#intro" data-section-link="intro">{{  "Intro"|i18n('link-intro') }}</a>
+            <a class="header__link" href="#white-paper" data-section-link="white-paper">{{ "White Paper"|i18n('link-white-paper') }}</a>
+            <a class="header__link" href="#help" data-section-link="help">{{ "Help & FAQ"|i18n('link-help') }}</a>
+            <a class="header__link" href="#network" data-section-link="network">{{ "Network Status"|i18n('link-network') }}</a>
+            <a class="header__link" href="#api" data-section-link="api">{{ "API & SDK"|i18n('link-api') }}</a>
+            <a class="header__link" href="#documents" data-section-link="documents">{{ "Documents"|i18n('link-documents') }}</a>
+            <a class="header__link" href="#dao" data-section-link="dao">{{ "Developers' DAO"|i18n('link-dao') }}</a>
+        </div>
+        <button class="header__offcanvas-button u-semantic-button" data-header-button>
+            <span class="header__offcanvas-icon-wrap">
+                <span class="header__offcanvas-icon">Menu</span>
+            </span>
+        </button>
+    </div>
+</header>

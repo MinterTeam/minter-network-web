@@ -1,0 +1,14 @@
+<footer class="footer">
+    <div class="footer__container u-container u-container--large">
+        <a class="footer__logo-link" href="#intro" data-section-link="intro">
+            <img class="footer__logo" src="/img/minter-logo-white.svg" alt="Minter">
+        </a>
+        <div class="footer__menu">
+            {% for link in __footer__ %}
+                <div class="footer__menu-item">
+                    <a class="footer__link link--hover" href="{{ link.url }}" target="_blank" rel="nofollow noopener">{{ link.title[__locale__] }}</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</footer>

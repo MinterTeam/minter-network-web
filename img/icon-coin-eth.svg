@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-coin-eth</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Landing-3.0" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Landing/minter-landing-3-en" transform="translate(-187.000000, -2155.000000)" fill-rule="nonzero">
+            <g id="3" transform="translate(0.000000, 1663.000000)">
+                <g id="Group-14" transform="translate(122.000000, 360.000000)">
+                    <g id="legend" transform="translate(65.000000, 40.000000)">
+                        <g id="Group-12" transform="translate(0.000000, 44.000000)">
+                            <g id="icon-coin-eth" transform="translate(0.000000, 48.000000)">
+                                <path d="M16,0 C7.16344991,0 0,7.16344991 0,16 C0,24.8365501 7.16344991,32 16,32 C24.8365501,32 32,24.8365501 32,16 C32,7.16344991 24.8365501,0 16,0 Z" id="Shape" fill="#62688F"></path>
+                                <path d="M16.7649692,20.5970749 L16.7649692,14.0905022 L23.1249339,16.8763348 L16.7649692,20.5970749 Z M16.7649692,27.1393128 L16.7649692,21.9056916 L23.0775683,18.2097621 L16.7649692,27.1393128 Z M16.7649692,5 L23.0020088,15.3753304 L16.7649692,12.6430661 L16.7649692,5 Z M15.3553128,12.6430661 L9.20468722,15.3369868 L15.3553128,5.00310132 L15.3553128,12.6430661 Z M15.3553128,20.5969339 L9,16.8742203 L15.3553128,14.0903612 L15.3553128,20.5969339 Z M15.3553128,27.1393128 L9.04271366,18.2097621 L15.3553128,21.9056916 L15.3553128,27.1393128 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

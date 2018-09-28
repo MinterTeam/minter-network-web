@@ -1,0 +1,21 @@
+{% extends "layouts/base.njk" %}
+
+{% block body %}
+    <div class="nav-panel nav-panel--index">
+        <div class="u-container u-container nav-panel__container nav-panel__container--index">
+            <span class="nav-panel__content nav-panel__content--mobile">{{ "Become Minter early adopter!"|i18n('ton-telegram-text')|safe }}</span>
+            <a class="nav-panel__button button button--tg" href="https://bot.minternetwork.com{{ '/ru' if __locale__ === 'ru' }}" target="_blank" rel="nofollow noopener">
+                <img class="button__icon" src="/img/icon-soc-telegram.svg" width="24" height="24" alt="" role="presentation">
+                {{ "Sign in with Telegram"|i18n('ton-telegram-button') }}
+            </a>
+        </div>
+    </div>
+    {#{% include 'layouts/_header.njk' %}#}
+    {% block content %}{% endblock %}
+    {#{% include 'layouts/_footer.njk' %}#}
+{% endblock %}
+
+
+
+
+
