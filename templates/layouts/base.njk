@@ -10,7 +10,7 @@
     <meta name="description" content="{{ page_description | default("We mint coins") }}">
     <meta property="og:title" content="{{ page_title | default("Minter") }}">
     <meta property="og:description" content="{{ page_description | default("We mint coins") }}">
-    <meta property="og:image" content="{{ page_social_image | default("/social-share{{ '-ru' if __locale__ === 'ru' }}.png") }}">
+    <meta property="og:image" content="{{ page_social_image | default("/social-share" + ('-ru' if __locale__ === 'ru') + ".png") }}">
     <link rel="icon" href="/favicon.png">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     {# styles #}
@@ -29,11 +29,7 @@
     <script src="/js/common.min.js"></script>
 {% endblock %}
 
-{% include 'layouts/_seo-gtag.njk' %}
-{% include 'layouts/_seo-ym.njk' %}
-{% include 'layouts/_seo-fb.njk' %}
-{% include 'layouts/_seo-vk.njk' %}
-{% include 'layouts/_seo-tw.njk' %}
+{% include 'layouts/_seo-gtm.njk' %}
 </body>
 </html>
 
