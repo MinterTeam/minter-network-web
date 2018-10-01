@@ -6,7 +6,7 @@ const locales = process.env.LOCALES;
 export default function initActiveLocale() {
     const localeUrlSegment = window.location.pathname.split('/')[1];
     // check that url segment is locale segment, otherwise it's default locale
-    const currentLocalePrefix = locales[localeUrlSegment] ? localeUrlSegment : '';
+    const currentLocalePrefix = locales[localeUrlSegment] ? locales[localeUrlSegment].prefix : '';
     const currentLocale = Object.keys(locales).find((code) => locales[code].prefix === currentLocalePrefix);
 
     $('[data-dropdown]').each(function () {
@@ -16,7 +16,7 @@ export default function initActiveLocale() {
         if ($currentLocaleEl.index() !== 0) {
             $currentLocaleEl.insertBefore($('[data-locale]').eq(0));
         }
-        const $currentLocaleIcon = $currentLocaleEl.find('[data-locale-icon]')
+        const $currentLocaleIcon = $currentLocaleEl.find('[data-locale-icon]');
         $dropdown.find('[data-locale-active]').attr('src', $currentLocaleIcon.attr('src')).attr('srcset', $currentLocaleIcon.attr('srcset'));
 
         $dropdown.find('[data-locale]').each(function () {
