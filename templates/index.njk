@@ -1,6 +1,6 @@
 {% extends "layouts/default.njk" %}
-{% set page_title = "Minter – We mint coins." %}
-{% set page_description = "Imagine a blockchain that would allow you to create your own coin and transfer it or exchange it for all of the other coins issued in the network—as well as Bitcoin, Ether, and even USD—in an instant, limitless manner. Imagine the next-generation cryptocurrencies."|i18n('hero-lead')|safe %}
+{% set page_title = "Home Page"|i18n('index-seo-title')|safe %}
+{% set page_description = "Create a cryptocurrency of your own. Build and run apps powered by the Minter blockchain."|i18n('index-seo-description')|safe %}
 
 {% from "partials/ton-feature.njk" import feature as tonFeature %}
 
@@ -26,14 +26,14 @@
                 <div class="u-grid u-grid--vertical-margin">
                     <div class="u-cell u-cell--small--1-2 u-cell--medium--1-3">
                         <img class="index-features__icon" src="/img/feature-speed.svg" width="75" height="75" alt="" role="presentation">
-                        <p>{{ "All transactions are processed in&nbsp;five&nbsp;seconds"|i18n('index-features-item1')|safe }}</p>
+                        <p>{{ "All transactions are processed every&nbsp;five&nbsp;seconds"|i18n('index-features-item1')|safe }}</p>
                     </div>
                     <div class="u-cell u-cell--small--1-2 u-cell--medium--1-3">
                         <img class="index-features__icon" src="/img/feature-exchange.svg" width="75" height="75" alt="" role="presentation">
                         <p>{{ "All coins can be exchanged for one another and also for Bitcoin, Ether, and&nbsp;USD"|i18n('index-features-item2')|safe }}</p>
                     </div>
                     <div class="u-cell u-cell--small--1-2 u-cell--medium--1-3">
-                        <img class="index-features__icon" src="/img/feature-coins.svg" width="75" height="75" alt="" role="presentation">
+                        <img class="index-features__icon" src="/img/feature-coins.svg?v2" width="75" height="75" alt="" role="presentation">
                         <p>{{ "Anyone can create their own coin and set its&nbsp;price"|i18n('index-features-item3')|safe }}</p>
                     </div>
                     <div class="u-cell u-cell--small--1-2 u-cell--medium--1-3">
@@ -240,7 +240,7 @@
                     </div>
 
 
-                    <p class="ton__feature-list-description">{{ "We link our future to TON and believe that with this network, we will be able to implement all of our ideas to the fullest. Below is a step-by-step approach we will take in 2019 to integrate Minter with TON:"|i18n('ton-description-fetures')|safe }}</p>
+                    <p class="ton__feature-list-description">{{ "We link our future to TON and believe that with this network, we will be able to implement all of our ideas to the fullest. Below is a step-by-step approach we will take in 2019 to integrate Minter with TON:"|i18n('ton-description-features')|safe }}</p>
 
                     <div class="ton__feature-list">
                         {{ tonFeature(

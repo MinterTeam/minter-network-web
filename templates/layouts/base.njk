@@ -6,11 +6,11 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     {# seo #}
-    <title>{{ page_title | default("Minter") }}</title>
+    <title>{{ page_title + " — Minter" if page_title else "Minter" }}</title>
     <meta name="description" content="{{ page_description | default("We mint coins") }}">
     <meta property="og:title" content="{{ page_title | default("Minter") }}">
     <meta property="og:description" content="{{ page_description | default("We mint coins") }}">
-    <meta property="og:image" content="{{ page_social_image | default("/social-share.png") }}">
+    <meta property="og:image" content="{{ page_social_image | default("/social-share{{ '-ru' if __locale__ === 'ru' }}.png") }}">
     <link rel="icon" href="/favicon.png">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     {# styles #}
