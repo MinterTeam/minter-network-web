@@ -24,7 +24,7 @@ import initDropdown from './include/dropdown';
     /**
      * Dropdown
      */
-    // initDropdown();
+    initDropdown();
 
     // start listening click
     clickBlur();
