@@ -25,7 +25,7 @@ export default function initActiveLocale() {
             const localePrefix = locales[localeCode].prefix;
             // set correct link href
             const basePath = currentLocalePrefix ? window.location.pathname.replace(new RegExp('^\/' + currentLocalePrefix), '') : window.location.pathname;
-            const localePath = localePrefix ? '/' + localePrefix + basePath : basePath;
+            const localePath = localePrefix ? ('/' + localePrefix + basePath) : (basePath ? basePath : '/');
             $localeLink.attr('href', localePath);
 
             $localeLink.on('click', function () {
