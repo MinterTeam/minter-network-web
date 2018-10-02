@@ -75,6 +75,27 @@
 
 
 
+
+// footer
+.footer {background: @c-black; color: #fff; padding: 38px 0;}
+.footer--ps {background: none;}
+.footer__container {display: flex; justify-content: center; flex-wrap: wrap;}
+.footer__logo-link {}
+.footer__logo {width: 76px; display: block;}
+.footer__menu {width: 100%; margin: 20px 0 0; padding: 0; text-align: center;}
+.footer__menu-item {
+    font-size: 14px; font-weight: 700; display: inline-block;
+    &::after {content: ' | '; margin: 0 3px;}
+    &:last-child::after {content: none;}
+}
+@media (min-width: @breakpoint-large-up) {
+    .footer__container {align-items: center; justify-content: space-between;}
+    .footer__container--ps {justify-content: center;}
+    .footer__menu {width: auto; margin-top: 0;}
+}
+
+
+
 .article {overflow: hidden; position: relative; z-index: 1; background: @c-orange; }
 
 
@@ -302,3 +323,30 @@
     &:active {background: shade(#FF4501, 10%);}
 }
 
+
+
+
+
+// private sale
+.body--ps {background: #163553; color: #fff;}
+.main-wrap--ps {min-height: 100vh; display: flex; flex-direction: column; }
+.article--ps {flex-grow: 2; width: 100%;}
+.ps__container {position: relative;}
+.ps__image {width: 280px; max-width: 100%; /*margin-bottom: -50px;*/ margin-top: 24px;}
+.ps__text-width {max-width: 580px;}
+.ps__sumsub-logo {margin-bottom: 16px;}
+.ps__form-input, .ps__form-button {min-width: 320px; width: auto;}
+.ps__form-button {padding-left: 24px; padding-right: 24px;}
+.ps__form-success {min-height: 100px; /*display: flex; align-items: center;*/}
+.ps__form-error {color: #ff4646;}
+@media (max-width: @breakpoint-mini-down) {
+    .ps__form-button {
+        padding-left: 10px; padding-right: 10px;
+        .button__icon {margin-right: 10px;}
+    }
+}
+@media (min-width: @breakpoint-medium-up) {
+    .ps__image {/*position: absolute; top: -35px; right: 0; z-index: -1;*/ margin: 0; width: auto; margin-top: -35px; }
+    .ps__sumsub {display: flex; align-items: flex-start;}
+    .ps__sumsub-logo {margin-right: 36px; flex-shrink: 0; margin-bottom: 0;}
+}

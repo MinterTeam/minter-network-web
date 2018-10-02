@@ -36,7 +36,7 @@ let paths = {
         js: 'js/*.js',
         img: ['img/**/*.{png,jpg,gif,svg}'],
         templatesDir: ['templates/'],
-        templatesFiles: 'templates/*.njk',
+        templatesFiles: ['templates/**/*.njk', '!templates/layouts/**/*.njk', '!templates/partials/**/*.njk'],
     },
     dest: {
         css: 'public/css/',

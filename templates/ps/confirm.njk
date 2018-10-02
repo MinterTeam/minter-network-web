@@ -1,0 +1,36 @@
+{# страница для перехода по ссылке подтверждения из почты #}
+{% extends "layouts/ps.njk" %}
+{% set page_title = "Minter – Confirm e-mail" %}
+{% set page_description = "" %}
+
+{% block content %}
+    {# article enables safari reader mode #}
+    <article class="article--ps">
+        <section class="u-section">
+            <div class="u-container u-container--large ps__container">
+                <div class="u-grid">
+                    <div class="u-cell u-cell--medium--1-2">
+                        <a href="/">
+                            <img class="hero__logo" src="/img/minter-logo-white.svg" width="133" height="42" alt="Minter">
+                        </a>
+                        <h1 class="u-h1 hero__title">{{ "Early Access"|i18n('ps-title')|safe }}</h1>
+
+                        <p class="ps__text-width" data-ps-loading>Loading…</p>
+                        <div class="form-row ps__form-error u-hidden" data-ps-form-error></div>
+                        <div class="ps__form-success u-hidden u-h3" data-ps-success>Your e-mail confirmed!</div>
+                    </div>
+                    <div class="u-cell u-cell--medium--1-2 u-text-center">
+                        <img class="ps__image" src="/img/ps-hero.svg" alt="" role="presentation">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </article>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+
+    <script src="/js/ps-confirm.min.js"></script>
+{% endblock %}

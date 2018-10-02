@@ -1,0 +1,17 @@
+{% extends "layouts/base.njk" %}
+{% set body_class = "body--ps" %}
+
+{% block body %}
+    <div class="main-wrap main-wrap--ps">
+        {#<div class="nav-panel">
+            <div class="u-container u-container--large nav-panel__container">
+                <a class="nav-panel__content link--hover" href="{{ localePrefix }}/">
+                    <img class="nav-panel__icon" src="/img/icon-nav-back.svg" alt="">
+                    {{ "Return to minter.network"|i18n('ps-back-button') }}
+                </a>
+            </div>
+        </div>#}
+        {% block content %}{% endblock %}
+        {% include 'layouts/_footer-ps.njk' %}
+    </div>
+{% endblock %}
