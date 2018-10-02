@@ -116,19 +116,11 @@
                 </div>
                 <img class="index-speed__exchange-image" src="/img/index-coins.svg" alt="" role="presentation">
                 <p class="index-speed__exchange-caption u-h u-h3">{{ "Make real-world payments with any coin issued in the Minter&nbsp;network!"|i18n('index-exchange-image-caption')|safe }}</p>
-                <img class="index-speed__heroes-image" src="/img/index-heroes.svg" alt="" role="presentation">
-            </div>
-        </section>
 
-
-
-        <hr class="index-fees-skew">
-        <section class="index-fees u-section">
-            <div class="u-container">
                 <div class="index-fees__grid u-grid u-grid--vertical-margin u-grid--align-center">
                     <div class="u-cell u-cell--medium--1-2">
                         <h2 class="u-h2">{{ "Transaction Fees"|i18n('index-fees-title') }}</h2>
-                        <hr class="hr--dark hr--short hr--left">
+                        <hr class="hr--dark hr--short">
                         <p>{{ "Transaction fees are so low that they don’t even bother anyone. Just to remind you, they do not exceed $0.01, regardless of the volume of an exchange or transfer&nbsp;operation."|i18n('index-fees-description')|safe }}</p>
                         <p>{{ "That is all because we have a high network throughput, thousands of transactions per second, meaning validators can make good money even with&nbsp;commission fees set so&nbsp;low."|i18n('index-fees-description2')|safe }}</p>
                     </div>
@@ -139,7 +131,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <h2 class="u-h2  u-text-center">{{ "Revenues of Validators and Delegators"|i18n('index-revenue-title') }}</h2>
                 <hr class="hr--dark hr--short">
                 <p class="u-text-medium u-text-center">
@@ -147,6 +139,15 @@
                 </p>
             </div>
         </section>
+
+
+
+        {#<hr class="index-fees-skew">
+        <section class="index-fees u-section">
+            <div class="u-container">
+
+            </div>
+        </section>#}
 
 
 
@@ -355,6 +356,9 @@
                     </div>
                 </div>
             </section>
+            <div class="u-container">
+                <img class="index-ton__heroes-image" src="/img/index-heroes.svg" alt="" role="presentation">
+            </div>
         </div>
     </article>
 {% endblock %}

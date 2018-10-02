@@ -108,12 +108,12 @@
     &::after {background: url(../img/hero-bg-wave.svg) repeat-x 50% 101% #48100A /*#621910*/; top: 0; left: 0; right: 0; bottom: 0;}
 }
 .hero__content {
-    font-size: 18px;
+    font-size: 18px; position: relative; z-index: 1;
     p+p {margin-top: 20px;}
 }
 .hero__logo {display: inline-block; vertical-align: top; font-family: @heading-font-family; font-size: 56px; line-height: 94px; font-weight: 500;}
 .hero__title {margin-top: 25px; margin-bottom: 20px; font-size: 30px; line-height: 36px;}
-.hero__image {margin: 60px auto -70px;}
+.hero__image {margin: 60px auto -70px; display: block; max-width: 80%;}
 @media (min-width: @breakpoint-medium-up) {
     .hero__container {position: relative; padding-top: 80px; padding-bottom: 80px;}
     .hero__content {max-width: 400px;}
@@ -157,14 +157,14 @@
 
 // speed
 .index-speed-skew {
-    height: 100px; position: relative; border: none; margin: 0;
+    height: 120px; position: relative; border: none; margin: 0;
     &::before, &::after {content: ''; position: absolute; z-index: -1;}
     &::before {right: 0; width: 25%; top: 0; height: 100%; background: #21234B;}
-    &::after {background: linear-gradient(to bottom, #21234B 144px, #1B1D40 144px, #1B1D40 156px, #2E305C 156px); transform: rotate(5deg); left: -50%; right: -50%; top: -100px; bottom: -100px;}
+    &::after {background: linear-gradient(to bottom, #21234B 164px, #1B1D40 164px, #1B1D40 176px, #2E305C 176px); transform: rotate(5deg); left: -50%; right: -50%; top: -100px; bottom: -100px;}
 }
 .index-speed {
     position: relative; color: #fff;
-    &::before {content: ''; position: absolute; z-index: -2; left: 0; right: 0; top: -100px; bottom: -120px; background: url(../img/hero-bg-wave-blue.svg) repeat-x 50% 100% #2E305C;}
+    &::before {content: ''; position: absolute; z-index: -2; left: 0; right: 0; top: -100px; bottom: 0; background: #2E305C;}
 }
 .index-speed__info {padding: 24px 24px 40px; margin: 40px 0; border-radius: 10px; background: #21234B; text-align: left;}
 .index-speed__info-title {font-size: 20px; line-height: 1.3; letter-spacing: 0.031em; margin-bottom: 26px;}
@@ -175,12 +175,11 @@
 }
 .index-speed__info-icon {margin-right: 16px;}
 .index-speed__info-image {margin-bottom: -40px; display: block;}
-.index-speed__info-caption {margin-bottom: 100px;}
+.index-speed__info-caption {margin-bottom: 96px;}
 .index-speed__info-caption-highlight {color: #fbb32b;}
 .index-speed__exchange-grid {}
 .index-speed__exchange-image {margin: 60px auto 0; display: block;}
-.index-speed__exchange-caption {max-width: 520px; margin-left: auto; margin-right: auto;}
-.index-speed__heroes-image {margin: 60px auto -115px; display: block; position: relative; z-index: -1;}
+.index-speed__exchange-caption {max-width: 520px; margin-left: auto; margin-right: auto; margin-bottom: 96px;}
 @media (min-width: @breakpoint-medium-up) {
     .index-speed__info {display: flex; justify-content: space-between; align-items: flex-end; padding: 34px 40px 40px;}
     .index-speed__info-title {margin-right: -240px;}
@@ -189,15 +188,15 @@
 
 
 // fees
-.index-fees-skew {
-    height: 100px; position: relative; border: none; margin: 0;
-    &::before, &::after {content: ''; position: absolute; z-index: -1; left: -50%; right: -50%;}
-    &::before {background: linear-gradient(to bottom, transparent 144px, #6F2C21 144px, #6F2C21 156px, @c-main 156px); transform: rotate(-2deg); top: -100px; bottom: -100px;}
-}
-.index-fees {
-    position: relative; color: #fff;
-    &::before {content: ''; position: absolute; z-index: -2; left: 0; right: 0; top: 20px; bottom: 0; background: @c-main;}
-}
+//.index-fees-skew {
+//    height: 100px; position: relative; border: none; margin: 0;
+//    &::before, &::after {content: ''; position: absolute; z-index: -1; left: -50%; right: -50%;}
+//    &::before {background: linear-gradient(to bottom, transparent 144px, #6F2C21 144px, #6F2C21 156px, @c-main 156px); transform: rotate(-2deg); top: -100px; bottom: -100px;}
+//}
+//.index-fees {
+//    position: relative; color: #fff;
+//    &::before {content: ''; position: absolute; z-index: -2; left: 0; right: 0; top: 20px; bottom: 0; background: @c-main;}
+//}
 .index-fees__grid {margin-bottom: 90px;}
 .index-fees__image-wrap {max-width: 296px; margin: auto; text-align: center;}
 .index-fees__image {display: block; margin: auto;}
@@ -206,10 +205,10 @@
 
 // team
 .index-team__skew {
-    height: 100px; position: relative; border: none; margin: 0;
+    height: 120px; position: relative; border: none; margin: 0;
     &::before, &::after {content: ''; position: absolute; z-index: -1; }
-    &::before {right: 0; width: 25%; top: 0; height: 100%; background: @c-main;}
-    &::after {background: linear-gradient(to bottom, @c-orange 144px, #ebebeb 144px, #ebebeb 156px, #fff 156px); transform: rotate(5deg); left: -50%; right: -50%; top: -100px; bottom: -100px;}
+    &::before {left: 0; width: 25%; top: 0; height: 100%; background: #2E305C;}
+    &::after {background: linear-gradient(to bottom, #2E305C 164px, #ebebeb 164px, #ebebeb 176px, #fff 176px); transform: rotate(-4deg); left: -50%; right: -50%; top: -100px; bottom: -100px;}
 }
 .index-team__lead {margin-bottom: 32px;}
 .index-team__item {}
@@ -253,13 +252,13 @@
 // ton
 .index-ton {
     color: #fff; position: relative;
-    &::before {content: ''; position: absolute; left: 0; top: 0; right: 0; bottom: 0; background: #333617; z-index: -1;}
+    &::before {content: ''; position: absolute; left: 0; top: 0; right: 0; bottom: 0; background: url(../img/hero-bg-wave-green.svg) repeat-x 50% 100%  #333617; z-index: -1;}
 }
 .ton__skew {
-    height: 100px; position: relative;
+    height: 120px; position: relative;
     &::before, &::after {content: ''; position: absolute; z-index: -1;}
-    &::before {left: 0; top: 0; width: 25%; height: 100%; background: #fff;}
-    &::after {background: linear-gradient(to bottom, #fff 144px, #26280E 144px, #26280E 156px, #333619 156px); transform: rotate(-5deg); left: -50%; right: -50%; top: -100px; bottom: -100px;}
+    &::before {right: 0; top: 0; width: 25%; height: 100%; background: #fff;}
+    &::after {background: linear-gradient(to bottom, #fff 164px, #26280E 164px, #26280E 176px, #333619 176px); transform: rotate(5deg); left: -50%; right: -50%; top: -100px; bottom: -100px;}
 }
 .ton__header {background: #333619;}
 .ton__feature-list-description {margin-top: 60px;}
@@ -322,6 +321,7 @@
     &:hover, &:focus {background: tint(#FF4501, 12%);}
     &:active {background: shade(#FF4501, 10%);}
 }
+.index-ton__heroes-image {margin: 20px auto 0; display: block; position: relative; z-index: -1;}
 
 
 
