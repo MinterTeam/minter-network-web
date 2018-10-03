@@ -41,8 +41,9 @@ module.exports = {
     'index-revenue-title': 'Доход валидаторов и делегаторов',
     'index-revenue-description': 'И все доходы и комиссии уходят валидаторам и их делегаторам, потому что именно они поддерживают нашу сеть. DPoS-консенсус подразумевает простейшие механизмы создания блоков на относительно недорогом оборудовании, но с высокой степенью честности. 98% всей эмиссии BIP и 100% комиссий будут добыты этими серверами.',
 
-    // 'index-speed-title': '',
-    // 'index-speed-description': '',
+    'index-speed-button-network': 'Подробнее о сети',
+    'index-speed-button-wp': 'Читать White Paper',
+
 
     // team
     'team-title': 'Команда',
@@ -99,6 +100,7 @@ module.exports = {
     'ton-social-title': 'Мы в социальных сетях:',
     'ton-social-caption-networks': 'Социальные сети',
     'ton-social-caption-chat': 'Telegram чат',
+    'index-ton-button': 'Подробнее о TON',
 
 
 

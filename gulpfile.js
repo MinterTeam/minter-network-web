@@ -7,6 +7,7 @@ const beeper = require('beeper');
 // templates
 const nunjucks = require('gulp-nunjucks-render');
 const cacheBust = require('gulp-cache-bust');
+const data = require('gulp-data');
 const decache = require('decache');
 const envConfig = require('dotenv').config();
 const footerLinksData = require('minter-footer-links');
@@ -116,6 +117,13 @@ function makeTemplatesTask(locale) {
 
         return gulp.src(paths.src.templatesFiles)
             .pipe(plumber({errorHandler: onError}))
+            .pipe(data(function getDataForFile(file) {
+                const locationPath = file.relative.replace(/index\.njk$/, '').replace(/\.njk$/, '').replace(/\\/g, '/');
+                return {
+                    __filePath__: file.relative,
+                    __locationPath__: locationPath ?  '/' + locationPath : '',
+                };
+            }))
             .pipe(nunjucks({
                 path: paths.src.templatesDir,
                 ext: '.html',

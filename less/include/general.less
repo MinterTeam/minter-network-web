@@ -92,11 +92,12 @@ hr {border: none; border-top: 1px solid @c-border;}
 .button--medium {min-width: 168px; padding-left: 14px; padding-right: 14px;}
 // button group
 .button-group {
-    display: flex; flex-direction: column; align-items: center; margin-top: -10px; margin-left: -20px; margin-bottom: @default-indent;
-    .button {margin-top: 10px; margin-left: 20px;}
+    display: flex; flex-direction: column; align-items: center; margin-top: -16px; margin-left: -24px; margin-bottom: @default-indent;
+    .button {margin-top: 16px; margin-left: 24px;}
     * + & {margin-top: @default-indent - 10px;}
     &:last-child {margin-bottom: 0;}
 }
+.button-group--margin {margin-top: (64px - 16px);}
 .button-group--small {
     margin-left: -10px;
     .button {margin-left: 10px;}

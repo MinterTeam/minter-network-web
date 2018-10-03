@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /ps/confirm
+Disallow: /ru/ps/confirm
+
+
+User-agent: Yandex
+Disallow:
+Host: www.minter.network

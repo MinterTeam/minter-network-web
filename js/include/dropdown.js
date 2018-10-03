@@ -7,6 +7,7 @@ export default function initDropdown() {
         const $dropdownButton = $dropdown.find('[data-dropdown-button]');
 
         const mdcMenu = new MDCMenu($dropdown.find('[data-dropdown-menu]')[0]);
+        mdcMenu.setAnchorMargin({top: -20, left: -16, right: -16});
 
         $dropdownButton.on('click', function () {
             mdcMenu.open = true;

@@ -1,4 +1,5 @@
 {% set localePrefix = '' if __locale__ === 'en' else '/' + __locale__ %}
+{% set host = 'https://minter.network' %}
 
 <!doctype html>
 <html lang="{{ __locale__ }}">
@@ -13,6 +14,13 @@
     <meta property="og:image" content="{{ page_social_image | default("/social-share" + ('-ru' if __locale__ === 'ru') + ".png") }}">
     <link rel="icon" href="/favicon.png">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="canonical" href="{{ host + localePrefix + __locationPath__ }}">
+    {% for code, locale in __locales__ %}
+        {% if locale.code !== __locale__ %}
+            <link rel="alternate" hreflang="{{ locale.code }}" href="{{ host + ('' if locale.code === 'en' else '/' + locale.code) + __locationPath__ }}" />
+        {% endif %}
+    {% endfor %}
+
     {# styles #}
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Rubik:500&amp;subset=cyrillic" rel="stylesheet">

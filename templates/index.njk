@@ -137,6 +137,11 @@
                 <p class="u-text-medium u-text-center">
                     {{ "All of the income plus transaction fees go to our validators and their delegators as it is they who support our network. DPoS implies the simplest block generation mechanisms on relatively affordable equipment, but with a high degree of integrity. These servers will receive 98% of the total BIP supply and 100% of transaction fees."|i18n('index-revenue-description')|safe }}
                 </p>
+
+                <div class="button-group button-group--margin">
+                    <a class="button button--main" href="https://about.minter.network{{ localePrefix }}" target="_blank">{{ "More About Network"|i18n('index-speed-button-network')|safe }}</a>
+                    <a class="button button--main" href="https://about.minter.network/Minter_White_Paper{{ '_Russian' if __locale__ === 'ru' }}.pdf" target="_blank">{{ "Read White Paper"|i18n('index-speed-button-wp')|safe }}</a>
+                </div>
             </div>
         </section>
 
@@ -292,6 +297,9 @@
                             imageSrc = '/img/ton-username.svg'
                         ) }}
                     </div>
+                    <div class="button-group button-group--margin">
+                        <a class="button button--main" href="https://about.minter.network{{ localePrefix }}/ton" target="_blank">{{ "More About TON"|i18n('index-ton-button')|safe }}</a>
+                    </div>
                 </div>
             </section>
 
@@ -301,7 +309,7 @@
                     <hr class="hr--main hr--short">
                     <p>{{ "If you are willing to become one of the first Minter network users, you may start the signup process via Telegram&nbsp;Passport."|i18n('ton-join-description')|safe }}</p>
                     <div class="button-group">
-                        <a class="button button--tg ton__social-link--tg" href="https://bot.minternetwork.com{{ '/ru' if __locale__ === 'ru' }}" target="_blank" rel="nofollow noopener">
+                        <a class="button button--tg ton__social-link--tg" href="https://bot.minternetwork.com{{ localePrefix }}" target="_blank">
                             <img class="button__icon" src="/img/icon-soc-telegram.svg" width="24" height="24" alt="" role="presentation">
                             {{ "Sign in with Telegram"|i18n('ton-telegram-button') }}
                         </a>
@@ -313,34 +321,36 @@
                 <div class="u-container">
                     <h2 class="u-h3">{{ "Follow Us on&nbsp;Social&nbsp;Media"|i18n('ton-social-title')|safe }}</h2>
                     <hr class="hr--left hr--main hr--short">
-                    <div class="ton__social-grid">
+                    <div class="ton__social-grid" itemscope itemtype="https://schema.org/Organization">
+                        <link itemprop="url" href="http://www.minter.network">
+                        <link itemprop="logo" href="http://www.minter.network/apple-touch-icon.png">
                         <div class="ton__social-cell">
                             <strong class="ton__social-caption">{{ "Social Networks"|i18n('ton-social-caption-networks')|safe }}</strong>
                             <div class="ton__social-group">
-                                <a class="button ton__social-link ton__social-link--tg" href="https://tele.click/{{ 'MinterNetwork' if __locale__ === 'ru' else 'MinterTeam' }}" target="_blank" rel="nofollow noopener">
+                                <a class="button ton__social-link ton__social-link--tg" href="https://tele.click/{{ 'MinterNetwork' if __locale__ === 'ru' else 'MinterTeam' }}" target="_blank" rel="noopener" itemprop="sameAs">
                                     <img class="ton__social-link-icon" src="/img/icon-soc-telegram.svg" width="24" height="24" alt="" aria-label="Telegram Channel">
                                 </a>
-                                <a class="button ton__social-link ton__social-link--tw" href="https://twitter.com/MinterTeam" target="_blank" rel="nofollow noopener">
+                                <a class="button ton__social-link ton__social-link--tw" href="https://twitter.com/MinterTeam" target="_blank" rel="noopener" itemprop="sameAs">
                                     <img class="ton__social-link-icon" src="/img/icon-soc-tw.svg" width="24" height="24" alt="" aria-label="Twitter">
                                 </a>
-                                <a class="button ton__social-link ton__social-link--li" href="https://www.linkedin.com/company/minternetwork/" target="_blank" rel="nofollow noopener">
+                                <a class="button ton__social-link ton__social-link--li" href="https://www.linkedin.com/company/minternetwork/" target="_blank" rel="noopener" itemprop="sameAs">
                                     <img class="ton__social-link-icon" src="/img/icon-soc-linkedin.svg" width="24" height="24" alt="" aria-label="LinkedIn">
                                 </a>
                                 {% if __locale__ === 'ru' %}
-                                    <a class="button ton__social-link ton__social-link--vk" href="https://vk.com/MinterNetwork" target="_blank" rel="nofollow noopener">
+                                    <a class="button ton__social-link ton__social-link--vk" href="https://vk.com/MinterNetwork" target="_blank" rel="noopener" itemprop="sameAs">
                                         <img class="ton__social-link-icon" src="/img/icon-soc-vk.svg" width="24" height="24" alt="" aria-label="VK">
                                     </a>
                                 {% endif %}
-                                <a class="button ton__social-link ton__social-link--fb" href="https://www.facebook.com/MinterNetwork" target="_blank" rel="nofollow noopener">
+                                <a class="button ton__social-link ton__social-link--fb" href="https://www.facebook.com/MinterNetwork" target="_blank" rel="noopener" itemprop="sameAs">
                                     <img class="ton__social-link-icon" src="/img/icon-soc-fb.svg" width="24" height="24" alt="" aria-label="facebook">
                                 </a>
-                                <a class="button ton__social-link ton__social-link--gh" href="https://github.com/MinterTeam" target="_blank" rel="nofollow noopener">
+                                <a class="button ton__social-link ton__social-link--gh" href="https://github.com/MinterTeam" target="_blank" rel="noopener" itemprop="sameAs">
                                     <img class="ton__social-link-icon" src="/img/icon-soc-github.svg" width="24" height="24" alt="" aria-label="Github">
                                 </a>
-                                <a class="button ton__social-link ton__social-link--mm" href="https://medium.com/@MinterTeam" target="_blank" rel="nofollow noopener">
+                                <a class="button ton__social-link ton__social-link--mm" href="https://medium.com/@MinterTeam" target="_blank" rel="noopener" itemprop="sameAs">
                                     <img class="ton__social-link-icon" src="/img/icon-soc-medium.svg" width="24" height="24" alt="" aria-label="Medium">
                                 </a>
-                                <a class="button ton__social-link ton__social-link--rd" href="https://www.reddit.com/r/Minter/" target="_blank" rel="nofollow noopener">
+                                <a class="button ton__social-link ton__social-link--rd" href="https://www.reddit.com/r/Minter/" target="_blank" rel="noopener" itemprop="sameAs">
                                     <img class="ton__social-link-icon" src="/img/icon-soc-reddit.svg" width="24" height="24" alt="" aria-label="Reddit">
                                 </a>
                             </div>
@@ -348,7 +358,7 @@
                         <div class="ton__social-cell">
                             <strong class="ton__social-caption">{{ "Telegram Chat"|i18n('ton-social-caption-chat')|safe }}</strong>
                             <div class="ton__social-group">
-                                <a class="button ton__social-link ton__social-link--tg" href="https://tele.click/joinchat/{{ 'EafyEVD-HEOxDcv8YyaqNg' if __locale__ === 'ru' else 'EafyERJSJZJ-nwH_139jLQ' }}"  target="_blank" rel="nofollow noopener">
+                                <a class="button ton__social-link ton__social-link--tg" href="https://tele.click/joinchat/{{ 'EafyEVD-HEOxDcv8YyaqNg' if __locale__ === 'ru' else 'EafyERJSJZJ-nwH_139jLQ' }}"  target="_blank" rel="noopener" itemprop="sameAs">
                                     <img class="ton__social-link-icon" src="/img/icon-soc-telegram.svg" width="24" height="24" alt="" aria-label="Telegram Chat">
                                 </a>
                             </div>
