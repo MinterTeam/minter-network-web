@@ -111,6 +111,27 @@ module.exports = {
     'index-ton-button': 'Подробнее о TON',
 
     'index-links-title': 'Ссылки',
+    'index-links-caption-about': 'О Сети',
+    'index-links-summary': 'Кратко о сети',
+    'index-links-get-bip': 'Как получить BIP? ',
+    'index-links-solving-kyc': 'Решение проблем, возникающих при прохождении KYC',
+    'index-links-console': 'Консоль',
+    'index-links-status': 'Статус',
+    'index-links-caption-validator': 'Для валидаторов и делегаторов',
+    'index-links-who-validator': 'Кто такой Валидатор?',
+    'index-links-who-delegator': 'Кто такие Делегаторы? ',
+    'index-links-how-validator': 'Как стать Валидатором?',
+    'index-links-how-delegator': 'Как стать Делегатором?',
+    'index-links-how-masternode': 'Как запустить мастерноду? ',
+    'index-links-node-doc': 'Документация по мастернодам',
+    'index-links-caption-coiner': 'Для Коинеров',
+    'index-links-who-coiner': 'Кто такой Коинер?',
+    'index-links-pco': 'Perpetual Coin Offering (Вечное предложение монет)',
+    'index-links-how-issue': 'Как выпустить свою монету? ',
+    'index-links-caption-developer': 'Для разработчиков',
+    'index-links-how-mapps': 'Как сделать MApps (Minter Apps)',
+    'index-links-caption-user': 'Для пользователей',
+    'index-links-help': 'Помощь и FAQ',
 
 
 
