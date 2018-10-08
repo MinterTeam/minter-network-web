@@ -1,7 +1,7 @@
 {% extends "layouts/base.njk" %}
 
 {% block body %}
-    <div class="nav-panel nav-panel--index">
+    <div class="nav-panel nav-panel--index" data-section="network" id="network" data-nav-panel>
         <div class="u-container u-container nav-panel__container">
             <div class="nav-panel__inner">
                 <span class="nav-panel__content">{{ "Become Minter early adopter!"|i18n('ton-telegram-text')|safe }}</span>
@@ -10,10 +10,10 @@
                     {{ "Sign in with Telegram"|i18n('ton-telegram-button') }}
                 </a>
             </div>
-            {% include 'partials/language.njk' %}
+            {#{% include 'partials/language.njk' %}#}
         </div>
     </div>
-    {#{% include 'layouts/_header.njk' %}#}
+    {% include 'layouts/_header.njk' %}
     {% block content %}{% endblock %}
     {#{% include 'layouts/_footer.njk' %}#}
 {% endblock %}

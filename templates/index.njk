@@ -5,7 +5,7 @@
 {% from "partials/ton-feature.njk" import feature as tonFeature %}
 
 {% block content %}
-    <article>
+    <article class="main-inner">
         <section class="hero">
             <div class="hero__container u-section u-container">
                 <div class="hero__content">
@@ -159,7 +159,7 @@
 
         {# Team #}
         <hr class="index-team__skew">
-        <section class="u-section u-container u-text-center">
+        <section class="u-section u-container u-text-center" data-section="team" id="team">
             <h2 class="u-h2">{{ "Team"|i18n('team-title') }}</h2>
             <hr class="hr--main hr--short">
             <p class="u-text-medium">{{ "To date, the Minter team consists of 20 people, among whom are blockchain developers and experienced front-end/back-end professionals. From the very beginning, we strive to build stylish, sophisticated applications for mobile users, so&nbsp;we have recruited accomplished designers and iOS/Android experts with the enormous expertise to join&nbsp;us."|i18n('team-description')|safe }}</p>
@@ -231,9 +231,9 @@
         {# TON #}
         <div class="index-ton">
             <div class="ton__skew"></div>
-            <section class="u-section">
+            <section class=" u-section" data-section="ton" id="ton">
                 <div class="u-container">
-                    <h1 class="u-h2">{{ "Integration With Telegram Open Network"|i18n('ton-title')|safe }}</h1>
+                    <h2 class="u-h2">{{ "Integration With Telegram Open Network"|i18n('ton-title')|safe }}</h2>
                     <hr class="hr--left hr--main hr--short">
 
                     <div class="u-grid u-grid--vertical-margin u-grid--align-center">
@@ -303,7 +303,7 @@
                 </div>
             </section>
 
-            <section class="ton__join u-section">
+            <section class="ton__join">
                 <div class="u-container u-container--small u-text-center">
                     <h2 class="u-h3">{{ "Join Minter!"|i18n('ton-join-title')|safe }}</h2>
                     <hr class="hr--main hr--short">
@@ -317,7 +317,7 @@
                 </div>
             </section>
 
-            <section class="u-section">
+            <section class="index-social u-section--top">
                 <div class="u-container">
                     <h2 class="u-h3">{{ "Follow Us on&nbsp;Social&nbsp;Media"|i18n('ton-social-title')|safe }}</h2>
                     <hr class="hr--left hr--main hr--short">
@@ -366,10 +366,186 @@
                     </div>
                 </div>
             </section>
-            <div class="u-container">
-                <img class="index-ton__heroes-image" src="/img/index-heroes.svg" alt="" role="presentation">
-            </div>
         </div>
+
+        {# Links #}
+        <section class="index-links u-section--top" data-section="links" id="links">
+            <div class="u-container">
+                <h2 class="u-h2">{{ "Links"|i18n('index-links-title')|safe }}</h2>
+                <hr class="hr--left hr--main hr--short">
+                <div class="index-links__group">
+                    <h3 class="index-links__caption">About</h3>
+                    <ul class="index-links__list">
+                        <li class="index-links__item">
+                            <a class="index-links__link link--main" href="https://about.minter.network/Minter_White_Paper.pdf" target="_blank">
+                                White Paper
+                            </a>
+                        </li>
+                        <li class="index-links__item">
+                            <a class="index-links__link link--main" href="https://minter.network/docs/Minter_Summary.pdf" target="_blank">
+                                Project Summary
+                            </a>
+                        </li>
+                        <li class="index-links__item">
+                            <a class="index-links__link link--main" href="https://medium.com/@MinterTeam/how-to-get-bip-84f4b04e9c91" target="_blank" rel="noreferrer">
+                                How to Get BIP?
+                            </a>
+                        </li>
+                        <li class="index-links__item">
+                            <a class="index-links__link link--main" href="https://trello.com/b/yXzshOhW/minter-roadmap" target="_blank" rel="noreferrer">
+                                Roadmap
+                            </a>
+                        </li>
+                        <li class="index-links__item">
+                            <a class="index-links__link link--main" href="https://medium.com/@MinterTeam/solving-kyc-related-issues-34aaf846a602" target="_blank" rel="noreferrer">
+                                Solving KYC-Related Issues
+                            </a>
+                        </li>
+                        <li class="index-links__item">
+                            <a class="index-links__link link--main" href="https://testnet.console.minter.network" target="_blank">
+                                Console
+                            </a>
+                        </li>
+                        <li class="index-links__item">
+                            <a class="index-links__link link--main" href="https://testnet.explorer.minter.network" target="_blank">
+                                Explorer
+                            </a>
+                        </li>
+                        <li class="index-links__item">
+                            <a class="index-links__link link--main" href="https://status.minter.network/testnet" target="_blank">
+                                Status
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="index-links__group">
+                    <h3 class="index-links__caption">For Validators and Delegators</h3>
+                    <ul class="index-links__list">
+                        <li class="index-links__item">
+                            <a class="index-links__link link--main" href="https://about.minter.network/validator" target="_blank">
+                                Who's Validator?
+                            </a>
+                        </li>
+                        <li class="index-links__item">
+                            <a class="index-links__link link--main" href="https://about.minter.network/delegator" target="_blank">
+                                Who's Delegatos?
+                            </a>
+                        </li>
+                        <li class="index-links__item">
+                            <a class="index-links__link link--main" href="https://medium.com/@MinterTeam/how-to-become-a-minter-network-validator-bc5f895f2cc7" target="_blank" rel="noreferrer">
+                                How to Become a Validator
+                            </a>
+                        </li>
+                        <li class="index-links__item">
+                            <a class="index-links__link link--main" href="https://medium.com/@MinterTeam/how-to-become-a-minter-network-delegator-d0c2ee918909" target="_blank" rel="noreferrer">
+                                How to Become a Delegator
+                            </a>
+                        </li>
+                        <li class="index-links__item">
+                            <a class="index-links__link link--main" href="https://medium.com/@MinterTeam/how-to-set-up-a-masternode-in-minter-52fdea3e4580" target="_blank" rel="noreferrer">
+                                How to Set up a Masternode
+                            </a>
+                        </li>
+                        <li class="index-links__item">
+                            <a class="index-links__link link--main" href="https://minter-go-node.readthedocs.io/en/latest/validators.html" target="_blank" rel="noreferrer">
+                                Node Documentation
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="index-links__group">
+                    <h3 class="index-links__caption">For Coiners</h3>
+                    <ul class="index-links__list">
+                        <li class="index-links__item">
+                            <a class="index-links__link link--main" href="https://about.minter.network/coins" target="_blank">
+                                Who's Coiner?
+                            </a>
+                        </li>
+                        <li class="index-links__item">
+                            <a class="index-links__link link--main" href="https://about.minter.network/Minter_PCO.pdf" target="_blank">
+                                Perpetual Coin Offering
+                            </a>
+                        </li>
+                        {#<li class="index-links__item">
+                            <a class="index-links__link link--main" href="" target="_blank" rel="noreferrer">
+                                How to Issue Your Own Coin
+                            </a>
+                        </li>#}
+                    </ul>
+                </div>
+                <div class="index-links__group">
+                    <h3 class="index-links__caption">For Developers</h3>
+                    <ul class="index-links__list">
+                        <li class="index-links__item">
+                            <a class="index-links__link link--main" href="https://apps.minter.network" target="_blank">
+                                How to Build MApps (Minter Apps)
+                            </a>
+                        </li>
+                        {#<li class="index-links__item">
+                            <a class="index-links__link link--main" href="" target="_blank" rel="noreferrer">
+                                API
+                            </a>
+                        </li>#}
+                        <li class="index-links__item">
+                            <a class="index-links__link link--main" href="https://github.com/MinterTeam/minter-ios-core" target="_blank" rel="noreferrer">
+                                iOS SDK
+                            </a>
+                        </li>
+                        <li class="index-links__item">
+                            <a class="index-links__link link--main" href="https://github.com/MinterTeam/minter-android-core" target="_blank" rel="noreferrer">
+                                Android SDK
+                            </a>
+                        </li>
+                        <li class="index-links__item">
+                            <a class="index-links__link link--main" href="https://github.com/MinterTeam/minter-php-sdk" target="_blank" rel="noreferrer">
+                                PHP SDK
+                            </a>
+                        </li>
+                        <li class="index-links__item">
+                            <a class="index-links__link link--main" href="https://github.com/MinterTeam/minter-js-sdk" target="_blank" rel="noreferrer">
+                                JS SDK
+                            </a>
+                        </li>
+                        <li class="index-links__item">
+                            <a class="index-links__link link--main" href="https://github.com/MinterTeam" target="_blank" rel="noreferrer">
+                                GitHub
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="index-links__group">
+                    <h3 class="index-links__caption">For Users</h3>
+                    <ul class="index-links__list">
+                        <li class="index-links__item">
+                            <a class="index-links__link link--main" href="https://itunes.apple.com/us/app/bip-wallet-testnet/id1436988091" target="_blank" rel="noreferrer">
+                                BIP iOS Wallet Testnet
+                            </a>
+                        </li>
+                        <li class="index-links__item">
+                            <a class="index-links__link link--main" href="https://play.google.com/store/apps/details?id=network.minter.bipwallet" target="_blank" rel="noreferrer">
+                                BIP Andtoid Wallet Testnet
+                            </a>
+                        </li>
+                        <li class="index-links__item">
+                            <a class="index-links__link link--main" href="https://tele.click/BipWallet_Bot" target="_blank" rel="noreferrer">
+                                BIP Telegram Bot Wallet Testnet
+                            </a>
+                        </li>
+                        <li class="index-links__item">
+                            <a class="index-links__link link--main" href="https://help.minter.network" target="_blank">
+                                Help and FAQ
+                            </a>
+                        </li>
+                        <li class="index-links__item">
+                            <a class="index-links__link link--main" href="http://tele.click/MinterHelpBot" target="_blank" rel="noreferrer">
+                                Telegram Help Bot
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <img class="index-links__heroes-image" src="/img/index-heroes.svg" alt="" role="presentation">
+            </div>
+        </section>
     </article>
 {% endblock %}
 

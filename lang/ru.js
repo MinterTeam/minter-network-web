@@ -1,4 +1,13 @@
 module.exports = {
+    'link-network': 'Сеть',
+    'link-apps': 'Приложения',
+    'link-team': 'Команда',
+    'link-ton': '',
+    'link-airdrops': 'Аирдропы',
+    'link-links': 'Ссылки',
+
+
+    // index
     'index-seo-title': 'Мы минтим монеты',
     'index-seo-description': 'Создайте собственную криптовалюту. Вся информация о сети Minter в одном месте.',
 
@@ -6,7 +15,6 @@ module.exports = {
     'hero-title': 'Ровно 10 лет назад был создан Биткоин. Не&nbsp;пора&nbsp;ли сделать следующий&nbsp;шаг?',
     'hero-description': 'Представьте себе блокчейн, позволяющий создавать, переводить и обменивать монеты мгновенно и без ограничений между собой, а также на Биткоин, Эфир и даже USD. Представьте себе криптовалюты нового поколения.',
     'hero-minter': 'Это Minter.',
-
 
     'index-features-title': 'Теперь по порядку:',
     'index-features-item1': 'Все транзакции выполняются каждые 5&nbsp;секунд',
@@ -101,6 +109,8 @@ module.exports = {
     'ton-social-caption-networks': 'Социальные сети',
     'ton-social-caption-chat': 'Telegram чат',
     'index-ton-button': 'Подробнее о TON',
+
+    'index-links-title': 'Ссылки',
 
 
 
