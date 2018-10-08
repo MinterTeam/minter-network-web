@@ -55,16 +55,16 @@
     .nav-panel__button {flex-shrink: 0;}
 }
 // language
-//.language-switch {margin-left: 16px; flex-shrink: 0;}
-//.language-switch__button {font-size: 0; display: block;}
-//.language-switch__button-icon {box-shadow: 0 0 0 1.6px #fff; border-radius: 50%; background: #fff;}
-//.language-switch__text {margin-right: 16px;}
-//@media (min-width: @breakpoint-small-up) {
-//    .language-switch {margin-left: 32px;}
-//}
-//@media (min-width: @breakpoint-large-up) {
-//    .language-switch {position: absolute; right: 32px; margin-left: 0;}
-//}
+.language-switch {/*margin-left: 16px; flex-shrink: 0;*/}
+.language-switch__button {font-size: 0; display: block;}
+.language-switch__button-icon {box-shadow: 0 0 0 1.2px #fff; border-radius: 50%; background: #fff;}
+.language-switch__text {margin-right: 16px;}
+@media (min-width: @breakpoint-small-up) {
+    //.language-switch {margin-left: 32px;}
+}
+@media (min-width: @breakpoint-large-up) {
+    //.language-switch {position: absolute; right: 32px; margin-left: 0;}
+}
 .mdc-menu {min-width: 135px;}
 
 
@@ -112,10 +112,6 @@
     &.is-active::after {height: @header-link-underline-height; opacity: 1;}
 }
 .header__controls {display: flex; align-items: center;}
-// language
-.language-switch {}
-.language-switch__button {font-size: 0; display: block;}
-.language-switch__text {margin-right: 16px;}
 // кнопка вешает .menu- классы на body
 .header--menu-active {
     &::after {content: ''; background: @c-brown; position: absolute; left: 0; top: 0; right: 0; bottom: 0; z-index: -1; }
@@ -333,12 +329,16 @@
 }
 .swiper-button-prev {left: 10px; background-image: url(../img/icon-slider-arrow-left.svg);}
 .swiper-button-next {right: 10px; background-image: url(../img/icon-slider-arrow-right.svg);}
+@media (min-width: @breakpoint-small-up) {
+    .index-team__cell {width: 45%; margin-right: 30px; /* preserve height until swiper is loaded */}
+}
 @media (min-width: @breakpoint-medium-up) {
     .index-team__slider-wrap {margin: 25px -@container-padding-large 0;}
     .index-team__slider {
         padding: 0 @container-padding-large;
         &::before, &::after {width: @container-padding-large;}
     }
+    .index-team__cell {width: 29.9%; margin-right: 40px; /* preserve height until swiper is loaded */}
     .swiper-button-prev, .swiper-button-next {top: 80px; width: @slider-arrow-size; height: @slider-arrow-size;}
 }
 @media (min-width: @breakpoint-large-up) {
@@ -357,7 +357,7 @@
 // ton
 .index-ton {
     color: #fff; position: relative;
-    &::before {content: ''; position: absolute; left: 0; top: 0; right: 0; bottom: 0; background: #333617; z-index: -1;}
+    &::before {content: ''; position: absolute; left: 0; top: -100px; right: 0; bottom: 0; background: #333617; z-index: -2;}
 }
 .ton__skew {
     height: 100px; position: relative;
@@ -377,6 +377,9 @@
     .ton__feature {text-align: left;}
 }
 .ton__join {background: #3A3D1A; padding: 40px 0;}
+
+// index social
+.index-social {background: #333617; color: #fff;}
 .ton__social-grid {display: flex; flex-wrap: wrap; margin-top: -14px; margin-left: -48px;}
 .ton__social-cell {
     margin-top: 24px; margin-left: 48px;
@@ -428,6 +431,7 @@
 }
 
 
+// index links
 .index-links {
     color: #fff; position: relative;
     &::before {content: ''; position: absolute; left: 0; top: 0; right: 0; bottom: 0; background: url(../img/hero-bg-wave-green.svg) repeat-x 50% 100% #333617; z-index: -1;}

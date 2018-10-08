@@ -43,30 +43,35 @@ export default function initSectionLinks(headerMenu) {
     });
 
     // Скролл до секции при открытии страницы по хэшу
-// const hashName = location.hash.substr(1);
-// const $targetSection  = $('[data-section="' + hashName + '"]');
-// if ($targetSection.length) {
-//     setTimeout(function () {
-//         scrollToSection($targetSection);
-//     }, 200);
-// }
+    const hashName = location.hash.substr(1);
+    const $targetSection  = $(`[data-section="${hashName}"], [data-section-disabled="${hashName}"]`);
+    if ($targetSection.length) {
+        setTimeout(function () {
+            scrollToSection($targetSection, true);
+        }, 200);
+    }
 }
 
 
-function scrollToSection($targetSection) {
-    let targetOffset = $targetSection.offset().top - HEADER_WIDTH;
+function scrollToSection($targetSection, instant) {
+    let targetOffset = $targetSection.offset().top - HEADER_WIDTH + 4;
     targetOffset = Math.max(targetOffset, 0);
     targetOffset = Math.min(targetOffset, $doc.outerHeight() - $win.height());
-    const distance = targetOffset - $win.scrollTop();
-    const time = 300 + Math.pow(Math.abs(distance), 0.6);
-    isScrollAnimated = true;
-    setActiveLinkClass($targetSection);
-    $htmlBody.animate({scrollTop: targetOffset}, time, function () {
-        // откладываем до выполнения пассивного листенера на скролле
-        setTimeout(() => {
-            isScrollAnimated = false;
+    if (instant) {
+        window.scrollTo(0, targetOffset);
+    } else {
+        const distance = targetOffset - $win.scrollTop();
+        const time = 300 + Math.pow(Math.abs(distance), 0.6);
+        isScrollAnimated = true;
+        setActiveLinkClass($targetSection);
+        $htmlBody.animate({scrollTop: targetOffset}, time, function () {
+            // откладываем до выполнения пассивного листенера на скролле
+            setTimeout(() => {
+                isScrollAnimated = false;
+            });
         });
-    });
+    }
+
 }
 
 function checkActiveLink() {
@@ -74,7 +79,7 @@ function checkActiveLink() {
         return;
     }
     const scrollTop = $win.scrollTop();
-    const windowCenter = scrollTop + $win.height() / 2;
+    const windowCenter = scrollTop + $win.height() * 0.4;
     const activeIndex = findActiveByBottom(windowCenter);
     const $activeSection = $sections.eq(activeIndex);
     setActiveLinkClass($activeSection);

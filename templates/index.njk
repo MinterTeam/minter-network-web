@@ -6,7 +6,7 @@
 
 {% block content %}
     <article class="main-inner">
-        <section class="hero">
+        <section class="hero" data-section-disabled="hero" id="hero">
             <div class="hero__container u-section u-container">
                 <div class="hero__content">
                     <img class="hero__logo" src="/img/minter-logo-white.svg" width="213" height="67" alt="Minter">
@@ -14,12 +14,14 @@
                     <p>{{ "Imagine a blockchain that would allow you to create your own coin and transfer it or exchange it for all of the other coins issued in the network—as well as Bitcoin, Ether, and even USD—in an instant, limitless manner. Imagine the next-generation cryptocurrencies."|i18n('hero-description')|safe }}</p>
                     <p><strong>{{ "That’s Minter."|i18n('hero-minter')|safe }}</strong></p>
                 </div>
-                <img class="hero__image" src="/img/hero-minter.svg" alt="" role="presentation">
+                <figure class="u-aspect-ratio hero__image" style="--aspect-ratio:437/587; width: 437px;">
+                    <img src="/img/hero-minter.svg" width="437" height="587" alt="" role="presentation">
+                </figure>
             </div>
         </section>
 
         <hr class="index-features-skew">
-        <section class="index-features u-section u-text-center">
+        <section class="index-features u-section u-text-center" data-section-disabled="straight" id="straight">
             <div class="u-container">
                 <h2 class="u-h2">{{ "Let’s get it straight"|i18n('index-features-title') }}</h2>
                 <hr class="hr--dark hr--short">
@@ -65,7 +67,7 @@
         </section>
 
         <hr class="index-speed-skew">
-        <section class="index-speed u-section u-text-center">
+        <section class="index-speed u-section u-text-center" data-section-disabled="speed" id="speed">
             <div class="u-container">
                 <h2 class="u-h2">{{ "Speed"|i18n('index-speed-title') }}</h2>
                 <hr class="hr--dark hr--short">
@@ -98,7 +100,9 @@
                             </li>
                         </ul>
                     </div>
-                    <img class="index-speed__info-image" src="/img/index-speed.svg" alt="" role="presentation">
+                    <figure class="u-aspect-ratio index-speed__info-image" style="--aspect-ratio:394/343; width: 394px;">
+                        <img src="/img/index-speed.svg" width="394" height="343" alt="" role="presentation">
+                    </figure>
                 </div>
                 <p class="index-speed__info-caption u-h u-h3 u-text-center">{{ "Minter is"|i18n('index-speed-caption-1')|safe }} <span class="index-speed__info-caption-highlight">{{ "200 times"|i18n('index-speed-caption-2')|safe }}</span> {{ "faster than its grandpa!"|i18n('index-speed-caption-3')|safe }}</p>
 
@@ -114,7 +118,10 @@
                         <p>{{ "All coins can be exchanged both within and outside the network. There is little sense in creating a currency that cannot be used to pay for goods and services around the world. That is why enabling you to exchange any coin for Bitcoin, Ether, and even USD whenever you want is one of Minter’s primary features. Why not use miles you got for riding the taxi to pay for flight&nbsp;tickets?"|i18n('index-exchange-description')|safe }}</p>
                     </div>
                 </div>
-                <img class="index-speed__exchange-image" src="/img/index-coins.svg" alt="" role="presentation">
+                <figure class="u-aspect-ratio index-speed__exchange-image" style="--aspect-ratio:556/140; width: 556px;">
+                    <img src="/img/index-coins.svg" width="556" height="140" alt="" role="presentation">
+                </figure>
+
                 <p class="index-speed__exchange-caption u-h u-h3">{{ "Make real-world payments with any coin issued in the Minter&nbsp;network!"|i18n('index-exchange-image-caption')|safe }}</p>
 
                 <div class="index-fees__grid u-grid u-grid--vertical-margin u-grid--align-center">
@@ -126,7 +133,9 @@
                     </div>
                     <div class="u-cell u-cell--medium--1-2">
                         <div class="index-fees__image-wrap">
-                            <img class="index-fees__image" src="/img/index-fee.svg" alt="" role="presentation">
+                            <figure class="u-aspect-ratio index-fees__image" style="--aspect-ratio:296/199; width: 296px;">
+                                <img src="/img/index-fee.svg" width="296" height="199" alt="" role="presentation">
+                            </figure>
                             <p class="index-fees__image-caption">{{ "Fees at a Maximum Transaction&nbsp;Speed"|i18n('index-fees-image-caption')|safe }}</p>
                         </div>
                     </div>
@@ -229,9 +238,9 @@
 
         
         {# TON #}
-        <div class="index-ton">
-            <div class="ton__skew"></div>
-            <section class=" u-section" data-section="ton" id="ton">
+        <div class="ton__skew"></div>
+        <div class="index-ton" data-section="ton" id="ton">
+            <section class="u-section">
                 <div class="u-container">
                     <h2 class="u-h2">{{ "Integration With Telegram Open Network"|i18n('ton-title')|safe }}</h2>
                     <hr class="hr--left hr--main hr--short">
@@ -241,7 +250,9 @@
                             <p>{{ "We have been closely watching various technologies and blockchains for the past few years and waited carefully for the moment when we could definitely say in what we believe and with whom we would like to integrate. Our choice fell on Telegram Open Network (TON)."|i18n('ton-description')|safe }}</p>
                         </div>
                         <div class="u-cell u-cell--medium--6-10 u-text-center">
-                            <img src="/img/index-ton.svg" alt="" role="presentation">
+                            <figure class="u-aspect-ratio index-fees__image" style="--aspect-ratio:381/242; width: 381px;">
+                                <img src="/img/index-ton.svg" width="381" height="242" alt="" role="presentation">
+                            </figure>
                         </div>
                     </div>
 
@@ -303,7 +314,7 @@
                 </div>
             </section>
 
-            <section class="ton__join">
+            <section class="ton__join" data-section-disabled="ton-join" id="ton-join">
                 <div class="u-container u-container--small u-text-center">
                     <h2 class="u-h3">{{ "Join Minter!"|i18n('ton-join-title')|safe }}</h2>
                     <hr class="hr--main hr--short">
@@ -316,60 +327,61 @@
                     </div>
                 </div>
             </section>
+        </div>
 
-            <section class="index-social u-section--top">
-                <div class="u-container">
-                    <h2 class="u-h3">{{ "Follow Us on&nbsp;Social&nbsp;Media"|i18n('ton-social-title')|safe }}</h2>
-                    <hr class="hr--left hr--main hr--short">
-                    <div class="ton__social-grid" itemscope itemtype="https://schema.org/Organization">
-                        <link itemprop="url" href="http://www.minter.network">
-                        <link itemprop="logo" href="http://www.minter.network/apple-touch-icon.png">
-                        <div class="ton__social-cell">
-                            <strong class="ton__social-caption">{{ "Social Networks"|i18n('ton-social-caption-networks')|safe }}</strong>
-                            <div class="ton__social-group">
-                                <a class="button ton__social-link ton__social-link--tg" href="https://tele.click/{{ 'MinterNetwork' if __locale__ === 'ru' else 'MinterTeam' }}" target="_blank" rel="nofollow noopener" itemprop="sameAs">
-                                    <img class="ton__social-link-icon" src="/img/icon-soc-telegram.svg" width="24" height="24" alt="" aria-label="Telegram Channel">
+        <section class="index-social u-section--top" data-section="social" id="social">
+            <div class="u-container">
+                <h2 class="u-h3">{{ "Follow Us on&nbsp;Social&nbsp;Media"|i18n('ton-social-title')|safe }}</h2>
+                <hr class="hr--left hr--main hr--short">
+                <div class="ton__social-grid" itemscope itemtype="https://schema.org/Organization">
+                    <link itemprop="url" href="http://www.minter.network">
+                    <link itemprop="logo" href="http://www.minter.network/apple-touch-icon.png">
+                    <div class="ton__social-cell">
+                        <strong class="ton__social-caption">{{ "Social Networks"|i18n('ton-social-caption-networks')|safe }}</strong>
+                        <div class="ton__social-group">
+                            <a class="button ton__social-link ton__social-link--tg" href="https://tele.click/{{ 'MinterNetwork' if __locale__ === 'ru' else 'MinterTeam' }}" target="_blank" rel="nofollow noopener" itemprop="sameAs">
+                                <img class="ton__social-link-icon" src="/img/icon-soc-telegram.svg" width="24" height="24" alt="" aria-label="Telegram Channel">
+                            </a>
+                            <a class="button ton__social-link ton__social-link--tw" href="https://twitter.com/MinterTeam" target="_blank" rel="noopener" itemprop="sameAs">
+                                <img class="ton__social-link-icon" src="/img/icon-soc-tw.svg" width="24" height="24" alt="" aria-label="Twitter">
+                            </a>
+                            <a class="button ton__social-link ton__social-link--li" href="https://www.linkedin.com/company/minternetwork/" target="_blank" rel="noopener" itemprop="sameAs">
+                                <img class="ton__social-link-icon" src="/img/icon-soc-linkedin.svg" width="24" height="24" alt="" aria-label="LinkedIn">
+                            </a>
+                            {% if __locale__ === 'ru' %}
+                                <a class="button ton__social-link ton__social-link--vk" href="https://vk.com/MinterNetwork" target="_blank" rel="noopener" itemprop="sameAs">
+                                    <img class="ton__social-link-icon" src="/img/icon-soc-vk.svg" width="24" height="24" alt="" aria-label="VK">
                                 </a>
-                                <a class="button ton__social-link ton__social-link--tw" href="https://twitter.com/MinterTeam" target="_blank" rel="noopener" itemprop="sameAs">
-                                    <img class="ton__social-link-icon" src="/img/icon-soc-tw.svg" width="24" height="24" alt="" aria-label="Twitter">
-                                </a>
-                                <a class="button ton__social-link ton__social-link--li" href="https://www.linkedin.com/company/minternetwork/" target="_blank" rel="noopener" itemprop="sameAs">
-                                    <img class="ton__social-link-icon" src="/img/icon-soc-linkedin.svg" width="24" height="24" alt="" aria-label="LinkedIn">
-                                </a>
-                                {% if __locale__ === 'ru' %}
-                                    <a class="button ton__social-link ton__social-link--vk" href="https://vk.com/MinterNetwork" target="_blank" rel="noopener" itemprop="sameAs">
-                                        <img class="ton__social-link-icon" src="/img/icon-soc-vk.svg" width="24" height="24" alt="" aria-label="VK">
-                                    </a>
-                                {% endif %}
-                                <a class="button ton__social-link ton__social-link--fb" href="https://www.facebook.com/MinterNetwork" target="_blank" rel="noopener" itemprop="sameAs">
-                                    <img class="ton__social-link-icon" src="/img/icon-soc-fb.svg" width="24" height="24" alt="" aria-label="facebook">
-                                </a>
-                                <a class="button ton__social-link ton__social-link--gh" href="https://github.com/MinterTeam" target="_blank" rel="noopener" itemprop="sameAs">
-                                    <img class="ton__social-link-icon" src="/img/icon-soc-github.svg" width="24" height="24" alt="" aria-label="Github">
-                                </a>
-                                <a class="button ton__social-link ton__social-link--mm" href="https://medium.com/@MinterTeam" target="_blank" rel="noopener" itemprop="sameAs">
-                                    <img class="ton__social-link-icon" src="/img/icon-soc-medium.svg" width="24" height="24" alt="" aria-label="Medium">
-                                </a>
-                                <a class="button ton__social-link ton__social-link--rd" href="https://www.reddit.com/r/Minter/" target="_blank" rel="noopener" itemprop="sameAs">
-                                    <img class="ton__social-link-icon" src="/img/icon-soc-reddit.svg" width="24" height="24" alt="" aria-label="Reddit">
-                                </a>
-                            </div>
+                            {% endif %}
+                            <a class="button ton__social-link ton__social-link--fb" href="https://www.facebook.com/MinterNetwork" target="_blank" rel="noopener" itemprop="sameAs">
+                                <img class="ton__social-link-icon" src="/img/icon-soc-fb.svg" width="24" height="24" alt="" aria-label="facebook">
+                            </a>
+                            <a class="button ton__social-link ton__social-link--gh" href="https://github.com/MinterTeam" target="_blank" rel="noopener" itemprop="sameAs">
+                                <img class="ton__social-link-icon" src="/img/icon-soc-github.svg" width="24" height="24" alt="" aria-label="Github">
+                            </a>
+                            <a class="button ton__social-link ton__social-link--mm" href="https://medium.com/@MinterTeam" target="_blank" rel="noopener" itemprop="sameAs">
+                                <img class="ton__social-link-icon" src="/img/icon-soc-medium.svg" width="24" height="24" alt="" aria-label="Medium">
+                            </a>
+                            <a class="button ton__social-link ton__social-link--rd" href="https://www.reddit.com/r/Minter/" target="_blank" rel="noopener" itemprop="sameAs">
+                                <img class="ton__social-link-icon" src="/img/icon-soc-reddit.svg" width="24" height="24" alt="" aria-label="Reddit">
+                            </a>
                         </div>
-                        <div class="ton__social-cell">
-                            <strong class="ton__social-caption">{{ "Telegram Chat"|i18n('ton-social-caption-chat')|safe }}</strong>
-                            <div class="ton__social-group">
-                                <a class="button ton__social-link ton__social-link--tg" href="https://tele.click/joinchat/{{ 'EafyEVD-HEOxDcv8YyaqNg' if __locale__ === 'ru' else 'EafyERJSJZJ-nwH_139jLQ' }}"  target="_blank" rel="nofollow noopener" itemprop="sameAs">
-                                    <img class="ton__social-link-icon" src="/img/icon-soc-telegram.svg" width="24" height="24" alt="" aria-label="Telegram Chat">
-                                </a>
-                            </div>
+                    </div>
+                    <div class="ton__social-cell">
+                        <strong class="ton__social-caption">{{ "Telegram Chat"|i18n('ton-social-caption-chat')|safe }}</strong>
+                        <div class="ton__social-group">
+                            <a class="button ton__social-link ton__social-link--tg" href="https://tele.click/joinchat/{{ 'EafyEVD-HEOxDcv8YyaqNg' if __locale__ === 'ru' else 'EafyERJSJZJ-nwH_139jLQ' }}"  target="_blank" rel="nofollow noopener" itemprop="sameAs">
+                                <img class="ton__social-link-icon" src="/img/icon-soc-telegram.svg" width="24" height="24" alt="" aria-label="Telegram Chat">
+                            </a>
                         </div>
                     </div>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
+
 
         {# Links #}
-        <section class="index-links u-section--top" data-section="links" id="links">
+        <section class="index-links u-section--top" data-section="docs" id="docs">
             <div class="u-container">
                 <h2 class="u-h2">{{ "Links"|i18n('index-links-title')|safe }}</h2>
                 <hr class="hr--left hr--main hr--short">
@@ -543,7 +555,10 @@
                         </li>
                     </ul>
                 </div>
-                <img class="index-links__heroes-image" src="/img/index-heroes.svg" alt="" role="presentation">
+                <figure class="u-aspect-ratio index-links__heroes-image" style="--aspect-ratio:550/332; width: 550px;">
+                    <img src="/img/index-heroes.svg" width="550" height="332" alt="" role="presentation">
+                </figure>
+
             </div>
         </section>
     </article>

@@ -1,10 +1,23 @@
 @import "variables";
 
+.u-semantic-button {background: none; border: none; border-radius: 0; color: inherit; font: inherit; text-align: inherit; padding: 0; cursor: pointer;}
 .u-hidden {display: none !important;}
 .u-visually-hidden {visibility: hidden !important;}
 .u-text-center { text-align: center;}
 .u-display-ib {display: inline-block !important;}
-.u-semantic-button {background: none; border: none; border-radius: 0; color: inherit; font: inherit; text-align: inherit; padding: 0; cursor: pointer;}
+
+.u-aspect-ratio {
+    max-width: 100%; margin: 0;
+    & > img { width: 100%; height: auto; }
+}
+@supports (--a:b) {
+    .u-aspect-ratio {
+        position: relative;
+        &::before {content: ""; display: block; padding-bottom: calc(100% / (var(--aspect-ratio)));}
+        & > img {position: absolute; top: 0; left: 0; height: 100%;}
+    }
+}
+
 @media (min-width: @breakpoint-xlarge-up) {
     .u-hidden-xlarge-up {display: none !important;}
 }
