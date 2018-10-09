@@ -6,7 +6,7 @@
 
 {% block content %}
     <article class="main-inner">
-        <section class="hero" data-section-disabled="hero" id="hero">
+        <section class="hero" {#data-section-hash="hero" id="hero"#}>
             <div class="hero__container u-section u-container">
                 <div class="hero__content">
                     <img class="hero__logo" src="/img/minter-logo-white.svg" width="213" height="67" alt="Minter">
@@ -21,7 +21,7 @@
         </section>
 
         <hr class="index-features-skew">
-        <section class="index-features u-section u-text-center" data-section-disabled="straight" id="straight">
+        <section class="index-features u-section u-text-center" data-section-hash="straight" id="straight">
             <div class="u-container">
                 <h2 class="u-h2">{{ "Let’s get it straight"|i18n('index-features-title') }}</h2>
                 <hr class="hr--dark hr--short">
@@ -67,7 +67,7 @@
         </section>
 
         <hr class="index-speed-skew">
-        <section class="index-speed u-section u-text-center" data-section-disabled="speed" id="speed">
+        <section class="index-speed u-section u-text-center" data-section-hash="speed" id="speed">
             <div class="u-container">
                 <h2 class="u-h2">{{ "Speed"|i18n('index-speed-title') }}</h2>
                 <hr class="hr--dark hr--short">
@@ -314,7 +314,7 @@
                 </div>
             </section>
 
-            <section class="ton__join" data-section-disabled="ton-join" id="ton-join">
+            <section class="ton__join" data-section-hash="ton-join" id="ton-join">
                 <div class="u-container u-container--small u-text-center">
                     <h2 class="u-h3">{{ "Join Minter!"|i18n('ton-join-title')|safe }}</h2>
                     <hr class="hr--main hr--short">

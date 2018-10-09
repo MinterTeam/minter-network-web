@@ -1,6 +1,7 @@
 import 'core-js/es6/promise';
 import $ from "jquery";
 import debounce from 'lodash-es/debounce';
+import throttle from 'lodash-es/throttle';
 import support from '../utils/support';
 
 const HEADER_WIDTH = 55;
@@ -11,19 +12,38 @@ const $doc = $(document);
 const $htmlBody = $('html, body');
 const $body = $('body');
 const $sections = $('[data-section]');
+const $hashSections = $('[data-section], [data-section-hash]');
 const $sectionLinks = $('[data-section-link]');
-let activeSectionName;
-let isScrollAnimated = false;
+let activeHashSectionIndex;
+let isScrollAnimated = 0;
+
+const throttledUpdateHash = throttle(updateHash, 1000);
+function updateHash() {
+    const $activeSection = $hashSections.eq(activeHashSectionIndex);
+    const activeSectionName = activeHashSectionIndex ? ($activeSection.attr('data-section') || $activeSection.attr('data-section-hash')) : '';
+    if (window.location.hash.substr(1) !== activeSectionName) {
+        // change hash without browser native scroll
+        // const sectionEl = document.getElementById(activeSectionName);
+        // sectionEl.id = activeSectionName+'-tmp';
+        // window.location.hash = activeSectionName;
+        // sectionEl.id = activeSectionName;
+        if (activeSectionName) {
+            window.history.replaceState(window.history.state, null, '#' + activeSectionName);
+        } else {
+            window.history.replaceState(window.history.state, null, window.location.pathname);
+        }
+    }
+}
 
 
 export default function initSectionLinks(headerMenu) {
-    const debouncedCheckActiveLink = debounce(checkActiveLink, 50);
+    const debouncedCheckActiveLink = debounce(checkActiveLink, 100);
     window.addEventListener('scroll', checkActiveLink, support.passiveListener ? {passive: true} : false);
     window.addEventListener('resize', debouncedCheckActiveLink, support.passiveListener ? {passive: true} : false);
     window.addEventListener('orientationchange', debouncedCheckActiveLink, support.passiveListener ? {passive: true} : false);
 
     // установка классов при открытии
-    checkActiveLink(null, {y: $win.scrollTop()});
+    checkActiveLink();
 
     // скролл до секции по клику на [data-section-link]
     $sectionLinks.on('click', function (e) {
@@ -44,7 +64,7 @@ export default function initSectionLinks(headerMenu) {
 
     // Скролл до секции при открытии страницы по хэшу
     const hashName = location.hash.substr(1);
-    const $targetSection  = $(`[data-section="${hashName}"], [data-section-disabled="${hashName}"]`);
+    const $targetSection  = $(`[data-section="${hashName}"], [data-section-hash="${hashName}"]`);
     if ($targetSection.length) {
         setTimeout(function () {
             scrollToSection($targetSection, true);
@@ -57,21 +77,24 @@ function scrollToSection($targetSection, instant) {
     let targetOffset = $targetSection.offset().top - HEADER_WIDTH + 4;
     targetOffset = Math.max(targetOffset, 0);
     targetOffset = Math.min(targetOffset, $doc.outerHeight() - $win.height());
+    setActiveLinkClass($targetSection);
+    setActiveHash($targetSection, true);
+    isScrollAnimated++;
     if (instant) {
         window.scrollTo(0, targetOffset);
+        // откладываем до выполнения пассивного листенера на скролле
+        setTimeout(() => {
+            isScrollAnimated--;
+        }, 100);
     } else {
         const distance = targetOffset - $win.scrollTop();
         const time = 300 + Math.pow(Math.abs(distance), 0.6);
-        isScrollAnimated = true;
-        setActiveLinkClass($targetSection);
-        $htmlBody.animate({scrollTop: targetOffset}, time, function () {
-            // откладываем до выполнения пассивного листенера на скролле
-            setTimeout(() => {
-                isScrollAnimated = false;
-            });
-        });
+        $htmlBody.animate({scrollTop: targetOffset}, time);
+        // откладываем до выполнения пассивного листенера на скролле
+        setTimeout(() => {
+            isScrollAnimated--;
+        }, time + 100);
     }
-
 }
 
 function checkActiveLink() {
@@ -80,36 +103,51 @@ function checkActiveLink() {
     }
     const scrollTop = $win.scrollTop();
     const windowCenter = scrollTop + $win.height() * 0.4;
-    const activeIndex = findActiveByBottom(windowCenter);
+    const activeIndex = findActiveByBottom(windowCenter, $sections);
     const $activeSection = $sections.eq(activeIndex);
     setActiveLinkClass($activeSection);
+    const activeHashIndex = findActiveByBottom(windowCenter, $hashSections);
+    setActiveHash(activeHashIndex);
 }
 
 function setActiveLinkClass($activeSection) {
-    activeSectionName = $activeSection.attr('data-section');
+    const activeSectionName = $activeSection.attr('data-section');
     $sectionLinks.removeClass('is-active is-active-disabled').filter(`[data-section-link="${activeSectionName}"]`).addClass('is-active');
+}
+function setActiveHash(index, instant) {
+    if (typeof index === 'object') {
+        // convert jquery object to index
+        index = $hashSections.index(index);
+    }
+    activeHashSectionIndex = index;
+    if (instant) {
+        updateHash();
+    } else {
+        throttledUpdateHash();
+    }
+
 }
 
 /**
  * Секция включает в себя область от своего начала до начала следующей секции, ищем попадание центра окна в область секции
- * @param windowCenter
+ * @param {number} windowCenter
+ * @param {jQuery} $sectionList
  * @return {number}
  */
-function findActiveByBottom(windowCenter) {
-    const sectionsPos = new SectionPos();
+function findActiveByBottom(windowCenter, $sectionList) {
+    const sectionsPos = new SectionPos($sectionList);
     let activeIndex;
 
-    $sections.each(function(index, section) {
+    $sectionList.each(function(index, section) {
         if (windowCenter >= sectionsPos.get(index) && windowCenter <= sectionsPos.get(index + 1)) {
             activeIndex = index;
             //return false;
         }
     });
-
     return activeIndex;
 }
 
-function SectionPos() {
+function SectionPos($sectionList) {
     const positions = [];
 
     /**
@@ -120,10 +158,10 @@ function SectionPos() {
         if (typeof positions[index] === 'undefined') {
             if (index === 0) {
                 positions[index] = 0;
-            } else if (index === $sections.length) {
+            } else if (index === $sectionList.length) {
                 positions[index] = $doc.outerHeight();
             } else {
-                positions[index] = $sections.eq(index).offset().top;
+                positions[index] = $sectionList.eq(index).offset().top;
             }
         }
 

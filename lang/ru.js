@@ -4,8 +4,8 @@ module.exports = {
     'link-team': 'Команда',
     'link-ton': '',
     'link-airdrops': 'Аирдропы',
-    'link-social': 'Соц. сети',
-    'link-links': 'Ссылки',
+    'link-social': 'Соцсети',
+    'link-links': 'Документы',
 
 
     // index
