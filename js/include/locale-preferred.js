@@ -24,7 +24,7 @@ export default function redirectPreferredLocale() {
             if (preferredLocalePrefix) {
                 path = '/' + preferredLocalePrefix + path;
             }
-            window.location.href = window.location.protocol + '//' + window.location.host + path + window.location.search;
+            window.location.href = window.location.protocol + '//' + window.location.host + path + window.location.search + window.location.hash;
             return true;
         }
     } else {
