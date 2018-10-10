@@ -111,7 +111,7 @@ module.exports = {
     'ton-social-caption-chat': 'Telegram чат',
     'index-ton-button': 'Подробнее о TON',
 
-    'index-links-title': 'Ссылки',
+    'index-links-title': 'Документы',
     'index-links-caption-about': 'О Сети',
     'index-links-summary': 'Кратко о сети',
     'index-links-get-bip': 'Как получить BIP? ',
