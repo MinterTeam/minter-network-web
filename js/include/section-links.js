@@ -42,9 +42,6 @@ export default function initSectionLinks(headerMenu) {
     window.addEventListener('resize', debouncedCheckActiveLink, support.passiveListener ? {passive: true} : false);
     window.addEventListener('orientationchange', debouncedCheckActiveLink, support.passiveListener ? {passive: true} : false);
 
-    // установка классов при открытии
-    checkActiveLink();
-
     // скролл до секции по клику на [data-section-link]
     $sectionLinks.on('click', function (e) {
         e.preventDefault();
@@ -69,6 +66,9 @@ export default function initSectionLinks(headerMenu) {
         setTimeout(function () {
             scrollToSection($targetSection, true);
         }, 200);
+    } else {
+        // установка классов при открытии
+        checkActiveLink();
     }
 }
 
@@ -144,6 +144,7 @@ function findActiveByBottom(windowCenter, $sectionList) {
             //return false;
         }
     });
+
     return activeIndex;
 }
 
@@ -175,12 +176,12 @@ function waitBody () {
         return Promise.resolve();
     } else {
         return new Promise((resolve) => {
-           let interval = setInterval(() => {
-               if (!isBodyTranslated()) {
-                   clearInterval(interval);
-                   resolve();
-               }
-           }, 50);
+            let interval = setInterval(() => {
+                if (!isBodyTranslated()) {
+                    clearInterval(interval);
+                    resolve();
+                }
+            }, 50);
         });
     }
 }
