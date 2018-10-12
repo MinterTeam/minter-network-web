@@ -4,6 +4,7 @@ import clickBlur from './include/click-blur';
 import redirectPreferredLocale from './include/locale-preferred';
 import initActiveLocale from './include/locale-active';
 import initDropdown from './include/dropdown';
+import './include/track';
 
 
 (() => {
