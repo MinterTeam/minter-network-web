@@ -5,7 +5,7 @@
     <div class="mdc-menu mdc-menu-surface" tabindex="-1" data-dropdown-menu>
         <div class="mdc-menu__items mdc-list" role="menu" aria-hidden="true">
             {% for code, locale in __locales__ %}
-                <a class="mdc-list-item" href="/{{ (locale.prefix + '/') if locale.prefix }}" data-locale="{{ locale.code }}" role="menuitem">
+                <a class="mdc-list-item" href="{{ host }}/{{ (locale.prefix + '/') if locale.prefix }}" data-locale="{{ locale.code }}" role="menuitem">
                     <span class="mdc-list-item__text language-switch__text">{{ locale.name }}</span>
                     <img class="mdc-list-item__meta" src="/img/icon-flag-{{ locale.code }}.png" srcset="/img/icon-flag-{{ locale.code }}@2x.png 2x" alt="" width="24" height="24" role="presentation" data-locale-icon>
                 </a>
