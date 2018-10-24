@@ -1,22 +1,47 @@
 module.exports = {
+    sa: {
+        code: 'sa',
+        prefix: 'sa',
+        name: 'Arabic',
+    },
+    cn: {
+        code: 'cn',
+        prefix: 'cn',
+        name: 'Chinese',
+    },
     en: {
         code: 'en',
         prefix: '',
         name: 'English',
+    },
+    de: {
+        code: 'de',
+        prefix: 'de',
+        name: 'German',
+    },
+    jp: {
+        code: 'jp',
+        prefix: 'jp',
+        name: 'Japanese',
+    },
+    kr: {
+        code: 'kr',
+        prefix: 'kr',
+        name: 'Korean',
+    },
+    fr: {
+        code: 'fr',
+        prefix: 'fr',
+        name: 'French',
     },
     ru: {
         code: 'ru',
         prefix: 'ru',
         name: 'Russian',
     },
-    // cn: {
-    //     code: 'cn',
-    //     prefix: 'cn',
-    //     name: 'Chinese',
-    // },
-    // fr: {
-    //     code: 'fr',
-    //     prefix: 'fr',
-    //     name: 'French',
-    // },
+    es: {
+        code: 'es',
+        prefix: 'es',
+        name: 'Spanish',
+    },
 };

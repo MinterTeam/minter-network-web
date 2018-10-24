@@ -95,11 +95,16 @@ gulp.task('js', function() {
 
 
 // TEMPLATES
-gulp.task('templates', ['templates:en', 'templates:ru', 'templates:cn', 'templates:fr']);
+gulp.task('templates', ['templates:en', 'templates:ru', 'templates:cn', 'templates:jp', 'templates:kr', 'templates:sa', 'templates:de', 'templates:fr', 'templates:es']);
 gulp.task('templates:en', makeTemplatesTask('en'));
 gulp.task('templates:ru', makeTemplatesTask('ru'));
 gulp.task('templates:cn', makeTemplatesTask('cn'));
+gulp.task('templates:jp', makeTemplatesTask('jp'));
+gulp.task('templates:kr', makeTemplatesTask('kr'));
+gulp.task('templates:sa', makeTemplatesTask('sa'));
+gulp.task('templates:de', makeTemplatesTask('de'));
 gulp.task('templates:fr', makeTemplatesTask('fr'));
+gulp.task('templates:es', makeTemplatesTask('es'));
 /**
  * @param {string} locale
  */
