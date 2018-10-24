@@ -95,12 +95,13 @@ gulp.task('js', function() {
 
 
 // TEMPLATES
-gulp.task('templates', ['templates:en', 'templates:ru']);
+gulp.task('templates', ['templates:en', 'templates:ru', 'templates:cn', 'templates:fr']);
 gulp.task('templates:en', makeTemplatesTask('en'));
 gulp.task('templates:ru', makeTemplatesTask('ru'));
 gulp.task('templates:cn', makeTemplatesTask('cn'));
+gulp.task('templates:fr', makeTemplatesTask('fr'));
 /**
- * @param {"en"|"cn"|"ru"} locale
+ * @param {string} locale
  */
 function makeTemplatesTask(locale) {
     return function () {

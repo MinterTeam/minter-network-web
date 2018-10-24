@@ -1,5 +1,13 @@
 /public/*.html
+/public/ru/
 /public/cn/
+/public/jp/
+/public/sa/
+/public/de/
+/public/fr/
+/public/es/
+
+
 /public/ru/
 /public/ps/
 /public/css

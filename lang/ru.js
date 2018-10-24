@@ -36,7 +36,7 @@ module.exports = {
     'index-speed-description': 'Такой быстрый, что даже не верится. А все благодаря уникальном движку Tendermint с DPoS-консенсусом. До 10 000 транзакций в каждом блоке раз в 5&nbsp;секунд. Но&nbsp;можем и больше! Никаких задержек или ожидания дополнительного подтверждения — вы нажали кнопку, ваша транзакция ушла.',
     'index-speed-info-title': 'Количество транзакций в&nbsp;секунду',
     'index-speed-caption-1': 'Minter в',
-    'index-speed-caption-2': '200 раз',
+    'index-speed-caption-2': ' 200 раз ',
     'index-speed-caption-3': 'быстрее своего дедушки!',
 
     'index-coins-title': 'Создание монет',
