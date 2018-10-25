@@ -20,6 +20,7 @@ const named = require('vinyl-named');
 const less = require('gulp-less');
 const postcss = require('gulp-postcss');
 const postcssNormalize = require('postcss-normalize');
+const postcssRtl = require('postcss-rtl');
 const autoprefixer = require('autoprefixer');
 const cleanCss = require('gulp-clean-css');
 // images
@@ -58,7 +59,8 @@ let paths = {
 
 
 // LESS
-gulp.task('less', function () {
+gulp.task('less', ['less:ltr', 'less:rtl']);
+gulp.task('less:ltr', function () {
     return gulp.src(paths.src.less)
         .pipe(plumber({errorHandler: onError}))
         .pipe(less())
@@ -76,6 +78,29 @@ gulp.task('less', function () {
         }))
         .pipe(rename({
             suffix: '.min'
+        }))
+        .pipe(gulp.dest(paths.dest.css));
+});
+
+gulp.task('less:rtl', function () {
+    return gulp.src(paths.src.less)
+        .pipe(plumber({errorHandler: onError}))
+        .pipe(less())
+        .pipe(postcss([
+            autoprefixer({cascade: false}),
+            postcssNormalize({forceImport: true}),
+            postcssRtl({onlyDirection: 'rtl'}),
+        ]))
+        .pipe(cleanCss({
+            level: {
+                1: {},
+                2: {
+                    removeUnusedAtRules: true,
+                },
+            }
+        }))
+        .pipe(rename({
+            suffix: '.rtl.min'
         }))
         .pipe(gulp.dest(paths.dest.css));
 });

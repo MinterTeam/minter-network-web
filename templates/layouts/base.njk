@@ -1,8 +1,9 @@
 {% set localePrefix = '' if __locale__ === 'en' else '/' + __locale__ %}
+{% set direction = 'rtl' if __locale__ === 'sa' else 'ltr'  %}
 {% set host = 'https://www.minter.network' %}
 
 <!doctype html>
-<html lang="{{ __locale__ }}">
+<html lang="{{ __locale__ }}" dir="{{ direction }}">
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -25,7 +26,11 @@
     {# styles #}
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Rubik:500,700&amp;subset=cyrillic" rel="stylesheet">
-    <link href="/css/style.min.css" rel="stylesheet">
+    {% if direction === 'ltr' %}
+        <link href="/css/style.min.css" rel="stylesheet">
+    {% else %}
+        <link href="/css/style.rtl.min.css" rel="stylesheet">
+    {% endif %}
 </head>
 <body class="{{ body_class }}">
 
