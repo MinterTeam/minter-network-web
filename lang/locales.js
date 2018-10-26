@@ -14,6 +14,11 @@ module.exports = {
         prefix: '',
         name: 'English',
     },
+    fr: {
+        code: 'fr',
+        prefix: 'fr',
+        name: 'French',
+    },
     de: {
         code: 'de',
         prefix: 'de',
@@ -28,11 +33,6 @@ module.exports = {
         code: 'kr',
         prefix: 'kr',
         name: 'Korean',
-    },
-    fr: {
-        code: 'fr',
-        prefix: 'fr',
-        name: 'French',
     },
     ru: {
         code: 'ru',
