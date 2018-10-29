@@ -334,6 +334,7 @@
 .swiper-button-prev, .swiper-button-next {
     position: absolute; top: 57px; z-index: 3; width: 36px; height: 36px; transition: .2s; cursor: pointer; background: no-repeat 50% 50% #fff; border-radius: 50%; box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     &:hover, &:focus {box-shadow: 0 2px 6px rgba(0,0,0,0.2);}
+    [dir="rtl"] & {transform: rotateY(180deg);}
 }
 .swiper-button-prev {left: 10px; background-image: url(../img/icon-slider-arrow-left.svg);}
 .swiper-button-next {right: 10px; background-image: url(../img/icon-slider-arrow-right.svg);}

@@ -1,4 +1,5 @@
 {% set localePrefix = '' if __locale__ === 'en' else '/' + __locale__ %}
+{% set localePrefixEnRu = '/ru' if __locale__ === 'ru' else '' %}
 {% set direction = 'rtl' if __locale__ === 'sa' else 'ltr'  %}
 {% set host = 'https://www.minter.network' %}
 
