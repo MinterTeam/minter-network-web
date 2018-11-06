@@ -6,5 +6,5 @@ Disallow: /ru/ps/confirm
 
 
 User-agent: Yandex
-Disallow:
+Disallow: /
 Host: www.minter.network
