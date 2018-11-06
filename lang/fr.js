@@ -1,11 +1,11 @@
 module.exports = {
-    'link-network': 'aaa',
-    'link-apps': 'aaa',
-    'link-team': 'aaa',
+    'link-network': '',
+    'link-apps': '',
+    'link-team': '',
     'link-ton': '',
-    'link-airdrops': 'aaa',
-    'link-social': 'aaa',
-    'link-links': 'aaa',
+    'link-airdrops': '',
+    'link-social': '',
+    'link-links': '',
 
 
     // index
@@ -13,8 +13,8 @@ module.exports = {
     'index-seo-description': 'Créez votre propre cryptomonnaie. Toute information sur le réseau Minter en un seul endroit.',
 
     // bonus
-    'index-bonus-title': 'aaa',
-    'index-bonus-description': 'aaa',
+    'index-bonus-title': '',
+    'index-bonus-description': '',
 
     // hero
     'hero-title': 'Il y a justement 10 ans que Bitcoin a été créé. Le moment n’est-il pas venu pour faire le pas suivant ?',
@@ -34,7 +34,7 @@ module.exports = {
 
     'index-speed-title': 'La vitesse',
     'index-speed-description': 'Si rapide qu’il est difficile d\'y croire. Et c’est grâce à un moteur unique Tendermint avec consensus DPoS. Jusqu\'à 10 000 transactions dans chaque bloc toutes les 5 secondes. Mais ça ne s\'arrêtera pas là ! Aucun retard ni attente de confirmation supplémentaire : vous avez appuyé le bouton, votre transaction est parti.',
-    'index-speed-info-title': 'aaa',
+    'index-speed-info-title': '',
     'index-speed-caption-1': 'Minter est',
     'index-speed-caption-2': ' 200 fois ',
     'index-speed-caption-3': 'plus rapide que son « grand-père » !',
@@ -49,13 +49,13 @@ module.exports = {
     'index-fees-title': 'La commission',
     'index-fees-description': 'Les commissions sont tellement petites que personne ne s’en soucie. Mais nous vous informons quand même qu’elles sont inférieures à 0,01 USD pour un transfert ou un échange de tout montant.',
     'index-fees-description2': 'Tout cela parce que nous avons un réseau avec un débit très haut, plusieurs milliers de transactions par seconde, et donc les validateurs peuvent parfaitement bien gagner avec de tels paramètres.',
-    'index-fees-image-caption': 'aaa',
+    'index-fees-image-caption': '',
 
     'index-revenue-title': 'Le revenu des validateurs et délégateurs',
     'index-revenue-description': 'Et tous les revenus et commissions partent aux validateurs et délégateurs parce que notamment ce sont eux qui soutiennent notre réseau. Le consensus DPoS sous-entend les mécanismes les plus simples de création des blocs sur un équipement peu cher, mais avec un haut degré d\'honnêteté. 98 % de toute l’émission de BIP et 100 % de la commission seront à minés par ces serveurs.',
 
-    'index-speed-button-network': 'aaa',
-    'index-speed-button-wp': 'aaa',
+    'index-speed-button-network': '',
+    'index-speed-button-wp': '',
 
 
     // team
@@ -91,7 +91,7 @@ module.exports = {
 
     // ton
     'ton-telegram-button': 'Pour accéder à l’aide de Telegram',
-    'ton-telegram-text': 'aaa',
+    'ton-telegram-text': '',
 
     'ton-title': 'L\'intégration avec Telegram Open Network',
     'ton-description': 'En observant ces quelques dernières années les technologies accessible et les blockchains, nous attendions longtemps le moment où on pourrait dire avec certitude à quoi nous croyons et avec qui nous voulons être intégrés. Notre choix s’est porté sur Telegram Open Network (TON).',
@@ -108,8 +108,8 @@ module.exports = {
     'ton-feature-payments-description': 'Les utilisateurs pourront transférer et recevoir, à l\'aide de TON Payments, des micropaiements en coins sur la base de Minter grâce à Lightning Network. Ce sera utile pour les services où il faut souvent transférer des sommes insignifiantes (par exemple un service publicitaire peut percevoir le paiement pour chaque consultation).',
     'ton-feature-exchange-title': 'L\'échange des coins',
     'ton-feature-exchange-description': 'Nous serons les premiers dans le monde qui pourront échanger la cryptomonnaie (dans notre cas le BIP) contre le coin principal TON (GRAM) et vice versa. C’est pour ça que nous cherchons activement d’ores et déjà les moyens d\'intégration avec Telegram et nous appliquons la politique KYC/AML pour tous nos utilisateurs. Et si BIP peut être échangé, tout autre coin du réseau Minter le pourra aussi !',
-    'ton-feature-description': 'aaa',
-    'index-ton-button': 'aaa',
+    'ton-feature-description': '',
+    'index-ton-button': '',
     'ton-join-title': 'Ralliez Minter!',
     'ton-join-description': 'Si vous voulez devenir l’un des premiers utilisateurs du réseau Minter, vous pouvez commencer la procédure d’enregistrement via Telegram Passport.',
     'ton-social-title': 'Retrouvez-nous sur les réseaux sociaux:',
