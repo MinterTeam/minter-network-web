@@ -1,5 +1,5 @@
 import $ from "jquery";
-import {MDCMenu} from '@material/menu';
+import {MDCMenu} from '@material/menu/index';
 
 export default function initDropdown() {
     $('[data-dropdown]').each(function () {

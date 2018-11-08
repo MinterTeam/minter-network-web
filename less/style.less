@@ -443,7 +443,7 @@
 // index links
 .index-links {
     color: #fff; position: relative;
-    &::before {content: ''; position: absolute; left: 0; top: 0; right: 0; bottom: 0; background: url(../img/hero-bg-wave-green.svg) repeat-x 50% 100% #333617; z-index: -1;}
+    &::before {content: ''; position: absolute; left: 0; top: 0; right: 0; bottom: 0; background: /*url(../img/hero-bg-wave-green.svg) repeat-x 50% 100% */#333617; z-index: -1;}
 }
 .index-links__group { margin-top: 40px;
     //&+& {margin-top: 40px;}
@@ -454,7 +454,7 @@
 .index-links__link {
     &,&:hover,&:focus,&:active {color: #EC5C24;}
 }
-.index-links__heroes-image {margin: 64px auto 0; display: block; position: relative; z-index: -1;}
+//.index-links__heroes-image {margin: 64px auto 0; display: block; position: relative; z-index: -1;}
 
 @media (min-width: @breakpoint-medium-up) {
     .index-links__list {columns: 2;}
