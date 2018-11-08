@@ -35,9 +35,6 @@ export default function initActiveLocale() {
                         expires: new Date(date.setDate(date.getDate() + 365)),
                         domain: window.location.host.split('.').slice(-2).join('.').replace(/:\d+$/, ''),
                     });
-                    // force link location change, since default behavior is prevented
-                    //@TODO remove when bug will be fixed see https://github.com/material-components/material-components-web/issues/3486
-                    window.location.href = localePath;
                 }
             });
         });
