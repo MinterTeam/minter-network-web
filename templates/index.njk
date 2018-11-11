@@ -6,7 +6,7 @@
 
 {% block content %}
     <article class="main-inner">
-        <section class="hero" {#data-section-hash="hero" id="hero"#}>
+        <section class="hero" data-section="network" id="network">
             <div class="hero__container u-section u-container">
                 <div class="hero__content">
                     <img class="hero__logo" src="/img/minter-logo-white.svg" width="213" height="67" alt="Minter">
@@ -67,7 +67,7 @@
         </section>
 
         <hr class="index-speed-skew">
-        <section class="index-speed u-section u-text-center" data-section-hash="speed" id="speed">
+        <section class="index-speed u-section u-text-center" data-section="speed" id="speed">
             <div class="u-container">
                 <h2 class="u-h2">{{ "Speed"|i18n('index-speed-title') }}</h2>
                 <hr class="hr--dark hr--short">
@@ -106,7 +106,7 @@
                 </div>
                 <p class="index-speed__info-caption u-h u-h3 u-text-center">{{ "Minter is"|i18n('index-speed-caption-1')|safe }}<span class="index-speed__info-caption-highlight">{{ " 200 times "|i18n('index-speed-caption-2')|safe }}</span>{{ "faster than its grandpa!"|i18n('index-speed-caption-3')|safe }}</p>
 
-                <div class="index-speed__exchange-grid u-grid u-grid--vertical-margin u-text-center">
+                <div class="index-speed__exchange-grid u-grid u-grid--vertical-margin u-text-center" data-section="coins">
                     <div class="u-cell u-cell--medium--1-2">
                         <h3 class="u-h2">{{ "Coin Issuance"|i18n('index-coins-title')|safe }}</h3>
                         <hr class="hr--dark hr--short">
@@ -141,7 +141,9 @@
                     </div>
                 </div>
 
-                <h2 class="u-h2  u-text-center">{{ "Revenues of Validators and Delegators"|i18n('index-revenue-title') }}</h2>
+                <h2 class="index-revenue__title u-h2 u-text-center" data-section="revenue">
+                    {{ "Revenues of Validators and Delegators"|i18n('index-revenue-title') }}
+                </h2>
                 <hr class="hr--dark hr--short">
                 <p class="u-text-medium u-text-center">
                     {{ "All of the income plus transaction fees go to our validators and their delegators as it is they who support our network. DPoS implies the simplest block generation mechanisms on relatively affordable equipment, but with a high degree of integrity. These servers will receive 98% of the total BIP supply and 100% of transaction fees."|i18n('index-revenue-description')|safe }}
