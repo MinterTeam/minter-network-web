@@ -1,5 +1,8 @@
 module.exports = {
     'link-network': 'Сеть',
+    'link-speed': 'Скорость',
+    'link-coins': 'Монеты',
+    'link-revenue': 'Доход',
     'link-apps': 'Приложения',
     'link-team': 'Команда',
     'link-ton': '',
