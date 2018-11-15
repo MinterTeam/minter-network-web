@@ -1,6 +1,4 @@
 User-agent: *
-Disallow: /
-Disallow: /ru
 Disallow: /ps/confirm
 Disallow: /ru/ps/confirm
 
