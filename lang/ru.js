@@ -138,7 +138,7 @@ module.exports = {
     'index-links-node-doc': 'Документация по мастернодам',
     'index-links-caption-coiner': 'Для Коинеров',
     'index-links-who-coiner': 'Кто такой Коинер?',
-    'index-links-pco': 'Perpetual Coin Offering (Вечное предложение монет)',
+    'index-links-pco': 'Perpetual Coin Offering (Вечное&nbsp;предложение&nbsp;монет)',
     'index-links-how-issue': 'Как выпустить свою монету? ',
     'index-links-caption-developer': 'Для разработчиков',
     'index-links-how-mapps': 'Как сделать MApps (Minter Apps)',
