@@ -17,7 +17,8 @@ module.exports = {
 
     // bonus
     'index-bonus-title': 'Бонус 20%',
-    'index-bonus-description': 'на все пополнения до&nbsp;31&nbsp;октября',
+    'index-bonus-description': 'До <strong>1&nbsp;мая</strong> будет запущена основная сеть, запросить BIP ещё не&nbsp;поздно, подробности в&nbsp;личном&nbsp;кабинете ',
+    'index-bonus-button': 'Запросить BIP',
 
     // hero
     'hero-title': 'Ровно 10 лет назад был создан Биткоин. Не&nbsp;пора&nbsp;ли сделать следующий&nbsp;шаг?',

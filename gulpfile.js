@@ -59,7 +59,6 @@ let paths = {
 
 
 // LESS
-gulp.task('less', ['less:ltr', 'less:rtl']);
 gulp.task('less:ltr', function () {
     return gulp.src(paths.src.less)
         .pipe(plumber({errorHandler: onError}))
@@ -104,6 +103,7 @@ gulp.task('less:rtl', function () {
         }))
         .pipe(gulp.dest(paths.dest.css));
 });
+gulp.task('less', gulp.parallel('less:ltr', 'less:rtl'));
 
 
 // JS
@@ -120,7 +120,6 @@ gulp.task('js', function() {
 
 
 // TEMPLATES
-gulp.task('templates', ['templates:en', 'templates:ru', 'templates:cn', 'templates:jp', 'templates:kr', 'templates:sa', 'templates:de', 'templates:fr', 'templates:es']);
 gulp.task('templates:en', makeTemplatesTask('en'));
 gulp.task('templates:ru', makeTemplatesTask('ru'));
 gulp.task('templates:cn', makeTemplatesTask('cn'));
@@ -130,6 +129,7 @@ gulp.task('templates:sa', makeTemplatesTask('sa'));
 gulp.task('templates:de', makeTemplatesTask('de'));
 gulp.task('templates:fr', makeTemplatesTask('fr'));
 gulp.task('templates:es', makeTemplatesTask('es'));
+gulp.task('templates', gulp.parallel('templates:en', 'templates:ru', 'templates:cn', 'templates:jp', 'templates:kr', 'templates:sa', 'templates:de', 'templates:fr', 'templates:es'));
 /**
  * @param {string} locale
  */
@@ -185,16 +185,11 @@ function getTranslations(locale) {
 
 
 // CACHE BUST
-gulp.task('cache-bust', ['templates', 'less', 'js'], cacheBustTask);
-gulp.task('cache-bust:templates', ['templates'], cacheBustTask);
-gulp.task('cache-bust:less', ['less'], cacheBustTask);
-gulp.task('cache-bust:js', ['js'], cacheBustTask);
-
-function cacheBustTask() {
-    gulp.src(paths.dest.html + '**/*.html')
+gulp.task('cache-bust', function() {
+    return gulp.src(paths.dest.html + '**/*.html')
         .pipe(cacheBust())
         .pipe(gulp.dest(paths.dest.html))
-}
+});
 
 
 
@@ -218,34 +213,41 @@ gulp.task('imagemin', function () {
             }))
         .pipe(gulp.dest(paths.dest.img));
 });
-gulp.task('imagemin:clean', ['imagemin:clean-dest', 'imagemin:clean-cache']);
-gulp.task('imagemin:clean-dest', function() {
-    return del.sync(paths.dest.img);
+gulp.task('imagemin:clean-dest', function(cb) {
+    del.sync(paths.dest.img);
+    cb();
 });
-gulp.task('imagemin:clean-cache', function() {
-    return del.sync([
+gulp.task('imagemin:clean-cache', function(cb) {
+    del.sync([
         paths.cache.tmpDir + '/' + paths.cache.cacheDirName + '/default',
     ]);
+    cb();
 });
+gulp.task('imagemin:clean', gulp.parallel('imagemin:clean-dest', 'imagemin:clean-cache'));
 
 
 
-// Полная сборка с вотчем
-gulp.task('default', ['less', 'js', 'templates', 'imagemin', 'cache-bust'], function() {
-    gulp.watch(paths.watch.less, ['less', 'cache-bust:less']);
-    gulp.watch(paths.watch.js, ['js', 'cache-bust:js']);
-    gulp.watch(paths.watch.templates, ['templates', 'cache-bust:templates']);
-    gulp.watch(paths.src.img, ['imagemin']).on('change', function(event) {
-        if (event.type === 'deleted') {
-            del(paths.dest.img + path.basename(event.path));
-        }
-    });
-    setTimeout(function () {
-        log('Watching ...');
-    });
-});
 // Полная сборка без вотча
-gulp.task('once', ['less', 'js', 'templates', 'imagemin', 'cache-bust']);
+gulp.task('once', gulp.parallel('less', 'js', 'templates', 'imagemin', 'cache-bust'));
+// Полная сборка с вотчем
+gulp.task('default', gulp.series(
+    'once',
+    function watch() {
+        gulp.watch(paths.watch.less, gulp.series('less', 'cache-bust'));
+        gulp.watch(paths.watch.js, gulp.series('js', 'cache-bust'));
+        gulp.watch(paths.watch.templates, gulp.series('templates', 'cache-bust'));
+        gulp.watch(paths.src.img, gulp.task('imagemin'))
+            .on('unlink', function(filePath) {
+                del(paths.dest.img + path.basename(filePath));
+            })
+            .on('unlinkDir', function(dirPath) {
+                del(paths.dest.img + path.basename(dirPath));
+            });
+        setTimeout(function () {
+            log('Watching...');
+        });
+    }
+));
 
 
 

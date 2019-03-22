@@ -2,29 +2,22 @@
 
 {% block body %}
 
-    {#<div class="nav-panel nav-panel--index" data-section="network" id="network" data-nav-panel>
+    <div class="nav-panel nav-panel--index" data-section="network" id="network" data-nav-panel>
         <div class="u-container u-container nav-panel__container">
             <div class="nav-panel__inner">
-                <div class="nav-panel__content">{{ "Become Minter early adopter!"|i18n('ton-telegram-text')|safe }}</div>
-                #}{#<div class="nav-panel__content nav-panel__bonus-wrap">
-                    <img class="nav-panel__icon" src="/img/index-bonus-gift.svg" width="58" height="58" alt="" role="presentation">
+                <div class="nav-panel__content nav-panel__bonus-wrap">
+                    <span class="nav-panel__icon">🚀</span>
                     <div class="nav-panel__bonus-content">
-                        <div class="nav-panel__bonus-title">
-                            {{ "A 20% Bonus"|i18n('index-bonus-title')|safe }}
-                        </div>
-                        <div class="nav-panel__bonus-description">
-                            {{ "on BIPs requested before October&nbsp;31"|i18n('index-bonus-description')|safe }}
-                        </div>
+                        {{ "The main network will be launched before the <strong>1st&nbsp;of&nbsp;May</strong>. You&nbsp;can still get BIP tokens at the pre-sale price"|i18n('index-bonus-description')|safe }}
                     </div>
-                </div>#}{#
-                <a class="nav-panel__button button button--tg" href="https://bot.minternetwork.com{{ localePrefixEnRu }}" target="_blank">
-                    <img class="button__icon" src="/img/icon-soc-telegram.svg" width="24" height="24" alt="" role="presentation">
-                    {{ "Sign in with Telegram"|i18n('ton-telegram-button') }}
+                </div>
+                <a class="nav-panel__button button button--main" href="https://minternetwork.com{{ localePrefixEnRu }}/invite/helloworld" target="_blank">
+                    {{ "Request BIP"|i18n('index-bonus-button') }}
                 </a>
             </div>
-            #}{#{% include 'partials/language.njk' %}#}{#
+            {#{% include 'partials/language.njk' %}#}
         </div>
-    </div>#}
+    </div>
     {% include 'layouts/_header.njk' %}
     {% block content %}{% endblock %}
     {#{% include 'layouts/_footer.njk' %}#}

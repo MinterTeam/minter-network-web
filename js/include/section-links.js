@@ -1,4 +1,3 @@
-import 'core-js/es6/promise';
 import $ from "jquery";
 import debounce from 'lodash-es/debounce';
 import throttle from 'lodash-es/throttle';
