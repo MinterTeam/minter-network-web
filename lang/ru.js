@@ -17,8 +17,12 @@ module.exports = {
 
     // bonus
     'index-bonus-title': 'Бонус 20%',
-    'index-bonus-description': 'До <strong>1&nbsp;мая</strong> будет запущена основная сеть, запросить BIP ещё не&nbsp;поздно, подробности в&nbsp;личном&nbsp;кабинете ',
-    'index-bonus-button': 'Запросить BIP',
+    'index-bonus-description-1': 'До <strong>1&nbsp;мая</strong> будет запущена основная сеть, запросить BIP ещё не&nbsp;поздно, подробности в&nbsp;личном&nbsp;кабинете',
+    'index-bonus-description-2': 'До <strong>1&nbsp;мая</strong> будет запущена основная сеть, получить BIP можно и&nbsp;сейчас по&nbsp;цене&nbsp;пресейла',
+    'index-bonus-description-3': 'Основная сеть будет запущена до <strong>1&nbsp;мая&nbsp;2019</strong>, получить BIP можно и&nbsp;сейчас, по&nbsp;цене пресейла&nbsp;— предложение&nbsp;ограничено.',
+    'index-bonus-button-1': 'Перейти',
+    'index-bonus-button-2': 'Получить BIP',
+    'index-bonus-button-3': 'Запросить BIP',
 
     // hero
     'hero-title': 'Ровно 10 лет назад был создан Биткоин. Не&nbsp;пора&nbsp;ли сделать следующий&nbsp;шаг?',

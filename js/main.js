@@ -2,10 +2,12 @@ import $ from 'jquery';
 import debounce from 'lodash-es/debounce';
 import 'jquery-inline-svg';
 import support from './utils/support';
+import initAb from './include/ab';
 import HeaderMenu from './include/header-menu';
 import sectionLinks from './include/section-links';
 
-
+// init AB test
+initAb();
 
 
 /**

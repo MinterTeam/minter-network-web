@@ -7,12 +7,20 @@
             <div class="nav-panel__inner">
                 <div class="nav-panel__content nav-panel__bonus-wrap">
                     <span class="nav-panel__icon">🚀</span>
-                    <span class="nav-panel__bonus-content">
-                        {{ "The main network will be launched before the <strong>1st&nbsp;of&nbsp;May</strong>. You&nbsp;can still get BIP tokens at the pre-sale price"|i18n('index-bonus-description')|safe }}
+                    <span class="nav-panel__bonus-content u-hidden" data-ab-panel="1">
+                        {{ "The main network will be launched before the <strong>1st&nbsp;of&nbsp;May</strong>. It&nbsp;is&nbsp;not&nbsp;too&nbsp;late to&nbsp;request BIP&nbsp;tokens. All&nbsp;the&nbsp;details are available in the user’s personal&nbsp;account."|i18n('index-bonus-description-1')|safe }}
+                    </span>
+                    <span class="nav-panel__bonus-content u-hidden" data-ab-panel="2">
+                        {{ "The main network will be launched before the <strong>1st&nbsp;of&nbsp;May</strong>. You&nbsp;can still get BIP tokens at the pre-sale&nbspprice"|i18n('index-bonus-description-2')|safe }}
+                    </span>
+                    <span class="nav-panel__bonus-content u-hidden" data-ab-panel="3">
+                        {{ "The main network will be launched before the <strong>1st&nbsp;of&nbsp;May</strong>. You&nbsp;can still get BIP tokens now at the pre-sale price. The&nbsp;offer is&nbsp;limited."|i18n('index-bonus-description-3')|safe }}
                     </span>
                 </div>
                 <a class="nav-panel__button button button--main" href="https://minternetwork.com{{ localePrefixEnRu }}/invite/helloworld" target="_blank">
-                    {{ "Request BIP"|i18n('index-bonus-button') }}
+                    <span class="u-hidden" data-ab-panel-button="1">{{ "Visit"|i18n('index-bonus-button-1') }}</span>
+                    <span class="u-hidden" data-ab-panel-button="2">{{ "Get BIP"|i18n('index-bonus-button-2') }}</span>
+                    <span class="u-hidden" data-ab-panel-button="3">{{ "Request BIP"|i18n('index-bonus-button-3') }}</span>
                 </a>
             </div>
             {#{% include 'partials/language.njk' %}#}
