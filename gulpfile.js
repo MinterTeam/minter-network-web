@@ -228,7 +228,7 @@ gulp.task('imagemin:clean', gulp.parallel('imagemin:clean-dest', 'imagemin:clean
 
 
 // Полная сборка без вотча
-gulp.task('once', gulp.parallel('less', 'js', 'templates', 'imagemin', 'cache-bust'));
+gulp.task('once', gulp.series(gulp.parallel('less', 'js', 'templates', 'imagemin'), 'cache-bust'));
 // Полная сборка с вотчем
 gulp.task('default', gulp.series(
     'once',
@@ -243,9 +243,6 @@ gulp.task('default', gulp.series(
             .on('unlinkDir', function(dirPath) {
                 del(paths.dest.img + path.basename(dirPath));
             });
-        setTimeout(function () {
-            log('Watching...');
-        });
     }
 ));
 
