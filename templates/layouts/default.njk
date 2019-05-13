@@ -2,6 +2,7 @@
 
 {% block body %}
 
+{#
     <div class="nav-panel nav-panel--index" data-section="network" id="network" data-nav-panel>
         <div class="u-container u-container nav-panel__container">
             <div class="nav-panel__inner">
@@ -23,9 +24,12 @@
                     <span class="u-hidden" data-ab-panel-button="3">{{ "Request BIP"|i18n('index-bonus-button-3') }}</span>
                 </a>
             </div>
-            {#{% include 'partials/language.njk' %}#}
+            #}
+{#{% include 'partials/language.njk' %}#}{#
+
         </div>
     </div>
+#}
     {% include 'layouts/_header.njk' %}
     {% block content %}{% endblock %}
     {#{% include 'layouts/_footer.njk' %}#}
