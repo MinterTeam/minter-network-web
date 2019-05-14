@@ -18,13 +18,13 @@
   "dependencies": {
     "@material/list": "^2.1.1",
     "@material/menu": "^2.1.1",
+    "@minterteam/footer-links": "^3.0.0",
     "axios": "^0.18.0",
     "core-js": "^3.0.1",
     "jquery": "^3.4.1",
     "jquery-inline-svg": "^1.0.2",
     "js-cookie": "^2.2.0",
     "lodash-es": "^4.17.11",
-    "minter-footer-links": "github:MinterTeam/minter-footer-links#v2.2.0",
     "pretty-num": "^0.2.2",
     "swiper": "^3.4.2"
   },

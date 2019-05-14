@@ -10,7 +10,7 @@ const cacheBust = require('gulp-cache-bust');
 const data = require('gulp-data');
 const decache = require('decache');
 const envConfig = require('dotenv').config();
-const footerLinksData = require('minter-footer-links');
+const footerLinksData = require('@minterteam/footer-links');
 // js
 const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
