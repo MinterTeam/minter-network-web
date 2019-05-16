@@ -111,7 +111,7 @@ module.exports = {
     'ton-feature-description': '',
     'index-ton-button': '',
     'ton-join-title': 'Minter에 가입하십시오!',
-    'ton-join-description': '최초로Minter 네트워크의 사용자가 되고 싶다면 Telegram Passport를 통해 등록 과정을 시작할 수 있습니다.',
+    // 'ton-join-description': '최초로Minter 네트워크의 사용자가 되고 싶다면 Telegram Passport를 통해 등록 과정을 시작할 수 있습니다.',
     'ton-social-title': '저희는 소셜네트워크에 있습니다 :',
     'ton-social-caption-networks': '소셜네트워크',
     'ton-social-caption-chat': 'Telegram채팅',

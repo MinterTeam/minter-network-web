@@ -111,7 +111,7 @@ module.exports = {
     'ton-feature-description': '',
     'index-ton-button': '',
     'ton-join-title': '请加入Minter！',
-    'ton-join-description': '如果您想成为Minter网络的首批用户之一，您可以通过Telegram Passport开始注册过程。',
+    // 'ton-join-description': '如果您想成为Minter网络的首批用户之一，您可以通过Telegram Passport开始注册过程。',
     'ton-social-title': '我们在社交网络：',
     'ton-social-caption-networks': '社交网络',
     'ton-social-caption-chat': '聊天',

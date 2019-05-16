@@ -111,7 +111,7 @@ module.exports = {
     'ton-feature-description': '',
     'index-ton-button': '',
     'ton-join-title': 'Minterにご参加ください！',
-    'ton-join-description': 'Minterネットワークのファーストユーザーになることをご希望でしたら、Telegram Passport経由で登録手続きを開始できます。',
+    // 'ton-join-description': 'Minterネットワークのファーストユーザーになることをご希望でしたら、Telegram Passport経由で登録手続きを開始できます。',
     'ton-social-title': '私どもはつぎのソーシャルネットワーク上におります。',
     'ton-social-caption-networks': 'ソーシャルネットワーク',
     'ton-social-caption-chat': 'Telegramチャット',

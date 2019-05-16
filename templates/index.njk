@@ -320,12 +320,23 @@
                 <div class="u-container u-container--small u-text-center">
                     <h2 class="u-h3">{{ "Join Minter!"|i18n('ton-join-title')|safe }}</h2>
                     <hr class="hr--main hr--short">
-                    <p>{{ "If you are willing to become one of the first Minter network users, you may start the signup process via Telegram&nbsp;Passport."|i18n('ton-join-description')|safe }}</p>
-                    <div class="button-group">
-                        <a class="button button--tg ton__social-link--tg" href="https://bot.minternetwork.com{{ localePrefixEnRu }}" target="_blank">
-                            <img class="button__icon" src="/img/icon-soc-telegram.svg" width="24" height="24" alt="" role="presentation">
-                            {{ "Sign in with Telegram"|i18n('ton-telegram-button') }}
+                    <p>{{ "Start the sign-up process or sign in to your account via Bip Wallet."|i18n('ton-join-description')|safe }}</p>
+
+                    <div class="index-cta__apps app-list">
+                        <a class="app-list__link" href="https://itunes.apple.com/ru/app/bip-wallet/id1457843214" target="_blank" rel="noopener">
+                            <img class="app-list__image" src="/img/store-ios.svg" alt="Download on the App Store">
                         </a>
+                        <a class="app-list__link" href="https://play.google.com/store/apps/details?id=network.minter.bipwallet.mainnet" target="_blank" rel="noopener">
+                            <img class="app-list__image" src="/img/store-android.svg" alt="Get it on Google Play">
+                        </a>
+                        <a class="app-list__link" href="https://wallet.bip.to" target="_blank" rel="noopener">
+                            <img class="app-list__image" src="/img/store-browser.svg" alt="Works on Any Browser">
+                        </a>
+                        <!--
+                                            <a class="app-list__link" href="tg://resolve?domain=BipWallet_Bot" target="_blank" rel="noopener">
+                                                <img class="app-list__image" src="/img/store-telegram.svg" alt="Telegram Bot">
+                                            </a>
+                        -->
                     </div>
                 </div>
             </section>

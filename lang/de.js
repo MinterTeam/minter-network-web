@@ -111,7 +111,7 @@ module.exports = {
     'ton-feature-description': '',
     'index-ton-button': '',
     'ton-join-title': 'Schließen Sie sich Minter an!',
-    'ton-join-description': 'Wenn Sie zu den ersten Benutzern des Netzwerks Minter gehören möchten, können Sie sich bereits jetzt über Telegram Passport registrieren.',
+    // 'ton-join-description': 'Wenn Sie zu den ersten Benutzern des Netzwerks Minter gehören möchten, können Sie sich bereits jetzt über Telegram Passport registrieren.',
     'ton-social-title': 'Sie finden uns in den sozialen Netzwerken:\n',
     'ton-social-caption-networks': 'Soziale Netzwerke',
     'ton-social-caption-chat': 'Telegram Chat',
