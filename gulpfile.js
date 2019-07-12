@@ -186,7 +186,7 @@ function getTranslations(locale) {
 
 // CACHE BUST
 gulp.task('cache-bust', function() {
-    return gulp.src(paths.dest.html + '**/*.html')
+    return gulp.src([paths.dest.html + '**/*.html', `!${paths.dest.html}tothemoon/**/*.html`])
         .pipe(cacheBust())
         .pipe(gulp.dest(paths.dest.html))
 });
