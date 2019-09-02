@@ -218,7 +218,7 @@
     color: #fff; position: relative;
     &::before, &::after {content: ''; position: absolute; z-index: -1;}
     &::before {background: #621910; transform: rotate(-10.5deg); left: -50%; right: -50%; top: -50%; bottom: 0;}
-    &::after {background: url(../img/hero-bg-wave.svg) repeat-x 50% 101% #48100A /*#621910*/; top: 0; left: 0; right: 0; bottom: 0;}
+    &::after {background: url(../img/hero-bg-wave.svg) repeat-x 50% 101%, linear-gradient(to top, #621910 0, #48100A 150px) #48100A /*#621910*/; top: 0; left: 0; right: 0; bottom: 0;}
 }
 .hero__content {
     font-size: 18px; position: relative; z-index: 1;
@@ -235,7 +235,7 @@
 @media (min-width: @breakpoint-large-up) {
     .hero {
         min-height: 623px;
-        &::after {background-position: 50% 125px;}
+        &::after {background-position: 50% 125px, 0 0;}
     }
     .hero__content {max-width: 430px;}
     .hero__image {left: 77.5%; top: -13px; transform: translateX(-50%); max-width: none;}
