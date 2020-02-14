@@ -1,0 +1,95 @@
+# This is a MINFO document in TOML format, which contains all information about the project.
+
+[document]
+created = 2020-02-12T22:33:00+03:00 # YYYY-MM-DDThh:mm:ss±hh:mm
+updated = 2020-02-13T19:23:00+03:00 # YYYY-MM-DDThh:mm:ss±hh:mm
+
+[project]
+name = "Minter" # 20 characters max
+title ="Create coins and run blockchain services with Minter." # 70 characters max
+short_description = "Minter blockchain lets people, projects, and companies create and manage their own coins and exchange them at a fair price with absolute and instant liquidity." # 300 characters max
+logo = "https://www.minter.network/img/minter-logo-circle.svg" # .SVG, .PNG, .JPG
+immediate_goal = "Create Internet of Money"
+stage = "prod" # Current stage of the project: dev, alpha, beta, mvp, prod
+launch = 2019-05-15T18:05:00+03:00 # YYYY-MM-DDThh:mm:ss±hh:mm
+whitepaper = "https://about.minter.network/Minter_White_Paper.pdf" # Full project description
+languages = [ # ISO 639-1
+	"en",
+	"ru",
+	"ar",
+	"zh",
+	"fr",
+	"de",
+	"ja",
+	"ko",
+	"es"
+]
+address = "Mxcdbdcf4ce903a9ae2d3b97e8f8b982d1f01cd820" # Mx...
+coin = "BIP" # Project coin
+contact_email = "hello@minter.org" # Email for complaints and suggestions
+support = "https://t.me/MinterHelp" #  Link to support service
+actual_address = "75 Broadway, Suite 202, San Francisco, CA, 94111"
+legal_status = "Non-stock non-profit foundation"
+privacy_policy = "https://minter.org/legal/privacy.pdf"
+links = [
+	{type = "site", url = "https://www.minter.network/"},
+	{type = "telegram", url = "https://t.me/MinterTeam"},
+	{type = "twitter", url = "https://twitter.com/MinterTeam"},
+	{type = "facebook", url = "https://www.facebook.com/MinterNetwork"},
+	{type = "medium", url = "https://medium.com/@MinterTeam"},
+	{type = "github", url = "https://github.com/MinterTeam/minter-go-node/"},
+	{type = "linkedin", url = "https://www.linkedin.com/company/minternetwork/"},
+	{type = "reddit", url = "https://www.reddit.com/r/Minter/"},
+	{type = "ios_app", url = "https://itunes.apple.com/ru/app/bip-wallet/id1457843214"},
+	{type = "android_app", url = "https://play.google.com/store/apps/details?id=network.minter.bipwallet.mainnet"}
+]
+
+[owner]
+owner_name = "Eugene Gordeev " # 30 characters max
+owner_role = "Product Owner"
+owner_address = "Mxff56d3caee091fe7d62b7047421b19431d63bc7b" # Mx...
+owner_about = "Visionary, advocate for user-friendly products. Venture investor, Bitcoin evangelist since 2013, founder of many projects at the earliest stage of markets—online advertising, mobile applications, Big Data, and currently blockchain."
+
+[[member]]
+  	member_name = "Daniil Lashin"
+  	member_role = "Blockchain Developer"
+  	member_address = "Mx68001420733be1f8ca639112108a0eba7c19a365"
+  	member_about = "In charge of the Minter core. Blockchain wunderkind, total dev experience is seven years, with three of them in blockchain."
+  	member_contact_telegram = "danillashin"
+
+[[member]]
+  	member_name = "Daniil Dulin"
+  	member_role = "Backend Developer"
+  	member_about = "Develops Explorer and its API. Dev experience amounts to 12 years, among which two in blockchain products."
+  	member_contact_telegram = "Daniil_Dulin"
+
+[[member]]
+  	member_name = "Kamil Mukhametzyanov"
+  	member_role = "Backend Developer"
+  	member_about = "Author of Telegram bot wallets, PHP SDK. Young and promising, six years in backend, two in blockchain. Deems Telegram superior to other messengers."
+  	member_contact_telegram = "grkamil"
+
+[[member]]
+  	member_name = "Nikita Eybog"
+  	member_role = "Frontend Developer"
+  	member_about = "All things web—Console, wallets, pages. Author of JS SDK. Five years in web development, expertise in creating SPAs, responsive layouts, and animation. Loves working overtime."
+
+[[member]]
+  	member_name = "Eduard Maximovich"
+  	member_role = "Android Developer"
+  	member_about = "Developed and now improves Android wallet, authored Android SDK. Four years of experience in mobile dev for Android, seven in backend dev for web projects. Developer of desktop and system software for *nix systems. Vaper."
+  	member_contact_telegram = "edwardstock"
+
+[[member]]
+  	member_name = "Alexey Sidorov"
+  	member_role = "iOS Developer"
+  	member_about = "Author of iOS wallet and iOS SDK. Total experience in app development is 10 years, with last five years focused on iOS applications. Launched his own startups, raised funds. User security guard."
+  	member_contact_telegram = "sidorov_panda"
+
+[[member]]
+  	member_name = "Ariil Davydov"
+  	member_role = "Designer"
+  	member_about = "We know nothing about him, yet he helped us a lot."
+  	member_contact_telegram = "ariil"
+
+# with Minter inside
