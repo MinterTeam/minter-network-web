@@ -114,10 +114,13 @@
 
 // footer
 .footer {background: #222; color: #fff; padding: 24px 0 30px; width: 100%; position: relative; z-index: 9;}
-.footer__container {display: flex; justify-content: space-between; flex-wrap: wrap;}
-.footer__stats-item {text-align: center;}
+.footer__container {display: flex; justify-content: space-around; flex-wrap: wrap; margin-top: -24px;}
+.footer__stats-item {text-align: center; margin-top: 24px;}
 .footer__stats-key {.u-h-uppercase(); opacity: 0.5;}
 .footer__stats-value {font-weight: 700; margin-top: 8px;}
+@media (min-width: @breakpoint-small-up) {
+    .footer__container {justify-content: space-between;}
+}
 
 
 
@@ -133,10 +136,13 @@
 
 /* INDEX intro */
 //.main-content--index {display: flex; align-items: center;}
-.index-section {padding-top: 100px; padding-bottom: 80px;}
+.index-section {padding-top: 60px; padding-bottom: 80px;}
 .index-intro {}
 .index-intro__title {margin-top: 24px;}
 .index-intro__button {margin-top: 32px;}
+@media (min-width: @breakpoint-small-up) {
+    .index-section {padding-top: 100px;}
+}
 
 
 .index-feature__icon {vertical-align: top;}
