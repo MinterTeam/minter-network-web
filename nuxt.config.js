@@ -20,7 +20,7 @@ module.exports = {
             { hid: 'description', name: 'description', content: BASE_DESCRIPTION },
             { hid: 'og-title', name: 'og:title', content: BASE_TITLE },
             { hid: 'og-description', name: 'og:description', content: BASE_DESCRIPTION },
-            { hid: 'og-image', name: 'og:image', content: '/social-share.png' },
+            { hid: 'og-image', name: 'og:image', content: '/social-share.png?v2' },
         ],
         link: [
             { rel: 'icon', href: '/favicon.png' },

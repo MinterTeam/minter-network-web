@@ -23,7 +23,7 @@
         <section class="index-intro">
             <img class="index-intro__logo" src="/img/minter-logo.svg" alt="Minter" width="133" height="42">
             <h1 class="index-intro__title u-h1">Create coins and run <span class="u-display-ib">blockchain services</span></h1>
-            <a class="index-intro__button button button--main" href="https://github.com/MinterTeam" target="_blank" rel="nofollow">Start Now</a>
+            <a class="index-intro__button button button--main" href="https://about.minter.network/" target="_blank">Start Now</a>
         </section>
         <hr class="hr--divider">
         <div class="u-grid u-grid--large u-grid--vertical-margin--large">
