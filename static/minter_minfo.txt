@@ -80,6 +80,7 @@ owner_about = "Visionary, advocate for user-friendly products. Venture investor,
     member_name = "Nikita Eybog"
     member_role = "Frontend Developer"
     member_about = "All things web—Console, wallets, pages. Author of JS SDK. Five years in web development, expertise in creating SPAs, responsive layouts, and animation. Loves working overtime."
+    member_contact_telegram = "shrpne"
 
 [[member]]
     member_name = "Eduard Maximovich"
