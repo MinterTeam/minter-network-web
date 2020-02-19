@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "prod": "npm run production",
-    "production": "npm run build",
+    "production": "npm run generate",
     "dev": "gulp & nuxt --spa --port=3022",
     "build": "gulp once && nuxt build --spa",
     "start": "nuxt start --spa --port=3022",
