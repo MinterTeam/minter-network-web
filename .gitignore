@@ -1,19 +1,17 @@
-/public/*.html
-/public/ru/
-/public/cn/
-/public/jp/
-/public/kr/
-/public/sa/
-/public/de/
-/public/fr/
-/public/es/
-
-/public/ps/
-/public/css
-/public/js
-/public/img
-/tmp
+/static/css/
+/static/img/
+/tmp/
 .env
 
 
+# dependencies
 node_modules
+
+# logs
+npm-debug.log
+
+# Nuxt build
+.nuxt
+
+# Nuxt generate
+dist

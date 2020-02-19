@@ -1,0 +1,152 @@
+// normalize-css подключается с помощью postcss-normalize
+@import (inline) '../../node_modules/@material/snackbar/dist/mdc.snackbar.css';
+@import (inline) '../../node_modules/@material/menu/dist/mdc.menu.css';
+@import (inline) '../../node_modules/@material/menu-surface/dist/mdc.menu-surface.css';
+@import (inline) '../../node_modules/@material/list/dist/mdc.list.css';
+@import "include/variables";
+@import "include/utils";
+@import "include/general";
+@import "include/layout";
+
+
+
+// vendor
+// mdc
+.mdc-snackbar__action-button {color: #fff;}
+// nuxt page transition
+.page-leave-active {transition: opacity .1s;}
+.page-enter-active {transition: opacity .25s;}
+.page-enter, .page-leave-to {opacity: 0;}
+
+
+// common
+.main-wrap {display: flex; flex-direction: column; min-height: 100vh; position: relative;}
+.main-content {width: 100%; flex-grow: 2; overflow: hidden;}
+
+
+// nuxt page transition
+.page-leave-active, .layout-leave-active {transition: opacity .1s;}
+.page-enter-active, .layout-enter-active {transition: opacity .25s;}
+.page-enter, .page-leave-to, .layout-enter, .layout-leave-to {opacity: 0;}
+
+.v-transition-fade-enter-active, .v-transition-fade-leave-active {
+    transition: opacity 0.15s;
+}
+.v-transition-fade-enter, .v-transition-fade-leave-to {
+    opacity: 0;
+}
+
+@keyframes fade-in {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+@keyframes fade-out {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+
+// social
+@social-icon-margin: 8px;
+@c-facebook: #38569D;
+@c-telegram: #349DDE;
+@c-vk: #507199;
+@c-twitter: #1DA1F2;
+@c-whatsapp: #51CA60;
+.social-list {margin-top: -@social-icon-margin; margin-left: -@social-icon-margin; display: flex; flex-wrap: wrap;}
+.social-button {margin-top: @social-icon-margin; margin-left: @social-icon-margin; height: 40px; width: 40px; display: flex; align-items: center; justify-content: center; border-radius: 8px;}
+.social-icon {
+    margin-top: @social-icon-margin; margin-left: @social-icon-margin;
+    &:hover, &:focus {opacity: 0.75;}
+    img {vertical-align: top;}
+}
+.social--facebook {
+    color: #fff; background: @c-facebook;
+    &:hover, &:focus {background: tint(@c-facebook, 15%);}
+    &:active {background: shade(@c-facebook, 10%);}
+}
+.social--telegram {
+    color: #fff; background: @c-telegram;
+    &:hover, &:focus {background: tint(@c-telegram, 15%);}
+    &:active {background: shade(@c-telegram, 10%);}
+}
+.social--vk  {
+    color: #fff; background: @c-vk;
+    &:hover, &:focus {background: tint(@c-vk, 15%);}
+    &:active {background: shade(@c-vk, 10%);}
+}
+.social--twitter {
+    color: #fff; background: @c-twitter;
+    &:hover, &:focus {background: tint(@c-twitter, 15%);}
+    &:active {background: shade(@c-twitter, 10%);}
+}
+.social--whatsapp {
+    color: #fff; background: @c-whatsapp;
+    &:hover, &:focus {background: tint(@c-whatsapp, 15%);}
+    &:active {background: shade(@c-whatsapp, 10%);}
+}
+
+
+
+
+// header
+@header-height: 68px;
+.header {
+    position: relative; /* fallback */ /*position: sticky; left: 0; right: 0; top: 0;*/  z-index: 10; height: @header-height;
+    // required for offcanvas menu
+}
+.header--white {box-shadow: 0 2px 40px rgba(0,0,0,0.1);}
+.header__container {display: flex; align-items: center; flex-wrap: wrap; justify-content: space-between; top: 0; min-height: 100%;}
+.header__logo {margin-right: 24px;}
+.header__logo-image {display: block; font-size: 0;}
+.header__wallet-button {margin-left: 24px;}
+.header__language {margin-right: auto;}
+.header__language-button {display: flex; align-items: center; text-transform: uppercase; font-size: 16px; font-weight: 700; letter-spacing: 1px;}
+.header__language-button-icon {font-size: 0; margin-right: 8px;}
+.header__language-text {margin-right: 16px;}
+@media (min-width: @breakpoint-small-up) {
+    .header__language {margin-left: auto; margin-right: 0;}
+
+}
+
+
+
+
+// footer
+.footer {background: #222; color: #fff; padding: 24px 0 30px; width: 100%; position: relative; z-index: 9;}
+.footer__container {display: flex; justify-content: space-between; flex-wrap: wrap;}
+.footer__stats-item {text-align: center;}
+.footer__stats-key {.u-h-uppercase(); opacity: 0.5;}
+.footer__stats-value {font-weight: 700; margin-top: 8px;}
+
+
+
+// error
+.main-content--error {display: flex; flex-direction: column;}
+.error__container {display: flex; flex-direction: column; flex-grow: 2;}
+.error__inner {max-height: 674px; flex-grow: 2; display: flex; flex-direction: column; justify-content: flex-end; position: relative;}
+.error__image {position: absolute; right: -64px; top: -20px; max-height: calc(100% + 30px); max-width: calc(100% + 12px); z-index: -1}
+.error__title {margin-bottom: 16px;}
+.error__description {font-size: 20px; font-weight: 700; text-transform: uppercase; max-width: 320px;}
+.error__link {font-size: 24px; font-weight: 700;}
+
+
+/* INDEX intro */
+//.main-content--index {display: flex; align-items: center;}
+.index-section {padding-top: 100px; padding-bottom: 80px;}
+.index-intro {}
+.index-intro__title {margin-top: 24px;}
+.index-intro__button {margin-top: 32px;}
+
+
+.index-feature__icon {vertical-align: top;}
+.index-feature__title {margin-top: 16px;}
+.index-feature__description {margin-top: 8px; font-size: 17px;}
+
+
+@media (min-width: @breakpoint-medium-up) {
+
+}
+
+
+
