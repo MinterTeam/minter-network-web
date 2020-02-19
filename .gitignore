@@ -1,3 +1,9 @@
+# nuxt v2 files
+/.nuxt/
+/dist/
+/static/
+
+
 /public/*.html
 /public/ru/
 /public/cn/
