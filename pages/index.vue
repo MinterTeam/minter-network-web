@@ -23,12 +23,12 @@
         <section class="index-intro">
             <img class="index-intro__logo" src="/img/minter-logo.svg" alt="Minter" width="133" height="42">
             <h1 class="index-intro__title u-h1">Create coins and run <span class="u-display-ib">blockchain services</span></h1>
-            <a class="index-intro__button button button--main" href="https://about.minter.network/" target="_blank">Start Now</a>
+            <a class="index-intro__button button button--main" href="https://about.minter.network/">Start Now</a>
         </section>
         <hr class="hr--divider">
         <div class="u-grid u-grid--large u-grid--vertical-margin--large">
             <div class="u-cell u-cell--medium--1-2">
-                <img class="index-feature__icon" src="/img/feature-tools.svg" alt="" role="presentation">
+                <img class="index-feature__icon" src="/img/feature-tools.svg" width="48" height="48" alt="" role="presentation">
                 <h2 class="index-feature__title u-h3">Comprehensive Toolset</h2>
                 <p class="index-feature__description">
                     Game credits, loyalty points, access tokens and achievements can be managed in a simple way via set of tools like wallets (<a class="link--default" href="https://itunes.apple.com/ru/app/bip-wallet/id1457843214" target="_blank" rel="nofollow">iOS</a>,
@@ -40,24 +40,24 @@
                 </p>
             </div>
             <div class="u-cell u-cell--medium--1-2">
-                <img class="index-feature__icon" src="/img/feature-consensus.svg" alt="" role="presentation">
+                <img class="index-feature__icon" src="/img/feature-consensus.svg" width="48" height="48" alt="" role="presentation">
                 <h2 class="index-feature__title u-h3">Trustworthy Consensus Algorithm</h2>
                 <p class="index-feature__description">Network’s native utility token is called <a class="link--default" href="https://www.coingecko.com/en/coins/bip" target="_blank" rel="nofollow">BIP</a> and mined by <a class="link--default" href="https://github.com/MinterTeam/minter-go-node" target="_blank" rel="nofollow">validators</a> (Tendermint-based DPoS)</p>
             </div>
             <div class="u-cell u-cell--medium--1-2">
-                <img class="index-feature__icon" src="/img/feature-speed.svg" alt="" role="presentation">
+                <img class="index-feature__icon" src="/img/feature-speed.svg" width="48" height="48" alt="" role="presentation">
                 <h2 class="index-feature__title u-h3">Blazingly Fast Speed</h2>
                 <p class="index-feature__description">Transactions are final in <a class="link--default" href="https://explorer.minter.network" target="_blank">5 seconds</a> and&nbsp;cost less than a cent. </p>
             </div>
             <div class="u-cell u-cell--medium--1-2">
-                <img class="index-feature__icon" src="/img/feature-open.svg" alt="" role="presentation">
+                <img class="index-feature__icon" src="/img/feature-open.svg" width="48" height="48" alt="" role="presentation">
                 <h2 class="index-feature__title u-h3">Open & Free Code</h2>
                 <p class="index-feature__description">Everything is crowdsourced and published in&nbsp;<a class="link--default" href="https://github.com/MinterTeam" target="_blank" rel="nofollow">GitHub</a> with open licenses.</p>
             </div>
         </div>
         <hr class="hr--divider">
         <div class="">
-            <img class="index-feature__icon" src="/img/feature-community.svg" alt="" role="presentation">
+            <img class="index-feature__icon" src="/img/feature-community.svg" width="48" height="48" alt="" role="presentation">
             <h2 class="index-feature__title u-h3">Helpful Community</h2>
             <p class="index-feature__description">
                 Subscribe to <a class="link--default" href="tg://resolve?domain=MinterTeam" target="_blank" rel="nofollow">Telegram</a>,
