@@ -1,6 +1,7 @@
 <script>
     import {getStatus} from "~/api/status.js";
     import {prettyRound} from "~/assets/utils";
+    import {HISTORY_BLOCK_COUNT, HISTORY_TRANSACTION_COUNT} from '~/assets/variables.js';
 
     export default {
         prettyRound,
@@ -8,6 +9,14 @@
             return {
                 stats: null,
             };
+        },
+        computed: {
+            numberOfBlocks() {
+                return this.stats ? this.stats.numberOfBlocks + HISTORY_BLOCK_COUNT : '';
+            },
+            txTotalCount() {
+                return this.stats ? this.stats.txTotalCount + HISTORY_TRANSACTION_COUNT : '';
+            },
         },
         beforeMount() {
             getStatus()
@@ -34,11 +43,11 @@
             </div>
             <div class="footer__stats-item">
                 <div class="footer__stats-key">Blocks</div>
-                <div class="footer__stats-value">{{ $options.prettyRound(stats.numberOfBlocks) }}</div>
+                <div class="footer__stats-value">{{ $options.prettyRound(numberOfBlocks) }}</div>
             </div>
             <div class="footer__stats-item">
                 <div class="footer__stats-key">Transactions</div>
-                <div class="footer__stats-value">{{ $options.prettyRound(stats.txTotalCount) }}</div>
+                <div class="footer__stats-value">{{ $options.prettyRound(txTotalCount) }}</div>
             </div>
             <div class="footer__stats-item">
                 <div class="footer__stats-key">BIPs mined</div>
