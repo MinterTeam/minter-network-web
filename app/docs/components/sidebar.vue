@@ -155,9 +155,9 @@
     },
     methods: {
       prepareSidebar() {
-        console.log('normalizedPath', this.normalizedPath)
+        /*console.log('normalizedPath', this.normalizedPath)
         console.log(this.$press)
-        console.log(this.$docs)
+        console.log(this.$docs)*/
 
         if (this.$docs.configPerLocale) {
           this._sidebars = this.$docs.sidebars[this.locale]
