@@ -73,11 +73,13 @@
         let result = {};
         const pages = this.pagesByLocale[`/${this.$press.locale}`];
         pages.forEach((path) => {
+
           // remove locale prefix
+          let pathWithoutLocale = path;
           if (this.$press.locale.length) {
-            path = path.replace(`/${this.$press.locale}`, '');
+            pathWithoutLocale = path.replace(`/${this.$press.locale}`, '');
           }
-          const category = path.split('/')[1];
+          const category = pathWithoutLocale.split('/')[1];
           // ensure key exists
           if (!result[category]) {
             result[category] = [];

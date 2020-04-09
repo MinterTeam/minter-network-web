@@ -1,5 +1,4 @@
 // @vue/component
-console.log('mixin')
 export default {
   computed: {
     $press_DEV_ONLY () {

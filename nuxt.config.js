@@ -121,6 +121,6 @@ module.exports = {
             //     ];
             // }
         },
-        transpile: [/es6-promise|\.(?!(?:js|json)$).{1,5}$/i, /^lodash-es/, /^@material/, /^@nuxt-press/],
+        transpile: [/es6-promise|\.(?!(?:js|json)$).{1,5}$/i, /^lodash-es/, /^@material/],
     },
 };
