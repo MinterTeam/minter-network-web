@@ -53,6 +53,7 @@ module.exports = {
     ],
     env: envConfig.error ? {} : envConfig.parsed,
     modules: [
+        ['@nuxt/press'],
         // ['nuxt-i18n', {
         //     locales: [
         //         {

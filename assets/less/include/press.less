@@ -1,0 +1,204 @@
+.sidebar-links {
+    &, & ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    & li {
+        list-style-type: none;
+        margin: 0px;
+        margin-bottom: 3px;
+        padding: 0px;
+        & a.active {
+            display: inline-block;
+            font-weight: bold;
+        }
+    }
+
+    & .sidebar-title {
+        display: inline-block;
+        margin: 1rem 0 0.7rem 0;
+    }
+
+    & .sidebar-heading {
+        margin: 0;
+    }
+
+    & .sidebar-depth-0 > li,
+    &.sidebar-auto .sidebar-depth-1 > li {
+        margin: 0 0 0.3rem 0;
+    }
+
+    & li.sidebar-item,
+    & li.sidebar-section .sidebar-heading {
+        padding-left: 0.7rem;
+    }
+
+    & li li.sidebar-item,
+    & li li.sidebar-section .sidebar-heading {
+        padding-left: 1.4rem;
+    }
+
+    //& li li li.sidebar-item,
+    //& li li li.sidebar-section .sidebar-heading {
+    //    padding-left: 2.1rem;
+    //}
+    //
+    //& li li li li.sidebar-item {
+    //    padding-left: 2.8rem;
+    //}
+}
+
+.docs-content {
+    & code {
+        font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+        font-size: 0.8em;
+        //color: @c-main;
+        font-weight: bold;
+        background-color: #faf8f5;
+        padding: 0.2em;
+    }
+
+    & a {
+        .link--default();
+        & code {
+            background: none;
+        }
+    }
+
+    & article {
+        line-height: 1.6rem;
+        margin: 0 auto;
+        max-width: 600px;
+
+        & h1 {
+            font-size: 2rem;
+        }
+        & h2 {
+            font-size: 1.8rem;
+        }
+        & h3 {
+            font-size: 1.6rem;
+        }
+
+        & h1, & h2, & h3, & h4, & h5, & h6 {
+            margin-top: 40px;
+        }
+
+        & h2 {
+            &:not(:first-of-type) {
+                margin-top: 70px;
+            }
+        }
+
+        & h3 {
+            & span {
+                color: #2f495e !important;
+                text-shadow: 1px 1px #fff;
+                margin-bottom: 0px;
+                border-bottom: 2px solid #2f495e;
+            }
+
+            &:not(:first-of-type) {
+                margin-top: 70px;
+            }
+        }
+
+        & blockquote {
+            font-style: italic;
+            font-size: 0.9em;
+            margin-left: 0px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            padding-left: 10px;
+            margin-right: 0px;
+            border-left: 3px solid #555555;
+        }
+
+        /* prismjs override */
+        & pre,
+        & pre[class*="language-"] {
+            padding: 15px;
+            background-color: #faf8f5;
+            font-size: 0.9em;
+            & > code {
+                padding: 0px;
+                background: transparent;
+            }
+        }
+
+        & table {
+            table-layout: fixed;
+            width: 100%;
+            border-collapse: collapse;
+            & th {
+                font-weight: 600;
+            }
+            & td,
+            & th {
+                border: 1px solid #dfe2e5;
+                padding: 6px 13px;
+                overflow-x: auto;
+                & code {
+                    font-size: 0.7em;
+                }
+            }
+            & tr {
+                background-color: #fff;
+                border-top: 1px solid #c6cbd1;
+            }
+            & tr:nth-child(2n) {
+                background-color: #f6f8fa;
+            }
+        }
+
+        & ol, & ul {
+            list-style-position: outside;
+            margin-left: 1rem;
+            padding-left: 0px;
+        }
+    }
+}
+@media (max-width: @breakpoint-large-down) {
+    .docs-content {
+
+        & article {
+            & h1 {
+                font-size: 1.2rem;
+            }
+            & h2 {
+                font-size: 1rem;
+            }
+            & h3 {
+                font-size: 1.6rem;
+            }
+
+            & h1, & h2, & h3, & h4, & h5, & h6 {
+                margin-top: 20px;
+            }
+
+            & h2 {
+                &:not(:first-of-type) {
+                    margin-top: 50px;
+                }
+            }
+
+            & h3 {
+                &:not(:first-of-type) {
+                    margin-top: 50px;
+                }
+            }
+
+            & code {
+                font-size: 0.8em;
+            }
+            /* prismjs override */
+            & pre,
+            & pre[class*="language-"] {
+                & > code {
+                    font-size: 0.7em !important;
+                }
+            }
+        }
+    }
+}

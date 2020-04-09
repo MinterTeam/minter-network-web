@@ -1,4 +1,6 @@
 // normalize-css подключается с помощью postcss-normalize
+@import (inline) '../../node_modules/wysiwyg.css/wysiwyg.css';
+@import (inline) '../../node_modules/@nuxt-press/core/src/prism.css';
 @import (inline) '../../node_modules/@material/snackbar/dist/mdc.snackbar.css';
 @import (inline) '../../node_modules/@material/menu/dist/mdc.menu.css';
 @import (inline) '../../node_modules/@material/menu-surface/dist/mdc.menu-surface.css';
@@ -7,6 +9,7 @@
 @import "include/utils";
 @import "include/general";
 @import "include/layout";
+@import "include/press";
 
 
 
@@ -21,7 +24,7 @@
 
 // common
 .main-wrap {display: flex; flex-direction: column; min-height: 100vh; position: relative;}
-.main-content {width: 100%; flex-grow: 2; overflow: hidden;}
+.main-content {width: 100%; flex-grow: 2;}
 
 
 // nuxt page transition
@@ -90,24 +93,124 @@
 
 
 // header
-@header-height: 68px;
+@header-height: 56px;
+@header-height-large: 80px;
+@header-link-padding: ((@header-height-large - 30px) / 2);
+@header-link-margin: 30px;
+@header-link-underline-height: 4px;
+.header-link-after() {content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: currentColor;}
 .header {
-    position: relative; /* fallback */ /*position: sticky; left: 0; right: 0; top: 0;*/  z-index: 10; height: @header-height;
+    position: relative; /* fallback */ z-index: 10; min-height: @header-height;
     // required for offcanvas menu
 }
-.header--white {box-shadow: 0 2px 40px rgba(0,0,0,0.1);}
-.header__container {display: flex; align-items: center; flex-wrap: wrap; justify-content: space-between; top: 0; min-height: 100%;}
-.header__logo {margin-right: 24px;}
-.header__logo-image {display: block; font-size: 0;}
-.header__wallet-button {margin-left: 24px;}
-.header__language {margin-right: auto;}
-.header__language-button {display: flex; align-items: center; text-transform: uppercase; font-size: 16px; font-weight: 700; letter-spacing: 1px;}
-.header__language-button-icon {font-size: 0; margin-right: 8px;}
-.header__language-text {margin-right: 16px;}
-@media (min-width: @breakpoint-small-up) {
-    .header__language {margin-left: auto; margin-right: 0;}
-
+.header--card {position: absolute;}
+.header__container {
+    display: flex; align-items: center; flex-wrap: wrap; justify-content: space-between; top: 0;
+    &::before {content: ''; position: absolute; left: 0; top: 0; right: 0; height: @header-height; z-index: -1; background: #fff; box-shadow: 0 4px 6px @c-border;}
 }
+.header__container--card {
+    &::before {content: none;}
+}
+.header__logo {padding: 12px 0;}
+.header__logo-image {display: block; font-size: 0; width: 32px; height: 32px;}
+.header__menu {display: none; flex-direction: column; }
+.header__link {
+    padding: 18px 0 16px; position: relative; font-size: 16px; line-height: 20px; font-weight: 700; text-decoration: none;
+    &::after {.header-link-after(); transition: 0.15s;}
+    &.is-active {
+        color: @c-main;
+        &::after {height: @header-link-underline-height; background: @c-main;}
+    }
+}
+.header__controls {display: flex; align-items: center;}
+// кнопка вешает .menu- классы на body
+.header--menu-active {
+    &::after {content: ''; background: #fff; position: absolute; left: 0; top: 0; right: 0; bottom: 0; z-index: -2; }
+    .header__menu {display: flex; padding-top: 10px; padding-bottom: 20px; order: 2; width: 100%;}
+}
+.header--menu-animate-in {
+    animation: slide-header-container both 0.25s;
+    &::after {animation: fade-in both 0.25s;}
+    .header__menu {animation: fade-in both 0.4s 0.05s;}
+    .header__link {animation: slide-up both 0.25s 0.05s}
+    .header__link:nth-child(2) {animation-duration: 0.28s;}
+    .header__link:nth-child(3) {animation-duration: 0.31s;}
+    .header__link:nth-child(4) {animation-duration: 0.34s;}
+    .header__link:nth-child(5) {animation-duration: 0.37s;}
+    .header__link:nth-child(6) {animation-duration: 0.4s;}
+}
+.header--menu-animate-out {
+    animation: slide-header-container reverse both 0.2s;;
+    &::after {animation: fade-out both 0.25s 0.1s;}
+    .header__menu {animation: fade-out both 0.2s;}
+}
+@menu-icon-size: 30px;
+@menu-icon-transition: .25s;
+@menu-icon-color: currentColor;
+.header__offcanvas-button {
+    display: block; width: @menu-icon-size; height: @menu-icon-size; position: relative; text-align: center; transition: 0.25s; margin-left: 20px;
+    .is-modal-opened & {opacity: 0;}
+}
+.header__offcanvas-icon-wrap {width: 40px; height: 40px; position: absolute; left: 50%; top: 50%; margin-top: -20px; margin-left: -20px;}
+.header__offcanvas-icon {
+    transition: @menu-icon-transition; background: @menu-icon-color; position: absolute; height: 3px; width: @menu-icon-size; left: 50%; top: 50%; margin-left: -@menu-icon-size / 2; margin-top: -3px; font-size: 0;
+    &:before, &:after {transition: @menu-icon-transition cubic-bezier(0.175, 0.885, 0.32, 1.275); background: @menu-icon-color; height: 100%; width: 100%; content: ''; position: absolute; left: 0;}
+    &:before {top: 10px;}
+    &:after {top: -10px;}
+    .header__offcanvas-button.is-active & {
+        background-color: transparent;
+        &:before, &:after {transform-origin: 50% 50%; top: 0 !important;}
+        &:before {transform: rotate3d(0, 0, 1, 45deg);}
+        &:after {transform: rotate3d(0, 0, 1, -45deg);}
+    }
+}
+@media (min-width: @breakpoint-small-up) {
+    .header__logo {margin-right: 70px;}
+}
+@media (min-width: @breakpoint-large-up) {
+    .header {min-height: @header-height-large;}
+    .header__container {
+        &::before {height: @header-height-large;}
+    }
+    .header__logo {padding: 22px 0;}
+    .header__logo-image {width: auto; height: auto;}
+    .header__menu {
+        display: flex; flex-direction: row; flex-grow: 2;
+        && {animation: none;}
+    }
+    .header__link {
+        font-size: 19px; line-height: 30px; padding: @header-link-padding 16px;
+        &::after {height: @header-link-underline-height; opacity: 0;}
+        &:hover, &:focus {background: @c-border;}
+        &:active {background: fade(@c-main, 20%);}
+        &.is-active::after {opacity: 1;}
+        //&+& {margin-left: @header-link-margin;}
+    }
+    .header__offcanvas-button {display: none;}
+}
+@media (min-width: @breakpoint-xlarge-up) {
+    .language-switch {margin-right: 80px;}
+}
+
+
+
+//@header-height: 68px;
+//.header {
+//    position: relative; /* fallback */ /*position: sticky; left: 0; right: 0; top: 0;*/  z-index: 10; height: @header-height;
+//    // required for offcanvas menu
+//}
+//.header--white {box-shadow: 0 2px 40px rgba(0,0,0,0.1);}
+//.header__container {display: flex; align-items: center; flex-wrap: wrap; justify-content: space-between; top: 0; min-height: 100%;}
+//.header__logo {margin-right: 24px;}
+//.header__logo-image {display: block; font-size: 0;}
+//.header__wallet-button {margin-left: 24px;}
+//.header__language {margin-right: auto;}
+//.header__language-button {display: flex; align-items: center; text-transform: uppercase; font-size: 16px; font-weight: 700; letter-spacing: 1px;}
+//.header__language-button-icon {font-size: 0; margin-right: 8px;}
+//.header__language-text {margin-right: 16px;}
+//@media (min-width: @breakpoint-small-up) {
+//    .header__language {margin-left: auto; margin-right: 0;}
+//}
 
 
 
@@ -132,6 +235,31 @@
 .error__title {margin-bottom: 16px;}
 .error__description {font-size: 20px; font-weight: 700; text-transform: uppercase; max-width: 320px;}
 .error__link {font-size: 24px; font-weight: 700;}
+
+
+
+/* DOCS */
+html.layout--docs {background: var(--underlay-bg-color);}
+.main-wrap--docs {max-width: 1024px; margin: 0 auto; box-shadow: 0 0 14px var(--shadow-color); background: var(--body-bg-color);}
+
+.docs-aside {
+    display: flex;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    //transition: box-shadow .2s ease-out;
+    //background: var(--elements-bg-color);
+    position: relative;
+    z-index: 2;
+}
+.docs-aside__sticky {position: sticky; top: 0; max-height: 100vh/*calc(100vh - @header-height)*/; overflow-y: auto; padding: @container-padding;}
+.docs-aside__menu {}
+.docs-aside__menu-link {
+    &.is-active {font-weight: 700;}
+}
+.docs-content {background: var(--docs-content-bg-color); padding: 50px 0;}
+//@media (min-width: @breakpoint-large-up) {
+//    .docs-aside__sticky {top: @header-height-large;}
+//}
+
 
 
 /* INDEX intro */

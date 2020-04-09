@@ -35,6 +35,50 @@
 }
 
 
+
+:root {
+    --text-color: @c-black;
+    --text-muted-color: @c-black-light;
+    --border-color: @c-border;
+    --border-dense-color: #e4e4e4;
+    --body-bg-color: @body-bg-color;
+    --docs-content-bg-color: #fff5f2;
+    --content-embose-bg-color: #fff;
+    --underlay-bg-color: #eee;
+    --elements-bg-color: #fff;
+    //--violet-color: @c-violet;
+    //--violet-text-color: @c-violet-text;
+    --shadow-color: rgba(0,0,0, 0.1);
+    --shadow-color-2: rgba(0,0,0, 0.14);
+    --shadow-color-3: rgba(0,0,0, 0.2);
+
+    // mdc
+    --card-border-color: var(--border-color);
+    --button-disabled-color: rgba(0,0,0,0.37);
+}
+
+[data-theme="dark"] {
+    --text-color: #fff  ;
+    --text-muted-color: #999;
+    --border-color: @c-border-dark;
+    --border-dense-color: #3c3c3c;
+    --body-bg-color: #1b1b1b;
+    --docs-content-bg-color: #fff5f2;
+    --content-embose-bg-color: #111;
+    --underlay-bg-color: #292929;
+    --elements-bg-color: @c-black;
+    //--violet-color: #a5a6d3;
+    //--violet-text-color: #a5a6d3;
+    --shadow-color: rgba(0,0,0, 0.2);
+    --shadow-color-2: rgba(0,0,0, 0.3);
+    --shadow-color-3: rgba(0,0,0, 0.35);
+
+    // mdc
+    --card-border-color: transparent;
+    --button-disabled-color: rgba(255,255,255,0.37);
+}
+
+
 *, *::before, *::after {box-sizing: border-box;}
 html {
     overflow-y: scroll; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; -webkit-overflow-scrolling: touch;

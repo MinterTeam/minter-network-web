@@ -1,7 +1,13 @@
 User-agent: *
-Disallow:
+Disallow: /docs
+Disallow: /tools
+Disallow: /solutions
+Disallow: /ru
 
 
 User-agent: Yandex
-Disallow:
+Disallow: /docs
+Disallow: /tools
+Disallow: /solutions
+Disallow: /ru
 Host: www.minter.network
