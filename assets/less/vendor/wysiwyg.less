@@ -33,8 +33,9 @@
 @table-thead: @grey-dark;
 
 // Spacing
-@line-height: 1.6;
-@margin: 1.4em;
+@line-height: 1.533;
+@margin: 20px;
+@list-margin: 6px;
 
 // Typography
 @family-wysiwyg: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
@@ -44,7 +45,7 @@
 @weight-headings: 700;
 
 // Options
-@closer-lists: false;
+@closer-lists: true;
 @custom-colors: false;
 @custom-fonts: false;
 @font-smoothing: false;
@@ -79,7 +80,7 @@
 
 // Styles
 .wysiwyg {
-    line-height: @line-height;
+    //line-height: @line-height;
 
     & when (@custom-colors) {
         color: @text;
@@ -95,6 +96,7 @@
     }
 
     // Inlines
+    /*
     a {
         text-decoration: none;
 
@@ -117,6 +119,7 @@
             }
         }
     }
+    */
 
     abbr {
         border-bottom: 1px dotted;
@@ -138,6 +141,8 @@
 
     img {
         vertical-align: text-bottom;
+        max-width: 100%;
+        //&:only-child {margin: 4px 0;}
     }
 
     ins {
@@ -153,13 +158,13 @@
         font-size: 0.8em;
     }
 
-    strong {
-        font-weight: @weight-strong;
-
-        & when (@custom-colors) {
-            color: @text-strong;
-        }
-    }
+    //strong {
+    //    font-weight: @weight-strong;
+    //
+    //    & when (@custom-colors) {
+    //        color: @text-strong;
+    //    }
+    //}
 
     sub,
     sup {
@@ -191,8 +196,10 @@
 
     // Headings
     h1, h2, h3, h4, h5, h6 {
-        font-weight: @weight-headings;
-        line-height: 1.2;
+        //font-weight: @weight-headings;
+        //line-height: 1.2;
+        margin-bottom: 16px;
+        margin-top: 32px;
 
         &:first-child {
             margin-top: 0;
@@ -202,34 +209,34 @@
             color: @text-headings;
         }
     }
-
-    h1 {
-        .heading(2.4em, true);
-
-        line-height: 1;
-    }
-
-    h2 {
-        .heading(1.6em, true, true);
-
-        line-height: 1.1;
-    }
-
-    h3 {
-        .heading(1.3em);
-    }
-
-    h4 {
-        .heading(1.2em);
-    }
-
-    h5 {
-        .heading(1.1em);
-    }
-
-    h6 {
-        .heading(1em);
-    }
+    //
+    //h1 {
+    //    .heading(2.4em, true);
+    //
+    //    line-height: 1;
+    //}
+    //
+    //h2 {
+    //    .heading(1.6em, true, true);
+    //
+    //    line-height: 1.1;
+    //}
+    //
+    //h3 {
+    //    .heading(1.3em);
+    //}
+    //
+    //h4 {
+    //    .heading(1.2em);
+    //}
+    //
+    //h5 {
+    //    .heading(1.1em);
+    //}
+    //
+    //h6 {
+    //    .heading(1em);
+    //}
 
     // Paragraphs
     & when (@closer-lists) {
@@ -237,7 +244,7 @@
             & + dl,
             & + ol,
             & + ul {
-                margin-top: -@margin;
+                margin-top: 16px - @margin;
             }
         }
     }
@@ -252,6 +259,8 @@
         list-style-position: outside;
         margin-left: @margin;
     }
+
+    li + li, li li:first-child {margin-top: @list-margin;}
 
     ol {
         list-style-type: decimal;
@@ -320,8 +329,8 @@
     kbd,
     samp,
     pre {
-        -moz-osx-font-smoothing: auto;
-        -webkit-font-smoothing: auto;
+        //-moz-osx-font-smoothing: auto;
+        //-webkit-font-smoothing: auto;
         background-color: @background-code;
         color: @text;
         font-size: 0.9em;
@@ -352,6 +361,7 @@
             background: none;
             font-size: 1em;
             line-height: 1em;
+            padding: 0;
         }
     }
 

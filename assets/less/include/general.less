@@ -145,15 +145,25 @@ textarea {resize: none;}
 h1, h2, h3, h4, h5, h6 {.u-h();}
 //.h-title {font-size: 24px; text-transform: uppercase; margin-bottom: 12px;}
 .u-h-uppercase() {font-size: 12px; line-height: 16px; text-transform: uppercase; font-weight: 700; letter-spacing: 1.5px;}
-.u-h1 {font-size: 32px; line-height: 1.22; font-weight: 800;}
-.u-h2 {font-size: 24px;}
-.u-h3 {font-size: 18px; line-height: 1.21;}
-.u-h5 {font: inherit; font-weight: 600;}
-@media (min-width: @breakpoint-small-up) {
-    .u-h1 {font-size: 49px; line-height: 1.2; letter-spacing: -0.33px}
-    .u-h2 {font-size: 29px;}
-    .u-h3 {font-size: 19px;}
+.u-h1 {
+    font-size: 32px; line-height: 1.22; font-weight: 800;
+    @media (min-width: @breakpoint-small-up) {
+        font-size: 49px; line-height: 1.2; letter-spacing: -0.33px
+    }
 }
+.u-h2 {
+    font-size: 24px;
+    @media (min-width: @breakpoint-small-up) {
+        font-size: 29px;
+    }
+}
+.u-h3 {
+    font-size: 18px; line-height: 1.21;
+    @media (min-width: @breakpoint-small-up) {
+        font-size: 19px;
+    }
+}
+.u-h5 {font: inherit; font-weight: 600;}
 
 
 hr {border: none; border-top: 1px solid @c-border;}
