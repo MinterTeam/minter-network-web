@@ -2,7 +2,7 @@
   <ul
     v-show="props.visible"
     :hidden="!props.visible"
-    class="sidebar-links"
+    class="sidebar-links docs-aside__page-nav"
     :class="`sidebar-depth-${props.depth}`"
   >
     <component :is="injections.components.SidebarSection"
@@ -14,6 +14,7 @@
       :active-page="props.activePage"
       :data="sectionData"
       :depth="props.depth"
+      :docsPrefix="props.docsPrefix"
     />
   </ul>
 </template>
@@ -36,6 +37,10 @@ export default {
     depth: {
       type: Number,
       default: 0
+    },
+    docsPrefix: {
+      type: String,
+      default: '',
     },
     visible: {
       type: Boolean,

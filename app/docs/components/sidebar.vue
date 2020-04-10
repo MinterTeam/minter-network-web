@@ -6,16 +6,18 @@
           aria-label="Main navigation"
   >
     <div class="docs-aside__sticky sidebar">
-      <div v-for="(page, path) in sidebarPages">
-        <nuxt-link class="docs-aside__menu-link" :to="path" :class="{'is-active': path === normalizedPath}">
-          {{ page.title }}
-        </nuxt-link>
-        <br>
+      <div class="docs-aside__page" v-for="(page, path) in sidebarPages">
+        <div class="docs-aside__page-link">
+          <nuxt-link class="docs-aside__menu-link" :to="path" :class="{'is-active': path === normalizedPath}">
+            {{ page.title }}
+          </nuxt-link>
+        </div>
         <sidebar-sections
                 v-if="path === normalizedPath"
                 :data="sidebarH2"
                 :active-path="activePath"
                 :active-page="activePageHash"
+                :docsPrefix="$docs && $docs.prefix"
         />
       </div>
     </div>

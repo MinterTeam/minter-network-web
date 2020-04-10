@@ -1,32 +1,7 @@
 <template>
-  <li :class="sectionClass">
-    <section
-      v-if="createChildSection"
-      class="section">
-      <p class="sidebar-heading">
-        <nuxt-link
-          v-if="url"
-          class="sidebar-link"
-          :class="{ active: isActive  }"
-          :to="fullUrl">
-          {{ name }}
-        </nuxt-link>
-        <span v-else>{{ name }}</span>
-      </p>
-
-      <component :is="components.SidebarSections"
-        :active-path="activePath"
-        :active-page="activePage"
-        :data="children"
-        :depth="depth + 1"
-        :visible="showChildSection"
-        @active="setChildActive"
-      />
-    </section>
+  <li class="sidebar-item" :class="{ 'is-active': isActive }">
     <nuxt-link
-      v-else
       class="sidebar-link"
-      :class="{ active: isActive }"
       :to="fullUrl">
       {{ name }}
     </nuxt-link>
@@ -34,11 +9,7 @@
 </template>
 
 <script>
-import docsMixin from 'press/docs/mixins/docs'
-
-export default {
-  mixins: [docsMixin],
-  inject: ['components'],
+  export default {
   props: {
     activePath: {
       type: String
@@ -53,16 +24,15 @@ export default {
     depth: {
       type: Number,
       default: 0
-    }
+    },
+    docsPrefix: {
+      type: String,
+      default: '',
+    },
   },
   created() {
     if (this.isActive) {
       this.$emit('active', this.isActive, this.name)
-    }
-  },
-  data() {
-    return {
-      activeChilds: 0
     }
   },
   computed: {
@@ -73,10 +43,7 @@ export default {
       return this.data[2]
     },
     fullUrl() {
-      return `${this.$docs.prefix}${this.url}`
-    },
-    children() {
-      return this.data[3]
+      return `${this.docsPrefix}${this.url}`
     },
     isActive() {
       let isActive = this.url === this.activePath
@@ -87,34 +54,11 @@ export default {
 
       return isActive
     },
-    anyActive() {
-      return this.isActive || this.activeChilds > 0
-    },
-    createChildSection() {
-      // const extraDepth = this.$page.meta.sidebar === 'auto' ? 0 : 1
-      // // console.log(this.url, this.depth, this.$page.meta.sidebarDepth, extraDepth)
-      // if (this.depth < this.$page.meta.sidebarDepth + extraDepth) {
-      //   return !!this.children && this.children.length > 0
-      // }
-
-      return false
-    },
-    showChildSection() {
-      return !this.depth || this.$page.meta.sidebar === 'auto' || this.anyActive
-    },
-    sectionClass() {
-      return this.createChildSection ? 'sidebar-section' : 'sidebar-item'
-    }
   },
   watch: {
     isActive(value) {
       this.$emit('active', value, this.name)
     }
   },
-  methods: {
-    setChildActive(hasActiveChild, name) {
-      this.activeChilds += hasActiveChild ? 1 : -1
-    }
-  }
 }
 </script>

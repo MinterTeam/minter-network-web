@@ -89,12 +89,14 @@ export default {
     },
     startObserver() {
       const elements = `
+        article h1,
         article h2
       `
 
       const initialId = this.$route.hash.substr(1)
 
       const observedCallback = (target) => {
+        console.log({target})
         const targetId = target.id ? `#${target.id}` : ``
         let targetHeading = `${this.$route.path}${targetId}`
         let heading = document.querySelector(`.sidebar a[href="${targetHeading}"`)
@@ -126,6 +128,7 @@ export default {
         vm: this,
         elements,
         initialId,
+        throttle: 50,
         options: {  }
       }, observedCallback)
     }

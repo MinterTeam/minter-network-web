@@ -4,40 +4,40 @@
         padding: 0;
     }
 
-    & li {
-        list-style-type: none;
-        margin: 0px;
-        margin-bottom: 3px;
-        padding: 0px;
-        & a.active {
-            display: inline-block;
-            font-weight: bold;
-        }
-    }
+    //& li {
+    //    list-style-type: none;
+    //    margin: 0px;
+    //    margin-bottom: 3px;
+    //    padding: 0px;
+    //    & a.active {
+    //        display: inline-block;
+    //        font-weight: bold;
+    //    }
+    //}
 
-    & .sidebar-title {
-        display: inline-block;
-        margin: 1rem 0 0.7rem 0;
-    }
+    //& .sidebar-title {
+    //    display: inline-block;
+    //    margin: 1rem 0 0.7rem 0;
+    //}
+    //
+    //& .sidebar-heading {
+    //    margin: 0;
+    //}
+    //
+    //& .sidebar-depth-0 > li,
+    //&.sidebar-auto .sidebar-depth-1 > li {
+    //    margin: 0 0 0.3rem 0;
+    //}
 
-    & .sidebar-heading {
-        margin: 0;
-    }
-
-    & .sidebar-depth-0 > li,
-    &.sidebar-auto .sidebar-depth-1 > li {
-        margin: 0 0 0.3rem 0;
-    }
-
-    & li.sidebar-item,
-    & li.sidebar-section .sidebar-heading {
-        padding-left: 0.7rem;
-    }
-
-    & li li.sidebar-item,
-    & li li.sidebar-section .sidebar-heading {
-        padding-left: 1.4rem;
-    }
+    //& li.sidebar-item,
+    //& li.sidebar-section .sidebar-heading {
+    //    padding-left: 0.7rem;
+    //}
+    //
+    //& li li.sidebar-item,
+    //& li li.sidebar-section .sidebar-heading {
+    //    padding-left: 1.4rem;
+    //}
 
     //& li li li.sidebar-item,
     //& li li li.sidebar-section .sidebar-heading {
@@ -47,6 +47,13 @@
     //& li li li li.sidebar-item {
     //    padding-left: 2.8rem;
     //}
+}
+
+.sidebar-item {
+    padding-left: 20px; list-style-type: none; margin-left: -2px; border-left: 2px solid fade(@c-main, 0%); transition: 0.2s;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+    &+& {margin-top: 16px;}
+    &.is-active {font-weight: 600; border-color: @c-main}
 }
 
 .docs-content {

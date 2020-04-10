@@ -166,7 +166,7 @@
     }
 }
 @media (min-width: @breakpoint-small-up) {
-    .header__logo {margin-right: 70px;}
+    //.header__logo {margin-right: 70px;}
 }
 @media (min-width: @breakpoint-large-up) {
     .header {min-height: @header-height-large;}
@@ -177,6 +177,8 @@
     .header__logo-image {width: auto; height: auto;}
     .header__menu {
         display: flex; flex-direction: row; flex-grow: 2;
+        // 25% - aside width, 36px - logo width, 75% - content, 640px - article
+        margin-left: calc(100vh * 0.25 - 36px - @container-padding + (100vh * 0.75 - 640px) / 2);
         && {animation: none;}
     }
     .header__link {
@@ -188,6 +190,9 @@
         //&+& {margin-left: @header-link-margin;}
     }
     .header__offcanvas-button {display: none;}
+}
+@media (min-width: @main-wrap-width) {
+    .header__menu {margin-left: calc(256px - 36px - @container-padding + (768px - 640px) / 2);}
 }
 @media (min-width: @breakpoint-xlarge-up) {
     .language-switch {margin-right: 80px;}
@@ -240,11 +245,11 @@
 
 
 /* DOCS */
+@main-wrap-width: 1024px;
 html.layout--docs {background: var(--underlay-bg-color);}
-.main-wrap--docs {max-width: 1024px; margin: 0 auto; box-shadow: 0 0 14px var(--shadow-color); background: var(--body-bg-color);}
+.main-wrap--docs {max-width: @main-wrap-width; margin: 0 auto; box-shadow: 0 0 14px var(--shadow-color); background: var(--body-bg-color);}
 
 .docs-aside {
-    display: flex;
     box-shadow: 0 2px 5px var(--shadow-color);
     //transition: box-shadow .2s ease-out;
     //background: var(--elements-bg-color);
@@ -252,9 +257,14 @@ html.layout--docs {background: var(--underlay-bg-color);}
     z-index: 2;
 }
 .docs-aside__sticky {position: sticky; top: 0; max-height: 100vh/*calc(100vh - @header-height)*/; overflow-y: auto; padding: @container-padding;}
-.docs-aside__menu {}
+.docs-aside__page {
+    font-size: 16px; line-height: 20px;
+    &+& {margin-top: 20px;}
+}
+.docs-aside__page-link {display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;}
+.docs-aside__page-nav {margin-left: 16px; margin-top: 16px; border-left: 2px solid fade(@c-main, 20%);}
 .docs-aside__menu-link {
-    &.is-active {font-weight: 700;}
+    &.is-active {font-weight: 600;}
 }
 .docs-content {background: var(--docs-content-bg-color); padding: 50px 0;}
 //@media (min-width: @breakpoint-large-up) {
