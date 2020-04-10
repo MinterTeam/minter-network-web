@@ -1,5 +1,5 @@
 // normalize-css подключается с помощью postcss-normalize
-@import (inline) '../../node_modules/wysiwyg.css/wysiwyg.css';
+//@import (inline) '../../node_modules/wysiwyg.css/wysiwyg.css';
 @import (inline) '../../node_modules/@nuxt-press/core/src/prism.css';
 @import (inline) '../../node_modules/@material/snackbar/dist/mdc.snackbar.css';
 @import (inline) '../../node_modules/@material/menu/dist/mdc.menu.css';
@@ -9,7 +9,8 @@
 @import "include/utils";
 @import "include/general";
 @import "include/layout";
-@import "include/press";
+@import "vendor/wysiwyg";
+@import "vendor/press";
 
 
 

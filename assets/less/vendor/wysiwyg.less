@@ -1,0 +1,447 @@
+/*! wysiwyg.css v0.0.3 | MIT License | github.com/jgthms/wysiwyg.css */
+// Colours
+@blue: #2478ff;
+@pink: #ff2450;
+@purple: #9524ff;
+
+@grey-light: hsl(0, 0%, 50%);
+@grey: hsl(0, 0%, 20%);
+@grey-dark: hsl(0, 0%, 10%);
+
+@background: hsl(0, 0%, 95%);
+@border: hsl(0, 0%, 90%);
+
+@text: @grey;
+@text-code: @pink;
+@text-strong: @grey-dark;
+@text-light: @grey-light;
+@text-headings: @grey-dark;
+@text-blockquote: @grey-light;
+
+@link: @blue;
+@link-hover: @blue;
+@link-visited: @purple;
+
+@background-code: @background;
+@background-ins: lime;
+@background-mark: yellow;
+
+@table-background: hsl(0, 0%, 100%);
+@table-background-even: hsl(0, 0%, 98%);
+@table-background-hover: hsl(0, 0%, 96%);
+@table-border: @border;
+@table-thead: @grey-dark;
+
+// Spacing
+@line-height: 1.6;
+@margin: 1.4em;
+
+// Typography
+@family-wysiwyg: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+@family-code: "Inconsolata", "Consolas", "Monaco", monospace;
+
+@weight-strong: 700;
+@weight-headings: 700;
+
+// Options
+@closer-lists: false;
+@custom-colors: false;
+@custom-fonts: false;
+@font-smoothing: false;
+@heading-borders: false;
+@show-underline: false;
+@table-hover: false;
+@table-striped: false;
+@visited-links: false;
+
+// Mixins
+.cell(@font-size) {
+    font-size: @font-size;
+    padding: @margin / 2 / @font-size;
+}
+
+.heading(@font-size, @with-border: false, @top-space: false) {
+    font-size: @font-size;
+    margin-bottom: @margin / @font-size;
+
+    & when (@top-space) {
+        margin-top: @margin * 2 / @font-size;
+    }
+    & when not (@top-space) {
+        margin-top: @margin / @font-size;
+    }
+
+    & when ((@heading-borders) and (@with-border)) {
+        border-bottom: 1px solid @border;
+        padding-bottom: @margin / @font-size;
+    }
+}
+
+// Styles
+.wysiwyg {
+    line-height: @line-height;
+
+    & when (@custom-colors) {
+        color: @text;
+    }
+
+    & when (@custom-fonts) {
+        font-family: @family-wysiwyg;
+    }
+
+    & when (@font-smoothing) {
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    // Inlines
+    a {
+        text-decoration: none;
+
+        & when (@custom-colors) {
+            color: @link;
+
+            & when (@visited-links) {
+                &:visited {
+                    color: @link-visited;
+                }
+            }
+        }
+
+        & when (@show-underline) {
+            border-bottom: 1px solid;
+        }
+        & when not (@heading-borders) {
+            &:hover {
+                border-bottom: 1px solid;
+            }
+        }
+    }
+
+    abbr {
+        border-bottom: 1px dotted;
+        cursor: help;
+    }
+
+    cite {
+        font-style: italic;
+    }
+
+    hr {
+        background: @border;
+        border: none;
+        display: block;
+        height: 1px;
+        margin-bottom: @margin;
+        margin-top: @margin;
+    }
+
+    img {
+        vertical-align: text-bottom;
+    }
+
+    ins {
+        background-color: @background-ins;
+        text-decoration: none;
+    }
+
+    mark {
+        background-color: @background-mark;
+    }
+
+    small {
+        font-size: 0.8em;
+    }
+
+    strong {
+        font-weight: @weight-strong;
+
+        & when (@custom-colors) {
+            color: @text-strong;
+        }
+    }
+
+    sub,
+    sup {
+        font-size: 0.8em;
+    }
+
+    sub {
+        vertical-align: sub;
+    }
+
+    sup {
+        vertical-align: super;
+    }
+
+    // Blocks
+    p, dl, ol, ul, blockquote, pre, table {
+        margin-bottom: @margin;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    p {
+        &:empty {
+            display: none;
+        }
+    }
+
+    // Headings
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: @weight-headings;
+        line-height: 1.2;
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        & when (@custom-colors) {
+            color: @text-headings;
+        }
+    }
+
+    h1 {
+        .heading(2.4em, true);
+
+        line-height: 1;
+    }
+
+    h2 {
+        .heading(1.6em, true, true);
+
+        line-height: 1.1;
+    }
+
+    h3 {
+        .heading(1.3em);
+    }
+
+    h4 {
+        .heading(1.2em);
+    }
+
+    h5 {
+        .heading(1.1em);
+    }
+
+    h6 {
+        .heading(1em);
+    }
+
+    // Paragraphs
+    & when (@closer-lists) {
+        p {
+            & + dl,
+            & + ol,
+            & + ul {
+                margin-top: -@margin;
+            }
+        }
+    }
+
+    // Lists
+    dd {
+        margin-left: @margin;
+    }
+
+    ol,
+    ul {
+        list-style-position: outside;
+        margin-left: @margin;
+    }
+
+    ol {
+        list-style-type: decimal;
+
+        ol {
+            list-style-type: lower-alpha;
+
+            ol {
+                list-style-type: lower-roman;
+
+                ol {
+                    list-style-type: lower-greek;
+
+                    ol {
+                        list-style-type: decimal;
+
+                        ol {
+                            list-style-type: lower-alpha;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    ul {
+        list-style-type: disc;
+
+        ul {
+            list-style-type: circle;
+
+            ul {
+                list-style-type: square;
+
+                ul {
+                    list-style-type: circle;
+
+                    ul {
+                        list-style-type: disc;
+
+                        ul {
+                            list-style-type: circle;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Blockquote
+    blockquote {
+        border-left: 4px solid @border;
+        padding: 0.6em 1.2em;
+
+        & when (@custom-colors) {
+            color: @text-blockquote;
+        }
+
+        p {
+            margin-bottom: 0;
+        }
+    }
+
+    // Code
+    code,
+    kbd,
+    samp,
+    pre {
+        -moz-osx-font-smoothing: auto;
+        -webkit-font-smoothing: auto;
+        background-color: @background-code;
+        color: @text;
+        font-size: 0.9em;
+
+        & when (@custom-fonts) {
+            font-family: @family-code;
+        }
+    }
+
+    code,
+    kbd,
+    samp {
+        border-radius: 3px;
+        line-height: @line-height / 0.9;
+        padding: 0.1em 0.4em 0.2em;
+        vertical-align: baseline;
+
+        & when (@custom-colors) {
+            color: @text-code;
+        }
+    }
+
+    pre {
+        overflow: auto;
+        padding: 1em 1.2em;
+
+        code {
+            background: none;
+            font-size: 1em;
+            line-height: 1em;
+        }
+    }
+
+    // Figure
+    figure {
+        margin-bottom: @margin * 2;
+        text-align: center;
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    figcaption {
+        font-size: 0.8em;
+        margin-top: @margin / 1.6;
+
+        & when (@custom-colors) {
+            color: @text-light;
+        }
+    }
+
+    // Table
+    table {
+        width: 100%;
+
+        pre {
+            white-space: pre-wrap;
+        }
+    }
+
+    th,
+    td {
+        .cell(1em);
+
+        border: 1px solid @table-border;
+        line-height: 1.4;
+    }
+
+    thead,
+    tfoot {
+        tr {
+            & when (@table-striped) {
+                background-color: @table-border;
+            }
+            & when not (@custom-colors) {
+                background-color: @table-background-hover;
+            }
+        }
+
+        th,
+        td {
+            .cell(0.9em);
+
+            & when (@custom-colors) {
+                color: @table-thead;
+            }
+
+            code {
+                background-color: @table-background;
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            background-color: @table-background;
+
+            & when (@table-striped) {
+                &:nth-child(even) {
+                    background-color: @table-background-even;
+                }
+
+                & when (@table-hover) {
+                    &:hover {
+                        background-color: @table-background-hover;
+                    }
+                }
+            }
+            & when not (@custom-colors) {
+                & when (@table-hover) {
+                    &:hover {
+                        background-color: @table-background-even;
+                    }
+                }
+            }
+        }
+    }
+}
