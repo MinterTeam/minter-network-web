@@ -256,10 +256,11 @@ html.layout--docs {background: var(--underlay-bg-color);}
     position: relative;
     z-index: 2;
 }
-.docs-aside__sticky {position: sticky; top: 0; max-height: 100vh/*calc(100vh - @header-height)*/; overflow-y: auto; padding: @container-padding;}
+.docs-aside__sticky {position: sticky; top: 0; max-height: 100vh/*calc(100vh - @header-height)*/; overflow-y: auto; padding: @container-padding @container-padding 0;}
 .docs-aside__page {
     font-size: 16px; line-height: 20px;
     &+& {margin-top: 20px;}
+    &:last-child {margin-bottom: @container-padding;} // fix .docs-aside__sticky bottom padding
 }
 .docs-aside__page-link {display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;}
 .docs-aside__page-nav {margin-left: 16px; margin-top: 16px; border-left: 2px solid fade(@c-main, 20%);}

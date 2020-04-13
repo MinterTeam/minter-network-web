@@ -3,7 +3,7 @@ export default {
     "docs": {
         "dir": "content",
         "prefix": "/",
-        "title": "NuxtPress documentation",
+        "title": "Minter",
         "nav": [
             { "Docs": "/docs" },
             { "How To": "/how-to" },

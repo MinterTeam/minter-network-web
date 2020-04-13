@@ -6,14 +6,14 @@
           aria-label="Main navigation"
   >
     <div class="docs-aside__sticky sidebar">
-      <div class="docs-aside__page" v-for="(page, path) in sidebarPages">
+      <div class="docs-aside__page" v-for="page in sidebarPages">
         <div class="docs-aside__page-link">
-          <nuxt-link class="docs-aside__menu-link" :to="path" :class="{'is-active': path === normalizedPath}">
+          <nuxt-link class="docs-aside__menu-link" :to="page.path" :class="{'is-active': page.path === normalizedPath}">
             {{ page.title }}
           </nuxt-link>
         </div>
         <sidebar-sections
-                v-if="path === normalizedPath"
+                v-if="page.path === normalizedPath"
                 :data="sidebarH2"
                 :active-path="activePath"
                 :active-page="activePageHash"
@@ -46,6 +46,8 @@
       }
     },
     created() {
+      //@TODO scroll to active section on start
+      //@TODO change max height of sticky on scroll
       this.prepareSidebar()
       this.changeSidebar()
     },
@@ -54,42 +56,91 @@
         console.log(this.$press)
         return this.$press.id
       },
-      pagesByLocale() {
+      sidebarPages() {
         const localeList = this.$press.docs.locales.map((item) => item.code);
-        let result = {};
+        let result = [];
         Object.keys(this.$press.docs.pages).forEach((path) => {
+          // LOCALE
           const localePart = path.split('/')[1];
           // is locale prefixed or without prefix
           const isLocalePrefixed = localeList.indexOf(localePart) >= 0;
           const locale = isLocalePrefixed ? localePart : '';
-          // ensure key exists
-          // add first slash, because locale may be empty string, and it is not valid object key
-          if (!result[`/${locale}`]) {
-            result[`/${locale}`] = [];
+          // filter other locales
+          if (locale !== this.$press.locale) {
+            return;
           }
-          result[`/${locale}`].push(path);
-        });
-        return result;
-      },
-      pagesByCategory() {
-        let result = {};
-        const pages = this.pagesByLocale[`/${this.$press.locale}`];
-        pages.forEach((path) => {
 
+          // CATEGORY
           // remove locale prefix
           let pathWithoutLocale = path;
-          if (this.$press.locale.length) {
+          if (locale) {
             pathWithoutLocale = path.replace(`/${this.$press.locale}`, '');
           }
           const category = pathWithoutLocale.split('/')[1];
-          // ensure key exists
-          if (!result[category]) {
-            result[category] = [];
+          // filter other categories
+          if (category !== this.currentCategory) {
+            return;
           }
-          result[category].push(path);
+
+          // ORDER
+          let order;
+          if (pathWithoutLocale === `/${category}/`) {
+            order = 0
+          } else if (this.$press.docs.pages[path].meta.order) {
+            order = this.$press.docs.pages[path].meta.order
+          } else {
+            order = 100;
+          }
+
+          result.push({
+            ...this.$press.docs.pages[path],
+            path,
+            locale,
+            category,
+            order,
+          });
         });
-        return result;
+
+        return result.sort((a, b) => {
+          return a.order - b.order;
+        })
       },
+      // pagesByLocale() {
+      //   const localeList = this.$press.docs.locales.map((item) => item.code);
+      //   let result = {};
+      //   Object.keys(this.$press.docs.pages).forEach((path) => {
+      //     const localePart = path.split('/')[1];
+      //     // is locale prefixed or without prefix
+      //     const isLocalePrefixed = localeList.indexOf(localePart) >= 0;
+      //     const locale = isLocalePrefixed ? localePart : '';
+      //     // ensure key exists
+      //     // add first slash, because locale may be empty string, and it is not valid object key
+      //     if (!result[`/${locale}`]) {
+      //       result[`/${locale}`] = [];
+      //     }
+      //     result[`/${locale}`].push(path);
+      //   });
+      //   return result;
+      // },
+      // pagesByCategory() {
+      //   let result = {};
+      //   const pages = this.pagesByLocale[`/${this.$press.locale}`];
+      //   pages.forEach((path) => {
+      //
+      //     // remove locale prefix
+      //     let pathWithoutLocale = path;
+      //     if (this.$press.locale.length) {
+      //       pathWithoutLocale = path.replace(`/${this.$press.locale}`, '');
+      //     }
+      //     const category = pathWithoutLocale.split('/')[1];
+      //     // ensure key exists
+      //     if (!result[category]) {
+      //       result[category] = [];
+      //     }
+      //     result[category].push(path);
+      //   });
+      //   return result;
+      // },
       currentCategory() {
         let path = this.normalizedPath;
         // remove locale prefix
@@ -98,14 +149,14 @@
         }
         return path.split('/')[1];
       },
-      sidebarPages() {
-        let result = {};
-        const pathList = this.pagesByCategory[this.currentCategory];
-        pathList.forEach((path) => {
-          result[path] = this.$press.docs.pages[path];
-        });
-        return result;
-      },
+      // sidebarPages() {
+      //   let result = {};
+      //   const pathList = this.pagesByCategory[this.currentCategory];
+      //   pathList.forEach((path) => {
+      //     result[path] = this.$press.docs.pages[path];
+      //   });
+      //   return result;
+      // },
       sidebarH2() {
         return this.sidebar.reduce((accumulator, item) => {
           return item[3] ? accumulator.concat(item[3]) : accumulator;

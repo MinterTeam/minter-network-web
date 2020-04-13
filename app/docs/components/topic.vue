@@ -10,6 +10,7 @@
 import { startObserver } from 'press/core/components/observer'
 import Home from 'press/docs/components/home'
 import docsMixin from 'press/docs/mixins/docs'
+import {BASE_TITLE_END} from '~/assets/variables.js';
 
 export default {
   components: { Home },
@@ -19,28 +20,28 @@ export default {
     const meta = [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { property: 'og:site_name', content: this.$docs.title }
+      { hid: 'og-title', name: 'og:title', content: this.meta.title },
     ]
 
     if (this.$docs.image) {
       meta.push({ property: 'og:image', content: this.$docs.image })
     }
 
-    if (this.$description) {
-      meta.push({ name: "description", content: this.meta.description })
+    if (this.meta.description) {
+      meta.push({ hid: 'description', name: "description", content: this.meta.description })
+      meta.push({ hid: 'og-description', name: "og:description", content: this.meta.description })
     }
 
     return {
       meta,
       title: this.meta.title,
-      titleTemplate: `%s - ${this.$docs.title}`
     }
   },
   computed: {
     meta() {
       return {
-        title: this.$page.title || 'Hello',
-        description: this.$page.description || 'Welcome to your NuxtPress site'
+        title: `${this.$page.title}${BASE_TITLE_END}`,
+        description: this.$page.description,
       }
     }
   },
