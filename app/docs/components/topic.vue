@@ -1,17 +1,9 @@
 <template>
-  <main>
-    <home
-      v-if="isHome"
-      :data="$docs.home"
-      :value="data.body"
-      :meta="meta"
-    />
-    <nuxt-template
-      v-else
-      tag="article"
-      :value="data.body"
-    />
-  </main>
+  <nuxt-template
+          v-else
+          tag="article"
+          :value="data.body"
+  />
 </template>
 
 <script>

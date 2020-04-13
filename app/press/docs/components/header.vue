@@ -11,7 +11,7 @@
                 class="header__link"
                 :class="activeClass(item.link)"
                 :no-prefix="true"
-                :to="item.link"
+                :to="localePrefix + item.link"
         >
             {{ item.text }}
         </nuxt-link>
@@ -57,7 +57,15 @@ export default {
       lang: this.$press.locale
     }
   },
+  computed: {
+      localePrefix() {
+          return this.$press.locale ? '/' + this.$press.locale : '';
+      },
+  },
   watch: {
+    '$press.locale'(newLocale) {
+        this.lang = newLocale;
+    },
     lang(newLocale, oldLocale) {
       let { href: newPath } = this.$router.resolve({
         name: this.$route.name,
@@ -93,7 +101,7 @@ export default {
   },
   methods: {
     activeClass(link) {
-      return this.$route.path.startsWith(link) ? 'is-active' : ''
+      return this.$route.path.startsWith(this.localePrefix + link) ? 'is-active' : ''
     },
     toggleMobile() {
       document.querySelector('.sidebar').classList.toggle('mobile-visible')

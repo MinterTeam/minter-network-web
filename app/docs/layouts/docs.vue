@@ -4,12 +4,12 @@
     <div class="main-content u-grid u-grid--no-margin">
 
       <sidebar class="u-cell u-cell--large--1-4" v-if="hasSidebar" />
-      <div class="docs-content u-cell--large--3-4" :class="{ 'has-sidebar': hasSidebar }">
+      <main class="docs-content u-cell--large--3-4" :class="{ 'has-sidebar': hasSidebar }">
         <nuxt
                 class="u-container u-container--content wysiwyg"
 
         />
-      </div>
+      </main>
 
     </div>
 
