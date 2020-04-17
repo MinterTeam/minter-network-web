@@ -10,6 +10,7 @@
 import { startObserver } from 'press/core/components/observer'
 import Home from 'press/docs/components/home'
 import docsMixin from 'press/docs/mixins/docs'
+import eventBus from '~/assets/event-bus';
 import {BASE_TITLE_END} from '~/assets/variables.js';
 
 export default {
@@ -68,6 +69,12 @@ export default {
     }
 
     this.startObserver()
+    eventBus.$on('pause-observer', this.stopObserver);
+    eventBus.$on('continue-observer', this.startObserver);
+  },
+  destroyed() {
+    eventBus.$off('pause-observer');
+    eventBus.$off('continue-observer');
   },
   methods: {
     restartObserver() {
@@ -75,12 +82,16 @@ export default {
       this.startObserver()
     },
     stopObserver() {
-      if (!this._observer) {
+      if (this._observer) {
         this._observer.disconnect()
         this._observer = undefined
       }
     },
     startObserver() {
+      if (this._observer) {
+        return;
+      }
+
       const elements = `
         article h1,
         article h2
@@ -89,7 +100,6 @@ export default {
       const initialId = this.$route.hash.substr(1)
 
       const observedCallback = (target) => {
-        console.log({target})
         const targetId = target.id ? `#${target.id}` : ``
         let targetHeading = `${this.$route.path}${targetId}`
         let heading = document.querySelector(`.sidebar a[href="${targetHeading}"`)

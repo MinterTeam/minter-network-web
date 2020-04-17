@@ -1,36 +1,15 @@
 <template>
-  <header class="header" data-header>
-    <div class="header__container u-container u-container--large" data-header-container>
-      <a class="header__logo" href="/" data-header-logo>
+  <header class="header">
+    <div class="header__container u-container u-container--large">
+      <a class="header__logo" href="/">
         <img class="header__logo-image" src="/img/minter-logo-circle.svg" alt="Minter" width="36" height="36">
       </a>
-      <nav class="header__menu" data-header-menu>
-        <nuxt-link
-                v-for="(item, idx) in $nav"
-                :key="`topmenu-${idx}`"
-                class="header__link"
-                :class="activeClass(item.link)"
-                :no-prefix="true"
-                :to="localePrefix + item.link"
-        >
-            {{ item.text }}
-        </nuxt-link>
-      </nav>
+      <HeaderMenu class="header__menu u-hidden-medium-down" :nav="$nav"/>
 
       <div class="header__controls">
-<!--        <Language class="header__control-language"/>-->
-          <select
-                  v-if="$docs.locales"
-                  v-model="lang"
-                  aria-label="Change locale"
-          >
-              <option
-                      v-for="locale in $docs.locales"
-                      :key='`locale-${locale.code}`'
-                      :value="locale.code">{{ locale.name }}</option>
-          </select>
+        <language class="header__control-language" :locales="$docs.locales" :lang.sync="lang"/>
 
-        <button class="header__offcanvas-button u-semantic-button" data-header-button>
+        <button class="header__offcanvas-button u-semantic-button u-hidden-medium-up" :class="{'is-active': isMenuActive}" @click="toggleMenu">
                         <span class="header__offcanvas-icon-wrap">
                             <span class="header__offcanvas-icon">Menu</span>
                         </span>
@@ -43,24 +22,26 @@
 <script>
 import docsMixin from 'press/docs/mixins/docs.js'
 import NavLink from 'press/docs/components/nav-link.vue'
-import HeaderMenu from '~/assets/header-menu';
-
-let headerMenu;
+import Language from '~/layouts/_language.vue';
+import HeaderMenu from '~/layouts/_header-menu.vue';
 
 export default {
   components: {
-    NavLink
+    NavLink,
+    Language,
+    HeaderMenu,
   },
   mixins: [docsMixin],
+  props: {
+    isMenuActive: {
+      type: Boolean,
+      required: true,
+    },
+  },
   data () {
     return {
       lang: this.$press.locale
     }
-  },
-  computed: {
-      localePrefix() {
-          return this.$press.locale ? '/' + this.$press.locale : '';
-      },
   },
   watch: {
     '$press.locale'(newLocale) {
@@ -89,19 +70,11 @@ export default {
       }
 
       this.$router.push(newPath)
-    }
-  },
-  mounted() {
-    headerMenu = new HeaderMenu();
-  },
-  destroyed() {
-    if (headerMenu && headerMenu.destroy) {
-      headerMenu.destroy();
-    }
+    },
   },
   methods: {
-    activeClass(link) {
-      return this.$route.path.startsWith(this.localePrefix + link) ? 'is-active' : ''
+    toggleMenu() {
+      this.$emit('update:isMenuActive', !this.isMenuActive);
     },
     toggleMobile() {
       document.querySelector('.sidebar').classList.toggle('mobile-visible')

@@ -1,13 +1,12 @@
 <template>
   <div id="nuxt-press" class="docs main-wrap main-wrap--docs">
-    <top v-if="hasHeader" />
+    <top-header :isMenuActive.sync="isMenuActive"/>
     <div class="main-content u-grid u-grid--no-margin">
 
-      <sidebar class="u-cell u-cell--large--1-4" v-if="hasSidebar" />
-      <main class="docs-content u-cell--large--3-4" :class="{ 'has-sidebar': hasSidebar }">
+      <sidebar class="u-cell u-cell--medium--1-4" :isShowSidebar="isShowSidebar"/>
+      <main class="docs-content u-cell u-cell--medium--3-4">
         <nuxt
                 class="u-container u-container--content wysiwyg"
-
         />
       </main>
 
@@ -17,17 +16,19 @@
 </template>
 
 <script>
+import {support} from '~/assets/utils-support.js';
+import eventBus from '~/assets/event-bus.js';
 import docsMixin from 'press/docs/mixins/docs'
-import top from 'press/docs/components/header'
+import TopHeader from 'press/docs/components/header'
 import sidebar from 'press/docs/components/sidebar'
 
 export default {
-  components: { top, sidebar },
+  components: { TopHeader, sidebar },
   mixins: [docsMixin],
   data() {
     return {
-      hasHeader: false,
-      hasSidebar: false
+      isMenuActive: false,
+      isDesktop: isDesktop(),
     }
   },
   head() {
@@ -56,34 +57,45 @@ export default {
       }
     }
   },
-  created() {
-    this.hasHeader = this.getHasHeader()
-    this.hasSidebar = this.getHasSidebar()
-
-    // wait until the source page component has been fully mounted
-    // before updating the sidebars
-    this.$nuxt.$on('press:sourceReady', this.sourceReady)
+  computed: {
+    isShowSidebar() {
+      return this.isMenuActive || this.isDesktop;
+    }
+  },
+  watch: {
+    '$route'(to, from) {
+      this.isMenuActive = false;
+    },
+    isMenuActive(newVal) {
+      if (newVal) {
+        // pause scroll observer when mobile menu is opened
+        eventBus.$emit('pause-observer');
+      } else {
+        eventBus.$emit('continue-observer');
+      }
+    }
+  },
+  mounted() {
+    window.addEventListener('resize', checkDesktop.bind(this), support.passiveListener ? {passive: true} : false);
   },
   destroyed() {
-    this.$nuxt.$off('press:sourceReady', this.sourceReady)
+    window.removeEventListener('resize', checkDesktop);
   },
   methods: {
-    sourceReady() {
-      this.hasHeader = this.getHasHeader()
-      this.hasSidebar = this.getHasSidebar()
-    },
-    getHasHeader() {
-      if (!this.$docs) {
-        return false
-      }
-      return !this.$isHome || this.$docs.home.header
-    },
-    getHasSidebar() {
-      if (!this.$docs) {
-        return false
-      }
-      return !this.$isHome || this.$docs.home.sidebar
-    }
+
+
   }
+}
+
+
+function checkDesktop() {
+  this.isDesktop = isDesktop();
+  if (this.isDesktop) {
+    this.isMenuActive = false;
+  }
+}
+
+function isDesktop() {
+  return process.client && document.body.clientWidth >= 700;
 }
 </script>

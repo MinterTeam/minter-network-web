@@ -1,22 +1,26 @@
 // normalize-css подключается с помощью postcss-normalize
+
+@import "include/variables";
+@import "include/utils";
+
 //@import (inline) '../../node_modules/wysiwyg.css/wysiwyg.css';
 @import (inline) '../../node_modules/@nuxt-press/core/src/prism.css';
 @import (inline) '../../node_modules/@material/snackbar/dist/mdc.snackbar.css';
 @import (inline) '../../node_modules/@material/menu/dist/mdc.menu.css';
 @import (inline) '../../node_modules/@material/menu-surface/dist/mdc.menu-surface.css';
 @import (inline) '../../node_modules/@material/list/dist/mdc.list.css';
-@import "include/variables";
-@import "include/utils";
-@import "include/general";
-@import "include/layout";
 @import "vendor/wysiwyg";
 @import "vendor/press";
+
+@import "include/general";
+@import "include/layout";
 
 
 
 // vendor
 // mdc
 .mdc-snackbar__action-button {color: #fff;}
+.mdc-list-item {width: 100%;}
 // nuxt page transition
 .page-leave-active {transition: opacity .1s;}
 .page-enter-active {transition: opacity .25s;}
@@ -25,7 +29,7 @@
 
 // common
 .main-wrap {display: flex; flex-direction: column; min-height: 100vh; position: relative;}
-.main-content {width: 100%; flex-grow: 2;}
+.main-content {width: 100%; flex-grow: 2; position: relative;}
 
 
 // nuxt page transition
@@ -104,60 +108,29 @@
     position: relative; /* fallback */ z-index: 10; min-height: @header-height;
     // required for offcanvas menu
 }
-.header--card {position: absolute;}
 .header__container {
     display: flex; align-items: center; flex-wrap: wrap; justify-content: space-between; top: 0;
     &::before {content: ''; position: absolute; left: 0; top: 0; right: 0; height: @header-height; z-index: -1; background: #fff; box-shadow: 0 4px 6px @c-border;}
 }
-.header__container--card {
-    &::before {content: none;}
-}
 .header__logo {padding: 12px 0;}
 .header__logo-image {display: block; font-size: 0; width: 32px; height: 32px;}
-.header__menu {display: none; flex-direction: column; }
-.header__link {
-    padding: 18px 0 16px; position: relative; font-size: 16px; line-height: 20px; font-weight: 700; text-decoration: none;
-    &::after {.header-link-after(); transition: 0.15s;}
+.nav__link {
+    font-size: 16px; line-height: 20px; font-weight: 700; text-decoration: none; display: block;
     &.is-active {
         color: @c-main;
-        &::after {height: @header-link-underline-height; background: @c-main;}
     }
 }
 .header__controls {display: flex; align-items: center;}
-// кнопка вешает .menu- классы на body
-.header--menu-active {
-    &::after {content: ''; background: #fff; position: absolute; left: 0; top: 0; right: 0; bottom: 0; z-index: -2; }
-    .header__menu {display: flex; padding-top: 10px; padding-bottom: 20px; order: 2; width: 100%;}
-}
-.header--menu-animate-in {
-    animation: slide-header-container both 0.25s;
-    &::after {animation: fade-in both 0.25s;}
-    .header__menu {animation: fade-in both 0.4s 0.05s;}
-    .header__link {animation: slide-up both 0.25s 0.05s}
-    .header__link:nth-child(2) {animation-duration: 0.28s;}
-    .header__link:nth-child(3) {animation-duration: 0.31s;}
-    .header__link:nth-child(4) {animation-duration: 0.34s;}
-    .header__link:nth-child(5) {animation-duration: 0.37s;}
-    .header__link:nth-child(6) {animation-duration: 0.4s;}
-}
-.header--menu-animate-out {
-    animation: slide-header-container reverse both 0.2s;;
-    &::after {animation: fade-out both 0.25s 0.1s;}
-    .header__menu {animation: fade-out both 0.2s;}
-}
-@menu-icon-size: 30px;
+@menu-icon-size: 26px;
 @menu-icon-transition: .25s;
 @menu-icon-color: currentColor;
-.header__offcanvas-button {
-    display: block; width: @menu-icon-size; height: @menu-icon-size; position: relative; text-align: center; transition: 0.25s; margin-left: 20px;
-    .is-modal-opened & {opacity: 0;}
-}
+.header__offcanvas-button { width: @menu-icon-size; height: @menu-icon-size; position: relative; text-align: center; margin-left: 20px;}
 .header__offcanvas-icon-wrap {width: 40px; height: 40px; position: absolute; left: 50%; top: 50%; margin-top: -20px; margin-left: -20px;}
 .header__offcanvas-icon {
-    transition: @menu-icon-transition; background: @menu-icon-color; position: absolute; height: 3px; width: @menu-icon-size; left: 50%; top: 50%; margin-left: -@menu-icon-size / 2; margin-top: -3px; font-size: 0;
-    &:before, &:after {transition: @menu-icon-transition cubic-bezier(0.175, 0.885, 0.32, 1.275); background: @menu-icon-color; height: 100%; width: 100%; content: ''; position: absolute; left: 0;}
-    &:before {top: 10px;}
-    &:after {top: -10px;}
+    transition: @menu-icon-transition; background: @menu-icon-color; position: absolute; height: 2.6px; width: @menu-icon-size; left: 50%; top: 50%; margin-left: -@menu-icon-size / 2; margin-top: -2px; font-size: 0;
+    &:before, &:after {transition: @menu-icon-transition; background: @menu-icon-color; height: 100%; width: 100%; content: ''; position: absolute; left: 0;}
+    &:before {top: 8px;}
+    &:after {top: -8px;}
     .header__offcanvas-button.is-active & {
         background-color: transparent;
         &:before, &:after {transform-origin: 50% 50%; top: 0 !important;}
@@ -165,8 +138,20 @@
         &:after {transform: rotate3d(0, 0, 1, -45deg);}
     }
 }
-@media (min-width: @breakpoint-small-up) {
-    //.header__logo {margin-right: 70px;}
+@media (min-width: @breakpoint-medium-up) {
+    .header__menu {
+        display: flex; flex-direction: row; flex-grow: 2;
+        // 25% - aside width, 32px - logo width
+        margin-left: calc(100vw * 0.25 - 32px);
+    }
+    .nav__link {
+        font-size: 17px; line-height: 20px; padding: 18px 16px; position: relative;
+        &::after {.header-link-after(); transition: 0.15s; height: @header-link-underline-height; opacity: 0;}
+        &:hover, &:focus {background: @c-border;}
+        &:active {background: fade(@c-main, 20%);}
+        &.is-active::after {opacity: 1;}
+        //&+& {margin-left: @header-link-margin;}
+    }
 }
 @media (min-width: @breakpoint-large-up) {
     .header {min-height: @header-height-large;}
@@ -176,26 +161,17 @@
     .header__logo {padding: 22px 0;}
     .header__logo-image {width: auto; height: auto;}
     .header__menu {
-        display: flex; flex-direction: row; flex-grow: 2;
         // 25% - aside width, 36px - logo width, 75% - content, 640px - article
-        margin-left: calc(100vh * 0.25 - 36px - @container-padding + (100vh * 0.75 - 640px) / 2);
-        && {animation: none;}
+        margin-left: calc(100vw * 0.25 - 36px - @container-padding + (100vw * 0.75 - 640px) / 2);
     }
-    .header__link {
+    .nav__link {
         font-size: 19px; line-height: 30px; padding: @header-link-padding 16px;
-        &::after {height: @header-link-underline-height; opacity: 0;}
-        &:hover, &:focus {background: @c-border;}
-        &:active {background: fade(@c-main, 20%);}
-        &.is-active::after {opacity: 1;}
         //&+& {margin-left: @header-link-margin;}
     }
     .header__offcanvas-button {display: none;}
 }
 @media (min-width: @main-wrap-width) {
     .header__menu {margin-left: calc(256px - 36px - @container-padding + (768px - 640px) / 2);}
-}
-@media (min-width: @breakpoint-xlarge-up) {
-    .language-switch {margin-right: 80px;}
 }
 
 
@@ -212,8 +188,8 @@
 //.header__wallet-button {margin-left: 24px;}
 //.header__language {margin-right: auto;}
 //.header__language-button {display: flex; align-items: center; text-transform: uppercase; font-size: 16px; font-weight: 700; letter-spacing: 1px;}
-//.header__language-button-icon {font-size: 0; margin-right: 8px;}
-//.header__language-text {margin-right: 16px;}
+.header__language-button-icon {font-size: 0; vertical-align: top;}
+.header__language-text {margin-right: 16px;}
 //@media (min-width: @breakpoint-small-up) {
 //    .header__language {margin-left: auto; margin-right: 0;}
 //}
@@ -250,13 +226,17 @@ html.layout--docs {background: var(--underlay-bg-color);}
 .main-wrap--docs {max-width: @main-wrap-width; margin: 0 auto; box-shadow: 0 0 14px var(--shadow-color); background: var(--body-bg-color);}
 
 .docs-aside {
-    box-shadow: 0 2px 5px var(--shadow-color);
-    //transition: box-shadow .2s ease-out;
-    //background: var(--elements-bg-color);
-    position: relative;
-    z-index: 2;
+    box-shadow: 0 2px 5px var(--shadow-color); position: absolute; z-index: 2; /* higher than input buttons */ top: 0; height: 100%; overflow: auto; background: @body-bg-color;
 }
-.docs-aside__sticky {position: sticky; top: 0; max-height: 100vh/*calc(100vh - @header-height)*/; overflow-y: auto; padding: @container-padding @container-padding 0;}
+.docs-aside__section {padding: @container-padding; border-bottom: 1px solid @c-border;}
+.docs-aside__nav {
+    .nav__link {
+        display: block;
+        &:hover, &:focus {color: @c-main;}
+    }
+    .nav__link + .nav__link {margin-top: 20px;}
+}
+.docs-aside__sticky {padding: @container-padding @container-padding 0;}
 .docs-aside__page {
     font-size: 16px; line-height: 20px;
     &+& {margin-top: 20px;}
@@ -266,11 +246,13 @@ html.layout--docs {background: var(--underlay-bg-color);}
 .docs-aside__page-nav {margin-left: 16px; margin-top: 16px; border-left: 2px solid fade(@c-main, 20%);}
 .docs-aside__menu-link {
     &.is-active {font-weight: 600;}
+    &:hover:not(.is-active), &:focus:not(.is-active) {text-decoration: underline;}
 }
 .docs-content {background: var(--docs-content-bg-color); padding: 50px 0; overflow-wrap: break-word;}
-//@media (min-width: @breakpoint-large-up) {
-//    .docs-aside__sticky {top: @header-height-large;}
-//}
+@media (min-width: @breakpoint-medium-up) {
+    .docs-aside {overflow: visible; position: relative; height: auto;}
+    .docs-aside__sticky {position: sticky; top: 0; max-height: 100vh/*calc(100vh - @header-height)*/; overflow-y: auto;}
+}
 
 
 

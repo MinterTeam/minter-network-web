@@ -4,7 +4,11 @@
           class="docs-aside"
           :class="sidebarClass"
           aria-label="Main navigation"
+          v-show="isShowSidebar"
   >
+    <div class="docs-aside__section u-hidden-medium-up">
+      <HeaderMenu class="docs-aside__nav" :nav="$nav"/>
+    </div>
     <div class="docs-aside__sticky sidebar">
       <div class="docs-aside__page" v-for="page in sidebarPages">
         <div class="docs-aside__page-link">
@@ -28,10 +32,12 @@
   import SidebarSection from 'press/docs/components/sidebar-section'
   import SidebarSections from 'press/docs/components/sidebar-sections'
   import docsMixin from 'press/docs/mixins/docs'
+  import HeaderMenu from '~/layouts/_header-menu.vue';
 
   export default {
     components: {
-      SidebarSections
+      SidebarSections,
+      HeaderMenu,
     },
     provide: {
       components: {
@@ -40,6 +46,12 @@
       }
     },
     mixins: [docsMixin],
+    props: {
+      isShowSidebar: {
+        type: Boolean,
+        required: true,
+      },
+    },
     data() {
       return {
         sidebar: [],
@@ -53,7 +65,6 @@
     },
     computed: {
       pressId() {
-        console.log(this.$press)
         return this.$press.id
       },
       sidebarPages() {
