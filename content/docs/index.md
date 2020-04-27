@@ -1,811 +1,997 @@
----
-sidebarSkipLevel: 1
----
+# Minter blockchain
 
-# Guide
+Minter is a blockchain network that lets people, projects, and companies issue and manage their own coins and trade them at a fair market price with absolute and instant liquidity.
 
-**NuxtPress** is a microframework that leverages the [Nuxt module system][1].
+Github: https://github.com/MinterTeam/minter-go-node  
+Official site: https://minter.network/
 
-It will automatically **register routes**, **templates** and **configuration options** in your Nuxt application. It also takes care of **loading Markdown files** and making **pre-rendered static files** automatically available.
+## Install Minter
 
-[1]: https://nuxtjs.org/guide/modules/
+There are several ways you can install Minter Blockchain Testnet node on your machine.
 
-## Setup
+### Using binary
 
-Install via [npm](http://npmjs.com) or [yarn](https://yarnpkg.com/):
+1. **Download Minter**
+   Get [latest binary build](https://github.com/MinterTeam/minter-go-node/releases) suitable for your architecture and unpack it to desired folder.
+2. **Run Minter**
+   ```bash
+   ./minter node
+   ```
+### From Source
 
-```shell
-$ npm install nuxt @nuxt/press
-$ yarn add nuxt @nuxt/press
+You'll need `golang` installed https://golang.org/doc/install and the
+required
+[environment variables
+set](https://github.com/tendermint/tendermint/wiki/Setting-GOPATH)
+
+1. **Clone Minter source code to your machine**
+  ```bash
+  mkdir -p $GOPATH/src/github.com/MinterTeam
+  cd $GOPATH/src/github.com/MinterTeam
+  git clone https://github.com/MinterTeam/minter-go-node.git
+  cd minter-go-node
+  ```
+2. **Get Tools & Dependencies**
+  ```bash
+  make get_tools
+  make get_vendor_deps
+  ```
+3. **Compile**
+  ```bash
+  make install
+  ```
+  to put the binary in `$GOPATH/bin` or use:
+  ```bash
+  make build
+  ```
+  to put the binary in `./build`.
+  The latest `minter version` is now installed.
+4. **Run Minter**
+  ```bash
+  ./build/minter node
+  ```
+  or 
+  ```bash
+  minter node
+  ```
+## Blockchain Specification
+
+**Tendermint**
+
+Minter Blockchain utilizes `Tendermint Consensus Engine`.
+
+Tendermint is software for securely and consistently replicating an
+application on many machines.
+By securely, we mean that Tendermint works even if up to 1/3 of machines
+fail in arbitrary ways.
+By consistently, we mean that every non-faulty machine sees the same
+transaction log and computes the same state.
+Secure and consistent replication is a fundamental problem in distributed
+systems; it plays a critical role in the
+fault tolerance of a broad range of applications, from currencies, to
+elections, to infrastructure orchestration,
+and beyond.
+
+Tendermint is designed to be easy-to-use, simple-to-understand, highly
+performant, and useful for a wide variety of
+distributed applications.
+
+You can read more about Tendermint Consensus in [official
+documentation](https://tendermint.com/docs/)
+
+**Consensus**
+
+In Minter we implemented Delegated Proof of Stake (DPOS) Consensus Protocol.
+
+DPOS is the fastest, most efficient, most decentralized, and most flexible
+consensus model available. DPOS leverages the power of stakeholder approval
+voting to resolve consensus issues in a fair and democratic way.
+
+**Block speed**
+
+Minter Blockchain is configured to produce `1 block per 5 sec`. Actual block
+speed may vary depends on validators count, their computational power,
+internet speed, etc.
+
+**Block size**
+
+We limit block size to `10 000 transactions`. Block size in terms of bytes
+is not limited.
+
+## Coins
+
+Minter Blockchain is multi-coin system.
+
+Base coin in testnet is `MNT`.  
+Base coin in mainnet is `BIP`.
+
+Smallest part of *each* coin is called `pip`.  
+1 pip = 1^-18 of any coin. In Blockchain and API we only operating with
+pips.
+
+> **Note:** Each coin has its **own** pip. You should treat pip like atomic
+part of a coin, not as currency:  
+> 1 MNT = 10^18 pip (MNT's pip)  
+> 1 ABC = 10^18 pip (ABC's pip)  
+> 1 MNT != 1 ABC
+
+### Coin Issuance
+
+Every user of Minter can issue own coin. Each coin is backed by base coin in
+some proportion.
+Issue own coin is as simple as filling a form with given fields:
+
+- **Coin name** - Name of a coin. Arbitrary string up to 64 letters length.
+- **Coin symbol** - Symbol of a coin. Must be unique, alphabetic, uppercase,
+3 to 10 letters length.
+- **Initial supply** - Amount of coins to issue. Issued coins will be
+available to sender account. Should be between 1 and 1,000,000,000,000,000
+coins.
+- **Initial reserve** - Initial reserve in base coin. Should be at least 10
+bips.
+- **Constant Reserve Ratio (CRR)** - uint, should be from 10 to 100.
+- **Max supply** - Max amount of coins that are allowed to be issued.
+Maximum is 1,000,000,000,000,000
+
+After coin issued you can send is as ordinary coin using standard wallets.
+
+### Issuance Fees
+
+To issue a coin Coiner should pay fee. Fee is depends on length of Coin
+Symbol.
+
+3 letters – 1 000 000 bips  
+4 letters – 100 000 bips  
+5 letters – 10 000 bips  
+6 letters – 1000 bips  
+7-10 letters – 100 bips
+
+### Coin Exchange
+
+Each coin in system can be instantly exchanged to another coin. This is
+possible because each coin has "reserve" in base
+coin.
+
+Here are some formulas we are using for coin conversion:
+
+**CalculatePurchaseReturn**  
+Given a coin supply (s), reserve balance (r), CRR (c) and a deposit amount
+(d), calculates the return for a given conversion (in the base coin):
+
+```go
+return s * ((1 + d / r) ^ c - 1);
 ```
 
-Note that you must also install [Nuxt][nuxt] if you haven't already.
+**CalculateSaleReturn**  
+Given a coin supply (s), reserve balance (r), CRR (c) and a sell amount (a),
+calculates the return for a given conversion
 
-[nuxt]: https://nuxtjs.org
+```go
+return r * (1 - (1 - a / s) ^ (1 / c));
+```
 
-## Configuration
+## Transactions
 
-First, **NuxtPress** needs to be enabled via `nuxt.config.js`:
+Transactions in Minter are
+[RLP-encoded](https://github.com/ethereum/wiki/wiki/RLP) structures.
 
-```js
-export default {
-  modules: ['@nuxt/press']
+Example of a signed transaction:
+    f873230101aae98a4d4e540000000000000094a93163fdf10724dc4785ff5cbfb9
+    ac0b5949409f880de0b6b3a764000080801ba06838db4a2197cfd70ede8d8d184d
+    bf332932ca051a243eb7886791250e545dd3a04b63fb1d1b5ef5f2cbd2ea12530c
+    da520b3280dcb75bfd45a873629109f24b29
+Each transaction has:
+
+-   **Nonce** - int, used for prevent transaction reply.
+-   **ChainID** - id of the network (1 - mainnet, 2 - testnet)
+-   **Gas Price** - big int, fee multiplier, should be equal or greater than
+current mempool min gas price.
+-   **Gas Coin** - 10 bytes, symbol of a coin to pay fee, right padded with
+zeros
+-   **Type** - type of transaction (see below).
+-   **Data** - data of transaction (depends on transaction type).
+-   **Payload** (arbitrary bytes) - arbitrary user-defined bytes.
+-   **Service Data** - reserved field.
+-   **Signature Type** - single or multisig transaction.
+-   **Signature Data** - digital signature of transaction.
+
+```go
+type Transaction struct {
+    Nonce         uint64
+    ChainID       byte
+    GasPrice      *big.Int
+    GasCoin       [10]byte
+    Type          byte
+    Data          []byte
+    Payload       []byte
+    ServiceData   []byte
+    SignatureType byte
+    SignatureData Signature
+}
+
+type Signature struct {
+    V           *big.Int
+    R           *big.Int
+    S           *big.Int
+}
+
+type MultiSignature struct {
+    MultisigAddress [20]byte
+    Signatures      []Signature
 }
 ```
 
-> In a freshly started project, `npm install` (or `yarn add`) will automatically create that `nuxt.config.js` file for you if you haven't already.
+### Signature Types
 
-### Default mode
+|Type Name                           |Byte|
+|----------------------------------- |----|
+|**TypeSingle**                      |0x01|
+|**TypeMulti**                       |0x02|
 
-The above `nuxt.config.js` file would set NuxtPress to run in its **default mode**, which enables support for Markdown `pages/`, and automatic full static `nuxt generate` for them.
+### Types
 
-In **default mode**, bundled apps can also be enabled based on the presence of the `docs/`, `blog/` and `slides/` directories. The URL prefix for each bundled app matches these directories, .e.g, blog will be able available at `/blog`.
+Type of transaction is determined by a single byte.
 
-### Standalone mode
+|Type Name                           |Byte|
+|----------------------------------- |----|
+|**TypeSend**                        |0x01|
+|**TypeSellCoin**                    |0x02|
+|**TypeSellAllCoin**                 |0x03|
+|**TypeBuyCoin**                     |0x04|
+|**TypeCreateCoin**                  |0x05|
+|**TypeDeclareCandidacy**            |0x06|
+|**TypeDelegate**                    |0x07|
+|**TypeUnbond**                      |0x08|
+|**TypeRedeemCheck**                 |0x09|
+|**TypeSetCandidateOnline**          |0x0A|
+|**TypeSetCandidateOffline**         |0x0B|
+|**TypeCreateMultisig**              |0x0C|
+|**TypeMultisend**                   |0x0D|
+|**TypeEditCandidate**               |0x0E|
 
-Alternatively, you can also do:
+### Send transaction
 
-```js
-export default {
-  modules: [
-    ['@nuxt/press', '<mode>']
-  ]
+Type: **0x01**
+
+Transaction for sending arbitrary coin.
+
+*Data field contents:*
+
+```go
+type SendData struct {
+    Coin  [10]byte
+    To    [20]byte
+    Value *big.Int
 }
 ```
 
-This would set NuxtPress to run in **docs standalone mode**:
+**Coin** - Symbol of a coin.
+**To** - Recipient address in Minter Network.
+**Value** - Amount of **Coin** to send.
 
-```js
-export default {
-  modules: [
-    ['@nuxt/press', 'docs']
-  ]
+### Sell coin transaction
+
+Type: **0x02**
+
+Transaction for selling one coin (owned by sender) in favour of another coin
+in a system.
+
+*Data field contents:*
+
+```go
+type SellCoinData struct {
+    CoinToSell          [10]byte
+    ValueToSell         *big.Int
+    CoinToBuy           [10]byte
+    MinimumValueToBuy   *big.Int
 }
 ```
 
-In docs standalone mode, there's no URL prefix, so here docs will be available at `/`, not `/docs`, and Markdown files can be placed directly on `<srcDir`>.
+**CoinToSell** - Symbol of a coin to give.
+**ValueToSell** - Amount of **CoinToSell** to give.
+**CoinToBuy** - Symbol of a coin to get.
+**MinimumValueToBuy** - Minimum value of coins to get.
 
-Standalone mode works similarly for `blog` and `slides`, as will be shown later.
+### Sell all coin transaction
 
-### On nuxt.press.json
+Type: **0x03**
 
-With the exception of the single string parameter that can be passed directly via `nuxt.config.js` (enabling **standalone mode** for any of the available bundled apps), all NuxtPress configuration must take place in either `nuxt.press.json` or `nuxt.press.js`. The JSON variant of the config is automatically generated the first time you run Nuxt with NuxtPress. If you decide to use `nuxt.press.js` instead (with a `default` export), `nuxt.press.json` is ignored.
+Transaction for selling all existing coins of one type (owned by sender) in
+favour of another coin in a system.
 
+*Data field contents:*
 
-The `nuxt.press.json` file autogenerated for [this documentation][docs-source] can be seen below. The `nav` key is initially empty and must be filled out.
-
-[docs-source]: https://github.com/nuxt/press/tree/master/demo/docs
-
-```json
-{
-  "docs": {
-    "dir": "docs",
-    "prefix": "/",
-    "title": "NuxtPress documentation",
-    "nav": [
-      { "Home": "/" },
-      { "Internals": "/internals" },
-      { "GitHub": "https://github.com/nuxt/press" }
-    ],
-    "sidebar": [
-      "/",
-      "/guide"
-    ]
-  }
+```go
+type SellAllCoinData struct {
+    CoinToSell          [10]byte
+    CoinToBuy           [10]byte
+    MinimumValueToBuy   *big.Int
 }
 ```
 
-### Deployment
+**CoinToSell** - Symbol of a coin to give.
+**CoinToBuy** - Symbol of a coin to get.
+**MinimumValueToBuy** - Minimum value of coins to get.
 
-Follow [Nuxt's guide](https://nuxtjs.org/guide/commands/) for all deployment details.
+### Buy coin transaction
 
-NuxtPress is tested with static builds ([`nuxt generate`](https://nuxtjs.org/api/configuration-generate/).) and live builds (`universal` mode).
+Type: **0x04**
 
-Nuxt's `spa` mode support is **not fully tested yet** (as of **0.1-beta.4**).
+Transaction for buy a coin paying another coin (owned by sender).
 
-## Markdown pages
+*Data field contents:*
 
-At its core, **NuxtPress** enables you to use Markdown files as [Nuxt pages][np]:
-
-[np]: https://nuxtjs.org/guide/views/#pages
-
-<table>
-<tr>
-<td><code>pages/index.md</code></td>
-<td><code>/</code></td>
-</tr>
-<tr>
-<td><code>pages/foo/index.md</code></td>
-<td><code>/foo</code></td>
-</tr>
-<tr>
-<td><code>pages/foo/bar.md</code></td>
-<td><code>/foo/bar</code></td>
-</tr>
-</table>
-
-Not only will NuxtPress transform Markdown files into working routes, it will also parse YAML metadata via [gray-matter][gm], if available.
-
-[gm]: https://github.com/jonschlinkert/gray-matter
-
-Here's a snippet from [`examples/pages`][pages-example]:
-
-[pages-example]: https://github.com/nuxt/press/tree/master/examples/pages
-
-```md
----
-someText: hey, this works
-someOtherText: hey, this works too
----
-
-### Hello world
-
-Go to [/subpage](/subpage)
-
-Go to [/subpage/other](/subpage/other)
-
-Msg: {{ $press.source.someText }}
-
-Msg: **{{ $press.source.someOtherText }}**
-```
-
-You can also use the YAML metadata to specify the [Nuxt layout][nlayout]:
-
-[nlayout]: https://nuxtjs.org/api/pages-layout/
-
-```md
----
-layout: yourLayout
----
-```
-
-### The common bundle
-
-NuxtPress makes this possible by adding the `common` app bundle to your Nuxt app. This bundle will register a middleware that will automaticaly retrieve JSON sources for every requested route. Once a source request is detected and loaded, it's passed on to the [press source route](https://github.com/nuxt/press/blob/master/src/blueprints/common/templates/pages/source.vue). This is the source route registered for this documentation suite, which has i18n enabled:
-
-```js
-{
-  path: "/:locale/:source(.*)",
-  component: _e1c6a3e4,
-  name: "source-locale"
+```go
+type BuyCoinData struct {
+    CoinToBuy           [10]byte
+    ValueToBuy          *big.Int
+    CoinToSell          [10]byte
+    MaximumValueToSell  *big.Int
 }
 ```
 
-Later in this guide you'll learn how to completely **eject** the [source code for the `common` bundle](https://github.com/nuxt/press/tree/master/src/blueprints/common), which can give you complete control over how NuxtPress works in any given Nuxt app.
+**CoinToBuy** - Symbol of a coin to get.
+**ValueToBuy** - Amount of **CoinToBuy** to get.
+**CoinToSell** - Symbol of a coin to give.
+**MaximumValueToSell** - Maximum value of coins to sell.
 
-### Learning internals
+### Create coin transaction
 
-See the [introductory blog post](https://hire.jonasgalvez.com.br/2019/aug/19/the-story-of-nuxtpress/) to learn about the architectural decisions that are behind NuxtPress, including **_blueprint modules_** which are the mechanism used to register its built-in apps.
+Type: **0x05**
 
-Contributing is extremely easy, just pull the [nuxt/press repository](https://github.com/nuxt/press), install NPM dependencies and use the `dev` script to test your changes directly in the bundled examples. If you change something in `src/blueprints/blog`, you'll want to test with your changes with:
+Transaction for creating new coin in a system.
 
-```shell
-$ npm run dev examples/blog
-```
+*Data field contents:*
 
-## Beyond pages
-
-Before we move on, keep in mind that **NuxtPress** can be added to and seamlessly extend any existing Nuxt application.
-
-**A NuxtPress app is a Nuxt app**. As long as it's the last enabled module, it won't interfere with existing functionality.
-
-In **default mode**, in addition to now being able to add Markdown files directly to `pages/`, **you have three new route folders to work with**: **`docs/`**, **`blog/`** and **`slides/`**.  The presence of any of these directories in the **`srcDir`** of a Nuxt project will enable their corresponding NuxtPress modes.
-
-You can customize these directories as follows:
-
-```json
-{
-  "docs": {
-    "dir": "my-custom-docs-dir"
-  },
-  "blog": {
-    "dir": "my-custom-blog-dir"
-  },
-  "slides": {
-    "dir": "my-custom-slides-dir"
-  }
+```go
+type CreateCoinData struct {
+    Name                 string
+    Symbol               [10]byte
+    InitialAmount        *big.Int
+    InitialReserve       *big.Int
+    ConstantReserveRatio uint
+    MaxSupply            *big.Int
 }
 ```
 
-> You can run multiple NuxtPress modes in the same Nuxt app.
+**Name** - Name of a coin. Arbitrary string up to 64 letters length.
+**Symbol** - Symbol of a coin. Must be unique, alphabetic, uppercase, 3 to
+10 symbols length.
+**InitialAmount** - Amount of coins to issue. Issued coins will be available
+to sender account.
+**InitialReserve** - Initial reserve in BIP's.
+**ConstantReserveRatio** - CRR, uint, should be from 10 to 100.
+**MaxSupply** - Max amount of coins that are allowed to be issued. Maximum
+is 1,000,000,000,000,000.
 
-## Standalone mode
+### Declare candidacy transaction
 
-You've seen briefly how to specify which bundled app should be loaded by passing a mode parameter to the `@nuxt/press` definition in `nuxt.config.js`.
+Type: **0x06**
 
-**Standalone mode** basically tells NuxtPress two things:  you're only using **one of the available bundled apps** and the URL prefix for  the URLs generated by the app bundle **should be `/`**, i.e., mixed with those that result from files being placed under the `pages/` directory.
+Transaction for declaring new validator candidacy.
 
-That means if you're running `blog` in **standalone mode**:
+*Data field contents:*
 
-```js
-export default {
-  modules: [
-    ['@nuxt/press', 'blog']
-  ]
+```go
+type DeclareCandidacyData struct {
+    Address    [20]byte
+    PubKey     []byte
+    Commission uint
+    Coin       [10]byte
+    Stake      *big.Int
 }
 ```
 
-And you have a `pages/index.vue` file, that is effectively overriding the index blog view. On the other hand, if you have `pages/about.md`, that will be available as `/about` and the blog index will be available at `/`.
+**Address** - Address of candidate in Minter Network. This address would be
+able to control candidate. Also all rewards will be sent to this address.
+**PubKey** - Public key of a validator.
+**Commission** - Commission (from 0 to 100) from rewards which delegators
+will pay to validator.
+**Coin** - Symbol of coin to stake.
+**Stake** - Amount of coins to stake.
 
-Depending on the standalone mode you choose, Markdown files are searched for in different directories, as detailed below:
+### Delegate transaction
 
-Standalone mode | Lookup directories
---------------- | ----------------------------------------
-`docs`          | `<srcDir>` **or** `<srcDir>/docs`
-`blog`          | `<srcDir>/entries` **or** `<srcDir>/posts`
-`slides`        | `<srcDir>` **or** `<srcDir>/slides`
+Type: **0x07**
 
-You can also set the standalone app via `nuxt.press.json`:
+Transaction for delegating funds to validator.
 
-```json
-{
-  "mode": "slides"
+*Data field contents:*
+
+```go
+type DelegateData struct {
+    PubKey []byte
+    Coin   [10]byte
+    Value  *big.Int
 }
 ```
 
-Or via `nuxt.press.js`:
+**PubKey** - Public key of a validator.
+**Coin** - Symbol of coin to stake.
+**Value** - Amount of coins to stake.
 
-```js
-export default {
-  mode: 'slides'
+### Unbond transaction
+
+Type: **0x08**
+
+Transaction for unbonding funds from validator's stake.
+
+*Data field contents:*
+
+```go
+type UnbondData struct {
+    PubKey []byte
+    Coin   [10]byte
+    Value  *big.Int
 }
 ```
 
-## Publishing blogs
+**PubKey** - Public key of a validator.
+**Coin** - Symbol of coin to unbond.
+**Value** - Amount of coins to unbond.
 
-You can structure Markdown files for the blog mode (under the configured lookup directory) in however many subdirectories you want (for grouping posts by year of publication for, for instance). What determines the publishing date of each blog entry is actually their Markdown source header.
+### Redeem check transaction
 
-By default, NuxtPress uses a simple format where the first line is parsed out as the publication date. **Titles** and **slugs** are automatically generated from the first heading (`#`) of your Markdown sources:
+Type: **0x09**
 
-```
-June 20, 2019
+Transaction for redeeming a check.
 
-# Blog Entry's Title
+*Data field contents:*
 
-```
-
-If your Markdown sources however start with a `---`, NuxtPress will try and parse it via [gray-matter][gm] and will look for `title`, `slug` and `date`.
-
-[gm]: https://github.com/jonschlinkert/gray-matter
-
-```markup
----
-title: Blog Entry's Title
-date: June 20, 2019
-slug: blog-entry-slug
----
-
-# This Heading Is Not Used As Title
-
-```
-
-### Adding sidebar links
-
-NuxtPress' default blog template makes it easy to automatically include sidebar text links.
-
-Here's `nuxt.press.json` from [`examples/blog`][examples-blog].
-
-[examples-blog]:  https://github.com/nuxt/press/tree/master/examples/blog
-
-```json
-{
-  "blog": {
-    "links": [
-      {"Home": "/blog"},
-      {"Archive": "/blog/archive"},
-      {"About": "/blog/about"},
-    ]
-  }
+```go
+type RedeemCheckData struct {
+    Check []byte
+    Proof [65]byte
 }
 ```
 
-This feature is mostly illustrative. You're likely to benefit more from ejecting the entire app bundle and adding your code for the `sidebar` component. Your component can still have access to these options you define under the `blog` configuration key in `nuxt.press.json` or `nuxt.press.js`, making it extremely to customize templates even with your own configuration options.
+**Check** - Check received from sender.
+**Proof** - Proof of owning a check: password signed with recipient's
+address. [Read
+more](https://docs.minter.network/#section/Minter-Check/Check-hijacking-protection)
 
-## Publishing docs
+Note that maximum GasPrice is limited to 1 to prevent fraud, because
+GasPrice is set by redeem tx sender but commission is charded from check
+issuer.
 
-The docs mode of NuxtPress provides similar functionality as VuePress. NuxtPress even borrows config syntax and some components from VuePress. Although NuxtPress aims to provide similar functionality its not meant to be a one to one replacement (just a very close one).
+### Set candidate online transaction
 
-### Multi-mode
+Type: **0x0A**
 
-NuxtPress docs support multiple docs configurations for a single Nuxt.js project. Use either the default `docs` key in your `nuxt.press.json` or use any other and specifify `blueprint: 'docs'` in your config:
+Transaction for turning candidate on. This transaction should be sent from
+address which is set in the "Declare candidacy transaction".
 
-```json
-{
-  "docs": {
-    "prefix": "/docs-current",
-    "dir": "/docs-v1"
-  },
-  "docs2": {
-    "blueprint": "docs",
-    "prefix": "/docs-next",
-    "dir": "/docs-v2"
-  }
-}
-```
-### Multiple directories
+*Data field contents:*
 
-You can also specify an array of directories, then markdown files from all these folders will be loaded
-
-```json
-{
-  "docs": {
-    "dir": [
-      "/docs-v1",
-      "/api-docs-v1"
-    ]
-  }
+```go
+type SetCandidateOnData struct {
+    PubKey []byte
 }
 ```
 
-> Please note: if the folders contain similar paths then the path from the last folder listed will overwrite the previous one
+**PubKey** - Public key of a validator.
 
-### Directory aliasing
+### Set candidate offline transaction
 
-By default the paths within the dir you configure are prefixed with the configured prefix, that will be the path from which the markdown page will be reachable.
+Type: **0x0B**
 
-If you specifiy `dir` as an object you can specifiy the dir to load pages from as the key, and an alias for that folder as value:
+Transaction for turning candidate off. This transaction should be sent from
+address which is set in the "Declare candidacy transaction".
 
-```json
-{
-  "docs": {
-    "prefix": /"
-    "dir": {
-      "docs-v1": "docs-current",
-      "docs-v2": "docs-next"
-    }
-  },
-}
+*Data field contents:*
 
-```
-
-The above will result in the same paths as the split configs in the `Multiple docs for a single Nuxt project` example. The difference being that the config using directory aliasing shares sidebar and nav configs, which might or might not be what you want.
-
-### Path prefix
-
-As you saw before, the URL prefix is automatically determined by whether you're running docs mode in NuxtPress standalone or default mode (`/` vs `/docs`).  You can override this by manually setting `docs.prefix` in the configuration:
-
-
-```json
-{
-  "docs": {
-    "prefix": "/custom-docs-prefix/"
-  }
+```go
+type SetCandidateOffData struct {
+    PubKey []byte
 }
 ```
 
-NuxtPress has full support for Markdown via [`@nuxt/markdown`](https://github.com/nuxt/markdown).
+**PubKey** - Public key of a validator.
 
-### Home page
+### Create multisig address
 
-NuxtPress will automatically detect the presence of a **`README.md`** file or an **`index.md`** file in the configured lookup directory and make that the *introductory page* of your docs suite.
+Type: **0x0C**
 
-NuxtPress provides a default home page layout similar to VuePress which can be configured by a YAML meta data section in your markdown index.
+Transaction for creating multisignature address.
 
-```yaml
----
-home: true
-heroImage: /hero.png
-actionText: Get Started →
-actionLink: /guide/
-features:
-- title: Simplicity First
-  details: Minimal setup with markdown-centered project structure helps you focus on writing.
-- title: Nuxt-Powered
-  details: Enjoy the dev experience of Nuxt.js and Vue
-- title: Performant
-  details: Because Nuxt.js
-footer: MIT Licensed
----
-```
+*Data field contents:*
 
-All additional markdown content will be rendered after the features sections (but before the footer).
-
-### Internationalization
-
-NuxtPress includes limited support to **i18n** via [nuxt-i18n](https://github.com/nuxt-community/nuxt-i18n). If you set the `i18n` top-level key in `nuxt.press.json` with `locales` and `messages`, these are used to populate [VueI18n](https://kazupon.github.io/vue-i18n/).
-
-```js
-"i18n": {
-  "locales": [
-    {
-      "code": "en",
-      "name": "English"
-    },
-    {
-      "code": "pt-BR",
-      "name": "Português (BR)"
-    }
-  ]
+```go
+type CreateMultisigData struct {
+    Threshold uint
+    Weights   []uint
+    Addresses [][20]byte
 }
 ```
 
-NuxtPress will then load content from directories named after each locale.
+### Multisend transaction
 
-Internally, `$press.locale` and `$press.locales` are exposed. The language select box on NuxtPress' landing page is rendered with the following:
+Type: **0x0D**
 
-```html
-<div class="lang-select">
-  <select
-    v-if="$press.locales"
-    v-model="lang"
-    @change="(e) => $router.push(`/${e.target.value}/`)">
-    <option
-      v-for="locale in $press.locales"
-      :key='`locale-${locale.code}`'
-      :value="locale.code">{{ locale.name }}</option>
-  </select>
-</div>
-```
+Transaction for sending coins to multiple addresses.
+*MultisendData can contain only 100 items. Therefore, this type of transaction has a limit of 100 recipent addresses.*
 
-See the full configuration for this documentation suite [here][docs-config].
+*Data field contents:*
 
-[docs-config]: https://github.com/nuxt/press/blob/master/docs/nuxt.press.json
+```go
+type MultisendData struct {
+    List []MultisendDataItem
+}
 
-### Navbar
-
-Currently the NuxtPress navbar only supports a links section. E.g. the links you see on the top right corner of this page are added via NuxtPress configuration. Use the `docs.nav` configuration key, as follows:
-
-NuxtPress does not (yet) support dropdown menus.
-
-```json
-{
-  "docs": {
-    "nav": [
-      {
-        "text": "Home",
-        "link": "/"
-      },
-      {
-        "text": "Internals",
-        "link": "/internals"
-      },
-      {
-        "text": "GitHub",
-        "link": "https://github.com/nuxt/press"
-      }
-    ]
-  }
+type MultisendDataItem struct {
+    Coin  [10]byte
+    To    [20]byte
+    Value *big.Int
 }
 ```
 
-You can also use a shorthand syntax as follows:
+### Edit candidate transaction
 
-```json
-{
-  "docs": {
-    "nav": [
-      {"Home": "/"},
-      {"Internals": "/internals"},
-      {"GitHub": "https://github.com/nuxt/press"}
-    ]
-  }
+Type: **0x0E**
+
+Transaction for editing existing candidate
+
+*Data field contents:*
+
+```go
+type EditCandidateData struct {
+    PubKey           []byte
+    RewardAddress    [20]byte
+    OwnerAddress     [20]byte
 }
 ```
 
-### Sidebar
+## Minter Check
 
-The docs bundled app also includes a sidebar component that can automatically scroll topics into view when you click them, and highlights which topic is currently into view. A basic sidebar expects an Array of paths to your markdown files:
+Minter Check is like an ordinary bank check. Each user of network can
+issue check with any amount of coins and pass it to another person.
+Receiver will be able to cash a check from arbitrary account.
 
-```
-{
-  "docs": {
-    "sidebar": [
-      "/",
-      "/guide",
-      "/customize"
-    ]
-  }
-}
-```
+### Introduction
 
-You can omit the `.md` extension. When the sidebar config includes paths ending with `/`, we try to match `*/readme.md` or `*/index.md` instead (case insensitive).
-
-The title for the link in the sidebar is automatically extracted from the markdown file, either from the first header in the page or the explicit title set in YAML meta data.
-
-#### Specifying a custom title
-
-The page title is normally also used within the sidebar. If you wish to list your page in the sidebar with a different title, add an array with the link as first item and your new title as second item:
+Checks are prefixed with "Mc". Here is example of a Minter Check:
 
 ```
-{
-  "docs": {
-    "sidebar": [
-      "/",
-      ["/guide", "For Hitchhiker's only"],
-      ["/customize", "Customise the app"]
-    ]
-  }
-}
+Mcf89b01830f423f8a4d4e5400000000000000843b9aca00b8419b3beac2c6ad88a8bd54d2
+4912754bb820e58345731cb1b9bc0885ee74f9e50a58a80aa990a29c98b05541b266af99d3
+825bb1e5ed4e540c6e2f7c9b40af9ecc011ca0387fd67ec41be0f1cf92c7d0181368b4c67a
+b07df2d2384192520d74ff77ace6a04ba0e7ad7b34c64223fe59584bc464d53fcdc7091faa
+ee5df0451254062cfb37
 ```
 
-#### Pattern matching for paths
+Each Minter Check has:
+-   **Nonce** - unique "id" of the check.
+-   **Coin Symbol** - symbol of coin.
+-   **Value** - amount of coins.
+-   **GasCoin** - symbol of a coin to pay fee.
+-   **Due Block** - defines last block height in which the check can
+    be used.
+-   **Lock** - secret to prevent hijacking.
+-   **Signature** - signature of issuer.
 
-You can also use glob's and regexes to match the files to include in the sidebar:
+### Check hijacking protection
 
-```
-{
-  "docs": {
-    "sidebar": [
-      "/",
-      "/guide-*",
-      "/customize-(it|this)"
-    ]
-  }
-}
-```
-
-The above will match any markdown file starting with `guide-` and the files `customize-it` and `customize-this` but not `customize-that`
-
-#### External links
-
-If you provide a link which cannot be resolved to a file, these links will be removed and wont show unless you specify a custom title
-
-```
-{
-  "docs": {
-    "prefix": "/docs",
-    "sidebar": [
-      "/",
-      "/guide",
-      ["/contact", "Contact us"]
-    ]
-  }
-}
-```
-
-will result in a sidebar with links: `/docs/`, `/docs/guide/` and `/contact/`
-
-
-#### Nested Header Links
-
-The sidebar automatically displays links for headers in the current active page, nested under the link for the page itself. You can customize this behavior using `docs.sidebarDepth`. The default depth is 1, which extracts the h2 headers. Setting it to 0 disables the header links, and the max value is 2 which extracts both h2 and h3 headers.
-
-A page can also override this value via YAML front matter:
-
-```yaml
----
-sidebarDepth: 2
----
-```
-
-#### Skipping Headers
-
-If you wish to omit some headers of your markdown from the sidebar, you can set the meta options `sidebarSkipLevels` and `sidebarSkipCount` to do so.
-
-Use `sidebarSkipLevels` to specifiy which header levels you want to skip, and `sidebarSkipCount` how many headers in total you want to skip. Omitting `sidebarSkipCount` or setting it to 0 means all headers will be skipped.
-
-A markdown file with the following contents
-```md
----
-sidebarSkipLevels: [2, 3]
-sidebarSkipCount: 2
----
-
-<h1>Header 1</h1>
-
-<h2>Header 2.1</h1>
-
-<h3>Header 3.1</h1>
-
-<h2>Header 2.2</h1>
-```
-
-will only have `Header 1` and `Header 2.2` listed in the sidebar.
-
-#### Sidebar Groups
-
-You can divide sidebar links into multiple groups by using objects:
-
-```json
-{
-  "docs": {
-    "sidebar": [
-      {
-        "title": "Group 1",
-        "children": [
-          "/"
-        ]
-      },
-      {
-        "title": "Group 2",
-        "children": [ /* ... */ ]
-      }
-    ]
-  }
-}
-```
-
-#### Multiple Sidebars
-
-If you wish to display different sidebars for different sections of content, first organize your pages into directories for each desired section:
-
-```
-.
-├─ README.md
-├─ contact.md
-├─ about.md
-├─ foo/
-│  ├─ README.md
-│  ├─ one.md
-│  └─ two.md
-└─ bar/
-   ├─ README.md
-   ├─ three.md
-   └─ four.md
-```
-
-Then, update your configuration to define your sidebar for each section.
-
-```json
-{
-  "docs": {
-    "sidebar": {
-      "/": [
-        "",        /* / */
-        "contact", /* /contact.html */
-        "about"    /* /about.html */
-      ],
-
-      "/foo/": [
-        "",     /* /foo/ */
-        "one",  /* /foo/one.html */
-        "two"   /* /foo/two.html */
-      ],
-
-      "/bar/": [
-        "",      /* /bar/ */
-        "three", /* /bar/three.html */
-        "four"   /* /bar/four.html */
-      ]
-    }
-  }
-}
-```
-
-#### Single Page Auto Sidebar
-
-If you wish to automatically generate a sidebar that contains only the header links for the current page, you can use YAML meta data for that page:
-
-```yaml
----
-sidebar: auto
----
-```
-
-#### Localization
-
-If you keep the filenames (and thus paths) for all locales the same, you can still use a single sidebar when using localization. NuxtPress will automatically create a sidebar for each locale and use the page titles from the localized file. If needed you can also explicitly tell that you have already configured localized sidebars by setting `localizedSidebar: true` in your config. NuxtPress wont automatically create sidebars for you.
-
-Given a folder structure like this:
-```
-.
-├─ en/
-│  └─ index.md
-└─ nl/
-   └─ index.md
-```
-
-```
-// en/index.md
-# Welcome in English
-
-Hello
-```
-
-```
-// nl/index.md
-# Welkom in het Nederlands
-
-Hallo
-```
-
-and a `nuxt.press.json` as follows
-```json
-{
-  "docs": {
-    dir: "",
-    sidebar: [
-      "/"
-    ]
-  },
-  "i18n": {
-    "locales": [
-      {
-        "code": "en",
-        "name": "English"
-      },
-      {
-        "code": "nl",
-        "name": "Nederlands"
-      }
-    ]
-  }
-}
-```
-
-Will result in two sidebars similar to the following config
-```
-{
-  "docs": {
-    ...
-    "sidebar": {
-      "en": [
-        ["/", "Welcome in English"]
-      ],
-      "nl": [
-        ["/", "Welkom in het Nederlands"]
-      ]
-    }
-  }
-}
-```
-
-
-## Publishing slides
-
-Add your markdown files to the `slides` directory.
-
-One markdown file = one full presentation.
-
-NuxtPress will parse each slide from Markdown using `#` as the delimiter. If text follows `#`, it's appended as a `<h1>` tag. If not, it's simply used as the delimiter and no `<h1>` tag is added.
-
-The following example represents four slides. It is a single file, but here it is shown divided in sections to illustrate the processing.
-
-```md
-
-My Presentation
-(opener, slide 1)
-
-```
-```md
-# Slide 2 header
-
-Slide 2 text
-
-```
-```md
-#
-
-Slide 3 text
-(slide with no header)
-
-```
-```md
-# Slide 4 header
-
-Slide 4 text
-
-```
-
-This is a simplification from [MDX][mdx], which uses `---` as delimiter.
-
-[mdx]: https://mdxjs.com/
-
-### Convenience classes
-
-NuxtPress adds classes to slides to make styling easier.
-
-```css
-.slides-<fileName> .slide-<slideNumber> {
-  ...
-}
-```
-
-Use the above CSS selector pattern to style the entire presentation or any specific slide. You can also inline `<style>` tags with such selectors in the slides Markdown source. Take a `slides/hello.md` file, for example:
-
-# asd
-## bla
-
-## lala
-# 3 
-```
-# Presentation
-
-<style>
-.slides-hello .slide-1 h1 {
-  font-size: 2rem;
-}
-</style>
+Minter Checks are issued offline and do not exist in blockchain before
+"cashing". So we decided to use special passphrase to protect checks
+from hijacking by another person in the moment of activation. Hash of
+this passphrase is used as private key in ECDSA to prove that sender is
+the one who owns the check.
+
+*TODO: describe algorithm*
+
+### How to issue a Minter Check
+
+For issuing Minter Check you can use our
+[Console](https://console.minter.network).
+
+You will need to fill a form:
+-   **Nonce** - unique "id" of the check.
+-   **Coin Symbol** - symbol of coin.
+-   **Gas coin** - symbol of a coin to pay fee.
+-   **Value** - amount of coins.
+-   **Pass phrase** - secret phrase which you will pass to receiver
+    of the check.
+        
+### How to cash a Minter Check
+
+To redeem a check user should have:
+-   Check itself
+-   Secret passphrase
+
+After redeeming balance of user will increased instantly.
+
+### Commission
+
+There is no commission for issuing a check because it done offline. In
+the moment of cashing issuer will pay commission.
+
+## Multisignatures
+
+Minter has built-in support for multisignature wallets. Multisignatures,
+or technically Accountable Subgroup Multisignatures (ASM), are signature
+schemes which enable any subgroup of a set of signers to sign any
+message, and reveal to the verifier exactly who the signers were.
+
+Suppose the set of signers is of size *n*. If we validate a signature if
+any subgroup of size *k* signs a message, this becomes what is commonly
+reffered to as a *k* of *n* multisig in Bitcoin.
+
+Minter Multisig Wallets has 2 main goals:
+-   Atomic swaps with sidechains
+-   Basic usage to manage funds within Minter Blockchain
+
+### Structure of multisig wallet
+
+Each multisig wallet has:
+-   Set of signers with corresponding weights
+-   Threshold
+
+Transactions from multisig wallets are proceed identically to the K of N
+multisig in Bitcoin, except the multisig fails if the sum of the weights
+of signatures is less than the threshold.
+
+### How to create multisig wallet
+
+TO BE DESCRIBED
+
+### How to use multisig wallet
+
+TO BE DESCRIBED
+
+## Commissions
+
+For each transaction sender should pay fee. Fees are measured in
+"units".
+
+1 unit = 10^15 pip = 0.001 bip.
+
+### Standard commissions
+
+Here is a list of current fees:
+
+| Type                       | Fee |
+|----------------------------|-----|
+|**TypeSend**                | 10 units |
+|**TypeSellCoin**            | 100 units |
+|**TypeSellAllCoin**         | 100 units |
+|**TypeBuyCoin**             | 100 units |
+|**TypeCreateCoin**          | Depends on the coin symbol length |
+|**TypeDeclareCandidacy**    | 10000 units |
+|**TypeDelegate**            | 200 units |
+|**TypeUnbond**              | 200 units |
+|**TypeRedeemCheck**         | 30 units |
+|**TypeSetCandidateOnline**  | 100 units |
+|**TypeSetCandidateOffline** | 100 units |
+|**TypeCreateMultisig**      | 100 units |
+|**TypeMultisend**           | 10+(n-1)*5 units |
+|**TypeEditCandidate**       | 10000 units |
+Also sender should pay extra 2 units per byte in Payload and Service
+Data fields.
+
+### Special fees
+
+To issue a coin with short name Coiner should pay extra fee. Fee is
+depends on length of Coin Symbol.
+
+3 letters — 1 000 000 bips  
+4 letters — 100 000 bips  
+5 letters — 10 000 bips  
+6 letters — 1000 bips  
+7-10 letters — 100 bips
+
+## Validators
+
+### Introduction
+
+The Minter Blockchain is based on Tendermint, which relies on a set of
+validators that are responsible for committing new blocks in the
+blockchain. These validators participate in the consensus protocol by
+broadcasting votes which contain cryptographic signatures signed by each
+validator's private key.
+
+Validator candidates can bond their own coins and have coins
+"delegated", or staked, to them by token holders. The validators are
+determined by who has the most stake delegated to them.
+
+Validators and their delegators will earn BIP (MNT) as rewards for
+blocks and commissions. Note that validators can set commission on the
+rewards their delegators receive as additional incentive.
+
+If validators double sign or frequently offline, their staked coins
+(including coins of users that delegated to them) can be slashed. The
+penalty depends on the severity of the violation.
+
+### Requirements
+Minimal requirements for running Validator's Node in testnet are:
+
+-   4GB RAM
+-   200GB SSD
+-   x64 2.0 GHz 4 vCPUs
+
+SSD disks are preferable for high transaction throughput.
+
+Recommended:
+
+-   4GB RAM
+-   200GB SSD
+-   x64 3.4 GHz 8 vCPUs
+-   HSM
+
+### Validators limitations
+Minter Network has limited number of available slots for validators.
+
+At genesis there are `16` slots. `4` slots will be added each
+`518,400` blocks. Maximum number of validators is `256`.
+
+### Rewards
+Rewards for blocks and commissions are accumulated and proportionally
+(based on stake value) payed once per `12 blocks` (approx 1 minute) to
+all active validators (and their delegators).
+
+Block rewards are configured to decrease from 333 to 0 BIP (MNT) in \~7
+years.
+
+Delegators receive their rewards at the same time after paying
+commission to their validators (commission value is based on
+validator's settings).
+
+`10%` from reward going to DAO account.
+
+`10%` from reward going to Developers.
+
+### Rules and fines
+
+Validators have one main responsibility:
+-   Be able to constantly run a correct version of the software:
+    validators need to make sure that their servers are always online
+    and their private keys are not compromised.
+If a validator misbehaves, its bonded stake along with its delegators'
+stake and will be slashed. The severity of the punishment depends on the
+type of fault. There are 3 main faults that can result in slashing of
+funds for a validator and its delegators:
+
+-   **Double signing**: If someone reports on chain A that a validator
+    signed two blocks at the same height on chain A and chain B, this
+    validator will get slashed on chain A
+-   **Unavailability**: If a validator's signature has not been
+    included in the last 12 blocks, 1% of stake will get slashed and
+    validator will be turned off
+Note that even if a validator does not intentionally misbehave, it can
+still be slashed if its node crashes, looses connectivity, gets DDOSed,
+or if its private key is compromised.
+
+### Becoming validator in testnet
+
+1. Install and run Minter Full Node.
+2. Get your validator's public key (`minter show_validator`).
+3. Go to [Minter
+Console](https://testnet.console.minter.network/masternode/) and send 2
+transactions:
+  
+  Fill and send `Declare candidacy` and `Set candidate online` forms.
+  1. Declare candidacy
+      Validators should declare their candidacy, after which users
+      can delegate and, if they so wish, unbond. Then declaring
+      candidacy validator should fill a form:
+      -   Address - You will receive rewards to this address and
+          will be able to on/off your validator.
+      -   Public Key - Paste public key from step 2 *(Mp\...)*.
+      -   Commission - Set commission for delegated stakes.
+      -   Coin - Enter coin of your stake (i.e. MNT).
+      -   Stake - Enter value of your stake in given coin.
+  2. Set candidate online
+      Validator is **offline** by default. When offline, validator
+      is not included in the list of Minter Blockchain validators,
+      so he is not receiving any rewards and cannot be punished
+      for low availability.
+      To turn your validator **on**, you should provide Public Key
+      (from step 2 *(Mp\...)*).
+      *Note: You should send transaction from address you choose
+      in Address field in step 3.1*
+4. Done.
+  Now you will receive reward as long as your node is running and available.
+### DDOS protection. Sentry node architecture
+Denial-of-service attacks occur when an attacker sends a flood of
+internet traffic to an IP address to prevent the server at the IP
+address from connecting to the internet.
+
+An attacker scans the network, tries to learn the IP address of various
+validator nodes and disconnect them from communication by flooding them
+with traffic.
+
+One recommended way to mitigate these risks is for validators to
+carefully structure their network topology in a so-called sentry node
+architecture.
+
+Validator nodes should only connect to full-nodes they trust because
+they operate them themselves or are run by other validators they know
+socially. A validator node will typically run in a data center. Most
+data centers provide direct links the networks of major cloud providers.
+The validator can use those links to connect to sentry nodes in the
+cloud. This shifts the burden of denial-of-service from the validator's
+node directly to its sentry nodes, and may require new sentry nodes be
+spun up or activated to mitigate attacks on existing ones.
+
+Sentry nodes can be quickly spun up or change their IP addresses.
+Because the links to the sentry nodes are in private IP space, an
+internet based attacked cannot disturb them directly. This will ensure
+validator block proposals and votes always make it to the rest of the
+network.
+
+It is expected that good operating procedures on that part of validators
+will completely mitigate these threats.
+
+#### Practical instructions
+
+To setup your sentry node architecture you can follow the instructions
+below:
+
+Validators nodes should edit their `config.toml`:
+```toml
+# Comma separated list of nodes to keep persistent connections to
+# Do not add private peers to this list if you don't want them advertised
+persistent_peers = ["list of sentry nodes"]
+# Set true to enable the peer-exchange reactor
+pex = false
 ```
 
+Sentry Nodes should edit their `config.toml`:
+```toml
+# Comma separated list of peer IDs to keep private (will not be gossiped to other peers)
+private_peer_ids = "ipaddress of validator nodes"
+```
 
+## Delegator FAQ
+
+### What is a delegator?
+People that cannot, or do not want to run validator operations, can
+still participate in the staking process as delegators. Indeed,
+validators are not chosen based on their own stake but based on their
+total stake, which is the sum of their own stake and of the stake that
+is delegated to them. This is an important property, as it makes
+delegators a safeguard against validators that exhibit bad behavior. If
+a validator misbehaves, its delegators will move their staked coins away
+from it, thereby reducing its stake. Eventually, if a validator's stake
+falls under the top addresses with highest stake, it will exit the
+validator set.
+
+Delegators share the revenue of their validators, but they also share
+the risks. In terms of revenue, validators and delegators differ in that
+validators can apply a commission on the revenue that goes to their
+delegator before it is distributed. This commission is known to
+delegators beforehand and cannot be changed. In terms of risk,
+delegators' coins can be slashed if their validator misbehaves. For
+more, see Risks section.
+
+To become delegators, coin holders need to send a "Delegate
+transaction" where they specify how many coins they want to bond and to
+which validator. Later, if a delegator wants to unbond part or all of
+its stake, it needs to send an "Unbond transaction". From there, the
+delegator will have to wait 30 days to retrieve its coins.
+
+### Directives of delegators
+Being a delegator is not a passive task. Here are the main directives of
+a delegator:
+- Perform careful due diligence on validators before delegating. If a
+    validator misbehaves, part of its total stake, which includes the
+    stake of its delegators, can be slashed. Delegators should therefore
+    carefully select validators they think will behave correctly.
+- Actively monitor their validator after having delegated. Delegators
+    should ensure that the validators they're delegating to behaves
+    correctly, meaning that they have good uptime, do not get hacked and
+    participate in governance. If a delegator is not satisfied with its
+    validator, it can unbond and switch to another validator.
+### Revenue
+Validators and delegators earn revenue in exchange for their services. This
+revenue is given in three forms:
+- Block rewards
+- Transaction fees: Each transaction on the Minter Network comes with
+    transactions fees. Fees are distributed to validators and delegators
+    in proportion to their stake.
+### Validator commission
+Each validator's staking pool receives revenue in proportion to its
+total stake. However, before this revenue is distributed to delegators
+inside the staking pool, the validator can apply a commission. In other
+words, delegators have to pay a commission to their validators on the
+revenue they earn.
+
+`10%` from reward going to DAO account.
+
+`10%` from reward going to Developers.
+
+Lets consider a validator whose stake (i.e. self-bonded stake +
+delegated stake) is 10% of the total stake of all validators. This
+validator has 20% self-bonded stake and applies a commission of 10%. Now
+let us consider a block with the following revenue:
+- 111 Bips as block reward (after subtraction taxes of 20%)
+- 10 Bips as transaction fees (after subtraction taxes of 20%)
+
+This amounts to a total of 121 Bips to be distributed among all staking
+pools.
+
+Our validator's staking pool represents 10% of the total stake, which
+means the pool obtains 12.1 bips. Now let us look at the internal
+distribution of revenue:
+- Commission = 10% * 80% * 12.1 bips = 0.69696 bips
+- Validator's revenue = 20% * 12.1 bips + Commission = 3.11696 bips
+- Delegators' total revenue = 80% * 12.1 bips - Commission = 8.98304
+    bips
+Then, each delegator in the staking pool can claim its portion of the
+delegators' total revenue.
+
+### Risks
+Staking coins is not free of risk. First, staked coins are locked up,
+and retrieving them requires a 30 days waiting period called unbonding
+period. Additionally, if a validator misbehaves, a portion of its total
+stake can be slashed (i.e. destroyed). This includes the stake of their
+delegators.
+
+There are 2 main slashing conditions:
+- **Double signing**: If someone reports on chain A that a validator
+    signed two blocks at the same height on chain A and chain B, this
+    validator will get slashed on chain A
+- **Unavailability**: If a validator's signature has not been
+    included in the last 12 blocks, 1% of stake will get slashed and
+    validator will be turned off
+This is why delegators should perform careful due diligence on
+validators before delegating. It is also important that delegators
+actively monitor the activity of their validators. If a validator
+behaves suspiciously or is too often offline, delegators can choose to
+unbond from it or switch to another validator. Delegators can also
+mitigate risk by distributing their stake across multiple validators.
+
+## Minter SDKs
+### GO SDK
+-   [minter-go-sdk](https://github.com/MinterTeam/minter-go-sdk) – a pure GO SDK for working with Minter blockchain
+    
+### JavaScript SDK
+-   [minter-js-sdk](https://github.com/MinterTeam/minter-js-sdk) –
+    work with transactions, checks, and deeplinks
+-   [minterjs-wallet](https://github.com/MinterTeam/minterjs-wallet) –
+    work with mnemonic, private/public key and address
+-   [minterjs-tx](https://github.com/MinterTeam/minterjs-tx) – 
+    low level TX implementation (only for advanced users, use SDK instead)
+-   [minterjs-util](https://github.com/MinterTeam/minterjs-util) – a collection of utility functions for Minter
+
+### iOS SDK
+-   [minter-ios-core](https://github.com/MinterTeam/minter-ios-core) –
+    create, manipulate and sign Minter transactions
+-   [minter-ios-explorer](https://github.com/MinterTeam/minter-ios-explorer)
+    – communicate with the Minter blockchain through Explorer
+    
+### PHP SDK
+-   [minter-php-sdk](https://github.com/MinterTeam/minter-php-sdk) – a pure PHP SDK for working with Minter blockchain
+    
+### Android SDK
+-   [minter-android-core](https://github.com/MinterTeam/minter-android-core)
+- foundation for all Minter blockchain operations
+- [minter-android-blockchain](https://github.com/MinterTeam/minter-android-blockchain)
+- operate with Minter transactions using this sdk
+- [minter-android-explorer](https://github.com/MinterTeam/minter-android-explorer)
+- communicate with the Minter blockchain through the Explorer
+
+### C++ SDK
+- [cpp-minter](https://github.com/MinterTeam/cpp-minter) - build and sign any transaction, generate mnemonic with private and public key
+
+
+## Other public services
+### Explorer API
+[Documentation](https://app.swaggerhub.com/apis-docs/GrKamil/minter-explorer_api)  
+Testnet base url: `https://testnet.explorer-api.minter.network/api/v1/`  
+Mainnet base url: `https://explorer-api.minter.network/api/v1/`
+
+### Gate API
+Minter Gate is a service to publish prepared transactions to the Minter Network. 
+  Prefer to use it instead of node, because it provides load balancing and automatical check of transaction success.
+
+[Documentation](https://minterteam.github.io/minter-gate-docs/#section/Introduction)  
+Testnet base url: `https://testnet.gate-api.minter.network/api/v1/`  
+Mainnet base url: `https://gate-api.minter.network/api/v1/`
+  
+## bip.dev API
+Trade BIP through [bip.dev](https://bip.dev)
+
+[Documentation](https://minterteam.github.io/bipdev-docs/)  
+Url: `https://api.bip.dev/api/`  
+[Card API documentation (Swagger)](https://app.swaggerhub.com/apis-docs/GrKamil/bipdev-card-api)  
+Card API url: `https://card-api.bip.dev/api/v1/`

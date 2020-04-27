@@ -171,6 +171,18 @@ hr {border: none; border-top: 1px solid @c-border;}
 .hr--section-divider {margin: 0;}
 
 
+table {border-collapse: collapse; box-shadow: 0 2px 6px rgba(0,0,0,0.1);}
+th, td {border: none; text-align: left;}
+th {background: #fff; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: @c-black-light; padding: 16px; border-bottom: 1px solid #e6e6e6}
+td {
+    padding: 12px 16px; border-right: 1px solid #e6e6e6; background: #fff;
+    //&:first-child {border-left: none;}
+    &:last-child {border-right: none;}
+    //tr:last-child & {border-bottom: 1px solid @c-border;}
+    tr:nth-child(2n+1) & {background: #f8f8f8;}
+}
+
+
 
 
 
