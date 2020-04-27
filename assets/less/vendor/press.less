@@ -62,7 +62,7 @@
         font-size: 0.85em;
         //color: @c-main;
         //font-weight: bold;
-        background-color: #f5ece8;
+        background-color: @code-bg-color;
         padding: 0.2em 0.4em;
         border-radius: 3px;
     }
@@ -108,8 +108,10 @@
     & pre,
     & pre[class*="language-"] {
         padding: 1em;
-        background-color: #f5ece8;
+        background-color: @code-bg-color;
         font-size: 14px;
+        tab-size: 4;
+        white-space: pre-wrap;
     }
 
     .language-css .token.string, .style .token.string, .token.entity, .token.operator, .token.url {

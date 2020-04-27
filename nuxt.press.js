@@ -6,9 +6,9 @@ export default {
         "title": "Minter",
         "nav": [
             { "Docs": "/docs" },
-            { "How To": "/how-to" },
-            { "Solutions": "/solutions" },
-            { "Tools": "/tools" },
+            { "How To": "/howto" },
+            // { "Solutions": "/solutions" },
+            // { "Tools": "/tools" },
         ],
         sidebarDepth: 1,
         sidebarAllAuto: true,

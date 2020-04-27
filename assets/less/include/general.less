@@ -42,7 +42,7 @@
     --border-color: @c-border;
     --border-dense-color: #e4e4e4;
     --body-bg-color: @body-bg-color;
-    --docs-content-bg-color: #fff5f2;
+    --docs-content-bg-color: @content-bg-color;
     --content-embose-bg-color: #fff;
     --underlay-bg-color: #eee;
     --elements-bg-color: #fff;
@@ -171,15 +171,15 @@ hr {border: none; border-top: 1px solid @c-border;}
 .hr--section-divider {margin: 0;}
 
 
-table {border-collapse: collapse; box-shadow: 0 2px 6px rgba(0,0,0,0.1);}
+table {border-collapse: collapse; border: 1px solid #e6e6e6;}
 th, td {border: none; text-align: left;}
-th {background: #fff; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: @c-black-light; padding: 16px; border-bottom: 1px solid #e6e6e6}
+th {background: @body-bg-color; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: @c-black-light; padding: 16px; border-bottom: 1px solid #e6e6e6}
 td {
-    padding: 12px 16px; border-right: 1px solid #e6e6e6; background: #fff;
+    padding: 12px 16px; border-right: 1px solid #e6e6e6; background: @content-bg-color;
     //&:first-child {border-left: none;}
     &:last-child {border-right: none;}
     //tr:last-child & {border-bottom: 1px solid @c-border;}
-    tr:nth-child(2n+1) & {background: #f8f8f8;}
+    tr:nth-child(2n) & {background: @body-bg-color;}
 }
 
 
