@@ -12,7 +12,7 @@
     <div class="docs-aside__sticky sidebar">
       <div class="docs-aside__page" v-for="page in sidebarPages">
         <div class="docs-aside__page-link">
-          <nuxt-link class="docs-aside__menu-link" :to="page.path" :class="{'is-active': page.path === normalizedPath}">
+          <nuxt-link class="docs-aside__menu-link" :to="page.pathClean" :class="{'is-active': page.path === normalizedPath}">
             {{ page.title }}
           </nuxt-link>
         </div>
@@ -109,6 +109,7 @@
             locale,
             category,
             order,
+            pathClean: path.replace(/(.+)\/$/, '$1'),
           });
         });
 

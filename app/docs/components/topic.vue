@@ -100,13 +100,17 @@ export default {
       const initialId = this.$route.hash.substr(1)
 
       const observedCallback = (target) => {
+        const cleanPath = this.$route.path.replace(/(.+)\/$/, '$1');
+        const pathList = [cleanPath, cleanPath + '/'];
         const targetId = target.id ? `#${target.id}` : ``
         let targetHeading = `${this.$route.path}${targetId}`
-        let heading = document.querySelector(`.sidebar a[href="${targetHeading}"`)
+        let headingSelector = pathList.map((path) => `.sidebar a[href="${path}${targetId}"]`).join(', ')
+        let heading = document.querySelector(headingSelector)
 
         if (!heading && target.tagName === 'H1') {
           targetHeading = this.$route.path
-          heading = document.querySelector(`.sidebar a[href="${targetHeading}"`)
+          headingSelector = pathList.map((path) => `.sidebar a[href="${path}"]`).join(', ')
+          heading = document.querySelector(headingSelector)
         }
 
         if (heading) {

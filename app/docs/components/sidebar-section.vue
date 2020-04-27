@@ -43,7 +43,8 @@
       return this.data[2]
     },
     fullUrl() {
-      return `${this.docsPrefix}${this.url}`
+      // remove last slash
+      return `${this.docsPrefix}${this.url}`.replace(/(.+)\/#(.+)$/, '$1#$2');
     },
     isActive() {
       let isActive = this.url === this.activePath

@@ -23,7 +23,7 @@
                 <p class="error__description" v-else>{{ error.message }}</p>
                 <p><a class="error__link link--default" href="/">{{ tt('Return to main page', 'error.return-link') }}</a></p>
 
-                <img class="error__image" src="/img/error-404.png" srcset="/img/error-404@2x.png 2x" alt="" role="presentation">
+                <img class="error__image" src="/img/error-404.png" alt="" role="presentation">
             </div>
         </div>
     </div>
