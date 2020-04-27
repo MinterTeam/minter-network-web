@@ -17,9 +17,9 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "@material/list": "^5.1.0",
-    "@material/menu": "^5.1.0",
-    "@material/snackbar": "^5.1.0",
+    "@material/list": "^6.0.0",
+    "@material/menu": "^6.0.0",
+    "@material/snackbar": "^6.0.0",
     "@nuxt-press/cli": "^0.2.0-beta.0",
     "@nuxt-press/core": "github:shrpne/press#standalone-core",
     "@nuxt-press/docs": "github:shrpne/press#standalone-docs",
@@ -28,8 +28,9 @@
     "@nuxt/press": "github:shrpne/press#standalone-press",
     "axios": "^0.19.2",
     "entity-decode": "^2.0.2",
+    "lodash-es": "^4.17.15",
     "nuxt": "^2.12.2",
-    "nuxt-i18n": "^6.9.1",
+    "nuxt-i18n": "^6.10.1",
     "pretty-num": "^0.4.0",
     "wysiwyg.css": "github:shrpne/wysiwyg.css#patch-1"
   },
@@ -42,7 +43,7 @@
     "dotenv": "^8.2.0",
     "eslint": "^6.8.0",
     "eslint-friendly-formatter": "^4.0.1",
-    "eslint-loader": "^4.0.0",
+    "eslint-loader": "^4.0.2",
     "eslint-plugin-vue": "^6.2.2",
     "fancy-log": "^1.3.3",
     "gulp": "^4",

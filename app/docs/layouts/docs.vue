@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import debounce from 'lodash-es/debounce';
 import {support} from '~/assets/utils-support.js';
 import eventBus from '~/assets/event-bus.js';
 import docsMixin from 'press/docs/mixins/docs'
@@ -76,26 +77,61 @@ export default {
     }
   },
   mounted() {
-    window.addEventListener('resize', checkDesktop.bind(this), support.passiveListener ? {passive: true} : false);
+    checkHeaderHeight();
+    setHeaderTopProperty();
+    window.addEventListener('scroll', setHeaderTopProperty, support.passiveListener ? {passive: true} : false);
+    window.addEventListener('resize', this.handleResize, support.passiveListener ? {passive: true} : false);
+    window.addEventListener('orientationchange', this.handleResize, support.passiveListener ? {passive: true} : false);
+
   },
   destroyed() {
-    window.removeEventListener('resize', checkDesktop);
+    window.removeEventListener('scroll', setHeaderTopProperty);
+    window.removeEventListener('resize', this.handleResize);
+    window.removeEventListener('orientationchange', this.handleResize);
   },
   methods: {
+    handleResize() {
+      const clientWidth = document.body.clientWidth
+      checkHeaderHeight(clientWidth);
+      checkDesktop.call(this, clientWidth);
+      debouncedSetHeaderTopProperty();
+    },
+  },
+}
 
 
+
+
+const debouncedSetHeaderTopProperty = debounce(setHeaderTopProperty, 50);
+function setHeaderTopProperty() {
+  document.documentElement.style.setProperty('--header-visible-height', Math.max(headerHeight - window.scrollY, 0) + 'px');
+}
+let headerHeight = 80;
+function checkHeaderHeight(clientWidth) {
+  if (!process.client) {
+    return;
+  }
+  clientWidth = clientWidth || document.body.clientWidth;
+  if (clientWidth >= 960) {
+    headerHeight = 80
+  } else {
+    headerHeight = 56;
   }
 }
 
 
-function checkDesktop() {
-  this.isDesktop = isDesktop();
+function checkDesktop(clientWidth) {
+  this.isDesktop = isDesktop(clientWidth);
   if (this.isDesktop) {
     this.isMenuActive = false;
   }
 }
 
-function isDesktop() {
-  return process.client && document.body.clientWidth >= 700;
+function isDesktop(clientWidth) {
+  if (!process.client) {
+    return;
+  }
+  clientWidth = clientWidth || document.body.clientWidth;
+  return clientWidth >= 700;
 }
 </script>

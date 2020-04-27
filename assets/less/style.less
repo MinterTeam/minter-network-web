@@ -113,7 +113,7 @@
     &::before {content: ''; position: absolute; left: 0; top: 0; right: 0; height: @header-height; z-index: -1; background: #fff; box-shadow: 0 4px 6px @c-border;}
 }
 .header__logo {padding: 12px 0;}
-.header__logo-image {display: block; font-size: 0; width: 32px; height: 32px;}
+.header__logo-image {display: block; font-size: 0;}
 .nav__link {
     font-size: 16px; line-height: 20px; font-weight: 700; text-decoration: none; display: block;
     &.is-active {
@@ -138,6 +138,9 @@
         &:after {transform: rotate3d(0, 0, 1, -45deg);}
     }
 }
+@media (max-width: @breakpoint-large-down) {
+    .header__logo-image {width: 32px; height: 32px;}
+}
 @media (min-width: @breakpoint-medium-up) {
     .header__menu {
         display: flex; flex-direction: row; flex-grow: 2;
@@ -159,7 +162,6 @@
         &::before {height: @header-height-large;}
     }
     .header__logo {padding: 22px 0;}
-    .header__logo-image {width: auto; height: auto;}
     .header__menu {
         // 25% - aside width, 36px - logo width, 75% - content, 640px - article
         margin-left: calc(100vw * 0.25 - 36px - @container-padding + (100vw * 0.75 - 640px) / 2);
@@ -242,7 +244,7 @@ html.layout--docs {background: var(--underlay-bg-color);}
     &+& {margin-top: 20px;}
     &:last-child {margin-bottom: @container-padding;} // fix .docs-aside__sticky bottom padding
 }
-.docs-aside__page-link {display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;}
+.docs-aside__page-link {display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;}
 .docs-aside__page-nav {margin-left: 16px; margin-top: 16px; border-left: 2px solid fade(@c-main, 20%);}
 .docs-aside__menu-link {
     &.is-active {font-weight: 600;}
@@ -250,8 +252,8 @@ html.layout--docs {background: var(--underlay-bg-color);}
 }
 .docs-content {background: var(--docs-content-bg-color); padding: 50px 0; overflow-wrap: break-word;}
 @media (min-width: @breakpoint-medium-up) {
-    .docs-aside {overflow: visible; position: relative; height: auto;}
-    .docs-aside__sticky {position: sticky; top: 0; max-height: 100vh/*calc(100vh - @header-height)*/; overflow-y: auto;}
+    .docs-aside {overflow: visible; position: relative; height: auto; display: block !important;/* override ssr v-show */}
+    .docs-aside__sticky {position: sticky; top: 0; max-height: 100vh; max-height: calc(100vh - var(--header-visible-height)); overflow-y: auto;}
 }
 
 
