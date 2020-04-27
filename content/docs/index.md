@@ -988,7 +988,7 @@ Minter Gate is a service to publish prepared transactions to the Minter Network.
 Testnet base url: `https://testnet.gate-api.minter.network/api/v1/`  
 Mainnet base url: `https://gate-api.minter.network/api/v1/`
   
-## bip.dev API
+### bip.dev API
 Trade BIP through [bip.dev](https://bip.dev)
 
 [Documentation](https://minterteam.github.io/bipdev-docs/)  
