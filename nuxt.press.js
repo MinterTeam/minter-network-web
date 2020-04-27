@@ -6,7 +6,7 @@ export default {
         "title": "Minter",
         "nav": [
             { "Docs": "/docs" },
-            { "How To": "/howto" },
+            { "HowTo": "/howto" },
             // { "Solutions": "/solutions" },
             // { "Tools": "/tools" },
         ],

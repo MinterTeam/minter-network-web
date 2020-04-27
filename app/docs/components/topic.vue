@@ -114,20 +114,21 @@ export default {
         }
 
         if (heading) {
-          const tocLinks = [...document.querySelectorAll('.sidebar a.active')]
+          const tocLinks = [...document.querySelectorAll('.sidebar-item.is-active')]
           for (const tocLink of tocLinks) {
-            tocLink.classList.remove('active')
+            tocLink.classList.remove('is-active')
           }
-          heading.classList.add('active')
+          heading.parentElement.classList.add('is-active')
 
-          this.$press.disableScrollBehavior = true
-          this.$router.replace(targetHeading, () => {
-            this.$nextTick(() => {
-              this.$press.disableScrollBehavior = false
-            })
-          }, () => {
-            this.$press.disableScrollBehavior = false
-          })
+          window.history.replaceState(window.history.state, null, targetHeading);
+          // this.$press.disableScrollBehavior = true
+          // this.$router.replace(targetHeading, () => {
+          //   this.$nextTick(() => {
+          //     this.$press.disableScrollBehavior = false
+          //   })
+          // }, () => {
+          //   this.$press.disableScrollBehavior = false
+          // })
         }
       }
 
