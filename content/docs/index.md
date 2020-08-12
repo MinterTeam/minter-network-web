@@ -851,9 +851,9 @@ from it, thereby reducing its stake. Eventually, if a validator's stake
 falls under the top addresses with highest stake, it will exit the
 validator set.
 
-Delegators share the revenue of their validators, but they also share
-the risks. In terms of revenue, validators and delegators differ in that
-validators can apply a commission on the revenue that goes to their
+Delegators share the rewards of their validators, but they also share
+the risks. In terms of rewards, validators and delegators differ in that
+validators can apply a commission on the rewards that goes to their
 delegator before it is distributed. This commission is known to
 delegators beforehand and cannot be changed. In terms of risk,
 delegators' coins can be slashed if their validator misbehaves. For
@@ -877,19 +877,19 @@ a delegator:
     correctly, meaning that they have good uptime, do not get hacked and
     participate in governance. If a delegator is not satisfied with its
     validator, it can unbond and switch to another validator.
-### Revenue
-Validators and delegators earn revenue in exchange for their services. This
-revenue is given in three forms:
+### Rewards
+Validators and delegators earn rewards in exchange for their services. This
+rewards is given in three forms:
 - Block rewards
 - Transaction fees: Each transaction on the Minter Network comes with
     transactions fees. Fees are distributed to validators and delegators
     in proportion to their stake.
 ### Validator commission
-Each validator's staking pool receives revenue in proportion to its
-total stake. However, before this revenue is distributed to delegators
+Each validator's staking pool receives rewards in proportion to its
+total stake. However, before this rewards is distributed to delegators
 inside the staking pool, the validator can apply a commission. In other
 words, delegators have to pay a commission to their validators on the
-revenue they earn.
+rewards they earn.
 
 `10%` from reward going to DAO account.
 
@@ -898,7 +898,7 @@ revenue they earn.
 Lets consider a validator whose stake (i.e. self-bonded stake +
 delegated stake) is 10% of the total stake of all validators. This
 validator has 20% self-bonded stake and applies a commission of 10%. Now
-let us consider a block with the following revenue:
+let us consider a block with the following rewards:
 - 111 Bips as block reward (after subtraction taxes of 20%)
 - 10 Bips as transaction fees (after subtraction taxes of 20%)
 
@@ -907,13 +907,13 @@ pools.
 
 Our validator's staking pool represents 10% of the total stake, which
 means the pool obtains 12.1 bips. Now let us look at the internal
-distribution of revenue:
+distribution of rewards:
 - Commission = 10% * 80% * 12.1 bips = 0.69696 bips
-- Validator's revenue = 20% * 12.1 bips + Commission = 3.11696 bips
-- Delegators' total revenue = 80% * 12.1 bips - Commission = 8.98304
+- Validator's rewards = 20% * 12.1 bips + Commission = 3.11696 bips
+- Delegators' total rewards = 80% * 12.1 bips - Commission = 8.98304
     bips
 Then, each delegator in the staking pool can claim its portion of the
-delegators' total revenue.
+delegators' total rewards.
 
 ### Risks
 Staking coins is not free of risk. First, staked coins are locked up,
