@@ -936,6 +936,7 @@ behaves suspiciously or is too often offline, delegators can choose to
 unbond from it or switch to another validator. Delegators can also
 mitigate risk by distributing their stake across multiple validators.
 
+
 ## Minter SDKs
 ### GO SDK
 -   [minter-go-sdk](https://github.com/MinterTeam/minter-go-sdk) – a pure GO SDK for working with Minter blockchain
@@ -968,6 +969,18 @@ mitigate risk by distributing their stake across multiple validators.
 
 ### C++ SDK
 - [cpp-minter](https://github.com/MinterTeam/cpp-minter) - build and sign any transaction, generate mnemonic with private and public key
+
+
+## Node API
+
+### v2 (latest)
+[Documentation](https://minterteam.github.io/node-grpc-gateway/)  
+Testnet base url: `https://testnet.node-api.minter.network/v2/`
+
+### v1 (deprecated)
+[Documentation](https://minterteam.github.io/minter-go-node-docs/)  
+[openapi.yaml](https://github.com/MinterTeam/minter-go-node-docs/blob/gh-pages/openapi.yaml),  [openapi.json](https://github.com/MinterTeam/minter-go-node-docs/blob/gh-pages/openapi.json)  
+Testnet base url: `https://testnet.node-api.minter.network/`
 
 
 ## Other public services
