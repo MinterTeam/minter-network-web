@@ -3,7 +3,7 @@
         nuxtI18n: false,
         layout: 'simple',
         beforeMount() {
-            window.location.href = '/?1';
+            window.location.href = '/';
         }
     }
 </script>

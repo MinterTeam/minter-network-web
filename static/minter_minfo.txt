@@ -14,15 +14,7 @@ stage = "prod" # Current stage of the project: dev, alpha, beta, mvp, prod
 launch = 2019-05-15T18:05:00+03:00 # YYYY-MM-DDThh:mm:ss±hh:mm
 whitepaper = "https://about.minter.network/Minter_White_Paper.pdf" # Full project description
 languages = [ # ISO 639-1
-  "en",
-  "ru",
-  "ar",
-  "zh",
-  "fr",
-  "de",
-  "ja",
-  "ko",
-  "es"
+  "en"
 ]
 address = "Mx04bea23efb744dc93b4fda4c20bf4a21c6e195f1" # Mx...
 coin = "BIP" # Project coin
