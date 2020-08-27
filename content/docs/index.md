@@ -1,6 +1,6 @@
 # Minter blockchain
 
-Minter is a blockchain network that lets people, projects, and companies issue and manage their own coins and trade them at a fair market price with absolute and instant liquidity.
+Minter is a global rewards and loyalty points network powered by a fast blockchain. Any brand, community, or blogger can create their own coins and launch their reward or loyalty system in minutes.
 
 Github: https://github.com/MinterTeam/minter-go-node  
 Official site: https://minter.network/
