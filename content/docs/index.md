@@ -1,3 +1,7 @@
+---
+description: Minter is a global rewards and loyalty points network powered by a fast blockchain. Any brand, community, or blogger can create their own coins and launch their reward or loyalty system in minutes.
+---
+
 # Minter blockchain
 
 Minter is a global rewards and loyalty points network powered by a fast blockchain. Any brand, community, or blogger can create their own coins and launch their reward or loyalty system in minutes.
