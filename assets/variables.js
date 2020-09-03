@@ -1,6 +1,6 @@
 export const BASE_TITLE_END = ' — Minter';
-export const BASE_TITLE = 'We Mint Coins';
-export const BASE_DESCRIPTION = 'Create a cryptocurrency of your own. All information about the Minter network in one place.';
+export const BASE_TITLE = 'Minter: a global rewards and loyalty points network';
+export const BASE_DESCRIPTION = 'Any brand, community, or blogger can create their own coins and launch their reward or loyalty system on our fast blockchain in minutes.';
 export const LANGUAGE_COOKIE_KEY = 'minter-language';
 export const HOST = 'https://www.minter.network';
 
