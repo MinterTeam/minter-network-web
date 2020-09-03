@@ -6,14 +6,14 @@ import dotenv from 'dotenv';
 const envConfig = dotenv.config();
 
 import langRu from './lang/ru';
-import {BASE_TITLE, BASE_DESCRIPTION, BASE_TITLE_END} from "./assets/variables";
+import {BASE_TITLE, BASE_DESCRIPTION} from "./assets/variables";
 
 module.exports = {
     /*
     ** Headers of the page
     */
     head: {
-        title: BASE_TITLE + BASE_TITLE_END,
+        title: BASE_TITLE,
         meta: [
             { charset: 'utf-8' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
