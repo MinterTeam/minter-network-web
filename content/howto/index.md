@@ -154,10 +154,9 @@ if ($balance >= $price) {
 $marketAddress = ‘Mx31e61a05adbd13c6b625262704bc305bf7725026’;
 $marketPrivateKey = ‘07bc17abdcee8b971bb8723e36fe9d2523306d5ab2d683631693238e0f9df142’;
 ```
-2. Install Minter PHP SDK.
-```php
+2. Install <a href="https://github.com/MinterTeam/minter-php-sdk#installing" rel="nofollow">Minter PHP SDK</a>. 
+```bash
 composer require minter/minter-php-sdk
-https://github.com/MinterTeam/minter-php-sdk#installing
 ```
 3. Generate a Minter address for the user upon sign-up. For that, the `MinterWallet::create()` method is used. It returns an array of data related to a given address: seed, mnemonic phrase, private key, and the address itself. Save the private key and address to a database.
 ```php
