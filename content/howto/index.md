@@ -1,7 +1,9 @@
 ---
 order: 1
-title: Blockchain Loyalty Points: The Definitive Guide (2020)
-description: How to create blockchain loyalty points and rewards on the Minter network? How to implement them into your platform, and what are the possible use cases?
+title: >-
+  Blockchain Loyalty Points: The Definitive Guide (2020)
+description: >-
+  How to create blockchain loyalty points and rewards on the Minter network? How to implement them into your platform, and what are the possible use cases?
 ---
 
 # Blockchain Loyalty Points
@@ -117,13 +119,13 @@ Pleae note that in order to integrate blockchain loyalty points into your platfo
 ### 1. Accept Your Coin for Goods and Services
 1. On the product page, the user clicks the ‘Pay with BIP’ button.
 2. The seller sets the coin’s price for a specific good or service. For example, 1 pint of beer = 16 BEER.
-```
+```php
 $price = 16; // BEER
 ```
 *(Change `BEER` with the ticker of your coin.)*
 
 3. The system generates a Minter network address. For that, the `MinterWallet::create()` method is used. It returns an array of data related to a given address: seed, mnemonic phrase, private key, and the address itself. Save the private key and address to a database and display the address to the user so that they can transfer the amount required.
-```
+```php
 use Minter\SDK\MinterWallet;
 $wallet = MinterWallet::create();
 $address = $wallet[‘address’];
@@ -136,7 +138,7 @@ $privateKey = $wallet[‘private_key’];
 **a.** Request the balance of a generated address every 30 seconds for 20 minutes. Once there is a required amount on the balance, consider the payment completed. Otherwise, stop checking and consider the payment canceled.
 
 **b.** Use MinterAPI.
-```
+```php
 use Minter\MinterAPI;
 $api = new MinterAPI(‘https://testnet.node-api.minter.network/v2’);
 $response = $api->getBalance($address);
@@ -148,17 +150,17 @@ if ($balance >= $price) {
 
 ### 2. Cashback in Your Coin
 1. Assume we have an address where we created `BONUS` coins and its private key.
-```
+```php
 $marketAddress = ‘Mx31e61a05adbd13c6b625262704bc305bf7725026’;
 $marketPrivateKey = ‘07bc17abdcee8b971bb8723e36fe9d2523306d5ab2d683631693238e0f9df142’;
 ```
 2. Install Minter PHP SDK.
-```
+```php
 composer require minter/minter-php-sdk
 https://github.com/MinterTeam/minter-php-sdk#installing
 ```
 3. Generate a Minter address for the user upon sign-up. For that, the `MinterWallet::create()` method is used. It returns an array of data related to a given address: seed, mnemonic phrase, private key, and the address itself. Save the private key and address to a database.
-```
+```php
 use Minter\SDK\MinterWallet;
 $wallet = MinterWallet::create();
 $userAddress = $wallet[‘address’];
@@ -169,7 +171,7 @@ $userPrivateKey = $wallet[‘private_key’];
 4. Once the user has made the payment, credit `BONUS` coins. To do that, you need to create a transaction and send it to the Minter network.
 
 5. First, initialize the `MinterAPI` class. You can use any open node.
-```
+```php
 use Minter\MinterAPI;
 $nodeUrl = ‘https://testnet.node-api.minter.network/v2'; // example of a node url
 $api = new MinterAPI($nodeUrl);
@@ -179,15 +181,15 @@ $api = new MinterAPI($nodeUrl);
 6. Then, we need to create a `Send` transaction.
 
 Get nonce for the address where `BONUS` coins are stored.
-```
+```php
 $nonce = $api->getNonce($marketAddress);
 ```
 Assume we want to send 10 `BONUS` coins.
-```
+```php
 $amount = 10;
 ```
 Create a transaction.
-```
+```php
 use Minter\SDK\MinterTx;
 use Minter\SDK\MinterCoins\MinterSendCoinTx;
 $tx = new MinterTx([
@@ -207,13 +209,13 @@ $tx = new MinterTx([
 ]);
 ```
 Sign a transaction with your private key (for the address where `BONUS` coins are stored).
-```
+```php
 $transaction = $tx->sign($marketPrivateKey);
 ```
 <a href="https://github.com/MinterTeam/minter-php-sdk#example-3" rel="nofollow">https://github.com/MinterTeam/minter-php-sdk#example-3</a>
 
 7. Send a signed transaction to the network.
-```
+```php
 use GuzzleHttp\Exception\RequestException;
 try {
  $response = $api->send($transaction);
@@ -230,23 +232,23 @@ $error = json_decode($content, true);
 ```
 ### 3. Exclusive Access
 1. Assume we have an address where we created `VIP` coins and its private key.
-```
+```php
 $mainAddress = ‘Mx31e61a05adbd13c6b625262704bc305bf7725026’;
 $mainAddressPrivateKey = ‘07bc17abdcee8b971bb8723e36fe9d2523306d5ab2d683631693238e0f9df142’;
 ```
 2. Now, we want to restrict access to our system. To gain access to the system or a specific action, the user will need to send the `N` amount of `VIP`. For that, we generate a special address that they will be able to transfer `VIP` coins to in order to get access (or invitation).
-```
+```php
 use Minter\SDK\MinterWallet;
 $wallet = MinterWallet::create();
 $address = $wallet[‘address’];
 $privateKey = $wallet[‘private_key’];
 ```
 3. Specify the required amount of `VIP`.
-```
+```php
 $requiredCoinAmount = 5;
 ```
 4. Verify if the user has transferred the coins. For that, we can check the balance of a generated address once every 15 seconds for 20 minutes.
-```
+```php
 use Minter\MinterAPI;
 $api = new MinterAPI(‘https://testnet.node-api.minter.network/v2');
 $response = $api->getBalance($address);
@@ -258,7 +260,7 @@ if (isset($balance->VIP) && $balance >= $requiredCoinAmount) {
 5. We can also send out the coins to the users we want to have access to the system.
 
 Assume we have the following array of addresses:
-```
+```php
 $addresses = [
 ‘Mx0a2bbda12c7b4660930d8a4d05b4c4d66abed1fc’,
 ‘Mx6041bb9afa46eea000129fb4a7ad56fa770c549c’,
@@ -266,7 +268,7 @@ $addresses = [
 ];
 ```
 In one transaction, we can send the coins to several addresses simultaneously.
-```
+```php
 use Minter\SDK\MinterTx;
 use Minter\SDK\MinterCoins\MinterMultiSendTx;
 $data = [];
@@ -293,7 +295,7 @@ $tx = new MinterTx([
 $transaction = $tx->sign($mainAddressPrivateKey)
 ```
 6. Send a signed transaction to the network.
-```
+```php
 use GuzzleHttp\Exception\RequestException;
 try {
  $response = $api->send($transaction);
@@ -310,7 +312,7 @@ $error = json_decode($content, true);
 ```
 ### 4. User Rating
 1. Assume we have the user who’s just signed up for our website. Generate a new address for them and save it to a database.
-```
+```php
 use Minter\SDK\MinterWallet;
 $wallet = MinterWallet::create();
 $userAddress = $wallet[‘address’];
@@ -319,15 +321,15 @@ $userPrivateKey = $wallet[‘private_key’];
 2. For specific actions on the website, we credit the coins (or blockchain loyalty points) to the user. To do that, we need to form and transmit a `Send` transaction.
 
 Get nonce for the address where `RATING` coins are stored.
-```
+```php
 $nonce = $api->getNonce($mainAddress);
 ```
 Assume we want to send 10 `RATING` coins.
-```
+```php
 $amount = 10;
 ```
 Create a transaction.
-```
+```php
 use Minter\SDK\MinterTx;
 use Minter\SDK\MinterCoins\MinterSendCoinTx;
 $tx = new MinterTx([
@@ -347,13 +349,13 @@ $tx = new MinterTx([
 ]);
 ```
 Sign a transaction with a private key (for the address where `RATING` coins are stored).
-```
+```php
 $transaction = $tx->sign($mainAddressPrivateKey);
 ```
 <a href="https://github.com/MinterTeam/minter-php-sdk#example-3" rel="nofollow">https://github.com/MinterTeam/minter-php-sdk#example-3</a>
 
 3. Send a signed transaction to the network.
-```
+```php
 use GuzzleHttp\Exception\RequestException;
 try {
  $response = $api->send($transaction);
@@ -369,7 +371,7 @@ $error = json_decode($content, true);
 }
 ```
 4. We can obtain the rating and category of a user (for example, to provide a Silver, Gold, or Platinum subscription) by the number of coins on the balance of their address. To do that, we can retrieve the balance.
-```
+```php
 use Minter\MinterAPI;
 $nodeUrl = ‘https://testnet.node-api.minter.network/v2';
 $api = new MinterAPI($nodeUrl);
