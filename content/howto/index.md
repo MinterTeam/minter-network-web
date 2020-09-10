@@ -1,7 +1,8 @@
 ---
 order: 0
 title: Minter 101
-description: How-to’s and guides on all things Minter.
+description: >-
+  How-to’s and guides on all things Minter.
 ---
 
 # Introduction
