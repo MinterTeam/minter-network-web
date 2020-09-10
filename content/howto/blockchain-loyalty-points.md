@@ -59,7 +59,7 @@ The minimum reserve for any custom coin is 10,000 BIP. For local coins, the maxi
 
 Global coins can be exchanged for one another or for BIP, which is why a BIP reserve is required. When you buy a coin inside Minter, its supply and reserve increase; when you sell it, they decrease. To provide instant liquidity when converting one coin into another, they must be backed by a sufficient number of BIPs. This is not possible with local coins because their reserve is constant and always equal to 10,000 BIP.
 
-The most user-friendly way to create a coin is through <a href="https://console.minter.network" rel="nofollow">Console</a> (the interface that offers more advanced features than <a href="https://www.bip.to" rel="nofollow">BIP Wallet</a>). You can use the web version or download the local one from <a href="https://github.com/MinterTeam/minter-console-web/releases" rel="nofollow">GitHub</a>.
+The most user-friendly way to create a coin is through <a href="https://console.minter.network" rel="nofollow">Console</a> (the interface that offers more advanced features than <a href="https://www.bip.to" rel="nofollow" target="_blank">BIP Wallet</a>). You can use the web version or download the local one from <a href="https://github.com/MinterTeam/minter-console-web/releases" rel="nofollow" target="_blank">GitHub</a>.
 
 Create an address by generating a seed phrase:
 
@@ -71,7 +71,7 @@ After pressing the corresponding button, you will see the address itself and a 1
 
 Make sure to keep the seed phrase in a safe place that no one can access except you. It is the key to all funds in your wallet, and it is impossible to restore or change it!
 
-To sign in to your wallet, enter the seed phrase you got. Since any custom Minter-based coin is backed by the network’s native digital token, you need to have BIP on your balance (see <a href="https://bip.dev" rel="nofollow">here</a> for reference).
+To sign in to your wallet, enter the seed phrase you got. Since any custom Minter-based coin is backed by the network’s native digital token, you need to have BIP on your balance (see <a href="https://bip.dev" rel="nofollow" target="_blank">here</a> for reference).
 
 Once you have the necessary amount of BIP, proceed to the <a href="https://console.minter.network/coiner" rel="nofollow">Coiner</a> section from the sidebar menu.
 
@@ -112,17 +112,17 @@ Having created a coin with its own unique ticker and required parameters, you ca
 - Cashbacks and discounts
 - and much more, depending on the functionality of the platform and your imagination
 
-Read this article to explore a case study of [Reddit blockchain rewards](https://medium.com/@MinterTeam/blockchain-reward-system-99be560b3c42).
+Read this article to explore a case study of <a href="https://medium.com/@MinterTeam/blockchain-reward-system-99be560b3c42" target="_blank">Reddit blockchain rewards</a>.
 
 Pleae note that in order to integrate blockchain loyalty points into your platform, you will need a programmer or team of programmers (if you are not one yourself). Some of the implementation cases are presented below for informational purposes only:
 
 ### 1. Accept Your Coin for Goods and Services
-1. On the product page, the user clicks the ‘Pay with BIP’ button.
+1. On the product page, the user clicks the ‘Pay with BEER’ button.
 2. The seller sets the coin’s price for a specific good or service. For example, 1 pint of beer = 16 BEER.
 ```php
 $price = 16; // BEER
 ```
-*(Change `BEER` with the ticker of your coin.)*
+*(Replace `BEER` with the ticker of your coin.)*
 
 3. The system generates a Minter network address. For that, the `MinterWallet::create()` method is used. It returns an array of data related to a given address: seed, mnemonic phrase, private key, and the address itself. Save the private key and address to a database and display the address to the user so that they can transfer the amount required.
 ```php
@@ -131,7 +131,7 @@ $wallet = MinterWallet::create();
 $address = $wallet[‘address’];
 $privateKey = $wallet[‘private_key’];
 ```
-<a href="https://github.com/MinterTeam/minter-php-sdk#minter-wallet" rel="nofollow">https://github.com/MinterTeam/minter-php-sdk#minter-wallet</a>
+<a href="https://github.com/MinterTeam/minter-php-sdk#minter-wallet" rel="nofollow" target="_blank">https://github.com/MinterTeam/minter-php-sdk#minter-wallet</a>
 
 4. The system checks if the payment has been made. Implementation options:
 
@@ -154,7 +154,7 @@ if ($balance >= $price) {
 $marketAddress = ‘Mx31e61a05adbd13c6b625262704bc305bf7725026’;
 $marketPrivateKey = ‘07bc17abdcee8b971bb8723e36fe9d2523306d5ab2d683631693238e0f9df142’;
 ```
-2. Install <a href="https://github.com/MinterTeam/minter-php-sdk#installing" rel="nofollow">Minter PHP SDK</a>. 
+2. Install <a href="https://github.com/MinterTeam/minter-php-sdk#installing" rel="nofollow" target="_blank">Minter PHP SDK</a>. 
 ```bash
 composer require minter/minter-php-sdk
 ```
@@ -165,7 +165,7 @@ $wallet = MinterWallet::create();
 $userAddress = $wallet[‘address’];
 $userPrivateKey = $wallet[‘private_key’];
 ```
-<a href="https://github.com/MinterTeam/minter-php-sdk#minter-wallet" rel="nofollow">https://github.com/MinterTeam/minter-php-sdk#minter-wallet</a>
+<a href="https://github.com/MinterTeam/minter-php-sdk#minter-wallet" rel="nofollow" target="_blank">https://github.com/MinterTeam/minter-php-sdk#minter-wallet</a>
 
 4. Once the user has made the payment, credit `BONUS` coins. To do that, you need to create a transaction and send it to the Minter network.
 
@@ -175,7 +175,7 @@ use Minter\MinterAPI;
 $nodeUrl = ‘https://testnet.node-api.minter.network/v2'; // example of a node url
 $api = new MinterAPI($nodeUrl);
 ```
-<a href="https://github.com/MinterTeam/minter-php-sdk#using-minterapi" rel="nofollow">https://github.com/MinterTeam/minter-php-sdk#using-minterapi</a>
+<a href="https://github.com/MinterTeam/minter-php-sdk#using-minterapi" rel="nofollow" target="_blank">https://github.com/MinterTeam/minter-php-sdk#using-minterapi</a>
 
 6. Then, we need to create a `Send` transaction.
 
@@ -211,7 +211,7 @@ Sign a transaction with your private key (for the address where `BONUS` coins ar
 ```php
 $transaction = $tx->sign($marketPrivateKey);
 ```
-<a href="https://github.com/MinterTeam/minter-php-sdk#example-3" rel="nofollow">https://github.com/MinterTeam/minter-php-sdk#example-3</a>
+<a href="https://github.com/MinterTeam/minter-php-sdk#example-3" rel="nofollow" target="_blank">https://github.com/MinterTeam/minter-php-sdk#example-3</a>
 
 7. Send a signed transaction to the network.
 ```php
@@ -351,7 +351,7 @@ Sign a transaction with a private key (for the address where `RATING` coins are 
 ```php
 $transaction = $tx->sign($mainAddressPrivateKey);
 ```
-<a href="https://github.com/MinterTeam/minter-php-sdk#example-3" rel="nofollow">https://github.com/MinterTeam/minter-php-sdk#example-3</a>
+<a href="https://github.com/MinterTeam/minter-php-sdk#example-3" rel="nofollow" target="_blank">https://github.com/MinterTeam/minter-php-sdk#example-3</a>
 
 3. Send a signed transaction to the network.
 ```php
@@ -386,7 +386,7 @@ $userCategory = ‘Senior’;
 }
 echo $userCategory;
 ```
-In this article, you can learn how to use Minter to build a [blockchain loyalty program for Twitter](https://medium.com/@danillashin/blockchain-loyalty-program-in-one-day-bcee6060fe7e) in one day.
+In this article, you can learn how to use Minter to build a <a href="https://medium.com/@danillashin/blockchain-loyalty-program-in-one-day-bcee6060fe7e" target="_blank">blockchain loyalty program for Twitter</a> in one day.
 
 ## Re-Creation of Coins
 You can re-issue the local coins while preserving the old ticker. It may be necessary if, for example, your reward system or loyalty program involves a one-time use of blockchain loyalty points:
@@ -400,4 +400,4 @@ One-time use of coins is relevant when the user should not participate in an eve
 
 Suppose 100 units are issued under the ticker of your local `FILM` coin. You, as a brand, have given away or sold tickets for the premiere of a new movie. 100 of your users received 1 `FILM` coin each. After the session ends, you archive this coin with it getting the `FILM-1` ticker. Its parameters remain the same, and upon re-creation, you set the new parameters for 200 `FILM` coins for 200 visitors. Thus, the ticker is saved, and the parameters can be adjusted for each specific movie, promo, presentation, etc.
 
-> The coin archiving feature is currently being developed and will be introduced with the <a href="https://medium.com/@danillashin/minter-1-2-b015670c6ae4" rel="nofollow">Minter 1.2 upgrade</a>. This how-to is subject to change without notice.
+> The coin archiving feature is currently being developed and will be introduced with the <a href="https://medium.com/@danillashin/minter-1-2-b015670c6ae4" rel="nofollow" target="_blank">Minter 1.2 upgrade</a>. This how-to is subject to change without notice.
