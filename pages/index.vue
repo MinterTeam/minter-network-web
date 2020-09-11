@@ -27,7 +27,7 @@ export default {
     <div class="u-container index-section">
         <section class="index-intro">
             <img class="index-intro__logo" src="/img/minter-logo.svg" alt="Minter" width="133" height="42">
-            <h1 class="index-intro__title u-h1">Create coins and run <span class="u-display-ib">blockchain services</span></h1>
+            <h1 class="index-intro__title u-h1">Create loyalty points and run <span class="u-display-ib">blockchain reward systems</span></h1>
             <a class="index-intro__button button button--main" href="https://about.minter.network/">Start Now</a>
         </section>
         <hr class="hr--divider">
