@@ -56,6 +56,16 @@ Type: `0x10`
 
 4.  Владелец сможет передавать права на тикер другому адресу.
 
+```go
+type EditCoinOwnerData struct {
+  Symbol   types.CoinSymbol
+  NewOwner types.Address
+}
+```
+
+Type: `0x11`
+Комиссия: 10000000 units (10k BIP)
+
 ----------
 
 **2. Изменение формулы расчёта стейка**
