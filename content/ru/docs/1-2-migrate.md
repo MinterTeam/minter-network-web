@@ -40,6 +40,20 @@ type SendData struct {
 
 3.  Владелец сможет пересоздать монету. Предположим, что существует монета COIN и владелец отправляет транзакцию для ее пересоздания. В этот момент старая монета переименовывается в COIN-1 и создается новая с тикером COIN.
 
+```go
+type RecreateCoinData struct {
+  Name                 string
+  Symbol               types.CoinSymbol
+  InitialAmount        *big.Int
+  InitialReserve       *big.Int
+  ConstantReserveRatio uint
+  MaxSupply            *big.Int
+}
+```
+
+Type: `0x10`
+Комиссия: 10000000 units (10k BIP)
+
 4.  Владелец сможет передавать права на тикер другому адресу.
 
 ----------
