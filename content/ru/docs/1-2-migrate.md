@@ -34,7 +34,39 @@ type SendData struct {
 }
 ```
 
-**TODO: примеры SDK**
+В JS SDK можно продолжать использовать тикеры монет в коде, но заменять их на ID с помощью метода `replaceCoinSymbol`, который сделает запрос в апи за ID переданных монет и подставит их обратно в переданный объект.
+```js
+import {Minter, TX_TYPE} from "minter-js-sdk";
+
+const minter = new Minter({apiType: 'gate', baseURL: 'https://gate-api.testnet.minter.network/api/v2/'});
+const symbolTxParams = {
+    chainId: 1,
+    type: TX_TYPE.SEND,
+    data: {
+        to: 'Mx7633980c000139dd3bd24a3f54e06474fa941e16',
+        value: 10,
+        coin: 'BIP', // <= coin symbol
+    },
+    gasCoin: 'MYCOIN', // <= coin symbol
+};
+
+// replace coin symbols in tx params with coin ids
+const idTxParams = await minter.replaceCoinSymbol(symbolTxParams);
+console.log(idTxParams);
+// {
+//     chainId: 1,
+//     type: 1,
+//     data: {
+//         to: 'Mx7633980c000139dd3bd24a3f54e06474fa941e16',
+//         value: 10,
+//         coin: 0, <= replaced with ID
+//     },
+//     gasCoin: 987 <= replaced with ID
+// }
+minter.postTx(idTxParams, {privateKey: '0x123...'})
+```
+
+**TODO: примеры других SDK**
 
 2.  У монет появился владелец: `owner_address`. Владельцами для новых монет будут являться адреса, с которых они были созданы. Для старых монет владелец может отсутствовать (быть null).
 
