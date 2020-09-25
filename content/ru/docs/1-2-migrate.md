@@ -66,7 +66,12 @@ console.log(idTxParams);
 minter.postTx(idTxParams, {privateKey: '0x123...'})
 ```
 
-**TODO: примеры других SDK**
+В GO SDK v2 реализованы методы получения ID монет по их тикерам у [HTTP](https://pkg.go.dev/github.com/MinterTeam/minter-go-sdk/v2/api/http_client#Client.CoinID) и [gRPC](https://pkg.go.dev/github.com/MinterTeam/minter-go-sdk/v2/api/grpc_client#Client.CoinID) клиентов:
+```go
+client, _ := http_client.New("http://localhost:8843/v2") // or client, _ := grpc_client.New("localhost:8842")
+id, _ := client.CoinID("BIP")
+dataSend := transaction.NewSellAllCoinData().SetCoin(id) // ...
+```
 
 2.  У монет появился владелец: `owner_address`. Владельцами для новых монет будут являться адреса, с которых они были созданы. Для старых монет владелец может отсутствовать (быть null).
 
@@ -177,19 +182,42 @@ Type: `0x13`
 
 **8. Wait List**
 
-Стейки, не вошедшие в топ-1000 слотов валидатора, теперь не возвращаются автоматически. Они попадают в WaitList с событием `minter/StakeKick`.
+Стейки, не вошедшие в топ-1000 слотов валидатора, теперь не возвращаются автоматически. Они попадают в WaitList с событием `minter/StakeKickEvent`.
 
 ```go
 type StakeKickEvent struct {  
   Address         types.Address `json:"address"`  
-  Amount          string `json:"amount"`  
-  Coin            types.CoinID `json:"coin"`  
-  ValidatorPubKey types.Pubkey `json:"validator_pub_key"`  
+  Amount          string        `json:"amount"`  
+  Coin            types.CoinID  `json:"coin"`  
+  ValidatorPubKey types.Pubkey  `json:"validator_pub_key"`  
 }
 ```
 
 Пользователь может заделегировать дополнительные монеты, чтобы стейк снова оказался в топ-1000, либо произвести Unbond.
 
-**TODO: описание метода API для получения WaitList**
+Pеализован метод API для вывода стейков попавших в WaitList по адресу владельца, публичный адрес ноды является опциональным параметром: ```/v2/waitlist/{address}?public_key=```. Подробное описание метода можно увидеть на странице [/v2/openapi-ui](https://minterteam.github.io/node-grpc-gateway/).
 
+```json
+{
+  "list": [
+    {
+      "public_key": "string",
+      "coin": {
+        "id": "0",
+        "symbol": "BIP"
+      },
+      "value": "string"
+    }
+  ]
+}
+```
 
+**9. Prune Blocks**
+
+В CLI появилась команда для удаления блоков
+
+На вход принимаются параметры первого и последнего блока для удаления:
+```console
+$ ./minter console
+>>> prune_blocks --from=1 --to=10000
+```
