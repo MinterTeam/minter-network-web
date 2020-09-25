@@ -70,7 +70,7 @@ minter.postTx(idTxParams, {privateKey: '0x123...'})
 ```go
 client, _ := http_client.New("http://localhost:8843/v2") // or client, _ := grpc_client.New("localhost:8842")
 id, _ := client.CoinID("BIP")
-dataSend := transaction.NewSellAllCoinData().SetCoin(id) // ...
+dataSend := transaction.NewSendData().SetCoin(id) // ...
 ```
 
 2.  У монет появился владелец: `owner_address`. Владельцами для новых монет будут являться адреса, с которых они были созданы. Для старых монет владелец может отсутствовать (быть null).
