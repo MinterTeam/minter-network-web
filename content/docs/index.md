@@ -6,8 +6,9 @@ description: Minter is a global rewards and loyalty points network powered by a 
 
 Minter is a global rewards and loyalty points network powered by a fast blockchain. Any brand, community, or blogger can create their own coins and launch their reward or loyalty system in minutes.
 
-Github: https://github.com/MinterTeam/minter-go-node  
-Official site: https://minter.network/
+- Github: [https://github.com/MinterTeam/minter-go-node](https://github.com/MinterTeam/minter-go-node)
+- Github (all projects): [https://github.com/MinterTeam](https://github.com/MinterTeam)
+- Official site: [https://minter.network/](https://minter.network/)
 
 ## Install Minter
 
@@ -23,10 +24,9 @@ There are several ways you can install Minter Blockchain Testnet node on your ma
    ```
 ### From Source
 
-You'll need `golang` installed https://golang.org/doc/install and the
+You'll need `golang` installed [https://golang.org/doc/install](https://golang.org/doc/install) and the
 required
-[environment variables
-set](https://github.com/tendermint/tendermint/wiki/Setting-GOPATH)
+[environment variables set](https://github.com/tendermint/tendermint/wiki/Setting-GOPATH)
 
 1. **Clone Minter source code to your machine**
   ```bash
@@ -54,7 +54,7 @@ set](https://github.com/tendermint/tendermint/wiki/Setting-GOPATH)
   ```bash
   ./build/minter node
   ```
-  or 
+  or
   ```bash
   minter node
   ```
@@ -106,17 +106,17 @@ is not limited.
 
 Minter Blockchain is multi-coin system.
 
-Base coin in testnet is `MNT`.  
+Base coin in testnet is `MNT`.
 Base coin in mainnet is `BIP`.
 
-Smallest part of *each* coin is called `pip`.  
+Smallest part of *each* coin is called `pip`.
 1 pip = 1^-18 of any coin. In Blockchain and API we only operating with
 pips.
 
 > **Note:** Each coin has its **own** pip. You should treat pip like atomic
-part of a coin, not as currency:  
-> 1 MNT = 10^18 pip (MNT's pip)  
-> 1 ABC = 10^18 pip (ABC's pip)  
+part of a coin, not as currency:
+> 1 MNT = 10^18 pip (MNT's pip)
+> 1 ABC = 10^18 pip (ABC's pip)
 > 1 MNT != 1 ABC
 
 ### Coin Issuance
@@ -144,10 +144,10 @@ After coin issued you can send is as ordinary coin using standard wallets.
 To issue a coin Coiner should pay fee. Fee is depends on length of Coin
 Symbol.
 
-3 letters – 1 000 000 bips  
-4 letters – 100 000 bips  
-5 letters – 10 000 bips  
-6 letters – 1000 bips  
+3 letters – 1 000 000 bips
+4 letters – 100 000 bips
+5 letters – 10 000 bips
+6 letters – 1000 bips
 7-10 letters – 100 bips
 
 ### Coin Exchange
@@ -158,7 +158,7 @@ coin.
 
 Here are some formulas we are using for coin conversion:
 
-**CalculatePurchaseReturn**  
+**CalculatePurchaseReturn**
 Given a coin supply (s), reserve balance (r), CRR (c) and a deposit amount
 (d), calculates the return for a given conversion (in the base coin):
 
@@ -166,7 +166,7 @@ Given a coin supply (s), reserve balance (r), CRR (c) and a deposit amount
 return s * ((1 + d / r) ^ c - 1);
 ```
 
-**CalculateSaleReturn**  
+**CalculateSaleReturn**
 Given a coin supply (s), reserve balance (r), CRR (c) and a sell amount (a),
 calculates the return for a given conversion
 
@@ -180,17 +180,19 @@ Transactions in Minter are
 [RLP-encoded](https://github.com/ethereum/wiki/wiki/RLP) structures.
 
 Example of a signed transaction:
-    f873230101aae98a4d4e540000000000000094a93163fdf10724dc4785ff5cbfb9
-    ac0b5949409f880de0b6b3a764000080801ba06838db4a2197cfd70ede8d8d184d
-    bf332932ca051a243eb7886791250e545dd3a04b63fb1d1b5ef5f2cbd2ea12530c
-    da520b3280dcb75bfd45a873629109f24b29
+```
+f873230101aae98a4d4e540000000000000094a93163fdf10724dc4785ff5cbfb9
+ac0b5949409f880de0b6b3a764000080801ba06838db4a2197cfd70ede8d8d184d
+bf332932ca051a243eb7886791250e545dd3a04b63fb1d1b5ef5f2cbd2ea12530c
+da520b3280dcb75bfd45a873629109f24b29
+```
 Each transaction has:
 
 -   **Nonce** - int, used for prevent transaction reply.
 -   **ChainID** - id of the network (1 - mainnet, 2 - testnet)
 -   **Gas Price** - big int, fee multiplier, should be equal or greater than
 current mempool min gas price.
--   **Gas Coin** - 10 bytes, symbol of a coin to pay fee, right padded with
+-   **Gas Coin ID** - int, coin id to pay fee, right padded with
 zeros
 -   **Type** - type of transaction (see below).
 -   **Data** - data of transaction (depends on transaction type).
@@ -204,7 +206,7 @@ type Transaction struct {
     Nonce         uint64
     ChainID       byte
     GasPrice      *big.Int
-    GasCoin       [10]byte
+    GasCoin       uint32
     Type          byte
     Data          []byte
     Payload       []byte
@@ -238,20 +240,26 @@ Type of transaction is determined by a single byte.
 
 |Type Name                           |Byte|
 |----------------------------------- |----|
-|**TypeSend**                        |0x01|
-|**TypeSellCoin**                    |0x02|
-|**TypeSellAllCoin**                 |0x03|
-|**TypeBuyCoin**                     |0x04|
-|**TypeCreateCoin**                  |0x05|
-|**TypeDeclareCandidacy**            |0x06|
-|**TypeDelegate**                    |0x07|
-|**TypeUnbond**                      |0x08|
-|**TypeRedeemCheck**                 |0x09|
-|**TypeSetCandidateOnline**          |0x0A|
-|**TypeSetCandidateOffline**         |0x0B|
-|**TypeCreateMultisig**              |0x0C|
-|**TypeMultisend**                   |0x0D|
-|**TypeEditCandidate**               |0x0E|
+|[TypeSend](#send-transaction)                                          |0x01|
+|[TypeSellCoin](#sell-coin-transaction)                                 |0x02|
+|[TypeSellAllCoin](#sell-all-coin-transaction)                          |0x03|
+|[TypeBuyCoin](#buy-coin-transaction)                                   |0x04|
+|[TypeCreateCoin](#create-coin-transaction)                             |0x05|
+|[TypeDeclareCandidacy](#declare-candidacy-transaction)                 |0x06|
+|[TypeDelegate](#delegate-transaction)                                  |0x07|
+|[TypeUnbond](#unbond-transaction)                                      |0x08|
+|[TypeRedeemCheck](#redeem-check-transaction)                           |0x09|
+|[TypeSetCandidateOnline](#set-candidate-online-transaction)            |0x0A|
+|[TypeSetCandidateOffline](#set-candidate-offline-transaction)          |0x0B|
+|[TypeCreateMultisig](#create-multisig-address)                         |0x0C|
+|[TypeMultisend](#multisend-transaction)                                |0x0D|
+|[TypeEditCandidate](#edit-candidate-transaction)                       |0x0E|
+|[TypeSetHaltBlock](#set-halt-block-transaction)                        |0x0F|
+|[TypeRecreateCoin](#recreate-coin-transaction)                         |0x10|
+|[TypeEditCoinOwner](#edit-coin-owner-transaction)                      |0x11|
+|[TypeEditMultisig](#edit-multisig-transaction)                         |0x12|
+|[TypePriceVote](#price-vote-transaction)                               |0x13|
+|[TypeEditCandidatePublicKey](#edit-candidate-public-key-transaction)   |0x14|
 
 ### Send transaction
 
@@ -263,15 +271,15 @@ Transaction for sending arbitrary coin.
 
 ```go
 type SendData struct {
-    Coin  [10]byte
+    Coin  uint32
     To    [20]byte
     Value *big.Int
 }
 ```
 
-**Coin** - Symbol of a coin.
-**To** - Recipient address in Minter Network.
-**Value** - Amount of **Coin** to send.
+- **Coin** - ID represents a coin.
+- **To** - Recipient address in Minter Network.
+- **Value** - Amount of **Coin** to send.
 
 ### Sell coin transaction
 
@@ -284,17 +292,17 @@ in a system.
 
 ```go
 type SellCoinData struct {
-    CoinToSell          [10]byte
+    CoinToSell          uint32
     ValueToSell         *big.Int
-    CoinToBuy           [10]byte
+    CoinToBuy           uint32
     MinimumValueToBuy   *big.Int
 }
 ```
 
-**CoinToSell** - Symbol of a coin to give.
-**ValueToSell** - Amount of **CoinToSell** to give.
-**CoinToBuy** - Symbol of a coin to get.
-**MinimumValueToBuy** - Minimum value of coins to get.
+- **CoinToSell** - ID of a coin to give.
+- **ValueToSell** - Amount of **CoinToSell** to give.
+- **CoinToBuy** - ID of a coin to get.
+- **MinimumValueToBuy** - Minimum value of coins to get.
 
 ### Sell all coin transaction
 
@@ -307,15 +315,15 @@ favour of another coin in a system.
 
 ```go
 type SellAllCoinData struct {
-    CoinToSell          [10]byte
-    CoinToBuy           [10]byte
+    CoinToSell          uint32
+    CoinToBuy           uint32
     MinimumValueToBuy   *big.Int
 }
 ```
 
-**CoinToSell** - Symbol of a coin to give.
-**CoinToBuy** - Symbol of a coin to get.
-**MinimumValueToBuy** - Minimum value of coins to get.
+- **CoinToSell** - ID of a coin to give.
+- **CoinToBuy** - ID of a coin to get.
+- **MinimumValueToBuy** - Minimum value of coins to get.
 
 ### Buy coin transaction
 
@@ -327,17 +335,17 @@ Transaction for buy a coin paying another coin (owned by sender).
 
 ```go
 type BuyCoinData struct {
-    CoinToBuy           [10]byte
+    CoinToBuy           uint32
     ValueToBuy          *big.Int
-    CoinToSell          [10]byte
+    CoinToSell          uint32
     MaximumValueToSell  *big.Int
 }
 ```
 
-**CoinToBuy** - Symbol of a coin to get.
-**ValueToBuy** - Amount of **CoinToBuy** to get.
-**CoinToSell** - Symbol of a coin to give.
-**MaximumValueToSell** - Maximum value of coins to sell.
+- **CoinToBuy** - ID of a coin to get.
+- **ValueToBuy** - Amount of **CoinToBuy** to get.
+- **CoinToSell** - ID of a coin to give.
+- **MaximumValueToSell** - Maximum value of coins to sell.
 
 ### Create coin transaction
 
@@ -353,19 +361,19 @@ type CreateCoinData struct {
     Symbol               [10]byte
     InitialAmount        *big.Int
     InitialReserve       *big.Int
-    ConstantReserveRatio uint
+    ConstantReserveRatio uint32
     MaxSupply            *big.Int
 }
 ```
 
-**Name** - Name of a coin. Arbitrary string up to 64 letters length.
-**Symbol** - Symbol of a coin. Must be unique, alphabetic, uppercase, 3 to
+- **Name** - Name of a coin. Arbitrary string up to 64 letters length.
+- **Symbol** - Symbol of a coin. Must be unique, alphabetic, uppercase, 3 to
 10 symbols length.
-**InitialAmount** - Amount of coins to issue. Issued coins will be available
+- **InitialAmount** - Amount of coins to issue. Issued coins will be available
 to sender account.
-**InitialReserve** - Initial reserve in BIP's.
-**ConstantReserveRatio** - CRR, uint, should be from 10 to 100.
-**MaxSupply** - Max amount of coins that are allowed to be issued. Maximum
+- **InitialReserve** - Initial reserve in BIP's.
+- **ConstantReserveRatio** - CRR, uint, should be from 10 to 100.
+- **MaxSupply** - Max amount of coins that are allowed to be issued. Maximum
 is 1,000,000,000,000,000.
 
 ### Declare candidacy transaction
@@ -381,18 +389,18 @@ type DeclareCandidacyData struct {
     Address    [20]byte
     PubKey     []byte
     Commission uint
-    Coin       [10]byte
+    Coin       uint32
     Stake      *big.Int
 }
 ```
 
-**Address** - Address of candidate in Minter Network. This address would be
+- **Address** - Address of candidate in Minter Network. This address would be
 able to control candidate. Also all rewards will be sent to this address.
-**PubKey** - Public key of a validator.
-**Commission** - Commission (from 0 to 100) from rewards which delegators
+- **PubKey** - Public key of a validator.
+- **Commission** - Commission (from 0 to 100) from rewards which delegators
 will pay to validator.
-**Coin** - Symbol of coin to stake.
-**Stake** - Amount of coins to stake.
+- **Coin** - ID of coin to stake.
+- **Stake** - Amount of coins to stake.
 
 ### Delegate transaction
 
@@ -405,14 +413,14 @@ Transaction for delegating funds to validator.
 ```go
 type DelegateData struct {
     PubKey []byte
-    Coin   [10]byte
+    Coin   uint32
     Value  *big.Int
 }
 ```
 
-**PubKey** - Public key of a validator.
-**Coin** - Symbol of coin to stake.
-**Value** - Amount of coins to stake.
+- **PubKey** - Public key of a validator.
+- **Coin** - ID of coin to stake.
+- **Value** - Amount of coins to stake.
 
 ### Unbond transaction
 
@@ -425,14 +433,14 @@ Transaction for unbonding funds from validator's stake.
 ```go
 type UnbondData struct {
     PubKey []byte
-    Coin   [10]byte
+    Coin   uint32
     Value  *big.Int
 }
 ```
 
-**PubKey** - Public key of a validator.
-**Coin** - Symbol of coin to unbond.
-**Value** - Amount of coins to unbond.
+- **PubKey** - Public key of a validator.
+- **Coin** - ID of coin to unbond.
+- **Value** - Amount of coins to unbond.
 
 ### Redeem check transaction
 
@@ -449,8 +457,8 @@ type RedeemCheckData struct {
 }
 ```
 
-**Check** - Check received from sender.
-**Proof** - Proof of owning a check: password signed with recipient's
+- **Check** - Check received from sender.
+- **Proof** - Proof of owning a check: password signed with recipient's
 address. [Read
 more](https://docs.minter.network/#section/Minter-Check/Check-hijacking-protection)
 
@@ -473,7 +481,7 @@ type SetCandidateOnData struct {
 }
 ```
 
-**PubKey** - Public key of a validator.
+- **PubKey** - Public key of a validator.
 
 ### Set candidate offline transaction
 
@@ -490,7 +498,7 @@ type SetCandidateOffData struct {
 }
 ```
 
-**PubKey** - Public key of a validator.
+- **PubKey** - Public key of a validator.
 
 ### Create multisig address
 
@@ -502,11 +510,15 @@ Transaction for creating multisignature address.
 
 ```go
 type CreateMultisigData struct {
-    Threshold uint
-    Weights   []uint
+    Threshold uint32
+    Weights   []uint32
     Addresses [][20]byte
 }
 ```
+
+- **Threshold** - minimum addresses weight that are involved in tx signing
+- **Weights** - ordered weights array mapped 1:1 to **Addresses**: **Weights\[0]** is weight for **Addresses\[0]**
+- **Addresses** - array of multisig addresses
 
 ### Multisend transaction
 
@@ -523,7 +535,7 @@ type MultisendData struct {
 }
 
 type MultisendDataItem struct {
-    Coin  [10]byte
+    Coin  uin32
     To    [20]byte
     Value *big.Int
 }
@@ -545,6 +557,134 @@ type EditCandidateData struct {
 }
 ```
 
+
+
+
+
+### Since Minter 1.2 released, there are few new transactions added:
+### Set halt block transaction
+Type: **0x0F**
+
+Since Minter 1.2 released, validators can now vote for a particular block to stop the blockchain for update.  
+For this purpose new transaction SetHaltBlock was introduced.  
+If 2/3+ of voting power on a given block voted for halting -blockchain will stop producing new blocks and wait for update.
+
+*Data field contents:*
+
+```go
+type SetHaltBlockData struct {
+    PubKey [32]byte
+    Height uint64
+}
+```
+
+- **PubKey** - node public key
+- **Height** - block number
+
+
+### Recreate coin transaction
+
+Type: **0x10**
+
+*Data field contents:*
+
+```go
+type RecreateCoinData struct {
+    Name                 string
+    Symbol               [10]byte
+    InitialAmount        *big.Int
+    InitialReserve       *big.Int
+    ConstantReserveRatio uint32
+    MaxSupply            *big.Int
+}
+```
+
+- **Name** - Name of a coin. Arbitrary string up to 64 letters length.
+- **Symbol** - Symbol of a coin. Must be unique, alphabetic, uppercase, 3 to
+10 symbols length.
+- **InitialAmount** - Amount of coins to issue. Issued coins will be available
+to sender account.
+- **InitialReserve** - Initial reserve in BIP's.
+- **ConstantReserveRatio** - CRR, uint, should be from 10 to 100.
+- **MaxSupply** - Max amount of coins that are allowed to be issued. Maximum
+is 1,000,000,000,000,000.
+
+
+### Edit Coin Owner Transaction
+
+Type: **0x11**
+
+Transaction to change coin owner address.
+
+*Data field contents:*
+
+```go
+type EditCoinOwnerData struct {
+    Symbol   [10]byte
+    NewOwner [20]byte
+}
+```
+
+- **Symbol** - Symbol of a coin
+- **NewOwner** - Address
+
+
+
+### Edit Multisig Transaction
+
+Type: **0x12**
+
+Transaction for change multisignature address.
+
+*Data field contents:*
+
+```go
+type EditMultisigData struct {
+    Threshold uint32
+    Weights   []uint32
+    Addresses [][20]byte
+}
+```
+
+Data is the same as in [Create Multisig Address Transaction](#create-multisig-address)
+
+
+### Price Vote Transaction
+
+Type: **0x13**
+
+To be able to run complex smart contracts and services, we need a way to discover the price of BIP on-chain. We will start with introducing a new tx type: PriceVote.
+
+*Data field contents:*
+
+```go
+type PriceVoteData struct {
+    Price uint
+}
+```
+
+
+### Edit Candidate Public Key Transaction
+
+Type: **0x14**
+
+Transaction to change candaite public key.  
+To improve validator security, it is proposed to add the public key change feature.
+
+*Data field contents:*
+
+```go
+type EditCandidatePublicKeyData struct {
+    PubKey    [32]byte
+    NewPubKey [32]byte
+}
+```
+
+- **PubKey** - Current Public key
+- **NewPubKey** - New Public key
+
+
+
 ## Minter Check
 
 Minter Check is like an ordinary bank check. Each user of network can
@@ -561,9 +701,10 @@ Mcf89b01830f423f8a4d4e5400000000000000843b9aca00b8419b3beac2c6ad88a8bd54d2491275
 
 Each Minter Check has:
 -   **Nonce** - unique "id" of the check.
--   **Coin Symbol** - symbol of coin.
+-   **ChainID** - id of the network (1 - mainnet, 2 - testnet).
+-   **Coin** - ID of a coin redeem to.
 -   **Value** - amount of coins.
--   **GasCoin** - symbol of a coin to pay fee.
+-   **GasCoin** - ID of a coin to pay fee.
 -   **Due Block** - defines last block height in which the check can
     be used.
 -   **Lock** - secret to prevent hijacking.
@@ -586,12 +727,12 @@ For issuing Minter Check you can use our
 
 You will need to fill a form:
 -   **Nonce** - unique "id" of the check.
--   **Coin Symbol** - symbol of coin.
--   **Gas coin** - symbol of a coin to pay fee.
+-   **Coin ID** - ID of coin.
+-   **Gas coin** - ID of a coin to pay fee.
 -   **Value** - amount of coins.
 -   **Pass phrase** - secret phrase which you will pass to receiver
     of the check.
-        
+
 ### How to cash a Minter Check
 
 To redeem a check user should have:
@@ -649,22 +790,28 @@ For each transaction sender should pay fee. Fees are measured in
 
 Here is a list of current fees:
 
-| Type                       | Fee |
-|----------------------------|-----|
-|**TypeSend**                | 10 units |
-|**TypeSellCoin**            | 100 units |
-|**TypeSellAllCoin**         | 100 units |
-|**TypeBuyCoin**             | 100 units |
-|**TypeCreateCoin**          | Depends on the coin symbol length |
-|**TypeDeclareCandidacy**    | 10000 units |
-|**TypeDelegate**            | 200 units |
-|**TypeUnbond**              | 200 units |
-|**TypeRedeemCheck**         | 30 units |
-|**TypeSetCandidateOnline**  | 100 units |
-|**TypeSetCandidateOffline** | 100 units |
-|**TypeCreateMultisig**      | 100 units |
-|**TypeMultisend**           | 10+(n-1)*5 units |
-|**TypeEditCandidate**       | 10000 units |
+| Type                           | Fee |
+|--------------------------------|-----|
+|**TypeSend**                    | 10 units |
+|**TypeSellCoin**                | 100 units |
+|**TypeSellAllCoin**             | 100 units |
+|**TypeBuyCoin**                 | 100 units |
+|**TypeCreateCoin**              | Depends on the coin symbol length |
+|**TypeDeclareCandidacy**        | 10000 units |
+|**TypeDelegate**                | 200 units |
+|**TypeUnbond**                  | 200 units |
+|**TypeRedeemCheck**             | 30 units |
+|**TypeSetCandidateOnline**      | 100 units |
+|**TypeSetCandidateOffline**     | 100 units |
+|**TypeCreateMultisig**          | 100 units |
+|**TypeMultisend**               | 10+(n-1)*5 units |
+|**TypeEditCandidate**           | 10000 units |
+|**TypeSetHaltBlock**            | 1000 units |
+|**TypeRecreateCoin**            | 10000000 units |
+|**TypeEditCoinOwner**           | 10000000 units |
+|**TypeEditMultisig**            | 1000 units |
+|**TypePriceVote**               | 10 units |
+|**TypeEditCandidatePublicKey**  | 10000000 units |
 Also sender should pay extra 2 units per byte in Payload and Service
 Data fields.
 
@@ -673,10 +820,10 @@ Data fields.
 To issue a coin with short name Coiner should pay extra fee. Fee is
 depends on length of Coin Symbol.
 
-3 letters — 1 000 000 bips  
-4 letters — 100 000 bips  
-5 letters — 10 000 bips  
-6 letters — 1000 bips  
+3 letters — 1 000 000 bips
+4 letters — 100 000 bips
+5 letters — 10 000 bips
+6 letters — 1000 bips
 7-10 letters — 100 bips
 
 ## Validators
@@ -743,12 +890,11 @@ validator's settings).
 
 Validators have one main responsibility:
 -   Be able to constantly run a correct version of the software:
-    validators need to make sure that their servers are always online
-    and their private keys are not compromised.
-If a validator misbehaves, its bonded stake along with its delegators'
-stake and will be slashed. The severity of the punishment depends on the
-type of fault. There are 3 main faults that can result in slashing of
-funds for a validator and its delegators:
+    validators need to make sure that their servers are always online and their private keys are not compromised.
+    If a validator misbehaves, its bonded stake along with its delegators'
+    stake and will be slashed. The severity of the punishment depends on the
+    type of fault. There are 3 main faults that can result in slashing of
+    funds for a validator and its delegators:
 
 -   **Double signing**: If someone reports on chain A that a validator
     signed two blocks at the same height on chain A and chain B, this
@@ -756,6 +902,7 @@ funds for a validator and its delegators:
 -   **Unavailability**: If a validator's signature has not been
     included in the last 12 blocks, 1% of stake will get slashed and
     validator will be turned off
+
 Note that even if a validator does not intentionally misbehave, it can
 still be slashed if its node crashes, looses connectivity, gets DDOSed,
 or if its private key is compromised.
@@ -767,7 +914,7 @@ or if its private key is compromised.
 3. Go to [Minter
 Console](https://testnet.console.minter.network/masternode/) and send 2
 transactions:
-  
+
   Fill and send `Declare candidacy` and `Set candidate online` forms.
   1. Declare candidacy
       Validators should declare their candidacy, after which users
@@ -943,68 +1090,68 @@ mitigate risk by distributing their stake across multiple validators.
 
 ## Minter SDKs
 ### GO SDK
--   [minter-go-sdk](https://github.com/MinterTeam/minter-go-sdk) – a pure GO SDK for working with Minter blockchain
-    
+- [minter-go-sdk](https://github.com/MinterTeam/minter-go-sdk) – a pure GO SDK for working with Minter blockchain
+
 ### JavaScript SDK
--   [minter-js-sdk](https://github.com/MinterTeam/minter-js-sdk) –
+- [minter-js-sdk](https://github.com/MinterTeam/minter-js-sdk) –
     work with transactions, checks, and deeplinks
--   [minterjs-wallet](https://github.com/MinterTeam/minterjs-wallet) –
+- [minterjs-wallet](https://github.com/MinterTeam/minterjs-wallet) –
     work with mnemonic, private/public key and address
--   [minterjs-tx](https://github.com/MinterTeam/minterjs-tx) – 
+- [minterjs-tx](https://github.com/MinterTeam/minterjs-tx) –
     low level TX implementation (only for advanced users, use SDK instead)
--   [minterjs-util](https://github.com/MinterTeam/minterjs-util) – a collection of utility functions for Minter
+- [minterjs-util](https://github.com/MinterTeam/minterjs-util) –
+    a collection of utility functions for Minter
 
 ### iOS SDK
--   [minter-ios-core](https://github.com/MinterTeam/minter-ios-core) –
-    create, manipulate and sign Minter transactions
--   [minter-ios-explorer](https://github.com/MinterTeam/minter-ios-explorer)
-    – communicate with the Minter blockchain through Explorer
-    
+- [minter-ios-core](https://github.com/MinterTeam/minter-ios-core)
+  – create, manipulate and sign Minter transactions
+- [minter-ios-explorer](https://github.com/MinterTeam/minter-ios-explorer)
+  – communicate with the Minter blockchain through Explorer
+
 ### PHP SDK
--   [minter-php-sdk](https://github.com/MinterTeam/minter-php-sdk) – a pure PHP SDK for working with Minter blockchain
-    
+- [minter-php-sdk](https://github.com/MinterTeam/minter-php-sdk)
+  – a pure PHP SDK for working with Minter blockchain
+
 ### Android SDK
--   [minter-android-core](https://github.com/MinterTeam/minter-android-core)
-- foundation for all Minter blockchain operations
-- [minter-android-blockchain](https://github.com/MinterTeam/minter-android-blockchain)
-- operate with Minter transactions using this sdk
-- [minter-android-explorer](https://github.com/MinterTeam/minter-android-explorer)
-- communicate with the Minter blockchain through the Explorer
+- [minter-android-core](https://github.com/MinterTeam/minter-android-core) - foundation for all Minter blockchain operations
+- [minter-android-blockchain](https://github.com/MinterTeam/minter-android-blockchain) - operate with Minter transactions and connect to Node API (rest) using this sdk
+- [minter-android-explorer](https://github.com/MinterTeam/minter-android-explorer) - communicate with the Minter blockchain through the Explorer and Gate API
 
 ### C++ SDK
 - [cpp-minter](https://github.com/MinterTeam/cpp-minter) - build and sign any transaction, generate mnemonic with private and public key
-
+- [example projects](https://github.com/MinterTeam/cpp-minter#examples)
 
 ## Node API
 
-### v2 (latest)
-[Documentation](https://minterteam.github.io/node-grpc-gateway/)  
-Testnet base url: `https://testnet.node-api.minter.network/v2/`
+### v2 (latest).
+- [Documentation](https://minterteam.github.io/node-grpc-gateway/)
+- Testnet base url: `https://node-api.testnet.minter.network/v2/`
 
 ### v1 (deprecated)
-[Documentation](https://minterteam.github.io/minter-go-node-docs/)  
-[openapi.yaml](https://github.com/MinterTeam/minter-go-node-docs/blob/gh-pages/openapi.yaml),  [openapi.json](https://github.com/MinterTeam/minter-go-node-docs/blob/gh-pages/openapi.json)  
-Testnet base url: `https://testnet.node-api.minter.network/`
+- [Documentation](https://minterteam.github.io/minter-go-node-docs/)
+- [openapi.yaml](https://github.com/MinterTeam/minter-go-node-docs/blob/gh-pages/openapi.yaml)
+- [openapi.json](https://github.com/MinterTeam/minter-go-node-docs/blob/gh-pages/openapi.json)
+- Testnet base url: `https://node-api.testnet.minter.network/`
 
 
 ## Other public services
 ### Explorer API
-[Documentation](https://app.swaggerhub.com/apis-docs/GrKamil/minter-explorer_api)  
-Testnet base url: `https://testnet.explorer-api.minter.network/api/v1/`  
-Mainnet base url: `https://explorer-api.minter.network/api/v1/`
+- [Documentation](https://app.swaggerhub.com/apis-docs/GrKamil/minter-explorer_api)
+- Testnet base url: `https://explorer-api.testnet.minter.network/api/v2/`
+- Mainnet base url: `https://explorer-api.minter.network/api/v2/`
 
-### Gate API
-Minter Gate is a service to publish prepared transactions to the Minter Network. 
+### Gate API (v2)
+Minter Gate is a service to publish prepared transactions to the Minter Network.
   Prefer to use it instead of node, because it provides load balancing and automatical check of transaction success.
 
-[Documentation](https://minterteam.github.io/minter-gate-docs/#section/Introduction)  
-Testnet base url: `https://testnet.gate-api.minter.network/api/v1/`  
-Mainnet base url: `https://gate-api.minter.network/api/v1/`
-  
+- [Documentation](https://minterteam.github.io/minter-gate-docs/#section/Introduction)
+- Testnet base url: `https://gate-api.testnet.minter.network/api/v2/`
+- Mainnet base url: `https://gate-api.minter.network/api/v2/`
+
 ### bip.dev API
 Trade BIP through [bip.dev](https://bip.dev)
 
-[Documentation](https://minterteam.github.io/bipdev-docs/)  
-Url: `https://api.bip.dev/api/`  
-[Card API documentation (Swagger)](https://app.swaggerhub.com/apis-docs/GrKamil/bipdev-card-api)  
-Card API url: `https://card-api.bip.dev/api/v1/`
+- [Documentation](https://minterteam.github.io/bipdev-docs/)
+- Base API url: `https://api.bip.dev/api/`
+- [Card API documentation (Swagger)](https://app.swaggerhub.com/apis-docs/GrKamil/bipdev-card-api)
+- Card API url: `https://card-api.bip.dev/api/v1/`
