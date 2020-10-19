@@ -186,8 +186,8 @@ ac0b5949409f880de0b6b3a764000080801ba06838db4a2197cfd70ede8d8d184d
 bf332932ca051a243eb7886791250e545dd3a04b63fb1d1b5ef5f2cbd2ea12530c
 da520b3280dcb75bfd45a873629109f24b29
 ```
-Each transaction has:
 
+Each transaction has:
 -   **Nonce** - int, used for prevent transaction reply.
 -   **ChainID** - id of the network (1 - mainnet, 2 - testnet)
 -   **Gas Price** - big int, fee multiplier, should be equal or greater than
