@@ -106,7 +106,7 @@ is not limited.
 
 Minter Blockchain is multi-coin system.
 
-Base coin in testnet is `MNT`.
+Base coin in testnet is `MNT`.  
 Base coin in mainnet is `BIP`.
 
 Smallest part of *each* coin is called `pip`.
@@ -114,9 +114,9 @@ Smallest part of *each* coin is called `pip`.
 pips.
 
 > **Note:** Each coin has its **own** pip. You should treat pip like atomic
-part of a coin, not as currency:
-> 1 MNT = 10^18 pip (MNT's pip)
-> 1 ABC = 10^18 pip (ABC's pip)
+part of a coin, not as currency:  
+> 1 MNT = 10^18 pip (MNT's pip)  
+> 1 ABC = 10^18 pip (ABC's pip)  
 > 1 MNT != 1 ABC
 
 ### Coin Issuance
@@ -144,10 +144,10 @@ After coin issued you can send is as ordinary coin using standard wallets.
 To issue a coin Coiner should pay fee. Fee is depends on length of Coin
 Symbol.
 
-3 letters – 1 000 000 bips
-4 letters – 100 000 bips
-5 letters – 10 000 bips
-6 letters – 1000 bips
+3 letters – 1 000 000 bips  
+4 letters – 100 000 bips  
+5 letters – 10 000 bips  
+6 letters – 1000 bips  
 7-10 letters – 100 bips
 
 ### Coin Exchange
@@ -158,7 +158,7 @@ coin.
 
 Here are some formulas we are using for coin conversion:
 
-**CalculatePurchaseReturn**
+**CalculatePurchaseReturn**  
 Given a coin supply (s), reserve balance (r), CRR (c) and a deposit amount
 (d), calculates the return for a given conversion (in the base coin):
 
@@ -166,7 +166,7 @@ Given a coin supply (s), reserve balance (r), CRR (c) and a deposit amount
 return s * ((1 + d / r) ^ c - 1);
 ```
 
-**CalculateSaleReturn**
+**CalculateSaleReturn**  
 Given a coin supply (s), reserve balance (r), CRR (c) and a sell amount (a),
 calculates the return for a given conversion
 
@@ -820,10 +820,10 @@ Data fields.
 To issue a coin with short name Coiner should pay extra fee. Fee is
 depends on length of Coin Symbol.
 
-3 letters — 1 000 000 bips
-4 letters — 100 000 bips
-5 letters — 10 000 bips
-6 letters — 1000 bips
+3 letters — 1 000 000 bips  
+4 letters — 100 000 bips  
+5 letters — 10 000 bips  
+6 letters — 1000 bips  
 7-10 letters — 100 bips
 
 ## Validators
