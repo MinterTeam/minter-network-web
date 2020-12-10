@@ -260,6 +260,11 @@ Type of transaction is determined by a single byte.
 |[TypeEditMultisig](#edit-multisig-transaction)                         |0x12|
 |[TypePriceVote](#price-vote-transaction)                               |0x13|
 |[TypeEditCandidatePublicKey](#edit-candidate-public-key-transaction)   |0x14|
+|[TypeAddSwapPool](#add-swap-pool)                                      |0x15|
+|[TypeRemoveSwapPool](#remove-swap-pool)                                |0x16|
+|[TypeSellSwapPool](#sell-swap-pool)                                    |0x17|
+|[TypeBuySwapPool](#buy-swap-pool)                                      |0x18|
+|[TypeSellAllSwapPool](#sell-all-swap-pool)                             |0x19|
 
 ### Send transaction
 
@@ -557,11 +562,6 @@ type EditCandidateData struct {
 }
 ```
 
-
-
-
-
-### Since Minter 1.2 released, there are few new transactions added:
 ### Set halt block transaction
 Type: **0x0F**
 
@@ -684,6 +684,54 @@ type EditCandidatePublicKeyData struct {
 - **NewPubKey** - New Public key
 
 
+### Since Minter 2.0 released, there are few new transactions added:
+
+### Add Swap Pool
+
+Type: **0x15**
+
+Transaction to add reserves of a pair of coins to the pool.  
+To create liquidity through this pool.
+
+*Data field contents:*
+
+```go
+type AddSwapPoolData struct {
+	Coin0      uin32
+	Coin1      uin32
+	Volume0    *big.Int
+	MaxVolume1 *big.Int
+}
+```
+
+- **Coin0** - ID of coin to pair
+- **Coin1** - ID of coin to pair
+- **Volume0** - Volume to add to reserve of the swap pool of first coin
+- **MaxVolume1** - Maximum volume to add to reserve of the swap pool of second coin
+
+When a new liquidity provider deposits tokens into an existing Uniswap pair, the number
+of liquidity tokens minted is computed based on the existing quantity of tokens:
+
+![](http://www.sciweavers.org/upload/Tex2Img_1607560876/render.png)
+
+if they are the first depositor, the number of liquidity tokens equal to the geometric mean 
+of the amounts deposited:
+
+![](http://www.sciweavers.org/upload/Tex2Img_1607560228/render.png)
+
+The above formula ensures that a liquidity pool share will never be worth less than 
+the geometric mean of the reserves in that pool. However, it is possible for the value of
+a liquidity pool share to grow over time, either by accumulating trading fees or through
+“donations” to the liquidity pool. In theory, this could result in a situation where the value
+of the minimum quantity of liquidity pool shares (1e-18 pool shares) is worth so much that
+it becomes infeasible for small liquidity providers to provide any liquidity.
+
+To mitigate this, we burns the first 1e-15 (0.000000000000001) pool shares that
+are minted (1000 times the minimum quantity of pool shares), sending them to the zero
+address instead of to the minter. This should be a negligible cost for almost any token
+pair. But it dramatically increases the cost of the above attack. In order to raise the
+value of a liquidity pool share to $100, the attacker would need to donate $100,000 to the
+pool, which would be permanently locked up as liquidity.
 
 ## Minter Check
 
@@ -812,6 +860,11 @@ Here is a list of current fees:
 |**TypeEditMultisig**            | 1000 units |
 |**TypePriceVote**               | 10 units |
 |**TypeEditCandidatePublicKey**  | 10000000 units |
+|**TypeAddSwapPool**             | 100 units |
+|**TypeRemoveSwapPool**          | 100 units |
+|**TypeBuySwapPool**             | 100 units |
+|**TypeSellSwapPool**            | 100 units |
+|**TypeSellAllSwapPool**         | 100 units |
 Also sender should pay extra 2 units per byte in Payload and Service
 Data fields.
 
