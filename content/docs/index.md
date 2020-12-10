@@ -106,17 +106,17 @@ is not limited.
 
 Minter Blockchain is multi-coin system.
 
-Base coin in testnet is `MNT`.  
+Base coin in testnet is `MNT`.
 Base coin in mainnet is `BIP`.
 
-Smallest part of *each* coin is called `pip`.  
+Smallest part of *each* coin is called `pip`.
 1 pip = 1^-18 of any coin. In Blockchain and API we only operating with
 pips.
 
 > **Note:** Each coin has its **own** pip. You should treat pip like atomic
-part of a coin, not as currency:  
-> 1 MNT = 10^18 pip (MNT's pip)  
-> 1 ABC = 10^18 pip (ABC's pip)  
+part of a coin, not as currency:
+> 1 MNT = 10^18 pip (MNT's pip)
+> 1 ABC = 10^18 pip (ABC's pip)
 > 1 MNT != 1 ABC
 
 ### Coin Issuance
@@ -144,10 +144,10 @@ After coin issued you can send is as ordinary coin using standard wallets.
 To issue a coin Coiner should pay fee. Fee is depends on length of Coin
 Symbol.
 
-3 letters – 1 000 000 bips  
-4 letters – 100 000 bips  
-5 letters – 10 000 bips  
-6 letters – 1000 bips  
+3 letters – 1 000 000 bips
+4 letters – 100 000 bips
+5 letters – 10 000 bips
+6 letters – 1000 bips
 7-10 letters – 100 bips
 
 ### Coin Exchange
@@ -158,7 +158,7 @@ coin.
 
 Here are some formulas we are using for coin conversion:
 
-**CalculatePurchaseReturn**  
+**CalculatePurchaseReturn**
 Given a coin supply (s), reserve balance (r), CRR (c) and a deposit amount
 (d), calculates the return for a given conversion (in the base coin):
 
@@ -166,7 +166,7 @@ Given a coin supply (s), reserve balance (r), CRR (c) and a deposit amount
 return s * ((1 + d / r) ^ c - 1);
 ```
 
-**CalculateSaleReturn**  
+**CalculateSaleReturn**
 Given a coin supply (s), reserve balance (r), CRR (c) and a sell amount (a),
 calculates the return for a given conversion
 
@@ -262,9 +262,9 @@ Type of transaction is determined by a single byte.
 |[TypeEditCandidatePublicKey](#edit-candidate-public-key-transaction)   |0x14|
 |[TypeAddSwapPool](#add-swap-pool)                                      |0x15|
 |[TypeRemoveSwapPool](#remove-swap-pool)                                |0x16|
-|[TypeSellSwapPool](#sell-swap-pool)                                    |0x17|
-|[TypeBuySwapPool](#buy-swap-pool)                                      |0x18|
-|[TypeSellAllSwapPool](#sell-all-swap-pool)                             |0x19|
+|[TypeSellSwapPool](#sell-from-swap-pool)                               |0x17|
+|[TypeBuySwapPool](#buy-from-swap-pool)                                 |0x18|
+|[TypeSellAllSwapPool](#sell-all-from-swap-pool)                        |0x19|
 
 ### Send transaction
 
@@ -565,8 +565,8 @@ type EditCandidateData struct {
 ### Set halt block transaction
 Type: **0x0F**
 
-Since Minter 1.2 released, validators can now vote for a particular block to stop the blockchain for update.  
-For this purpose new transaction SetHaltBlock was introduced.  
+Since Minter 1.2 released, validators can now vote for a particular block to stop the blockchain for update.
+For this purpose new transaction SetHaltBlock was introduced.
 If 2/3+ of voting power on a given block voted for halting -blockchain will stop producing new blocks and wait for update.
 
 *Data field contents:*
@@ -668,7 +668,7 @@ type PriceVoteData struct {
 
 Type: **0x14**
 
-Transaction to change candaite public key.  
+Transaction to change candaite public key.
 To improve validator security, it is proposed to add the public key change feature.
 
 *Data field contents:*
@@ -690,7 +690,7 @@ type EditCandidatePublicKeyData struct {
 
 Type: **0x15**
 
-Transaction to add reserves of a pair of coins to the pool.  
+Transaction to add reserves of a pair of coins to the pool.
 To create liquidity through this pool.
 
 *Data field contents:*
@@ -714,12 +714,12 @@ of liquidity tokens minted is computed based on the existing quantity of tokens:
 
 ![](http://www.sciweavers.org/upload/Tex2Img_1607560876/render.png)
 
-if they are the first depositor, the number of liquidity tokens equal to the geometric mean 
+if they are the first depositor, the number of liquidity tokens equal to the geometric mean
 of the amounts deposited:
 
 ![](http://www.sciweavers.org/upload/Tex2Img_1607560228/render.png)
 
-The above formula ensures that a liquidity pool share will never be worth less than 
+The above formula ensures that a liquidity pool share will never be worth less than
 the geometric mean of the reserves in that pool. However, it is possible for the value of
 a liquidity pool share to grow over time, either by accumulating trading fees or through
 “donations” to the liquidity pool. In theory, this could result in a situation where the value
@@ -732,6 +732,116 @@ address instead of to the minter. This should be a negligible cost for almost an
 pair. But it dramatically increases the cost of the above attack. In order to raise the
 value of a liquidity pool share to $100, the attacker would need to donate $100,000 to the
 pool, which would be permanently locked up as liquidity.
+
+To see the total supply and balance of the provider, check on these API v2 endpoints:
+```
+/v2/swap_pool/{coin0}/{coin1}
+/v2/swap_pool/{coin0}/{coin1}/{provider}
+```
+
+### Remove Swap Pool
+
+Type: **0x16**
+
+Transaction to withdraw the reserves of a pair from the pool.
+
+*Data field contents:*
+
+```go
+type RemoveSwapPoolData struct {
+	Coin0          uin32
+	Coin1          uin32
+	Liquidity      *big.Int
+	MinimumVolume0 *big.Int
+	MinimumVolume1 *big.Int
+}
+```
+
+- **Coin0** - ID of coin to pair
+- **Coin1** - ID of coin to pair
+- **Liquidity** - Volume of shares to be withdrawn from the pool
+- **MinimumVolume0** - Minimum expected volume of coin0 to be returned to the account
+- **MinimumVolume1** - Minimum expected volume of coin1 to be returned to the account
+
+
+### Sell From Swap Pool
+
+Type: **0x17**
+
+Transaction for selling from the swap pool of the pair.
+
+*Data field contents:*
+
+```go
+type SellSwapPoolData struct {
+    CoinToSell          uint32
+    ValueToSell         *big.Int
+    CoinToBuy           uint32
+    MinimumValueToBuy   *big.Int
+}
+```
+
+- **CoinToSell** - ID of a coin to give.
+- **ValueToSell** - Amount of **CoinToSell** to give.
+- **CoinToBuy** - ID of a coin to get.
+- **MinimumValueToBuy** - Minimum value of coins to get.
+
+Use API v2 endpoint to calculate sales price:
+```
+/v2/estimate_coin_sell?coin_id_to_buy=0&coin_id_to_sell=1&value_to_buy=999&from_pool=true
+```
+
+### Buy From Swap Pool
+
+Type: **0x18**
+
+Transaction for buying from the swap pool of the pair.
+
+*Data field contents:*
+
+```go
+type BuySwapPoolData struct {
+    CoinToBuy           uint32
+    ValueToBuy          *big.Int
+    CoinToSell          uint32
+    MaximumValueToSell  *big.Int
+}
+```
+
+- **CoinToBuy** - ID of a coin to get.
+- **ValueToBuy** - Amount of **CoinToBuy** to get.
+- **CoinToSell** - ID of a coin to give.
+- **MaximumValueToSell** - Maximum value of coins to sell.
+
+Use API v2 endpoint to calculate purchase price:
+```
+/v2/estimate_coin_buy?coin_id_to_buy=1&coin_id_to_sell=0&value_to_buy=999&from_pool=true
+```
+
+### Sell All From Swap Pool
+
+Type: **0x19**
+
+Transaction for selling all existing coins from the swap pool of the pair.
+
+*Data field contents:*
+
+```go
+type SellAllSwapPoolData struct {
+    CoinToSell          uint32
+    CoinToBuy           uint32
+    MinimumValueToBuy   *big.Int
+}
+```
+
+- **CoinToSell** - ID of a coin to give.
+- **CoinToBuy** - ID of a coin to get.
+- **MinimumValueToBuy** - Minimum value of coins to get.
+
+Use API v2 endpoint to calculate sales price
+```
+/v2/estimate_coin_sell_all?coin_id_to_buy=0&coin_id_to_sell=1&value_to_buy=999&from_pool=true
+```
 
 ## Minter Check
 
@@ -873,10 +983,10 @@ Data fields.
 To issue a coin with short name Coiner should pay extra fee. Fee is
 depends on length of Coin Symbol.
 
-3 letters — 1 000 000 bips  
-4 letters — 100 000 bips  
-5 letters — 10 000 bips  
-6 letters — 1000 bips  
+3 letters — 1 000 000 bips
+4 letters — 100 000 bips
+5 letters — 10 000 bips
+6 letters — 1000 bips
 7-10 letters — 100 bips
 
 ## Validators
