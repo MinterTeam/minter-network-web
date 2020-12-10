@@ -109,14 +109,14 @@ Minter Blockchain is multi-coin system.
 Base coin in testnet is `MNT`.  
 Base coin in mainnet is `BIP`.
 
-Smallest part of *each* coin is called `pip`.
+Smallest part of *each* coin is called `pip`.  
 1 pip = 1^-18 of any coin. In Blockchain and API we only operating with
 pips.
 
 > **Note:** Each coin has its **own** pip. You should treat pip like atomic
-part of a coin, not as currency:
-> 1 MNT = 10^18 pip (MNT's pip)
-> 1 ABC = 10^18 pip (ABC's pip)
+part of a coin, not as currency:  
+> 1 MNT = 10^18 pip (MNT's pip)  
+> 1 ABC = 10^18 pip (ABC's pip)  
 > 1 MNT != 1 ABC
 
 ### Coin Issuance
@@ -159,6 +159,7 @@ coin.
 Here are some formulas we are using for coin conversion:
 
 **CalculatePurchaseReturn**
+
 Given a coin supply (s), reserve balance (r), CRR (c) and a deposit amount
 (d), calculates the return for a given conversion (in the base coin):
 
@@ -167,6 +168,7 @@ return s * ((1 + d / r) ^ c - 1);
 ```
 
 **CalculateSaleReturn**
+
 Given a coin supply (s), reserve balance (r), CRR (c) and a sell amount (a),
 calculates the return for a given conversion
 
