@@ -106,7 +106,7 @@ is not limited.
 
 Minter Blockchain is multi-coin system.
 
-Base coin in testnet is `MNT`.
+Base coin in testnet is `MNT`.  
 Base coin in mainnet is `BIP`.
 
 Smallest part of *each* coin is called `pip`.
@@ -144,10 +144,10 @@ After coin issued you can send is as ordinary coin using standard wallets.
 To issue a coin Coiner should pay fee. Fee is depends on length of Coin
 Symbol.
 
-3 letters – 1 000 000 bips
-4 letters – 100 000 bips
-5 letters – 10 000 bips
-6 letters – 1000 bips
+3 letters – 1 000 000 bips  
+4 letters – 100 000 bips  
+5 letters – 10 000 bips  
+6 letters – 1000 bips  
 7-10 letters – 100 bips
 
 ### Coin Exchange
@@ -983,10 +983,10 @@ Data fields.
 To issue a coin with short name Coiner should pay extra fee. Fee is
 depends on length of Coin Symbol.
 
-3 letters — 1 000 000 bips
-4 letters — 100 000 bips
-5 letters — 10 000 bips
-6 letters — 1000 bips
+3 letters — 1 000 000 bips  
+4 letters — 100 000 bips  
+5 letters — 10 000 bips  
+6 letters — 1000 bips  
 7-10 letters — 100 bips
 
 ## Validators
