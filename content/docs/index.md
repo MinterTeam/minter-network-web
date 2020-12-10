@@ -706,20 +706,20 @@ type AddSwapPoolData struct {
 }
 ```
 
-- **Coin0** - ID of coin to pair
-- **Coin1** - ID of coin to pair
+- **Coin0** - ID of first coin to pair
+- **Coin1** - ID of second coin to pair
 - **Volume0** - Volume to add to reserve of the swap pool of first coin
 - **MaxVolume1** - Maximum volume to add to reserve of the swap pool of second coin
 
 When a new liquidity provider deposits tokens into an existing Uniswap pair, the number
 of liquidity tokens minted is computed based on the existing quantity of tokens:
 
-![](http://www.sciweavers.org/upload/Tex2Img_1607560876/render.png)
+![](https://i.ibb.co/YkQdMLd/image.png)
 
 if they are the first depositor, the number of liquidity tokens equal to the geometric mean
 of the amounts deposited:
 
-![](http://www.sciweavers.org/upload/Tex2Img_1607560228/render.png)
+![](https://i.ibb.co/cFXTdfQ/image.png)
 
 The above formula ensures that a liquidity pool share will never be worth less than
 the geometric mean of the reserves in that pool. However, it is possible for the value of
@@ -736,10 +736,11 @@ value of a liquidity pool share to $100, the attacker would need to donate $100,
 pool, which would be permanently locked up as liquidity.
 
 To see the total supply and balance of the provider, check on these API v2 endpoints:
-```
-/v2/swap_pool/{coin0}/{coin1}
-/v2/swap_pool/{coin0}/{coin1}/{provider}
-```
+
+[/v2/swap_pool/{coin0}/{coin1}](https://node-api.testnet.minter.network/v2/swap_pool/0/1)
+
+[/v2/swap_pool/{coin0}/{coin1}/{provider}](https://node-api.testnet.minter.network/v2/swap_pool/0/1/Mx0000000000000000000000000000000000000000)
+
 
 ### Remove Swap Pool
 
@@ -789,9 +790,8 @@ type SellSwapPoolData struct {
 - **MinimumValueToBuy** - Minimum value of coins to get.
 
 Use API v2 endpoint to calculate sales price:
-```
-/v2/estimate_coin_sell?coin_id_to_buy=0&coin_id_to_sell=1&value_to_buy=999&from_pool=true
-```
+
+[/v2/estimate_coin_sell?coin_id_to_buy=0&coin_id_to_sell=1&value_to_buy=999&from_pool=true](https://node-api.testnet.minter.network/v2/estimate_coin_sell_all?coin_id_to_buy=0&coin_id_to_sell=1&value_to_buy=999&from_pool=true)
 
 ### Buy From Swap Pool
 
@@ -816,9 +816,9 @@ type BuySwapPoolData struct {
 - **MaximumValueToSell** - Maximum value of coins to sell.
 
 Use API v2 endpoint to calculate purchase price:
-```
-/v2/estimate_coin_buy?coin_id_to_buy=1&coin_id_to_sell=0&value_to_buy=999&from_pool=true
-```
+
+[/v2/estimate_coin_buy?coin_id_to_buy=1&coin_id_to_sell=0&value_to_buy=999&from_pool=true](https://node-api.testnet.minter.network/v2/estimate_coin_buy?coin_id_to_buy=1&coin_id_to_sell=0&value_to_buy=999&from_pool=true)
+
 
 ### Sell All From Swap Pool
 
@@ -841,9 +841,8 @@ type SellAllSwapPoolData struct {
 - **MinimumValueToBuy** - Minimum value of coins to get.
 
 Use API v2 endpoint to calculate sales price
-```
-/v2/estimate_coin_sell_all?coin_id_to_buy=0&coin_id_to_sell=1&value_to_buy=999&from_pool=true
-```
+
+[/v2/estimate_coin_sell_all?coin_id_to_buy=0&coin_id_to_sell=1&value_to_buy=999&from_pool=true](https://node-api.testnet.minter.network/v2/estimate_coin_sell_all?coin_id_to_buy=0&coin_id_to_sell=1&value_to_buy=999&from_pool=true)
 
 ## Minter Check
 
