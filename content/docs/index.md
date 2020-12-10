@@ -376,8 +376,8 @@ type CreateCoinData struct {
 10 symbols length.
 - **InitialAmount** - Amount of coins to issue. Issued coins will be available
 to sender account.
-- **InitialReserve** - Initial reserve in BIP's.
-- **ConstantReserveRatio** - CRR, uint, should be from 10 to 100.
+- **InitialReserve** - Initial reserve in BIP's, can be zero for creation without reserve coin.
+- **ConstantReserveRatio** - CRR, uint, should be from 10 to 100, or equal 0 for creation without reserve coin.
 - **MaxSupply** - Max amount of coins that are allowed to be issued. Maximum
 is 1,000,000,000,000,000.
 
@@ -604,8 +604,8 @@ type RecreateCoinData struct {
 10 symbols length.
 - **InitialAmount** - Amount of coins to issue. Issued coins will be available
 to sender account.
-- **InitialReserve** - Initial reserve in BIP's.
-- **ConstantReserveRatio** - CRR, uint, should be from 10 to 100.
+- **InitialReserve** - Initial reserve in BIP's, can be zero for creation without reserve coin.
+- **ConstantReserveRatio** - CRR, uint, should be from 10 to 100, or equal 0 for creation without reserve coin.
 - **MaxSupply** - Max amount of coins that are allowed to be issued. Maximum
 is 1,000,000,000,000,000.
 
