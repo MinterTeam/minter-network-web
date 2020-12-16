@@ -106,17 +106,17 @@ is not limited.
 
 Minter Blockchain is multi-coin system.
 
-Base coin in testnet is `MNT`.
+Base coin in testnet is `MNT`.  
 Base coin in mainnet is `BIP`.
 
-Smallest part of *each* coin is called `pip`.
+Smallest part of *each* coin is called `pip`.  
 1 pip = 1^-18 of any coin. In Blockchain and API we only operating with
 pips.
 
 > **Note:** Each coin has its **own** pip. You should treat pip like atomic
-part of a coin, not as currency:
-> 1 MNT = 10^18 pip (MNT's pip)
-> 1 ABC = 10^18 pip (ABC's pip)
+part of a coin, not as currency:  
+> 1 MNT = 10^18 pip (MNT's pip)  
+> 1 ABC = 10^18 pip (ABC's pip)  
 > 1 MNT != 1 ABC
 
 ### Coin Issuance
@@ -144,10 +144,10 @@ After coin issued you can send is as ordinary coin using standard wallets.
 To issue a coin Coiner should pay fee. Fee is depends on length of Coin
 Symbol.
 
-3 letters – 1 000 000 bips
-4 letters – 100 000 bips
-5 letters – 10 000 bips
-6 letters – 1000 bips
+3 letters – 1 000 000 bips  
+4 letters – 100 000 bips  
+5 letters – 10 000 bips  
+6 letters – 1000 bips  
 7-10 letters – 100 bips
 
 ### Coin Exchange
@@ -567,8 +567,8 @@ type EditCandidateData struct {
 ### Set halt block transaction
 Type: **0x0F**
 
-Since Minter 1.2 released, validators can now vote for a particular block to stop the blockchain for update.
-For this purpose new transaction SetHaltBlock was introduced.
+Since Minter 1.2 released, validators can now vote for a particular block to stop the blockchain for update.  
+For this purpose new transaction SetHaltBlock was introduced.  
 If 2/3+ of voting power on a given block voted for halting -blockchain will stop producing new blocks and wait for update.
 
 *Data field contents:*
@@ -670,7 +670,7 @@ type PriceVoteData struct {
 
 Type: **0x14**
 
-Transaction to change candaite public key.
+Transaction to change candaite public key.  
 To improve validator security, it is proposed to add the public key change feature.
 
 *Data field contents:*
@@ -984,10 +984,10 @@ Data fields.
 To issue a coin with short name Coiner should pay extra fee. Fee is
 depends on length of Coin Symbol.
 
-3 letters — 1 000 000 bips
-4 letters — 100 000 bips
-5 letters — 10 000 bips
-6 letters — 1000 bips
+3 letters — 1 000 000 bips  
+4 letters — 100 000 bips  
+5 letters — 10 000 bips  
+6 letters — 1000 bips  
 7-10 letters — 100 bips
 
 ## Validators
