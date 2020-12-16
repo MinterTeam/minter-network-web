@@ -106,17 +106,17 @@ is not limited.
 
 Minter Blockchain is multi-coin system.
 
-Base coin in testnet is `MNT`.  
+Base coin in testnet is `MNT`.
 Base coin in mainnet is `BIP`.
 
-Smallest part of *each* coin is called `pip`.  
+Smallest part of *each* coin is called `pip`.
 1 pip = 1^-18 of any coin. In Blockchain and API we only operating with
 pips.
 
 > **Note:** Each coin has its **own** pip. You should treat pip like atomic
-part of a coin, not as currency:  
-> 1 MNT = 10^18 pip (MNT's pip)  
-> 1 ABC = 10^18 pip (ABC's pip)  
+part of a coin, not as currency:
+> 1 MNT = 10^18 pip (MNT's pip)
+> 1 ABC = 10^18 pip (ABC's pip)
 > 1 MNT != 1 ABC
 
 ### Coin Issuance
@@ -144,10 +144,10 @@ After coin issued you can send is as ordinary coin using standard wallets.
 To issue a coin Coiner should pay fee. Fee is depends on length of Coin
 Symbol.
 
-3 letters – 1 000 000 bips  
-4 letters – 100 000 bips  
-5 letters – 10 000 bips  
-6 letters – 1000 bips  
+3 letters – 1 000 000 bips
+4 letters – 100 000 bips
+5 letters – 10 000 bips
+6 letters – 1000 bips
 7-10 letters – 100 bips
 
 ### Coin Exchange
@@ -699,17 +699,17 @@ To create liquidity through this pool.
 
 ```go
 type AddSwapPoolData struct {
-	Coin0      uin32
-	Coin1      uin32
-	Volume0    *big.Int
-	MaxVolume1 *big.Int
+	Coin0          uin32
+	Coin1          uin32
+	Volume0        *big.Int
+	MaximumVolume1 *big.Int
 }
 ```
 
 - **Coin0** - ID of first coin to pair
 - **Coin1** - ID of second coin to pair
 - **Volume0** - Volume to add to reserve of the swap pool of first coin
-- **MaxVolume1** - Maximum volume to add to reserve of the swap pool of second coin
+- **MaximumVolume1** - Maximum volume to add to reserve of the swap pool of second coin
 
 When a new liquidity provider deposits tokens into an existing Uniswap pair, the number
 of liquidity tokens minted is computed based on the existing quantity of tokens:
@@ -719,7 +719,7 @@ of liquidity tokens minted is computed based on the existing quantity of tokens:
 if they are the first depositor, the number of liquidity tokens equal to the geometric mean
 of the amounts deposited:
 
-![](https://i.ibb.co/cFXTdfQ/image.png)
+![](https://i.ibb.co/N9HbGTH/image.png)
 
 The above formula ensures that a liquidity pool share will never be worth less than
 the geometric mean of the reserves in that pool. However, it is possible for the value of
@@ -984,10 +984,10 @@ Data fields.
 To issue a coin with short name Coiner should pay extra fee. Fee is
 depends on length of Coin Symbol.
 
-3 letters — 1 000 000 bips  
-4 letters — 100 000 bips  
-5 letters — 10 000 bips  
-6 letters — 1000 bips  
+3 letters — 1 000 000 bips
+4 letters — 100 000 bips
+5 letters — 10 000 bips
+6 letters — 1000 bips
 7-10 letters — 100 bips
 
 ## Validators
