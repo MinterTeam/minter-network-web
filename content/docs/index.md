@@ -784,7 +784,7 @@ TO BE DESCRIBED
 For each transaction sender should pay fee. Fees are measured in
 "units".
 
-1 unit = 10^15 pip = 0.001 bip.
+1 unit = 10^17 pip = 0.1 bip.
 
 ### Standard commissions
 
@@ -811,7 +811,10 @@ Here is a list of current fees:
 |**TypeEditCoinOwner**           | 10000000 units |
 |**TypeEditMultisig**            | 1000 units |
 |**TypePriceVote**               | 10 units |
-|**TypeEditCandidatePublicKey**  | 10000000 units |
+|**TypeEditCandidatePublicKey**  | 100000000 units |
+
+[Source](https://github.com/MinterTeam/minter-go-node/blob/master/core/commissions/commissions.go)
+
 Also sender should pay extra 2 units per byte in Payload and Service
 Data fields.
 
