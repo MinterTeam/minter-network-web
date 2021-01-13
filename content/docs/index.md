@@ -870,7 +870,7 @@ type MoveStakeData struct {
     From     [32]byte
     To       [32]byte
     Coin     uint32
-    Value    *big.Int
+    Stake    *big.Int
 }
 ```
 
