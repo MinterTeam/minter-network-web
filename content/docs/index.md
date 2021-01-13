@@ -267,7 +267,13 @@ Type of transaction is determined by a single byte.
 |[TypeSellSwapPool](#sell-from-swap-pool)                               |0x17|
 |[TypeBuySwapPool](#buy-from-swap-pool)                                 |0x18|
 |[TypeSellAllSwapPool](#sell-all-from-swap-pool)                        |0x19|
-
+|[TypeEditCandidateCommission](#edit-candidate-commission)              |0x20|
+|[TypeMoveStake](#move-stake)                                           |0x21|
+|[TypeMintToken](#mint-token)                                           |0x22|
+|[TypeBurnToken](#burn-token)                                           |0x23|
+|[TypeCreateToken](#create-token)                                       |0x24|
+|[TypeRecreateToken](#recreate-token)                                   |0x25|
+    
 ### Send transaction
 
 Type: **0x01**
@@ -378,8 +384,8 @@ type CreateCoinData struct {
 10 symbols length.
 - **InitialAmount** - Amount of coins to issue. Issued coins will be available
 to sender account.
-- **InitialReserve** - Initial reserve in BIP's, can be zero for creation without reserve coin.
-- **ConstantReserveRatio** - CRR, uint, should be from 10 to 100, or equal 0 for creation without reserve coin.
+- **InitialReserve** - Initial reserve in BIP's.
+- **ConstantReserveRatio** - CRR, uint, should be from 10 to 100.
 - **MaxSupply** - Max amount of coins that are allowed to be issued. Maximum
 is 1,000,000,000,000,000.
 
@@ -606,8 +612,8 @@ type RecreateCoinData struct {
 10 symbols length.
 - **InitialAmount** - Amount of coins to issue. Issued coins will be available
 to sender account.
-- **InitialReserve** - Initial reserve in BIP's, can be zero for creation without reserve coin.
-- **ConstantReserveRatio** - CRR, uint, should be from 10 to 100, or equal 0 for creation without reserve coin.
+- **InitialReserve** - Initial reserve in BIP's.
+- **ConstantReserveRatio** - CRR, uint, should be from 10 to 100.
 - **MaxSupply** - Max amount of coins that are allowed to be issued. Maximum
 is 1,000,000,000,000,000.
 
@@ -735,12 +741,7 @@ pair. But it dramatically increases the cost of the above attack. In order to ra
 value of a liquidity pool share to $100, the attacker would need to donate $100,000 to the
 pool, which would be permanently locked up as liquidity.
 
-To see the total supply and balance of the provider, check on these API v2 endpoints:
-
-[/v2/swap_pool/{coin0}/{coin1}](https://node-api.testnet.minter.network/v2/swap_pool/0/1)
-
-[/v2/swap_pool/{coin0}/{coin1}/{provider}](https://node-api.testnet.minter.network/v2/swap_pool/0/1/Mx0000000000000000000000000000000000000000)
-
+To see the total supply and balance of the provider, check on [SwapPool](https://minterteam.github.io/node-gateway-api-v2-doc/#operation/SwapPool) and [SwapPoolProvider](https://minterteam.github.io/node-gateway-api-v2-doc/#operation/SwapPoolProvider) API v2 endpoints.
 
 ### Remove Swap Pool
 
@@ -789,9 +790,7 @@ type SellSwapPoolData struct {
 - **CoinToBuy** - ID of a coin to get.
 - **MinimumValueToBuy** - Minimum value of coins to get.
 
-Use API v2 endpoint to calculate sales price:
-
-[/v2/estimate_coin_sell?coin_id_to_buy=0&coin_id_to_sell=1&value_to_buy=999&from_pool=true](https://node-api.testnet.minter.network/v2/estimate_coin_sell_all?coin_id_to_buy=0&coin_id_to_sell=1&value_to_buy=999&from_pool=true)
+Use [EstimateCoinSell](https://minterteam.github.io/node-gateway-api-v2-doc/#operation/EstimateCoinSell) API v2 endpoint with _swap_from=pool_ parameter to calculate sales price from swap pool.
 
 ### Buy From Swap Pool
 
@@ -817,7 +816,7 @@ type BuySwapPoolData struct {
 
 Use API v2 endpoint to calculate purchase price:
 
-[/v2/estimate_coin_buy?coin_id_to_buy=1&coin_id_to_sell=0&value_to_buy=999&from_pool=true](https://node-api.testnet.minter.network/v2/estimate_coin_buy?coin_id_to_buy=1&coin_id_to_sell=0&value_to_buy=999&from_pool=true)
+Use [EstimateCoinBuy](https://minterteam.github.io/node-gateway-api-v2-doc/#operation/EstimateCoinBuy) API v2 endpoint with _swap_from=pool_ parameter to calculate purchase price from swap pool.
 
 
 ### Sell All From Swap Pool
@@ -840,9 +839,122 @@ type SellAllSwapPoolData struct {
 - **CoinToBuy** - ID of a coin to get.
 - **MinimumValueToBuy** - Minimum value of coins to get.
 
-Use API v2 endpoint to calculate sales price
+Use [EstimateCoinSellAll](https://minterteam.github.io/node-gateway-api-v2-doc/#operation/EstimateCoinSellAll) API v2 endpoint with _swap_from=pool_ parameter to calculate sales price from swap pool.
 
-[/v2/estimate_coin_sell_all?coin_id_to_buy=0&coin_id_to_sell=1&value_to_buy=999&from_pool=true](https://node-api.testnet.minter.network/v2/estimate_coin_sell_all?coin_id_to_buy=0&coin_id_to_sell=1&value_to_buy=999&from_pool=true)
+
+### Edit Candidate Commission
+
+Type: **0x20**
+
+*Data field contents:*
+
+```go
+type EditCandidateCommissionData struct {
+    PubKey    [32]byte
+    Commission uint32
+}
+```
+
+UnbondPeriod * 3
+
+_todo_
+
+### Move Stake     
+
+Type: **0x21**
+
+*Data field contents:*
+
+```go
+type MoveStakeData struct {
+    From     [32]byte
+    To       [32]byte
+    Coin     uint32
+    Value    *big.Int
+}
+```
+
+```go
+const TypeStakeMoveEvent = "minter/StakeMoveEvent"
+
+type StakeMoveEvent struct {
+	Address         string `json:"address"`
+	Amount          string `json:"amount"`
+	Coin            string `json:"coin"`
+	ValidatorPubKey string `json:"validator_pub_key"`
+	WaitList        bool   `json:"waitlist"`
+}
+```
+
+_todo_
+
+### Mint Token    
+
+Type: **0x22**
+
+*Data field contents:*
+
+```go
+type MintTokenData struct {
+    Coin     uint32
+    Value    *big.Int
+}
+```
+
+_todo_
+                                        
+### Burn Token    
+
+Type: **0x23**
+
+*Data field contents:*
+
+```go
+type BurnTokenData struct {
+    Coin     uint32
+    Value    *big.Int
+}
+```
+
+_todo_
+
+### Create Token    
+
+Type: **0x24**
+
+*Data field contents:*
+
+```go
+type CreateTokenData struct {
+	Name          string
+	Symbol        [10]byte
+	InitialAmount *big.Int
+	MaxSupply     *big.Int
+	Mintable      bool
+	Burnable      bool
+}
+```
+
+_todo_
+
+### Recreate Token    
+
+Type: **0x25**
+
+*Data field contents:*
+
+```go
+type RecreateTokenData struct {
+	Name          string
+	Symbol        [10]byte
+	InitialAmount *big.Int
+	MaxSupply     *big.Int
+	Mintable      bool
+	Burnable      bool
+}
+```
+
+_todo_
 
 ## Minter Check
 
@@ -976,6 +1088,14 @@ Here is a list of current fees:
 |**TypeBuySwapPool**             | 100 units |
 |**TypeSellSwapPool**            | 100 units |
 |**TypeSellAllSwapPool**         | 100 units |
+|**TypeEditCandidateCommission** | 10000 units |
+|**TypeMoveStake**               | 600 units |
+|**TypeEditEmission**            | 100 units |
+|**TypeCreateToken**             | Depends on the coin symbol length |
+|**TypeRecreateToken**           | 10000000 units |
+|**TypeMintToken**               | 100 units |
+|**TypeBurnToken**               | 100 units |
+    
 Also sender should pay extra 2 units per byte in Payload and Service
 Data fields.
 
