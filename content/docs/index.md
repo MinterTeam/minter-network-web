@@ -741,7 +741,7 @@ pair. But it dramatically increases the cost of the above attack. In order to ra
 value of a liquidity pool share to $100, the attacker would need to donate $100,000 to the
 pool, which would be permanently locked up as liquidity.
 
-To see the total supply and balance of the provider, check on [SwapPool](https://minterteam.github.io/node-gateway-api-v2-doc/#operation/SwapPool) and [SwapPoolProvider](https://minterteam.github.io/node-gateway-api-v2-doc/#operation/SwapPoolProvider) API v2 endpoints.
+To see the total supply and balance of the provider, check on [SwapPool](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/1.3/docs/api.swagger.json#operation/SwapPool) and [SwapPoolProvider](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/1.3/docs/api.swagger.json#operation/SwapPoolProvider) API v2 endpoints.
 
 ### Remove Swap Pool
 
