@@ -267,12 +267,14 @@ Type of transaction is determined by a single byte.
 |[TypeSellSwapPool](#sell-from-swap-pool)                               |0x17|
 |[TypeBuySwapPool](#buy-from-swap-pool)                                 |0x18|
 |[TypeSellAllSwapPool](#sell-all-from-swap-pool)                        |0x19|
-|[TypeEditCandidateCommission](#edit-candidate-commission)              |0x20|
-|[TypeMoveStake](#move-stake)                                           |0x21|
-|[TypeMintToken](#mint-token)                                           |0x22|
-|[TypeBurnToken](#burn-token)                                           |0x23|
-|[TypeCreateToken](#create-token)                                       |0x24|
-|[TypeRecreateToken](#recreate-token)                                   |0x25|
+|[TypeEditCandidateCommission](#edit-candidate-commission)              |0x1A|
+|[TypeMoveStake](#move-stake)                                           |0x1B|
+|[TypeMintToken](#mint-token)                                           |0x1C|
+|[TypeBurnToken](#burn-token)                                           |0x1D|
+|[TypeCreateToken](#create-token)                                       |0x1E|
+|[TypeRecreateToken](#recreate-token)                                   |0x1F|
+|[TypePriceCommission](#price-commission)                               |0x20|
+|[TypeUpdateNetwork](#update-network)                                   |0x21|
     
 ### Send transaction
 
@@ -844,7 +846,7 @@ Use [EstimateCoinSellAll](https://minterteam.github.io/node-gateway-api-v2-doc/#
 
 ### Edit Candidate Commission
 
-Type: **0x20**
+Type: **0x1A**
 
 *Data field contents:*
 
@@ -861,7 +863,7 @@ _todo_
 
 ### Move Stake     
 
-Type: **0x21**
+Type: **0x1B**
 
 *Data field contents:*
 
@@ -890,7 +892,7 @@ _todo_
 
 ### Mint Token    
 
-Type: **0x22**
+Type: **0x1C**
 
 *Data field contents:*
 
@@ -905,7 +907,7 @@ _todo_
                                         
 ### Burn Token    
 
-Type: **0x23**
+Type: **0x1D**
 
 *Data field contents:*
 
@@ -920,7 +922,7 @@ _todo_
 
 ### Create Token    
 
-Type: **0x24**
+Type: **0x1E**
 
 *Data field contents:*
 
@@ -939,7 +941,7 @@ _todo_
 
 ### Recreate Token    
 
-Type: **0x25**
+Type: **0x1F**
 
 *Data field contents:*
 
@@ -951,6 +953,109 @@ type RecreateTokenData struct {
 	MaxSupply     *big.Int
 	Mintable      bool
 	Burnable      bool
+}
+```
+
+_todo_
+
+### Price Commission    
+
+Type: **0x20**
+
+*Data field contents:*
+
+```go
+type PriceCommissionData struct {
+	PubKey                  PublicKey
+	Height                  uint64
+	Coin                    CoinID
+	PayloadByte             *big.Int
+	Send                    *big.Int
+	Convert                 *big.Int
+	CreateTicker3           *big.Int
+	CreateTicker4           *big.Int
+	CreateTicker5           *big.Int
+	CreateTicker6           *big.Int
+	CreateTicker7to10       *big.Int
+	RecreateTicker          *big.Int
+	DeclareCandidacy        *big.Int
+	Delegate                *big.Int
+	Unbond                  *big.Int
+	RedeemCheck             *big.Int
+	ToggleCandidateStatus   *big.Int
+	CreateMultisig          *big.Int
+	MultisendDelta          *big.Int
+	EditCandidate           *big.Int
+	SetHaltBlock            *big.Int
+	EditTickerOwner         *big.Int
+	EditMultisig            *big.Int
+	PriceVote               *big.Int
+	EditCandidatePublicKey  *big.Int
+	AddLiquidity            *big.Int
+	RemoveLiquidity         *big.Int
+	EditCandidateCommission *big.Int
+	MoveStake               *big.Int
+	EditTokenEmission       *big.Int
+	PriceCommission         *big.Int
+	UpdateNetwork           *big.Int
+}
+```
+
+update event 
+
+```go
+const TypeUpdateCommissionsEvent = "minter/UpdateCommissionsEvent"
+type UpdateCommissionsEvent struct {
+	Coin                    uint64 `json:"coin"`
+	PayloadByte             string `json:"payload_byte"`
+	Send                    string `json:"send"`
+	Convert                 string `json:"convert"`
+	CreateTicker3           string `json:"create_ticker3"`
+	CreateTicker4           string `json:"create_ticker4"`
+	CreateTicker5           string `json:"create_ticker5"`
+	CreateTicker6           string `json:"create_ticker6"`
+	CreateTicker7_10        string `json:"create_ticker7_10"`
+	RecreateTicker          string `json:"recreate_ticker"`
+	DeclareCandidacy        string `json:"declare_candidacy"`
+	Delegate                string `json:"delegate"`
+	Unbond                  string `json:"unbond"`
+	RedeemCheck             string `json:"redeem_check"`
+	ToggleCandidateStatus   string `json:"toggle_candidate_status"`
+	CreateMultisig          string `json:"create_multisig"`
+	MultisendDelta          string `json:"multisend_delta"`
+	EditCandidate           string `json:"edit_candidate"`
+	SetHaltBlock            string `json:"set_halt_block"`
+	EditTickerOwner         string `json:"edit_ticker_owner"`
+	EditMultisig            string `json:"edit_multisig"`
+	PriceVote               string `json:"price_vote"`
+	EditCandidatePublicKey  string `json:"edit_candidate_public_key"`
+	AddLiquidity            string `json:"add_liquidity"`
+	RemoveLiquidity         string `json:"remove_liquidity"`
+	EditCandidateCommission string `json:"edit_candidate_commission"`
+	MoveStake               string `json:"move_stake"`
+	EditTokenEmission       string `json:"edit_token_emission"`
+	PriceCommission         string `json:"price_commission"`
+	UpdateNetwork           string `json:"update_network"`
+}
+```
+_todo_
+
+### Update Network    
+
+Type: **0x21**
+
+*Data field contents:*
+
+```go
+type UpdateNetworkData struct {
+	Version string
+	PubKey  PublicKey
+	Height  uint64
+}
+
+const TypeUpdateNetworkEvent = "minter/UpdateNetworkEvent"
+type UpdateNetworkEvent struct {
+	Version string `json:"version"`
 }
 ```
 
