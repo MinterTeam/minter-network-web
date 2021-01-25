@@ -966,9 +966,9 @@ Type: **0x20**
 
 ```go
 type PriceCommissionData struct {
-	PubKey                  PublicKey
+	PubKey                  [32]byte
 	Height                  uint64
-	Coin                    CoinID
+	Coin                    uint32
 	PayloadByte             *big.Int
 	Send                    *big.Int
 	Convert                 *big.Int
@@ -1006,7 +1006,7 @@ update event
 ```go
 const TypeUpdateCommissionsEvent = "minter/UpdateCommissionsEvent"
 type UpdateCommissionsEvent struct {
-	Coin                    uint64 `json:"coin"`
+	Coin                    string `json:"coin"`
 	PayloadByte             string `json:"payload_byte"`
 	Send                    string `json:"send"`
 	Convert                 string `json:"convert"`
