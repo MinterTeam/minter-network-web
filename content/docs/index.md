@@ -262,8 +262,8 @@ Type of transaction is determined by a single byte.
 |[TypeEditMultisig](#edit-multisig-transaction)                         |0x12|
 |[TypePriceVote](#price-vote-transaction)                               |0x13|
 |[TypeEditCandidatePublicKey](#edit-candidate-public-key-transaction)   |0x14|
-|[TypeAddSwapPool](#add-swap-pool)                                      |0x15|
-|[TypeRemoveSwapPool](#remove-swap-pool)                                |0x16|
+|[TypeAddLiquidity](#add-swap-pool)                                      |0x15|
+|[TypeRemoveLiquidity](#remove-swap-pool)                                |0x16|
 |[TypeSellSwapPool](#sell-from-swap-pool)                               |0x17|
 |[TypeBuySwapPool](#buy-from-swap-pool)                                 |0x18|
 |[TypeSellAllSwapPool](#sell-all-from-swap-pool)                        |0x19|
@@ -706,7 +706,7 @@ To create liquidity through this pool.
 *Data field contents:*
 
 ```go
-type AddSwapPoolData struct {
+type AddLiquidityData struct {
 	Coin0          uin32
 	Coin1          uin32
 	Volume0        *big.Int
@@ -1038,6 +1038,9 @@ type UpdateCommissionsEvent struct {
 	UpdateNetwork           string `json:"update_network"`
 }
 ```
+
+API current prices [PriceCommission](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/1.3/docs/api.swagger.json#operation/PriceCommission) and votes for update commissions [PriceVotes](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/1.3/docs/api.swagger.json#operation/PriceVotes)
+
 _todo_
 
 ### Update Network    
