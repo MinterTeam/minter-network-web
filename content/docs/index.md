@@ -1086,7 +1086,7 @@ type CreateSwapPoolData struct {
 
 Number of liquidity tokens equal to the geometric mean of the amounts deposited:
 
-![](https://i.ibb.co/N9HbGTH/image.png)
+![](https://i.ibb.co/cFXTdfQ/image.png)
 
 The above formula ensures that a liquidity pool share will never be worth less than
 the geometric mean of the reserves in that pool. However, it is possible for the value of
