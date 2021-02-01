@@ -262,8 +262,8 @@ Type of transaction is determined by a single byte.
 |[TypeEditMultisig](#edit-multisig-transaction)                         |0x12|
 |[TypePriceVote](#price-vote-transaction)                               |0x13|
 |[TypeEditCandidatePublicKey](#edit-candidate-public-key-transaction)   |0x14|
-|[TypeAddLiquidity](#add-swap-pool)                                      |0x15|
-|[TypeRemoveLiquidity](#remove-swap-pool)                                |0x16|
+|[TypeAddLiquidity](#add-swap-pool)                                     |0x15|
+|[TypeRemoveLiquidity](#remove-swap-pool)                               |0x16|
 |[TypeSellSwapPool](#sell-from-swap-pool)                               |0x17|
 |[TypeBuySwapPool](#buy-from-swap-pool)                                 |0x18|
 |[TypeSellAllSwapPool](#sell-all-from-swap-pool)                        |0x19|
@@ -275,6 +275,7 @@ Type of transaction is determined by a single byte.
 |[TypeRecreateToken](#recreate-token)                                   |0x1F|
 |[TypePriceCommission](#price-commission)                               |0x20|
 |[TypeUpdateNetwork](#update-network)                                   |0x21|
+|[TypeCreateSwapPool](#create-swap-pool)                                |0x22|
     
 ### Send transaction
 
@@ -724,25 +725,6 @@ of liquidity tokens minted is computed based on the existing quantity of tokens:
 
 ![](https://i.ibb.co/YkQdMLd/image.png)
 
-if they are the first depositor, the number of liquidity tokens equal to the geometric mean
-of the amounts deposited:
-
-![](https://i.ibb.co/N9HbGTH/image.png)
-
-The above formula ensures that a liquidity pool share will never be worth less than
-the geometric mean of the reserves in that pool. However, it is possible for the value of
-a liquidity pool share to grow over time, either by accumulating trading fees or through
-“donations” to the liquidity pool. In theory, this could result in a situation where the value
-of the minimum quantity of liquidity pool shares (1e-18 pool shares) is worth so much that
-it becomes infeasible for small liquidity providers to provide any liquidity.
-
-To mitigate this, we burns the first 1e-15 (0.000000000000001) pool shares that
-are minted (1000 times the minimum quantity of pool shares), sending them to the zero
-address instead of to the minter. This should be a negligible cost for almost any token
-pair. But it dramatically increases the cost of the above attack. In order to raise the
-value of a liquidity pool share to $100, the attacker would need to donate $100,000 to the
-pool, which would be permanently locked up as liquidity.
-
 To see the total supply and balance of the provider, check on [SwapPool](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/1.3/docs/api.swagger.json#operation/SwapPool) and [SwapPoolProvider](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/1.3/docs/api.swagger.json#operation/SwapPoolProvider) API v2 endpoints.
 
 ### Remove Swap Pool
@@ -1001,14 +983,15 @@ type PriceCommissionData struct {
 	EditMultisig            *big.Int
 	PriceVote               *big.Int
 	EditCandidatePublicKey  *big.Int
+    CreateSwapPool          *big.Int
 	AddLiquidity            *big.Int
 	RemoveLiquidity         *big.Int
 	EditCandidateCommission *big.Int
 	MoveStake               *big.Int
 	BurnToken               *big.Int
 	MintToken               *big.Int
-	PriceCommission         *big.Int
-	UpdateNetwork           *big.Int
+	VotePrice               *big.Int
+	VoteUpdate              *big.Int
 }
 ```
 
@@ -1049,14 +1032,15 @@ type UpdateCommissionsEvent struct {
 	EditMultisig            string `json:"edit_multisig"`
 	PriceVote               string `json:"price_vote"`
 	EditCandidatePublicKey  string `json:"edit_candidate_public_key"`
+	CreateSwapPool          string `json:"create_swap_pool"`
 	AddLiquidity            string `json:"add_liquidity"`
 	RemoveLiquidity         string `json:"remove_liquidity"`
 	EditCandidateCommission string `json:"edit_candidate_commission"`
 	MoveStake               string `json:"move_stake"`
 	MintToken               string `json:"mint_token"`
 	BurnToken               string `json:"burn_token"`
-	PriceCommission         string `json:"price_commission"`
-	UpdateNetwork           string `json:"update_network"`
+	VotePrice               string `json:"vote_price"`
+	UpdateNetwork           string `json:"vote_update"`
 }
 ```
 
@@ -1084,6 +1068,42 @@ type UpdateNetworkEvent struct {
 ```
 
 _todo_
+
+### Create Swap Pool
+
+Type: **0x22**
+
+*Data field contents:*
+
+```go
+type CreateSwapPoolData struct {
+	Coin0          uin32
+	Coin1          uin32
+	Volume0        *big.Int
+	Volume1        *big.Int
+}
+```
+
+Number of liquidity tokens equal to the geometric mean of the amounts deposited:
+
+![](https://i.ibb.co/N9HbGTH/image.png)
+
+The above formula ensures that a liquidity pool share will never be worth less than
+the geometric mean of the reserves in that pool. However, it is possible for the value of
+a liquidity pool share to grow over time, either by accumulating trading fees or through
+“donations” to the liquidity pool. In theory, this could result in a situation where the value
+of the minimum quantity of liquidity pool shares (1e-18 pool shares) is worth so much that
+it becomes infeasible for small liquidity providers to provide any liquidity.
+
+To mitigate this, we burns the first 1e-15 (0.000000000000001) pool shares that
+are minted (1000 times the minimum quantity of pool shares), sending them to the zero
+address instead of to the minter. This should be a negligible cost for almost any token
+pair. But it dramatically increases the cost of the above attack. In order to raise the
+value of a liquidity pool share to $100, the attacker would need to donate $100,000 to the
+pool, which would be permanently locked up as liquidity.
+
+To see the total supply and balance of the provider, check on [SwapPool](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/1.3/docs/api.swagger.json#operation/SwapPool) and [SwapPoolProvider](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/1.3/docs/api.swagger.json#operation/SwapPoolProvider) API v2 endpoints.
+
 
 ## Minter Check
 
