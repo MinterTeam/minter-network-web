@@ -990,7 +990,7 @@ type PriceCommissionData struct {
 	MoveStake               *big.Int
 	BurnToken               *big.Int
 	MintToken               *big.Int
-	VotePrice               *big.Int
+	VoteCommission          *big.Int
 	VoteUpdate              *big.Int
 }
 ```
@@ -1039,7 +1039,7 @@ type UpdateCommissionsEvent struct {
 	MoveStake               string `json:"move_stake"`
 	MintToken               string `json:"mint_token"`
 	BurnToken               string `json:"burn_token"`
-	VotePrice               string `json:"vote_price"`
+	VoteCommission          string `json:"vote_commission"`
 	UpdateNetwork           string `json:"vote_update"`
 }
 ```
