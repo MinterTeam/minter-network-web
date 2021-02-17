@@ -762,16 +762,14 @@ Transaction for selling from the swap pool of the pair.
 
 ```go
 type SellSwapPoolData struct {
-    CoinToSell          uint32
+    Coins               []uint32
     ValueToSell         *big.Int
-    CoinToBuy           uint32
     MinimumValueToBuy   *big.Int
 }
 ```
 
-- **CoinToSell** - ID of a coin to give.
+- **Coins** - IDs of coin from given to received.
 - **ValueToSell** - Amount of **CoinToSell** to give.
-- **CoinToBuy** - ID of a coin to get.
 - **MinimumValueToBuy** - Minimum value of coins to get.
 
 Use [EstimateCoinSell](https://minterteam.github.io/node-gateway-api-v2-doc/#operation/EstimateCoinSell) API v2 endpoint with _swap_from=pool_ parameter to calculate sales price from swap pool.
@@ -786,16 +784,14 @@ Transaction for buying from the swap pool of the pair.
 
 ```go
 type BuySwapPoolData struct {
-    CoinToBuy           uint32
+    Coins               []uint32
     ValueToBuy          *big.Int
-    CoinToSell          uint32
     MaximumValueToSell  *big.Int
 }
 ```
 
-- **CoinToBuy** - ID of a coin to get.
+- **Coins** - IDs of coin from given to received.
 - **ValueToBuy** - Amount of **CoinToBuy** to get.
-- **CoinToSell** - ID of a coin to give.
 - **MaximumValueToSell** - Maximum value of coins to sell.
 
 Use API v2 endpoint to calculate purchase price:
@@ -813,14 +809,12 @@ Transaction for selling all existing coins from the swap pool of the pair.
 
 ```go
 type SellAllSwapPoolData struct {
-    CoinToSell          uint32
-    CoinToBuy           uint32
+    Coins               []uint32
     MinimumValueToBuy   *big.Int
 }
 ```
 
-- **CoinToSell** - ID of a coin to give.
-- **CoinToBuy** - ID of a coin to get.
+- **Coins** - IDs of coin from given to received.
 - **MinimumValueToBuy** - Minimum value of coins to get.
 
 Use [EstimateCoinSellAll](https://minterteam.github.io/node-gateway-api-v2-doc/#operation/EstimateCoinSellAll) API v2 endpoint with _swap_from=pool_ parameter to calculate sales price from swap pool.
