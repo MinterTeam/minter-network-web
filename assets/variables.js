@@ -1,6 +1,6 @@
 export const BASE_TITLE_END = ' — Minter';
-export const BASE_TITLE = 'Minter: a global rewards and loyalty points network';
-export const BASE_DESCRIPTION = 'Any brand, community, or blogger can create their own coins and launch their reward or loyalty system on our fast blockchain in minutes.';
+export const BASE_TITLE = 'Minter: digital assets marketplace';
+export const BASE_DESCRIPTION = 'Your single gateway to major digital currencies and assets: buy, sell, send, and spend BTC, ETH, BIP, USDC, gold, oil, stocks, and thousands more.';
 export const LANGUAGE_COOKIE_KEY = 'minter-language';
 export const HOST = 'https://www.minter.network';
 

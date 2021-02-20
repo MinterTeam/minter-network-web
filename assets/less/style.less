@@ -262,17 +262,39 @@ html.layout--docs {background: var(--underlay-bg-color);}
 /* INDEX intro */
 //.main-content--index {display: flex; align-items: center;}
 .index-section {padding-top: 60px; padding-bottom: 80px;}
+.index-bar {background: @c-main; color: #fff; font-weight: 700; font-size: 17px; text-align: center; line-height: 20px; padding: 10px 0;}
 .index-intro {}
-.index-intro__title {margin-top: 24px;}
+.index-intro__logo {vertical-align: top;}
+.index-intro__title {margin-top: 16px; margin-bottom: 8px; font-size: 42px; line-height: 1.2;}
 .index-intro__button {margin-top: 32px;}
+.index-intro__assets-wrap {}
+.index-intro__assets {max-width: 70%; margin: 16px auto 0; display: block;}
 @media (min-width: @breakpoint-small-up) {
+    .index-intro__title {font-size: 56px; line-height: 66px;}
+}
+@media (min-width: @breakpoint-medium-up) {
     .index-section {padding-top: 100px;}
+    .index-intro {display: flex; justify-content: space-between;}
+    .index-intro__content {max-width: 400px; flex-shrink: 0;}
+    .index-intro__assets-wrap {margin-left: 16px; align-self: center;}
+    .index-intro__assets {max-width: 100%; margin: 8px 0 0;}
 }
 
 
+.index-numbers {font-weight: 700; line-height: 1.2;}
+.index-numbers__item {}
+.index-numbers__value {font-size: 40px;}
+.index-numbers__caption {font-size: 17px;}
+
+
+.index-wallets__item {padding-left: 52px; position: relative;}
+.index-wallets__icon {position: absolute; left: 0; top: 0; border-radius: 8px; box-shadow: 4px 4px 0 rgba(0,0,0, 0.1);}
+.index-wallets__title {font-weight: 600;}
+.index-wallets__description { line-height: 1.375;}
+
 .index-feature__icon {vertical-align: top;}
 .index-feature__title {margin-top: 16px;}
-.index-feature__description {margin-top: 8px; font-size: 17px;}
+.index-feature__description {margin-top: 8px;}
 
 
 @media (min-width: @breakpoint-medium-up) {
