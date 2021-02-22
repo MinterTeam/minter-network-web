@@ -157,7 +157,7 @@ export default {
             <div class="u-grid u-grid--large u-grid--vertical-margin--large">
                 <div class="u-cell u-cell--medium--1-2">
                     <img class="index-feature__icon" src="/img/feature-tools.svg" width="48" height="48" alt="" role="presentation">
-                    <h2 class="index-feature__title u-h3">Comprehensive toolset</h2>
+                    <h2 class="index-feature__title u-h3">Create your own coin or token</h2>
                     <p class="index-feature__description">
                         Game credits, loyalty points, access tokens and achievements can be managed in a simple way via set of tools like wallets (<a class="link--default" href="https://itunes.apple.com/ru/app/bip-wallet/id1457843214" target="_blank" rel="nofollow">iOS</a>,
                         <a class="link--default" href="https://play.google.com/store/apps/details?id=network.minter.bipwallet.mainnet" target="_blank" rel="nofollow">Android</a>,
