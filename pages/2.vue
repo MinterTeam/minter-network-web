@@ -5,7 +5,7 @@ import {prettyRound} from '~/assets/utils.js';
 
 export default {
     head() {
-        const title = 'Minter: digital assets marketplace';
+        const title = 'Minter 2 — Digital Assets Marketplace';
         const description = 'Your single gateway to major digital currencies and assets: buy, sell, send, and spend BTC, ETH, BIP, USDC, gold, oil, stocks, and thousands more.';
         // const localeSuffix = this.$i18n.locale === 'en' ? '' : '-' + this.$i18n.locale;
 
