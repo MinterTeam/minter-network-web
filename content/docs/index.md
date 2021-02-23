@@ -824,6 +824,8 @@ Use [EstimateCoinSellAll](https://minterteam.github.io/node-gateway-api-v2-doc/#
 
 Type: **0x1A**
 
+This transaction changes the validator's fee. Only validator owner is allowed to send. The fee cannot be increased by more than 10 units at once and cannot be changed sooner than once in every three UnbondPeriod's. UnbondPeriod = 518400 blocks (177 on testnet).
+
 *Data field contents:*
 
 ```go
@@ -833,13 +835,11 @@ type EditCandidateCommissionData struct {
 }
 ```
 
-UnbondPeriod * 3
-
-_todo_
-
 ### Move Stake     
 
 Type: **0x1B**
+
+Reserved transaction not used in current version.
 
 *Data field contents:*
 
@@ -864,11 +864,11 @@ type StakeMoveEvent struct {
 }
 ```
 
-_todo_
-
 ### Mint Token    
 
 Type: **0x1C**
+
+This transaction increases the token's supply. Can be applied to tokens only and is executed from the coin owner address. The new supply must not exceed the MaxSupply value.
 
 *Data field contents:*
 
@@ -879,11 +879,14 @@ type MintTokenData struct {
 }
 ```
 
-_todo_
+- **Coin** - the token's id
+- **Value** - the quantity of coins to be issued
                                         
 ### Burn Token    
 
 Type: **0x1D**
+
+This transaction decreases the token's supply. Can be applied to tokens only and is executed from the address of the user who has the necessary amount of this coin. The new supply must be more than or equal to 0.
 
 *Data field contents:*
 
@@ -894,11 +897,12 @@ type BurnTokenData struct {
 }
 ```
 
-_todo_
 
 ### Create Token    
 
 Type: **0x1E**
+
+Creation of a token (non-reserve coin).
 
 *Data field contents:*
 
@@ -913,11 +917,16 @@ type CreateTokenData struct {
 }
 ```
 
-_todo_
+- **InitialAmount** - the number of tokens to be created at the start
+- **MaxSupply** - the upper limit of the total number of tokens
+- **Mintable** - allow new tokens to be issued additionally
+- **Burnable** - allow all tokens to be burned
 
 ### Recreate Token    
 
 Type: **0x1F**
+
+This transaction re-creates the coins (both backed and non-reserve).
 
 *Data field contents:*
 
@@ -932,27 +941,35 @@ type RecreateTokenData struct {
 }
 ```
 
-_todo_
+- **InitialAmount** - the number of tokens to be created at the start
+- **MaxSupply** - the upper limit of the total number of tokens
+- **Mintable** - allow new tokens to be issued additionally
+- **Burnable** - allow all tokens to be burned
 
 ### Price Commission    
 
 Type: **0x20**
 
+This transaction enables validators to vote for the fees to be changed. The change comes into force once a two-thirds majority is reached. The vote can be sent from the validator owner address.
+
 *Data field contents:*
 
 ```go
-type PriceCommissionData struct {
-	PubKey                  [32]byte
+type VoteCommissionData struct {
+	PubKey                  types.Pubkey
 	Height                  uint64
-	Coin                    uint32
+	Coin                    types.CoinID
 	PayloadByte             *big.Int
 	Send                    *big.Int
 	BuyBancor               *big.Int
 	SellBancor              *big.Int
 	SellAllBancor           *big.Int
-	BuyPool                 *big.Int
-	SellPool                *big.Int
-	SellAllPool             *big.Int
+	BuyPoolBase             *big.Int
+	BuyPoolDelta            *big.Int
+	SellPoolBase            *big.Int
+	SellPoolDelta           *big.Int
+	SellAllPoolBase         *big.Int
+	SellAllPoolDelta        *big.Int
 	CreateTicker3           *big.Int
 	CreateTicker4           *big.Int
 	CreateTicker5           *big.Int
@@ -977,32 +994,34 @@ type PriceCommissionData struct {
 	EditMultisig            *big.Int
 	PriceVote               *big.Int
 	EditCandidatePublicKey  *big.Int
-    CreateSwapPool          *big.Int
+	CreateSwapPool          *big.Int
 	AddLiquidity            *big.Int
 	RemoveLiquidity         *big.Int
 	EditCandidateCommission *big.Int
 	MoveStake               *big.Int
-	BurnToken               *big.Int
 	MintToken               *big.Int
+	BurnToken               *big.Int
 	VoteCommission          *big.Int
 	VoteUpdate              *big.Int
 }
 ```
-
-update event 
+Once there is a consensus, the event with the information about the new fees will occur at the corresponding block height.
 
 ```go
 const TypeUpdateCommissionsEvent = "minter/UpdateCommissionsEvent"
 type UpdateCommissionsEvent struct {
-	Coin                    string `json:"coin"`
+	Coin                    uint64 `json:"coin"`
 	PayloadByte             string `json:"payload_byte"`
 	Send                    string `json:"send"`
 	BuyBancor               string `json:"buy_bancor"`
 	SellBancor              string `json:"sell_bancor"`
 	SellAllBancor           string `json:"sell_all_bancor"`
-	BuyPool                 string `json:"buy_pool"`
-	SellPool                string `json:"sell_pool"`
-	SellAllPool             string `json:"sell_all_pool"`
+	BuyPoolBase             string `json:"buy_pool_base"`
+	BuyPoolDelta            string `json:"buy_pool_delta"`
+	SellPoolBase            string `json:"sell_pool_base"`
+	SellPoolDelta           string `json:"sell_pool_delta"`
+	SellAllPoolBase         string `json:"sell_all_pool_base"`
+	SellAllPoolDelta        string `json:"sell_all_pool_delta"`
 	CreateTicker3           string `json:"create_ticker3"`
 	CreateTicker4           string `json:"create_ticker4"`
 	CreateTicker5           string `json:"create_ticker5"`
@@ -1019,6 +1038,7 @@ type UpdateCommissionsEvent struct {
 	SetCandidateOn          string `json:"set_candidate_on"`
 	SetCandidateOff         string `json:"set_candidate_off"`
 	CreateMultisig          string `json:"create_multisig"`
+	MultisendBase           string `json:"multisend_base"`
 	MultisendDelta          string `json:"multisend_delta"`
 	EditCandidate           string `json:"edit_candidate"`
 	SetHaltBlock            string `json:"set_halt_block"`
@@ -1034,38 +1054,45 @@ type UpdateCommissionsEvent struct {
 	MintToken               string `json:"mint_token"`
 	BurnToken               string `json:"burn_token"`
 	VoteCommission          string `json:"vote_commission"`
-	UpdateNetwork           string `json:"vote_update"`
+	VoteUpdate              string `json:"vote_update"`
 }
 ```
 
 API current prices [PriceCommission](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/1.3/docs/api.swagger.json#operation/PriceCommission) and votes for update commissions [PriceVotes](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/1.3/docs/api.swagger.json#operation/PriceVotes)
 
-_todo_
-
 ### Update Network    
 
 Type: **0x21**
 
+This transaction allows to vote whether to proceed with the network's upgrade to a new version. Can only be sent by a node owner and from the owner address. The upgrade is approved if the two-thirds of the voting power is in favor.
+
 *Data field contents:*
 
 ```go
-type UpdateNetworkData struct {
+type VoteUpdateData struct {
 	Version string
-	PubKey  PublicKey
+	PubKey  [32]byte
 	Height  uint64
 }
+```
+- **Version** - the codename of the upgrade
+- **PubKey** - the public key of the validator that's casting a vote
+- **Height** - the block in which the upgrade is to take place
 
+Once there is a consensus, the event will occur at the corresponding block height.
+
+```
 const TypeUpdateNetworkEvent = "minter/UpdateNetworkEvent"
 type UpdateNetworkEvent struct {
 	Version string `json:"version"`
 }
 ```
 
-_todo_
-
 ### Create Swap Pool
 
 Type: **0x22**
+
+This transaction creates a liquidity pool for two coins, in volumes specified within this transaction. The volumes will be withdrawn from your balance according to the figure you've specified in the transaction. When a pool is established, a P-number coin (example: P-123) is created and issued in the amount equal to the amount of pool liquidity. The calculations related to that liquidity are described below.
 
 *Data field contents:*
 
@@ -1239,6 +1266,8 @@ Here is a list of current fees:
 |**TypeMintToken**               | 100 units |
 |**TypeBurnToken**               | 100 units |
     
+Ref.: https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/1.3/docs/api.swagger.json#operation/PriceCommission
+
 Also sender should pay extra 2 units per byte in Payload and Service
 Data fields.
 
