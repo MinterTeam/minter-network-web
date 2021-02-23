@@ -768,9 +768,9 @@ type SellSwapPoolData struct {
 }
 ```
 
-- **Coins** - IDs of coin from given to received.
-- **ValueToSell** - Amount of **CoinToSell** to give.
-- **MinimumValueToBuy** - Minimum value of coins to get.
+- **Coins** - List of coin IDs from given to received.
+- **ValueToSell** - Amount of coin to spend (first coin in **Coins** list).
+- **MinimumValueToBuy** - Minimum value of coin to get.
 
 Use [EstimateCoinSell](https://minterteam.github.io/node-gateway-api-v2-doc/#operation/EstimateCoinSell) API v2 endpoint with _swap_from=pool_ parameter to calculate sales price from swap pool.
 
@@ -790,9 +790,9 @@ type BuySwapPoolData struct {
 }
 ```
 
-- **Coins** - IDs of coin from given to received.
-- **ValueToBuy** - Amount of **CoinToBuy** to get.
-- **MaximumValueToSell** - Maximum value of coins to sell.
+- **Coins** - List of coin IDs from given to received.
+- **ValueToBuy** - Amount of coin to get (last coin in **Coins** list).
+- **MaximumValueToSell** - Maximum value of coin to spend.
 
 Use API v2 endpoint to calculate purchase price:
 
@@ -814,8 +814,8 @@ type SellAllSwapPoolData struct {
 }
 ```
 
-- **Coins** - IDs of coin from given to received.
-- **MinimumValueToBuy** - Minimum value of coins to get.
+- **Coins** - List of coin IDs from given to received.
+- **MinimumValueToBuy** - Minimum value of coin to get.
 
 Use [EstimateCoinSellAll](https://minterteam.github.io/node-gateway-api-v2-doc/#operation/EstimateCoinSellAll) API v2 endpoint with _swap_from=pool_ parameter to calculate sales price from swap pool.
 
