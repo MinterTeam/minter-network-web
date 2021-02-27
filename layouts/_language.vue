@@ -15,6 +15,10 @@
                 type: String,
                 default: '',
             },
+            push: {
+                type: Boolean,
+                default: false,
+            },
         },
         data() {
             return {
@@ -50,6 +54,20 @@
         },
         methods: {
             setLang(lang) {
+                console.log(lang, this.currentLocale.code)
+                const currentLang = this.currentLocale.code;
+                if (this.push && lang !== currentLang) {
+                    const cleanPath = currentLang === DEFAULT_LOCALE
+                        ? this.$route.fullPath
+                        : this.$route.fullPath.replace(new RegExp(`^\/${currentLang}`), '');
+                    // cleanPath may be: '', '/', '/asd', '/asd/
+
+                    const newPath = lang === DEFAULT_LOCALE
+                        ? (cleanPath || '/')
+                        : '/' + lang + cleanPath.replace(/\/$/, '');
+
+                    this.$router.push(newPath);
+                }
                 lang = lang === DEFAULT_LOCALE ? '' : lang;
                 this.$emit('update:lang', lang);
             }

@@ -18,7 +18,4 @@ export default {
     SET_SNACKBAR_INACTIVE: (state) => {
         state.isSnackbarActive = false;
     },
-    SET_PREFERRED_LOCALE: (state, locale) => {
-        state.preferredLocale = locale;
-    },
 };

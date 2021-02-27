@@ -2,8 +2,12 @@
 import {getStatus} from '~/api/status.js';
 import {HOST} from '~/assets/variables.js';
 import {prettyRound} from '~/assets/utils.js';
+import Language from '~/layouts/_language.vue';
 
 export default {
+    components: {
+        Language,
+    },
     head() {
         const title = 'Minter 2 — Digital Assets Marketplace';
         const description = 'Your single gateway to major digital currencies and assets: buy, sell, send, and spend BTC, ETH, BIP, USDC, gold, oil, stocks, and thousands more.';
@@ -43,6 +47,9 @@ export default {
     <div>
         <div class="index-bar">
             <div class="u-container">Minter 2 is coming soon!</div>
+        </div>
+        <div class="u-container u-container--full index-language">
+            <language class="" :locales='[{"code":"","name":"English"},{"code":"ru","name":"Russian"}]' lang="" :push="true"/>
         </div>
         <div class="u-container index-section">
             <section class="index-intro">

@@ -31,7 +31,9 @@
     "entity-decode": "^2.0.2",
     "lodash-es": "^4.17.15",
     "nuxt": "^2.12.2",
-    "nuxt-i18n": "^6.10.1",
+    "nuxt-i18n": "^6.20.3",
+    "nuxt-i18n-default": "0.0.2",
+    "nuxt-i18n-preferred": "^0.2.0",
     "pretty-num": "^0.4.0",
     "wysiwyg.css": "github:shrpne/wysiwyg.css#patch-1"
   },
