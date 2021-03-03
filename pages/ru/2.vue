@@ -24,7 +24,7 @@ export default {
                 { hid: 'og-image', name: 'og:image', content: `/img/social-share-2.png` },
             ],
             link: [
-                { rel: 'canonical', href: `${HOST}/`},
+                { rel: 'canonical', href: `${HOST}/2`},
             ],
         };
     },
@@ -59,6 +59,7 @@ export default {
                     <img class="index-intro__logo" src="/img/minter-logo.svg" alt="Minter" width="133" height="42">
                     <h1 class="index-intro__title">Маркетплейс цифровых активов</h1>
                     <p>Ваша единая точка доступа к крупнейшим цифровым валютам и активам — покупайте, продавайте, отправляйте и тратьте BTC, ETH, BIP, USDC, золото, нефть, акции и тысячи других.</p>
+                    <a class="u-mt-15 button button--main" href="/ru/how-to-buy-and-sell-bip">Купить BIP</a>
                 </div>
                 <div class="index-intro__assets-wrap">
                     <img class="index-intro__assets" src="/img/index-assets.png" srcset="/img/index-assets@2x.png 2x" alt="" role="presentation">

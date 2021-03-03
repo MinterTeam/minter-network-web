@@ -3,6 +3,7 @@ import prettyNum, {PRECISION_SETTING} from 'pretty-num';
 import {getBipPrice} from '~/api/explorer.js';
 import {getAveragePrice, getExchangePrice} from '~/api/bipchange.js';
 import {getRankCmc, getRankCoingecko} from '~/api/rank.js'
+import {HOST} from '~/assets/variables.js';
 
 export default {
     fetchOnServer: false,
@@ -38,6 +39,24 @@ export default {
 
         return Promise.all(exchangePricePromiseList.concat(bipPricePromise, cmcRankPromise, geckoRankPromise));
     },
+    head() {
+        const title = 'Minter 2 — Как купить и продать Bip?';
+        const description = '';
+        // const localeSuffix = this.$i18n.locale === 'en' ? '' : '-' + this.$i18n.locale;
+
+        return {
+            title: title,
+            meta: [
+                { hid: 'og-title', name: 'og:title', content: title },
+                { hid: 'description', name: 'description', content: description },
+                { hid: 'og-description', name: 'og:description', content: description },
+                { hid: 'og-image', name: 'og:image', content: `/img/social-share-2.png` },
+            ],
+            link: [
+                { rel: 'canonical', href: `${HOST}/how-to-buy-and-sell-bip`},
+            ],
+        };
+    },
     data() {
         return {
             bipPrice: 0,
@@ -65,7 +84,7 @@ export default {
         </div>
         <div class="u-container index-section">
             <img class="index-intro__logo" src="/img/minter-logo.svg" alt="Minter" width="133" height="42">
-            <h1 class="index-intro__title">Как купить и продать Bip?</h1>
+            <h1 class="index-intro__title">Как купить и продать BIP?</h1>
 
             <div class="u-grid u-grid--small u-grid--vertical-margin u-mt-25">
                 <div class="u-cell u-cell--medium--4-10">

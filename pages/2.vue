@@ -24,7 +24,7 @@ export default {
                 { hid: 'og-image', name: 'og:image', content: `/img/social-share-2.png` },
             ],
             link: [
-                { rel: 'canonical', href: `${HOST}/`},
+                { rel: 'canonical', href: `${HOST}/2`},
             ],
         };
     },
