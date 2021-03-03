@@ -21,7 +21,7 @@ export default {
                 { hid: 'og-title', name: 'og:title', content: title },
                 { hid: 'description', name: 'description', content: description },
                 { hid: 'og-description', name: 'og:description', content: description },
-                { hid: 'og-image', name: 'og:image', content: `/img/social-share-2.png` },
+                { hid: 'og-image', name: 'og:image', content: `/social-share-2.png` },
             ],
             link: [
                 { rel: 'canonical', href: `${HOST}/2`},
