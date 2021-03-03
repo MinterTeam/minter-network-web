@@ -1,8 +1,9 @@
 <script>
 import prettyNum, {PRECISION_SETTING} from 'pretty-num';
-import {getBipPrice} from '~/api/explorer.js';
+import {getStatus} from '~/api/explorer.js';
 import {getAveragePrice, getExchangePrice} from '~/api/bipchange.js';
-import {getRankCmc, getRankCoingecko} from '~/api/rank.js'
+import {getRankCmc, getRankCoingecko} from '~/api/rank.js';
+import {prettyRound} from '~/assets/utils.js';
 import {HOST} from '~/assets/variables.js';
 import Language from '~/layouts/_language.vue';
 
@@ -12,9 +13,10 @@ export default {
     },
     fetchOnServer: false,
     fetch() {
-        const bipPricePromise = getBipPrice()
-            .then((bipPrice) => {
-                this.bipPrice = bipPrice;
+        const bipPricePromise = getStatus()
+            .then((status) => {
+                this.bipPrice = status.bipPriceUsd;
+                this.marketCap = status.marketCap;
             });
 
         const cmcRankPromise = getRankCmc()
@@ -64,6 +66,7 @@ export default {
     data() {
         return {
             bipPrice: 0,
+            marketCap: 0,
             priceList: [],
             rank: {
                 cmc: 0,
@@ -72,12 +75,13 @@ export default {
         };
     },
     methods: {
+        prettyRound,
         coinPrice: (value) => prettyNum(value || 0, {precision: 4, precisionSetting: PRECISION_SETTING.FIXED}),
         getPrice(slug) {
             return this.coinPrice(this.priceList.find((item) => item.slug === slug)?.price);
         },
     },
-}
+};
 </script>
 
 <template>
@@ -90,14 +94,18 @@ export default {
             <img class="index-intro__logo" src="/img/minter-logo.svg" alt="Minter" width="133" height="42">
             <h1 class="index-intro__title">Как купить и продать BIP?</h1>
 
-            <div class="u-grid u-grid--small u-grid--vertical-margin u-mt-25">
-                <div class="u-cell u-cell--medium--4-10">
+            <div class="u-grid u-grid--vertical-margin u-mt-25">
+                <div class="u-cell u-cell--large--3-10 u-cell--medium--1-3 u-cell--small--1-2">
                     <h4 class="bip-price__caption u-h--uppercase u-mb-05">Средняя цена BIP</h4>
                     <div class="bip-price__value u-text-number">
                         ${{ coinPrice(bipPrice) }}
                     </div>
                 </div>
-                <div class="u-cell u-cell--medium--3-10">
+                <div class="u-cell u-cell--large--auto u-cell--small--1-2">
+                    <h4 class="bip-cap__title">Капитализация</h4>
+                    <div class="bip-cap__value">${{ prettyRound(marketCap) }}</div>
+                </div>
+                <div class="u-cell u-cell--small--auto">
                     <div class="bip-cap__item">
                         <a class="bip-cap__link link--default" href="https://coinmarketcap.com/currencies/minter-network/" target="_blank" rel="noopener">
                             <img class="bip-cap__icon" src="/img/bip-price-cmc.png" srcset="/img/bip-price-cmc@2x.png 2x" alt="" role="presentation">
@@ -106,7 +114,7 @@ export default {
                         <div class="bip-cap__value">#{{ rank.cmc }}</div>
                     </div>
                 </div>
-                <div class="u-cell u-cell--medium--3-10">
+                <div class="u-cell u-cell--small--auto">
                     <div class="bip-cap__item">
                         <a class="bip-cap__link link--default" href="https://www.coingecko.com/en/coins/bip" target="_blank" rel="noopener">
                             <img class="bip-cap__icon" src="/img/bip-price-coingecko.png" srcset="/img/bip-price-coingecko@2x.png 2x" alt="" role="presentation">
@@ -127,16 +135,6 @@ export default {
                         <div class="u-grid u-grid--small u-grid--vertical-margin">
                             <div class="u-cell u-cell--small--1-2">
                                 <div class="bip-trade__item">
-                                    <a class="bip-trade__link link--default" href="https://t.me/BIP_Banker_bot" target="_blank" rel="noopener">
-                                        <img class="bip-trade__icon" src="/img/bip-trade-banker-bot.png" srcset="/img/bip-trade-banker-bot@2x.png 2x" alt="" role="presentation">
-                                        <h4 class="bip-trade__title">Bip Banker Bot</h4>
-                                    </a>
-                                    <div class="bip-trade__value">${{ getPrice('bipbanker') }}</div>
-                                </div>
-                                <p class="bip-trade__description">Удобный Telegram-бот с P2P торговлей. Позволяет приобретать и продавать BIP как за криптовалюту, так и за фиатные средства.</p>
-                            </div>
-                            <div class="u-cell u-cell--small--1-2">
-                                <div class="bip-trade__item">
                                     <a class="bip-trade__link link--default" href="https://www.bithumb.pro/en-us/exchange/professional?q=BIP-USDT" target="_blank" rel="noopener">
                                         <img class="bip-trade__icon" src="/img/bip-trade-bithumb.png" srcset="/img/bip-trade-bithumb@2x.png 2x" alt="" role="presentation">
                                         <h4 class="bip-trade__title">Bithumb Global</h4>
@@ -144,6 +142,16 @@ export default {
                                     <div class="bip-trade__value">${{ getPrice('bithumb') }}</div>
                                 </div>
                                 <p class="bip-trade__description">Криптовалютная биржа с наиболее активными торгами BIP. Занимает 16 место в CoinGecko, KYC не требуется.</p>
+                            </div>
+                            <div class="u-cell u-cell--small--1-2">
+                                <div class="bip-trade__item">
+                                    <a class="bip-trade__link link--default" href="https://t.me/BIP_Banker_bot" target="_blank" rel="noopener">
+                                        <img class="bip-trade__icon" src="/img/bip-trade-banker-bot.png" srcset="/img/bip-trade-banker-bot@2x.png 2x" alt="" role="presentation">
+                                        <h4 class="bip-trade__title">Bip Banker Bot</h4>
+                                    </a>
+                                    <div class="bip-trade__value">${{ getPrice('bipbanker') }}</div>
+                                </div>
+                                <p class="bip-trade__description">Удобный Telegram-бот с P2P торговлей. Позволяет приобретать и продавать BIP как за криптовалюту, так и за фиатные средства.</p>
                             </div>
                             <div class="u-cell u-cell--small--1-2">
                                 <div class="bip-trade__item">

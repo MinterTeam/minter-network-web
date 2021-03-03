@@ -9,9 +9,9 @@ const instance = axios.create({
 addToCamelInterceptor(instance);
 
 
-export function getBipPrice() {
+export function getStatus() {
     return instance.get('status')
-        .then((response) => response.data.data.bipPriceUsd);
+        .then((response) => response.data.data);
 }
 
 /**
