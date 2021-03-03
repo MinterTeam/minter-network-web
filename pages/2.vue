@@ -59,6 +59,7 @@ export default {
                     <img class="index-intro__logo" src="/img/minter-logo.svg" alt="Minter" width="133" height="42">
                     <h1 class="index-intro__title">Digital Assets Marketplace</h1>
                     <p>Your single gateway to major digital currencies and assets: buy, sell, send, and spend BTC, ETH, BIP, USDC, gold, oil, stocks, and thousands more.</p>
+                    <a class="u-mt-15 button button--main" href="/how-to-buy-and-sell-bip">Buy BIP</a>
                 </div>
                 <div class="index-intro__assets-wrap">
                     <img class="index-intro__assets" src="/img/index-assets.png" srcset="/img/index-assets@2x.png 2x" alt="" role="presentation">

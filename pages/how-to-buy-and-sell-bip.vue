@@ -44,7 +44,7 @@ export default {
         return Promise.all(exchangePricePromiseList.concat(bipPricePromise, cmcRankPromise, geckoRankPromise));
     },
     head() {
-        const title = 'Minter 2 — Как купить и продать Bip?';
+        const title = 'Minter 2 — How to buy and sell BIP?';
         const description = '';
         // const localeSuffix = this.$i18n.locale === 'en' ? '' : '-' + this.$i18n.locale;
 
@@ -83,16 +83,16 @@ export default {
 <template>
     <div>
         <div class="u-container u-container--full language-wrap">
-            <nuxt-link class="language-item link--default" to="/ru/2">Что такое Minter?</nuxt-link>
-            <language class="language-item" :locales='[{"code":"","name":"English"},{"code":"ru","name":"Russian"}]' lang="ru" :push="true"/>
+            <nuxt-link class="language-item link--default" to="/2">What’s Minter?</nuxt-link>
+            <language class="language-item" :locales='[{"code":"","name":"English"},{"code":"ru","name":"Russian"}]' lang="" :push="true"/>
         </div>
         <div class="u-container index-section">
             <img class="index-intro__logo" src="/img/minter-logo.svg" alt="Minter" width="133" height="42">
-            <h1 class="index-intro__title">Как купить и продать BIP?</h1>
+            <h1 class="index-intro__title">How to buy and sell BIP?</h1>
 
             <div class="u-grid u-grid--small u-grid--vertical-margin u-mt-25">
                 <div class="u-cell u-cell--medium--4-10">
-                    <h4 class="bip-price__caption u-h--uppercase u-mb-05">Средняя цена BIP</h4>
+                    <h4 class="bip-price__caption u-h--uppercase u-mb-05">Average price</h4>
                     <div class="bip-price__value u-text-number">
                         ${{ coinPrice(bipPrice) }}
                     </div>
@@ -120,8 +120,8 @@ export default {
             <section class="bip-trade__panel">
                 <div class="u-grid">
                     <div class="u-cell u-cell--medium--1-3">
-                        <h2 class="u-h2 u-mb-05">Где торговать</h2>
-                        <p>Чтобы приобрести или продать BIP, воспользуйтесь одним из этих проверенных способов.</p>
+                        <h2 class="u-h2 u-mb-05">Where to trade</h2>
+                        <p>To buy or sell BIP, use one of the verified methods below.</p>
                     </div>
                     <div class="u-cell u-cell--medium--2-3">
                         <div class="u-grid u-grid--small u-grid--vertical-margin">
@@ -133,7 +133,7 @@ export default {
                                     </a>
                                     <div class="bip-trade__value">${{ getPrice('bipbanker') }}</div>
                                 </div>
-                                <p class="bip-trade__description">Удобный Telegram-бот с P2P торговлей. Позволяет приобретать и продавать BIP как за криптовалюту, так и за фиатные средства.</p>
+                                <p class="bip-trade__description">Convenient P2P trading Telegram bot. Allows you to purchase and sell BIP for both crypto and fiat currencies.</p>
                             </div>
                             <div class="u-cell u-cell--small--1-2">
                                 <div class="bip-trade__item">
@@ -143,7 +143,7 @@ export default {
                                     </a>
                                     <div class="bip-trade__value">${{ getPrice('bithumb') }}</div>
                                 </div>
-                                <p class="bip-trade__description">Криптовалютная биржа с наиболее активными торгами BIP. Занимает 16 место в CoinGecko, KYC не требуется.</p>
+                                <p class="bip-trade__description">Cryptocurrency exchange where BIP is traded most actively. Ranks 16th on CoinGecko, no KYC required.</p>
                             </div>
                             <div class="u-cell u-cell--small--1-2">
                                 <div class="bip-trade__item">
@@ -153,7 +153,7 @@ export default {
                                     </a>
                                     <div class="bip-trade__value">${{ getPrice('dailyexchange') }}</div>
                                 </div>
-                                <p class="bip-trade__description">Telegram-бот от команды MinterPro, позволяющий приобрести BIP за USDT, ETH и Qiwi.</p>
+                                <p class="bip-trade__description">Telegram bot by the MinterPro team. Allows you to purchase BIP for USDT, ETH, and Qiwi.</p>
                             </div>
                             <div class="u-cell u-cell--small--1-2">
                                 <div class="bip-trade__item">
@@ -163,15 +163,15 @@ export default {
                                     </a>
                                     <div class="bip-trade__value">${{ getPrice('coinsblack') }}</div>
                                 </div>
-                                <p class="bip-trade__description">Платформа обмена криптовалют и цифровых активов с множеством вариантов покупки BIP за фиатные и криптовалютные средства.</p>
+                                <p class="bip-trade__description">Digital assets and currencies exchange service with various options to get BIP for fiat and crypto funds.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <h2 class="u-h2 u-mt-35 u-mb-05">Как хранить</h2>
-            <p class="u-mb-15">Выберите один из удобных кошельков для управления своими BIP:</p>
+            <h2 class="u-h2 u-mt-35 u-mb-05">Where to store</h2>
+            <p class="u-mb-15">Manage your BIP in one of these user-friendly wallets:</p>
             <div class="u-grid u-grid--small u-grid--vertical-margin">
                 <div class="u-cell u-cell--medium--1-3">
                     <div class="index-wallets__item">
@@ -179,7 +179,7 @@ export default {
                             <img class="index-wallets__icon" src="/img/index-wallet-bip.png" srcset="/img/index-wallet-bip@2x.png 2x" alt="" role="presentation">
                             <div class="bip-wallets__title">Bip Wallet</div>
                         </a>
-                        <p class="bip-wallets__description">Основной кошелек, имеющий все необходимые для полноценной работы функции. Поддерживаются iOS, Android и Web версии.</p>
+                        <p class="bip-wallets__description">Main wallet that has all the features you need. iOS, Android, and Web versions are supported.</p>
                     </div>
                 </div>
                 <div class="u-cell u-cell--medium--1-3">
@@ -188,7 +188,7 @@ export default {
                             <img class="index-wallets__icon" src="/img/index-wallet-minter.png" srcset="/img/index-wallet-minter@2x.png 2x" alt="" role="presentation">
                             <div class="bip-wallets__title">Minter Wallet</div>
                         </a>
-                        <p class="bip-wallets__description">Наиболее простой кошелек, не требующий от вас ничего, кроме email адреса.</p>
+                        <p class="bip-wallets__description">The most simple wallet. The only thing you need to use it is an e-mail address.</p>
                     </div>
                 </div>
                 <div class="u-cell u-cell--medium--1-3">
@@ -197,7 +197,7 @@ export default {
                             <img class="index-wallets__icon" src="/img/index-wallet-console.png" srcset="/img/index-wallet-console@2x.png 2x" alt="" role="presentation">
                             <div class="bip-wallets__title">Minter Console</div>
                         </a>
-                        <p class="bip-wallets__description">Полноценный рабочий инструмент для самых продвинутых пользователей. </p>
+                        <p class="bip-wallets__description">Full-fledged operational tool for the most advanced users.</p>
                     </div>
                 </div>
             </div>
@@ -205,8 +205,8 @@ export default {
             <hr class="hr--divider">
 
 
-            <h2 class="u-h2 u-mb-05">Узнать больше</h2>
-            <p class="u-mb-15">BIP — базовая монета блокчейна Minter. <br> <nuxt-link class="link--default" to="/ru/2">Узнать подробнее о Minter.</nuxt-link></p>
+            <h2 class="u-h2 u-mb-05">Learn more</h2>
+            <p class="u-mb-15">BIP is the native coin of Minter network.<br> <nuxt-link class="link--default" to="/2">Find out more about Minter.</nuxt-link></p>
         </div>
     </div>
 </template>
