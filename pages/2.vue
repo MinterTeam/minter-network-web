@@ -3,10 +3,12 @@ import {getStatus} from '~/api/status.js';
 import {HOST} from '~/assets/variables.js';
 import {prettyRound} from '~/assets/utils.js';
 import Language from '~/layouts/_language.vue';
+import Footer from '~/layouts/_footer.vue';
 
 export default {
     components: {
         Language,
+        Footer,
     },
     head() {
         const title = 'Minter 2 — Digital Assets Marketplace';
@@ -19,7 +21,7 @@ export default {
                 { hid: 'og-title', name: 'og:title', content: title },
                 { hid: 'description', name: 'description', content: description },
                 { hid: 'og-description', name: 'og:description', content: description },
-                // { hid: 'og-image', name: 'og:image', content: `/img/social-share-wallet${localeSuffix}.png` },
+                { hid: 'og-image', name: 'og:image', content: `/img/social-share-2.png` },
             ],
             link: [
                 { rel: 'canonical', href: `${HOST}/`},
@@ -204,5 +206,7 @@ export default {
                 </p>
             </div>
         </div>
+
+        <Footer/>
     </div>
 </template>

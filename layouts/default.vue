@@ -1,10 +1,10 @@
 <script>
-    import Footer from '~/layouts/_footer';
+    // import Footer from '~/layouts/_footer';
 
     export default {
         components: {
 
-            Footer,
+            // Footer,
         },
         data() {
             return {
@@ -24,7 +24,7 @@
     <div class="main-wrap">
         <nuxt class="main-content"/>
 
-        <Footer/>
+
     </div>
 </template>
 

@@ -258,7 +258,11 @@ html.layout--docs {background: var(--underlay-bg-color);}
     .docs-aside__sticky {position: sticky; top: 0; max-height: 100vh; max-height: calc(100vh - var(--header-visible-height)); overflow-y: auto;}
 }
 
-
+.language-wrap {display: flex; justify-content: flex-end; margin-top: 16px;}
+.language-item {
+    font-weight: 800;
+    &+& {margin-left: 24px;}
+}
 .index-language {display: flex; justify-content: flex-end; margin-top: 16px; margin-bottom: -48px;}
 
 /* INDEX intro */
@@ -288,20 +292,38 @@ html.layout--docs {background: var(--underlay-bg-color);}
 .index-numbers__value {font-size: 40px;}
 .index-numbers__caption {font-size: 17px;}
 
-
+@shadow: 4px 4px 0 rgba(0,0,0, 0.1);
 .index-wallets__item {padding-left: 52px; position: relative;}
-.index-wallets__icon {position: absolute; left: 0; top: 0; border-radius: 8px; box-shadow: 4px 4px 0 rgba(0,0,0, 0.1);}
+.index-wallets__icon {position: absolute; left: 0; top: 0; border-radius: 8px; box-shadow: @shadow;}
 .index-wallets__title {font-weight: 600;}
 .index-wallets__description { line-height: 1.375;}
 
 .index-feature__icon {vertical-align: top;}
 .index-feature__title {margin-top: 16px;}
 .index-feature__description {margin-top: 8px;}
-
-
 @media (min-width: @breakpoint-medium-up) {
 
 }
+
+.bip-price__caption {font-size: 14px; line-height: 18px;}
+.bip-price__value {font-size: 48px; font-weight: 800; line-height: 1;}
+
+.bip-cap__item {padding-left: 52px; position: relative; display: flex; flex-direction: column;}
+.bip-cap__link {align-self: flex-start;}
+.bip-cap__icon {position: absolute; left: 0; top: 0; border-radius: 50%; box-shadow: @shadow;}
+.bip-cap__title {font-weight: 600; font-size: 14px; line-height: 18px; margin-bottom: 2px;}
+.bip-cap__value {font-weight: 800; font-size: 18px; line-height: 22px;}
+
+.bip-trade__panel {padding: 32px; margin: 0 -32px; margin-top: 40px; border-radius: 16px; background: #ffd5c7; box-shadow: 14px 12px 0 #f5ece9;}
+.bip-trade__item {padding-left: 68px; margin-bottom: 16px; position: relative; display: flex; flex-direction: column;}
+.bip-trade__link {align-self: flex-start;}
+.bip-trade__icon {position: absolute; left: 0; top: 0; border-radius: 8px; box-shadow: @shadow;}
+.bip-trade__title {font-weight: 700; font-size: 20px; line-height: 24px; margin-bottom: 6px;}
+.bip-trade__value {font-weight: 700; font-size: 16px; line-height: 20px;}
+.bip-trade__description {font-size: 13px; line-height: 17px;}
+
+.bip-wallets__title {font-size: 20px; line-height: 24px; font-weight: 700; margin-bottom: 8px;}
+.bip-wallets__description {font-size: 13px; line-height: 17px;}
 
 
 

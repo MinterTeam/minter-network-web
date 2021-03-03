@@ -133,6 +133,11 @@ module.exports = {
             //     ];
             // }
         },
-        transpile: [/es6-promise|\.(?!(?:js|json)$).{1,5}$/i, /^lodash-es/, /^@material/],
+        transpile: [
+            /es6-promise|\.(?!(?:js|json)$).{1,5}$/i,
+            /^lodash-es/,
+            /^@material/,
+            /^pretty-num/
+        ],
     },
 };

@@ -28,6 +28,7 @@
     "@nuxt/press": "github:shrpne/press#standalone-press",
     "axios": "^0.19.2",
     "axios-extensions": "^3.1.3",
+    "camelcase-keys": "^6",
     "entity-decode": "^2.0.2",
     "lodash-es": "^4.17.15",
     "nuxt": "^2.12.2",
