@@ -76,7 +76,7 @@ export default {
                 </div>
                 <div class="u-cell u-cell--medium--3-10">
                     <div class="bip-cap__item">
-                        <a class="bip-cap__link link--default" href="https://coinmarketcap.com" target="_blank" rel="noopener">
+                        <a class="bip-cap__link link--default" href="https://coinmarketcap.com/currencies/minter-network/" target="_blank" rel="noopener">
                             <img class="bip-cap__icon" src="/img/bip-price-cmc.png" srcset="/img/bip-price-cmc@2x.png 2x" alt="" role="presentation">
                             <h4 class="bip-cap__title">Coinmarketcap.com</h4>
                         </a>
@@ -85,7 +85,7 @@ export default {
                 </div>
                 <div class="u-cell u-cell--medium--3-10">
                     <div class="bip-cap__item">
-                        <a class="bip-cap__link link--default" href="https://coingecko.com" target="_blank" rel="noopener">
+                        <a class="bip-cap__link link--default" href="https://www.coingecko.com/en/coins/bip" target="_blank" rel="noopener">
                             <img class="bip-cap__icon" src="/img/bip-price-coingecko.png" srcset="/img/bip-price-coingecko@2x.png 2x" alt="" role="presentation">
                             <h4 class="bip-cap__title">Coingecko.com</h4>
                         </a>
