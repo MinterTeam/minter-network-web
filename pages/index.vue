@@ -4,8 +4,11 @@ import Footer from '~/layouts/_footer.vue';
 
 export default {
     components: {
-
         Footer,
+    },
+    fetchOnServer: false,
+    fetch() {
+        window.location.href = '/';
     },
     head() {
         // const title = 'Get paid with Minter';
@@ -25,7 +28,7 @@ export default {
             ],
         };
     },
-}
+};
 </script>
 
 <template>
