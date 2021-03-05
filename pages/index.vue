@@ -6,10 +6,13 @@ export default {
     components: {
         Footer,
     },
-    fetchOnServer: false,
-    fetch() {
-        window.location.href = '/2';
+    middleware({ redirect }) {
+        return redirect('/2');
     },
+    // fetchOnServer: false,
+    // fetch() {
+    //     window.location.href = '/2';
+    // },
     head() {
         // const title = 'Get paid with Minter';
         // const description = 'By embracing a new approach of routing transfers via the trustless network, we let anyone in the world use the Internet of Money';
