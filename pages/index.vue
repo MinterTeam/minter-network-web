@@ -8,7 +8,7 @@ export default {
     },
     fetchOnServer: false,
     fetch() {
-        window.location.href = '/';
+        window.location.href = '/2';
     },
     head() {
         // const title = 'Get paid with Minter';
