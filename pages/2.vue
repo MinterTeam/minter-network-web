@@ -162,6 +162,16 @@ export default {
 
             <hr class="hr--divider">
 
+
+            <h2 class="u-h2 u-mb-05">What about HUB?</h2>
+            <p>
+                <a class="link--default" href="https://etherscan.io/token/0x8e9a29e7ed21db7c5b2e1cd75e676da0236dfb45" target="_blank" rel="noopener">HUB</a> is the native token of the Minter Hub blockchain that's bridging Minter with Ethereum and Binance Smart Chain. HUB is a PoS token, so oracles receive 1% on the fees charged for cross-chain transfers. HUB also serves as reserve for Uniswap pools both on Minter and Ethereum/Binance Smart Chain. For example <a class="link--default" href="https://info.uniswap.org/pair/0x3796fee2b555DA1356cdcD3e1861263B351A58A0" target="_blank" rel="noopener">HUB-USDT</a>.
+            </p>
+
+
+            <hr class="hr--divider">
+
+
             <h2 class="u-h2 u-mb-20">Facts and links</h2>
 
             <div class="u-grid u-grid--large u-grid--vertical-margin--large">
