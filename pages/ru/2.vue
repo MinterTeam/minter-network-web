@@ -165,7 +165,7 @@ export default {
 
             <h2 class="u-h2 u-mb-05">Что насчёт HUB?</h2>
             <p>
-                <a class="link--default" href="https://etherscan.io/token/0x8e9a29e7ed21db7c5b2e1cd75e676da0236dfb45" target="_blank" rel="noopener">HUB</a> это нативный токен в блокчейне Minter Hub, который является мостом, соединяющим Minter с Ethereum и Binance Smart Chain. HUB это PoS токен, оракулы получают 1% комиссии от кросс-чейн переводов. HUB так же служит резервом в Uniswap-like пулах в Minter, Ethereum и Binance Smart Chain. Например, <a class="link--default" href="https://info.uniswap.org/pair/0x3796fee2b555DA1356cdcD3e1861263B351A58A0" target="_blank" rel="noopener">HUB-USDT</a>.
+                <a class="link--default" href="https://etherscan.io/token/0x8e9a29e7ed21db7c5b2e1cd75e676da0236dfb45" target="_blank" rel="noopener">HUB</a> — это нативный токен в блокчейне Minter Hub, который, в свою очередь, является мостом, соединяющим Minter с Ethereum и Binance Smart Chain. HUB — это PoS-токен, и все оракулы получают 1% комиссии от переводов между сетями. HUB также служит резервом в Uniswap-подобных пулах в Minter, Ethereum и Binance Smart Chain. Например, <a class="link--default" href="https://info.uniswap.org/pair/0x3796fee2b555DA1356cdcD3e1861263B351A58A0" target="_blank" rel="noopener">HUB-USDT</a>.
             </p>
 
 
