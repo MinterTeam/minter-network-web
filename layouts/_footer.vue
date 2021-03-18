@@ -36,6 +36,29 @@
 <template>
     <footer class="footer">
         <div class="u-container">
+            <div class="footer__stat-container" v-if="stats">
+                <div class="footer__stats-item">
+                    <div class="footer__stats-key">Since</div>
+                    <div class="footer__stats-value">May 15, 2019</div>
+                </div>
+                <div class="footer__stats-item">
+                    <div class="footer__stats-key">Coins created</div>
+                    <div class="footer__stats-value">{{ $options.prettyRound(stats.customCoinsCount) }}</div>
+                </div>
+                <div class="footer__stats-item">
+                    <div class="footer__stats-key">Blocks</div>
+                    <div class="footer__stats-value">{{ $options.prettyRound(numberOfBlocks) }}</div>
+                </div>
+                <div class="footer__stats-item">
+                    <div class="footer__stats-key">Transactions</div>
+                    <div class="footer__stats-value">{{ $options.prettyRound(txTotalCount) }}</div>
+                </div>
+                <div class="footer__stats-item">
+                    <div class="footer__stats-key">BIPs mined</div>
+                    <div class="footer__stats-value">{{ $options.prettyRound(stats.bipEmission) }}</div>
+                </div>
+            </div>
+
             <div class="footer__container">
                 <img class="footer__logo u-hidden-medium-down" src="/img/minter-logo-white.svg" width="95" height="30" alt="Minter">
                 <div class="footer__menu">
@@ -66,28 +89,6 @@
                     For correspondence: 548 Market St #32852, San&nbsp;Francisco, CA&nbsp;94104-5401 <br>
                     <a class="link--default" href="mailto:hello@minter.org">hello@minter.org</a>
                 </p>
-            </div>
-            <div class="footer__stat-container" v-if="stats">
-                <div class="footer__stats-item">
-                    <div class="footer__stats-key">Since</div>
-                    <div class="footer__stats-value">May 15, 2019</div>
-                </div>
-                <div class="footer__stats-item">
-                    <div class="footer__stats-key">Coins created</div>
-                    <div class="footer__stats-value">{{ $options.prettyRound(stats.customCoinsCount) }}</div>
-                </div>
-                <div class="footer__stats-item">
-                    <div class="footer__stats-key">Blocks</div>
-                    <div class="footer__stats-value">{{ $options.prettyRound(numberOfBlocks) }}</div>
-                </div>
-                <div class="footer__stats-item">
-                    <div class="footer__stats-key">Transactions</div>
-                    <div class="footer__stats-value">{{ $options.prettyRound(txTotalCount) }}</div>
-                </div>
-                <div class="footer__stats-item">
-                    <div class="footer__stats-key">BIPs mined</div>
-                    <div class="footer__stats-value">{{ $options.prettyRound(stats.bipEmission) }}</div>
-                </div>
             </div>
         </div>
     </footer>
