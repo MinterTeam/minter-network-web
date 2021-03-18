@@ -3,12 +3,10 @@ import {getStatus} from '~/api/status.js';
 import {HOST} from '~/assets/variables.js';
 import {prettyRound} from '~/assets/utils.js';
 import Language from '~/layouts/_language.vue';
-import Footer from '~/layouts/_footer.vue';
 
 export default {
     components: {
         Language,
-        Footer,
     },
     head() {
         const title = 'Minter 2 — Маркетплейс цифровых активов';
@@ -217,7 +215,5 @@ export default {
                 </p>
             </div>
         </div>
-
-        <Footer/>
     </div>
 </template>
