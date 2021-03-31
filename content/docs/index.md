@@ -262,20 +262,20 @@ Type of transaction is determined by a single byte.
 |[TypeEditMultisig](#edit-multisig-transaction)                         |0x12|
 |[TypePriceVote](#price-vote-transaction)                               |0x13|
 |[TypeEditCandidatePublicKey](#edit-candidate-public-key-transaction)   |0x14|
-|[TypeAddLiquidity](#add-swap-pool)                                     |0x15|
-|[TypeRemoveLiquidity](#remove-swap-pool)                               |0x16|
-|[TypeSellSwapPool](#sell-from-swap-pool)                               |0x17|
-|[TypeBuySwapPool](#buy-from-swap-pool)                                 |0x18|
-|[TypeSellAllSwapPool](#sell-all-from-swap-pool)                        |0x19|
-|[TypeEditCandidateCommission](#edit-candidate-commission)              |0x1A|
-|[TypeMoveStake](#move-stake)                                           |0x1B|
-|[TypeMintToken](#mint-token)                                           |0x1C|
-|[TypeBurnToken](#burn-token)                                           |0x1D|
-|[TypeCreateToken](#create-token)                                       |0x1E|
-|[TypeRecreateToken](#recreate-token)                                   |0x1F|
-|[TypePriceCommission](#price-commission)                               |0x20|
-|[TypeUpdateNetwork](#update-network)                                   |0x21|
-|[TypeCreateSwapPool](#create-swap-pool)                                |0x22|
+|[TypeAddLiquidity](#add-liquidity-to-swap-pool-transaction)            |0x15|
+|[TypeRemoveLiquidity](#remove-liquidity-from-swap-pool-transaction)    |0x16|
+|[TypeSellSwapPool](#sell-from-swap-pool-transaction)                   |0x17|
+|[TypeBuySwapPool](#buy-from-swap-pool-transaction)                     |0x18|
+|[TypeSellAllSwapPool](#sell-all-from-swap-pool-transaction)            |0x19|
+|[TypeEditCandidateCommission](#edit-candidate-commission-transaction)  |0x1A|
+|[TypeMoveStake](#move-stake-transaction)                               |0x1B|
+|[TypeMintToken](#mint-token-transaction)                               |0x1C|
+|[TypeBurnToken](#burn-token-transaction)                               |0x1D|
+|[TypeCreateToken](#create-token-transaction)                           |0x1E|
+|[TypeRecreateToken](#recreate-token-transaction)                       |0x1F|
+|[TypeVoteCommission](#vote-for-commission-price-transaction)           |0x20|
+|[TypeVoteUpdate](#vote-for-network-update-transaction)                 |0x21|
+|[TypeCreateSwapPool](#create-swap-pool-transaction)                    |0x22|
     
 ### Send transaction
 
@@ -664,6 +664,7 @@ Data is the same as in [Create Multisig Address Transaction](#create-multisig-ad
 
 Type: **0x13**
 
+**Disabled transaction, not used anymore**
 To be able to run complex smart contracts and services, we need a way to discover the price of BIP on-chain. We will start with introducing a new tx type: PriceVote.
 
 *Data field contents:*
@@ -697,7 +698,8 @@ type EditCandidatePublicKeyData struct {
 
 ### Since Minter 2.0 released, there are few new transactions added:
 
-### Add Swap Pool
+
+### Add liquidity to swap pool transaction
 
 Type: **0x15**
 
@@ -727,7 +729,7 @@ of liquidity tokens minted is computed based on the existing quantity of tokens:
 
 To see the total supply and balance of the provider, check on [SwapPool](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/1.3/docs/api.swagger.json#operation/SwapPool) and [SwapPoolProvider](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/1.3/docs/api.swagger.json#operation/SwapPoolProvider) API v2 endpoints.
 
-### Remove Swap Pool
+### Remove liquidity from swap pool transaction
 
 Type: **0x16**
 
@@ -736,7 +738,7 @@ Transaction to withdraw the reserves of a pair from the pool.
 *Data field contents:*
 
 ```go
-type RemoveSwapPoolData struct {
+type RemoveLiquidityData struct {
 	Coin0          uin32
 	Coin1          uin32
 	Liquidity      *big.Int
@@ -752,7 +754,7 @@ type RemoveSwapPoolData struct {
 - **MinimumVolume1** - Minimum expected volume of coin1 to be returned to the account
 
 
-### Sell From Swap Pool
+### Sell from swap pool transaction
 
 Type: **0x17**
 
@@ -774,7 +776,7 @@ type SellSwapPoolData struct {
 
 Use [EstimateCoinSell](https://minterteam.github.io/node-gateway-api-v2-doc/#operation/EstimateCoinSell) API v2 endpoint with _swap_from=pool_ parameter to calculate sales price from swap pool.
 
-### Buy From Swap Pool
+### Buy from swap pool transaction
 
 Type: **0x18**
 
@@ -799,7 +801,7 @@ Use API v2 endpoint to calculate purchase price:
 Use [EstimateCoinBuy](https://minterteam.github.io/node-gateway-api-v2-doc/#operation/EstimateCoinBuy) API v2 endpoint with _swap_from=pool_ parameter to calculate purchase price from swap pool.
 
 
-### Sell All From Swap Pool
+### Sell all from swap pool transaction
 
 Type: **0x19**
 
@@ -820,7 +822,7 @@ type SellAllSwapPoolData struct {
 Use [EstimateCoinSellAll](https://minterteam.github.io/node-gateway-api-v2-doc/#operation/EstimateCoinSellAll) API v2 endpoint with _swap_from=pool_ parameter to calculate sales price from swap pool.
 
 
-### Edit Candidate Commission
+### Edit candidate commission transaction
 
 Type: **0x1A**
 
@@ -835,11 +837,11 @@ type EditCandidateCommissionData struct {
 }
 ```
 
-### Move Stake     
+### Move stake transaction
 
 Type: **0x1B**
 
-Reserved transaction not used in current version.
+Reserved transaction, disabled in current version.
 
 *Data field contents:*
 
@@ -864,7 +866,7 @@ type StakeMoveEvent struct {
 }
 ```
 
-### Mint Token    
+### Mint token transaction
 
 Type: **0x1C**
 
@@ -882,7 +884,7 @@ type MintTokenData struct {
 - **Coin** - the token's id
 - **Value** - the quantity of coins to be issued
                                         
-### Burn Token    
+### Burn token transaction
 
 Type: **0x1D**
 
@@ -898,7 +900,7 @@ type BurnTokenData struct {
 ```
 
 
-### Create Token    
+### Create token transaction
 
 Type: **0x1E**
 
@@ -922,7 +924,7 @@ type CreateTokenData struct {
 - **Mintable** - allow new tokens to be issued additionally
 - **Burnable** - allow all tokens to be burned
 
-### Recreate Token    
+### Recreate token transaction
 
 Type: **0x1F**
 
@@ -946,7 +948,7 @@ type RecreateTokenData struct {
 - **Mintable** - allow new tokens to be issued additionally
 - **Burnable** - allow all tokens to be burned
 
-### Price Commission    
+### Vote for commission price transaction
 
 Type: **0x20**
 
@@ -1060,7 +1062,7 @@ type UpdateCommissionsEvent struct {
 
 API current prices [PriceCommission](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/1.3/docs/api.swagger.json#operation/PriceCommission) and votes for update commissions [PriceVotes](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/1.3/docs/api.swagger.json#operation/PriceVotes)
 
-### Update Network    
+### Vote for network update transaction
 
 Type: **0x21**
 
@@ -1088,7 +1090,8 @@ type UpdateNetworkEvent struct {
 }
 ```
 
-### Create Swap Pool
+
+### Create swap pool transaction
 
 Type: **0x22**
 
@@ -1124,6 +1127,7 @@ value of a liquidity pool share to $100, the attacker would need to donate $100,
 pool, which would be permanently locked up as liquidity.
 
 To see the total supply and balance of the provider, check on [SwapPool](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/1.3/docs/api.swagger.json#operation/SwapPool) and [SwapPoolProvider](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/1.3/docs/api.swagger.json#operation/SwapPoolProvider) API v2 endpoints.
+
 
 
 ## Minter Check
