@@ -735,11 +735,11 @@ You will need to fill a form:
 
 ### How to cash a Minter Check
 
-To redeem a check user should have:
+To redeem a check user should send [redeem check transaction](#redeem-check-transaction) with next data:
 -   Check itself
 -   Secret passphrase
 
-After redeeming balance of user will increased instantly.
+After redeeming, balance of user will be increased instantly.
 
 ### Commission
 
