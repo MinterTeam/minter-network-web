@@ -994,13 +994,11 @@ type VoteCommissionData struct {
 	SetHaltBlock            *big.Int
 	EditTickerOwner         *big.Int
 	EditMultisig            *big.Int
-	PriceVote               *big.Int
 	EditCandidatePublicKey  *big.Int
 	CreateSwapPool          *big.Int
 	AddLiquidity            *big.Int
 	RemoveLiquidity         *big.Int
 	EditCandidateCommission *big.Int
-	MoveStake               *big.Int
 	MintToken               *big.Int
 	BurnToken               *big.Int
 	VoteCommission          *big.Int
@@ -1046,13 +1044,11 @@ type UpdateCommissionsEvent struct {
 	SetHaltBlock            string `json:"set_halt_block"`
 	EditTickerOwner         string `json:"edit_ticker_owner"`
 	EditMultisig            string `json:"edit_multisig"`
-	PriceVote               string `json:"price_vote"`
 	EditCandidatePublicKey  string `json:"edit_candidate_public_key"`
 	CreateSwapPool          string `json:"create_swap_pool"`
 	AddLiquidity            string `json:"add_liquidity"`
 	RemoveLiquidity         string `json:"remove_liquidity"`
 	EditCandidateCommission string `json:"edit_candidate_commission"`
-	MoveStake               string `json:"move_stake"`
 	MintToken               string `json:"mint_token"`
 	BurnToken               string `json:"burn_token"`
 	VoteCommission          string `json:"vote_commission"`
@@ -1226,65 +1222,45 @@ TO BE DESCRIBED
 
 ## Commissions
 
-For each transaction sender should pay fee. Fees are measured in
-"units".
+For each transaction sender should pay fee. Fees are measured in pip value of commission price coin. It can be base coin of reserveless token. If price coin differs from base coin then needed base coin value will be calculated as "how much base coin will be received if certain amount of price coin will be sold to the swap pool". Actually swap will not occur, it will only calculate needed base coin amount.
 
-1 unit = 10^15 pip = 0.001 bip.
+Also user has option to pay commission in any coin or reservless token which can be converted to base coin. In such case this custom coin will be converted to base coin automatically. When transaction change blockchain state, first it apply changes from fee coin converted to base coin, second it apply changes from transaction data. E.g. if user performs "buy from swap pool" transaction and pay fee with on of this pool pair token, fee conversion will affect pool parameters, and then received amount for swap will be calculated based on the changed pool parameters.
 
-### Standard commissions
+So in most complicated case there can be three commission values:
+- commission coin price value: how validators asses costs of transaction
+- base coin value: how much base coins will be spent for validating rewards
+- custom coin value: how much coins sender will spend
 
-Here is a list of current fees:
+You can estimate commission value required for transaction in [/v2/estimate_tx_commission/{tx}](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/1.3/docs/api.swagger.json#operation/EstimateTxCommission] API method.
 
-| Type                           | Fee |
-|--------------------------------|-----|
-|**TypeSend**                    | 10 units |
-|**TypeSellCoin**                | 100 units |
-|**TypeSellAllCoin**             | 100 units |
-|**TypeBuyCoin**                 | 100 units |
-|**TypeCreateCoin**              | Depends on the coin symbol length |
-|**TypeDeclareCandidacy**        | 10000 units |
-|**TypeDelegate**                | 200 units |
-|**TypeUnbond**                  | 200 units |
-|**TypeRedeemCheck**             | 30 units |
-|**TypeSetCandidateOnline**      | 100 units |
-|**TypeSetCandidateOffline**     | 100 units |
-|**TypeCreateMultisig**          | 100 units |
-|**TypeMultisend**               | 10+(n-1)*5 units |
-|**TypeEditCandidate**           | 10000 units |
-|**TypeSetHaltBlock**            | 1000 units |
-|**TypeRecreateCoin**            | 10000000 units |
-|**TypeEditCoinOwner**           | 10000000 units |
-|**TypeEditMultisig**            | 1000 units |
-|**TypePriceVote**               | 10 units |
-|**TypeEditCandidatePublicKey**  | 10000000 units |
-|**TypeAddSwapPool**             | 100 units |
-|**TypeRemoveSwapPool**          | 100 units |
-|**TypeBuySwapPool**             | 100 units |
-|**TypeSellSwapPool**            | 100 units |
-|**TypeSellAllSwapPool**         | 100 units |
-|**TypeEditCandidateCommission** | 10000 units |
-|**TypeMoveStake**               | 600 units |
-|**TypeEditEmission**            | 100 units |
-|**TypeCreateToken**             | Depends on the coin symbol length |
-|**TypeRecreateToken**           | 10000000 units |
-|**TypeMintToken**               | 100 units |
-|**TypeBurnToken**               | 100 units |
-    
-Ref.: https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/1.3/docs/api.swagger.json#operation/PriceCommission
 
-Also sender should pay extra 2 units per byte in Payload and Service
-Data fields.
+Since Minter 2.0 there are no standard commissions.  
+Commission price may change after validators vote for it. See [list of available fields](#vote-for-commission-price-transaction) to change by vote.
 
-### Special fees
+Current commission values can be found in [/v2/price_commissions](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/1.3/docs/api.swagger.json#operation/PriceCommission) API method.
 
-To issue a coin with short name Coiner should pay extra fee. Fee is
-depends on length of Coin Symbol.
+### How commission is calculated
 
-3 letters — 1 000 000 bips  
-4 letters — 100 000 bips  
-5 letters — 10 000 bips  
-6 letters — 1000 bips  
-7-10 letters — 100 bips
+Needed commission price coin amount consist of several parts:
+
+**1. Base**
+
+Depends on transaction type, each type has it's own base amount field.
+
+**2. Delta**
+
+Some transaction types has delta amount field based on count of something. In this case fee will be calculated as follows: `fee = base_value + (count - 1) * delta_value`.  
+For multisend transaction `count` is number of recepients.  
+For swap within pool transaction `count` is a number of pools participating in swap chain route.
+
+**3. Ticker length**
+
+To create a coin or token, Coiner should reserve ticker for it. Taking tickers costs extra fee. The shorter ticker length, the more fee amount. 3 letters tickers are most expensive, 7-10 letters tickers are most cheaper.
+
+**4. Payload length**
+
+Sender should pay extra fee per byte in Payload fields
+
 
 ## Validators
 
