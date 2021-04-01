@@ -842,13 +842,13 @@ Validator candidates can bond their own coins and have coins
 "delegated", or staked, to them by token holders. The validators are
 determined by who has the most stake delegated to them.
 
-Validators and their delegators will earn BIP (MNT) as rewards for
+Validators and their delegators will earn base coin BIP as rewards for
 blocks and commissions. Note that validators can set commission on the
 rewards their delegators receive as additional incentive.
 
-If validators double sign or frequently offline, their staked coins
-(including coins of users that delegated to them) can be slashed. The
-penalty depends on the severity of the violation.
+There are two types of penalty for validators:
+- If validators double sign, their staked coins will be slashed for 5% (including coins of users that delegated to them).
+- If validator skip signing 12 of 24 last blocks, it will be banned for 24 hours.
 
 ### Requirements
 Minimal requirements for running Validator's Node in testnet are:
@@ -869,12 +869,12 @@ Recommended:
 ### Validators limitations
 Minter Network has limited number of available slots for validators.
 
-At genesis there are `16` slots. `4` slots will be added each
-`518,400` blocks. Maximum number of validators is `256`.
+At the launch there were `16` slots. `4` slots were added each
+`518 400` blocks. Maximum number of validators is `64`.
 
 ### Rewards
 Rewards for blocks and commissions are accumulated and proportionally
-(based on stake value) payed once per `12 blocks` (approx 1 minute) to
+(based on stake value) paid once per `720 blocks` (approx 1 hour) to
 all active validators (and their delegators).
 
 Block rewards are configured to decrease from 333 to 0 BIP (MNT) in \~7
@@ -892,18 +892,17 @@ validator's settings).
 
 Validators have one main responsibility:
 -   Be able to constantly run a correct version of the software:
-    validators need to make sure that their servers are always online and their private keys are not compromised.
+    validators need to make sure that their servers are always online, and their private keys are not compromised.
     If a validator misbehaves, its bonded stake along with its delegators'
     stake and will be slashed. The severity of the punishment depends on the
-    type of fault. There are 3 main faults that can result in slashing of
+    type of fault. There are 2 main faults that can result in slashing of
     funds for a validator and its delegators:
 
 -   **Double signing**: If someone reports on chain A that a validator
     signed two blocks at the same height on chain A and chain B, this
-    validator will get slashed on chain A
+    validator will get slashed on chain A for 5% of stake
 -   **Unavailability**: If a validator's signature has not been
-    included in the last 12 blocks, 1% of stake will get slashed and
-    validator will be turned off
+    included in the 12 of 24 last blocks, validator will be turned off and banned for 24 hours
 
 Note that even if a validator does not intentionally misbehave, it can
 still be slashed if its node crashes, looses connectivity, gets DDOSed,
@@ -914,7 +913,7 @@ or if its private key is compromised.
 1. Install and run Minter Full Node.
 2. Get your validator's public key (`minter show_validator`).
 3. Go to [Minter
-Console](https://testnet.console.minter.network/masternode/) and send 2
+Console](https://console.testnet.minter.network/masternode/) and send 2
 transactions:
 
   Fill and send `Declare candidacy` and `Set candidate online` forms.
@@ -924,7 +923,7 @@ transactions:
       candidacy validator should fill a form:
       -   Address - You will receive rewards to this address and
           will be able to on/off your validator.
-      -   Public Key - Paste public key from step 2 *(Mp\...)*.
+      -   Public Key - Paste public key from step 2 *(Mp...)*.
       -   Commission - Set commission for delegated stakes.
       -   Coin - Enter coin of your stake (i.e. MNT).
       -   Stake - Enter value of your stake in given coin.
@@ -934,7 +933,7 @@ transactions:
       so he is not receiving any rewards and cannot be punished
       for low availability.
       To turn your validator **on**, you should provide Public Key
-      (from step 2 *(Mp\...)*).
+      (from step 2 *(Mp...)*).
       *Note: You should send transaction from address you choose
       in Address field in step 3.1*
 4. Done.
@@ -1032,7 +1031,7 @@ a delegator:
     validator, it can unbond and switch to another validator.
 ### Rewards
 Validators and delegators earn rewards in exchange for their services. This
-rewards is given in three forms:
+rewards is given in two forms:
 - Block rewards
 - Transaction fees: Each transaction on the Minter Network comes with
     transactions fees. Fees are distributed to validators and delegators
@@ -1048,7 +1047,7 @@ rewards they earn.
 
 `10%` from reward going to Developers.
 
-Lets consider a validator whose stake (i.e. self-bonded stake +
+Let's consider a validator whose stake (i.e. self-bonded stake +
 delegated stake) is 10% of the total stake of all validators. This
 validator has 20% self-bonded stake and applies a commission of 10%. Now
 let us consider a block with the following rewards:
@@ -1078,10 +1077,9 @@ delegators.
 There are 2 main slashing conditions:
 - **Double signing**: If someone reports on chain A that a validator
     signed two blocks at the same height on chain A and chain B, this
-    validator will get slashed on chain A
+    validator will get slashed on chain A for 5% of their stake
 - **Unavailability**: If a validator's signature has not been
-    included in the last 12 blocks, 1% of stake will get slashed and
-    validator will be turned off
+    included in the 12 of last 24 blocks it will be turned off and banned for 24 hours
 This is why delegators should perform careful due diligence on
 validators before delegating. It is also important that delegators
 actively monitor the activity of their validators. If a validator
