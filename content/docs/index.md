@@ -188,12 +188,11 @@ da520b3280dcb75bfd45a873629109f24b29
 ```
 
 Each transaction has:
--   **Nonce** - int, used for prevent transaction reply.
+-   **Nonce** - int, unique number for each address, used to prevent transaction reply, starts from 1.
 -   **ChainID** - id of the network (1 - mainnet, 2 - testnet)
 -   **Gas Price** - big int, fee multiplier, should be equal or greater than
 current mempool min gas price.
--   **Gas Coin ID** - int, coin id to pay fee, right padded with
-zeros
+-   **Gas Coin ID** - int, coin id to pay fee
 -   **Type** - type of transaction (see below).
 -   **Data** - data of transaction (depends on transaction type).
 -   **Payload** (arbitrary bytes) - arbitrary user-defined bytes.
@@ -212,7 +211,7 @@ type Transaction struct {
     Payload       []byte
     ServiceData   []byte
     SignatureType byte
-    SignatureData Signature
+    SignatureData Signature|MultiSignature
 }
 
 type Signature struct {
