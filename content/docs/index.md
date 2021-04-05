@@ -175,7 +175,7 @@ calculates the return for a given conversion
 ```go
 return r * (1 - (1 - a / s) ^ (1 / c));
 ```
-## Coins
+## Tokens
 
 Unlike coins, tokens have no reserve in BIP.
 
@@ -192,19 +192,19 @@ Allow owner to edit token supply:
 
 After the token has been created, users can send it via regular wallets similar to ordinary coins.
 
-### Issuance Fees
+### Token Exchange
 
-To issue a token, Creator should pay a fee that depends on the length of Symbol.
+Since tokens are not backed, their conversion cannot be based on the formulas used with coins. The token is exchangeable only if it is present in liquidity pools.
+
+## Issuance fees for coins and tokens
+
+To issue a coin, Creator should pay a fee that depends on the length of Symbol.
 
 3 letters – 100 000 MUSDC
 4 letters – 10 000 MUSDC
 5 letters – 1 000 MUSDC
 6 letters – 100 MUSDC
 7–10 letters – 10 MUSDC
-
-### Token Exchange
-
-Since tokens are not backed, their conversion cannot be based on the formulas used with coins. The token is exchangeable only if it is present in liquidity pools.
 
 ## Liquidity Pools
 
