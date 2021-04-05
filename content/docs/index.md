@@ -175,6 +175,53 @@ calculates the return for a given conversion
 ```go
 return r * (1 - (1 - a / s) ^ (1 / c));
 ```
+## Coins
+
+Unlike coins, tokens have no reserve in BIP.
+
+### Token Issuance
+
+- **Name** - Full name of a token. Arbitrary string with the length of up to 64 letters.
+- **Symbol** - Ticker symbol of a token. Must be unique, alphabetic, uppercase, and 3 to 10 letters long.
+- **Initial amount** - Number of tokens to be issued at start. Should fall within the range of 1 to 1,000,000,000,000,000. They will become available on the sender's address.
+- **Max supply** - Maximum amount of tokens that can ever be issued. The upper limit is 1,000,000,000,000,000.
+
+Allow owner to edit token supply:
+– **Mintable**: Ability to gradually increase token supply (cannot exceed Max supply).
+– **Burnable**: Ability to burn tokens that are freely available in the owner's wallet.
+
+After the token has been created, users can send it via regular wallets similar to ordinary coins.
+
+### Issuance Fees
+
+To issue a token, Creator should pay a fee that depends on the length of Symbol.
+
+3 letters – 100 000 MUSDC
+4 letters – 10 000 MUSDC
+5 letters – 1 000 MUSDC
+6 letters – 100 MUSDC
+7–10 letters – 10 MUSDC
+
+### Token Exchange
+
+Since tokens are not backed, their conversion cannot be based on the formulas used with coins. The token is exchangeable only if it is present in liquidity pools.
+
+## Liquidity Pools
+
+### Introduction
+
+A liquidity pool is a trading pair of coins/tokens with locked-up funds of liquidity providers that guarantee swappability. Buying or selling a coin through a liquidity pool, a trader uses funds that have been locked into the pool. The process is carried out using Automated Market Maker (AMM).
+
+The AMM mechanism implies that when the coin/token is bought, it’s added to the pool; when sold, it’s removed from it. Hence, with the quantity of both coins/tokens inside the pool being balanced, their price changes as well.
+
+> Price for 1 unit of Coin A = Amount of Coin B inside the pool / Amount of Coin A inside the pool
+> Price for 1 unit of Coin B = Amount of Coin A inside the pool / Amount of Coin B inside the pool
+
+### Liquidity Providers
+
+For users to be able to buy and sell coins/tokens within the pool, these pools should be liquid. That is ensured by liquidity providers who get 0.2% on each swap transaction as a reward. These fees are automatically added into the pool, thereby increasing it.
+
+To add liquidity, the provider needs to make a corresponding transaction by putting both coins/tokens into the pool in equal amounts (50/50). For that, liquidity providers are accrued additionally minted LP tokens expressing their share of the pool’s total liquidity. To withdraw liquidity, the provider needs to have previously accrued LP tokens on their balance that will now be burned, while the corresponding liquidity share will be returned to the user’s balance.
 
 ## Transactions
 
