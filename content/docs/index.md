@@ -139,17 +139,6 @@ Maximum is 1,000,000,000,000,000
 
 After coin issued you can send is as ordinary coin using standard wallets.
 
-### Issuance Fees
-
-To issue a coin Coiner should pay fee. Fee is depends on length of Coin
-Symbol.
-
-3 letters – 1 000 000 bips  
-4 letters – 100 000 bips  
-5 letters – 10 000 bips  
-6 letters – 1000 bips  
-7-10 letters – 100 bips
-
 ### Coin Exchange
 
 Each coin in system can be instantly exchanged to another coin. This is
