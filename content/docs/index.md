@@ -195,6 +195,27 @@ To issue a coin, Creator should pay a fee that depends on the length of Symbol.
 6 letters – 100 MUSDC
 7–10 letters – 10 MUSDC
 
+## Coins and tokens difference
+
+|Function                        |Coins                |Tokens               |
+|--------------------------------|---------------------|---------------------|
+|**Reservation**                 |in BIP               |—                    |
+|**Min reserve**                 |10000 BIP            |—                    |
+|**Name**                        |up to 64 letters long|up to 64 letters long|
+|**Symbol**                      |3 to 10 symbols long |3 to 10 symbols long |
+|**Initial amount**              |Yes                  |Yes                  |
+|**Max supply**                  |Yes                  |Yes                  |
+|**CRR**                         |10 - 100%            |—                    |
+|**Mintable (by owner)**         |—                    |Yes                  |
+|**Burnable (by any address)**   |—                    |Yes                  |
+|**Swap (reserves)**             |Yes                  |—                    |
+|**Swap (pools)**                |Yes                  |Yes                  |
+|**Creation of liquidity pools** |Yes                  |Yes                  |
+|**Delegate and receive rewards**|Yes                  |—                    |
+|**Ticker symbol fees**          |10 - 100000 USD      |10 - 100000 USD      |
+|**Pay fees**                    |Yes                  |Yes                  |
+|**Re-creation**                 |Yes                  |Yes                  |
+
 ## Liquidity Pools
 
 ### Introduction
