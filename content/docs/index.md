@@ -315,7 +315,7 @@ Type of transaction is determined by a single byte.
 |[TypeEditCandidate](#edit-candidate-transaction)                       |0x0E|
 |[TypeSetHaltBlock](#set-halt-block-transaction)                        |0x0F|
 |[TypeRecreateCoin](#recreate-coin-transaction)                         |0x10|
-|[TypeEditCoinOwner](#edit-coin-owner-transaction)                      |0x11|
+|[TypeEditTickerOwner](#edit-ticker-owner-transaction)                  |0x11|
 |[TypeEditMultisig](#edit-multisig-transaction)                         |0x12|
 |[TypePriceVote](#price-vote-transaction)                               |0x13|
 |[TypeEditCandidatePublicKey](#edit-candidate-public-key-transaction)   |0x14|
@@ -678,16 +678,17 @@ to sender account.
 is 1,000,000,000,000,000.
 
 
-### Edit Coin Owner Transaction
+<a name="edit-coin-owner-transaction"></a>
+### Edit ticker owner transaction
 
 Type: **0x11**
 
-Transaction to change coin owner address.
+Transaction to change ticker owner address for coins and tokens
 
 *Data field contents:*
 
 ```go
-type EditCoinOwnerData struct {
+type EditTickerOwnerData struct {
     Symbol   [10]byte
     NewOwner [20]byte
 }
@@ -698,7 +699,7 @@ type EditCoinOwnerData struct {
 
 
 
-### Edit Multisig Transaction
+### Edit multisig transaction
 
 Type: **0x12**
 
