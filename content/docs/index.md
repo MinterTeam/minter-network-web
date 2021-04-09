@@ -129,13 +129,13 @@ Issue own coin is as simple as filling a form with given fields:
 - **Coin symbol** - Symbol of a coin. Must be unique, alphabetic, uppercase,
 3 to 10 letters length.
 - **Initial supply** - Amount of coins to issue. Issued coins will be
-available to sender account. Should be between 1 and 1,000,000,000,000,000
+available to sender account. Should be between 1 and 10^15
 coins.
 - **Initial reserve** - Initial reserve in base coin. Should be at least 10
 bips.
 - **Constant Reserve Ratio (CRR)** - uint, should be from 10 to 100.
 - **Max supply** - Max amount of coins that are allowed to be issued.
-Maximum is 1,000,000,000,000,000
+Maximum is 10^15
 
 After coin issued you can send is as ordinary coin using standard wallets.
 
@@ -172,8 +172,8 @@ Unlike coins, tokens have no reserve in BIP.
 
 - **Name** - Full name of a token. Arbitrary string with the length of up to 64 letters.
 - **Symbol** - Ticker symbol of a token. Must be unique, alphabetic, uppercase, and 3 to 10 letters long.
-- **Initial amount** - Number of tokens to be issued at start. Should fall within the range of 1 to 1,000,000,000,000,000. They will become available on the sender's address.
-- **Max supply** - Maximum amount of tokens that can ever be issued. The upper limit is 1,000,000,000,000,000.
+- **Initial amount** - Number of tokens to be issued at start. Should fall within the range of 1 to 10^15. They will become available on the sender's address.
+- **Max supply** - Maximum amount of tokens that can ever be issued. The upper limit is 10^15.
 
 Allow owner to edit token supply:
 – **Mintable**: Ability to gradually increase token supply (cannot exceed Max supply).
@@ -189,11 +189,55 @@ Since tokens are not backed, their conversion cannot be based on the formulas us
 
 To issue a coin, Creator should pay a fee that depends on the length of Symbol.
 
-3 letters – 100 000 MUSDC
-4 letters – 10 000 MUSDC
-5 letters – 1 000 MUSDC
-6 letters – 100 MUSDC
-7–10 letters – 10 MUSDC
+3 letters – 100 000 USD  
+4 letters – 10 000 USD  
+5 letters – 1 000 USD  
+6 letters – 100 USD  
+7–10 letters – 10 USD
+
+## Coins and tokens archiving
+
+1. Starting from version 1.2, coins will have unique numerical IDs.
+```json
+{
+   "id": 1,
+   "name": "Test Coin",
+   ...
+}
+```
+
+API responses now return structure (instead of a ticker symbol):
+```json
+{
+   "id": 1,
+   "symbol": "TEST"
+}
+```
+
+All coin-related transactions are modified so that queries use IDs:
+```go
+type SendData struct {  
+  Coin  types.CoinID  
+  To    types.Address  
+  Value *big.Int  
+}
+```
+
+In the case of JS SDK, you can keep using coin tickers. In most cases SDK will replace coin tickers with IDs automatically.
+
+In GO SDK v2, we’ve implemented methods of obtaining coin IDs by their tickers from [HTTP](https://pkg.go.dev/github.com/MinterTeam/minter-go-sdk/v2/api/http_client#Client.CoinID) and [gRPC](https://pkg.go.dev/github.com/MinterTeam/minter-go-sdk/v2/api/grpc_client#Client.CoinID) clients:
+```go
+client, _ := http_client.New("http://localhost:8843/v2") // or client, _ := grpc_client.New("localhost:8842")
+id, _ := client.CoinID("BIP")
+dataSend := transaction.NewSendData().SetCoin(id) // ...
+```
+
+2.  Each coin now has an owner: `owner_address`. For new coins, addresses that have created them will be set as owners. For old coins, there may be no owner at all (null value).
+
+3.  The owner can reissue the coin. Suppose there is COIN, and its owner sends a transaction to recreate it. At that point, the old coin is renamed to COIN-1, and the new one is issued under the ticker COIN. If recreate again, second coin COIN will be renamed to COIN-2, and third coin will be issued as COIN. See [recreate coin transaction](#recreate-coin-transaction) and [recreate token transaction](#recreate-token-transaction).
+
+4.  The owner can transfer ticker ownership rights to another address. See [edit ticker owner transaction](#edit-ticker-owner-transaction).
+
 
 ## Coins and tokens difference
 
@@ -384,6 +428,8 @@ Type: **0x03**
 Transaction for selling all existing coins of one type (owned by sender) in
 favour of another coin in a system.
 
+CoinToSell will be used as GasCoin to pay fee.
+
 *Data field contents:*
 
 ```go
@@ -447,7 +493,7 @@ to sender account.
 - **InitialReserve** - Initial reserve in BIP's.
 - **ConstantReserveRatio** - CRR, uint, should be from 10 to 100.
 - **MaxSupply** - Max amount of coins that are allowed to be issued. Maximum
-is 1,000,000,000,000,000.
+is 10^15.
 
 ### Declare candidacy transaction
 
@@ -470,7 +516,7 @@ type DeclareCandidacyData struct {
 - **Address** - Address of candidate in Minter Network. This address would be
 able to control candidate. Also all rewards will be sent to this address.
 - **PubKey** - Public key of a validator.
-- **Commission** - Commission (from 0 to 100) from rewards which delegators
+- **Commission** - Commission percent (from 0% to 100%) from rewards which delegators
 will pay to validator.
 - **Coin** - ID of coin to stake.
 - **Stake** - Amount of coins to stake.
@@ -536,8 +582,10 @@ address. [Read
 more](https://docs.minter.network/#section/Minter-Check/Check-hijacking-protection)
 
 Note that maximum GasPrice is limited to 1 to prevent fraud, because
-GasPrice is set by redeem tx sender but commission is charded from check
+GasPrice is set by redeem tx sender but commission is charged from check
 issuer.
+
+Tx's GasCoin must be the same as specified in the check.
 
 ### Set candidate online transaction
 
@@ -627,8 +675,14 @@ type EditCandidateData struct {
     PubKey           []byte
     RewardAddress    [20]byte
     OwnerAddress     [20]byte
+    ControlAddress   [20]byte
 }
 ```
+
+- **RewardAddress** - address for acquiring rewards
+- **OwnerAddress** - address with full control of the validator
+- **ControlAddress** - its functionality is strictly limited to switching masternode on and off (SetCandidateOnline/SetCandidateOffline transactions).
+
 
 ### Set halt block transaction
 Type: **0x0F**
@@ -675,7 +729,7 @@ to sender account.
 - **InitialReserve** - Initial reserve in BIP's.
 - **ConstantReserveRatio** - CRR, uint, should be from 10 to 100.
 - **MaxSupply** - Max amount of coins that are allowed to be issued. Maximum
-is 1,000,000,000,000,000.
+is 10^15.
 
 
 <a name="edit-coin-owner-transaction"></a>
@@ -703,7 +757,9 @@ type EditTickerOwnerData struct {
 
 Type: **0x12**
 
-Transaction for change multisignature address.
+Transaction for change multisignature address.  
+Allows one to make changes to the list of MultiSig owners and threshold without changing the address itself.  
+Must be sent from the MultiSig address and signed by the required number of owners.
 
 *Data field contents:*
 
@@ -723,6 +779,7 @@ Data is the same as in [Create Multisig Address Transaction](#create-multisig-ad
 Type: **0x13**
 
 **Disabled transaction, not used anymore**
+
 To be able to run complex smart contracts and services, we need a way to discover the price of BIP on-chain. We will start with introducing a new tx type: PriceVote.
 
 *Data field contents:*
@@ -739,7 +796,8 @@ type PriceVoteData struct {
 Type: **0x14**
 
 Transaction to change candaite public key.  
-To improve validator security, it is proposed to add the public key change feature.
+To improve validator security, it is proposed to add the public key change feature.  
+The transaction must be sent from the validator (OwnerAddress). Once changed, the old public key is blacklisted and cannot be declared again.
 
 *Data field contents:*
 
@@ -865,6 +923,8 @@ Type: **0x19**
 
 Transaction for selling all existing coins from the swap pool of the pair.
 
+Coin to spend (`Coins[0]`) will be used as GasCoin to pay fee.
+
 *Data field contents:*
 
 ```go
@@ -894,6 +954,9 @@ type EditCandidateCommissionData struct {
     Commission uint32
 }
 ```
+
+- **PubKey** - Public key of a validator.
+- **Commission** - Commission percent (from 0% to 100%) from rewards which delegators will pay to validator.
 
 ### Move stake transaction
 
@@ -1362,11 +1425,11 @@ Recommended:
 Minter Network has limited number of available slots for validators.
 
 At genesis there are `16` slots. `4` slots will be added each
-`518,400` blocks. Maximum number of validators is `256`.
+`518,400` blocks. Maximum number of validators is `64`.
 
 ### Rewards
 Rewards for blocks and commissions are accumulated and proportionally
-(based on stake value) payed once per `12 blocks` (approx 1 minute) to
+(based on stake value) payed once per `720 blocks` (approx 1 hour) to
 all active validators (and their delegators).
 
 Block rewards are configured to decrease from 333 to 0 BIP (MNT) in \~7
@@ -1394,8 +1457,7 @@ Validators have one main responsibility:
     signed two blocks at the same height on chain A and chain B, this
     validator will get slashed on chain A
 -   **Unavailability**: If a validator's signature has not been
-    included in the last 12 blocks, 1% of stake will get slashed and
-    validator will be turned off
+    included in the 12 of last 2 blocks, validator will be turned off and banned for 1 day
 
 Note that even if a validator does not intentionally misbehave, it can
 still be slashed if its node crashes, looses connectivity, gets DDOSed,
@@ -1572,8 +1634,7 @@ There are 2 main slashing conditions:
     signed two blocks at the same height on chain A and chain B, this
     validator will get slashed on chain A
 - **Unavailability**: If a validator's signature has not been
-    included in the last 12 blocks, 1% of stake will get slashed and
-    validator will be turned off
+    included in 12 of the last 24 blocks, validator will be turned off and banned for 1 day
 This is why delegators should perform careful due diligence on
 validators before delegating. It is also important that delegators
 actively monitor the activity of their validators. If a validator
