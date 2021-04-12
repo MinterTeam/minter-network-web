@@ -175,8 +175,8 @@ Unlike coins, tokens have no reserve in BIP.
 - **Initial amount** - Number of tokens to be issued at start. Should fall within the range of 1 to 10^15. They will become available on the sender's address.
 - **Max supply** - Maximum amount of tokens that can ever be issued. The upper limit is 10^15.
 
-Allow owner to edit token supply:
-– **Mintable**: Ability to gradually increase token supply (cannot exceed Max supply).
+Allow owner to edit token supply: \
+– **Mintable**: Ability to gradually increase token supply (cannot exceed Max supply). \
 – **Burnable**: Ability to burn tokens that are freely available in the owner's wallet.
 
 After the token has been created, users can send it via regular wallets similar to ordinary coins.
@@ -268,7 +268,7 @@ A liquidity pool is a trading pair of coins/tokens with locked-up funds of liqui
 
 The AMM mechanism implies that when the coin/token is bought, it’s added to the pool; when sold, it’s removed from it. Hence, with the quantity of both coins/tokens inside the pool being balanced, their price changes as well.
 
-> Price for 1 unit of Coin A = Amount of Coin B inside the pool / Amount of Coin A inside the pool
+> Price for 1 unit of Coin A = Amount of Coin B inside the pool / Amount of Coin A inside the pool \
 > Price for 1 unit of Coin B = Amount of Coin A inside the pool / Amount of Coin B inside the pool
 
 ### Liquidity Providers
