@@ -129,26 +129,15 @@ Issue own coin is as simple as filling a form with given fields:
 - **Coin symbol** - Symbol of a coin. Must be unique, alphabetic, uppercase,
 3 to 10 letters length.
 - **Initial supply** - Amount of coins to issue. Issued coins will be
-available to sender account. Should be between 1 and 1,000,000,000,000,000
+available to sender account. Should be between 1 and 10^15
 coins.
 - **Initial reserve** - Initial reserve in base coin. Should be at least 10
 bips.
 - **Constant Reserve Ratio (CRR)** - uint, should be from 10 to 100.
 - **Max supply** - Max amount of coins that are allowed to be issued.
-Maximum is 1,000,000,000,000,000
+Maximum is 10^15
 
 After coin issued you can send is as ordinary coin using standard wallets.
-
-### Issuance Fees
-
-To issue a coin Coiner should pay fee. Fee is depends on length of Coin
-Symbol.
-
-3 letters – 100 000 000 BIP  
-4 letters – 10 000 000 BIP  
-5 letters – 1 000 000 BIP  
-6 letters – 100 000 BIP  
-7-10 letters – 10 000 BIP
 
 ### Coin Exchange
 
@@ -158,7 +147,8 @@ coin.
 
 Here are some formulas we are using for coin conversion:
 
-**CalculatePurchaseReturn**  
+**CalculatePurchaseReturn**
+
 Given a coin supply (s), reserve balance (r), CRR (c) and a deposit amount
 (d), calculates the return for a given conversion (in the base coin):
 
@@ -166,13 +156,126 @@ Given a coin supply (s), reserve balance (r), CRR (c) and a deposit amount
 return s * ((1 + d / r) ^ c - 1);
 ```
 
-**CalculateSaleReturn**  
+**CalculateSaleReturn**
+
 Given a coin supply (s), reserve balance (r), CRR (c) and a sell amount (a),
 calculates the return for a given conversion
 
 ```go
 return r * (1 - (1 - a / s) ^ (1 / c));
 ```
+## Tokens
+
+Unlike coins, tokens have no reserve in BIP.
+
+### Token Issuance
+
+- **Name** - Full name of a token. Arbitrary string with the length of up to 64 letters.
+- **Symbol** - Ticker symbol of a token. Must be unique, alphabetic, uppercase, and 3 to 10 letters long.
+- **Initial amount** - Number of tokens to be issued at start. Should fall within the range of 1 to 10^15. They will become available on the sender's address.
+- **Max supply** - Maximum amount of tokens that can ever be issued. The upper limit is 10^15.
+
+Allow owner to edit token supply:
+– **Mintable**: Ability to gradually increase token supply (cannot exceed Max supply).
+– **Burnable**: Ability to burn tokens that are freely available in the owner's wallet.
+
+After the token has been created, users can send it via regular wallets similar to ordinary coins.
+
+### Token Exchange
+
+Since tokens are not backed, their conversion cannot be based on the formulas used with coins. The token is exchangeable only if it is present in liquidity pools.
+
+## Issuance fees for coins and tokens
+
+To issue a coin, Creator should pay a fee that depends on the length of Symbol.
+
+3 letters – 100 000 USD  
+4 letters – 10 000 USD  
+5 letters – 1 000 USD  
+6 letters – 100 USD  
+7–10 letters – 10 USD
+
+## Coins and tokens archiving
+
+1. Starting from version 1.2, coins will have unique numerical IDs.
+```json
+{
+   "id": 1,
+   "name": "Test Coin",
+   ...
+}
+```
+
+API responses now return structure (instead of a ticker symbol):
+```json
+{
+   "id": 1,
+   "symbol": "TEST"
+}
+```
+
+All coin-related transactions are modified so that queries use IDs:
+```go
+type SendData struct {  
+  Coin  types.CoinID  
+  To    types.Address  
+  Value *big.Int  
+}
+```
+
+In the case of JS SDK, you can keep using coin tickers. In most cases SDK will replace coin tickers with IDs automatically.
+
+In GO SDK v2, we’ve implemented methods of obtaining coin IDs by their tickers from [HTTP](https://pkg.go.dev/github.com/MinterTeam/minter-go-sdk/v2/api/http_client#Client.CoinID) and [gRPC](https://pkg.go.dev/github.com/MinterTeam/minter-go-sdk/v2/api/grpc_client#Client.CoinID) clients:
+```go
+client, _ := http_client.New("http://localhost:8843/v2") // or client, _ := grpc_client.New("localhost:8842")
+id, _ := client.CoinID("BIP")
+dataSend := transaction.NewSendData().SetCoin(id) // ...
+```
+
+2.  Each coin now has an owner: `owner_address`. For new coins, addresses that have created them will be set as owners. For old coins, there may be no owner at all (null value).
+
+3.  The owner can reissue the coin. Suppose there is COIN, and its owner sends a transaction to recreate it. At that point, the old coin is renamed to COIN-1, and the new one is issued under the ticker COIN. If recreate again, second coin COIN will be renamed to COIN-2, and third coin will be issued as COIN. See [recreate coin transaction](#recreate-coin-transaction) and [recreate token transaction](#recreate-token-transaction).
+
+4.  The owner can transfer ticker ownership rights to another address. See [edit ticker owner transaction](#edit-ticker-owner-transaction).
+
+
+## Coins and tokens difference
+
+|Function                        |Coins                |Tokens               |
+|--------------------------------|---------------------|---------------------|
+|**Reservation**                 |in BIP               |—                    |
+|**Min reserve**                 |10000 BIP            |—                    |
+|**Name**                        |up to 64 letters long|up to 64 letters long|
+|**Symbol**                      |3 to 10 symbols long |3 to 10 symbols long |
+|**Initial amount**              |Yes                  |Yes                  |
+|**Max supply**                  |Yes                  |Yes                  |
+|**CRR**                         |10 - 100%            |—                    |
+|**Mintable (by owner)**         |—                    |Yes                  |
+|**Burnable (by any address)**   |—                    |Yes                  |
+|**Swap (reserves)**             |Yes                  |—                    |
+|**Swap (pools)**                |Yes                  |Yes                  |
+|**Creation of liquidity pools** |Yes                  |Yes                  |
+|**Delegate and receive rewards**|Yes                  |—                    |
+|**Ticker symbol fees**          |10 - 100000 USD      |10 - 100000 USD      |
+|**Pay fees**                    |Yes                  |Yes                  |
+|**Re-creation**                 |Yes                  |Yes                  |
+
+## Liquidity Pools
+
+### Introduction
+
+A liquidity pool is a trading pair of coins/tokens with locked-up funds of liquidity providers that guarantee swappability. Buying or selling a coin through a liquidity pool, a trader uses funds that have been locked into the pool. The process is carried out using Automated Market Maker (AMM).
+
+The AMM mechanism implies that when the coin/token is bought, it’s added to the pool; when sold, it’s removed from it. Hence, with the quantity of both coins/tokens inside the pool being balanced, their price changes as well.
+
+> Price for 1 unit of Coin A = Amount of Coin B inside the pool / Amount of Coin A inside the pool
+> Price for 1 unit of Coin B = Amount of Coin A inside the pool / Amount of Coin B inside the pool
+
+### Liquidity Providers
+
+For users to be able to buy and sell coins/tokens within the pool, these pools should be liquid. That is ensured by liquidity providers who get 0.2% on each swap transaction as a reward. These fees are automatically added into the pool, thereby increasing it.
+
+To add liquidity, the provider needs to make a corresponding transaction by putting both coins/tokens into the pool in equal amounts (50/50). For that, liquidity providers are accrued additionally minted LP tokens expressing their share of the pool’s total liquidity. To withdraw liquidity, the provider needs to have previously accrued LP tokens on their balance that will now be burned, while the corresponding liquidity share will be returned to the user’s balance.
 
 ## Transactions
 
@@ -255,11 +358,25 @@ Type of transaction is determined by a single byte.
 |[TypeEditCandidate](#edit-candidate-transaction)                       |0x0E|
 |[TypeSetHaltBlock](#set-halt-block-transaction)                        |0x0F|
 |[TypeRecreateCoin](#recreate-coin-transaction)                         |0x10|
-|[TypeEditCoinOwner](#edit-coin-owner-transaction)                      |0x11|
+|[TypeEditTickerOwner](#edit-ticker-owner-transaction)                  |0x11|
 |[TypeEditMultisig](#edit-multisig-transaction)                         |0x12|
 |[TypePriceVote](#price-vote-transaction)                               |0x13|
 |[TypeEditCandidatePublicKey](#edit-candidate-public-key-transaction)   |0x14|
-
+|[TypeAddLiquidity](#add-liquidity-to-swap-pool-transaction)            |0x15|
+|[TypeRemoveLiquidity](#remove-liquidity-from-swap-pool-transaction)    |0x16|
+|[TypeSellSwapPool](#sell-from-swap-pool-transaction)                   |0x17|
+|[TypeBuySwapPool](#buy-from-swap-pool-transaction)                     |0x18|
+|[TypeSellAllSwapPool](#sell-all-from-swap-pool-transaction)            |0x19|
+|[TypeEditCandidateCommission](#edit-candidate-commission-transaction)  |0x1A|
+|[TypeMoveStake](#move-stake-transaction)                               |0x1B|
+|[TypeMintToken](#mint-token-transaction)                               |0x1C|
+|[TypeBurnToken](#burn-token-transaction)                               |0x1D|
+|[TypeCreateToken](#create-token-transaction)                           |0x1E|
+|[TypeRecreateToken](#recreate-token-transaction)                       |0x1F|
+|[TypeVoteCommission](#vote-for-commission-price-transaction)           |0x20|
+|[TypeVoteUpdate](#vote-for-network-update-transaction)                 |0x21|
+|[TypeCreateSwapPool](#create-swap-pool-transaction)                    |0x22|
+    
 ### Send transaction
 
 Type: **0x01**
@@ -309,6 +426,8 @@ Type: **0x03**
 
 Transaction for selling all existing coins of one type (owned by sender) in
 favour of another coin in a system.
+
+CoinToSell will be used as GasCoin to pay fee.
 
 *Data field contents:*
 
@@ -373,7 +492,7 @@ to sender account.
 - **InitialReserve** - Initial reserve in BIP's.
 - **ConstantReserveRatio** - CRR, uint, should be from 10 to 100.
 - **MaxSupply** - Max amount of coins that are allowed to be issued. Maximum
-is 1,000,000,000,000,000.
+is 10^15.
 
 ### Declare candidacy transaction
 
@@ -396,7 +515,7 @@ type DeclareCandidacyData struct {
 - **Address** - Address of candidate in Minter Network. This address would be
 able to control candidate. Also all rewards will be sent to this address.
 - **PubKey** - Public key of a validator.
-- **Commission** - Commission (from 0 to 100) from rewards which delegators
+- **Commission** - Commission percent (from 0% to 100%) from rewards which delegators
 will pay to validator.
 - **Coin** - ID of coin to stake.
 - **Stake** - Amount of coins to stake.
@@ -462,8 +581,10 @@ address. [Read
 more](https://docs.minter.network/#section/Minter-Check/Check-hijacking-protection)
 
 Note that maximum GasPrice is limited to 1 to prevent fraud, because
-GasPrice is set by redeem tx sender but commission is charded from check
+GasPrice is set by redeem tx sender but commission is charged from check
 issuer.
+
+Tx's GasCoin must be the same as specified in the check.
 
 ### Set candidate online transaction
 
@@ -553,14 +674,15 @@ type EditCandidateData struct {
     PubKey           []byte
     RewardAddress    [20]byte
     OwnerAddress     [20]byte
+    ControlAddress   [20]byte
 }
 ```
 
+- **RewardAddress** - address for acquiring rewards
+- **OwnerAddress** - address with full control of the validator
+- **ControlAddress** - its functionality is strictly limited to switching masternode on and off (SetCandidateOnline/SetCandidateOffline transactions).
 
 
-
-
-### Since Minter 1.2 released, there are few new transactions added:
 ### Set halt block transaction
 Type: **0x0F**
 
@@ -606,19 +728,20 @@ to sender account.
 - **InitialReserve** - Initial reserve in BIP's.
 - **ConstantReserveRatio** - CRR, uint, should be from 10 to 100.
 - **MaxSupply** - Max amount of coins that are allowed to be issued. Maximum
-is 1,000,000,000,000,000.
+is 10^15.
 
 
-### Edit Coin Owner Transaction
+<a name="edit-coin-owner-transaction"></a>
+### Edit ticker owner transaction
 
 Type: **0x11**
 
-Transaction to change coin owner address.
+Transaction to change ticker owner address for coins and tokens
 
 *Data field contents:*
 
 ```go
-type EditCoinOwnerData struct {
+type EditTickerOwnerData struct {
     Symbol   [10]byte
     NewOwner [20]byte
 }
@@ -629,11 +752,13 @@ type EditCoinOwnerData struct {
 
 
 
-### Edit Multisig Transaction
+### Edit multisig transaction
 
 Type: **0x12**
 
-Transaction for change multisignature address.
+Transaction for change multisignature address.  
+Allows one to make changes to the list of MultiSig owners and threshold without changing the address itself.  
+Must be sent from the MultiSig address and signed by the required number of owners.
 
 *Data field contents:*
 
@@ -652,6 +777,8 @@ Data is the same as in [Create Multisig Address Transaction](#create-multisig-ad
 
 Type: **0x13**
 
+**Disabled transaction, not used anymore**
+
 To be able to run complex smart contracts and services, we need a way to discover the price of BIP on-chain. We will start with introducing a new tx type: PriceVote.
 
 *Data field contents:*
@@ -668,7 +795,8 @@ type PriceVoteData struct {
 Type: **0x14**
 
 Transaction to change candaite public key.  
-To improve validator security, it is proposed to add the public key change feature.
+To improve validator security, it is proposed to add the public key change feature.  
+The transaction must be sent from the validator (OwnerAddress). Once changed, the old public key is blacklisted and cannot be declared again.
 
 *Data field contents:*
 
@@ -681,6 +809,440 @@ type EditCandidatePublicKeyData struct {
 
 - **PubKey** - Current Public key
 - **NewPubKey** - New Public key
+
+
+### Since Minter 2.0 released, there are few new transactions added:
+
+
+### Add liquidity to swap pool transaction
+
+Type: **0x15**
+
+Transaction to add reserves of a pair of coins to the pool.
+To create liquidity through this pool.
+
+*Data field contents:*
+
+```go
+type AddLiquidityData struct {
+	Coin0          uin32
+	Coin1          uin32
+	Volume0        *big.Int
+	MaximumVolume1 *big.Int
+}
+```
+
+- **Coin0** - ID of first coin to pair
+- **Coin1** - ID of second coin to pair
+- **Volume0** - Volume to add to reserve of the swap pool of first coin
+- **MaximumVolume1** - Maximum volume to add to reserve of the swap pool of second coin
+
+When a new liquidity provider deposits tokens into an existing Uniswap pair, the number
+of liquidity tokens minted is computed based on the existing quantity of tokens:
+
+![](https://i.ibb.co/YkQdMLd/image.png)
+
+To see the total supply and balance of the provider, check on [SwapPool](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/1.3/docs/api.swagger.json#operation/SwapPool) and [SwapPoolProvider](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/1.3/docs/api.swagger.json#operation/SwapPoolProvider) API v2 endpoints.
+
+### Remove liquidity from swap pool transaction
+
+Type: **0x16**
+
+Transaction to withdraw the reserves of a pair from the pool.
+
+*Data field contents:*
+
+```go
+type RemoveLiquidityData struct {
+	Coin0          uin32
+	Coin1          uin32
+	Liquidity      *big.Int
+	MinimumVolume0 *big.Int
+	MinimumVolume1 *big.Int
+}
+```
+
+- **Coin0** - ID of coin to pair
+- **Coin1** - ID of coin to pair
+- **Liquidity** - Volume of shares to be withdrawn from the pool
+- **MinimumVolume0** - Minimum expected volume of coin0 to be returned to the account
+- **MinimumVolume1** - Minimum expected volume of coin1 to be returned to the account
+
+
+### Sell from swap pool transaction
+
+Type: **0x17**
+
+Transaction for selling from the swap pool of the pair.
+
+*Data field contents:*
+
+```go
+type SellSwapPoolData struct {
+    Coins               []uint32
+    ValueToSell         *big.Int
+    MinimumValueToBuy   *big.Int
+}
+```
+
+- **Coins** - List of coin IDs from given to received.
+- **ValueToSell** - Amount of coin to spend (first coin in **Coins** list).
+- **MinimumValueToBuy** - Minimum value of coin to get.
+
+Use [EstimateCoinSell](https://minterteam.github.io/node-gateway-api-v2-doc/#operation/EstimateCoinSell) API v2 endpoint with _swap_from=pool_ parameter to calculate sales price from swap pool.
+
+### Buy from swap pool transaction
+
+Type: **0x18**
+
+Transaction for buying from the swap pool of the pair.
+
+*Data field contents:*
+
+```go
+type BuySwapPoolData struct {
+    Coins               []uint32
+    ValueToBuy          *big.Int
+    MaximumValueToSell  *big.Int
+}
+```
+
+- **Coins** - List of coin IDs from given to received.
+- **ValueToBuy** - Amount of coin to get (last coin in **Coins** list).
+- **MaximumValueToSell** - Maximum value of coin to spend.
+
+Use API v2 endpoint to calculate purchase price:
+
+Use [EstimateCoinBuy](https://minterteam.github.io/node-gateway-api-v2-doc/#operation/EstimateCoinBuy) API v2 endpoint with _swap_from=pool_ parameter to calculate purchase price from swap pool.
+
+
+### Sell all from swap pool transaction
+
+Type: **0x19**
+
+Transaction for selling all existing coins from the swap pool of the pair.
+
+Coin to spend (`Coins[0]`) will be used as GasCoin to pay fee.
+
+*Data field contents:*
+
+```go
+type SellAllSwapPoolData struct {
+    Coins               []uint32
+    MinimumValueToBuy   *big.Int
+}
+```
+
+- **Coins** - List of coin IDs from given to received.
+- **MinimumValueToBuy** - Minimum value of coin to get.
+
+Use [EstimateCoinSellAll](https://minterteam.github.io/node-gateway-api-v2-doc/#operation/EstimateCoinSellAll) API v2 endpoint with _swap_from=pool_ parameter to calculate sales price from swap pool.
+
+
+### Edit candidate commission transaction
+
+Type: **0x1A**
+
+This transaction changes the validator's fee. Only validator owner is allowed to send. The fee cannot be increased by more than 10 units at once and cannot be changed sooner than once in every three UnbondPeriod's. UnbondPeriod = 518400 blocks (177 on testnet).
+
+*Data field contents:*
+
+```go
+type EditCandidateCommissionData struct {
+    PubKey    [32]byte
+    Commission uint32
+}
+```
+
+- **PubKey** - Public key of a validator.
+- **Commission** - Commission percent (from 0% to 100%) from rewards which delegators will pay to validator.
+
+### Move stake transaction
+
+Type: **0x1B**
+
+Reserved transaction, disabled in current version.
+
+*Data field contents:*
+
+```go
+type MoveStakeData struct {
+    From     [32]byte
+    To       [32]byte
+    Coin     uint32
+    Stake    *big.Int
+}
+```
+
+```go
+const TypeStakeMoveEvent = "minter/StakeMoveEvent"
+
+type StakeMoveEvent struct {
+	Address         string `json:"address"`
+	Amount          string `json:"amount"`
+	Coin            string `json:"coin"`
+	ValidatorPubKey string `json:"validator_pub_key"`
+	WaitList        bool   `json:"waitlist"`
+}
+```
+
+### Mint token transaction
+
+Type: **0x1C**
+
+This transaction increases the token's supply. Can be applied to tokens only and is executed from the coin owner address. The new supply must not exceed the MaxSupply value.
+
+*Data field contents:*
+
+```go
+type MintTokenData struct {
+    Coin     uint32
+    Value    *big.Int
+}
+```
+
+- **Coin** - the token's id
+- **Value** - the quantity of coins to be issued
+                                        
+### Burn token transaction
+
+Type: **0x1D**
+
+This transaction decreases the token's supply. Can be applied to tokens only and is executed from the address of the user who has the necessary amount of this coin. The new supply must be more than or equal to 0.
+
+*Data field contents:*
+
+```go
+type BurnTokenData struct {
+    Coin     uint32
+    Value    *big.Int
+}
+```
+
+
+### Create token transaction
+
+Type: **0x1E**
+
+Creation of a token (non-reserve coin).
+
+*Data field contents:*
+
+```go
+type CreateTokenData struct {
+	Name          string
+	Symbol        [10]byte
+	InitialAmount *big.Int
+	MaxSupply     *big.Int
+	Mintable      bool
+	Burnable      bool
+}
+```
+
+- **InitialAmount** - the number of tokens to be created at the start
+- **MaxSupply** - the upper limit of the total number of tokens
+- **Mintable** - allow new tokens to be issued additionally
+- **Burnable** - allow all tokens to be burned
+
+### Recreate token transaction
+
+Type: **0x1F**
+
+This transaction re-creates the coins (both backed and non-reserve).
+
+*Data field contents:*
+
+```go
+type RecreateTokenData struct {
+	Name          string
+	Symbol        [10]byte
+	InitialAmount *big.Int
+	MaxSupply     *big.Int
+	Mintable      bool
+	Burnable      bool
+}
+```
+
+- **InitialAmount** - the number of tokens to be created at the start
+- **MaxSupply** - the upper limit of the total number of tokens
+- **Mintable** - allow new tokens to be issued additionally
+- **Burnable** - allow all tokens to be burned
+
+### Vote for commission price transaction
+
+Type: **0x20**
+
+This transaction enables validators to vote for the fees to be changed. The change comes into force once a two-thirds majority is reached. The vote can be sent from the validator owner address.
+
+*Data field contents:*
+
+```go
+type VoteCommissionData struct {
+	PubKey                  types.Pubkey
+	Height                  uint64
+	Coin                    types.CoinID
+	PayloadByte             *big.Int
+	Send                    *big.Int
+	BuyBancor               *big.Int
+	SellBancor              *big.Int
+	SellAllBancor           *big.Int
+	BuyPoolBase             *big.Int
+	BuyPoolDelta            *big.Int
+	SellPoolBase            *big.Int
+	SellPoolDelta           *big.Int
+	SellAllPoolBase         *big.Int
+	SellAllPoolDelta        *big.Int
+	CreateTicker3           *big.Int
+	CreateTicker4           *big.Int
+	CreateTicker5           *big.Int
+	CreateTicker6           *big.Int
+	CreateTicker7to10       *big.Int
+	CreateCoin              *big.Int
+	CreateToken             *big.Int
+	RecreateCoin            *big.Int
+	RecreateToken           *big.Int
+	DeclareCandidacy        *big.Int
+	Delegate                *big.Int
+	Unbond                  *big.Int
+	RedeemCheck             *big.Int
+	SetCandidateOn          *big.Int
+	SetCandidateOff         *big.Int
+	CreateMultisig          *big.Int
+	MultisendBase           *big.Int
+	MultisendDelta          *big.Int
+	EditCandidate           *big.Int
+	SetHaltBlock            *big.Int
+	EditTickerOwner         *big.Int
+	EditMultisig            *big.Int
+	EditCandidatePublicKey  *big.Int
+	CreateSwapPool          *big.Int
+	AddLiquidity            *big.Int
+	RemoveLiquidity         *big.Int
+	EditCandidateCommission *big.Int
+	MintToken               *big.Int
+	BurnToken               *big.Int
+	VoteCommission          *big.Int
+	VoteUpdate              *big.Int
+}
+```
+Once there is a consensus, the event with the information about the new fees will occur at the corresponding block height.
+
+```go
+const TypeUpdateCommissionsEvent = "minter/UpdateCommissionsEvent"
+type UpdateCommissionsEvent struct {
+	Coin                    uint64 `json:"coin"`
+	PayloadByte             string `json:"payload_byte"`
+	Send                    string `json:"send"`
+	BuyBancor               string `json:"buy_bancor"`
+	SellBancor              string `json:"sell_bancor"`
+	SellAllBancor           string `json:"sell_all_bancor"`
+	BuyPoolBase             string `json:"buy_pool_base"`
+	BuyPoolDelta            string `json:"buy_pool_delta"`
+	SellPoolBase            string `json:"sell_pool_base"`
+	SellPoolDelta           string `json:"sell_pool_delta"`
+	SellAllPoolBase         string `json:"sell_all_pool_base"`
+	SellAllPoolDelta        string `json:"sell_all_pool_delta"`
+	CreateTicker3           string `json:"create_ticker3"`
+	CreateTicker4           string `json:"create_ticker4"`
+	CreateTicker5           string `json:"create_ticker5"`
+	CreateTicker6           string `json:"create_ticker6"`
+	CreateTicker7_10        string `json:"create_ticker7_10"`
+	CreateCoin              string `json:"create_coin"`
+	CreateToken             string `json:"create_token"`
+	RecreateCoin            string `json:"recreate_coin"`
+	RecreateToken           string `json:"recreate_token"`
+	DeclareCandidacy        string `json:"declare_candidacy"`
+	Delegate                string `json:"delegate"`
+	Unbond                  string `json:"unbond"`
+	RedeemCheck             string `json:"redeem_check"`
+	SetCandidateOn          string `json:"set_candidate_on"`
+	SetCandidateOff         string `json:"set_candidate_off"`
+	CreateMultisig          string `json:"create_multisig"`
+	MultisendBase           string `json:"multisend_base"`
+	MultisendDelta          string `json:"multisend_delta"`
+	EditCandidate           string `json:"edit_candidate"`
+	SetHaltBlock            string `json:"set_halt_block"`
+	EditTickerOwner         string `json:"edit_ticker_owner"`
+	EditMultisig            string `json:"edit_multisig"`
+	EditCandidatePublicKey  string `json:"edit_candidate_public_key"`
+	CreateSwapPool          string `json:"create_swap_pool"`
+	AddLiquidity            string `json:"add_liquidity"`
+	RemoveLiquidity         string `json:"remove_liquidity"`
+	EditCandidateCommission string `json:"edit_candidate_commission"`
+	MintToken               string `json:"mint_token"`
+	BurnToken               string `json:"burn_token"`
+	VoteCommission          string `json:"vote_commission"`
+	VoteUpdate              string `json:"vote_update"`
+}
+```
+
+API current prices [PriceCommission](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/1.3/docs/api.swagger.json#operation/PriceCommission) and votes for update commissions [PriceVotes](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/1.3/docs/api.swagger.json#operation/PriceVotes)
+
+### Vote for network update transaction
+
+Type: **0x21**
+
+This transaction allows to vote whether to proceed with the network's upgrade to a new version. Can only be sent by a node owner and from the owner address. The upgrade is approved if the two-thirds of the voting power is in favor.
+
+*Data field contents:*
+
+```go
+type VoteUpdateData struct {
+	Version string
+	PubKey  [32]byte
+	Height  uint64
+}
+```
+- **Version** - the codename of the upgrade
+- **PubKey** - the public key of the validator that's casting a vote
+- **Height** - the block in which the upgrade is to take place
+
+Once there is a consensus, the event will occur at the corresponding block height.
+
+```
+const TypeUpdateNetworkEvent = "minter/UpdateNetworkEvent"
+type UpdateNetworkEvent struct {
+	Version string `json:"version"`
+}
+```
+
+
+### Create swap pool transaction
+
+Type: **0x22**
+
+This transaction creates a liquidity pool for two coins, in volumes specified within this transaction. The volumes will be withdrawn from your balance according to the figure you've specified in the transaction. When a pool is established, a P-number coin (example: P-123) is created and issued in the amount equal to the amount of pool liquidity. The calculations related to that liquidity are described below.
+
+*Data field contents:*
+
+```go
+type CreateSwapPoolData struct {
+	Coin0          uin32
+	Coin1          uin32
+	Volume0        *big.Int
+	Volume1        *big.Int
+}
+```
+
+Number of liquidity tokens equal to the geometric mean of the amounts deposited:
+
+![](https://i.ibb.co/S03qZ1r/image.png)
+
+The above formula ensures that a liquidity pool share will never be worth less than
+the geometric mean of the reserves in that pool. However, it is possible for the value of
+a liquidity pool share to grow over time, either by accumulating trading fees or through
+“donations” to the liquidity pool. In theory, this could result in a situation where the value
+of the minimum quantity of liquidity pool shares (1e-18 pool shares) is worth so much that
+it becomes infeasible for small liquidity providers to provide any liquidity.
+
+To mitigate this, we burns the first 1e-15 (0.000000000000001) pool shares that
+are minted (1000 times the minimum quantity of pool shares), sending them to the zero
+address instead of to the minter. This should be a negligible cost for almost any token
+pair. But it dramatically increases the cost of the above attack. In order to raise the
+value of a liquidity pool share to $100, the attacker would need to donate $100,000 to the
+pool, which would be permanently locked up as liquidity.
+
+To see the total supply and balance of the provider, check on [SwapPool](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/1.3/docs/api.swagger.json#operation/SwapPool) and [SwapPoolProvider](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/1.3/docs/api.swagger.json#operation/SwapPoolProvider) API v2 endpoints.
 
 
 
@@ -780,53 +1342,45 @@ TO BE DESCRIBED
 
 ## Commissions
 
-For each transaction sender should pay fee. Fees are measured in
-"units".
+For each transaction sender should pay fee. Fees are measured in pip value of commission price coin. It can be base coin of reserveless token. If price coin differs from base coin then needed base coin value will be calculated as "how much base coin will be received if certain amount of price coin will be sold to the swap pool". Actually swap will not occur, it will only calculate needed base coin amount.
 
-1 unit = 10^17 pip = 0.1 bip.
+Also user has option to pay commission in any coin or reservless token which can be converted to base coin. In such case this custom coin will be converted to base coin automatically. When transaction change blockchain state, first it apply changes from fee coin converted to base coin, second it apply changes from transaction data. E.g. if user performs "buy from swap pool" transaction and pay fee with on of this pool pair token, fee conversion will affect pool parameters, and then received amount for swap will be calculated based on the changed pool parameters.
 
-### Standard commissions
+So in most complicated case there can be three commission values:
+- commission coin price value: how validators asses costs of transaction
+- base coin value: how much base coins will be spent for validating rewards
+- custom coin value: how much coins sender will spend
 
-Here is a list of current fees:
+You can estimate commission value required for transaction in [/v2/estimate_tx_commission/{tx}](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/1.3/docs/api.swagger.json#operation/EstimateTxCommission] API method.
 
-| Type                           | Fee |
-|--------------------------------|-----|
-|**TypeSend**                    | 10 units |
-|**TypeSellCoin**                | 100 units |
-|**TypeSellAllCoin**             | 100 units |
-|**TypeBuyCoin**                 | 100 units |
-|**TypeCreateCoin**              | Depends on the coin symbol length |
-|**TypeDeclareCandidacy**        | 10000 units |
-|**TypeDelegate**                | 200 units |
-|**TypeUnbond**                  | 200 units |
-|**TypeRedeemCheck**             | 30 units |
-|**TypeSetCandidateOnline**      | 100 units |
-|**TypeSetCandidateOffline**     | 100 units |
-|**TypeCreateMultisig**          | 100 units |
-|**TypeMultisend**               | 10+(n-1)*5 units |
-|**TypeEditCandidate**           | 10000 units |
-|**TypeSetHaltBlock**            | 1000 units |
-|**TypeRecreateCoin**            | 10000000 units |
-|**TypeEditCoinOwner**           | 10000000 units |
-|**TypeEditMultisig**            | 1000 units |
-|**TypePriceVote**               | 10 units |
-|**TypeEditCandidatePublicKey**  | 100000000 units |
 
-[Source](https://github.com/MinterTeam/minter-go-node/blob/master/core/commissions/commissions.go)
+Since Minter 2.0 there are no standard commissions.  
+Commission price may change after validators vote for it. See [list of available fields](#vote-for-commission-price-transaction) to change by vote.
 
-Also sender should pay extra 2 units per byte in Payload and Service
-Data fields.
+Current commission values can be found in [/v2/price_commissions](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/1.3/docs/api.swagger.json#operation/PriceCommission) API method.
 
-### Special fees
+### How commission is calculated
 
-To issue a coin with short name Coiner should pay extra fee. Fee is
-depends on length of Coin Symbol.
+Needed commission price coin amount consist of several parts:
 
-3 letters — 1 000 000 bips  
-4 letters — 100 000 bips  
-5 letters — 10 000 bips  
-6 letters — 1000 bips  
-7-10 letters — 100 bips
+**1. Base**
+
+Depends on transaction type, each type has it's own base amount field.
+
+**2. Delta**
+
+Some transaction types has delta amount field based on count of something. In this case fee will be calculated as follows: `fee = base_value + (count - 1) * delta_value`.  
+For multisend transaction `count` is number of recepients.  
+For swap within pool transaction `count` is a number of pools participating in swap chain route.
+
+**3. Ticker length**
+
+To create a coin or token, Coiner should reserve ticker for it. Taking tickers costs extra fee. The shorter ticker length, the more fee amount. 3 letters tickers are most expensive, 7-10 letters tickers are most cheaper.
+
+**4. Payload length**
+
+Sender should pay extra fee per byte in Payload fields
+
 
 ## Validators
 
@@ -902,7 +1456,7 @@ Validators have one main responsibility:
     signed two blocks at the same height on chain A and chain B, this
     validator will get slashed on chain A for 5% of stake
 -   **Unavailability**: If a validator's signature has not been
-    included in the 12 of 24 last blocks, validator will be turned off and banned for 24 hours
+    included in the 12 of last 24 blocks, validator will be turned off and banned for 24 hours
 
 Note that even if a validator does not intentionally misbehave, it can
 still be slashed if its node crashes, looses connectivity, gets DDOSed,
@@ -1080,6 +1634,7 @@ There are 2 main slashing conditions:
     validator will get slashed on chain A for 5% of their stake
 - **Unavailability**: If a validator's signature has not been
     included in the 12 of last 24 blocks it will be turned off and banned for 24 hours
+
 This is why delegators should perform careful due diligence on
 validators before delegating. It is also important that delegators
 actively monitor the activity of their validators. If a validator
