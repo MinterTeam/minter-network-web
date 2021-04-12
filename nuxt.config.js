@@ -6,7 +6,7 @@ import dotenv from 'dotenv';
 const envConfig = dotenv.config();
 
 import langRu from './lang/ru';
-import {BASE_TITLE, BASE_DESCRIPTION} from "./assets/variables";
+import {BASE_TITLE, BASE_DESCRIPTION, LANGUAGE_COOKIE_KEY, I18N_ROUTE_NAME_SEPARATOR} from "./assets/variables.js";
 
 module.exports = {
     /*
@@ -54,6 +54,12 @@ module.exports = {
     env: envConfig.error ? {} : envConfig.parsed,
     modules: [
         ['@nuxt/press'],
+        // ['nuxt-i18n-preferred', {
+        //     routesNameSeparator: I18N_ROUTE_NAME_SEPARATOR,
+        //     languageCookieKey: LANGUAGE_COOKIE_KEY,
+        //     detectBrowserLanguage: false,
+        // }],
+        // 'nuxt-i18n-default',
         // ['nuxt-i18n', {
         //     locales: [
         //         {
@@ -79,6 +85,12 @@ module.exports = {
         //     },
         //     // seo: false,
         //     detectBrowserLanguage: false,
+        //     parsePages: false,
+        //     pages: {
+        //         'index': false,
+        //         'source-pages': false,
+        //         'source-docs-locales-_ru': false,
+        //     },
         // }],
     ],
     /*
@@ -121,6 +133,11 @@ module.exports = {
             //     ];
             // }
         },
-        transpile: [/es6-promise|\.(?!(?:js|json)$).{1,5}$/i, /^lodash-es/, /^@material/],
+        transpile: [
+            /es6-promise|\.(?!(?:js|json)$).{1,5}$/i,
+            /^lodash-es/,
+            /^@material/,
+            /^pretty-num/
+        ],
     },
 };

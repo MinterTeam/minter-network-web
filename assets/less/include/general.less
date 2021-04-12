@@ -84,13 +84,12 @@ html {
     overflow-y: scroll; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; -webkit-overflow-scrolling: touch;
     font-family: @body-font-family;
     font-size: 16px;
-    line-height: 1.533;
+    line-height: 1.5;
     color: @c-black;
     font-weight: 400;
     background: @body-bg-color;
 }
 body {
-    font-size: 15px;
     margin: 0;
     //position: relative; //в данной реализации модала не актуально // чтобы не разъезжался абсолютный контент при открытии модального
 
@@ -114,7 +113,7 @@ a, .link {&:hover, &:focus {/*text-decoration: underline; */outline: none;}}
     text-decoration: underline;
     &:hover, &:focus {text-decoration: none;}
 }
-.link--default {.link--main(); .link--underline(); font-weight: 600;}
+.link--default {.link--main(); .link--hover(); font-weight: 600;}
 button {cursor: pointer; outline: none;}
 p, ul, ol {margin: 0;}
 p, ul, ol, h5 {
@@ -164,6 +163,7 @@ h1, h2, h3, h4, h5, h6 {.u-h();}
     }
 }
 .u-h5 {font: inherit; font-weight: 600;}
+.u-h--uppercase {.u-h-uppercase();}
 
 
 hr {border: none; border-top: 1px solid @c-border;}

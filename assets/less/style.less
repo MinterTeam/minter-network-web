@@ -29,7 +29,7 @@
 
 
 // common
-.main-wrap {display: flex; flex-direction: column; min-height: 100vh; position: relative;}
+.main-wrap {display: flex; flex-direction: column; min-height: 100vh; position: relative; overflow: clip;}
 .main-content {width: 100%; flex-grow: 2; position: relative;}
 
 
@@ -191,6 +191,7 @@
 //.header__wallet-button {margin-left: 24px;}
 //.header__language {margin-right: auto;}
 //.header__language-button {display: flex; align-items: center; text-transform: uppercase; font-size: 16px; font-weight: 700; letter-spacing: 1px;}
+.header__language-button {border: 2px solid #F5ECE9; border-radius: 50%;}
 .header__language-button-icon {font-size: 0; vertical-align: top;}
 .header__language-text {margin-right: 16px;}
 //@media (min-width: @breakpoint-small-up) {
@@ -201,13 +202,31 @@
 
 
 // footer
-.footer {background: #222; color: #fff; padding: 24px 0 30px; width: 100%; position: relative; z-index: 9;}
-.footer__container {display: flex; justify-content: space-around; flex-wrap: wrap; margin-top: -24px;}
+.footer {background: #222; color: #fff; padding: 28px 0; width: 100%; position: relative; z-index: 9;}
+.footer__stat-container {display: flex; justify-content: space-around; flex-wrap: wrap; margin-top: -24px; margin-bottom: 42px;}
 .footer__stats-item {text-align: center; margin-top: 24px;}
 .footer__stats-key {.u-h-uppercase(); opacity: 0.5;}
 .footer__stats-value {font-weight: 700; margin-top: 8px;}
+.footer__container {display: flex; flex-wrap: wrap;}
+.footer__logo-link {}
+.footer__logo {/*width: 76px;*/ display: block;}
+.footer__menu {text-align: center; display: flex; flex-wrap: wrap; margin-left: -24px;}
+.footer__menu-item {display: inline-block; margin-left: 24px;}
+.footer__link {.u-h--uppercase(); color: @c-black-light;}
+.footer__copyright {font-size: 12px;}
 @media (min-width: @breakpoint-small-up) {
-    .footer__container {justify-content: space-between;}
+    .footer__stat-container {justify-content: space-between;}
+}
+@media (min-width: @breakpoint-medium-up) {
+    .footer__container {
+        align-items: center; justify-content: space-between;
+    }
+    .footer__logo {margin-top: -12px; /*margin-right: 50%;*/}
+    .footer__menu {margin-left: -32px;}
+    .footer__menu-item {margin-left: 32px;}
+    .footer__copyright-container {display: flex; justify-content: space-between;}
+    .footer__copyright {font-size: 14px; min-width: 50%; margin-top: 0;}
+    .footer__copyright:last-child {text-align: right;}
 }
 
 
@@ -257,27 +276,72 @@ html.layout--docs {background: var(--underlay-bg-color);}
     .docs-aside__sticky {position: sticky; top: 0; max-height: 100vh; max-height: calc(100vh - var(--header-visible-height)); overflow-y: auto;}
 }
 
-
+.language-wrap {display: flex; justify-content: flex-end; align-items: center; margin-top: 16px;}
+.language-item {
+    font-weight: 800;
+    &+& {margin-left: 24px;}
+}
+.index-language {display: flex; justify-content: flex-end; margin-top: 16px; margin-bottom: -48px;}
 
 /* INDEX intro */
 //.main-content--index {display: flex; align-items: center;}
 .index-section {padding-top: 60px; padding-bottom: 80px;}
+.index-bar {background: @c-main; color: #fff; font-weight: 700; font-size: 17px; text-align: center; line-height: 20px; padding: 10px 0;}
 .index-intro {}
-.index-intro__title {margin-top: 24px;}
+.index-intro__logo {vertical-align: top;}
+.index-intro__title {margin-top: 16px; margin-bottom: 8px; font-size: 42px; line-height: 1.2;}
 .index-intro__button {margin-top: 32px;}
+.index-intro__assets-wrap {}
+.index-intro__assets {max-width: 70%; margin: 16px auto 0; display: block;}
 @media (min-width: @breakpoint-small-up) {
+    .index-intro__title {font-size: 56px; line-height: 66px;}
+}
+@media (min-width: @breakpoint-medium-up) {
     .index-section {padding-top: 100px;}
+    .index-intro {display: flex; justify-content: space-between;}
+    .index-intro__content {max-width: 400px; flex-shrink: 0;}
+    .index-intro__assets-wrap {margin-left: 16px; align-self: center;}
+    .index-intro__assets {max-width: 100%; margin: 8px 0 0;}
 }
 
+
+.index-numbers {font-weight: 700; line-height: 1.2;}
+.index-numbers__item {}
+.index-numbers__value {font-size: 40px;}
+.index-numbers__caption {font-size: 17px;}
+
+@shadow: 4px 4px 0 rgba(0,0,0, 0.1);
+.index-wallets__item {padding-left: 52px; position: relative;}
+.index-wallets__icon {position: absolute; left: 0; top: 0; border-radius: 8px; box-shadow: @shadow;}
+.index-wallets__title {font-weight: 600;}
+.index-wallets__description { line-height: 1.375;}
 
 .index-feature__icon {vertical-align: top;}
 .index-feature__title {margin-top: 16px;}
-.index-feature__description {margin-top: 8px; font-size: 17px;}
-
-
+.index-feature__description {margin-top: 8px;}
 @media (min-width: @breakpoint-medium-up) {
 
 }
+
+.bip-price__caption {font-size: 14px; line-height: 18px;}
+.bip-price__value {font-size: 48px; font-weight: 800; line-height: 1;}
+
+.bip-cap__item {padding-left: 52px; position: relative; display: flex; flex-direction: column;}
+.bip-cap__link {align-self: flex-start;}
+.bip-cap__icon {position: absolute; left: 0; top: 0; border-radius: 50%; box-shadow: @shadow;}
+.bip-cap__title {font-weight: 600; font-size: 14px; line-height: 18px; margin-bottom: 2px;}
+.bip-cap__value {font-weight: 800; font-size: 18px; line-height: 22px;}
+
+.bip-trade__panel {padding: 32px; margin: 0 -32px; margin-top: 40px; border-radius: 16px; background: #ffd5c7; box-shadow: 14px 12px 0 #f5ece9;}
+.bip-trade__item {padding-left: 68px; margin-bottom: 16px; position: relative; display: flex; flex-direction: column;}
+.bip-trade__link {align-self: flex-start;}
+.bip-trade__icon {position: absolute; left: 0; top: 0; border-radius: 8px; box-shadow: @shadow;}
+.bip-trade__title {font-weight: 700; font-size: 20px; line-height: 24px; margin-bottom: 6px;}
+.bip-trade__value {font-weight: 700; font-size: 16px; line-height: 20px;}
+.bip-trade__description {font-size: 13px; line-height: 17px;}
+
+.bip-wallets__title {font-size: 20px; line-height: 24px; font-weight: 700; margin-bottom: 8px;}
+.bip-wallets__description {font-size: 13px; line-height: 17px;}
 
 
 
