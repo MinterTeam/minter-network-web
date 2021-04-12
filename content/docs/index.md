@@ -102,7 +102,9 @@ internet speed, etc.
 We limit block size to `10 000 transactions`. Block size in terms of bytes
 is not limited.
 
-## Coins
+## Coins and tokens
+
+### Coins
 
 Minter Blockchain is multi-coin system.
 
@@ -164,7 +166,7 @@ calculates the return for a given conversion
 ```go
 return r * (1 - (1 - a / s) ^ (1 / c));
 ```
-## Tokens
+### Tokens
 
 Unlike coins, tokens have no reserve in BIP.
 
@@ -175,9 +177,9 @@ Unlike coins, tokens have no reserve in BIP.
 - **Initial amount** - Number of tokens to be issued at start. Should fall within the range of 1 to 10^15. They will become available on the sender's address.
 - **Max supply** - Maximum amount of tokens that can ever be issued. The upper limit is 10^15.
 
-Allow owner to edit token supply:\
-– **Mintable**: Ability to gradually increase token supply (cannot exceed Max supply).\
-– **Burnable**: Ability to burn tokens that are freely available in the owner's wallet.
+Allow owner to edit token supply:
+- **Mintable**: Ability to gradually increase token supply (cannot exceed Max supply).
+- **Burnable**: Ability to burn tokens that are freely available in the owner's wallet.
 
 After the token has been created, users can send it via regular wallets similar to ordinary coins.
 
@@ -185,7 +187,7 @@ After the token has been created, users can send it via regular wallets similar 
 
 Since tokens are not backed, their conversion cannot be based on the formulas used with coins. The token is exchangeable only if it is present in liquidity pools.
 
-## Issuance fees for coins and tokens
+### Issuance fees for coins and tokens
 
 To issue a coin, Creator should pay a fee that depends on the length of Symbol.
 
@@ -193,9 +195,9 @@ To issue a coin, Creator should pay a fee that depends on the length of Symbol.
 4 letters – 10 000 USD  
 5 letters – 1 000 USD  
 6 letters – 100 USD  
-7–10 letters – 10 USD
+7-10 letters – 10 USD
 
-## Coins and tokens archiving
+### Coins and tokens archiving
 
 1. Starting from version 1.2, coins will have unique numerical IDs.
 ```json
@@ -239,7 +241,7 @@ dataSend := transaction.NewSendData().SetCoin(id) // ...
 4.  The owner can transfer ticker ownership rights to another address. See [edit ticker owner transaction](#edit-ticker-owner-transaction).
 
 
-## Coins and tokens difference
+### Coins and tokens difference
 
 |Function                        |Coins                |Tokens               |
 |--------------------------------|---------------------|---------------------|
@@ -260,7 +262,7 @@ dataSend := transaction.NewSendData().SetCoin(id) // ...
 |**Pay fees**                    |Yes                  |Yes                  |
 |**Re-creation**                 |Yes                  |Yes                  |
 
-## Liquidity Pools
+## Liquidity pools
 
 ### Introduction
 
@@ -268,10 +270,11 @@ A liquidity pool is a trading pair of coins/tokens with locked-up funds of liqui
 
 The AMM mechanism implies that when the coin/token is bought, it’s added to the pool; when sold, it’s removed from it. Hence, with the quantity of both coins/tokens inside the pool being balanced, their price changes as well.
 
-> Price for 1 unit of Coin A = Amount of Coin B inside the pool / Amount of Coin A inside the pool\
+> Price for 1 unit of Coin A = Amount of Coin B inside the pool / Amount of Coin A inside the pool
+> 
 > Price for 1 unit of Coin B = Amount of Coin A inside the pool / Amount of Coin B inside the pool
 
-### Liquidity Providers
+### Liquidity providers
 
 For users to be able to buy and sell coins/tokens within the pool, these pools should be liquid. That is ensured by liquidity providers who get 0.2% on each swap transaction as a reward. These fees are automatically added into the pool, thereby increasing it.
 
