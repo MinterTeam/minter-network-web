@@ -87,7 +87,7 @@ export default {
 <template>
     <div>
         <div class="u-container u-container--full language-wrap">
-            <nuxt-link class="language-item link--default" to="/ru/2">Что такое Minter?</nuxt-link>
+            <nuxt-link class="language-item link--default" to="/ru">Что такое Minter?</nuxt-link>
             <language class="language-item" :locales='[{"code":"","name":"English"},{"code":"ru","name":"Russian"}]' lang="ru" :push="true"/>
         </div>
         <div class="u-container index-section">
@@ -214,7 +214,7 @@ export default {
 
 
             <h2 class="u-h2 u-mb-05">Узнать больше</h2>
-            <p class="u-mb-15">BIP — базовая монета блокчейна Minter. <br> <nuxt-link class="link--default" to="/ru/2">Узнать подробнее о Minter.</nuxt-link></p>
+            <p class="u-mb-15">BIP — базовая монета блокчейна Minter. <br> <nuxt-link class="link--default" to="/ru">Узнать подробнее о Minter.</nuxt-link></p>
         </div>
     </div>
 </template>
