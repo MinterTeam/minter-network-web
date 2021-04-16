@@ -4,7 +4,9 @@ description: Minter is a global rewards and loyalty points network powered by a 
 
 # Minter blockchain
 
-Minter is a global rewards and loyalty points network powered by a fast blockchain. Any brand, community, or blogger can create their own coins and launch their reward or loyalty system in minutes.
+Minter is a digital assets marketplace allowing anyone to buy, sell, send, and spend BTC, ETH, BIP, USDC, gold, oil, stocks, and much more within a single decentralized network. Minter is integrated with Ethereum and Binance Smart Chain to provide cross-chain transfers and swaps.
+
+Everything is lightning-fast and cost-efficient: a transaction takes only 5 seconds. Fees are tied to U.S. dollars and can be paid in any liquid coin: $0.03 for trades & $0.01 for transfers. Besides, Minter allows anyone to create tokens and liquidity pools in a couple of clicks.
 
 - Github: [https://github.com/MinterTeam/minter-go-node](https://github.com/MinterTeam/minter-go-node)
 - Github (all projects): [https://github.com/MinterTeam](https://github.com/MinterTeam)
