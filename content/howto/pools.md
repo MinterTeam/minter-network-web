@@ -9,7 +9,7 @@ description: >-
 
 ## What's a Liquidity Pool?
 
-A liquidity pool is a trading pair of coins/tokens with locked-up funds of liquidity providers that guarantee swappability. Buying or selling through a liquidity pool, a trader uses funds that have been locked into the pool. The process is carried out using Automated Market Maker (AMM). You can view all liquidity pools that have been created on the Minter network [here](https://explorer.minter.network/pools).
+A liquidity pool is a trading pair of coins/tokens with locked-up funds of liquidity providers that guarantee swappability. Buying or selling through a liquidity pool, a trader uses funds that have been locked into the pool. The process is carried out using Automated Market Maker (AMM). View all [liquidity pools on the Minter network](https://explorer.minter.network/pools).
 
 ## How to Create a Liquidity Pool
 
@@ -18,6 +18,7 @@ You can create a new pool via [Minter Console](https://console.minter.network/po
 ![LP creation](/img/docs/pool1.jpg)
 
 To do that:
+
 1. Choose two coins or tokens that will form a trading pair
 2. Specify the necessary amounts of both coins/tokens. These values will determine the pool's starting liquidity
 3. Check the initial prices for each direction, make sure the proportions are correct
