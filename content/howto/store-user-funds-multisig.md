@@ -1,5 +1,5 @@
 ---
-order: 2
+order: 3
 title: How to Securely Store User Funds in Multisig Wallets
 description: >-
   A guideline to safe storage of user funds on multi-signature addresses.
