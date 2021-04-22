@@ -4,7 +4,7 @@ order: 6
 
 # How to Create Your Own Token on Minter
 
-Unlike [coins](/en/docs/create-coin), tokens have no BIP reserve and are, in fact, "empty." This leads to a number of restrictions (e.g., tokens can't be delegated), but makes it possible to:
+Unlike [coins](/docs/create-coin), tokens have no BIP reserve and are, in fact, "empty." This leads to a number of restrictions (e.g., tokens can't be delegated), but makes it possible to:
 - Mint (owner)
 - Burn (anyone)
 
