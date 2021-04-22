@@ -10,7 +10,7 @@ Any participant of the Minter network can create a coin with the parameters they
 
 To create a coin, go to the [corresponding section in Console](https://console.minter.network/coiner):
 
-![Create coin](/assets/img/docs/create-coin-en.png)
+![Create coin](/img/docs/create-coin-en.png)
 
 - **Coin name** - full name of the coin, up to 64 characters long (you may use spaces, mix upper and lower cases, insert emojis). Doesn't necessarily have to be unique;
 - **Coin symbol** - short, unique name of the coin (also known as ticker symbol) that consists of numbers and uppercase English letters. Must be 3 to 10 characters long;
