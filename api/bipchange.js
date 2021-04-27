@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {BIPCHANGE_API_URL, BITHUMB_API_URL, HOTBIT_API_URL, COINSBLACK_API_URL} from "~/assets/variables";
+import {BIPCHANGE_API_URL, BITHUMB_API_URL, HOTBIT_API_URL, COINSBLACK_API_URL, DAILYEXCHANGE_API_URL} from "~/assets/variables";
 
 const instance =  axios.create({
     baseURL: BIPCHANGE_API_URL,
@@ -16,7 +16,7 @@ export function getAveragePrice() {
 /**
  * Get last price item
  * @param {string} exchangeName
- * @return {Promise<{price: string, time: string, history: ?Array}>}
+ * @return {Promise<{price: string, timestamp: string, history: ?Array}>}
  */
 export function getExchangePrice(exchangeName) {
     /* BITHUMB */
@@ -42,15 +42,15 @@ export function getExchangePrice(exchangeName) {
         });
     }
     /* COINSBLACK */
-/*
     if (exchangeName === 'coinsblack') {
-        return axios.get('rates/request-exportxml.xml', {
+        return axios.get('exportxml.xml', {
             baseURL: COINSBLACK_API_URL,
         }).then((response) => {
             let priceItem;
+            const dataFixed = response.data.replace(/-->>$/, '-->');
             try {
                 const parser = new DOMParser();
-                const data = parser.parseFromString(response.data, "text/xml");
+                const data = parser.parseFromString(dataFixed, "text/xml");
                 const rates = data.children[0];
                 priceItem = Array.from(rates.children).find((item) => {
                     const from = item.getElementsByTagName('from')[0];
@@ -72,7 +72,17 @@ export function getExchangePrice(exchangeName) {
             };
         });
     }
-*/
+    /* DAILY EXCHANGE */
+    if (exchangeName === 'dailyexchange') {
+        return axios.get('rates/daily/', {
+            baseURL: DAILYEXCHANGE_API_URL,
+        }).then((response) => {
+            return {
+                price: (Number(response.data.usdt2bip.rate) + Number(response.data.bip2usdt.rate)) / 2,
+                timestamp: Date.now(),
+            };
+        });
+    }
 
     /* BIPCHANGE */
     return instance.get(`ex/${exchangeName}/`)

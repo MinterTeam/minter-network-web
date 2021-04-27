@@ -7,6 +7,7 @@ export const BIPCHANGE_API_URL = process.env.APP_BIPCHANGE_API_URL;
 export const BITHUMB_API_URL = 'https://global-openapi.bithumb.pro/openapi/v1/';
 export const HOTBIT_API_URL = process.env.APP_HOTBIT_API_URL;
 export const COINSBLACK_API_URL = process.env.APP_COINSBLACK_API_URL;
+export const DAILYEXCHANGE_API_URL = process.env.APP_DAILYEXCHANGE_API_URL;
 export const CMC_API_URL = process.env.APP_CMC_API_URL;
 export const CMC_API_KEY = '';
 export const COINGECKO_API_URL = 'https://api.coingecko.com/api/v3/';
