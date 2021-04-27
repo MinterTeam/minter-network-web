@@ -18,6 +18,7 @@
         <fail unless="env.app_bipchange_api_url" message="app_bipchange_api_url environment variable is not set"/>
         <fail unless="env.app_hotbit_api_url" message="app_hotbit_api_url environment variable is not set"/>
         <fail unless="env.app_coinsblack_api_url" message="app_coinsblack_api_url environment variable is not set"/>
+        <fail unless="env.app_dailyexchange_api_url" message="app_dailyexchange_api_url environment variable is not set"/>
         <fail unless="env.app_cmc_api_url" message="app_cmc_api_url environment variable is not set"/>
     </target>
 </project>
