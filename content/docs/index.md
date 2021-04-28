@@ -710,7 +710,7 @@ type EditTickerOwnerData struct {
 }
 ```
 
-- **Symbol** - Symbol of a ticker;
+- **Symbol** - ticker Symbol of a coin/token;
 - **NewOwner** - address of the new owner.
 
 
@@ -1201,7 +1201,7 @@ Minter Check is like an ordinary bank check. Each user of the network can issue 
 
 ### Introduction
 
-Checks are prefixed with "Mc." Here is an example of a Minter Check:
+Checks are prefixed with `Mc`. Here is an example of a Minter Check:
 
 ```
 Mcf89b01830f423f8a4d4e5400000000000000843b9aca00b8419b3beac2c6ad88a8bd54d24912754bb820e58345731cb1b9bc0885ee74f9e50a58a80aa990a29c98b05541b266af99d3825bb1e5ed4e540c6e2f7c9b40af9ecc011ca0387fd67ec41be0f1cf92c7d0181368b4c67ab07df2d2384192520d74ff77ace6a04ba0e7ad7b34c64223fe59584bc464d53fcdc7091faaee5df0451254062cfb37
