@@ -22,8 +22,7 @@ service:
   port: 80
   
 deployment:
-  healthCheckPath: /cmc/cryptocurrency/listings/latest
-#  healthCheckPath: /coinsblack/exportxml.xml
+  healthCheckPath: /
 
 ingress:
   domain: ""

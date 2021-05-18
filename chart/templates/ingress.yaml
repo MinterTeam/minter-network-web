@@ -3,13 +3,15 @@ kind: Ingress
 metadata:
   name: {{ include "chart.fullname" . }}
   annotations:
-    {{- if .Values.ingress.issuer }}
-    cert-manager.io/issuer: {{ .Values.ingress.issuer }}
-    {{- end }}
+    nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
+    # production
     {{- if .Values.ingress.clusterissuer }}
     cert-manager.io/cluster-issuer: {{ .Values.ingress.clusterissuer }}
     {{- end }}
-    nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
+    # staging
+    {{- if .Values.ingress.issuer }}
+    cert-manager.io/issuer: {{ .Values.ingress.issuer }}
+    {{- end }}
 spec:
   rules:
     - host: "www.{{ .Values.ingress.domain }}"

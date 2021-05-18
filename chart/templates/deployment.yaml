@@ -34,10 +34,16 @@ spec:
             httpGet:
               path: {{ .Values.deployment.healthCheckPath }}
               port: http
+            initialDelaySeconds: 60 #default 0
+            periodSeconds: 20 #default 10
+            timeoutSeconds: 5 #default 1
           readinessProbe:
             httpGet:
               path: {{ .Values.deployment.healthCheckPath }}
               port: http
+            periodSeconds: 20 #default 10
+            timeoutSeconds: 5 #default 1
+            #failureThreshold: 3 #default 3
           resources:
       {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
