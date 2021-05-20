@@ -160,7 +160,7 @@ export default {
 
             <h2 class="u-h2 u-mb-05">Что насчёт HUB?</h2>
             <p>
-                <a class="link--default" href="https://etherscan.io/token/0x8e9a29e7ed21db7c5b2e1cd75e676da0236dfb45" target="_blank" rel="noopener">HUB</a> — это нативный токен в блокчейне Minter Hub, который, в свою очередь, является мостом, соединяющим Minter с Ethereum и Binance Smart Chain. HUB — это PoS-токен, и все оракулы получают 1% комиссии от переводов между сетями. HUB также служит резервом в Uniswap-подобных пулах в Minter, Ethereum и Binance Smart Chain. Например, <a class="link--default" href="https://info.uniswap.org/pair/0x3796fee2b555DA1356cdcD3e1861263B351A58A0" target="_blank" rel="noopener">HUB-USDT</a>.
+                <a class="link--default" href="https://coinmarketcap.com/currencies/minter-hub/" target="_blank" rel="noopener">HUB</a> — это нативный токен в блокчейне Minter Hub, который, в свою очередь, является мостом, соединяющим Minter с Ethereum и Binance Smart Chain. HUB — это PoS-токен, и все оракулы получают 1% комиссии от переводов между сетями. HUB также служит резервом в Uniswap-подобных пулах в Minter, Ethereum и Binance Smart Chain. Например, Uniswap <a class="link--default" href="https://info.uniswap.org/#/pools/0x27878ae7f961a126755042ee8e5c074ea971511f" target="_blank" rel="noopener">HUB-USDT</a>, Minter <a class="link--default" href="https://explorer.minter.network/pools/BIP/HUB" target="_blank">BIP / HUB</a>.
             </p>
 
 
@@ -185,7 +185,7 @@ export default {
                 <div class="u-cell u-cell--medium--1-2">
                     <img class="index-feature__icon" src="/img/feature-consensus.svg" width="48" height="48" alt="" role="presentation">
                     <h2 class="index-feature__title u-h3">Надежный алгоритм консенсуса</h2>
-                    <p class="index-feature__description">Нативный utility-токен сети называется <a class="link--default" href="https://www.coingecko.com/en/coins/bip" target="_blank" rel="nofollow">BIP</a> и добывается <a class="link--default" href="https://github.com/MinterTeam/minter-go-node" target="_blank" rel="nofollow">валидаторами</a> (DPoS на базе Tendermint)</p>
+                    <p class="index-feature__description">Нативный utility-токен сети называется <nuxt-link class="link--default" to="/ru/how-to-buy-and-sell-bip">BIP</nuxt-link> и добывается <a class="link--default" href="https://github.com/MinterTeam/minter-go-node" target="_blank" rel="nofollow">валидаторами</a> (DPoS на базе Tendermint)</p>
                 </div>
                 <div class="u-cell u-cell--medium--1-2">
                     <img class="index-feature__icon" src="/img/feature-speed.svg" width="48" height="48" alt="" role="presentation">
@@ -196,6 +196,11 @@ export default {
                     <img class="index-feature__icon" src="/img/feature-open.svg" width="48" height="48" alt="" role="presentation">
                     <h2 class="index-feature__title u-h3">Открытый исходный код</h2>
                     <p class="index-feature__description">Наш код основан на принципах краудсорсинга и публикуется на <a class="link--default" href="https://github.com/MinterTeam" target="_blank" rel="nofollow">GitHub</a> под открытыми лицензиями.</p>
+                </div>
+                <div class="u-cell u-cell--medium--1-2">
+                    <img class="index-feature__icon" src="/img/feature-open.svg" width="48" height="48" alt="" role="presentation">
+                    <h2 class="index-feature__title u-h3">Детальная документация</h2>
+                    <p class="index-feature__description">В <nuxt-link class="link--default" to="/docs">документации</nuxt-link> вы найдёте все, чтобы начать работать с блокчейном Minter, разрабатывать на нём сервисы и приложения или интегрировать Minter в процессы своей организации.</p>
                 </div>
             </div>
             <hr class="hr--divider">
