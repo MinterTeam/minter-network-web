@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {BIPCHANGE_API_URL, BITHUMB_API_URL, HOTBIT_API_URL, COINSBLACK_API_URL, DAILYEXCHANGE_API_URL} from "~/assets/variables";
+import {BIPCHANGE_API_URL, BITHUMB_API_URL, HOTBIT_API_URL, COINSBLACK_API_URL, DAILYEXCHANGE_API_URL, BIPBANKER_API_URL} from "~/assets/variables";
 
 const instance =  axios.create({
     baseURL: BIPCHANGE_API_URL,
@@ -79,6 +79,18 @@ export function getExchangePrice(exchangeName) {
         }).then((response) => {
             return {
                 price: (Number(response.data.usdt2bip.rate) + Number(response.data.bip2usdt.rate)) / 2,
+                timestamp: Date.now(),
+            };
+        });
+    }
+
+    /* DAILY EXCHANGE */
+    if (exchangeName === 'bipbanker') {
+        return axios.get('stats/rates/BIP?currency=RUB&days=1&type=buy', {
+            baseURL: BIPBANKER_API_URL,
+        }).then((response) => {
+            return {
+                price: response.data.usdRate,
                 timestamp: Date.now(),
             };
         });

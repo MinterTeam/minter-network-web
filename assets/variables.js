@@ -10,6 +10,7 @@ export const COINSBLACK_API_URL = process.env.APP_COINSBLACK_API_URL;
 export const DAILYEXCHANGE_API_URL = process.env.APP_DAILYEXCHANGE_API_URL;
 export const CMC_API_URL = process.env.APP_CMC_API_URL;
 export const CMC_API_KEY = '';
+export const BIPBANKER_API_URL = process.env.APP_BIPBANKER_API_URL;
 export const COINGECKO_API_URL = 'https://api.coingecko.com/api/v3/';
 export const LANGUAGE_COOKIE_KEY = 'minter-language';
 export const I18N_ROUTE_NAME_SEPARATOR = '___';
