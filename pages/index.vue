@@ -160,7 +160,7 @@ export default {
 
             <h2 class="u-h2 u-mb-05">What about HUB?</h2>
             <p>
-                <a class="link--default" href="https://coinmarketcap.com/currencies/minter-hub/" target="_blank" rel="noopener">HUB</a> is the native token of the Minter Hub blockchain that's bridging Minter with Ethereum and Binance Smart Chain. HUB is a PoS token, so oracles receive 1% on the fees charged for cross-chain transfers. HUB also serves as reserve for DEX pools both on Minter and Ethereum/Binance Smart Chain. For example, Uniswap <a class="link--default" href="https://info.uniswap.org/#/pools/0x27878ae7f961a126755042ee8e5c074ea971511f" target="_blank" rel="noopener">HUB-USDT</a>, Minter <a class="link--default" href="https://explorer.minter.network/pools/BIP/HUB" target="_blank">BIP / HUB</a>.
+                <a class="link--default" href="https://coinmarketcap.com/currencies/minter-hub/" target="_blank" rel="noopener">HUB</a> is the native token of the Minter Hub blockchain that's bridging Minter with Ethereum and Binance Smart Chain. HUB is a PoS token, so oracles receive 1% on the fees charged for cross-chain transfers. HUB also serves as reserve for DEX pools both on Minter and Ethereum/Binance Smart Chain. For example, Uniswap v3 <a class="link--default" href="https://info.uniswap.org/#/pools/0x27878ae7f961a126755042ee8e5c074ea971511f" target="_blank" rel="noopener">HUB-USDT</a>, Uniswap v2 <a class="link--default" href="https://v2.info.uniswap.org/pair/0x3796fee2b555DA1356cdcD3e1861263B351A58A0" target="_blank" rel="noopener">HUB-USDT</a>, Minter <a class="link--default" href="https://explorer.minter.network/pools/BIP/HUB" target="_blank">BIP / HUB</a>.
             </p>
 
 
@@ -178,8 +178,8 @@ export default {
                         <a class="link--default" href="https://play.google.com/store/apps/details?id=network.minter.bipwallet.mainnet" target="_blank" rel="nofollow">Android</a>,
                         <a class="link--default" href="https://wallet.bip.to/" target="_blank">Web</a><!--, <a class="link&#45;&#45;default" href="">Telegram bot</a>-->) and
                         <a class="link--default" href="https://console.minter.network/" target="_blank">console</a>, or
-                        <a class="link--default" href="https://docs.minter.network/#section/Minter-SDKs" target="_blank">SDK</a> and
-                        <a class="link--default" href="https://docs.minter.network/#tag/Node-API" target="_blank">API</a> for advanced integrations.
+                        <a class="link--default" href="https://www.minter.network/docs#minter-sdks" target="_blank">SDK</a> and
+                        <a class="link--default" href="https://www.minter.network/docs#node-api" target="_blank">API</a> for advanced integrations.
                     </p>
                 </div>
                 <div class="u-cell u-cell--medium--1-2">
@@ -200,7 +200,7 @@ export default {
                 <div class="u-cell u-cell--medium--1-2">
                     <img class="index-feature__icon" src="/img/feature-open.svg" width="48" height="48" alt="" role="presentation">
                     <h2 class="index-feature__title u-h3">Detailed documentation</h2>
-                    <p class="index-feature__description">In our <nuxt-link class="link--default" to="/docs">docs</nuxt-link> we’ve covered everything you need to know in order to start maintaining the Minter network, build services and applications running on top of it, or integrate it into your organization’s operations.</p>
+                    <p class="index-feature__description">In our <nuxt-link class="link--default" to="/docs">docs</nuxt-link>, we’ve covered everything you need to know in order to start maintaining the Minter network, build services and applications running on top of it, or integrate it into your organization’s operations.</p>
                 </div>
             </div>
             <hr class="hr--divider">

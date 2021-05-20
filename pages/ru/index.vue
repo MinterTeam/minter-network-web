@@ -160,7 +160,7 @@ export default {
 
             <h2 class="u-h2 u-mb-05">Что насчёт HUB?</h2>
             <p>
-                <a class="link--default" href="https://coinmarketcap.com/currencies/minter-hub/" target="_blank" rel="noopener">HUB</a> — это нативный токен в блокчейне Minter Hub, который, в свою очередь, является мостом, соединяющим Minter с Ethereum и Binance Smart Chain. HUB — это PoS-токен, и все оракулы получают 1% комиссии от переводов между сетями. HUB также служит резервом в Uniswap-подобных пулах в Minter, Ethereum и Binance Smart Chain. Например, Uniswap <a class="link--default" href="https://info.uniswap.org/#/pools/0x27878ae7f961a126755042ee8e5c074ea971511f" target="_blank" rel="noopener">HUB-USDT</a>, Minter <a class="link--default" href="https://explorer.minter.network/pools/BIP/HUB" target="_blank">BIP / HUB</a>.
+                <a class="link--default" href="https://coinmarketcap.com/currencies/minter-hub/" target="_blank" rel="noopener">HUB</a> — это нативный токен в блокчейне Minter Hub, который, в свою очередь, является мостом, соединяющим Minter с Ethereum и Binance Smart Chain. HUB — это PoS-токен, и все оракулы получают 1% комиссии от переводов между сетями. HUB также служит резервом в Uniswap-подобных пулах в Minter, Ethereum и Binance Smart Chain. Например, Uniswap <a class="link--default" href="https://info.uniswap.org/#/pools/0x27878ae7f961a126755042ee8e5c074ea971511f" target="_blank" rel="noopener">HUB-USDT</a>, Uniswap v2 <a class="link--default" href="https://v2.info.uniswap.org/pair/0x3796fee2b555DA1356cdcD3e1861263B351A58A0" target="_blank" rel="noopener">HUB-USDT</a>, Minter <a class="link--default" href="https://explorer.minter.network/pools/BIP/HUB" target="_blank">BIP / HUB</a>.
             </p>
 
 
@@ -178,8 +178,8 @@ export default {
                         <a class="link--default" href="https://play.google.com/store/apps/details?id=network.minter.bipwallet.mainnet" target="_blank" rel="nofollow">Android</a>,
                         <a class="link--default" href="https://wallet.bip.to/" target="_blank">Web</a><!--, <a class="link&#45;&#45;default" href="">Telegram bot</a>-->) и
                         <a class="link--default" href="https://console.minter.network/" target="_blank">консоль</a> или же
-                        <a class="link--default" href="https://docs.minter.network/#section/Minter-SDKs" target="_blank">SDK</a> и
-                        <a class="link--default" href="https://docs.minter.network/#tag/Node-API" target="_blank">API</a> для продвинутых интеграций.
+                        <a class="link--default" href="https://www.minter.network/docs#minter-sdks" target="_blank">SDK</a> и
+                        <a class="link--default" href="https://www.minter.network/docs#node-api" target="_blank">API</a> для продвинутых интеграций.
                     </p>
                 </div>
                 <div class="u-cell u-cell--medium--1-2">
