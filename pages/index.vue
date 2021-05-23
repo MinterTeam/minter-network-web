@@ -198,7 +198,7 @@ export default {
                     <p class="index-feature__description">Everything is crowdsourced and published in&nbsp;<a class="link--default" href="https://github.com/MinterTeam" target="_blank" rel="nofollow">GitHub</a> with open licenses.</p>
                 </div>
                 <div class="u-cell u-cell--medium--1-2">
-                    <img class="index-feature__icon" src="/img/feature-open.svg" width="48" height="48" alt="" role="presentation">
+                    <img class="index-feature__icon" src="/img/feature-docs.svg" width="48" height="48" alt="" role="presentation">
                     <h2 class="index-feature__title u-h3">Detailed documentation</h2>
                     <p class="index-feature__description">In our <nuxt-link class="link--default" to="/docs">docs</nuxt-link>, we’ve covered everything you need to know in order to start maintaining the Minter network, build services and applications running on top of it, or integrate it into your organization’s operations.</p>
                 </div>

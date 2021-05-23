@@ -198,7 +198,7 @@ export default {
                     <p class="index-feature__description">Наш код основан на принципах краудсорсинга и публикуется на <a class="link--default" href="https://github.com/MinterTeam" target="_blank" rel="nofollow">GitHub</a> под открытыми лицензиями.</p>
                 </div>
                 <div class="u-cell u-cell--medium--1-2">
-                    <img class="index-feature__icon" src="/img/feature-open.svg" width="48" height="48" alt="" role="presentation">
+                    <img class="index-feature__icon" src="/img/feature-docs.svg" width="48" height="48" alt="" role="presentation">
                     <h2 class="index-feature__title u-h3">Детальная документация</h2>
                     <p class="index-feature__description">В <nuxt-link class="link--default" to="/docs">документации</nuxt-link> вы найдёте все, чтобы начать работать с блокчейном Minter, разрабатывать на нём сервисы и приложения или интегрировать Minter в процессы своей организации.</p>
                 </div>
