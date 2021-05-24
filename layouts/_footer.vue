@@ -1,7 +1,7 @@
 <script>
     import {getStatus} from "~/api/status.js";
     import {prettyRound} from "~/assets/utils";
-    import {HISTORY_BLOCK_COUNT, HISTORY_TRANSACTION_COUNT} from '~/assets/variables.js';
+    import {HISTORY_BLOCK_COUNT} from '~/assets/variables.js';
 
     export default {
         prettyRound,
@@ -18,7 +18,7 @@
                 return this.stats ? this.stats.numberOfBlocks + HISTORY_BLOCK_COUNT : '';
             },
             txTotalCount() {
-                return this.stats ? this.stats.txTotalCount + HISTORY_TRANSACTION_COUNT : '';
+                return this.stats ? this.stats.txTotalCount : '';
             },
         },
         beforeMount() {
