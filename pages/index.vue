@@ -114,7 +114,7 @@ export default {
                 <div class="u-cell u-cell--medium--1-3">
                     <div class="index-wallets__item">
                         <a class="index-wallets__link link--default" href="https://console.minter.network" target="_blank" rel="noopener">
-                            <img class="index-wallets__icon" src="/img/index-wallet-console.png" srcset="/img/index-wallet-console@2x.png 2x" alt="" role="presentation">
+                            <img class="index-wallets__icon" src="/img/index-wallet-console.svg" alt="" role="presentation">
                             <div class="index-wallets__title">Minter Console</div>
                         </a>
                         <p class="index-wallets__description">For the most advanced users and businesses</p>

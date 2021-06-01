@@ -136,7 +136,7 @@ export default {
                             <div class="u-cell u-cell--small--1-2">
                                 <div class="bip-trade__item">
                                     <a class="bip-trade__link link--default" href="https://console.minter.network/ru/hub" target="_blank">
-                                        <img class="bip-trade__icon" src="/img/index-wallet-console.png" srcset="/img/index-wallet-console@2x.png 2x" alt="" role="presentation" width="52" height="52">
+                                        <img class="bip-trade__icon" src="/img/index-wallet-console.svg" alt="" role="presentation" width="52" height="52">
                                         <h4 class="bip-trade__title">Minter Console</h4>
                                     </a>
                                     <div class="bip-trade__value">${{ coinPrice(bipPrice) }}</div>
@@ -212,7 +212,7 @@ export default {
                 <div class="u-cell u-cell--medium--1-3">
                     <div class="index-wallets__item">
                         <a class="index-wallets__link link--default" href="https://console.minter.network" target="_blank" rel="noopener">
-                            <img class="index-wallets__icon" src="/img/index-wallet-console.png" srcset="/img/index-wallet-console@2x.png 2x" alt="" role="presentation">
+                            <img class="index-wallets__icon" src="/img/index-wallet-console.svg" alt="" role="presentation">
                             <div class="bip-wallets__title">Minter Console</div>
                         </a>
                         <p class="bip-wallets__description">Полноценный рабочий инструмент для самых продвинутых пользователей. </p>
