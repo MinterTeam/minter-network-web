@@ -135,6 +135,16 @@ export default {
                         <div class="u-grid u-grid--small u-grid--vertical-margin">
                             <div class="u-cell u-cell--small--1-2">
                                 <div class="bip-trade__item">
+                                    <a class="bip-trade__link link--default" href="https://console.minter.network/ru/hub" target="_blank">
+                                        <img class="bip-trade__icon" src="/img/index-wallet-console.png" srcset="/img/index-wallet-console@2x.png 2x" alt="" role="presentation" width="52" height="52">
+                                        <h4 class="bip-trade__title">Minter Console</h4>
+                                    </a>
+                                    <div class="bip-trade__value">${{ coinPrice(bipPrice) }}</div>
+                                </div>
+                                <p class="bip-trade__description">Переводите свои Ethereum-активы в сеть Minter и обменивайте их на BIP. <a class="link--default" href="https://teletype.in/@biplenta/usdt-bip" target="_blank" rel="noopener">Узнать как</a></p>
+                            </div>
+                            <div class="u-cell u-cell--small--1-2">
+                                <div class="bip-trade__item">
                                     <a class="bip-trade__link link--default" href="https://www.bithumb.pro/en-us/exchange/professional?q=BIP-USDT" target="_blank" rel="noopener">
                                         <img class="bip-trade__icon" src="/img/bip-trade-bithumb.png" srcset="/img/bip-trade-bithumb@2x.png 2x" alt="" role="presentation">
                                         <h4 class="bip-trade__title">Bithumb Global</h4>
