@@ -17,7 +17,6 @@ You can also [transfer Ethereum assets](https://teletype.in/@biplenta/usdt-bip-e
 |Pool for farming                |Timeframe               |Rewards (daily)                        |Accruals in                |Track distribution|
 |--------------------------------|---------------------|-----------------------------------------------|----------------------------|-------------------|
 |[HUBABUBA-HUB](https://chainik.io/pool/HUBABUBA/HUB) |May 10, 2021 – May 10, 2022 |1% |HUBABUBA |[Here](https://explorer.minter.network/address/Mxfe3e56a9e937b6414b19d92444b4cf6ebf939b31)|
-|[BIP-MUSD](https://chainik.io/pool/BIP/MUSD) |Jun. 3, 2021 – Aug. 31, 2021 |0.3% |BIP |[Here](https://explorer.minter.network/address/Mx03917665df248b94abbf9e29eed61bec87304ae8)|
 |[HUB-MUSD](https://chainik.io/pool/HUB/MUSD) |Jun. 7, 2021 – Aug. 31, 2021 |0.2% |BIP |[Here](https://explorer.minter.network/address/Mxdbdb613e371651846f1cf8b69dabaf3a78fbd390)|
 |[HUB-USDTE](https://chainik.io/pool/HUB/USDTE) |Jun. 1, 2021 – Aug. 31, 2021 |0.2% |HUB |[Here](https://explorer.minter.network/address/Mx91640949942a0e3d3ba80025b1a4773b333b6338)|
 |[HUB-BIP](https://chainik.io/pool/HUB/BIP) |starting May 1, 2021 |0.1% |BIP |[Here](https://explorer.minter.network/address/Mxc2e37cd5f45a64a0762de5bf552afa6ec8cec7cb)|
