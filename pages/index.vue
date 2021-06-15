@@ -53,13 +53,49 @@ export default {
                 <div class="index-intro__content">
                     <img class="index-intro__logo" src="/img/minter-logo.svg" alt="Minter" width="133" height="42">
                     <h1 class="index-intro__title">Digital Assets Marketplace</h1>
-                    <p>Your single gateway to major digital currencies and assets: buy, sell, send, and spend BTC, ETH, BIP, USDC, gold, oil, stocks, and thousands more.</p>
-                    <a class="u-mt-15 button button--main" href="/how-to-buy-and-sell-bip">Buy BIP</a>
+                    <p class="u-mb-15">Your single gateway to major digital currencies and assets: buy, sell, send, and spend BTC, ETH, BIP, USDC, gold, oil, stocks, and thousands more.</p>
+                    <div class="button-group">
+                        <nuxt-link class="button button--main" to="/how-to-buy-and-sell-bip">Buy BIP</nuxt-link>
+                        <a class="button button--black" href="https://explorer.minter.network/farming">Farm BIP</a>
+                    </div>
                 </div>
                 <div class="index-intro__assets-wrap">
                     <img class="index-intro__assets" src="/img/index-assets.png" srcset="/img/index-assets@2x.png 2x" alt="" role="presentation">
                 </div>
             </section>
+
+            <h2 class="u-h2 u-mt-35 u-mb-05">DeFi with Minter</h2>
+            <p class="u-mb-15">Choose among three ways to increase your digital assets holdings:</p>
+
+            <div class="u-grid u-grid--vertical-margin">
+                <div class="u-cell u-cell--medium--1-3">
+                    <img class="index-feature__icon" src="/img/defi-farm.svg" width="48" height="48" alt="" role="presentation">
+                    <h2 class="index-feature__title u-h3">
+                        <nuxt-link class="link--default u-fw-700" to="/howto/minter-farming">Yield farming</nuxt-link>
+                    </h2>
+                    <p class="index-feature__description">
+                        Participate in special programs that reward you for locking your coins and tokens into the pools (some offer up to 365% in APR).
+                    </p>
+                </div>
+                <div class="u-cell u-cell--medium--1-3">
+                    <img class="index-feature__icon" src="/img/defi-liquidity.svg" width="48" height="48" alt="" role="presentation">
+                    <h2 class="index-feature__title u-h3">
+                        <a class="link--default u-fw-700" href="https://teletype.in/@biplenta/minter-pools-en" target="_blank">Liquidity mining</a>
+                    </h2>
+                    <p class="index-feature__description">
+                        Mine BTC, ETH, BNB, DOGE, USDT, BIP, and many more by providing liquidity. 0.2% of each trade goes directly to LPs.
+                    </p>
+                </div>
+                <div class="u-cell u-cell--medium--1-3">
+                    <img class="index-feature__icon" src="/img/defi-stake.svg" width="48" height="48" alt="" role="presentation">
+                    <h2 class="index-feature__title u-h3">
+                        <nuxt-link class="link--default u-fw-700" to="/docs#delegator-faq">Staking</nuxt-link>
+                    </h2>
+                    <p class="index-feature__description">
+                        Delegate your BIP to the validators of the network to get rewards in BIP (about 40% APR).
+                    </p>
+                </div>
+            </div>
 
             <hr class="hr--divider">
 

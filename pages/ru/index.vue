@@ -53,13 +53,51 @@ export default {
                 <div class="index-intro__content">
                     <img class="index-intro__logo" src="/img/minter-logo.svg" alt="Minter" width="133" height="42">
                     <h1 class="index-intro__title">Маркетплейс цифровых активов</h1>
-                    <p>Ваша единая точка доступа к крупнейшим цифровым валютам и активам — покупайте, продавайте, отправляйте и тратьте BTC, ETH, BIP, USDC, золото, нефть, акции и тысячи других.</p>
-                    <a class="u-mt-15 button button--main" href="/ru/how-to-buy-and-sell-bip">Купить BIP</a>
+                    <p></p>
+
+                    <p class="u-mb-15">Ваша единая точка доступа к крупнейшим цифровым валютам и активам — покупайте, продавайте, отправляйте и тратьте BTC, ETH, BIP, USDC, золото, нефть, акции и тысячи других.</p>
+                    <div class="button-group">
+                        <nuxt-link class="button button--main" to="/ru/how-to-buy-and-sell-bip">Купить BIP</nuxt-link>
+                        <a class="button button--black" href="https://explorer.minter.network/farming">Фармить BIP</a>
+                    </div>
                 </div>
                 <div class="index-intro__assets-wrap">
                     <img class="index-intro__assets" src="/img/index-assets.png" srcset="/img/index-assets@2x.png 2x" alt="" role="presentation">
                 </div>
             </section>
+
+            <h2 class="u-h2 u-mt-35 u-mb-05">DeFi с Minter</h2>
+            <p class="u-mb-15">Выбери один из трёх способов преумножения своих цифровых активов:</p>
+
+            <div class="u-grid u-grid--vertical-margin">
+                <div class="u-cell u-cell--medium--1-3">
+                    <img class="index-feature__icon" src="/img/defi-farm.svg" width="48" height="48" alt="" role="presentation">
+                    <h2 class="index-feature__title u-h3">
+                        <nuxt-link class="link--default u-fw-700" to="/ru/howto/minter-farming">Доходное фермерство</nuxt-link>
+                    </h2>
+                    <p class="index-feature__description">
+                        Участвуй в специальных программах и получай награды за добавление монет и токенов в пулы ликвидности (до 365% годовых).
+                    </p>
+                </div>
+                <div class="u-cell u-cell--medium--1-3">
+                    <img class="index-feature__icon" src="/img/defi-liquidity.svg" width="48" height="48" alt="" role="presentation">
+                    <h2 class="index-feature__title u-h3">
+                        <a class="link--default u-fw-700" href="https://teletype.in/@biplenta/minter2-pools" target="_blank">Майнинг ликвидности</a>
+                    </h2>
+                    <p class="index-feature__description">
+                        Добывай BTC, ETH, BNB, DOGE, USDT, BIP и другие монеты предоставляя ликвидность в пулы. Награда составляет 0.2% от каждого обмена.
+                    </p>
+                </div>
+                <div class="u-cell u-cell--medium--1-3">
+                    <img class="index-feature__icon" src="/img/defi-stake.svg" width="48" height="48" alt="" role="presentation">
+                    <h2 class="index-feature__title u-h3">
+                        <nuxt-link class="link--default u-fw-700" to="/ru/docs/delegation">Стейкинг</nuxt-link>
+                    </h2>
+                    <p class="index-feature__description">
+                        Делегируй BIP валидаторам сети, чтобы получать BIP в качестве награды (около 40% годовых).
+                    </p>
+                </div>
+            </div>
 
             <hr class="hr--divider">
 
