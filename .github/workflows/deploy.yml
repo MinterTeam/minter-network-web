@@ -2,11 +2,13 @@ name: CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master, dev ]
 env:
   PRODUCTION_BRANCH: "master"
   INGRESS_DOMAIN_master: "minter.network"
   KUBE_NAMESPACE_master: "minter-network"
+  INGRESS_DOMAIN_dev: "minter-network.kubernetes.icu"
+  KUBE_NAMESPACE_dev: "default"
 jobs:
   ci:
     runs-on: ubuntu-latest
