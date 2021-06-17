@@ -127,7 +127,7 @@ export default {
 
             <section class="bip-trade__panel">
                 <h2 class="u-h2 u-mb-10">Buy BIP for ETH. Fully decentralized</h2>
-                <div class="u-grid">
+                <div class="u-grid u-grid--small u-grid--vertical-margin">
                     <div class="u-cell u-cell--medium--2-3">
                         <p>Use our cross-chain bridge to buy BIP in a fully decentralized way. Just log in to Console, click “Buy BIP,” and follow instructions.</p>
                         <a class="button button--main u-mt-10" href="https://console.minter.network" target="_blank">Buy BIP</a>
