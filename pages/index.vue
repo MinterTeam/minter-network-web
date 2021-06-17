@@ -40,7 +40,7 @@ export default {
     methods: {
         prettyRound,
     },
-}
+};
 </script>
 
 <template>
@@ -100,9 +100,7 @@ export default {
             <hr class="hr--divider">
 
             <h2 class="u-h2 u-mb-05">What’s Minter</h2>
-            <p>Minter is a DPoS blockchain, meaning that all transactions are secure, anonymous, and&nbsp;final. Only&nbsp;you control your assets, and no one can restrict, block, or tamper with&nbsp;them.</p>
-
-            <hr class="hr--divider" v-if="stats">
+            <p class="u-mb-15">Minter is a DPoS blockchain, meaning that all transactions are secure, anonymous, and&nbsp;final. Only&nbsp;you control your assets, and no one can restrict, block, or tamper with&nbsp;them.</p>
 
             <div class="index-numbers u-grid u-grid--xlarge u-grid--vertical-margin" v-if="stats">
                 <div class="index-numbers__item u-cell u-cell--auto">

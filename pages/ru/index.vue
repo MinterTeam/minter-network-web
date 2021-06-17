@@ -35,12 +35,12 @@ export default {
         getStatus()
             .then((data) => {
                 this.stats = data;
-            })
+            });
     },
     methods: {
         prettyRound,
     },
-}
+};
 </script>
 
 <template>
@@ -67,25 +67,25 @@ export default {
             </section>
 
             <h2 class="u-h2 u-mt-35 u-mb-05">DeFi с Minter</h2>
-            <p class="u-mb-15">Выбери один из трёх способов преумножения своих цифровых активов:</p>
+            <p class="u-mb-15">Выбирайте один из трех способов преумножения своих цифровых активов:</p>
 
             <div class="u-grid u-grid--vertical-margin">
                 <div class="u-cell u-cell--medium--1-3">
                     <img class="index-feature__icon" src="/img/defi-farm.svg" width="48" height="48" alt="" role="presentation">
                     <h2 class="index-feature__title u-h3">
-                        <nuxt-link class="link--default u-fw-700" to="/ru/howto/minter-farming">Доходное фермерство</nuxt-link>
+                        <nuxt-link class="link--default u-fw-700" to="/ru/howto/minter-farming">Фарминг-программы</nuxt-link>
                     </h2>
                     <p class="index-feature__description">
-                        Участвуй в специальных программах и получай награды за добавление монет и токенов в пулы ликвидности (до 365% годовых).
+                        Участвуйте в специальных программах и получайте награды за добавление монет и токенов в пулы ликвидности (до 365% годовых).
                     </p>
                 </div>
                 <div class="u-cell u-cell--medium--1-3">
                     <img class="index-feature__icon" src="/img/defi-liquidity.svg" width="48" height="48" alt="" role="presentation">
                     <h2 class="index-feature__title u-h3">
-                        <a class="link--default u-fw-700" href="https://teletype.in/@biplenta/minter2-pools" target="_blank">Майнинг ликвидности</a>
+                        <a class="link--default u-fw-700" href="https://teletype.in/@biplenta/minter2-pools" target="_blank">Майнинг ликвидностью</a>
                     </h2>
                     <p class="index-feature__description">
-                        Добывай BTC, ETH, BNB, DOGE, USDT, BIP и другие монеты предоставляя ликвидность в пулы. Награда составляет 0.2% от каждого обмена.
+                        Добывайте BTC, ETH, BNB, DOGE, USDT, BIP и другие монеты, предоставляя ликвидность в пулы. Награда составляет 0.2% от каждого обмена.
                     </p>
                 </div>
                 <div class="u-cell u-cell--medium--1-3">
@@ -94,7 +94,7 @@ export default {
                         <nuxt-link class="link--default u-fw-700" to="/ru/docs/delegation">Стейкинг</nuxt-link>
                     </h2>
                     <p class="index-feature__description">
-                        Делегируй BIP валидаторам сети, чтобы получать BIP в качестве награды (около 40% годовых).
+                        Делегируйте BIP валидаторам сети, чтобы получать BIP в качестве награды (около 40% годовых).
                     </p>
                 </div>
             </div>
@@ -102,9 +102,7 @@ export default {
             <hr class="hr--divider">
 
             <h2 class="u-h2 u-mb-05">Кратко о Minter</h2>
-            <p>Minter — это DPoS-блокчейн, а значит, все транзакции безопасны, анонимны и финальны. Лишь вы решаете, как распоряжаться своими активами, и никто не может ограничивать, блокировать или изменять их.</p>
-
-            <hr class="hr--divider" v-if="stats">
+            <p class="u-mb-15">Minter — это DPoS-блокчейн, а значит, все транзакции безопасны, анонимны и финальны. Лишь вы решаете, как распоряжаться своими активами, и никто не может ограничивать, блокировать или изменять их.</p>
 
             <div class="index-numbers u-grid u-grid--xlarge u-grid--vertical-margin" v-if="stats">
                 <div class="index-numbers__item u-cell u-cell--auto">

@@ -126,23 +126,32 @@ export default {
             </div>
 
             <section class="bip-trade__panel">
+                <h2 class="u-h2 u-mb-10">Buy BIP for ETH. Fully decentralized</h2>
+                <div class="u-grid">
+                    <div class="u-cell u-cell--medium--2-3">
+                        <p>Use our cross-chain bridge to buy BIP in a fully decentralized way. Just log in to Console, click “Buy BIP,” and follow instructions.</p>
+                        <a class="button button--main u-mt-10" href="https://console.minter.network" target="_blank">Buy BIP</a>
+                    </div>
+                    <div class="u-cell u-cell--medium--1-3">
+                        <div class="bip-trade__item bip-trade__item--large">
+                            <a class="bip-trade__link link--default" href="https://console.minter.network" target="_blank">
+                                <img class="bip-trade__icon" src="/img/index-wallet-console.svg" alt="" role="presentation" width="68" height="68">
+                                <h4 class="bip-trade__title">Minter Console</h4>
+                            </a>
+                            <div class="bip-trade__value bip-trade__value--large">${{ coinPrice(bipPrice) }}</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bip-trade__panel">
                 <div class="u-grid">
                     <div class="u-cell u-cell--medium--1-3">
-                        <h2 class="u-h2 u-mb-05">Where to trade</h2>
+                        <h2 class="u-h2 u-mb-05">Elsewhere</h2>
                         <p>To buy or sell BIP, use one of the verified methods below.</p>
                     </div>
                     <div class="u-cell u-cell--medium--2-3">
                         <div class="u-grid u-grid--small u-grid--vertical-margin">
-                            <div class="u-cell u-cell--small--1-2">
-                                <div class="bip-trade__item">
-                                    <a class="bip-trade__link link--default" href="https://console.minter.network/hub" target="_blank">
-                                        <img class="bip-trade__icon" src="/img/index-wallet-console.svg" alt="" role="presentation" width="52" height="52">
-                                        <h4 class="bip-trade__title">Minter Console</h4>
-                                    </a>
-                                    <div class="bip-trade__value">${{ coinPrice(bipPrice) }}</div>
-                                </div>
-                                <p class="bip-trade__description">Transfer your Ethereum assets to the Minter network and swap them for BIP. <a class="link--default" href="https://teletype.in/@biplenta/usdt-bip-en" target="_blank" rel="noopener">Learn how</a></p>
-                            </div>
                             <div class="u-cell u-cell--small--1-2" v-if="false">
                                 <div class="bip-trade__item">
                                     <a class="bip-trade__link link--default" href="https://www.bithumb.pro/en-us/exchange/professional?q=BIP-USDT" target="_blank" rel="noopener">
