@@ -1,5 +1,5 @@
 ---
-order: 
+order: 5
 title: Что такое BIPx
 ---
 
