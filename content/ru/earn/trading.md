@@ -24,7 +24,7 @@ Minter объединил в себе все преимущества децен
 
 ## Необходимые инструменты для трейдинга в Minter
 
-- Кошелек: [Minter Console](https://console.minter.network/ru/) (для профессионалов) или [BIP Wallet](https://www.bip.to/) (упрощенный)
+- Кошелек: [Minter Console](https://console.minter.network/ru/)
 - Эксплорер: [Minter Explorer](https://explorer.minter.network/)
 - Графики монет и пулов: [Chainik](https://chainik.io/)
 - Анонсы: [новых токенов](https://t.me/coinfeed), [новых пулов](https://t.me/poolfeed)
