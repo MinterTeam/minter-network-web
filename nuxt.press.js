@@ -7,6 +7,7 @@ export default {
         "nav": [
             { "Docs": "/docs" },
             { "HowTo": "/howto" },
+            { "Earn": "/earn" },
             // { "Solutions": "/solutions" },
             // { "Tools": "/tools" },
         ],
