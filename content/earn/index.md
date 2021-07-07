@@ -1,20 +1,17 @@
 ---
-description: >-
-  Increase your digital assets holdings using DeFi
+order: 1
+title: How to Earn in Minter
 ---
 
-# Earn with Minter
+# How to Earn in Minter
 
-Choose among three ways to increase your digital assets holdings:
+There are various money-making tools in Minter. In this part of the website, you may find all of them along with the usage instructions.
 
-### Yield farming
+- [Delegating](/earn/delegation)
+- [Providing liquidity](/earn/liquidity-pools)
+- [Farming](/earn/farm)
+- [Trading](/earn/trading)
+- [Arbitrage](/earn/arbitrage)
+- [Staking HUB with oracles](/earn/hub-staking)
 
-Participate in special programs that reward you for locking your coins and tokens into the pools (some offer up to 365% in APR).
-
-### Liquidity mining
-
-Mine BTC, ETH, BNB, DOGE, USDT, BIP, and many more by providing liquidity. 0.2% of each trade goes directly to LPs.
-
-### Staking
-            
-Delegate your BIP to the validators of the network to get rewards in BIP (about 40% APR).
+*This section serves educational purposes only. The information contained herewithin does not constitute an investment, financial, legal, or tax advice, and it is not an offer or solicitation to purchase or sell any financial instrument.*
