@@ -574,6 +574,10 @@ header {
 	font-weight: bold;
 	}
 
+.compare_tab {
+	font-size: 14px;
+}
+
 .compare_ths, .compare_tds {
 	display: flex;
 	align-content: center;
@@ -600,31 +604,36 @@ header {
 	}
 
 .compare_2 {
-	width: 180px;
+	width: 170px;
 	padding: 0 12px 0 0;
 	}
 
 .compare_1_2 {
-	width: 221px;
+	width: 211px;
 	padding: 0 12px 0 0;
 	}
 
 .compare_3 {
-	width: 110px;
+	width: 100px;
 	padding: 0 17px 0 0;
 	}
 
 .compare_4 {
-	width: 110px;
+	width: 100px;
 	padding: 0 18px 0 0;
 	}
 
 .compare_5 {
-	width: 110px;
+	width: 100px;
 	padding: 0 18px 0 0;
 	}
 
 .compare_6 {
+	width: 100px;
+	padding: 0 18px 0 0;
+	}
+
+.compare_7 {
 	width: 90px;
 	}
 
