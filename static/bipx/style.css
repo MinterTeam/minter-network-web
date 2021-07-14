@@ -883,14 +883,14 @@ header {
 	background: url('images/social_md.svg') no-repeat 0px center;
 	}
 .social_rd {
-	width: 35%;
+	width: 25%;
 	margin: 0 0 16px 0;
 	}
 .social_rd a {
 	background: url('images/social_rd.svg') no-repeat 0px center;
 	}
 .social_tw {
-	width: 25%;
+	width: 35%;
 	margin: 0 0 16px 0;
 	}
 .social_tw a {
