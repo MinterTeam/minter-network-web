@@ -412,6 +412,13 @@ header {
 	margin: 0 12px 0 0;
 	}
 
+.index-language {
+	display: block;
+    position: absolute;
+    top: 16px;
+    right: 24px;
+}
+
 /* END HEADER */
 
 
