@@ -348,15 +348,15 @@ blockquote cite {
 	}
 
 .btn:hover{
-	border-color: #502ec2;
-	background-color: #502ec2;
+	border-color: #d66c38;
+	background-color: #d66c38;
 	color: #fff;
 	text-decoration: none;
 	}
 
 .btn_c2 {
-	border: 1px solid #1058FB;
-	background: #1058FB;
+	border: 1px solid #2263f5;
+	background: #2263f5;
 	}
 
 .btn_c2:hover {
