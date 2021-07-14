@@ -54,7 +54,7 @@ header {
 	display: block;
 	width: auto;
 	margin: 0;
-	padding: 20px 10px 30px 10px;
+	padding: 20px 24px 30px 24px;
 	}
 
 .top_r {
@@ -71,7 +71,7 @@ header {
 	display: block;
 	width: auto;
 	margin: 0;
-	padding: 0 10px 30px 10px;
+	padding: 0 24px 30px 24px;
 	}
 
 .bipx_r {
@@ -88,7 +88,7 @@ header {
 	display: block;
 	width: auto;
 	margin: 0;
-	padding: 0 10px 10px 10px;
+	padding: 0 24px 10px 24px;
 	}
 
 .minter_li {
@@ -100,7 +100,7 @@ header {
 .minter_bot {
 	width: auto;
 	margin: 0;
-	padding: 0 10px 30px 10px;
+	padding: 0 24px 30px 24px;
 	}
 
 
@@ -108,7 +108,7 @@ header {
 	display: block;
 	width: auto;
 	margin: 0;
-	padding: 0 10px 30px 10px;
+	padding: 0 24px 30px 24px;
 	}
 
 .minter_r {
@@ -123,11 +123,11 @@ header {
 	overflow: auto;
 	-webkit-overflow-scrolling: touch;
 	margin: 0 auto 30px auto;
-	padding: 20px 10px;
+	padding: 20px 24px;
 	}
 
 .compare_tab {
-	width: 500px;
+	width: 675px;
 	}
 
 
@@ -135,7 +135,7 @@ header {
 	display: block;
 	width: auto;
 	margin: 0;
-	padding: 0 10px 30px 10px;
+	padding: 0 24px 30px 24px;
 	}
 
 .farming {
@@ -148,7 +148,7 @@ header {
 	display: block;
 	width: auto;
 	margin: 0;
-	padding: 0 10px 30px 10px;
+	padding: 0 24px 30px 24px;
 	}
 
 
@@ -156,7 +156,7 @@ header {
 	display: block;
 	width: auto;
 	margin: 0;
-	padding: 0 10px 20px 10px;
+	padding: 0 24px 20px 24px;
 	}
 
 .wallets_i {
@@ -176,7 +176,7 @@ header {
 
 .tech {
 	width: auto;
-	padding: 0 10px 30px 10px;
+	padding: 0 24px 30px 24px;
 	}
 
 .tech_a a {
@@ -190,7 +190,7 @@ header {
 .social {
 	width: auto;
 	margin: 0;
-	padding: 0 10px 30px 10px;
+	padding: 0 24px 30px 24px;
 	}
 
 .social_as {
@@ -207,7 +207,7 @@ header {
 .discover {
 	width: auto;
 	margin: 0;
-	padding: 0 10px 20px 10px;
+	padding: 0 24px 20px 24px;
 	}
 
 .discover_top {
@@ -236,7 +236,7 @@ header {
 	flex-wrap: wrap;
 	width: auto;
 	margin: 0 auto;
-	padding: 0 10px 20px 10px;
+	padding: 0 24px 20px 24px;
 	}
 
 .stat {
@@ -253,7 +253,7 @@ footer {
 	display: block;
 	width: auto;
 	margin: 0;
-	padding: 0 10px 30px 10px;
+	padding: 0 24px 30px 24px;
 	}
 
 .bot_l {
