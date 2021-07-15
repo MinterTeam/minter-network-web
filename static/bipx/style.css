@@ -355,13 +355,15 @@ blockquote cite {
 	}
 
 .btn_c2 {
-	border: 1px solid #2263f5;
-	background: #2263f5;
+	border: 2px solid #D15C22;
+    background: transparent;
+    color: #D15C22;
+    margin: 0 !important;
 	}
 
 .btn_c2:hover {
-	border: 1px solid #502ec2;
-	background: #502ec2;
+    border: 2px solid #d66c38;
+	color: #fff;
 	}
 
 /* END FORM */
@@ -389,7 +391,7 @@ header {
 
 .top_r {
 	order: 2;
-	width: 352px;
+	width: 370px;
 	}
 
 .logo{
@@ -957,7 +959,7 @@ header {
 	}
 
 .discover_th {
-	margin: 0 16px 0 0;
+	margin: 0 12px 0 0;
 	font-size: 14px;
 	line-height: 17px;
 	font-weight: bold;
