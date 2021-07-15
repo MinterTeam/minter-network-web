@@ -93,7 +93,7 @@
                 <!-- current locale -->
                 <button class="mdc-list-item u-semantic-button" @click="setLang(currentLocale.code)" type="button">
                     <span class="mdc-list-item__text header__language-text">{{ currentLocale.name }}</span>
-                    <img class="mdc-list-item__meta" :src="`/img/icon-flag-${currentLocale.code}.png`" :srcset="`/img/icon-flag-${currentLocale.code}@2x.png 2x`" alt="" width="24" height="24" role="presentation">
+                    <img class="mdc-list-item__meta" :src="`/img/icon-flag-${currentLocale.code}.png`" :srcset="`/img/icon-flag-${currentLocale.code}@2x.png 2x, /img/icon-flag-${currentLocale.code}@3x.png 3x`" alt="" width="24" height="24" role="presentation">
                 </button>
                 <!--list of other locales -->
                 <button class="mdc-list-item u-semantic-button"

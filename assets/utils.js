@@ -24,3 +24,15 @@ export function pretty(value, roundingMode) {
 export function prettyRound(value) {
     return decode(prettyNum(value, {precision: 0, thousandsSeparator: '&nbsp;'}));
 }
+
+/**
+ * calculate APY percent
+ * @param {number} tradeVolume1d
+ * @param {number} liquidity
+ * @return {number}
+ */
+export function getApy(tradeVolume1d, liquidity) {
+    const tradeFee = tradeVolume1d * 0.002;
+    const apr = liquidity > 0 ? tradeFee / liquidity * 365 : 0;
+    return ((1 + apr / 365) ** 365 - 1) * 100;
+}

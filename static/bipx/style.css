@@ -6,7 +6,7 @@ Author URI: http://artraft.net
 
 /* NULL */
 
-HTML, BODY, DIV, SPAN, APPLET, OBJECT, IFRAME, H1, H2, H3, H4, H5, H6, P, BLOCKQUOTE, PRE, A, ABBR, ACRONYM, ADDRESS, BIG, CITE, CODE, DEL, DFN, EM, FONT, IMG, INS, KBD, Q, S, SAMP, SMALL, STRIKE, STRONG, TT, VAR, B, U, I, CENTER, DL, DT, DD, OL, UL, LI, FIELDSET, FORM, LABEL, LEGEND {margin: 0;padding: 0;border: 0;outline: 0;font-size: 100%;vertical-align: baseline;background: transparent;}
+HTML, BODY, DIV, SPAN, APPLET, OBJECT, IFRAME, H1, H2, H3, H4, H5, H6, P, BLOCKQUOTE, PRE, A, ABBR, ACRONYM, ADDRESS, BIG, CITE, CODE, DEL, DFN, EM, FONT, IMG, INS, KBD, Q, S, SAMP, SMALL, STRIKE, STRONG, TT, VAR, B, U, I, CENTER, DL, DT, DD, OL, UL, LI, FIELDSET, FORM, LABEL, LEGEND {margin: 0;padding: 0;border: 0;outline: 0;font-size: 100%;vertical-align: baseline;background: transparent; box-sizing: content-box;}
 SUP, SUB {line-height: 1px;}
 BODY {line-height: 1;}
 UL {list-style: none;}
@@ -62,8 +62,8 @@ img {
 body {
 	color: #fff;
 	font-size: 16px;
-	line-height: 19px;
-	font-family: 'Inter', sans-serif;
+	line-height: 1.5;
+	font-family: Inter, sans-serif;
 	background: #17112e;
 	text-align: center;
 	position: relative;
@@ -101,7 +101,7 @@ body:after {
 	}
 
 input, textarea {
-	font-family: 'Inter', sans-serif;
+	font-family: Inter, sans-serif;
 	}
 
 a {
@@ -414,13 +414,6 @@ header {
 	margin: 0 12px 0 0;
 	}
 
-.index-language {
-	display: block;
-    position: absolute;
-    top: 16px;
-    right: 24px;
-}
-
 /* END HEADER */
 
 
@@ -521,9 +514,10 @@ header {
 
 
 .minter_bot {
-	width: 575px;
+	box-sizing: border-box;
+	width: 712px;
 	margin: 0 auto;
-	padding: 0 135px 72px 0;
+	padding: 0 100px 72px 0;
 	font-size: 24px;
 	line-height: 29px;
 	}
@@ -667,7 +661,7 @@ header {
 
 .farming {
 	width: 320px;
-	margin: 0 0 32px 0;
+	margin: 0 0 8px 0;
 	padding: 16px;
 	background: #29204F;
 	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -826,24 +820,26 @@ header {
 	display: inline-block;
 	margin: 0 44px 10px 0;
 	padding: 5px 0 5px 48px;
+	position: relative;
 	}
+.tech_a a::before {content: ''; position: absolute; left: 0; top: 0; width: 32px; height: 32px; border-radius: 8px; background-size: 32px;}
 
-.tech_git {
-	background: url('images/tech_git.svg') no-repeat 0px center;
+.tech_git::before {
+	background-image: url('images/tech_git.svg');
 	}
-.tech_api {
-	background: url('images/tech_api.svg') no-repeat 0px center;
+.tech_api::before {
+	background-image: url('images/tech_api.svg');
 	}
-.tech_sdk {
-	background: url('images/tech_sdk.svg') no-repeat 0px center;
+.tech_sdk::before {
+	background-image: url('images/tech_sdk.svg');
 	}
-.tech_doc {
-	background: url('images/tech_doc.svg') no-repeat 0px center;
+.tech_doc::before {
+	background-image: url('images/tech_doc.png');
 	}
 .tech_cons {
 	margin: 0 0 10px 0 !important;
-	background: url('images/tech_cons.svg') no-repeat 0px center;
 	}
+.tech_cons::before {background-image: url('/img/index-wallet-console.svg');}
 
 
 .social {
@@ -999,86 +995,13 @@ header {
 	}
 
 
-.stats {
-	display: flex;
-	justify-content: space-between;
-	width: 712px;
-	margin: 0 auto;
-	padding: 0 0 40px 0;
-	}
-
-.stat {
-	width: 18%;
-	font-size: 15px;
-	font-weight: bold;
-	}
-
-.stat span {
-	display: block;
-	padding: 0 0 8px 0;
-	opacity: 0.5;
-	font-size: 12px;
-	line-height: 15px;
-	text-transform: uppercase;
-	letter-spacing: 1.5px;
-	}
 
 
 /* END HOME */
 
 
-/* FOOTER */
-
-footer {
-	display: flex;
-	justify-content: space-between;
-	width: 712px;
-	margin: 0 auto;
-	padding: 0 0 96px 0;
-	font-size: 14px;
-	line-height: 17px;
-	}
-
-.bot_l {
-	width: 300px;
-	}
-
-.logo_bot {
-	margin: 0 0 8px 0;
-	}
-
-.logo_bot img {
-	width: 78px;
-	vertical-align: bottom;
-	}
-
-.bot_r {
-	width: 352px;
-	text-align: right;
-	}
-
-.nav_bot {
-	padding: 7px 0 8px 0;
-	}
-
-.nav_bot ul li {
-	display: inline-block;
-	margin: 0 0 0 8px;
-	font-weight: bold;
-	text-transform: uppercase;
-	}
-
-.nav_bot ul li a {
-	text-decoration: none;
-	}
-
-.nav_bot ul li a:hover, .nav_bot ul li.active a {
-	text-decoration: underline;
-	}
-
-.bot_cont a {
-	font-weight: bold;
-	}
-
-
-/* END FOOTER */
+/*.mdc-menu, .mdc-menu * {box-sizing: border-box;}*/
+.mdc-list-item__meta {max-width: none;}
+.footer .u-container {max-width: 712px;}
+.footer__link {text-decoration: none;}
+.footer__link:hover, .footer__link:focus {text-decoration: underline;}

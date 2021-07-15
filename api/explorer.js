@@ -78,6 +78,29 @@ export function getAddressStakeList(address) {
 }
 
 
+/**
+ * @typedef {Object} Pool
+ * @property {Coin} coin0
+ * @property {Coin} coin1
+ * @property {number|string} amount0
+ * @property {number|string} amount1
+ * @property {number|string} liquidity
+ * @property {number|string} liquidityBip
+ * @property {string} token
+ * @property {number|string} tradeVolumeBip1D
+ */
+
+/**
+ * @param {string} coin0
+ * @param {string} coin1
+ * @return {Promise<Pool>}
+ */
+export function getPool(coin0, coin1) {
+    return instance.get(`pools/coins/${coin0}/${coin1}`)
+        .then((response) => response.data.data);
+}
+
+
 
 /**
  * @typedef {Object} StakeItem

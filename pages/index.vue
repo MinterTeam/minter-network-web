@@ -5,6 +5,9 @@ import {prettyRound} from '~/assets/utils.js';
 import Language from '~/layouts/_language.vue';
 
 export default {
+    middleware({ redirect }) {
+        return redirect('/bipx');
+    },
     components: {
         Language,
     },
@@ -130,7 +133,7 @@ export default {
                 <div class="u-cell u-cell--medium--1-3">
                     <div class="index-wallets__item">
                         <a class="index-wallets__link link--default" href="https://wallet.minter.org" target="_blank">
-                            <img class="index-wallets__icon" src="/img/index-wallet-minter.png" srcset="/img/index-wallet-minter@2x.png 2x" alt="" role="presentation">
+                            <img class="index-wallets__icon" src="/img/index-wallet-minter.svg" alt="" role="presentation">
                             <div class="index-wallets__title">Minter Wallet</div>
                         </a>
                         <p class="index-wallets__description">You will only need an e-mail to get started</p>
