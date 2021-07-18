@@ -1002,6 +1002,6 @@ header {
 
 /*.mdc-menu, .mdc-menu * {box-sizing: border-box;}*/
 .mdc-list-item__meta {max-width: none;}
-.footer .u-container {max-width: 712px;}
+.footer .u-container {max-width: 712px; box-sizing: border-box;}
 .footer__link {text-decoration: none;}
 .footer__link:hover, .footer__link:focus {text-decoration: underline;}
