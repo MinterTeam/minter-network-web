@@ -97,7 +97,7 @@ export default {
                     <a class="bipx_coi" href="https://www.coingecko.com/en/coins/bip" target="_blank">CoinGecko</a>
                 </div>
             </div>
-            <div class="bipx_r"><img src="/bipx/images/bipx.svg" /></div>
+            <div class="bipx_r"><img src="/bipx/images/bipx.png" srcset="/bipx/images/bipx@2x.png 2x, /bipx/images/bipx@3x.png 3x" alt="" role="presentation"/></div>
         </div>
         <div class="minter">
             <div class="minter_t">Что такое Minter?</div>

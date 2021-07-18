@@ -97,7 +97,7 @@ export default {
                     <a class="bipx_coi" href="https://www.coingecko.com/en/coins/bip" target="_blank">CoinGecko</a>
                 </div>
             </div>
-            <div class="bipx_r"><img src="/bipx/images/bipx.svg" /></div>
+            <div class="bipx_r"><img src="/bipx/images/bipx.png" srcset="/bipx/images/bipx@2x.png 2x, /bipx/images/bipx@3x.png 3x" alt="" role="presentation"/></div>
         </div>
         <div class="minter">
             <div class="minter_t">What is Minter?</div>
@@ -207,7 +207,7 @@ export default {
             <div class="farmings_t">Yield farming on Minter</div>
             <div class="farming">
                 <div class="farming_top">
-                    <div class="farming_icos"><img src="/bipx/images/logos/usdt.svg" /><img src="/bipx/images/logos/usdc.svg" /></div>
+                    <div class="farming_icos"><img src="https://explorer-static.minter.network/coins/1993.png" /><img src="https://explorer-static.minter.network/coins/1994.png" /></div>
                     <div class="farming_t">USDT / USDC</div>
                 </div>
                 <div class="farming_param">
@@ -225,7 +225,7 @@ export default {
             </div>
             <div class="farming">
                 <div class="farming_top">
-                    <div class="farming_icos"><img src="/bipx/images/logos/hub.svg" /><img src="/bipx/images/logos/musd.svg" /></div>
+                    <div class="farming_icos"><img src="https://explorer-static.minter.network/coins/1902.png" /><img src="https://explorer-static.minter.network/coins/2024.png" /></div>
                     <div class="farming_t">HUB / MUSD</div>
                 </div>
                 <div class="farming_param">
@@ -243,7 +243,7 @@ export default {
             </div>
             <div class="farming">
                 <div class="farming_top">
-                    <div class="farming_icos"><img src="/bipx/images/logos/hub.svg" /><img src="/bipx/images/logos/hubabuba.svg" /></div>
+                    <div class="farming_icos"><img src="https://explorer-static.minter.network/coins/1902.png" /><img src="https://explorer-static.minter.network/coins/1942.png" /></div>
                     <div class="farming_t">HUB / HUBABUBA</div>
                 </div>
                 <div class="farming_param">

@@ -825,13 +825,13 @@ header {
 .tech_a a::before {content: ''; position: absolute; left: 0; top: 0; width: 32px; height: 32px; border-radius: 8px; background-size: 32px;}
 
 .tech_git::before {
-	background-image: url('images/tech_git.svg');
+	background-image: url('images/tech_git.png');
 	}
 .tech_api::before {
-	background-image: url('images/tech_api.svg');
+	background-image: url('images/tech_api.png');
 	}
 .tech_sdk::before {
-	background-image: url('images/tech_sdk.svg');
+	background-image: url('images/tech_sdk.png');
 	}
 .tech_doc::before {
 	background-image: url('images/tech_doc.png');
