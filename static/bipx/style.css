@@ -78,7 +78,6 @@ body:before {
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	z-index: 1;
 	}
 
 body:after {
@@ -91,12 +90,9 @@ body:after {
 	position: absolute;
 	bottom: 0px;
 	left: 0px;
-	z-index: 2;
 	}
 
 .wrap {
-	position: relative;
-	z-index: 3;
 	text-align: left;
 	}
 
@@ -686,13 +682,14 @@ header {
 	}
 
 .farming_icos {
-	width: 32px;
+	width: 39px;
 	height: 32px;
 	margin: 0 16px 0 0;
 	position: relative;
 	}
 
 .farming_icos img {
+	width: 24px;
 	vertical-align: bottom;
 	}
 
