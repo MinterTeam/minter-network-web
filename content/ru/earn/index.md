@@ -13,3 +13,4 @@ title: Как зарабатывать в Minter
 - [Торговля](/ru/earn/trading)
 - [Арбитраж](/ru/earn/arbitrage)
 - [Стейкинг HUB у оракулов](/ru/earn/hub-staking)
+- [Лотереи](/ru/earn/giveaway)
