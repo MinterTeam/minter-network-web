@@ -84,7 +84,7 @@ export default {
                 <h1>Farm USDT and BIPx on Uniswap at 0.2% daily</h1>
                 <div class="top_e">Simply join the USDT-BIPx pool to start yield farming. The program is running from July 15 until August 15, 2021.</div>
                 <a class="btn" href="https://v2.info.uniswap.org/pair/0xb1700c93ddc26ce1d59441c24daef1035444d7b7" target="_blank">Start farming</a>
-                <a class="btn btn_c2" href="https://minterteam.medium.com/fa2c30a09e18" target="_blank">Explore giveaway</a>
+                <a class="btn btn_c2" href="https://minterteam.medium.com/fa2c30a09e18" target="_blank">Airdrop and giveaway</a>
             </div>
             <div class="top_l"><img src="/bipx/images/header.png" srcset="/bipx/images/header@2x.png 2x, /bipx/images/header@3x.png 3x" /></div>
         </header>
