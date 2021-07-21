@@ -64,33 +64,11 @@ body {
 	font-size: 16px;
 	line-height: 1.5;
 	font-family: Inter, sans-serif;
-	background: #17112e;
+	background-image: linear-gradient(to bottom, #000000, rgba(14, 8, 34, 0) 508px), linear-gradient(to top, #000000, rgba(14, 8, 34, 0) 508px);
+	background-color: #17112e;
 	text-align: center;
-	position: relative;
 	}
 
-body:before {
-	content: " ";
-	display: block;
-	width: 100%;
-	height: 508px;
-	background: linear-gradient(180deg, #000000 18.11%, rgba(14, 8, 34, 0) 100%);
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	}
-
-body:after {
-	content: " ";
-	display: block;
-	width: 100%;
-	height: 492px;
-	background: linear-gradient(180deg, #000000 0%, rgba(14, 8, 34, 0) 100%);
-	transform: rotate(-180deg);
-	position: absolute;
-	bottom: 0px;
-	left: 0px;
-	}
 
 .wrap {
 	text-align: left;

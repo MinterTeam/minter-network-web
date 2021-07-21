@@ -48,8 +48,8 @@ export default {
             ],
             link: [
                 { rel: 'canonical', href: `${HOST}/bipx`},
-                { rel: 'stylesheet', href: '/bipx/style.css'},
-                { rel: 'stylesheet', href: '/bipx/style320.css', media: '(max-width: 760px)'},
+                { rel: 'stylesheet', href: '/bipx/style.css?2'},
+                { rel: 'stylesheet', href: '/bipx/style320.css?2', media: '(max-width: 760px)'},
             ],
         };
     },
