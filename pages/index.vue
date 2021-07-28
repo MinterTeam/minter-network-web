@@ -6,9 +6,12 @@ import Language from '~/layouts/_language.vue';
 
 export default {
     middleware({ redirect }) {
-        window.location = '/bipx';
+        if (!process.server) {
+            window.location = '/bipx';
+        } else {
+            return redirect('/bipx');
+        }
         return new Promise(() => {});
-        // return redirect('/bipx');
     },
     components: {
         Language,
@@ -28,6 +31,9 @@ export default {
             ],
             link: [
                 { rel: 'canonical', href: `${HOST}/`},
+                //@TODO temporary links to prevent flashes of unstyled content on redirect
+                { rel: 'stylesheet', href: '/bipx/style.css?2'},
+                { rel: 'stylesheet', href: '/bipx/style320.css?2', media: '(max-width: 760px)'},
             ],
         };
     },

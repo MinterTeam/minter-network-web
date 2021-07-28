@@ -84,13 +84,13 @@ export default {
         </div>
         <header>
             <div class="top_r">
-                <div class="logo"><a href="#"><img src="/img/minter-logo-white.svg" width="155" height="48" alt="Minter"/></a></div>
+                <div class="logo"><a href="#"><img src="/static/img/minter-logo-white.svg" width="155" height="48" alt="Minter"/></a></div>
                 <h1>Farm USDT and BIPx on Uniswap at 0.2% daily</h1>
                 <div class="top_e">Simply join the USDT-BIPx pool to start yield farming. The program is running from July 15 until August 15, 2021.</div>
                 <a class="btn" href="https://v2.info.uniswap.org/pair/0xb1700c93ddc26ce1d59441c24daef1035444d7b7" target="_blank" v-track-click="'farm'">Start farming</a>
                 <a class="btn btn_c2" href="https://minterteam.medium.com/fa2c30a09e18" target="_blank" v-track-click="'giveaway'">Airdrop and giveaway</a>
             </div>
-            <div class="top_l"><img src="/bipx/images/header.png" srcset="/bipx/images/header@2x.png 2x, /bipx/images/header@3x.png 3x" /></div>
+            <div class="top_l"><img src="/static/bipx/images/header.png" srcset="/static/bipx/images/header@2x.png 2x, /bipx/images/header@3x.png 3x" /></div>
         </header>
         <div class="bipx">
             <div class="bipx_l">
@@ -101,49 +101,49 @@ export default {
                     <a class="bipx_coi" href="https://www.coingecko.com/en/coins/bip" target="_blank">CoinGecko</a>
                 </div>
             </div>
-            <div class="bipx_r"><img src="/bipx/images/bipx.png" srcset="/bipx/images/bipx@2x.png 2x, /bipx/images/bipx@3x.png 3x" alt="" role="presentation"/></div>
+            <div class="bipx_r"><img src="/static/bipx/images/bipx.png" srcset="/static/bipx/images/bipx@2x.png 2x, /bipx/images/bipx@3x.png 3x" alt="" role="presentation"/></div>
         </div>
         <div class="minter">
             <div class="minter_t">What is Minter?</div>
             <div class="minter_li">
-                <div class="minter_li_i"><img src="/bipx/images/minter1.svg" /></div>
+                <div class="minter_li_i"><img src="/static/bipx/images/minter1.svg" /></div>
                 <div class="minter_li_t">Fast transactions</div>
                 <span>5 seconds</span> with final blocks
             </div>
             <div class="minter_li">
-                <div class="minter_li_i"><img src="/bipx/images/minter2.svg" /></div>
+                <div class="minter_li_i"><img src="/static/bipx/images/minter2.svg" /></div>
                 <div class="minter_li_t">Low fees</div>
                 <span>$0.01</span> per transfer, <span>$0.03</span> + <span>0.2%</span> per swap, payable in any liquid coin or token
             </div>
             <div class="minter_li">
-                <div class="minter_li_i"><img src="/bipx/images/minter3.svg" /></div>
+                <div class="minter_li_i"><img src="/static/bipx/images/minter3.svg" /></div>
                 <div class="minter_li_t">Cross-chain swaps</div>
                 Send cross-chain transfers with swaps. <br />For example, BUSD on Binance Smart Chain for USDC on Ethereum
             </div>
             <div class="minter_li">
-                <div class="minter_li_i"><img src="/bipx/images/minter4.svg" /></div>
+                <div class="minter_li_i"><img src="/static/bipx/images/minter4.svg" /></div>
                 <div class="minter_li_t">Easy access</div>
                 Make decentralized deposits and withdrawals, easily
             </div>
             <div class="minter_li">
-                <div class="minter_li_i"><img src="/bipx/images/minter5.svg" /></div>
+                <div class="minter_li_i"><img src="/static/bipx/images/minter5.svg" /></div>
                 <div class="minter_li_t">Limit orders</div>
                 Place limit orders powered by a unique implementation at the core level of Minter blockchain
             </div>
             <div class="minter_li">
-                <div class="minter_li_i"><img src="/bipx/images/minter6.svg" /></div>
+                <div class="minter_li_i"><img src="/static/bipx/images/minter6.svg" /></div>
                 <div class="minter_li_t">Custom tokens and pools</div>
                 Create your own tokens and liquidity <br />pools in a couple of clicks
             </div>
             <div class="minter_li">
-                <div class="minter_li_i"><img src="/bipx/images/minter7.svg" alt=""/></div>
+                <div class="minter_li_i"><img src="/static/bipx/images/minter7.svg" alt=""/></div>
                 <div class="minter_li_t">Global integration</div>
                 Enjoy all benefits of integration with Ethereum and Binance Smart Chain and later, with other popular networks
             </div>
         </div>
         <div class="minter_bot">Trade in most cryptocurrencies, tokens, and digital assets within a single network. <span>All decentralized.</span></div>
         <div class="minter_sup">
-            <div class="minter_l"><img src="/bipx/images/minter-sup.png" srcset="/bipx/images/minter-sup@2x.png 2x, /bipx/images/minter-sup@3x.png 3x" alt=""/></div>
+            <div class="minter_l"><img src="/static/bipx/images/minter-sup.png" srcset="/static/bipx/images/minter-sup@2x.png 2x, /bipx/images/minter-sup@3x.png 3x" alt=""/></div>
             <div class="minter_r">
                 <div class="minter_sup_t">Minter supports trading and cross-chain transfers of</div>
                 BTC, ETH, 1INCH, USDT, USDС, DAI, PAX, BUSD, BIP, HUB, and many more.
@@ -161,7 +161,7 @@ export default {
                     <div class="compare_7">Fee coin</div>
                 </div>
                 <div class="compare_tds">
-                    <div class="compare_1"><img src="/img/minter-logo-circle.svg" width="24" height="24" /></div>
+                    <div class="compare_1"><img src="/static/img/minter-logo-circle.svg" width="24" height="24" /></div>
                     <div class="compare_2">Minter</div>
                     <div class="compare_3">0.2%</div>
                     <div class="compare_4">5 sec</div>
@@ -170,7 +170,7 @@ export default {
                     <div class="compare_7">ANY</div>
                 </div>
                 <div class="compare_tds">
-                    <div class="compare_1"><img src="/bipx/images/logos/pancakeswap.png" srcset="/bipx/images/logos/pancakeswap@2x.png 2x, /bipx/images/logos/pancakeswap@3x.png 3x" /></div>
+                    <div class="compare_1"><img src="/static/bipx/images/logos/pancakeswap.png" srcset="/static/bipx/images/logos/pancakeswap@2x.png 2x, /bipx/images/logos/pancakeswap@3x.png 3x" /></div>
                     <div class="compare_2">PancakeSwap</div>
                     <div class="compare_3">0.25%</div>
                     <div class="compare_4">6 sec</div>
@@ -179,7 +179,7 @@ export default {
                     <div class="compare_7">BNB</div>
                 </div>
                 <div class="compare_tds">
-                    <div class="compare_1"><img src="/bipx/images/logos/uniswap.png" srcset="/bipx/images/logos/uniswap@2x.png 2x, /bipx/images/logos/uniswap@3x.png 3x" /></div>
+                    <div class="compare_1"><img src="/static/bipx/images/logos/uniswap.png" srcset="/static/bipx/images/logos/uniswap@2x.png 2x, /bipx/images/logos/uniswap@3x.png 3x" /></div>
                     <div class="compare_2">Uniswap</div>
                     <div class="compare_3">0.3%</div>
                     <div class="compare_4">16 sec</div>
@@ -188,7 +188,7 @@ export default {
                     <div class="compare_7">ETH</div>
                 </div>
                 <div class="compare_tds">
-                    <div class="compare_1"><img src="/bipx/images/logos/1inch.png" srcset="/bipx/images/logos/1inch@2x.png 2x, /bipx/images/logos/1inch@3x.png 3x" /></div>
+                    <div class="compare_1"><img src="/static/bipx/images/logos/1inch.png" srcset="/static/bipx/images/logos/1inch@2x.png 2x, /bipx/images/logos/1inch@3x.png 3x" /></div>
                     <div class="compare_2">1INCH</div>
                     <div class="compare_3">0.3%</div>
                     <div class="compare_4">71 sec</div>
@@ -197,7 +197,7 @@ export default {
                     <div class="compare_7">ETH</div>
                 </div>
                 <div class="compare_tds">
-                    <div class="compare_1"><img src="/bipx/images/logos/sushiswap.png" srcset="/bipx/images/logos/sushiswap@2x.png 2x, /bipx/images/logos/sushiswap@3x.png 3x" /></div>
+                    <div class="compare_1"><img src="/static/bipx/images/logos/sushiswap.png" srcset="/static/bipx/images/logos/sushiswap@2x.png 2x, /bipx/images/logos/sushiswap@3x.png 3x" /></div>
                     <div class="compare_2">SushiSwap</div>
                     <div class="compare_3">0.3%</div>
                     <div class="compare_4">62 sec</div>
@@ -270,22 +270,22 @@ export default {
         <div class="staking">
             <div class="minter_t">Staking</div>
             <div class="minter_li">
-                <div class="minter_li_i"><img src="/bipx/images/staking1.svg" /></div>
+                <div class="minter_li_i"><img src="/static/bipx/images/staking1.svg" /></div>
                 <div class="minter_li_t">Delegate</div>
                 Delegate your BIP to the validators of the network to get rewards in BIP (about 40% APR)
             </div>
             <div class="minter_li">
-                <div class="minter_li_i"><img src="/bipx/images/staking2.svg" /></div>
+                <div class="minter_li_i"><img src="/static/bipx/images/staking2.svg" /></div>
                 <div class="minter_li_t">Provide liquidity</div>
                 Mine BTC, ETH, USDT, USDC, 1INCH, BIP, HUB, and many more by providing liquidity. 0.2% of each trade goes directly to LPs
             </div>
         </div>
         <div class="wallets">
             <div class="wallets_t">Wallets</div>
-            <div class="wallets_i"><img src="/bipx/images/wallets.png" srcset="/bipx/images/wallets@2x.png 2x" alt="" role="presentation" /></div>
+            <div class="wallets_i"><img src="/static/bipx/images/wallets.png" srcset="/static/bipx/images/wallets@2x.png 2x" alt="" role="presentation" /></div>
             <div class="wallets_r">
                 <div class="wallet">
-                    <div class="wallet_i"><img src="/bipx/images/logos/bipwallet.svg" /></div>
+                    <div class="wallet_i"><img src="/static/bipx/images/logos/bipwallet.svg" /></div>
                     <div class="wallet_t">Bip Wallet</div>
                     <div class="wallet_e">User-friendly and feature-rich wallet <br />released as an application for mobile <br />devices</div>
                     <div class="wallet_a">
@@ -294,18 +294,18 @@ export default {
                     </div>
                 </div>
                 <div class="wallet">
-                    <div class="wallet_i"><img src="/bipx/images/logos/webwallet.svg" /></div>
+                    <div class="wallet_i"><img src="/static/bipx/images/logos/webwallet.svg" /></div>
                     <div class="wallet_t"><a href="https://wallet.bip.to/" target="_blank">Web Wallet</a></div>
                     <div class="wallet_e">BIP Wallet’s basic web version. Includes all essential functionality for managing your coins: receive, send, and delegate</div>
                 </div>
             </div>
             <div class="wallet">
-                <div class="wallet_i"><img src="/img/index-wallet-minter.svg" width="48" height="48"/></div>
+                <div class="wallet_i"><img src="/static/img/index-wallet-minter.svg" width="48" height="48"/></div>
                 <div class="wallet_t"><a href="https://wallet.minter.org/" target="_blank">Minter Wallet</a></div>
                 <div class="wallet_e">The most simple solution to receive and send funds. You will only need an e-mail to get started</div>
             </div>
             <div class="wallet">
-                <div class="wallet_i"><img src="/img/index-wallet-console.svg" width="48" height="48" alt="" role="presentation"/></div>
+                <div class="wallet_i"><img src="/static/img/index-wallet-console.svg" width="48" height="48" alt="" role="presentation"/></div>
                 <div class="wallet_t"><a href="https://console.minter.network/" target="_blank">Console</a></div>
                 <div class="wallet_e">This wallet has the most features: besides the standard functions of the basic wallet, you can also work with checks, create coins and tokens, launch masternodes, set up and manage MultiSig addresses and liquidity pools, and broadcast the transactions signed off-line</div>
             </div>
@@ -336,7 +336,7 @@ export default {
         <div class="discover">
             <div class="discover_t">Discover HUB token</div>
             <div class="discover_top">
-                <div class="discover_img"><img src="/bipx/images/discover.svg" /></div>
+                <div class="discover_img"><img src="/static/bipx/images/discover.svg" /></div>
                 <div class="discover_th">Current price <span>${{ pretty(hubPrice) }}</span></div>
                 <div class="discover_th">Start price <span>$0.11</span></div>
                 <div class="discover_th">Max supply <span>1 000 000</span></div>
