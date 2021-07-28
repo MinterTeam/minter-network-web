@@ -84,7 +84,7 @@ export default {
         </div>
         <header>
             <div class="top_r">
-                <div class="logo"><a href="#"><img src="/static/img/minter-logo-white.svg" width="155" height="48" alt="Minter"/></a></div>
+                <div class="logo"><a href="#"><img src="/img/minter-logo-white.svg" width="155" height="48" alt="Minter"/></a></div>
                 <h1>Farm USDT and BIPx on Uniswap at 0.2% daily</h1>
                 <div class="top_e">Simply join the USDT-BIPx pool to start yield farming. The program is running from July 15 until August 15, 2021.</div>
                 <a class="btn" href="https://v2.info.uniswap.org/pair/0xb1700c93ddc26ce1d59441c24daef1035444d7b7" target="_blank" v-track-click="'farm'">Start farming</a>
@@ -161,7 +161,7 @@ export default {
                     <div class="compare_7">Fee coin</div>
                 </div>
                 <div class="compare_tds">
-                    <div class="compare_1"><img src="/static/img/minter-logo-circle.svg" width="24" height="24" /></div>
+                    <div class="compare_1"><img src="/img/minter-logo-circle.svg" width="24" height="24" /></div>
                     <div class="compare_2">Minter</div>
                     <div class="compare_3">0.2%</div>
                     <div class="compare_4">5 sec</div>
@@ -300,12 +300,12 @@ export default {
                 </div>
             </div>
             <div class="wallet">
-                <div class="wallet_i"><img src="/static/img/index-wallet-minter.svg" width="48" height="48"/></div>
+                <div class="wallet_i"><img src="/img/index-wallet-minter.svg" width="48" height="48"/></div>
                 <div class="wallet_t"><a href="https://wallet.minter.org/" target="_blank">Minter Wallet</a></div>
                 <div class="wallet_e">The most simple solution to receive and send funds. You will only need an e-mail to get started</div>
             </div>
             <div class="wallet">
-                <div class="wallet_i"><img src="/static/img/index-wallet-console.svg" width="48" height="48" alt="" role="presentation"/></div>
+                <div class="wallet_i"><img src="/img/index-wallet-console.svg" width="48" height="48" alt="" role="presentation"/></div>
                 <div class="wallet_t"><a href="https://console.minter.network/" target="_blank">Console</a></div>
                 <div class="wallet_e">This wallet has the most features: besides the standard functions of the basic wallet, you can also work with checks, create coins and tokens, launch masternodes, set up and manage MultiSig addresses and liquidity pools, and broadcast the transactions signed off-line</div>
             </div>
