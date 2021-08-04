@@ -85,24 +85,45 @@ export default {
         <header>
             <div class="top_r">
                 <div class="logo"><a href="#"><img src="/img/minter-logo-white.svg" width="155" height="48" alt="Minter"/></a></div>
-                <h1>Farm USDT and BIPx on Uniswap at 0.2% daily</h1>
-                <div class="top_e">Simply join the USDT-BIPx pool to start yield farming. The program is running from July 15 until August 15, 2021.</div>
-                <a class="btn" href="https://v2.info.uniswap.org/pair/0xb1700c93ddc26ce1d59441c24daef1035444d7b7" target="_blank" v-track-click="'farm'">Start farming</a>
-                <a class="btn btn_c2" href="https://minterteam.medium.com/fa2c30a09e18" target="_blank" v-track-click="'giveaway'">Airdrop and giveaway</a>
+                <h1>Yield Farming with Stablecoins on Minter</h1>
+                <div class="top_e">Not so sure where the market is headed in the short run? Join our stablecoin farming program.</div>
+                <a class="btn" href="https://v2.info.uniswap.org/pair/0xb1700c93ddc26ce1d59441c24daef1035444d7b7" target="_blank" v-track-click="'farm'">Join Now</a>
             </div>
-            <div class="top_l"><img src="/bipx/images/header.png" srcset="/bipx/images/header@2x.png 2x, /bipx/images/header@3x.png 3x" /></div>
+            <div class="top_l"><img src="/bipx/images/header-stables.png" srcset="/bipx/images/header-stables@2x.png 2x, /bipx/images/header-stables@3x.png 3x" /></div>
         </header>
-        <div class="bipx">
-            <div class="bipx_l">
-                <div class="bipx_t">What is BIPx?</div>
-                <div class="bipx_e">BIPx is the wrapped BIP—which is Minter Network’s native token—issued on Ethereum. Being a DPoS blockchain, Minter is validated through BIP stake delegation.</div>
-                <div class="bipx_a">
-                    <a class="bipx_cmc" href="https://coinmarketcap.com/currencies/minter-network/" target="_blank">CMC</a>
-                    <a class="bipx_coi" href="https://www.coingecko.com/en/coins/bip" target="_blank">CoinGecko</a>
-                </div>
+        
+        <div class="stablecoins">
+            <div class="minter_t">Stablecoin farming features:</div>
+            <div class="minter_li">
+                <div class="minter_li_i"><img src="/bipx/images/stablecoins1.svg" /></div>
+                <span>0.1% daily</span>
             </div>
-            <div class="bipx_r"><img src="/bipx/images/bipx.png" srcset="/bipx/images/bipx@2x.png 2x, /bipx/images/bipx@3x.png 3x" alt="" role="presentation"/></div>
+            <div class="minter_li">
+                <div class="minter_li_i"><img src="/bipx/images/stablecoins2.svg" /></div>
+                <span>no KYC</span>
+            </div>
+            <div class="minter_li">
+                <div class="minter_li_i"><img src="/bipx/images/stablecoins3.svg" /></div>
+                <span>completely decentralized operations since Minter is a DEX</span>
+            </div>
+            <div class="minter_li">
+                <div class="minter_li_i"><img src="/bipx/images/minter4.svg" /></div>
+                <span>easy deposit and withdrawal of assets</span>
+            </div>
+            <div class="minter_li">
+                <div class="minter_li_i"><img src="/bipx/images/stablecoins4.svg" /></div>
+                <span>little to no risks as stablecoins always stay stable</span>
+            </div>
+            <div class="minter_li">
+                <div class="minter_li_i"><img src="/bipx/images/staking1.svg" /></div>
+                <span>an additional APY of up to 40% due to fees</span>
+            </div>
         </div>
+        
+        <div class="start">
+            <a class="btn" href="https://explorer.minter.network/farming" target="_blank" v-track-click="'farm'">Check All Farmings</a>
+        </div>
+        
         <div class="minter">
             <div class="minter_t">What is Minter?</div>
             <div class="minter_li">
