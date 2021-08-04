@@ -443,6 +443,21 @@ header {
 	background: url('images/bipx_coi.svg') no-repeat 0px center;
 	}
 
+.stablecoins {
+    display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	width: 710px;
+	margin: 0 auto;
+	padding: 0 0 40px 0;
+}
+.stablecoin .minter_li {
+	display: flex;
+    align-items: flex-end;
+}
+.stablecoin .minter_li_i {
+	margin: 0 0 16px 0;
+}
 
 .minter {
 	display: flex;
