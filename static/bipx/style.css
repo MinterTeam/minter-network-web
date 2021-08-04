@@ -451,11 +451,11 @@ header {
 	margin: 0 auto;
 	padding: 0 0 40px 0;
 }
-.stablecoin .minter_li {
+.stablecoins .minter_li {
 	display: flex;
     align-items: flex-end;
 }
-.stablecoin .minter_li_i {
+.stablecoins .minter_li_i {
 	margin: 0 0 16px 0;
 }
 
