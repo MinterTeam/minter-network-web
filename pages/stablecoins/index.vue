@@ -38,8 +38,8 @@ export default {
         ]);
     },
     head() {
-        const title = 'Farm USDT and BIPx on Uniswap at 0.2% daily';
-        const description = 'Simply join the USDT-BIPx pool to start yield farming. The program is running from July 15 until August 15, 2021.';
+        const title = 'Earn 36.5% APR with USDT-USDC pool on Minter';
+        const description = 'Not so sure where the market is headed in the short run? Join our stablecoin yield farming program. It\'s easy, safe, and fast.';
         // const localeSuffix = this.$i18n.locale === 'en' ? '' : '-' + this.$i18n.locale;
 
         return {
@@ -85,9 +85,9 @@ export default {
         <header>
             <div class="top_r">
                 <div class="logo"><a href="#"><img src="/img/minter-logo-white.svg" width="155" height="48" alt="Minter"/></a></div>
-                <h1>Yield Farming with Stablecoins on Minter</h1>
-                <div class="top_e">Not so sure where the market is headed in the short run? Join our stablecoin farming program.</div>
-                <a class="btn" href="https://v2.info.uniswap.org/pair/0xb1700c93ddc26ce1d59441c24daef1035444d7b7" target="_blank" v-track-click="'farm'">Join Now</a>
+                <h1>Earn 36.5% APR with USDT-USDC pool on Minter</h1>
+                <div class="top_e">Not so sure where the market is headed in the short run? Join our stablecoin yield farming program. It's easy, safe, and fast.</div>
+                <a class="btn" href="https://www.minter.network/howto/usdt-usdc" target="_blank" v-track-click="'learn'">Learn How</a>
             </div>
             <div class="top_l"><img src="/bipx/images/header-stables.png" srcset="/bipx/images/header-stables@2x.png 2x, /bipx/images/header-stables@3x.png 3x" /></div>
         </header>
