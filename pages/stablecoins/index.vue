@@ -48,10 +48,10 @@ export default {
                 { hid: 'og-title', name: 'og:title', content: title },
                 { hid: 'description', name: 'description', content: description },
                 { hid: 'og-description', name: 'og:description', content: description },
-                { hid: 'og-image', name: 'og:image', content: `/bipx/images/bipx-meta.png` },
+                // { hid: 'og-image', name: 'og:image', content: `/bipx/images/bipx-meta.png` },
             ],
             link: [
-                { rel: 'canonical', href: `${HOST}/bipx`},
+                { rel: 'canonical', href: `${HOST}/stablecoins`},
                 { rel: 'stylesheet', href: '/bipx/style.css?2'},
                 { rel: 'stylesheet', href: '/bipx/style320.css?2', media: '(max-width: 760px)'},
             ],
@@ -91,7 +91,7 @@ export default {
             </div>
             <div class="top_l"><img src="/bipx/images/header-stables.png" srcset="/bipx/images/header-stables@2x.png 2x, /bipx/images/header-stables@3x.png 3x" /></div>
         </header>
-        
+
         <div class="stablecoins">
             <div class="minter_t">Stablecoin farming features:</div>
             <div class="minter_li">
@@ -119,11 +119,11 @@ export default {
                 <span>an additional APY of up to 40% due to fees</span>
             </div>
         </div>
-        
+
         <div class="start">
             <a class="btn" href="https://explorer.minter.network/farming" target="_blank" v-track-click="'farm'">Check All Farmings</a>
         </div>
-        
+
         <div class="minter">
             <div class="minter_t">What is Minter?</div>
             <div class="minter_li">

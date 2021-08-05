@@ -724,3 +724,6 @@ footer {
 	}
 
 /* END FOOTER */
+
+/* reset global style */
+*, *::after, *::before {box-sizing: content-box;}
