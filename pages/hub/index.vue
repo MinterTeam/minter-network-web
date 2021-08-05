@@ -53,7 +53,7 @@ export default {
             link: [
                 { rel: 'canonical', href: `${HOST}/hub`},
                 { rel: 'stylesheet', href: '/hub/style.css'},
-                { rel: 'stylesheet', href: '/hub/style320.css', media: '(max-width: 730px)'},
+                { rel: 'stylesheet', href: '/hub/style320.css', media: 'screen and (max-width: 730px)'},
             ],
         };
     },
@@ -84,7 +84,7 @@ export default {
             <div class="home_top">
                 <h1>Cross-Chain Bridge to Global Crypto Liquidity</h1>
                 <p>Minter Hub is a blockchain bridging Minter, Ethereum, and Binance Smart Chain (BSC). Polkadot, Cardano, Solana, and other popular networks will be interconnected in the near future.</p>
-                <a class="btn" href="#">Buy HUB</a>
+                <a class="btn" href="https://app.1inch.io/#/1/swap/USDT/0x8e9A29e7Ed21DB7c5B2E1cd75e676dA0236dfB45" target="_blank" v-track-click="'buyhub'">Buy HUB</a>
             </div>
         </div>
         <div class="wrap figures">
@@ -140,12 +140,12 @@ export default {
                 <div class="product">
                     <div class="product_img"><img src="/hub/images/minter.svg" /></div>
                     <p>Minter, a digital assets marketplace allowing anyone to buy, sell, send, and spend BTC, ETH, BIP, USDC, and more</p>
-                    <a class="btn btn_c2" href="#">Learn More</a>
+                    <a class="btn btn_c2" href="https://www.minter.network/" v-track-click="'minter'">Learn More</a>
                 </div>
                 <div class="product">
                     <div class="product_img"><img src="/hub/images/honee.svg" /></div>
                     <p>Honee, a wallet that makes crypto money easier for everyone—from students to small businesses</p>
-                    <a class="btn btn_c2" href="#">Learn More</a>
+                    <!--<a class="btn btn_c2" href="#">Learn More</a>-->
                 </div>
             </div>
         </div>
@@ -226,10 +226,10 @@ export default {
         <div class="wrap pricing">
             <h2>Pricing</h2>
             <p>The initial supply of <b>50,000 tokens</b> was distributed to the community for free.</p>
-            <p>In the very first days, community members launched trading in the <a href="#">HUB-USDT</a> pair on Uniswap, setting the starting price at $0.10. The first trade took place <a href="#">October 27, 2020</a>, when 9 HUBs were bought for $1.</p>
+            <p>In the very first days, community members launched trading in the <a href="https://v2.info.uniswap.org/pair/0x3796fee2b555da1356cdcd3e1861263b351a58a0" target="_blank" v-track-click="'hubpool'">HUB-USDT</a> pair on Uniswap, setting the starting price at $0.10. The first trade took place <a href="#">October 27, 2020</a>, when 9 HUBs were bought for $1.</p>
             <div class="pricing_flx">
                 <div class="pricing_cur">Current Price <span>${{ pretty(hubPrice) }}</span></div>
-                <div class="pricing_buy"><a class="btn" href="#">Buy HUB</a></div>
+                <div class="pricing_buy"><a class="btn" href="https://app.1inch.io/#/1/swap/USDT/0x8e9A29e7Ed21DB7c5B2E1cd75e676dA0236dfB45" target="_blank" v-track-click="'buyhub'">Buy HUB</a></div>
             </div>
             <p>The team does not exclude that it will support listings and integrations in one form or another, including rewards in HUB tokens. But it will not initiate such activities, giving the community complete freedom of action.</p>
         </div>
@@ -246,7 +246,7 @@ export default {
                     <p>Minter Hub is based on Cosmos SDK and a modified Peggy solution that’s developed by the Cosmos team.</p>
                 </div>
             </div>
-            <p>The project’s code can be accessed in a public repository: <a href="https://github.com/MinterTeam/minter-hub">https://github.com/MinterTeam/minter-hub</a>.</p>
+            <p>The project’s code can be accessed in a public repository: <a href="https://github.com/MinterTeam/minter-hub" target="_blank">https://github.com/MinterTeam/minter-hub</a>.</p>
             <p>Minter Hub is supported by oracles. Here is what they launch on their servers:</p>
             <ul class="list">
                 <li>Minter node</li>

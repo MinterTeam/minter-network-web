@@ -22,8 +22,8 @@ img.alignleft, img.left {
 	height: 0;
 	padding-bottom: 54.15%;
 }
-.video iframe,  
-.video object,  
+.video iframe,
+.video object,
 .video embed {
 	position: absolute;
 	width: 100%;
@@ -57,21 +57,21 @@ h1, .h1, .title{
 
 header {
 	width: auto;
-	padding: 12px 10px;
+	padding: 12px 24px;
 	}
 
 .wrap {
 	width: auto;
-	padding: 0 10px 40px 10px;
+	padding: 0 24px 40px 24px;
 	}
 
 .home_top {
 	width: auto;
-	padding: 60px 10px;
+	padding: 60px 24px;
 	}
 
 .figures {
-	padding: 0 10px 20px 10px;
+	padding: 0 24px 20px 24px;
 	}
 
 .figure {
@@ -83,7 +83,7 @@ header {
 .how {
 	width: auto;
 	min-height: 1px;
-	padding: 200px 10px 40px 10px;
+	padding: 200px 24px 40px 24px;
 	background-size: auto 190px;
 	background-position: 10px 0px;
 	}
@@ -91,19 +91,19 @@ header {
 .oracles {
 	width: auto;
 	min-height: 1px;
-	padding: 200px 10px 40px 10px;
+	padding: 200px 24px 40px 24px;
 	background-size: auto 190px;
 	background-position: 10px 0px;
 	}
 
 .speedcost {
-	padding: 0 10px 40px 10px;
+	padding: 0 24px 40px 24px;
 	}
 
 
 .products {
 	width: auto;
-	padding: 0 10px 40px 10px;
+	padding: 0 24px 40px 24px;
 	background: none;
 	}
 
@@ -119,7 +119,7 @@ header {
 
 
 .hubtoken {
-	padding: 40px 10px 40px 10px;
+	padding: 40px 24px 40px 24px;
 	}
 
 
@@ -166,7 +166,7 @@ header {
 .investors {
 	width: auto;
 	min-height: 1px;
-	padding: 200px 10px 40px 10px;
+	padding: 200px 24px 40px 24px;
 	background-size: auto 190px;
 	background-position: 10px 0px;
 	}
@@ -183,7 +183,7 @@ header {
 
 footer {
 	width: auto;
-	padding: 40px 10px;
+	padding: 40px 24px;
 	}
 
 .copy {
