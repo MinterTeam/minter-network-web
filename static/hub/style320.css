@@ -1,0 +1,199 @@
+.wrap {
+	width: 100%;
+	}
+
+.on320 { display: block; }
+.only760, .hide320 {display: none;}
+
+img.alignright, img.right {
+	float: none;
+	display: block;
+	margin: 0 0 10px 0;
+	}
+img.alignleft, img.left {
+	float: none;
+	display: block;
+	margin: 0 0 10px 0;
+	}
+
+.video {
+	position: relative;
+	overflow: hidden;
+	height: 0;
+	padding-bottom: 54.15%;
+}
+.video iframe,  
+.video object,  
+.video embed {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	}
+
+.entry_table {
+	width: 100%;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	}
+
+.entry img {
+	width: auto !important;
+	height: auto !important;
+	}
+
+[class*='col-'] {
+	float: none;
+	width: auto;
+	padding: 0;
+	}
+
+h1, .h1, .title{
+	font-size: 26px;
+	line-height: 30px;
+	}
+
+
+header {
+	width: auto;
+	padding: 12px 10px;
+	}
+
+.wrap {
+	width: auto;
+	padding: 0 10px 40px 10px;
+	}
+
+.home_top {
+	width: auto;
+	padding: 60px 10px;
+	}
+
+.figures {
+	padding: 0 10px 20px 10px;
+	}
+
+.figure {
+	width: 100%;
+	padding: 0 0 20px 0;
+	}
+
+
+.how {
+	width: auto;
+	min-height: 1px;
+	padding: 200px 10px 40px 10px;
+	background-size: auto 190px;
+	background-position: 10px 0px;
+	}
+
+.oracles {
+	width: auto;
+	min-height: 1px;
+	padding: 200px 10px 40px 10px;
+	background-size: auto 190px;
+	background-position: 10px 0px;
+	}
+
+.speedcost {
+	padding: 0 10px 40px 10px;
+	}
+
+
+.products {
+	width: auto;
+	padding: 0 10px 40px 10px;
+	background: none;
+	}
+
+.products_flx {
+	display: block;
+	}
+
+.product {
+	width: auto;
+	padding: 10px 0 20px 0;
+	background: url('images/products.svg') no-repeat;
+	}
+
+
+.hubtoken {
+	padding: 40px 10px 40px 10px;
+	}
+
+
+.hubtoken_img {
+	width: 70px;
+	min-width: 70px;
+	margin: 0 16px 0 0;
+	}
+
+.hubtoken_t span {
+	padding: 0 0 4px 0;
+	font-size: 26px;
+	line-height: 29px;
+	}
+
+
+.tokenomics1 {
+	padding: 0 0 10px 0;
+	}
+
+.tokenomics2 {
+	padding: 0 0 10px 0;
+	}
+
+.tokenomics3 {
+	padding: 0 0 10px 0;
+	}
+
+
+.tokenomics_lists {
+	margin: 0;
+	}
+
+.tokenomics_list {
+	margin: 0 20px 20px 0;
+	}
+
+
+.pricing_flx {
+	padding: 4px 0 24px 0;
+	}
+
+
+.investors {
+	width: auto;
+	min-height: 1px;
+	padding: 200px 10px 40px 10px;
+	background-size: auto 190px;
+	background-position: 10px 0px;
+	}
+
+
+.technologies_top {
+	display: block;
+	min-height: 1px;
+	padding: 200px 0 0;
+	background-size: auto 190px;
+	background-position: 10px 0px;
+	}
+
+
+footer {
+	width: auto;
+	padding: 40px 10px;
+	}
+
+.copy {
+	float: none;
+	width: auto;
+	padding: 0 0 10px 0;
+	}
+
+.bot_cont {
+	float: none;
+	width: auto;
+	text-align: left;
+	}
