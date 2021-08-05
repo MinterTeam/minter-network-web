@@ -226,7 +226,7 @@ export default {
         <div class="wrap pricing">
             <h2>Pricing</h2>
             <p>The initial supply of <b>50,000 tokens</b> was distributed to the community for free.</p>
-            <p>In the very first days, community members launched trading in the <a href="https://v2.info.uniswap.org/pair/0x3796fee2b555da1356cdcd3e1861263b351a58a0" target="_blank" v-track-click="'hubpool'">HUB-USDT</a> pair on Uniswap, setting the starting price at $0.10. The first trade took place <a href="#">October 27, 2020</a>, when 9 HUBs were bought for $1.</p>
+            <p>In the very first days, community members launched trading in the <a href="https://v2.info.uniswap.org/pair/0x3796fee2b555da1356cdcd3e1861263b351a58a0" target="_blank" v-track-click="'hubpool'">HUB-USDT</a> pair on Uniswap, setting the starting price at $0.10. The first trade took place <a href="https://etherscan.io/tx/0x9e1e7f6e22022c03bb9e95505126c21644ce3f15b3b5ea1dbbd6d744151faa41" target="_blank">October 27, 2020</a>, when 9 HUBs were bought for $1.</p>
             <div class="pricing_flx">
                 <div class="pricing_cur">Current Price <span>${{ pretty(hubPrice) }}</span></div>
                 <div class="pricing_buy"><a class="btn" href="https://app.1inch.io/#/1/swap/USDT/0x8e9A29e7Ed21DB7c5B2E1cd75e676dA0236dfB45" target="_blank" v-track-click="'buyhub'">Buy HUB</a></div>
