@@ -449,15 +449,16 @@ header {
 	justify-content: space-between;
 	width: 710px;
 	margin: 0 auto;
-	padding: 0 0 40px 0;
 }
 .stablecoins .minter_li {
 	display: flex;
     align-items: flex-end;
+    width: 330px;
 }
 .stablecoins .minter_li_i {
 	margin: 0 16px 0 0;
     width: 50px;
+    min-width: 50px;
 }
 
 .minter {
