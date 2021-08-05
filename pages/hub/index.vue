@@ -75,7 +75,7 @@ export default {
 </script>
 
 <template>
-    <div>
+    <div class="page--hub">
         <div class="bg_top">
             <header>
                 <div class="logo"><a href="#"><img src="/hub/images/logo.svg" /></a></div>
