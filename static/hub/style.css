@@ -726,4 +726,4 @@ footer {
 /* END FOOTER */
 
 /* reset global style */
-*, *::after, *::before {box-sizing: content-box;}
+.page--hub *, .page--hub *::after, .page--hub *::before {box-sizing: content-box;}
