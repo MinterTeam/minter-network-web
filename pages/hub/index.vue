@@ -17,8 +17,15 @@ export default {
     },
     fetchOnServer: false,
     fetch() {
+        const bipPricePromise = getStatus()
+            .then((status) => {
+                this.bipPrice = status.bipPriceUsd;
+            });
+
         const poolsPromise = Promise.all([
+                getPool('USDCE', 'USDTE'),
                 getPool('HUB', 'MUSD'),
+                getPool('HUB', 'HUBABUBA'),
             ])
             .then((pools) => {
                 this.pools = pools;
@@ -26,12 +33,13 @@ export default {
             });
 
         return Promise.all([
+            bipPricePromise,
             poolsPromise,
         ]);
     },
     head() {
-        const title = 'Minter Hub – Cross-Chain Bridge to Global Crypto Liquidity';
-        const description = 'Minter Hub is a blockchain bridging Minter, Ethereum, and Binance Smart Chain (BSC). Polkadot, Cardano, Solana, and other popular networks will be interconnected in the near future.';
+        const title = 'Farm USDT and BIPx on Uniswap at 0.2% daily';
+        const description = 'Simply join the USDT-BIPx pool to start yield farming. The program is running from July 15 until August 15, 2021.';
         // const localeSuffix = this.$i18n.locale === 'en' ? '' : '-' + this.$i18n.locale;
 
         return {
@@ -44,8 +52,8 @@ export default {
             ],
             link: [
                 { rel: 'canonical', href: `${HOST}/hub`},
-                { rel: 'stylesheet', href: '/hub/style.css?2'},
-                { rel: 'stylesheet', href: '/hub/style320.css?2', media: 'screen and (max-width: 730px)'},
+                { rel: 'stylesheet', href: '/hub/style.css'},
+                { rel: 'stylesheet', href: '/hub/style320.css', media: '(max-width: 730px)'},
             ],
         };
     },
@@ -72,13 +80,13 @@ export default {
 <template>
     <div class="bg_top">
         <header>
-            <div class="logo"><a href="#"><img src="images/logo.svg" /></a></div>
+            <div class="logo"><a href="#"><img src="/hub/images/logo.svg" /></a></div>
             <div class="lang"><language class="" :locales='[{"code":"","name":"English"},{"code":"ru","name":"Russian"}]' lang="" :push="true"/></div>
         </header>
         <div class="home_top">
             <h1>Cross-Chain Bridge to Global Crypto Liquidity</h1>
             <p>Minter Hub is a blockchain bridging Minter, Ethereum, and Binance Smart Chain (BSC). Polkadot, Cardano, Solana, and other popular networks will be interconnected in the near future.</p>
-            <a class="btn" href="#" target="_blank">Buy HUB</a>
+            <a class="btn" href="#">Buy HUB</a>
         </div>
     </div>
     <div class="wrap figures">
