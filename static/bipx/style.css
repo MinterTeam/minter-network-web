@@ -452,7 +452,7 @@ header {
 }
 .stablecoins .minter_li {
 	display: flex;
-    align-items: flex-end;
+    align-items: center;
     width: 330px;
 }
 .stablecoins .minter_li_i {
