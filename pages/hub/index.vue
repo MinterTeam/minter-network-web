@@ -52,8 +52,8 @@ export default {
             ],
             link: [
                 { rel: 'canonical', href: `${HOST}/hub`},
-                { rel: 'stylesheet', href: '/hub/style.css'},
-                { rel: 'stylesheet', href: '/hub/style320.css', media: 'screen and (max-width: 730px)'},
+                { rel: 'stylesheet', href: '/hub/style.css', hid: 'hub-style'},
+                { rel: 'stylesheet', href: '/hub/style320.css', media: 'screen and (max-width: 730px)', hid: 'hub-style320'},
             ],
         };
     },
@@ -63,6 +63,15 @@ export default {
             hubPrice: 0,
             pools: [],
         };
+    },
+    mounted() {
+        // move landing styles under global styles
+        const style = document.querySelector('[data-hid="hub-style"]');
+        const style320 = document.querySelector('[data-hid="hub-style320"]');
+        style.parentNode.removeChild(style);
+        style320.parentNode.removeChild(style320);
+        document.head.appendChild(style);
+        document.head.appendChild(style320);
     },
     methods: {
         pretty,
