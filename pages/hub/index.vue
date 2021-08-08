@@ -87,7 +87,7 @@ export default {
     <div class="page--hub">
         <div class="bg_top">
             <header>
-                <div class="logo"><a href="/"><img src="/hub/images/logo.svg" /></a></div>
+                <div class="logo"><img src="/hub/images/logo.svg" /></div>
                 <div class="lang"><language class="" :locales='[{"code":"","name":"English"},{"code":"ru","name":"Russian"}]' lang="" :push="true"/></div>
             </header>
             <div class="home_top">
