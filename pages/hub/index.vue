@@ -87,7 +87,7 @@ export default {
     <div class="page--hub">
         <div class="bg_top">
             <header>
-                <div class="logo"><a href="#"><img src="/hub/images/logo.svg" /></a></div>
+                <div class="logo"><a href="/"><img src="/hub/images/logo.svg" /></a></div>
                 <div class="lang"><language class="" :locales='[{"code":"","name":"English"},{"code":"ru","name":"Russian"}]' lang="" :push="true"/></div>
             </header>
             <div class="home_top">
@@ -234,7 +234,7 @@ export default {
         </div>
         <div class="wrap pricing">
             <h2>Pricing</h2>
-            <p>The initial supply of <b>50,000 tokens</b> was distributed to the community for free.</p>
+            <p>The initial supply of <b>50,000 tokens</b> was distributed to the community <b>for free</b>.</p>
             <p>In the very first days, community members launched trading in the <a href="https://v2.info.uniswap.org/pair/0x3796fee2b555da1356cdcd3e1861263b351a58a0" target="_blank" v-track-click="'hubpool'">HUB-USDT</a> pair on Uniswap, setting the starting price at $0.10. The first trade took place <a href="https://etherscan.io/tx/0x9e1e7f6e22022c03bb9e95505126c21644ce3f15b3b5ea1dbbd6d744151faa41" target="_blank">October 27, 2020</a>, when 9 HUBs were bought for $1.</p>
             <div class="pricing_flx">
                 <div class="pricing_cur">Current Price <span>${{ pretty(hubPrice) }}</span></div>

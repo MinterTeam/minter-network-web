@@ -67,6 +67,7 @@ body {
 	font-family: 'Inter', sans-serif;
 	background: #080e1e;
 	text-align: center;
+	font-feature-settings: 'zero' on, 'ordn' on, 'ss01' on;
 	}
 
 input, textarea {
@@ -727,3 +728,4 @@ footer {
 
 /* reset global style */
 .page--hub *, .page--hub *::after, .page--hub *::before {box-sizing: content-box;}
+.page--hub .mdc-menu {min-width: 130px;}
