@@ -68,6 +68,9 @@ export default {
         // move landing styles under global styles
         const style = document.querySelector('[data-hid="hub-style"]');
         const style320 = document.querySelector('[data-hid="hub-style320"]');
+        if (!style || !style320) {
+            return;
+        }
         style.parentNode.removeChild(style);
         style320.parentNode.removeChild(style320);
         document.head.appendChild(style);
