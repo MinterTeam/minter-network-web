@@ -93,7 +93,8 @@ export default {
             <div class="home_top">
                 <h1>Кросс-чейн мост в глобальную крипто-ликвидность</h1>
                 <p>Minter Hub — это блокчейн, соединяющий Minter, Ethereum и Binance Smart Chain. Скоро будут добавлены Polkadot, Cardano, Solana и другие популярные сети.</p>
-                <a class="btn" href="https://app.1inch.io/#/1/swap/USDT/0x8e9A29e7Ed21DB7c5B2E1cd75e676dA0236dfB45" target="_blank" v-track-click="'buyhub'">Купить HUB</a>
+                <a class="btn" href="https://app.1inch.io/#/1/swap/USDT/0x8e9A29e7Ed21DB7c5B2E1cd75e676dA0236dfB45" target="_blank" v-track-click="'buyhub'">Купить HUB в Ethereum</a>
+                <a class="btn btn_alt" href="https://console.minter.network/buy?coin=HUB" target="_blank" v-track-click="'buyhubminter'">Купить HUB в Minter</a>
             </div>
         </div>
         <div class="wrap figures">
@@ -173,11 +174,11 @@ export default {
             <div class="figures_flx">
                 <div class="figure">
                     <span>Фонд</span>
-                    950 000 токенов
+                    948 442 токена
                 </div>
                 <div class="figure">
                     <span>Сообщество Minter</span>
-                    50 000 токенов
+                    51 558 токенов
                 </div>
             </div>
             <div class="currenthub_txt">

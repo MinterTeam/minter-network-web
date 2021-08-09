@@ -96,7 +96,8 @@ export default {
             <div class="home_top">
                 <h1>Cross-Chain Bridge to Global Crypto Liquidity</h1>
                 <p>Minter Hub is a blockchain bridging Minter, Ethereum, and Binance Smart Chain (BSC). Polkadot, Cardano, Solana, and other popular networks will be interconnected in the near future.</p>
-                <a class="btn" href="https://app.1inch.io/#/1/swap/USDT/0x8e9A29e7Ed21DB7c5B2E1cd75e676dA0236dfB45" target="_blank" v-track-click="'buyhub'">Buy HUB</a>
+                <a class="btn" href="https://app.1inch.io/#/1/swap/USDT/0x8e9A29e7Ed21DB7c5B2E1cd75e676dA0236dfB45" target="_blank" v-track-click="'buyhub'">Buy HUB on Ethereum</a>
+                <a class="btn btn_alt" href="https://console.minter.network/buy?coin=HUB" target="_blank" v-track-click="'buyhubminter'">Buy HUB on Minter</a>
             </div>
         </div>
         <div class="wrap figures">
@@ -176,11 +177,11 @@ export default {
             <div class="figures_flx">
                 <div class="figure">
                     <span>Fund</span>
-                    950,000 tokens
+                    948,442 tokens
                 </div>
                 <div class="figure">
                     <span>Minter community</span>
-                    50,000 tokens
+                    51,558 tokens
                 </div>
             </div>
             <div class="currenthub_txt">

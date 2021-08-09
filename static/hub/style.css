@@ -321,14 +321,25 @@ blockquote cite {
 	text-decoration: none;
 	text-align: center;
 	cursor: pointer;
+	margin: 0 15px 15px 0;
 	}
 
 .btn:hover{
-	border-color: #FF9900;
-	background-color: #FF9900;
+	border-color: #588AFC;
+	background-color: #588AFC;
 	color: #fff;
 	text-decoration: none;
 	}
+
+.btn_alt {
+	border: 2px solid #546DA6;
+	background: #546DA6;
+}
+
+.btn_alt:hover {
+	border: 2px solid #8799C1;
+	background: #8799C1;
+}
 
 .btn_c2 {
 	background: none;
@@ -394,9 +405,9 @@ header {
 	}
 
 .home_top {
-	width: 442px;
+	width: 460px;
 	margin: 0 auto;
-	padding: 102px 270px 160px 0;
+	padding: 102px 252px 160px 0;
 	text-align: left;
 	}
 
