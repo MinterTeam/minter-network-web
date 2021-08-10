@@ -10,7 +10,7 @@ export default {
     layout: 'simple',
     components: {
         Language,
-        Footer,
+        // Footer,
     },
     directives: {
         trackClick,
@@ -59,24 +59,22 @@ export default {
     },
     data() {
         return {
-            bipPrice: 0,
+            // bipPrice: 0,
             hubPrice: 0,
-            pools: [],
+            // pools: [],
         };
     },
     mounted() {
-        setTimeout(() => {
-            // move landing styles under global styles
-            const style = document.querySelector('[data-hid="hub-style"]');
-            const style320 = document.querySelector('[data-hid="hub-style320"]');
-            if (!style || !style320) {
-                return;
-            }
-            style.parentNode.removeChild(style);
-            style320.parentNode.removeChild(style320);
-            document.head.appendChild(style);
-            document.head.appendChild(style320);
-        }, 0);
+        // move landing styles under global styles
+        const style = document.querySelector('[data-hid="hub-style"]');
+        const style320 = document.querySelector('[data-hid="hub-style320"]');
+        if (!style || !style320) {
+            return;
+        }
+        style.parentNode.removeChild(style);
+        style320.parentNode.removeChild(style320);
+        document.head.appendChild(style);
+        document.head.appendChild(style320);
     },
     methods: {
         pretty,
@@ -274,11 +272,11 @@ export default {
         </div>
         <div class="bg_bot">
             <footer>
-                <div class="logo_bot"><img src="/hub/images/minter.svg" /></div>
+                <div class="logo_bot"><img src="/hub/images/minter.svg" alt=""></div>
                 <div class="copy">Copyright © 2019-2021 Minter Development Foundation. All rights reserved.</div>
                 <div class="bot_cont">
-                    75 Broadway, Suite 202, San Francisco, CA, 94111<br />
-                    For correspondence: 548 Market St #32852, San Francisco, CA 94104-5401<br />
+                    75 Broadway, Suite 202, San Francisco, CA, 94111 <br>
+                    For correspondence: 548 Market St #32852, San Francisco, CA 94104-5401 <br>
                     <a href="mailto:hello@minter.org">hello@minter.org</a>
                 </div>
                 <div class="clear"></div>
