@@ -740,4 +740,5 @@ footer {
 /* reset global style */
 .page--hub *, .page--hub *::after, .page--hub *::before {box-sizing: content-box;}
 .page--hub .mdc-menu-surface--anchor *, .page--hub .mdc-menu-surface--anchor *::after, .page--hub .mdc-menu-surface--anchor *::before {box-sizing: border-box;}
-.page--hub .mdc-menu {min-width: 130px;}
+/*.page--hub .mdc-menu {min-width: 130px;}*/
+.mdc-list-item__meta {max-width: none;}
