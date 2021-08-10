@@ -4,7 +4,7 @@ export function gaSend(category, action, label, value) {
     // console.log({category, action, label, pageLabel: getPageLabel()})
     // gtag style
     if (typeof window.ga === 'function') {
-        window.ga(function () {
+        window.ga(function() {
             const tracker = window.ga.getAll()[0];
             if (tracker) {
                 tracker.send({
@@ -46,6 +46,7 @@ export function getPageLabel() {
 
 export function ymGoal(category, action, label) {
     if (typeof window.ym === 'function') {
-        window.ym(49878307, 'reachGoal', `${category}-${action}-${label}`);
+        const labelSuffix = label ? '-' + label : '';
+        window.ym(49878307, 'reachGoal', `${category}-${action}${labelSuffix}`);
     }
 }

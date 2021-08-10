@@ -96,8 +96,8 @@ export default {
             <div class="home_top">
                 <h1>Кросс-чейн мост в глобальную крипто-ликвидность</h1>
                 <p>Minter Hub — это блокчейн, соединяющий Minter, Ethereum и Binance Smart Chain. Скоро будут добавлены Polkadot, Cardano, Solana и другие популярные сети.</p>
-                <a class="btn" href="https://app.1inch.io/#/1/swap/USDT/0x8e9A29e7Ed21DB7c5B2E1cd75e676dA0236dfB45" target="_blank" v-track-click="'buyhub'">Купить HUB в Ethereum</a>
-                <a class="btn btn_alt" href="https://console.minter.network/buy?coin=HUB" target="_blank" v-track-click="'buyhubminter'">Купить HUB в Minter</a>
+                <a class="btn" href="https://app.1inch.io/#/1/swap/USDT/0x8e9A29e7Ed21DB7c5B2E1cd75e676dA0236dfB45" target="_blank" v-track-click="'hub-buyhub'">Купить HUB в Ethereum</a>
+                <a class="btn btn_alt" href="https://console.minter.network/buy?coin=HUB" target="_blank" v-track-click="'hub-buyhubminter'">Купить HUB в Minter</a>
             </div>
         </div>
         <div class="wrap figures">
@@ -153,7 +153,7 @@ export default {
                 <div class="product">
                     <div class="product_img"><img src="/hub/images/minter.svg" /></div>
                     <p>Minter — маркетплейс цифровых активов, где каждый может купить, продать, отправить или потратить BTC, ETH, BIP, USDC и другие</p>
-                    <a class="btn btn_c2" href="https://www.minter.network/ru" v-track-click="'minter'">Подробнее</a>
+                    <a class="btn btn_c2" href="https://www.minter.network/ru" v-track-click="'hub-minter'">Подробнее</a>
                 </div>
                 <div class="product">
                     <div class="product_img"><img src="/hub/images/honee.svg" /></div>
@@ -239,10 +239,10 @@ export default {
         <div class="wrap pricing">
             <h2>Ценообразование</h2>
             <p>Начальную эмиссию в <b>50 000 токенов</b> сообщество получило <b>бесплатно</b>.</p>
-            <p>В первые же дни члены сообщества запустили торги пары <a href="https://v2.info.uniswap.org/pair/0x3796fee2b555da1356cdcd3e1861263b351a58a0" target="_blank" v-track-click="'hubpool'">HUB-USDT</a> в Uniswap, установив стартовую цену на отметке $0.10. Первый трейд состоялся <a href="https://etherscan.io/tx/0x9e1e7f6e22022c03bb9e95505126c21644ce3f15b3b5ea1dbbd6d744151faa41" target="_blank">27 октября 2020 г.</a>, за $1 были куплены 9 HUB.</p>
+            <p>В первые же дни члены сообщества запустили торги пары <a href="https://v2.info.uniswap.org/pair/0x3796fee2b555da1356cdcd3e1861263b351a58a0" target="_blank" v-track-click="'hub-hubpool'">HUB-USDT</a> в Uniswap, установив стартовую цену на отметке $0.10. Первый трейд состоялся <a href="https://etherscan.io/tx/0x9e1e7f6e22022c03bb9e95505126c21644ce3f15b3b5ea1dbbd6d744151faa41" target="_blank">27 октября 2020 г.</a>, за $1 были куплены 9 HUB.</p>
             <div class="pricing_flx">
                 <div class="pricing_cur">Цена сейчас: <span>${{ pretty(hubPrice) }}</span></div>
-                <div class="pricing_buy"><a class="btn" href="https://app.1inch.io/#/1/swap/USDT/0x8e9A29e7Ed21DB7c5B2E1cd75e676dA0236dfB45" target="_blank" v-track-click="'buyhub'">Купить HUB</a></div>
+                <div class="pricing_buy"><a class="btn" href="https://app.1inch.io/#/1/swap/USDT/0x8e9A29e7Ed21DB7c5B2E1cd75e676dA0236dfB45" target="_blank" v-track-click="'hub-buyhub'">Купить HUB</a></div>
             </div>
             <p>Команда не исключает, что поддержит листинги и интеграции в том или ином виде, в том числе наградами в токенах HUB. Но сама не будет инициировать подобную деятельность, предоставив сообществу полную свободу действий.</p>
         </div>

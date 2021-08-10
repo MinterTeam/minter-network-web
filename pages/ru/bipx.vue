@@ -87,8 +87,8 @@ export default {
                 <div class="logo"><a href="#"><img src="/img/minter-logo-white.svg" width="155" height="48" alt="Minter"/></a></div>
                 <h1>Фармите USDT и BIPx на Uniswap, 0.2% ежедневно</h1>
                 <div class="top_e">Просто присоединитесь к пулу USDT-BIPx, чтобы участвовать. Программа действует с 15 июля по 15 августа 2021 г.</div>
-                <a class="btn" href="https://v2.info.uniswap.org/pair/0xb1700c93ddc26ce1d59441c24daef1035444d7b7" target="_blank" v-track-click="'farm'">Начать фарминг</a>
-                <a class="btn btn_c2" href="https://minterteam.medium.com/2d91d98fba71" target="_blank" v-track-click="'giveaway'">Узнать о призах</a>
+                <a class="btn" href="https://v2.info.uniswap.org/pair/0xb1700c93ddc26ce1d59441c24daef1035444d7b7" target="_blank" v-track-click="'bipx-farm'">Начать фарминг</a>
+                <a class="btn btn_c2" href="https://minterteam.medium.com/2d91d98fba71" target="_blank" v-track-click="'bipx-giveaway'">Узнать о призах</a>
             </div>
             <div class="top_l"><img src="/bipx/images/header.png" srcset="/bipx/images/header@2x.png 2x, /bipx/images/header@3x.png 3x" /></div>
         </header>
@@ -341,7 +341,7 @@ export default {
                 <div class="discover_th">Начальная цена <span>$0.11</span></div>
                 <div class="discover_th">Макс. эмиссия <span>1000000</span></div>
                 <div class="discover_th">Пулы <span><a href="https://explorer.minter.network/pools/HUB/USDTE" target="_blank">Minter</a> <a href="https://v2.info.uniswap.org/pair/0x3796fee2b555da1356cdcd3e1861263b351a58a0" target="_blank">Ethereum</a></span></div>
-                <div class="discover_go"><a class="btn" href="https://minterteam.medium.com/c0a86610f08f" target="_blank" v-track-click="'white-paper'">White paper</a></div>
+                <div class="discover_go"><a class="btn" href="https://minterteam.medium.com/c0a86610f08f" target="_blank" v-track-click="'bipx-white-paper'">White paper</a></div>
             </div>
             <!--<div class="discover_chart"><img src="/bipx/images/chart.svg" /></div>-->
             <div class="discover_e">
@@ -349,7 +349,7 @@ export default {
                 <p>Например, Uniswap v3 <a href="https://info.uniswap.org/#/pools/0x27878ae7f961a126755042ee8e5c074ea971511f" target="_blank">HUB-USDT</a>, Uniswap v2 <a href="https://v2.info.uniswap.org/pair/0x3796fee2b555da1356cdcd3e1861263b351a58a0" target="_blank">HUB-USDT</a>, Minter <a href="https://explorer.minter.network/pools/HUB/BIP" target="_blank">HUB-BIP</a>.</p>
             </div>
         </div>
-        <div class="start"><a class="btn" href="https://v2.info.uniswap.org/pair/0xb1700c93ddc26ce1d59441c24daef1035444d7b7" target="_blank" v-track-click="'farm'">Перейти к фармингу USDT и BIPx</a></div>
+        <div class="start"><a class="btn" href="https://v2.info.uniswap.org/pair/0xb1700c93ddc26ce1d59441c24daef1035444d7b7" target="_blank" v-track-click="'bipx-farm'">Перейти к фармингу USDT и BIPx</a></div>
         <Footer class="footer--transparent"/>
     </div>
 </template>

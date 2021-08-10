@@ -87,7 +87,7 @@ export default {
                 <div class="logo"><a href="#"><img src="/img/minter-logo-white.svg" width="155" height="48" alt="Minter"/></a></div>
                 <h1>Earn 36.5% APR with USDT-USDC pool on Minter</h1>
                 <div class="top_e">Not so sure where the market is headed in the short run? Join our stablecoin yield farming program. It's easy, safe, and fast.</div>
-                <a class="btn" href="https://www.minter.network/howto/usdt-usdc" target="_blank" v-track-click="'learn'">Learn How</a>
+                <a class="btn" href="https://www.minter.network/howto/usdt-usdc" target="_blank" v-track-click="'stablecoins-learn'">Learn How</a>
             </div>
             <div class="top_l"><img src="/bipx/images/header-stables.png" srcset="/bipx/images/header-stables@2x.png 2x, /bipx/images/header-stables@3x.png 3x" /></div>
         </header>
@@ -121,7 +121,7 @@ export default {
         </div>
 
         <div class="start">
-            <a class="btn" href="https://explorer.minter.network/farming" target="_blank" v-track-click="'farm'">Check All Farmings</a>
+            <a class="btn" href="https://explorer.minter.network/farming" target="_blank" v-track-click="'stablecoins-farm'">Check All Farmings</a>
         </div>
 
         <div class="minter">
@@ -362,7 +362,7 @@ export default {
                 <div class="discover_th">Start price <span>$0.11</span></div>
                 <div class="discover_th">Max supply <span>1 000 000</span></div>
                 <div class="discover_th">Pools <span><a href="https://explorer.minter.network/pools/HUB/USDTE" target="_blank">Minter</a> <a href="https://v2.info.uniswap.org/pair/0x3796fee2b555da1356cdcd3e1861263b351a58a0" target="_blank">Ethereum</a></span></div>
-                <div class="discover_go"><a class="btn" href="https://minterteam.medium.com/hub-token-of-the-minter-hub-blockchain-69a3f2605ffd" target="_blank" v-track-click="'white-paper'">White paper</a></div>
+                <div class="discover_go"><a class="btn" href="https://minterteam.medium.com/hub-token-of-the-minter-hub-blockchain-69a3f2605ffd" target="_blank" v-track-click="'stablecoins-white-paper'">White paper</a></div>
             </div>
             <!--<div class="discover_chart"><img src="/bipx/images/chart.svg" /></div>-->
             <div class="discover_e">
@@ -370,7 +370,7 @@ export default {
                 <p>For example, Uniswap v3 <a href="https://info.uniswap.org/#/pools/0x27878ae7f961a126755042ee8e5c074ea971511f" target="_blank">HUB-USDT</a>, Uniswap v2 <a href="https://v2.info.uniswap.org/pair/0x3796fee2b555da1356cdcd3e1861263b351a58a0" target="_blank">HUB-USDT</a>, Minter <a href="https://explorer.minter.network/pools/HUB/BIP" target="_blank">HUB-BIP</a>.</p>
             </div>
         </div>
-        <div class="start"><a class="btn" href="https://v2.info.uniswap.org/pair/0xb1700c93ddc26ce1d59441c24daef1035444d7b7" target="_blank" v-track-click="'farm'">Start farming USDT and BIPx</a></div>
+        <div class="start"><a class="btn" href="https://v2.info.uniswap.org/pair/0xb1700c93ddc26ce1d59441c24daef1035444d7b7" target="_blank" v-track-click="'stablecoins-farm'">Start farming USDT and BIPx</a></div>
         <Footer class="footer--transparent"/>
     </div>
 </template>
