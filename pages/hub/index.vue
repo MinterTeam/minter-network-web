@@ -48,7 +48,7 @@ export default {
                 { hid: 'og-title', name: 'og:title', content: title },
                 { hid: 'description', name: 'description', content: description },
                 { hid: 'og-description', name: 'og:description', content: description },
-                // { hid: 'og-image', name: 'og:image', content: `/bipx/images/bipx-meta.png` },
+                { hid: 'og-image', name: 'og:image', content: `/hub/images/meta.png` },
             ],
             link: [
                 { rel: 'canonical', href: `${HOST}/hub`},
