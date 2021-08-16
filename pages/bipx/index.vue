@@ -341,7 +341,7 @@ export default {
                 <div class="discover_th">Start price <span>$0.11</span></div>
                 <div class="discover_th">Max supply <span>1 000 000</span></div>
                 <div class="discover_th">Pools <span><a href="https://explorer.minter.network/pools/HUB/USDTE" target="_blank">Minter</a> <a href="https://v2.info.uniswap.org/pair/0x3796fee2b555da1356cdcd3e1861263b351a58a0" target="_blank">Ethereum</a></span></div>
-                <div class="discover_go"><a class="btn" href="https://minterteam.medium.com/hub-token-of-the-minter-hub-blockchain-69a3f2605ffd" target="_blank" v-track-click="'bipx-white-paper'">White paper</a></div>
+                <div class="discover_go"><a class="btn" href="https://minter.network/hub" target="_blank" v-track-click="'bipx-white-paper'">Read More</a></div>
             </div>
             <!--<div class="discover_chart"><img src="/bipx/images/chart.svg" /></div>-->
             <div class="discover_e">

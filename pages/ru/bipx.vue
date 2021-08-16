@@ -341,7 +341,7 @@ export default {
                 <div class="discover_th">Начальная цена <span>$0.11</span></div>
                 <div class="discover_th">Макс. эмиссия <span>1000000</span></div>
                 <div class="discover_th">Пулы <span><a href="https://explorer.minter.network/pools/HUB/USDTE" target="_blank">Minter</a> <a href="https://v2.info.uniswap.org/pair/0x3796fee2b555da1356cdcd3e1861263b351a58a0" target="_blank">Ethereum</a></span></div>
-                <div class="discover_go"><a class="btn" href="https://minterteam.medium.com/c0a86610f08f" target="_blank" v-track-click="'bipx-white-paper'">White paper</a></div>
+                <div class="discover_go"><a class="btn" href="https://minter.network/ru/hub" target="_blank" v-track-click="'bipx-white-paper'">Подробнее</a></div>
             </div>
             <!--<div class="discover_chart"><img src="/bipx/images/chart.svg" /></div>-->
             <div class="discover_e">
