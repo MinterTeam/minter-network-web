@@ -20,6 +20,7 @@ export default {
         const bipPricePromise = getStatus()
             .then((status) => {
                 this.bipPrice = status.bipPriceUsd;
+                this.marketCap = status.marketCap;
             });
 
         const poolsPromise = Promise.all([
@@ -52,17 +53,30 @@ export default {
             ],
             link: [
                 { rel: 'canonical', href: `${HOST}/bip`},
-                { rel: 'stylesheet', href: '/bipx/style.css?2'},
-                { rel: 'stylesheet', href: '/bipx/style320.css?2', media: '(max-width: 760px)'},
+                { rel: 'stylesheet', href: '/bipx/style.css?2', hid: 'bipx-style'},
+                { rel: 'stylesheet', href: '/bipx/style320.css?2', media: '(max-width: 760px)', hid: 'bipx-style320'},
             ],
         };
     },
     data() {
         return {
             bipPrice: 0,
+            marketCap: 0,
             hubPrice: 0,
             pools: [],
         };
+    },
+    mounted() {
+        // move landing styles under global styles
+        const style = document.querySelector('[data-hid="bipx-style"]');
+        const style320 = document.querySelector('[data-hid="bipx-style320"]');
+        if (!style || !style320) {
+            return;
+        }
+        style.parentNode.removeChild(style);
+        style320.parentNode.removeChild(style320);
+        document.head.appendChild(style);
+        document.head.appendChild(style320);
     },
     methods: {
         pretty,
@@ -71,6 +85,9 @@ export default {
             return bipValue * (this.bipPrice || 0);
         },
         apy(pool) {
+            if (!pool) {
+                return 0;
+            }
             return getApy(pool.tradeVolumeBip1D, pool.liquidityBip);
         },
     },
@@ -87,7 +104,7 @@ export default {
                 <div class="logo"><a href="#"><img src="/img/minter-logo-white.svg" width="155" height="48" alt="Minter"/></a></div>
                 <h1>Digital Assets Marketplace</h1>
                 <div class="top_e">Minter is a digital assets marketplace allowing anyone to buy, sell, send, and spend BTC, ETH, BIP, USDC, gold, oil, stocks, and much more within a single decentralized network.</div>
-                <a class="btn" href="https://www.minter.network/how-to-buy-and-sell-bip" target="_blank" v-track-click="'buy-bip'">Buy BIP</a>
+                <nuxt-link class="btn" to="/how-to-buy-and-sell-bip" v-track-click="'buy-bip'">Buy BIP</nuxt-link>
                 <a class="btn btn_c2" href="https://v2.info.uniswap.org/pair/0xb1700c93ddc26ce1d59441c24daef1035444d7b7" target="_blank" v-track-click="'buy-bipx'">Buy BIPx</a>
                 <a class="btn btn_c2 btn_nomargin" href="https://minterteam.medium.com/bipx-usdt-farming-at-0-2-giveaway-fa2c30a09e18#9cb4" target="_blank" v-track-click="'airdrop'">Get Airdrop</a>
             </div>
@@ -104,7 +121,7 @@ export default {
             </div>
             <div class="bipx_r"><img src="/bipx/images/bipx.png" srcset="/bipx/images/bipx@2x.png 2x, /bipx/images/bipx@3x.png 3x" alt="" role="presentation"/></div>
         </div>
-        <div class="wrap figures">
+        <div class="figures">
             <h2>Earn with Minter</h2>
             <div class="figures_flx">
                 <div class="figure">
@@ -121,7 +138,7 @@ export default {
                 </div>
                 <div class="figure">
                     <span>Market Cap</span>
-                    $ 19 754 418
+                    ${{ prettyRound(marketCap) }}
                 </div>
                 <div class="figure">
                     <span>Liquidity Yield</span>

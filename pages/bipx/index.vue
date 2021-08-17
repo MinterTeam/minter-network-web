@@ -52,8 +52,8 @@ export default {
             ],
             link: [
                 { rel: 'canonical', href: `${HOST}/bipx`},
-                { rel: 'stylesheet', href: '/bipx/style.css?2'},
-                { rel: 'stylesheet', href: '/bipx/style320.css?2', media: '(max-width: 760px)'},
+                { rel: 'stylesheet', href: '/bipx/style.css?2', hid: 'bipx-style'},
+                { rel: 'stylesheet', href: '/bipx/style320.css?2', media: '(max-width: 760px)', hid: 'bipx-style320'},
             ],
         };
     },
@@ -64,6 +64,18 @@ export default {
             pools: [],
         };
     },
+    mounted() {
+        // move landing styles under global styles
+        const style = document.querySelector('[data-hid="bipx-style"]');
+        const style320 = document.querySelector('[data-hid="bipx-style320"]');
+        if (!style || !style320) {
+            return;
+        }
+        style.parentNode.removeChild(style);
+        style320.parentNode.removeChild(style320);
+        document.head.appendChild(style);
+        document.head.appendChild(style320);
+    },
     methods: {
         pretty,
         prettyRound,
@@ -71,6 +83,9 @@ export default {
             return bipValue * (this.bipPrice || 0);
         },
         apy(pool) {
+            if (!pool) {
+                return 0;
+            }
             return getApy(pool.tradeVolumeBip1D, pool.liquidityBip);
         },
     },

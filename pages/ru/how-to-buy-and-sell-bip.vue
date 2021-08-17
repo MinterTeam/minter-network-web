@@ -152,7 +152,7 @@ export default {
                     </div>
                     <div class="u-cell u-cell--medium--2-3">
                         <div class="u-grid u-grid--small u-grid--vertical-margin">
-                            <div class="u-cell u-cell--small--1-2" v-if="false">
+                            <div class="u-cell u-cell--small--1-2">
                                 <div class="bip-trade__item">
                                     <a class="bip-trade__link link--default" href="https://www.bithumb.pro/en-us/exchange/professional?q=BIP-USDT" target="_blank" rel="noopener">
                                         <img class="bip-trade__icon" src="/img/bip-trade-bithumb.png" srcset="/img/bip-trade-bithumb@2x.png 2x" alt="" role="presentation">

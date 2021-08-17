@@ -71,6 +71,9 @@ export default {
             return bipValue * (this.bipPrice || 0);
         },
         apy(pool) {
+            if (!pool) {
+                return 0;
+            }
             return getApy(pool.tradeVolumeBip1D, pool.liquidityBip);
         },
     },
