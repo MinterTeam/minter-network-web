@@ -103,6 +103,7 @@ h1, .h1, .title{
 h2, .h2{
 	font-size: 24px;
 	line-height: 28px;
+	margin: 0 0 24px 0 !important;
 	}
 h3, .h3{
 	font-size: 22px;
@@ -306,14 +307,14 @@ blockquote cite {
 	display: inline-block;
 	box-sizing: border-box;
 	min-height: 40px;
-	padding: 10px 16px;
+	padding: 10px 14px;
 	border: 1px solid #D15C22;
 	background: #D15C22;
 	border-radius: 12px;
 	transition: all 0.3s 0.02s ease;
 	-webkit-appearance: none;
 	color: #fff;
-	font-size: 16px;
+	font-size: 15px;
 	line-height: 18px;
 	font-weight: bold;
 	text-decoration: none;
@@ -332,13 +333,18 @@ blockquote cite {
 	border: 2px solid #D15C22;
     background: transparent;
     color: #D15C22;
-    margin: 0 !important;
+    /*margin: 0 !important;*/
 	}
 
 .btn_c2:hover {
     border: 2px solid #d66c38;
-	color: #fff;
+		color: #fff;
 	}
+
+.btn_nomargin {
+    margin: 0 !important;
+	}
+
 
 /* END FORM */
 
@@ -400,7 +406,7 @@ header {
 	}
 
 .figures {
-	padding: 0 0 52px 0;
+	padding: 0 0 96px 0;
 	}
 
 .figures_flx {
@@ -433,7 +439,7 @@ header {
 	align-items: center;
 	width: 710px;
 	margin: 0 auto;
-	padding: 0 0 84px 0;
+	padding: 0 0 96px 0;
 	}
 
 .bipx_r {
