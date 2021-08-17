@@ -86,7 +86,7 @@ export default {
             <div class="top_r">
                 <div class="logo"><a href="#"><img src="/img/minter-logo-white.svg" width="155" height="48" alt="Minter"/></a></div>
                 <h1>Маркетплейс цифровых активов</h1>
-                <div class="top_e">Minter это маркетплейс цифровых активов, позволяющий любому пользователю покупать, продавать, отправлять и тратить BTC, ETH, BIP, USDT, золото, акции и другие активы в рамках единой децентрализованной сети.</div>
+                <div class="top_e">Minter — это маркетплейс цифровых активов, позволяющий любому пользователю покупать, продавать, отправлять и тратить BTC, ETH, BIP, USDT, золото, акции и другие активы в рамках единой децентрализованной сети.</div>
                 <a class="btn" href="https://www.minter.network/ru/how-to-buy-and-sell-bip" target="_blank" v-track-click="'buy-bip'">Купить BIP</a>
                 <a class="btn btn_c2" href="https://v2.info.uniswap.org/pair/0xb1700c93ddc26ce1d59441c24daef1035444d7b7" target="_blank" v-track-click="'buy-bipx'">Купить BIPx</a>
                 <a class="btn btn_c2 btn_nomargin" href="https://minterteam.medium.com/bipx-usdt-%D1%84%D0%B0%D1%80%D0%BC%D0%B8%D0%BD%D0%B3-0-2-%D0%BB%D0%BE%D1%82%D0%B5%D1%80%D0%B5%D1%8F-2d91d98fba71#0d32" target="_blank" v-track-click="'airdrop'">Airdrop</a>
@@ -369,13 +369,13 @@ export default {
                 <div class="discover_img"><img src="/bipx/images/discover.svg" /></div>
                 <div class="discover_th">Текущая цена <span>${{ pretty(hubPrice) }}</span></div>
                 <div class="discover_th">Начальная цена <span>$0.11</span></div>
-                <div class="discover_th">Макс. эмиссия <span>1000000</span></div>
+                <div class="discover_th">Макс. эмиссия <span>1 000 000</span></div>
                 <div class="discover_th">Пулы <span><a href="https://explorer.minter.network/pools/HUB/USDTE" target="_blank">Minter</a> <a href="https://v2.info.uniswap.org/pair/0x3796fee2b555da1356cdcd3e1861263b351a58a0" target="_blank">Ethereum</a></span></div>
                 <div class="discover_go"><a class="btn" href="https://minter.network/ru/hub" target="_blank" v-track-click="'bipx-white-paper'">Подробнее</a></div>
             </div>
             <!--<div class="discover_chart"><img src="/bipx/images/chart.svg" /></div>-->
             <div class="discover_e">
-                <p><a href="https://etherscan.io/token/0x8e9A29e7Ed21DB7c5B2E1cd75e676dA0236dfB45" target="_blank">HUB</a> это нативный токен в блокчейне Minter Hub, который, в свою очередь, является мостом, соединяющим Minter с Ethereum и Binance Smart Chain. HUB — это PoS-токен, и все оракулы получают 1% комиссии от переводов между сетями. HUB также служит резервом для пулов в Minter, Ethereum и Binance Smart Chain.</p>
+                <p><a href="https://etherscan.io/token/0x8e9A29e7Ed21DB7c5B2E1cd75e676dA0236dfB45" target="_blank">HUB</a> — это нативный токен в блокчейне Minter Hub, который, в свою очередь, является мостом, соединяющим Minter с Ethereum и Binance Smart Chain. HUB — это PoS-токен, и все оракулы получают 1% комиссии от переводов между сетями. HUB также служит резервом для пулов в Minter, Ethereum и Binance Smart Chain.</p>
                 <p>Например, Uniswap v3 <a href="https://info.uniswap.org/#/pools/0x27878ae7f961a126755042ee8e5c074ea971511f" target="_blank">HUB-USDT</a>, Uniswap v2 <a href="https://v2.info.uniswap.org/pair/0x3796fee2b555da1356cdcd3e1861263b351a58a0" target="_blank">HUB-USDT</a>, Minter <a href="https://explorer.minter.network/pools/HUB/BIP" target="_blank">HUB-BIP</a>.</p>
             </div>
         </div>
