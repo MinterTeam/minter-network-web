@@ -22,8 +22,8 @@ img.alignleft, img.left {
 	height: 0;
 	padding-bottom: 54.15%;
 }
-.video iframe,  
-.video object,  
+.video iframe,
+.video object,
 .video embed {
 	position: absolute;
 	width: 100%;
@@ -66,6 +66,14 @@ header {
 	margin: 0 8px 10px 0;
 	}
 
+.figures {
+	padding: 0 24px 20px 24px;
+	}
+
+.figure {
+	width: 100%;
+	padding: 0 0 20px 0;
+	}
 
 .bipx {
 	display: block;
@@ -282,4 +290,8 @@ footer {
 	max-width: 50%;
     margin: 16px auto;
     display: block;
+}
+
+.m-l-40 {
+	margin: 0;
 }

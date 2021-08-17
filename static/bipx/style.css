@@ -365,6 +365,10 @@ header {
 	order: 1;
 	}
 
+.m-l-40 {
+	margin: 0 0 0 -40;
+}
+
 .top_l img {
 	vertical-align: bottom;
 	}

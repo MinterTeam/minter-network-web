@@ -7,9 +7,9 @@ import Language from '~/layouts/_language.vue';
 export default {
     middleware({ redirect }) {
         if (!process.server) {
-            window.location = '/bipx';
+            window.location = '/bip';
         } else {
-            return redirect('/bipx');
+            return redirect('/bip');
         }
         return new Promise(() => {});
     },
