@@ -361,6 +361,16 @@ header {
 	padding: 61px 0 96px 0;
 	}
 
+.lang-wrap {
+	width: 918px;
+}
+
+@media (max-width: 960px) {
+.lang-wrap {
+	width: 712px;
+	}
+}
+
 .top_l {
 	order: 1;
 	}

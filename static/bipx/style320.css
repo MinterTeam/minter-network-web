@@ -57,6 +57,11 @@ header {
 	padding: 20px 24px 30px 24px;
 	}
 
+.lang-wrap {
+	width: auto;
+	padding: 12px 24px;
+	}
+
 .top_r {
 	width: auto;
 	padding: 0 0 10px 0;

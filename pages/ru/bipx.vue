@@ -7,6 +7,14 @@ import Language from '~/layouts/_language.vue';
 import Footer from '~/layouts/_footer.vue';
 
 export default {
+    middleware({ redirect }) {
+        if (!process.server) {
+            window.location = '/ru/bip';
+        } else {
+            return redirect('/ru/bip');
+        }
+        return new Promise(() => {});
+    },
     layout: 'simple',
     components: {
         Language,

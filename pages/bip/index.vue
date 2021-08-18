@@ -96,7 +96,7 @@ export default {
 
 <template>
     <div class="wrap">
-        <div class="u-container u-container--full index-language">
+        <div class="u-container u-container--full index-language lang-wrap">
             <language class="" :locales='[{"code":"","name":"English"},{"code":"ru","name":"Russian"}]' lang="" :push="true"/>
         </div>
         <header>

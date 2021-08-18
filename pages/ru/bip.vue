@@ -96,7 +96,7 @@ export default {
 
 <template>
     <div class="wrap">
-        <div class="u-container u-container--full index-language">
+        <div class="u-container u-container--full index-language lang-wrap">
             <language class="" :locales='[{"code":"","name":"English"},{"code":"ru","name":"Russian"}]' lang="ru" :push="true"/>
         </div>
         <header>
@@ -128,21 +128,22 @@ export default {
                     <span>BIP фарминг</span>
                     До 73% годовых
                 </div>
-                <div class="figure">
-                    <span>Запуск сети</span>
-                    15 мая 2019
-                </div>
+
                 <div class="figure">
                     <span>BIP стейкинг</span>
                     40% годовых
                 </div>
                 <div class="figure">
-                    <span>Капитализация</span>
-                    ${{ prettyRound(marketCap) }}
-                </div>
-                <div class="figure">
                     <span>Предоставление ликидности</span>
                     0.2% от каждого трейда
+                </div>
+                <div class="figure">
+                    <span>Запуск сети</span>
+                    15 мая 2019
+                </div>
+                <div class="figure">
+                    <span>Капитализация</span>
+                    ${{ prettyRound(marketCap) }}
                 </div>
                 <div class="figure">
                     <span>Монет в циркуляции</span>
