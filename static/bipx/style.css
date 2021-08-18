@@ -402,20 +402,18 @@ header {
 
 
 /* HOME */
-.wrap {
+.figures {
 	width: 712px;
-	padding: 0 0 140px 0;
+	padding: 0 0 96px 0;
 	margin: 0 auto;
 	text-align: left;
-	}
-
-.figures {
-	padding: 0 0 96px 0;
 	}
 
 .figures_flx {
 	display: flex;
 	flex-wrap: wrap;
+	flex-direction: column;
+  max-height: 270px;
 	}
 
 .figure {

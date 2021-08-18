@@ -129,20 +129,20 @@ export default {
                     Up to 73% APY
                 </div>
                 <div class="figure">
-                    <span>Mainnet Launch</span>
-                    May 15, 2019
-                </div>
-                <div class="figure">
                     <span>BIP Staking</span>
                     40% APY
                 </div>
                 <div class="figure">
-                    <span>Market Cap</span>
-                    ${{ prettyRound(marketCap) }}
-                </div>
-                <div class="figure">
                     <span>Liquidity Yield</span>
                     0.2% of each trade
+                </div>
+                <div class="figure">
+                    <span>Mainnet Launch</span>
+                    May 15, 2019
+                </div>
+                <div class="figure">
+                    <span>Market Cap</span>
+                    ${{ prettyRound(marketCap) }}
                 </div>
                 <div class="figure">
                     <span>Circulating Supply</span>
