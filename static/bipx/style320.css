@@ -73,6 +73,7 @@ header {
 
 .figures {
 	padding: 0 24px 20px 24px;
+	width: auto;
 	}
 
 .figures_flx {
