@@ -106,7 +106,7 @@ export default {
                 <div class="top_e">Minter — это маркетплейс цифровых активов, позволяющий любому пользователю покупать, продавать, отправлять и тратить BTC, ETH, BIP, USDT, золото, акции и другие активы в рамках единой децентрализованной сети.</div>
                 <nuxt-link class="btn" to="/ru/how-to-buy-and-sell-bip" v-track-click="'buy-bip'">Купить BIP</nuxt-link>
                 <a class="btn btn_c2" href="https://v2.info.uniswap.org/pair/0xb1700c93ddc26ce1d59441c24daef1035444d7b7" target="_blank" v-track-click="'buy-bipx'">Купить BIPx</a>
-                <a class="btn btn_c2 btn_nomargin" href="https://minterteam.medium.com/bipx-usdt-%D1%84%D0%B0%D1%80%D0%BC%D0%B8%D0%BD%D0%B3-0-2-%D0%BB%D0%BE%D1%82%D0%B5%D1%80%D0%B5%D1%8F-2d91d98fba71#0d32" target="_blank" v-track-click="'airdrop'">Airdrop</a>
+                <!--<a class="btn btn_c2 btn_nomargin" href="https://minterteam.medium.com/bipx-usdt-%D1%84%D0%B0%D1%80%D0%BC%D0%B8%D0%BD%D0%B3-0-2-%D0%BB%D0%BE%D1%82%D0%B5%D1%80%D0%B5%D1%8F-2d91d98fba71#0d32" target="_blank" v-track-click="'airdrop'">Airdrop</a>-->
             </div>
             <div class="top_l m-l-40"><img src="/bipx/images/header-bip.png" srcset="/bipx/images/header-bip@2x.png 2x, /bipx/images/header-bip@3x.png 3x" /></div>
         </header>

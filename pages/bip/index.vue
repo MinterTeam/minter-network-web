@@ -106,7 +106,7 @@ export default {
                 <div class="top_e">Minter is a digital assets marketplace allowing anyone to buy, sell, send, and spend BTC, ETH, BIP, USDC, gold, oil, stocks, and much more within a single decentralized network.</div>
                 <nuxt-link class="btn" to="/how-to-buy-and-sell-bip" v-track-click="'buy-bip'">Buy BIP</nuxt-link>
                 <a class="btn btn_c2" href="https://v2.info.uniswap.org/pair/0xb1700c93ddc26ce1d59441c24daef1035444d7b7" target="_blank" v-track-click="'buy-bipx'">Buy BIPx</a>
-                <a class="btn btn_c2 btn_nomargin" href="https://minterteam.medium.com/bipx-usdt-farming-at-0-2-giveaway-fa2c30a09e18#9cb4" target="_blank" v-track-click="'airdrop'">Get Airdrop</a>
+                <!--<a class="btn btn_c2 btn_nomargin" href="https://minterteam.medium.com/bipx-usdt-farming-at-0-2-giveaway-fa2c30a09e18#9cb4" target="_blank" v-track-click="'airdrop'">Get Airdrop</a>-->
             </div>
             <div class="top_l m-l-40"><img src="/bipx/images/header-bip.png" srcset="/bipx/images/header-bip@2x.png 2x, /bipx/images/header-bip@3x.png 3x" /></div>
         </header>
