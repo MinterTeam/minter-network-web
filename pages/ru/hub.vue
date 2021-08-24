@@ -157,7 +157,7 @@ export default {
                 </div>
                 <div class="product">
                     <div class="product_img"><img src="/hub/images/honee.svg" /></div>
-                    <p>Honee — кошелек, который упрощает крипто-деньги для всех: от представителей студенчества до владельцев малого бизнеса</p>
+                    <p>Honee — это крипто-кошелек, который помогает зарабатывать.</p>
                     <!--<a class="btn btn_c2" href="#">Learn More</a>-->
                 </div>
             </div>

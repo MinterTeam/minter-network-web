@@ -157,7 +157,7 @@ export default {
                 </div>
                 <div class="product">
                     <div class="product_img"><img src="/hub/images/honee.svg" /></div>
-                    <p>Honee, a wallet that makes crypto money easier for everyone—from students to small businesses</p>
+                    <p>Honee, a crypto wallet that helps users earn.</p>
                     <!--<a class="btn btn_c2" href="#">Learn More</a>-->
                 </div>
             </div>
