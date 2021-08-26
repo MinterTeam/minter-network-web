@@ -113,7 +113,7 @@ export default {
         <div class="bipx">
             <div class="bipx_l">
                 <div class="bipx_t">Что такое BIPx и BIP?</div>
-                <div class="bipx_e">BIPx — это обернутый BIP; нативный токен сети Minter, выпущенный на Ethereum. Minter — DPoS-блокчейн, и валидируется он при помощи заделегированных BIP.</div>
+                <div class="bipx_e">BIP — это нативный токен сети Minter, а его обернутая версия в Ethereum называется BIPx. Minter — DPoS-блокчейн, который валидируется при помощи заделегированных BIP.</div>
                 <div class="bipx_a">
                     <a class="bipx_cmc" href="https://coinmarketcap.com/currencies/minter-network/" target="_blank">CMC</a>
                     <a class="bipx_coi" href="https://www.coingecko.com/en/coins/bip" target="_blank">CoinGecko</a>

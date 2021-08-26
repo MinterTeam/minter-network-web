@@ -113,7 +113,7 @@ export default {
         <div class="bipx">
             <div class="bipx_l">
                 <div class="bipx_t">What Is BIPx and BIP?</div>
-                <div class="bipx_e">BIPx is the wrapped BIP—which is Minter Network’s native token—issued on Ethereum. Being a DPoS blockchain, Minter is validated through BIP stake delegation.</div>
+                <div class="bipx_e">BIP is Minter Network’s native token, while BIPx is its wrapped version on Ethereum. Being a DPoS blockchain, Minter is validated through BIP stake delegation.</div>
                 <div class="bipx_a">
                     <a class="bipx_cmc" href="https://coinmarketcap.com/currencies/minter-network/" target="_blank">CMC</a>
                     <a class="bipx_coi" href="https://www.coingecko.com/en/coins/bip" target="_blank">CoinGecko</a>
