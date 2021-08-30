@@ -38,7 +38,7 @@
         <div class="u-container">
             <div class="footer__stat-container" v-if="stats">
                 <div class="footer__stats-item">
-                    <div class="footer__stats-key">Since</div>
+                    <div class="footer__stats-key">Mainnet Launch</div>
                     <div class="footer__stats-value">May 15, 2019</div>
                 </div>
                 <div class="footer__stats-item">
