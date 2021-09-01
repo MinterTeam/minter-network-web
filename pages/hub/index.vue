@@ -158,7 +158,7 @@ export default {
                 <div class="product">
                     <div class="product_img"><img src="/hub/images/honee.svg" /></div>
                     <p>Honee, a crypto wallet that helps users earn.</p>
-                    <!--<a class="btn btn_c2" href="#">Learn More</a>-->
+                    <a class="btn btn_c2" href="https://medium.com/@honeeapp/honee-crypto-wallet-that-helps-users-earn-e6ae3088963d" v-track-click="'hub-honee'">Learn More</a>
                 </div>
             </div>
         </div>
