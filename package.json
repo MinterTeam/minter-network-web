@@ -36,7 +36,7 @@
     "nuxt-i18n-default": "0.0.2",
     "nuxt-i18n-preferred": "^0.2.0",
     "pretty-num": "^0.4.0",
-    "wysiwyg.css": "github:shrpne/wysiwyg.css#patch-1"
+    "wysiwyg.css": "github:jgthms/wysiwyg.css#pull/8/head"
   },
   "devDependencies": {
     "autoprefixer": "^9.7.6",
