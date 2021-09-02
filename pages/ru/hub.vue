@@ -153,12 +153,12 @@ export default {
                 <div class="product">
                     <div class="product_img"><img src="/hub/images/minter.svg" /></div>
                     <p>Minter — маркетплейс цифровых активов, где каждый может купить, продать, отправить или потратить BTC, ETH, BIP, USDC и другие</p>
-                    <a class="btn btn_c2" href="https://www.minter.network/ru" v-track-click="'hub-minter'">Подробнее</a>
+                    <a class="btn btn_c2" href="https://www.minter.network/ru" v-track-click="'hub-minter'" target="_blank">Подробнее</a>
                 </div>
                 <div class="product">
                     <div class="product_img"><img src="/hub/images/honee.svg" /></div>
-                    <p>Honee — это крипто-кошелек, который помогает зарабатывать.</p>
-                    <a class="btn btn_c2" href="https://medium.com/@honeeapp/honee-crypto-wallet-that-helps-users-earn-e6ae3088963d" v-track-click="'hub-honee'">Learn More</a>
+                    <p>Honee — это крипто-кошелек, который помогает зарабатывать. Стадия альфа-тестирования начинается во вторник, 28 сентября 2021 г.</p>
+                    <a class="btn btn_c2" href="https://medium.com/@honeeapp/honee-crypto-wallet-that-helps-users-earn-e6ae3088963d" v-track-click="'hub-honee'" target="_blank">Подробнее</a>
                 </div>
             </div>
         </div>

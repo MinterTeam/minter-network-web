@@ -153,12 +153,12 @@ export default {
                 <div class="product">
                     <div class="product_img"><img src="/hub/images/minter.svg" /></div>
                     <p>Minter, a digital assets marketplace allowing anyone to buy, sell, send, and spend BTC, ETH, BIP, USDC, and more</p>
-                    <a class="btn btn_c2" href="https://www.minter.network/" v-track-click="'hub-minter'">Learn More</a>
+                    <a class="btn btn_c2" href="https://www.minter.network/" v-track-click="'hub-minter'" target="_blank">Learn More</a>
                 </div>
                 <div class="product">
                     <div class="product_img"><img src="/hub/images/honee.svg" /></div>
-                    <p>Honee, a crypto wallet that helps users earn.</p>
-                    <a class="btn btn_c2" href="https://medium.com/@honeeapp/honee-crypto-wallet-that-helps-users-earn-e6ae3088963d" v-track-click="'hub-honee'">Learn More</a>
+                    <p>Honee, a crypto wallet that helps users earn. The alpha testing phase starts on Tuesday, September 28, 2021</p>
+                    <a class="btn btn_c2" href="https://medium.com/@honeeapp/honee-crypto-wallet-that-helps-users-earn-e6ae3088963d" v-track-click="'hub-honee'" target="_blank">Learn More</a>
                 </div>
             </div>
         </div>
