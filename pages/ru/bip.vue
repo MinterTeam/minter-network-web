@@ -39,8 +39,8 @@ export default {
         ]);
     },
     head() {
-        const title = 'Minter — маркетплейс цифровых активов';
-        const description = 'Minter позволяет покупать, продавать, отправлять и тратить BTC, ETH, BIP, USDC, золото, акции и другие активы в рамках единой децентрализованной сети.';
+        const title = 'Minter — интернет денег';
+        const description = 'Единая децентрализованная сеть, позволяющая любому пользователю покупать, продавать, отправлять и зарабатывать такие цифровые активы, как BTC, ETH, BIP, USDT, золото, акции и многие другие.';
         // const localeSuffix = this.$i18n.locale === 'en' ? '' : '-' + this.$i18n.locale;
 
         return {
@@ -102,8 +102,8 @@ export default {
         <header>
             <div class="top_r">
                 <div class="logo"><a href="#"><img src="/img/minter-logo-white.svg" width="155" height="48" alt="Minter"/></a></div>
-                <h1>Маркетплейс цифровых активов</h1>
-                <div class="top_e">Minter — это маркетплейс цифровых активов, позволяющий любому пользователю покупать, продавать, отправлять и тратить BTC, ETH, BIP, USDT, золото, акции и другие активы в рамках единой децентрализованной сети.</div>
+                <h1>Интернет денег</h1>
+                <div class="top_e">Minter — это единая децентрализованная сеть, позволяющая любому пользователю покупать, продавать, отправлять и зарабатывать такие цифровые активы, как BTC, ETH, BIP, USDT, золото, акции и многие другие.</div>
                 <nuxt-link class="btn" to="/ru/how-to-buy-and-sell-bip" v-track-click="'buy-bip'">Купить BIP</nuxt-link>
                 <a class="btn btn_c2" href="https://v2.info.uniswap.org/pair/0xb1700c93ddc26ce1d59441c24daef1035444d7b7" target="_blank" v-track-click="'buy-bipx'">Купить BIPx</a>
                 <!--<a class="btn btn_c2 btn_nomargin" href="https://minterteam.medium.com/bipx-usdt-%D1%84%D0%B0%D1%80%D0%BC%D0%B8%D0%BD%D0%B3-0-2-%D0%BB%D0%BE%D1%82%D0%B5%D1%80%D0%B5%D1%8F-2d91d98fba71#0d32" target="_blank" v-track-click="'airdrop'">Airdrop</a>-->

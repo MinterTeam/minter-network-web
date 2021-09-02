@@ -39,8 +39,8 @@ export default {
         ]);
     },
     head() {
-        const title = 'Minter — Digital Assets Marketplace';
-        const description = 'Minter is a digital assets marketplace allowing anyone to buy, sell, send, and spend BTC, ETH, BIP, USDC, gold, oil, stocks, and much more within a single decentralized network.';
+        const title = 'Minter — Internet of Money';
+        const description = 'Minter is a single decentralized network allowing anyone to buy, sell, send, and earn digital assets such as BTC, ETH, BIP, USDT, gold, oil, stocks, and much more.';
         // const localeSuffix = this.$i18n.locale === 'en' ? '' : '-' + this.$i18n.locale;
 
         return {
@@ -102,8 +102,8 @@ export default {
         <header>
             <div class="top_r">
                 <div class="logo"><a href="#"><img src="/img/minter-logo-white.svg" width="155" height="48" alt="Minter"/></a></div>
-                <h1>Digital Assets Marketplace</h1>
-                <div class="top_e">Minter is a digital assets marketplace allowing anyone to buy, sell, send, and spend BTC, ETH, BIP, USDC, gold, oil, stocks, and much more within a single decentralized network.</div>
+                <h1>Internet of Money</h1>
+                <div class="top_e">Minter is a single decentralized network allowing anyone to buy, sell, send, and earn digital assets such as BTC, ETH, BIP, USDT, gold, oil, stocks, and much more.</div>
                 <nuxt-link class="btn" to="/how-to-buy-and-sell-bip" v-track-click="'buy-bip'">Buy BIP</nuxt-link>
                 <a class="btn btn_c2" href="https://v2.info.uniswap.org/pair/0xb1700c93ddc26ce1d59441c24daef1035444d7b7" target="_blank" v-track-click="'buy-bipx'">Buy BIPx</a>
                 <!--<a class="btn btn_c2 btn_nomargin" href="https://minterteam.medium.com/bipx-usdt-farming-at-0-2-giveaway-fa2c30a09e18#9cb4" target="_blank" v-track-click="'airdrop'">Get Airdrop</a>-->
