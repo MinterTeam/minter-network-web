@@ -27,10 +27,11 @@ export default {
                 getPool('USDCE', 'USDTE'),
                 getPool('BIP', 'USDTE'),
                 getPool('HUB', 'HUBABUBA'),
+                getPool('HUB', 'MUSD'),
             ])
             .then((pools) => {
                 this.pools = pools;
-                this.hubPrice = pools[1].amount1 / pools[1].amount0;
+                this.hubPrice = pools[3].amount1 / pools[3].amount0;
             });
 
         return Promise.all([
