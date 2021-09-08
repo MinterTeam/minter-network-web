@@ -158,7 +158,7 @@ export default {
                 <div class="product">
                     <div class="product_img"><img src="/hub/images/honee.svg" /></div>
                     <p>Honee — это крипто-кошелек, который помогает зарабатывать. Стадия альфа-тестирования начинается во вторник, 28 сентября 2021 г.</p>
-                    <a class="btn btn_c2" href="https://medium.com/@honeeapp/honee-crypto-wallet-that-helps-users-earn-e6ae3088963d" v-track-click="'hub-honee'" target="_blank">Подробнее</a>
+                    <a class="btn btn_c2" href="https://honee.app/" v-track-click="'hub-honee'" target="_blank">Подробнее</a>
                 </div>
             </div>
         </div>
