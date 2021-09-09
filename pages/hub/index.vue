@@ -125,7 +125,7 @@ export default {
                 </div>
                 <div class="figure">
                     <span>HUB Pools’ Rewards</span>
-                    Up to 146% APY
+                    Up to 365% APY
                 </div>
                 <div class="figure">
                     <span>Staking Rewards</span>

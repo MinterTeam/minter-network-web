@@ -125,7 +125,7 @@ export default {
                 </div>
                 <div class="figure">
                     <span>Награды в пулах с HUB</span>
-                    До 146% годовых
+                    До 365% годовых
                 </div>
                 <div class="figure">
                     <span>Вознаграждения за стейкинг</span>
