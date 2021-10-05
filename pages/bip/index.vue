@@ -25,7 +25,7 @@ export default {
 
         const poolsPromise = Promise.all([
                 getPool('USDCE', 'USDTE'),
-                getPool('BIP', 'USDTE'),
+                getPool('BEE', 'MUSD'),
                 getPool('HUB', 'HUBABUBA'),
                 getPool('HUB', 'MUSD'),
             ])
@@ -277,8 +277,8 @@ export default {
             </div>
             <div class="farming">
                 <div class="farming_top">
-                    <div class="farming_icos"><img src="https://explorer-static.minter.network/coins/0.png" /><img src="https://explorer-static.minter.network/coins/1993.png" /></div>
-                    <div class="farming_t">BIP / USDT</div>
+                    <div class="farming_icos"><img src="https://explorer-static.minter.network/coins/2361.png" /><img src="https://explorer-static.minter.network/coins/2024.png" /></div>
+                    <div class="farming_t">BEE / MUSD</div>
                 </div>
                 <div class="farming_param">
                     <div>Total value locked</div>
@@ -286,7 +286,7 @@ export default {
                 </div>
                 <div class="farming_param">
                     <div>Farming APR</div>
-                    <div>36.5%</div>
+                    <div>100%</div>
                 </div>
                 <div class="farming_param">
                     <div>Staking APY</div>
