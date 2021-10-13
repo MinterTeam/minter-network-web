@@ -159,7 +159,7 @@ Unlike coins, tokens have no BIP reserve.
 
 Allow owner to edit token supply:
 - **Mintable**: Ability to gradually increase token supply (cannot exceed Max supply);
-- **Burnable**: Ability to burn tokens that are freely available in the owner's wallet.
+- **Burnable**: Ability to burn tokens that are freely available in the holder's wallet.
 
 After the token has been created, users can send it via regular wallets similar to ordinary coins.
 
@@ -1082,7 +1082,7 @@ type VoteCommissionData struct {
 	BurnToken               *big.Int
 	VoteCommission          *big.Int
 	VoteUpdate              *big.Int
-	FailedTX                *big.Int
+    FailedTX                *big.Int
 	AddLimitOrder           *big.Int
 	RemoveLimitOrder        *big.Int
 }
@@ -1135,7 +1135,7 @@ type UpdateCommissionsEvent struct {
 	BurnToken               string `json:"burn_token"`
 	VoteCommission          string `json:"vote_commission"`
 	VoteUpdate              string `json:"vote_update"`
-	FailedTx                string `json:"failed_tx"`
+    FailedTx                string `json:"failed_tx"`
 	AddLimitOrder           string `json:"add_limit_order"`
 	RemoveLimitOrder        string `json:"remove_limit_order"`
 }
