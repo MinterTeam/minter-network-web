@@ -1082,7 +1082,7 @@ type VoteCommissionData struct {
 	BurnToken               *big.Int
 	VoteCommission          *big.Int
 	VoteUpdate              *big.Int
-    FailedTX                *big.Int
+	FailedTX                *big.Int
 	AddLimitOrder           *big.Int
 	RemoveLimitOrder        *big.Int
 }
@@ -1135,7 +1135,7 @@ type UpdateCommissionsEvent struct {
 	BurnToken               string `json:"burn_token"`
 	VoteCommission          string `json:"vote_commission"`
 	VoteUpdate              string `json:"vote_update"`
-    FailedTx                string `json:"failed_tx"`
+	FailedTx                string `json:"failed_tx"`
 	AddLimitOrder           string `json:"add_limit_order"`
 	RemoveLimitOrder        string `json:"remove_limit_order"`
 }
