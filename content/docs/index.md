@@ -6,7 +6,7 @@ description: Minter is a digital assets marketplace powered by a fast blockchain
 
 Minter is a digital assets marketplace allowing anyone to buy, sell, send, and spend BTC, ETH, BIP, USDC, gold, oil, stocks, and much more within a single decentralized network. Minter is integrated with Ethereum and Binance Smart Chain to provide cross-chain transfers and swaps.
 
-Everything is lightning-fast and cost-efficient: a transaction takes only 5 seconds. Fees are tied to U.S. dollars and can be paid in any liquid coin: $0.03 for trades & $0.01 for transfers. Besides, Minter allows anyone to create tokens and liquidity pools in a couple of clicks.
+Everything is lightning-fast and cost-efficient: a transaction takes only 5 seconds. Fees are tied to U.S. dollars and can be paid in any liquid coin: $0.03 for trades & $0.01 for transfers. Besides, Minter allows anyone to create tokens and liquidity pools in a couple of clicks.
 
 - GitHub: [https://github.com/MinterTeam/minter-go-node](https://github.com/MinterTeam/minter-go-node)
 - GitHub (all projects): [https://github.com/MinterTeam](https://github.com/MinterTeam)
@@ -358,6 +358,8 @@ Type of transaction is determined by a single byte.
 |[TypeVoteCommission](#vote-for-commission-price-transaction)           |0x20|
 |[TypeVoteUpdate](#vote-for-network-update-transaction)                 |0x21|
 |[TypeCreateSwapPool](#create-swap-pool-transaction)                    |0x22|
+|[TypeAddLimitOrder](#add-limit-order-transaction)                    |0x23|
+|[TypeRemoveLimitOrder](#remove-limit-order-transaction)                    |0x24|
     
 ### Send transaction
 
@@ -1080,6 +1082,9 @@ type VoteCommissionData struct {
 	BurnToken               *big.Int
 	VoteCommission          *big.Int
 	VoteUpdate              *big.Int
+    FailedTX                *big.Int
+	AddLimitOrder           *big.Int
+	RemoveLimitOrder        *big.Int
 }
 ```
 Once there is a consensus, the event with the information about the new fees will occur at the corresponding block height.
@@ -1130,6 +1135,9 @@ type UpdateCommissionsEvent struct {
 	BurnToken               string `json:"burn_token"`
 	VoteCommission          string `json:"vote_commission"`
 	VoteUpdate              string `json:"vote_update"`
+    FailedTx                string `json:"failed_tx"`
+	AddLimitOrder           string `json:"add_limit_order"`
+	RemoveLimitOrder        string `json:"remove_limit_order"`
 }
 ```
 
@@ -1168,7 +1176,7 @@ type UpdateNetworkEvent struct {
 
 Type: **0x22**
 
-This transaction creates a liquidity pool for two coins, in volumes specified within this transaction. The volumes will be withdrawn from your balance according to the figure you've specified in the transaction. When a pool is established, a P-number coin (example: P-123) is created and issued in the amount equal to the amount of pool liquidity. The calculations related to that liquidity are described below.
+This transaction creates a liquidity pool for two coins, in volumes specified within this transaction. The volumes will be withdrawn from your balance according to the figure you've specified in the transaction. When a pool is established, a LP-number coin (example: LP-123) is created and issued in the amount equal to the amount of pool liquidity. The calculations related to that liquidity are described below.
 
 *Data field contents:*
 
@@ -1193,6 +1201,57 @@ value of a liquidity pool share to $100, the attacker would need to donate $100,
 
 To see the total supply and balance of the provider, check out [SwapPool](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/1.3/docs/api.swagger.json#operation/SwapPool) and [SwapPoolProvider](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/1.3/docs/api.swagger.json#operation/SwapPoolProvider) API v2 endpoints.
 
+
+### Add limit order transaction
+
+Type: **0x23**
+
+Транзакция создания ордера на продажу. Она списывает объем на продажу и по мере покупки ордера, начисляет средства в монете для покупки на кошелек владельца. Ордер имеет минимальное ограничения объемов продажи/покупки и должно быть больше чем 1e10 pip. Курс объемов монет в ордере не должн отличаться от курса в пуле более чем в 5 раз. 
+
+*Data field contents:*
+
+```go
+type AddLimitOrderData struct {
+	CoinToSell  uin32
+	ValueToSell *big.Int
+	CoinToBuy   uin32
+	ValueToBuy  *big.Int
+}
+```
+
+- **CoinToSell** - id монеты для продажи
+- **ValueToSell** - количество монеты для продажи, дожно быть больше чем 1e10 pip
+- **CoinToBuy** - id монеты для покупки
+- **ValueToBuy** - количество монеты для покупки, дожно быть больше чем 1e10 pip
+
+Что-бы проверить состояние ордера по ID или отобразить список ордеров по пулу, check out [LimitOrder](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/orderbook/docs/api.swagger.json#operation/LimitOrder), [LimitOrders](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/orderbook/docs/api.swagger.json#operation/LimitOrders) and [LimitOrdersOfPool](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/orderbook/docs/api.swagger.json#operation/LimitOrdersOfPool) API v2 endpoints.
+
+Ордер автоматически отзывается после 483840 блоков (~28 дней) с момента его создания или при достижении объемов в пуле меньше 1е10 пип, при этом инициализируется событие 
+
+```go
+type OrderExpiredEvent struct {
+	ID      string        `json:"id"`
+	Address string `json:"address"`
+	Coin    string        `json:"coin"`
+	Amount  string        `json:"amount"`
+}
+```
+
+### Remove limit order transaction
+
+Type: **0x24**
+
+Данная транзакция доступна только владельцу ордера, который он закрывает, заблокированые средства вернутся на баланс владельца за исключением тех, которые уже были выкуплены.
+
+*Data field contents:*
+
+```go
+type RemoveLimitOrderData struct {
+	ID uint32
+}
+```
+
+- **ID** - id ордера для закрытия
 
 
 ## Minter Check
@@ -1348,6 +1407,10 @@ Recommended:
 The Minter Network has a limited number of available slots for validators.
 
 At launch, there were `16` slots. `4` slots were added once in every `518 400` blocks. The maximum number of validators is `64`.
+
+Кандидат не принимает делегирование в случае, когда его суммарный стейк превосходит 20% от суммы стейков всех кандидатов.  
+
+Каждые 720 блоков, происходит пересчет стейков кандидатов. Кандидаты, невходящие в топ 100 по сумарному объему делегированных в них средтв, удаляются, а их стейки отзываются.
 
 ### Rewards
 Block rewards and fees are accumulated and proportionally (based on stake value) paid out once per `720 blocks` (approx. 1 hour) to all active validators (and their delegators).
