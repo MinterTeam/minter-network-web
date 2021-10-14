@@ -1176,7 +1176,7 @@ type UpdateNetworkEvent struct {
 
 Type: **0x22**
 
-This transaction creates a liquidity pool for two coins, in volumes specified within this transaction. The volumes will be withdrawn from your balance according to the figure you've specified in the transaction. When a pool is established, a LP-number coin (example: LP-123) is created and issued in the amount equal to the amount of pool liquidity. The calculations related to that liquidity are described below.
+This transaction creates a liquidity pool for two coins, in volumes specified within this transaction. The volumes will be withdrawn from your balance according to the figure you've specified in the transaction. When a pool is established, an LP-number coin (example: LP-123) is created and issued in the amount equal to the amount of pool liquidity. The calculations related to that liquidity are described below.
 
 *Data field contents:*
 
@@ -1206,7 +1206,7 @@ To see the total supply and balance of the provider, check out [SwapPool](https:
 
 Type: **0x23**
 
-Транзакция создания ордера на продажу. Она списывает объем на продажу и по мере покупки ордера, начисляет средства в монете для покупки на кошелек владельца. Ордер имеет минимальное ограничения объемов продажи/покупки и должно быть больше чем 1e10 pip. Курс объемов монет в ордере не должн отличаться от курса в пуле более чем в 5 раз. 
+A sell order creation transaction. It charges the volume sold and as the order is being filled, accrues the funds in the coin bought to the owner address. The order has a minimum limit on the sell/buy volume, which should be more than 1e10 pip. The rate in the order should not differ from the rate inside the pool by more than 5 times. 
 
 *Data field contents:*
 
@@ -1219,14 +1219,14 @@ type AddLimitOrderData struct {
 }
 ```
 
-- **CoinToSell** - id монеты для продажи
-- **ValueToSell** - количество монеты для продажи, дожно быть больше чем 1e10 pip
-- **CoinToBuy** - id монеты для покупки
-- **ValueToBuy** - количество монеты для покупки, дожно быть больше чем 1e10 pip
+- **CoinToSell** - id of the coin being sold
+- **ValueToSell** - quantity of the coin being sold, must exceed 1e10 pip
+- **CoinToBuy** - id of the coin being purchased
+- **ValueToBuy** - quantity of the coin being purchased, must exceed 1e10 pip
 
-Что-бы проверить состояние ордера по ID или отобразить список ордеров по пулу, check out [LimitOrder](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/orderbook/docs/api.swagger.json#operation/LimitOrder), [LimitOrders](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/orderbook/docs/api.swagger.json#operation/LimitOrders) and [LimitOrdersOfPool](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/orderbook/docs/api.swagger.json#operation/LimitOrdersOfPool) API v2 endpoints.
+To check the order's status by its ID or get the list of orders by pool, check out [LimitOrder](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/orderbook/docs/api.swagger.json#operation/LimitOrder), [LimitOrders](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/orderbook/docs/api.swagger.json#operation/LimitOrders), and [LimitOrdersOfPool](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/orderbook/docs/api.swagger.json#operation/LimitOrdersOfPool) API v2 endpoints.
 
-Ордер автоматически отзывается после 483840 блоков (~28 дней) с момента его создания или при достижении объемов в пуле меньше 1е10 пип, при этом инициализируется событие 
+The order expires automatically after 483 840 blocks (~28 days) since placement *or* once the pool's volumes fall below 1е10 pip. The following event is initialized: 
 
 ```go
 type OrderExpiredEvent struct {
@@ -1241,7 +1241,7 @@ type OrderExpiredEvent struct {
 
 Type: **0x24**
 
-Данная транзакция доступна только владельцу ордера, который он закрывает, заблокированые средства вернутся на баланс владельца за исключением тех, которые уже были выкуплены.
+This transaction is only available to the order's owner. Once completed, the order is canceled, while funds that were locked return to the owner balance (except for those that had already been filled).
 
 *Data field contents:*
 
@@ -1251,7 +1251,7 @@ type RemoveLimitOrderData struct {
 }
 ```
 
-- **ID** - id ордера для закрытия
+- **ID** - id of the order to be closed
 
 
 ## Minter Check
