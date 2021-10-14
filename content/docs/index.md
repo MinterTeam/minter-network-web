@@ -1408,9 +1408,9 @@ The Minter Network has a limited number of available slots for validators.
 
 At launch, there were `16` slots. `4` slots were added once in every `518 400` blocks. The maximum number of validators is `64`.
 
-Кандидат не принимает делегирование в случае, когда его суммарный стейк превосходит 20% от суммы стейков всех кандидатов.  
+A candidate cannot accept delegation if their total stake is larger than the combined stake of all candidates multiplied by .2.  
 
-Каждые 720 блоков, происходит пересчет стейков кандидатов. Кандидаты, невходящие в топ 100 по сумарному объему делегированных в них средтв, удаляются, а их стейки отзываются.
+Once every 720 blocks, the candidates' stakes are re-calculated. Those who do not fall into the top 100 by the aggregate amount of funds delegated to them are removed and their stakes, unbonded.
 
 ### Rewards
 Block rewards and fees are accumulated and proportionally (based on stake value) paid out once per `720 blocks` (approx. 1 hour) to all active validators (and their delegators).
