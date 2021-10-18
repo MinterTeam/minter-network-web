@@ -772,9 +772,6 @@ type EditCandidatePublicKeyData struct {
 - **NewPubKey** - new public key.
 
 
-### With Minter 2.0 released, there are a few new transactions:
-
-
 ### Add liquidity to swap pool transaction
 
 Type: **0x15**
@@ -1201,6 +1198,7 @@ value of a liquidity pool share to $100, the attacker would need to donate $100,
 
 To see the total supply and balance of the provider, check out [SwapPool](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/1.3/docs/api.swagger.json#operation/SwapPool) and [SwapPoolProvider](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/1.3/docs/api.swagger.json#operation/SwapPoolProvider) API v2 endpoints.
 
+### With Minter 2.6.0 released, there are a few new transactions:
 
 ### Add limit order transaction
 
