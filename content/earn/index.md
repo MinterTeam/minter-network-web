@@ -8,7 +8,7 @@ title: How to Earn in Minter
 There are various money-making tools in Minter. In this part of the website, you may find all of them along with the usage instructions.
 
 - [Delegating](/earn/delegation)
-- [Providing liquidity](/earn/liquidity-pools)
+- [Providing liquidity](/earn/earn-liquidity-pools)
 - [Farming](/earn/farm)
 - [Trading](/earn/trading)
 - [Arbitrage](/earn/arbitrage)
