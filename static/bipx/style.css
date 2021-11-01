@@ -350,6 +350,22 @@ blockquote cite {
 
 
 /* HEADER */
+.promo-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #D15C22;
+    color: #fff;
+	height: 56px;
+	padding: 0 24px;
+}
+.promo-top img {
+	margin: 0 12px 0 0;
+}
+.promo-top b {
+	font-weight: 700;
+	color: #fff;
+}
 
 header {
 	display: flex;

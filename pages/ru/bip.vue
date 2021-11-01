@@ -97,6 +97,10 @@ export default {
 
 <template>
     <div class="wrap">
+        <div class="promo-top">
+            <img src="/hub/images/hub-promo-icon.svg" />
+            Большое обновление Minter состоится&nbsp<b>1 декабря 2021</b>.
+        </div>
         <div class="u-container u-container--full index-language lang-wrap">
             <language class="" :locales='[{"code":"","name":"English"},{"code":"ru","name":"Russian"}]' lang="ru" :push="true"/>
         </div>

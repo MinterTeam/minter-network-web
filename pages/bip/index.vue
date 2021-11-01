@@ -97,6 +97,10 @@ export default {
 
 <template>
     <div class="wrap">
+        <div class="promo-top">
+            <img src="/hub/images/hub-promo-icon.svg" />
+            Big Minter update is going to happen on&nbsp<b>Dec. 1, 2021</b>.
+        </div>
         <div class="u-container u-container--full index-language lang-wrap">
             <language class="" :locales='[{"code":"","name":"English"},{"code":"ru","name":"Russian"}]' lang="" :push="true"/>
         </div>
