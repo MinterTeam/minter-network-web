@@ -94,8 +94,8 @@ export default {
                 <div class="lang"><language class="" :locales='[{"code":"","name":"English"},{"code":"ru","name":"Russian"}]' lang="" :push="true"/></div>
             </header>
             <div class="home_top">
-                <h1>Cross-Chain Bridge to Global Crypto Liquidity</h1>
-                <p>Minter Hub is a blockchain bridging Minter, Ethereum, and Binance Smart Chain (BSC). Polkadot, Cardano, Solana, and other popular networks will be interconnected in the near future.</p>
+                <h1>Cross-Chain Bridge to Global Crypto Liquidity. Big Upgrade on Dec. 2, 2021</h1>
+                <p>Minter Hub is a blockchain bridging Minter, Ethereum, and Binance Smart Chain (BSC). Solana, Cardano, Polygon, Terra, Tron, and other popular networks will be interconnected in the near future. Minter Hub 2 launch is going to happen on the 2nd of December 2021.</p>
                 <a class="btn" href="https://app.1inch.io/#/1/swap/USDT/0x8e9A29e7Ed21DB7c5B2E1cd75e676dA0236dfB45" target="_blank" v-track-click="'hub-buyhub'">Buy HUB on Ethereum</a>
                 <a class="btn btn_alt" href="https://console.minter.network/buy?coin=HUB" target="_blank" v-track-click="'hub-buyhubminter'">Buy HUB on Minter</a>
             </div>
