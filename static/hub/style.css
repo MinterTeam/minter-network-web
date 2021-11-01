@@ -364,6 +364,9 @@ blockquote cite {
 	padding: 0 24px;
 }
 .promo-top img {
+	max-width: 32px;
+	width: 32px;
+	height: 32px;
 	margin: 0 12px 0 0;
 }
 .promo-top b {

@@ -89,7 +89,7 @@ export default {
 <template>
     <div class="page--hub">
         <div class="promo-top">
-            <div><img src="/hub/images/hub-promo-icon.svg" /></div>
+            <img src="/hub/images/hub-promo-icon.svg" />
             <div>Запуск Minter Hub 2 состоится <b>2 декабря 2021</b>.</div>
         </div>
         <div class="bg_top">
