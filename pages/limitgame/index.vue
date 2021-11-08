@@ -32,6 +32,15 @@ export default {
             ],
         };
     },
+    mounted() {
+        // move landing styles under global styles
+        const style = document.querySelector('[data-hid="limitgame-style"]');
+        if (!style) {
+            return;
+        }
+        style.parentNode.removeChild(style);
+        document.head.appendChild(style);
+    },
 };
 </script>
 
