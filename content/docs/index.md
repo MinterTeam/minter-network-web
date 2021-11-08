@@ -1565,12 +1565,9 @@ This is why delegators should do their own research on validators before delegat
 - [Documentation](https://minterteam.github.io/node-grpc-gateway/)
 - Testnet base url: `https://node-api.testnet.minter.network/v2/`
 
-### v1 (deprecated)
-- [Documentation](https://minterteam.github.io/minter-go-node-docs/)
-- [openapi.yaml](https://github.com/MinterTeam/minter-go-node-docs/blob/gh-pages/openapi.yaml)
-- [openapi.json](https://github.com/MinterTeam/minter-go-node-docs/blob/gh-pages/openapi.json)
-- Testnet base url: `https://node-api.testnet.minter.network/`
-
+### gRPC
+- [Protobuf](https://github.com/MinterTeam/node-grpc-gateway)
+- Testnet gRPC address: `node-api.testnet.minter.network:28842`
 
 ## Other public services
 ### Explorer API
