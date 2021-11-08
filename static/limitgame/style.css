@@ -1,0 +1,203 @@
+/* BASE */
+@font-face {
+    font-family: Inter;
+    src: url('../fonts/Inter-Regular.woff2') format('woff2'),
+    url('../fonts/Inter-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: Inter;
+    src: url('../fonts/Inter-SemiBold.woff2') format('woff2'),
+    url('../fonts/Inter-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: Inter;
+    src: url('../fonts/Inter-Bold.woff2') format('woff2'),
+    url('../fonts/Inter-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: Inter;
+    src: url('../fonts/Inter-ExtraBold.woff2') format('woff2'),
+    url('../fonts/Inter-ExtraBold.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+}
+
+
+*, *::before, *::after {box-sizing: border-box;}
+html {
+    overflow-y: scroll; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; -webkit-overflow-scrolling: touch;
+    font-family: Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,Segoe UI,SimSun,PingFang SC,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;;
+    font-size: 20px;
+    line-height: 1.2;
+    color: #fff;
+    font-weight: 400;
+}
+
+ul, ol {
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .title, .entry table, .entry form, .entry ul, ul.list, .entry ol, .entry hr, blockquote {
+    margin: 0 0 8px 0;
+}
+
+p {
+    margin: 0 0 8px 0;
+}
+
+/*h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .title {*/
+/*	font-weight: bold;*/
+/*	}*/
+h1, .h1, .title {
+    font-size: 26px;
+    line-height: 32px;
+    font-weight: 700;
+}
+h1 span {
+    color: #D15C22;
+    font-weight: 900;
+    font-style: italic;
+    font-size: 26px;
+    line-height: 31px;
+    text-shadow: 1px -1px 0 #FF7E3F, -2px 2px 0 #422C34;
+}
+
+
+/* END BASE */
+
+
+/* FORM */
+.btn {
+    display: inline-block;
+    box-sizing: border-box;
+    min-height: 40px;
+    min-width: max-content;
+    padding: 10px 14px;
+    border: 0;
+    background: #D15C22;
+    border-radius: 12px;
+    -webkit-appearance: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s 0.02s ease;
+}
+
+.btn:hover {
+    background-color: #d66c38;
+    color: #fff;
+    text-decoration: none;
+}
+
+
+.container {
+    max-width: 825px;
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+/* END FORM */
+
+/* HEADER */
+header {
+    background: -webkit-gradient(linear,left top,left bottom,from(#183175),color-stop(100%,#080E1E));
+    background: linear-gradient(to bottom,#183175,#080E1E 100%);
+    z-index: -2;
+}
+.hello {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    position: relative;
+    padding: 40px 0 0 0;
+    min-height: 100vh;
+    overflow: hidden;
+}
+.hello-content {
+    text-align: left;
+    width: 407px;
+}
+.hello-image {
+    width: 372px;
+    height: 443px;
+}
+.logo {
+    vertical-align: bottom;
+    margin: 0 0 24px;
+    line-height: 0;
+}
+.hello h3 {
+    color: #ff8a00;
+}
+.button-block {
+    display: flex;
+    align-items: center;
+    margin: 25px 0 0 0;
+}
+small {
+    margin: 0 0 0 23px;
+    font-size: 14px;
+    font-weight: 700;
+}
+.airdrop {
+    background: url(/img/airdrop.svg) no-repeat center;
+    width: 341px;
+    height: 172px;
+    font-size: 16px;
+    margin: 40px 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 25px 0 0;
+}
+.airdrop p {
+    transform: rotate(2.5deg);
+    max-width: 250px;
+    text-align: center;
+}
+/* END HEADER */
+
+/* CONTENT */
+
+
+/* END CONTENT */
+
+
+
+
+@media (max-width: 780px) {
+    .hello {
+        padding: 40px 24px;
+    }
+    .hello picture {
+        display: none;
+    }
+    .hello-content {
+        width: 100%;
+    }
+    .airdrop {
+        margin: 40px auto;
+    }
+}
+@media (max-width: 360px) {
+    .button-block {
+        flex-direction: column;
+    }
+    .btn {
+        width: 100%;
+    }
+    small {
+        margin: 12px 0 0 0;
+    }
+}
