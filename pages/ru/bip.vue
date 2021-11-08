@@ -27,7 +27,7 @@ export default {
                 getPool('USDCE', 'USDTE'),
                 getPool('BEE', 'MUSD'),
                 getPool('HUB', 'HUBABUBA'),
-                getPool('HUB', 'MUSD'),
+                getPool('HUB', 'USDTE'),
             ])
             .then((pools) => {
                 this.pools = pools;

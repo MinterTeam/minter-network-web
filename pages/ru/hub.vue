@@ -24,7 +24,7 @@ export default {
 
         const poolsPromise = Promise.all([
                 // getPool('USDCE', 'USDTE'),
-                getPool('HUB', 'MUSD'),
+                getPool('HUB', 'USDTE'),
                 // getPool('HUB', 'HUBABUBA'),
             ])
             .then((pools) => {
