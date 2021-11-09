@@ -58,7 +58,7 @@ export default {
                         <p>The game will be held on Minter Testnet. The rules are super-easy, but you’ll learn them a bit later.</p>
                         <div class="button-block">
                             <a class="btn" href="https://forms.gle/TSGCHjvH5ZfnUwRM9">I’m in!</a>
-                            <small>Entry is open until November 10, 2021. Hurry up!</small>
+                            <small>Entry is open until November 12, 2021. Hurry up!</small>
                         </div>
                         <div class="airdrop">
                             <p>All active participants will get airdrop, <b>no matter the results!</b></p>
