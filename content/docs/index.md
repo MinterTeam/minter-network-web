@@ -1561,7 +1561,7 @@ This is why delegators should do their own research on validators before delegat
 
 ## Node API
 
-### v2 (latest)
+### HTTP
 - [Documentation](https://minterteam.github.io/node-grpc-gateway/)
 - Testnet base url: `https://node-api.testnet.minter.network/v2/`
 
