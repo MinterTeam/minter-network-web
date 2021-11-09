@@ -57,7 +57,7 @@ export default {
                         <h1>Participate in <span>LIMIT GAME</span></h1>
                         <p>The game will be held on Minter Testnet. The rules are super-easy, but you’ll learn them a bit later.</p>
                         <div class="button-block">
-                            <a class="btn" href="https://forms.gle/TSGCHjvH5ZfnUwRM9">I’m in!</a>
+                            <a class="btn" href="https://forms.gle/e23C9jgJ79VCLwXb8">I’m in!</a>
                             <small>Entry is open until November 12, 2021. Hurry up!</small>
                         </div>
                         <div class="airdrop">
