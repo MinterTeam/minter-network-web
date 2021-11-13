@@ -57,8 +57,9 @@ export default {
                         <h1>Прими участие в <span>LIMIT GAME</span></h1>
                         <p>Игра будет проходить в тестнете Минтера, правила максимально просты, но о них ты узнаешь позже.</p>
                         <div class="button-block">
-                            <a class="btn" href="https://forms.gle/TSGCHjvH5ZfnUwRM9">Участвовать</a>
-                            <small>Регистрация открыта до 12 ноября 2021. Торопись!</small>
+                            <!--<a class="btn" href="https://forms.gle/TSGCHjvH5ZfnUwRM9">Участвовать</a>
+                            <small>Регистрация открыта до 12 ноября 2021. Торопись!</small>-->
+                            <small>Регистрация закрыта. Ожидайте начала игры.</small>
                         </div>
                         <div class="airdrop">
                             <p>Все активные участники игры, <b>вне зависимости от результата</b> получат аирдроп!</p>
