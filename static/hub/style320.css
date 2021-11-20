@@ -88,6 +88,14 @@ header {
 	background-position: 10px 0px;
 	}
 
+.listing {
+	width: auto;
+	min-height: 1px;
+	padding: 200px 24px 40px 24px;
+	background-size: auto 190px;
+	background-position: 10px 0px;
+	}
+
 .oracles {
 	width: auto;
 	min-height: 1px;

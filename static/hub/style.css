@@ -467,6 +467,15 @@ header {
 	text-align: left;
 	}
 
+.listing {
+	width: 352px;
+	min-height: 267px;
+	margin: 0 auto;
+	padding: 0 0 40px 352px;
+	background: url('images/listing.svg') no-repeat;
+	text-align: left;
+	}
+
 
 .oracles {
 	width: 352px;
