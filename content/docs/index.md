@@ -6,7 +6,7 @@ description: Minter is a digital assets marketplace powered by a fast blockchain
 
 Minter is a digital assets marketplace allowing anyone to buy, sell, send, and spend BTC, ETH, BIP, USDC, gold, oil, stocks, and much more within a single decentralized network. Minter is integrated with Ethereum and Binance Smart Chain to provide cross-chain transfers and swaps.
 
-Everything is lightning-fast and cost-efficient: a transaction takes only 5 seconds. Fees are tied to U.S. dollars and can be paid in any liquid coin: $0.03 for trades & $0.01 for transfers. Besides, Minter allows anyone to create tokens and liquidity pools in a couple of clicks.
+Everything is lightning-fast and cost-efficient: a transaction takes only 5 seconds. Fees are tied to U.S. dollars and can be paid in any liquid coin: $0.03 for trades & $0.01 for transfers. Besides, Minter allows anyone to create tokens and liquidity pools in a couple of clicks.
 
 - GitHub: [https://github.com/MinterTeam/minter-go-node](https://github.com/MinterTeam/minter-go-node)
 - GitHub (all projects): [https://github.com/MinterTeam](https://github.com/MinterTeam)
@@ -159,7 +159,7 @@ Unlike coins, tokens have no BIP reserve.
 
 Allow owner to edit token supply:
 - **Mintable**: Ability to gradually increase token supply (cannot exceed Max supply);
-- **Burnable**: Ability to burn tokens that are freely available in the owner's wallet.
+- **Burnable**: Ability to burn tokens that are freely available in the holder's wallet.
 
 After the token has been created, users can send it via regular wallets similar to ordinary coins.
 
@@ -358,6 +358,8 @@ Type of transaction is determined by a single byte.
 |[TypeVoteCommission](#vote-for-commission-price-transaction)           |0x20|
 |[TypeVoteUpdate](#vote-for-network-update-transaction)                 |0x21|
 |[TypeCreateSwapPool](#create-swap-pool-transaction)                    |0x22|
+|[TypeAddLimitOrder](#add-limit-order-transaction)                    |0x23|
+|[TypeRemoveLimitOrder](#remove-limit-order-transaction)                    |0x24|
     
 ### Send transaction
 
@@ -770,9 +772,6 @@ type EditCandidatePublicKeyData struct {
 - **NewPubKey** - new public key.
 
 
-### With Minter 2.0 released, there are a few new transactions:
-
-
 ### Add liquidity to swap pool transaction
 
 Type: **0x15**
@@ -1080,6 +1079,9 @@ type VoteCommissionData struct {
 	BurnToken               *big.Int
 	VoteCommission          *big.Int
 	VoteUpdate              *big.Int
+	FailedTX                *big.Int
+	AddLimitOrder           *big.Int
+	RemoveLimitOrder        *big.Int
 }
 ```
 Once there is a consensus, the event with the information about the new fees will occur at the corresponding block height.
@@ -1130,6 +1132,9 @@ type UpdateCommissionsEvent struct {
 	BurnToken               string `json:"burn_token"`
 	VoteCommission          string `json:"vote_commission"`
 	VoteUpdate              string `json:"vote_update"`
+	FailedTx                string `json:"failed_tx"`
+	AddLimitOrder           string `json:"add_limit_order"`
+	RemoveLimitOrder        string `json:"remove_limit_order"`
 }
 ```
 
@@ -1168,7 +1173,7 @@ type UpdateNetworkEvent struct {
 
 Type: **0x22**
 
-This transaction creates a liquidity pool for two coins, in volumes specified within this transaction. The volumes will be withdrawn from your balance according to the figure you've specified in the transaction. When a pool is established, a P-number coin (example: P-123) is created and issued in the amount equal to the amount of pool liquidity. The calculations related to that liquidity are described below.
+This transaction creates a liquidity pool for two coins, in volumes specified within this transaction. The volumes will be withdrawn from your balance according to the figure you've specified in the transaction. When a pool is established, an LP-number coin (example: LP-123) is created and issued in the amount equal to the amount of pool liquidity. The calculations related to that liquidity are described below.
 
 *Data field contents:*
 
@@ -1193,6 +1198,58 @@ value of a liquidity pool share to $100, the attacker would need to donate $100,
 
 To see the total supply and balance of the provider, check out [SwapPool](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/1.3/docs/api.swagger.json#operation/SwapPool) and [SwapPoolProvider](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/1.3/docs/api.swagger.json#operation/SwapPoolProvider) API v2 endpoints.
 
+### With Minter 2.6.0 released, there are a few new transactions:
+
+### Add limit order transaction
+
+Type: **0x23**
+
+A sell order creation transaction. It charges the volume sold and as the order is being filled, accrues the funds in the coin bought to the owner address. The order has a minimum limit on the sell/buy volume, which should be more than 1e10 pip. The rate in the order should not differ from the rate inside the pool by more than 5 times. 
+
+*Data field contents:*
+
+```go
+type AddLimitOrderData struct {
+	CoinToSell  uin32
+	ValueToSell *big.Int
+	CoinToBuy   uin32
+	ValueToBuy  *big.Int
+}
+```
+
+- **CoinToSell** - id of the coin being sold
+- **ValueToSell** - quantity of the coin being sold, must exceed 1e10 pip
+- **CoinToBuy** - id of the coin being purchased
+- **ValueToBuy** - quantity of the coin being purchased, must exceed 1e10 pip
+
+To check the order's status by its ID or get the list of orders by pool, check out [LimitOrder](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/orderbook/docs/api.swagger.json#operation/LimitOrder), [LimitOrders](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/orderbook/docs/api.swagger.json#operation/LimitOrders), and [LimitOrdersOfPool](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/orderbook/docs/api.swagger.json#operation/LimitOrdersOfPool) API v2 endpoints.
+
+The order expires automatically after 483 840 blocks (~28 days) since placement *or* once the pool's volumes fall below 1е10 pip. The following event is initialized: 
+
+```go
+type OrderExpiredEvent struct {
+	ID      string        `json:"id"`
+	Address string `json:"address"`
+	Coin    string        `json:"coin"`
+	Amount  string        `json:"amount"`
+}
+```
+
+### Remove limit order transaction
+
+Type: **0x24**
+
+This transaction is only available to the order's owner. Once completed, the order is canceled, while funds that were locked return to the owner balance (except for those that had already been filled).
+
+*Data field contents:*
+
+```go
+type RemoveLimitOrderData struct {
+	ID uint32
+}
+```
+
+- **ID** - id of the order to be closed
 
 
 ## Minter Check
@@ -1349,6 +1406,10 @@ The Minter Network has a limited number of available slots for validators.
 
 At launch, there were `16` slots. `4` slots were added once in every `518 400` blocks. The maximum number of validators is `64`.
 
+A candidate cannot accept delegation if their total stake is larger than the combined stake of all candidates multiplied by .2.  
+
+Once every 720 blocks, the candidates' stakes are re-calculated. Those who do not fall into the top 100 by the aggregate amount of funds delegated to them are removed and their stakes, unbonded.
+
 ### Rewards
 Block rewards and fees are accumulated and proportionally (based on stake value) paid out once per `720 blocks` (approx. 1 hour) to all active validators (and their delegators).
 
@@ -1500,16 +1561,13 @@ This is why delegators should do their own research on validators before delegat
 
 ## Node API
 
-### v2 (latest)
+### HTTP
 - [Documentation](https://minterteam.github.io/node-grpc-gateway/)
 - Testnet base url: `https://node-api.testnet.minter.network/v2/`
 
-### v1 (deprecated)
-- [Documentation](https://minterteam.github.io/minter-go-node-docs/)
-- [openapi.yaml](https://github.com/MinterTeam/minter-go-node-docs/blob/gh-pages/openapi.yaml)
-- [openapi.json](https://github.com/MinterTeam/minter-go-node-docs/blob/gh-pages/openapi.json)
-- Testnet base url: `https://node-api.testnet.minter.network/`
-
+### gRPC
+- [Protobuf](https://github.com/MinterTeam/node-grpc-gateway)
+- Testnet gRPC address: `node-api.testnet.minter.network:28842`
 
 ## Other public services
 ### Explorer API
