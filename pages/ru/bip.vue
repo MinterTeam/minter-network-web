@@ -28,6 +28,10 @@ export default {
                 getPool('BEE', 'MUSD'),
                 getPool('HUB', 'HUBABUBA'),
                 getPool('HUB', 'USDTE'),
+                getPool('TON', 'BIP'),
+                getPool('SHIB', 'BIP'),
+                getPool('METAINDEX', 'BIP'),
+                getPool('HUB', 'BIP'),
             ])
             .then((pools) => {
                 this.pools = pools;
