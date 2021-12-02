@@ -41,7 +41,7 @@ export default {
     },
     head() {
         const title = 'Minter — интернет денег';
-        const description = 'Единая децентрализованная сеть, позволяющая любому пользователю покупать, продавать, отправлять и зарабатывать такие цифровые активы, как BTC, ETH, BIP, USDT и многие другие. Запуск большого обновления Minter состоится 1 декабря 2021 года.';
+        const description = 'Единая децентрализованная сеть, позволяющая любому пользователю покупать, продавать, отправлять и зарабатывать такие цифровые активы, как BTC, ETH, BIP, USDT и многие другие.';
         // const localeSuffix = this.$i18n.locale === 'en' ? '' : '-' + this.$i18n.locale;
 
         return {
@@ -97,9 +97,9 @@ export default {
 
 <template>
     <div class="wrap">
-        <div class="promo-top">
+        <!--<div class="promo-top">
             <div>Большое обновление Minter состоится <b>1 декабря 2021</b>.</div>
-        </div>
+        </div>-->
         <div class="u-container u-container--full index-language lang-wrap">
             <language class="" :locales='[{"code":"","name":"English"},{"code":"ru","name":"Russian"}]' lang="ru" :push="true"/>
         </div>
@@ -107,7 +107,7 @@ export default {
             <div class="top_r">
                 <div class="logo"><a href="#"><img src="/img/minter-logo-white.svg" width="155" height="48" alt="Minter"/></a></div>
                 <h1>Интернет денег</h1>
-                <div class="top_e">Minter — это единая децентрализованная сеть, позволяющая любому пользователю покупать, продавать, отправлять и зарабатывать такие цифровые активы, как BTC, ETH, BIP, USDT и многие другие. Запуск большого обновления Minter состоится 1 декабря 2021 года.</div>
+                <div class="top_e">Minter — это единая децентрализованная сеть, позволяющая любому пользователю покупать, продавать, отправлять и зарабатывать такие цифровые активы, как BTC, ETH, BIP, USDT и многие другие.</div>
                 <nuxt-link class="btn" to="/ru/how-to-buy-and-sell-bip" v-track-click="'buy-bip'">Купить BIP</nuxt-link>
                 <a class="btn btn_c2" href="https://v2.info.uniswap.org/pair/0xb1700c93ddc26ce1d59441c24daef1035444d7b7" target="_blank" v-track-click="'buy-bipx'">Купить BIPx</a>
                 <!--<a class="btn btn_c2 btn_nomargin" href="https://minterteam.medium.com/bipx-usdt-%D1%84%D0%B0%D1%80%D0%BC%D0%B8%D0%BD%D0%B3-0-2-%D0%BB%D0%BE%D1%82%D0%B5%D1%80%D0%B5%D1%8F-2d91d98fba71#0d32" target="_blank" v-track-click="'airdrop'">Airdrop</a>-->
@@ -198,7 +198,7 @@ export default {
             <div class="minter_l"><img src="/bipx/images/minter-sup.png" srcset="/bipx/images/minter-sup@2x.png 2x, /bipx/images/minter-sup@3x.png 3x" alt=""/></div>
             <div class="minter_r">
                 <div class="minter_sup_t">Minter поддерживает трейдинг и переводы между сетями для</div>
-                BTC, ETH, 1INCH, USDT, USDС, DAI, PAX, BUSD, BIP, HUB и многих других.
+                BTC, ETH, USDT, USDС, 1INCH, TON COIN, SHIB, METAVERSE INDEX, DAI, PAX, BUSD, BIP, HUB и многих других.
             </div>
         </div>
         <div class="compare">
@@ -313,6 +313,78 @@ export default {
                 <div class="farming_param">
                     <div>Доходность стейкинга (APY)</div>
                     <div>{{ pretty(apy(pools[2])) }}%</div>
+                </div>
+            </div>
+            <div class="farming">
+                <div class="farming_top">
+                    <div class="farming_icos"><img src="https://explorer-static.minter.network/coins/3324.png" /><img src="https://explorer-static.minter.network/coins/0.png" /></div>
+                    <div class="farming_t">TON / BIP</div>
+                </div>
+                <div class="farming_param">
+                    <div>Всего в ликвидности (TVL)</div>
+                    <div>${{ prettyRound(usdPrice(pools[4].liquidityBip)) }}</div>
+                </div>
+                <div class="farming_param">
+                    <div>Доходность фарминга (APR)</div>
+                    <div>124%</div>
+                </div>
+                <div class="farming_param">
+                    <div>Доходность стейкинга (APY)</div>
+                    <div>{{ pretty(apy(pools[4])) }}%</div>
+                </div>
+            </div>
+            <div class="farming">
+                <div class="farming_top">
+                    <div class="farming_icos"><img src="https://explorer-static.minter.network/coins/3258.png" /><img src="https://explorer-static.minter.network/coins/0.png" /></div>
+                    <div class="farming_t">SHIB / BIP</div>
+                </div>
+                <div class="farming_param">
+                    <div>Всего в ликвидности (TVL)</div>
+                    <div>${{ prettyRound(usdPrice(pools[5].liquidityBip)) }}</div>
+                </div>
+                <div class="farming_param">
+                    <div>Доходность фарминга (APR)</div>
+                    <div>124%</div>
+                </div>
+                <div class="farming_param">
+                    <div>Доходность стейкинга (APY)</div>
+                    <div>{{ pretty(apy(pools[5])) }}%</div>
+                </div>
+            </div>
+            <div class="farming">
+                <div class="farming_top">
+                    <div class="farming_icos"><img src="https://explorer-static.minter.network/coins/3403.png" /><img src="https://explorer-static.minter.network/coins/0.png" /></div>
+                    <div class="farming_t">METAINDEX / BIP</div>
+                </div>
+                <div class="farming_param">
+                    <div>Всего в ликвидности (TVL)</div>
+                    <div>${{ prettyRound(usdPrice(pools[6].liquidityBip)) }}</div>
+                </div>
+                <div class="farming_param">
+                    <div>Доходность фарминга (APR)</div>
+                    <div>124%</div>
+                </div>
+                <div class="farming_param">
+                    <div>Доходность стейкинга (APY)</div>
+                    <div>{{ pretty(apy(pools[6])) }}%</div>
+                </div>
+            </div>
+            <div class="farming">
+                <div class="farming_top">
+                    <div class="farming_icos"><img src="https://explorer-static.minter.network/coins/1902.png" /><img src="https://explorer-static.minter.network/coins/0.png" /></div>
+                    <div class="farming_t">HUB / BIP</div>
+                </div>
+                <div class="farming_param">
+                    <div>Всего в ликвидности (TVL)</div>
+                    <div>${{ prettyRound(usdPrice(pools[7].liquidityBip)) }}</div>
+                </div>
+                <div class="farming_param">
+                    <div>Доходность фарминга (APR)</div>
+                    <div>36.5%</div>
+                </div>
+                <div class="farming_param">
+                    <div>Доходность стейкинга (APY)</div>
+                    <div>{{ pretty(apy(pools[7])) }}%</div>
                 </div>
             </div>
             <div class="farming farming_all">
