@@ -155,7 +155,7 @@ export default {
                 </div>
                 <div class="figure">
                     <span>Монет в циркуляции</span>
-                    44%
+                    51%
                 </div>
             </div>
         </div>

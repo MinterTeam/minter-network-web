@@ -154,7 +154,7 @@ export default {
                 </div>
                 <div class="figure">
                     <span>Circulating Supply</span>
-                    44%
+                    51%
                 </div>
             </div>
         </div>
