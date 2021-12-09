@@ -167,7 +167,7 @@ export default {
         </div>
         <div class="listing">
             <h2>Cross-Chain Listing of Tokens</h2>
-            <p>Any existing project’s ERC-20 token can be included in the list of cross-chain tokens. There are three main ways to make a cross-chain listing of an Ethereum token on Minter.</p>
+            <p>Any existing project’s ERC-20 or BEP-20 token can be included in the list of cross-chain tokens. There are three main ways to make a cross-chain listing of an Ethereum or Binance Smart Chain token on Minter.</p>
             <a class="btn btn_c2" href="https://minterteam.medium.com/cross-chain-listing-of-ethereums-erc-20-tokens-on-minter-e85e9f3bb028" v-track-click="'hub-listing'" target="_blank">Read More</a>
         </div>
         <div class="hubtoken_bg">

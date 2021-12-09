@@ -369,6 +369,16 @@ blockquote cite {
 	font-weight: 700;
 	color: #fff;
 }
+.promo-top a {
+	font-weight: 700;
+	color: #fff !important;
+	text-decoration: none;
+    transition: all 0.3s 0.02s ease;
+    border-bottom: 1px #fff solid;
+}
+.promo-top a:hover {
+    border-bottom: 0;
+}
 
 header {
 	display: flex;

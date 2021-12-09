@@ -101,9 +101,9 @@ export default {
 
 <template>
     <div class="wrap">
-        <!--<div class="promo-top">
-            <div>Большое обновление Minter состоится <b>1 декабря 2021</b>.</div>
-        </div>-->
+        <div class="promo-top">
+            <div>Обновление токеномики Minter 3 уже весной 2022 г. <a href="https://minterteam.medium.com/minter-3-%D0%BE%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%82%D0%BE%D0%BA%D0%B5%D0%BD%D0%BE%D0%BC%D0%B8%D0%BA%D0%B8-bip-6a6da7a18fe7" target="_blank" rel="nofollow">Подробнее</a></div>
+        </div>
         <div class="u-container u-container--full index-language lang-wrap">
             <language class="" :locales='[{"code":"","name":"English"},{"code":"ru","name":"Russian"}]' lang="ru" :push="true"/>
         </div>

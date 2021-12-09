@@ -167,7 +167,7 @@ export default {
         </div>
         <div class="listing">
             <h2>Кросс-чейн листинг токенов</h2>
-            <p>Токен ERC-20 любого существующего проекта может быть включен в список кросс-чейн токенов. Существует три основных способа кросс-чейн листинга Ethereum-токенов в Minter.</p>
+            <p>Токен ERC-20 или BEP-20 любого существующего проекта может быть включен в список кросс-чейн токенов. Существует три основных способа кросс-чейн листинга токенов из Ethereum или Binance Smart Chain в Minter.</p>
             <a class="btn btn_c2" href="https://minterteam.medium.com/%D0%BA%D1%80%D0%BE%D1%81%D1%81-%D1%87%D0%B5%D0%B9%D0%BD-%D0%BB%D0%B8%D1%81%D1%82%D0%B8%D0%BD%D0%B3-%D1%82%D0%BE%D0%BA%D0%B5%D0%BD%D0%BE%D0%B2-%D0%B8%D0%B7-ethereum-%D0%B2-minter-6dffe984e116" v-track-click="'hub-listing'" target="_blank">Подробнее</a>
         </div>
         <div class="hubtoken_bg">

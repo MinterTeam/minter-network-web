@@ -101,9 +101,9 @@ export default {
 
 <template>
     <div class="wrap">
-        <!--<div class="promo-top">
-            <div>Big Minter update is going to happen on <b>Dec. 1, 2021</b>.</div>
-        </div>-->
+        <div class="promo-top">
+            <div>Minter 3 Tokenomics Update Coming Spring 2022. <a href="https://minterteam.medium.com/minter-3-bip-tokenomics-update-c6e81264e33c" target="_blank" rel="nofollow">Learn more</a></div>
+        </div>
         <div class="u-container u-container--full index-language lang-wrap">
             <language class="" :locales='[{"code":"","name":"English"},{"code":"ru","name":"Russian"}]' lang="" :push="true"/>
         </div>
