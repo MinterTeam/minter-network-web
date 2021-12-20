@@ -214,15 +214,15 @@ export default {
             <div class="tokenomics2">
                 <div class="tokenomics_top">
                     <div class="tokenomics_ico"><img src="/hub/images/tokenomics2.svg" /></div>
-                    <div class="tokenomics_t">Staking</div>
+                    <h3 class="tokenomics_t" id="tokenomics-staking">Staking</h3>
                 </div>
                 <p>HUB holders may stake their tokens with oracles and receive up to 1% on all cross-chain transfers made via Minter Hub. For example, when someone transfers 100 USDT from Minter network to Ethereum, 1 USDT is paid out to oracles proportionally to their stake in Minter Hub.</p>
                 <p>In turn, Minter Hub oracles need to stake HUBs for transactions to be processed fairly and blocks to be formed. For that, they receive 1% of the fees charged for all transfers between the networks and share that income with their stakers.</p>
             </div>
             <div class="tokenomics3">
                 <div class="tokenomics_top">
-                    <div class="tokenomics_ico"><img src="/hub/images/tokenomics3.svg" /></div>
-                    <div class="tokenomics_t">Discounts for HUB Holders</div>
+                    <div class="tokenomics_ico"><img src="/hub/images/tokenomics3.svg" alt=""/></div>
+                    <h3 class="tokenomics_t" id="tokenomics-discount">Discounts for HUB Holders</h3>
                 </div>
                 <p>Bearing in mind that the 1-percent cross-chain transfer fee could be high for professional players who trade in big volumes, we also realize that oracles need to be interested in maintaining the Minter Hub network in the long run. That is why we are going to introduce the following discount system for HUB holders.</p>
                 <p>The HUB token will reduce fees for cross-chain transfers across Minter, Ethereum, and Binance Smart Chain. Since all three addresses are managed by one seed phrase, it was proposed to lower the fees for those who hold HUB on any of them. By default, the fee is 1% for any transfer between the networks, but the availability of tokens (regular HODLing) will give the following discounts:</p>
@@ -238,7 +238,7 @@ export default {
             <div class="tokenomics4">
                 <div class="tokenomics_top">
                     <div class="tokenomics_ico"><img src="/hub/images/tokenomics4.svg" /></div>
-                    <div class="tokenomics_t">Tips</div>
+                    <h3 class="tokenomics_t" id="tokenomics-tips">Tips</h3>
                 </div>
                 <p>An important element of tokenomics will be tips about trades and profitable operations carried out using Minter Hub. Any community member will receive tips if they have at least 1 HUB on their address on any of the networks. That way, we’ll help answer the main question of the DeFi market: “How to make money?”</p>
                 <p>A distinctive feature of decentralized finance in general is the ability of users to monitor the actions of various addresses and copy successful transactions. Until now, the so-called “social trading” was only available in closed apps or clubs and mainly in the field of trading. We plan to offer tips across the entire spectrum of financial services—from trading and liquidity management to loans and deposits.</p>
