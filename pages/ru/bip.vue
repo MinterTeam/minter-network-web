@@ -444,8 +444,9 @@ export default {
                 <p>Учитывая недавние корректировки ведущими блокчейнами собственных токеномик, команда Minter предлагает осуществить крупный апдейт сети, нацеленный на улучшение экономической модели Minter, внедрить дефляционные и противоинфляционные механизмы, которые станут стимулом укрепления BIP.</p>
                 <p>Команда Minter приступила к разработке перечисленных ниже механизмов. Мы планируем поэтапно внедрять эти обновления, с 1-го по 2-й квартал 2022 года.</p>
                 <a class="btn btn_c2" href="https://minterteam.medium.com/minter-3-%D0%BE%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%82%D0%BE%D0%BA%D0%B5%D0%BD%D0%BE%D0%BC%D0%B8%D0%BA%D0%B8-bip-6a6da7a18fe7" target="_blank" v-track-click="'roadmap'">Подробнее</a>
+            </div>
             <div class="minter_roadmap_r">
-                <img src="/bipx/images/map.png" srcset="/bipx/images/map@2x.png 2x" alt="Minter roadmap"/></div>
+                <img src="/bipx/images/map.png" srcset="/bipx/images/map@2x.png 2x" alt="Minter roadmap"/>
             </div>
         </div>
         <div class="tech">

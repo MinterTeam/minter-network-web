@@ -307,7 +307,7 @@ footer {
 	margin: 0 8px 0 0;
 	}
 
-.top_l img, .bipx_r img, .minter_l img, .wallets_i img {
+.top_l img, .bipx_r img, .minter_l img, .wallets_i img, .minter_roadmap_r img {
 	max-width: 50%;
     margin: 16px auto;
     display: block;
