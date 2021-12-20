@@ -341,6 +341,29 @@ blockquote cite {
 		color: #fff;
 	}
 
+.btn-img {
+	-webkit-box-align: center;
+    align-items: center;
+    display: inline-flex;
+    cursor: pointer;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: auto;
+    height: 40px;
+    padding: 8px 12px 8px 8px;
+}
+.btn-img img {
+	width: 24px;
+    height: 24px;
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin-left: 0px;
+    margin-right: 8px;
+}
+
 .btn_nomargin {
     margin: 0 !important;
 	}
@@ -434,7 +457,7 @@ header {
 	}
 
 .top_r .btn {
-	margin: 0 12px 0 0;
+	margin: 0 8px 10px 0;
 	}
 
 /* END HEADER */

@@ -32,6 +32,7 @@ export default {
                 getPool('SHIB', 'BIP'),
                 getPool('METAINDEX', 'BIP'),
                 getPool('HUB', 'BIP'),
+                getPool('BNB', 'BIP'),
             ])
             .then((pools) => {
                 this.pools = pools;
@@ -112,8 +113,10 @@ export default {
                 <div class="logo"><a href="#"><img src="/img/minter-logo-white.svg" width="155" height="48" alt="Minter"/></a></div>
                 <h1>Internet of Money</h1>
                 <div class="top_e">Minter is a single decentralized network allowing anyone to buy, sell, send, and earn digital assets such as BTC, ETH, USDT, BIP, and much more.</div>
-                <nuxt-link class="btn" to="/how-to-buy-and-sell-bip" v-track-click="'buy-bip'">Buy BIP</nuxt-link>
-                <a class="btn btn_c2" href="https://v2.info.uniswap.org/pair/0xb1700c93ddc26ce1d59441c24daef1035444d7b7" target="_blank" v-track-click="'buy-bipx'">Buy BIPx</a>
+                <p><b>Buy BIP on:</b></p>
+                <nuxt-link class="btn btn-img" to="/how-to-buy-and-sell-bip" v-track-click="'buy-bip'"><img src="/bipx/images/logos/minter_w.png" srcset="/bipx/images/logos/minter_w@2x.png 2x, /bipx/images/logos/minter_w@3x.png 3x" />Minter</nuxt-link>
+                <a class="btn btn_c2 btn-img" href="https://v2.info.uniswap.org/pair/0xb1700c93ddc26ce1d59441c24daef1035444d7b7" target="_blank" v-track-click="'buy-bipx'"><img src="/bipx/images/logos/uniswap_w.png" srcset="/bipx/images/logos/uniswap_w@2x.png 2x, /bipx/images/logos/uniswap_w@3x.png 3x" />Uniswap</a>
+                <a class="btn btn_c2 btn-img" href="https://pancakeswap.finance/info/pool/0xf51e1b34be6f2ddac9d3f4e6186b772ae4ae3855" target="_blank" v-track-click="'buy-bipx'"><img src="/bipx/images/logos/pancakeswap.png" srcset="/bipx/images/logos/pancakeswap@2x.png 2x, /bipx/images/logos/pancakeswap@3x.png 3x" />Pancake</a>
                 <!--<a class="btn btn_c2 btn_nomargin" href="https://minterteam.medium.com/bipx-usdt-farming-at-0-2-giveaway-fa2c30a09e18#9cb4" target="_blank" v-track-click="'airdrop'">Get Airdrop</a>-->
             </div>
             <div class="top_l m-l-40"><img src="/bipx/images/header-bip.png" srcset="/bipx/images/header-bip@2x.png 2x, /bipx/images/header-bip@3x.png 3x" /></div>
@@ -121,7 +124,7 @@ export default {
         <div class="bipx">
             <div class="bipx_l">
                 <div class="bipx_t">What Is BIP and BIPx?</div>
-                <div class="bipx_e">BIP is Minter Network’s native token, while BIPx is its wrapped version on Ethereum. Being a DPoS blockchain, Minter is validated through BIP stake delegation.</div>
+                <div class="bipx_e">BIP is Minter Network’s native token, while BIPx is its wrapped version on Ethereum and Binance Smart Chain. Being a DPoS blockchain, Minter is validated through BIP stake delegation.</div>
                 <div class="bipx_a">
                     <a class="bipx_cmc" href="https://coinmarketcap.com/currencies/minter-network/" target="_blank">CMC</a>
                     <a class="bipx_coi" href="https://www.coingecko.com/en/coins/bip" target="_blank">CoinGecko</a>
@@ -167,7 +170,7 @@ export default {
             </div>
             <div class="minter_li">
                 <div class="minter_li_i"><img src="/bipx/images/minter2.svg" /></div>
-                <div class="minter_li_t">Low fees</div>
+                <div class="minter_li_t">Low fees fixed in USD</div>
                 <span>$0.01</span> per transfer, <span>$0.03</span> + <span>0.2%</span> per swap, payable in any liquid coin or token
             </div>
             <div class="minter_li">
@@ -302,78 +305,6 @@ export default {
             </div>
             <div class="farming">
                 <div class="farming_top">
-                    <div class="farming_icos"><img src="https://explorer-static.minter.network/coins/1902.png" /><img src="https://explorer-static.minter.network/coins/1942.png" /></div>
-                    <div class="farming_t">HUB / HUBABUBA</div>
-                </div>
-                <div class="farming_param">
-                    <div>Total value locked</div>
-                    <div>${{ prettyRound(usdPrice(pools[2].liquidityBip)) }}</div>
-                </div>
-                <div class="farming_param">
-                    <div>Farming APR</div>
-                    <div>365%</div>
-                </div>
-                <div class="farming_param">
-                    <div>Staking APY</div>
-                    <div>{{ pretty(apy(pools[2])) }}%</div>
-                </div>
-            </div>
-            <div class="farming">
-                <div class="farming_top">
-                    <div class="farming_icos"><img src="https://explorer-static.minter.network/coins/3324.png" /><img src="https://explorer-static.minter.network/coins/0.png" /></div>
-                    <div class="farming_t">TON / BIP</div>
-                </div>
-                <div class="farming_param">
-                    <div>Total value locked</div>
-                    <div>${{ prettyRound(usdPrice(pools[4].liquidityBip)) }}</div>
-                </div>
-                <div class="farming_param">
-                    <div>Farming APR</div>
-                    <div>124%</div>
-                </div>
-                <div class="farming_param">
-                    <div>Staking APY</div>
-                    <div>{{ pretty(apy(pools[4])) }}%</div>
-                </div>
-            </div>
-            <div class="farming">
-                <div class="farming_top">
-                    <div class="farming_icos"><img src="https://explorer-static.minter.network/coins/3258.png" /><img src="https://explorer-static.minter.network/coins/0.png" /></div>
-                    <div class="farming_t">SHIB / BIP</div>
-                </div>
-                <div class="farming_param">
-                    <div>Total value locked</div>
-                    <div>${{ prettyRound(usdPrice(pools[5].liquidityBip)) }}</div>
-                </div>
-                <div class="farming_param">
-                    <div>Farming APR</div>
-                    <div>124%</div>
-                </div>
-                <div class="farming_param">
-                    <div>Staking APY</div>
-                    <div>{{ pretty(apy(pools[5])) }}%</div>
-                </div>
-            </div>
-            <div class="farming">
-                <div class="farming_top">
-                    <div class="farming_icos"><img src="https://explorer-static.minter.network/coins/3403.png" /><img src="https://explorer-static.minter.network/coins/0.png" /></div>
-                    <div class="farming_t">METAINDEX / BIP</div>
-                </div>
-                <div class="farming_param">
-                    <div>Total value locked</div>
-                    <div>${{ prettyRound(usdPrice(pools[6].liquidityBip)) }}</div>
-                </div>
-                <div class="farming_param">
-                    <div>Farming APR</div>
-                    <div>124%</div>
-                </div>
-                <div class="farming_param">
-                    <div>Staking APY</div>
-                    <div>{{ pretty(apy(pools[6])) }}%</div>
-                </div>
-            </div>
-            <div class="farming">
-                <div class="farming_top">
                     <div class="farming_icos"><img src="https://explorer-static.minter.network/coins/1902.png" /><img src="https://explorer-static.minter.network/coins/0.png" /></div>
                     <div class="farming_t">HUB / BIP</div>
                 </div>
@@ -388,6 +319,24 @@ export default {
                 <div class="farming_param">
                     <div>Staking APY</div>
                     <div>{{ pretty(apy(pools[7])) }}%</div>
+                </div>
+            </div>
+                        <div class="farming">
+                <div class="farming_top">
+                    <div class="farming_icos"><img src="https://explorer-static.minter.network/coins/2107.png" /><img src="https://explorer-static.minter.network/coins/0.png" /></div>
+                    <div class="farming_t">BNB / BIP</div>
+                </div>
+                <div class="farming_param">
+                    <div>Total value locked</div>
+                    <div>${{ prettyRound(usdPrice(pools[8].liquidityBip)) }}</div>
+                </div>
+                <div class="farming_param">
+                    <div>Farming APR</div>
+                    <div>36.5%</div>
+                </div>
+                <div class="farming_param">
+                    <div>Staking APY</div>
+                    <div>{{ pretty(apy(pools[8])) }}%</div>
                 </div>
             </div>
             <div class="farming farming_all">
