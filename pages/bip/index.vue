@@ -437,6 +437,16 @@ export default {
                 <div class="wallet_e">This wallet has the most features: besides the standard functions of the basic wallet, you can also work with checks, create coins and tokens, launch masternodes, set up and manage MultiSig addresses and liquidity pools, and broadcast the transactions signed off-line</div>
             </div>
         </div>
+        <div class="minter_roadmap">
+            <div class="minter_roadmap_l">
+                <div class="minter_roadmap_t">Roadmap</div>
+                <p>In light of the changes that leading blockchains have recently made in their tokenomics, Minter Team is proposing a large-scale update of the network. Its goal is to improve the economic model and implement deflationary and counter-inflationary mechanisms, stimulating the strengthening of BIP.</p>
+                <p>The Minter team has started to design mechanisms outlined below. We plan to gradually roll them out in Q1 and Q2 2022.</p>
+                <a class="btn btn_c2" href="https://minterteam.medium.com/minter-3-bip-tokenomics-update-c6e81264e33c" target="_blank" v-track-click="'roadmap'">Read More</a>
+            <div class="minter_roadmap_r">
+                <img src="/bipx/images/map.png" srcset="/bipx/images/map@2x.png 2x" alt="Minter roadmap"/></div>
+            </div>
+        </div>
         <div class="tech">
             <div class="tech_t">Tech side</div>
             <div class="tech_e">In our docs, we’ve covered everything you need to know in order to start maintaining the Minter network, build services and applications on top of it, or integrate it into your organization’s operations.</div>

@@ -141,6 +141,17 @@ header {
 	padding: 30px 0 0 0;
 	}
 
+.minter_roadmap {
+	display: block;
+	width: auto;
+	margin: 0;
+	padding: 0 24px 30px 24px;
+	}
+
+.minter_roadmap_l {
+	width: auto;
+	padding: 30px 0 0 0;
+	}
 
 .compare {
 	box-sizing: border-box;
