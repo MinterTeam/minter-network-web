@@ -329,7 +329,7 @@ export default {
                 </div>
                 <div class="farming_param">
                     <div>Всего в ликвидности (TVL)</div>
-                    <div>${{ prettyRound(usdPrice(pools[6].liquidityBip)) }}</div>
+                    <div>${{ prettyRound(usdPrice(pools[8].liquidityBip)) }}</div>
                 </div>
                 <div class="farming_param">
                     <div>Доходность фарминга (APR)</div>
@@ -337,7 +337,7 @@ export default {
                 </div>
                 <div class="farming_param">
                     <div>Доходность стейкинга (APY)</div>
-                    <div>{{ pretty(apy(pools[6])) }}%</div>
+                    <div>{{ pretty(apy(pools[8])) }}%</div>
                 </div>
             </div>
             <div class="farming farming_all">
