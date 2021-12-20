@@ -351,6 +351,7 @@ blockquote cite {
     width: auto;
     height: 40px;
     padding: 8px 12px 8px 8px;
+	font-size: 14px;
 }
 .btn-img img {
 	width: 24px;
