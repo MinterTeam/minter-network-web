@@ -121,7 +121,7 @@ export default {
             </div>
             <div class="top_l m-l-40"><img src="/bipx/images/header-bip.png" srcset="/bipx/images/header-bip@2x.png 2x, /bipx/images/header-bip@3x.png 3x" /></div>
         </header>
-        <div class="bipx">
+        <div class="bipx" id="bipx">
             <div class="bipx_l">
                 <div class="bipx_t">Что такое BIP и BIPx?</div>
                 <div class="bipx_e">BIP — это нативный токен сети Minter, а его обернутая версия в Ethereum и Binance Smart Chain называется BIPx. Minter — DPoS-блокчейн, который валидируется при помощи заделегированных BIP.</div>
@@ -132,7 +132,7 @@ export default {
             </div>
             <div class="bipx_r"><img src="/bipx/images/bipx.png" srcset="/bipx/images/bipx@2x.png 2x, /bipx/images/bipx@3x.png 3x" alt="" role="presentation"/></div>
         </div>
-        <div class="figures">
+        <div class="figures" id="earn">
             <h2>Заработок в Minter</h2>
             <div class="figures_flx">
                 <div class="figure">
@@ -162,7 +162,7 @@ export default {
                 </div>
             </div>
         </div>
-        <div class="minter">
+        <div class="minter" id="features">
             <div class="minter_t">Преимущества сети</div>
             <div class="minter_li">
                 <div class="minter_li_i"><img src="/bipx/images/minter1.svg" /></div>
@@ -208,7 +208,7 @@ export default {
                 BTC, ETH, USDT, USDС, 1INCH, TON COIN, SHIB, METAVERSE INDEX, DAI, PAX, BUSD, BIP, HUB и многих других.
             </div>
         </div>
-        <div class="compare">
+        <div class="compare" id="compare">
             <div class="compare_t">Сравните скорость, комиссии, удобство</div>
             <div class="compare_tab">
                 <div class="compare_ths">
@@ -266,7 +266,7 @@ export default {
                 </div>
             </div>
         </div>
-        <div class="farmings" v-if="pools.length">
+        <div class="farmings" id="yf" v-if="pools.length">
             <div class="farmings_t">Программы фарминга в Minter</div>
             <div class="farming">
                 <div class="farming_top">
@@ -344,7 +344,7 @@ export default {
                 <a href="https://explorer.minter.network/farming" target="_blank">Смотреть все</a>
             </div>
         </div>
-        <div class="staking">
+        <div class="staking" id="staking">
             <div class="minter_t">Стейкинг</div>
             <div class="minter_li">
                 <div class="minter_li_i"><img src="/bipx/images/staking1.svg" /></div>
@@ -357,7 +357,7 @@ export default {
                 Добывайте BTC, ETH, USDT, USDC, 1INCH, BIP, HUB и многие другие, предоставляя ликвидность в пулы. Награда составляет 0.2% от каждого обмена
             </div>
         </div>
-        <div class="wallets">
+        <div class="wallets" id="wallets">
             <div class="wallets_t">Кошельки</div>
             <div class="wallets_i"><img src="/bipx/images/wallets.png" srcset="/bipx/images/wallets@2x.png 2x" alt="" role="presentation" /></div>
             <div class="wallets_r">
@@ -387,7 +387,7 @@ export default {
                 <div class="wallet_e">Этот кошелек предлагает наиболее широкий спектр действий: помимо стандартного функционала, вы получаете возможность работать с чеками, выпускать монеты и токены, запускать и настраивать мастерноды, создавать MultiSig-адреса и пулы ликвидности и управлять ими, а также отправлять транзакции, подписанные офлайн</div>
             </div>
         </div>
-        <div class="minter_roadmap">
+        <div class="minter_roadmap" id="roadmap">
             <div class="minter_roadmap_l">
                 <div class="minter_roadmap_t">Дорожная карта</div>
                 <p>Учитывая недавние корректировки ведущими блокчейнами собственных токеномик, команда Minter предлагает осуществить крупный апдейт сети, нацеленный на улучшение экономической модели Minter, внедрить дефляционные и противоинфляционные механизмы, которые станут стимулом укрепления BIP.</p>
@@ -398,7 +398,7 @@ export default {
                 <img src="/bipx/images/map.png" srcset="/bipx/images/map@2x.png 2x" alt="Minter roadmap"/>
             </div>
         </div>
-        <div class="tech">
+        <div class="tech" id="tech">
             <div class="tech_t">Техническая сторона</div>
             <div class="tech_e">В документации вы найдете все, чтобы начать работу с блокчейном Minter, разрабатывать на нем сервисы и приложения или интегрировать его во внутренние процессы вашей организации.</div>
             <div class="tech_a">
@@ -409,7 +409,7 @@ export default {
                 <a class="tech_cons" href="https://console.minter.network/" target="_blank">Console</a>
             </div>
         </div>
-        <div class="social">
+        <div class="social" id="follow">
             <div class="social_t">Соцмедиа</div>
             <div class="social_e">Следите за всеми нашими новостями, объявлениями и новым контентом в социальных сетях и мессенджерах.</div>
             <div class="social_as">
@@ -421,7 +421,7 @@ export default {
                 <div class="social_a social_fb"><a href="https://www.facebook.com/MinterNetwork" target="_blank">Facebook</a></div>
             </div>
         </div>
-        <div class="discover">
+        <div class="discover" id="hub">
             <div class="discover_t">Откройте для себя токен HUB</div>
             <div class="discover_top">
                 <div class="discover_img"><img src="/bipx/images/discover.svg" /></div>

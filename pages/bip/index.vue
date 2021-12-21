@@ -121,7 +121,7 @@ export default {
             </div>
             <div class="top_l m-l-40"><img src="/bipx/images/header-bip.png" srcset="/bipx/images/header-bip@2x.png 2x, /bipx/images/header-bip@3x.png 3x" /></div>
         </header>
-        <div class="bipx">
+        <div class="bipx" id="bipx">
             <div class="bipx_l">
                 <div class="bipx_t">What Is BIP and BIPx?</div>
                 <div class="bipx_e">BIP is Minter Network’s native token, while BIPx is its wrapped version on Ethereum and Binance Smart Chain. Being a DPoS blockchain, Minter is validated through BIP stake delegation.</div>
@@ -132,7 +132,7 @@ export default {
             </div>
             <div class="bipx_r"><img src="/bipx/images/bipx.png" srcset="/bipx/images/bipx@2x.png 2x, /bipx/images/bipx@3x.png 3x" alt="" role="presentation"/></div>
         </div>
-        <div class="figures">
+        <div class="figures" id="earn">
             <h2>Earn with Minter</h2>
             <div class="figures_flx">
                 <div class="figure">
@@ -161,7 +161,7 @@ export default {
                 </div>
             </div>
         </div>
-        <div class="minter">
+        <div class="minter" id="features">
             <div class="minter_t">Network Features</div>
             <div class="minter_li">
                 <div class="minter_li_i"><img src="/bipx/images/minter1.svg" /></div>
@@ -207,7 +207,7 @@ export default {
                 BTC, ETH, USDT, USDС, 1INCH, TON COIN, SHIB, METAVERSE INDEX, DAI, PAX, BUSD, BIP, HUB, and many more.
             </div>
         </div>
-        <div class="compare">
+        <div class="compare" id="compare">
             <div class="compare_t">Compare speed, fees, convenience</div>
             <div class="compare_tab">
                 <div class="compare_ths">
@@ -265,7 +265,7 @@ export default {
                 </div>
             </div>
         </div>
-        <div class="farmings" v-if="pools.length">
+        <div class="farmings" id="yf" v-if="pools.length">
             <div class="farmings_t">Yield farming on Minter</div>
             <div class="farming">
                 <div class="farming_top">
@@ -343,7 +343,7 @@ export default {
                 <a href="https://explorer.minter.network/farming" target="_blank">View all</a>
             </div>
         </div>
-        <div class="staking">
+        <div class="staking" id="staking">
             <div class="minter_t">Staking</div>
             <div class="minter_li">
                 <div class="minter_li_i"><img src="/bipx/images/staking1.svg" /></div>
@@ -356,7 +356,7 @@ export default {
                 Mine BTC, ETH, USDT, USDC, 1INCH, BIP, HUB, and many more by providing liquidity. 0.2% of each trade goes directly to LPs
             </div>
         </div>
-        <div class="wallets">
+        <div class="wallets" id="wallets">
             <div class="wallets_t">Wallets</div>
             <div class="wallets_i"><img src="/bipx/images/wallets.png" srcset="/bipx/images/wallets@2x.png 2x" alt="" role="presentation" /></div>
             <div class="wallets_r">
@@ -386,7 +386,7 @@ export default {
                 <div class="wallet_e">This wallet has the most features: besides the standard functions of the basic wallet, you can also work with checks, create coins and tokens, launch masternodes, set up and manage MultiSig addresses and liquidity pools, and broadcast the transactions signed off-line</div>
             </div>
         </div>
-        <div class="minter_roadmap">
+        <div class="minter_roadmap" id="roadmap">
             <div class="minter_roadmap_l">
                 <div class="minter_roadmap_t">Roadmap</div>
                 <p>In light of the changes that leading blockchains have recently made in their tokenomics, Minter Team is proposing a large-scale update of the network. Its goal is to improve the economic model and implement deflationary and counter-inflationary mechanisms, stimulating the strengthening of BIP.</p>
@@ -397,7 +397,7 @@ export default {
                 <img src="/bipx/images/map.png" srcset="/bipx/images/map@2x.png 2x" alt="Minter roadmap"/>
             </div>
         </div>
-        <div class="tech">
+        <div class="tech" id="tech">
             <div class="tech_t">Tech side</div>
             <div class="tech_e">In our docs, we’ve covered everything you need to know in order to start maintaining the Minter network, build services and applications on top of it, or integrate it into your organization’s operations.</div>
             <div class="tech_a">
@@ -408,7 +408,7 @@ export default {
                 <a class="tech_cons" href="https://console.minter.network/" target="_blank">Console</a>
             </div>
         </div>
-        <div class="social">
+        <div class="social" id="follow">
             <div class="social_t">Social media</div>
             <div class="social_e">Follow all of our news, announcements, and content updates across social networks and instant messengers.</div>
             <div class="social_as">
@@ -420,7 +420,7 @@ export default {
                 <div class="social_a social_fb"><a href="https://www.facebook.com/MinterNetwork" target="_blank">Facebook</a></div>
             </div>
         </div>
-        <div class="discover">
+        <div class="discover" id="hub">
             <div class="discover_t">Discover HUB token</div>
             <div class="discover_top">
                 <div class="discover_img"><img src="/bipx/images/discover.svg" /></div>

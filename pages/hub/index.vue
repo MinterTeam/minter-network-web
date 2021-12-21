@@ -103,7 +103,7 @@ export default {
                 <a class="btn btn_alt" href="https://console.minter.network/buy?coin=HUB" target="_blank" v-track-click="'hub-buyhubminter'">Buy HUB on Minter</a>
             </div>
         </div>
-        <div class="wrap figures">
+        <div class="wrap figures" id="figures">
             <h2>In Figures</h2>
             <div class="figures_flx">
                 <div class="figure">
@@ -136,21 +136,21 @@ export default {
                 </div>
             </div>
         </div>
-        <div class="how">
+        <div class="how" id="how">
             <h2>How It Works</h2>
             <p>Minter Hub is a standalone blockchain with its own validators (oracles) that are connected to all networks at once (Minter, Ethereum, BSC) and have access to the multi-signature wallets on each.</p>
             <p>Oracles lock the coin on one network and issue its ‘mirrored’ version on the other.</p>
         </div>
-        <div class="oracles">
+        <div class="oracles" id="oracles">
             <h2>Oracles</h2>
             <p>Minter Hub was designed to have 16 oracles and run on the PoS consensus, which means using stake as collateral in order to vote on blocks. If necessary, however, the decision on changing the rules and code can be made by blockchain’s oracles.</p>
             <p>Cross-chain transfers are the new era of sovereign blockchains. They ensure not only the communication among the networks, but also reliable, fast, and secure decentralized transactions that no one can cancel, alter, or censor.</p>
         </div>
-        <div class="wrap speedcost">
+        <div class="wrap speedcost" id="speedcost">
             <h2>Speed and Cost</h2>
             <p>For example, Minter ⇔ Ethereum transactions take an average <b>20–60 seconds</b>, which is pretty fast for cross-chain transfers. At the same time, it is quite expensive as truly decentralized processing requires a large amount of fees. On Ethereum, cross-chain fees are charged for each oracle’s signature, and on top of that, <b>1%</b> goes to Minter Hub oracles as a service fee.</p>
         </div>
-        <div class="products">
+        <div class="products" id="products">
             <h2>Products</h2>
             <div class="products_flx">
                 <div class="product">
@@ -165,12 +165,12 @@ export default {
                 </div>
             </div>
         </div>
-        <div class="listing">
+        <div class="listing" id="listing">
             <h2>Cross-Chain Listing of Tokens</h2>
             <p>Any existing project’s ERC-20 or BEP-20 token can be included in the list of cross-chain tokens. There are three main ways to make a cross-chain listing of an Ethereum or Binance Smart Chain token on Minter.</p>
             <a class="btn btn_c2" href="https://minterteam.medium.com/cross-chain-listing-of-ethereums-erc-20-tokens-on-minter-e85e9f3bb028" v-track-click="'hub-listing'" target="_blank">Read More</a>
         </div>
-        <div class="hubtoken_bg">
+        <div class="hubtoken_bg" id="token">
             <div class="wrap hubtoken">
                 <div class="hubtoken_top">
                     <div class="hubtoken_img"><img src="/hub/images/hub.svg" /></div>
@@ -181,7 +181,7 @@ export default {
             </div>
         </div>
         <div class="wrap">
-            <h2>Current HUB distribution</h2>
+            <h2 id="token-distribution">Current HUB distribution</h2>
             <div class="figures_flx">
                 <div class="figure">
                     <span>Fund</span>
@@ -208,7 +208,7 @@ export default {
         </div>
         <div class="wrap">
             <div class="tokenomics1">
-                <h2>Tokenomics</h2>
+                <h2 id="token-tokenomics">Tokenomics</h2>
                 <p>In 2021, we see three main use cases for HUB tokens to create a growing blockchain economy and long-term balance of power: Staking, Fee Discounts & Tips.</p>
             </div>
             <div class="tokenomics2">
@@ -244,7 +244,7 @@ export default {
                 <p>A distinctive feature of decentralized finance in general is the ability of users to monitor the actions of various addresses and copy successful transactions. Until now, the so-called “social trading” was only available in closed apps or clubs and mainly in the field of trading. We plan to offer tips across the entire spectrum of financial services—from trading and liquidity management to loans and deposits.</p>
             </div>
         </div>
-        <div class="wrap pricing">
+        <div class="wrap pricing" id="price">
             <h2>Pricing</h2>
             <p>The initial supply of <b>50,000 tokens</b> was distributed to the community <b>for free</b>.</p>
             <p>In the very first days, community members launched trading in the <a href="https://v2.info.uniswap.org/pair/0x3796fee2b555da1356cdcd3e1861263b351a58a0" target="_blank" v-track-click="'hub-hubpool'">HUB-USDT</a> pair on Uniswap, setting the starting price at $0.10. The first trade took place <a href="https://etherscan.io/tx/0x9e1e7f6e22022c03bb9e95505126c21644ce3f15b3b5ea1dbbd6d744151faa41" target="_blank">October 27, 2020</a>, when 9 HUBs were bought for $1.</p>
@@ -254,13 +254,13 @@ export default {
             </div>
             <p>The team does not exclude that it will support listings and integrations in one form or another, including rewards in HUB tokens. But it will not initiate such activities, giving the community complete freedom of action.</p>
         </div>
-        <div class="investors">
+        <div class="investors" id="investors">
             <h2>Investors</h2>
             <p>Since the first announcements of Minter Hub, the fund (token holder) has been receiving offers from investors interested in long-term participation in the protocol. We are talking about both venture funds and those focused exclusively on blockchain projects.</p>
             <p>We plan to sell only small portions of tokens, no more than 5% per fund, and always with a lock-up or vesting period of 3–7 years. The longer the period, the higher the discount at the time of purchase.</p>
             <p>Speaking of investors, we mean only qualified legal entities that comply with all laws and regulations in the field of cryptocurrencies in their respective jurisdictions.</p>
         </div>
-        <div class="technologies wrap">
+        <div class="technologies wrap" id="technologies">
             <div class="technologies_top">
                 <div>
                     <h2>Technologies</h2>
