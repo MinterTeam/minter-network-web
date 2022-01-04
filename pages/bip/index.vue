@@ -269,42 +269,6 @@ export default {
             <div class="farmings_t">Yield farming on Minter</div>
             <div class="farming">
                 <div class="farming_top">
-                    <div class="farming_icos"><img src="https://explorer-static.minter.network/coins/1993.png" /><img src="https://explorer-static.minter.network/coins/1994.png" /></div>
-                    <div class="farming_t">USDT / USDC</div>
-                </div>
-                <div class="farming_param">
-                    <div>Total value locked</div>
-                    <div>${{ prettyRound(usdPrice(pools[0].liquidityBip)) }}</div>
-                </div>
-                <div class="farming_param">
-                    <div>Farming APR</div>
-                    <div>36.5%</div>
-                </div>
-                <div class="farming_param">
-                    <div>Staking APY</div>
-                    <div>{{ pretty(apy(pools[0])) }}%</div>
-                </div>
-            </div>
-            <div class="farming">
-                <div class="farming_top">
-                    <div class="farming_icos"><img src="https://explorer-static.minter.network/coins/2361.png" /><img src="https://explorer-static.minter.network/coins/2024.png" /></div>
-                    <div class="farming_t">BEE / MUSD</div>
-                </div>
-                <div class="farming_param">
-                    <div>Total value locked</div>
-                    <div>${{ prettyRound(usdPrice(pools[1].liquidityBip)) }}</div>
-                </div>
-                <div class="farming_param">
-                    <div>Farming APR</div>
-                    <div>100%</div>
-                </div>
-                <div class="farming_param">
-                    <div>Staking APY</div>
-                    <div>{{ pretty(apy(pools[1])) }}%</div>
-                </div>
-            </div>
-            <div class="farming">
-                <div class="farming_top">
                     <div class="farming_icos"><img src="https://explorer-static.minter.network/coins/1902.png" /><img src="https://explorer-static.minter.network/coins/0.png" /></div>
                     <div class="farming_t">HUB / BIP</div>
                 </div>
