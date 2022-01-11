@@ -361,6 +361,95 @@ export default {
                 <img src="/bipx/images/map.png" srcset="/bipx/images/map@2x.png 2x" alt="Minter roadmap"/>
             </div>
         </div>
+        <div class="completed" id="completed">
+            <div class="completed_t">Completed in 2021</div>
+            <div class="completed_timeline">
+                <div class="completed_outer">
+                    <div class="completed_card" id="timeline_1">
+                        <div class="completed_info">
+                            <div class="completed_title">Minter 2 Launch</div>
+                            <p>The Minter network had a major upgrade on April 12, 2021. Its main goal was to lay down a unique infrastructure for decentralized trading, cross-chain transfers, and DeFi earning opportunities (for liquidity providers, traders, lenders, and borrowers alike).</p>
+                            <p>This upgrade has brought Minter closer than ever to fulfilling its original vision for an efficient, blockchain-powered Internet of Money architecture.</p>
+                            <p class="timeline_links">
+                                <a href="https://coinmarketcal.com/en/event/minter-2-launch-58690" target="_blank" rel="nofollow">Calendar Event</a>
+                                <a href="https://minterteam.medium.com/minter-2-on-chain-automated-market-maker-with-order-book-e29b19fc365f" target="_blank" rel="nofollow">Read More</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="completed_card" id="timeline_2">
+                        <div class="completed_info">
+                            <div class="completed_title">Token Burn</div>
+                            <p>On May 15, 2021, MDF (Minter Development Foundation) burned 385 000 000 BIP, or 9.3% of current supply (~$8,000,000 at the time).</p>
+                            <p>That volume was forever removed from circulation and therefore will never enter the market.</p>
+                            <p>Deflationary mechanisms such as limited supply, burn of coins, and gradual decrease of rewards for generating new blocks have proved efficient in strengthening the tokenomics of many blockchains.</p>
+                            <p class="timeline_links">
+                                <a href="https://coinmarketcal.com/en/event/300-million-bip-burn-66859" target="_blank" rel="nofollow">Calendar Event</a>
+                                <a href="https://minterteam.medium.com/a-385-million-bip-burn-dedicated-to-launch-day-8426f93881aa" target="_blank" rel="nofollow">Read More</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="completed_card" id="timeline_3">
+                        <div class="completed_info">
+                            <div class="completed_title">BIPX Token Launch</div>
+                            <p>BIPx is a wrapped version of BIP on Ethereum and Binance Smart Chain. BIPx unlocks the best of global decentralized finance (DeFi) and helps users earn with just one of the Minter wallets at hand.</p>
+                            <p class="timeline_links">
+                                <a href="https://coinmarketcal.com/en/event/token-launch-71586" target="_blank" rel="nofollow">Calendar Event</a>
+                                <a href="https://minterteam.medium.com/how-to-make-money-on-defi-with-bipx-17905b034285" target="_blank" rel="nofollow">Read More</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="completed_card" id="timeline_4">
+                        <div class="completed_info">
+                            <div class="completed_title">HONEE Wallet Launch</div>
+                            <p>The alpha launch of HONEE, the simplest crypto wallet that helps users earn.</p>
+                            <p class="timeline_links">
+                                <a href="https://coinmarketcal.com/en/event/honee-wallet-launch-88666" target="_blank" rel="nofollow">Calendar Event</a>
+                                <a href="https://medium.com/@honeeapp/honee-crypto-wallet-that-helps-users-earn-e6ae3088963d" target="_blank" rel="nofollow">Read More</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="completed_card" id="timeline_5">
+                        <div class="completed_info">
+                            <div class="completed_title">Listing of popular cryptos on Minter</div>
+                            <p>Launch of the Minter Hub bridge has made it possible to move tokens between the networks. As of the end of 2021, support has been added for the following top coins:<br>
+                            BTC, ETH, BNB, USDT, USDС, 1INCH, TON COIN, SHIB, METAVERSE INDEX, DAI, PAX, BUSD, BIP, HUB, and more.</p>
+                            <p class="timeline_links">
+                                <a href="https://minterteam.medium.com/listing-tokens-on-minter-ce70f26e1a08" target="_blank" rel="nofollow">Read More</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="completed_card" id="timeline_6">
+                        <div class="completed_info">
+                            <div class="completed_title">Minter 2.6 Update</div>
+                            <p>With this update, Minter has revolutionized DeFi protocols by introducing On-Chain Automated Market Maker with Order Book (AMMOB).</p>
+                            <p>Being a decentralized assets marketplace, Minter now lets its users place and execute limit orders in order to buy or sell any crypto at a pre-determined rate. Limit orders are located inside the liquidity pools themselves.</p>
+                            <p class="timeline_links">
+                                <a href="https://coinmarketcal.com/en/event/minter-update-95562" target="_blank" rel="nofollow">Calendar Event</a>
+                                <a href="https://t.me/MinterTeam/635" target="_blank" rel="nofollow">Read More</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="completed_card" id="timeline_7">
+                        <div class="completed_info">
+                            <div class="completed_title">Minter Hub 2 Launch</div>
+                            <p>
+                                <ul>
+                                    <li><b>Easy modular connection</b> <br>unlocks access to assets, liquidity, and DeFi tools on other blockchains without the need to re-write the code. The new release already has BSC integrated.</li>
+                                    <li><b>Revamped cross-chain fees mechanism</b> <br>allows you to get cashback in cases when the actual fee turns out to be less than what you have already paid.</li>
+                                    <li><b>Support for native ETH</b> <br>allows you to forget about converting into wETH.</li>
+                                    <li><b>Discounts for HUB holders</b> <br>are as simple as it gets—hold the HUB token on your balance and move your tokens between the networks at a smaller fee.</li>
+                                    <li><b>Cross-chain DeFi</b> <br>and its full-fledged interoperability with other chains allows you to make not only transfers, but also any other operations—including farming, staking, lotteries, loans, etc. And you can still pay the fee in any liquid coin on Minter Network.</li>
+                                </ul>
+                            </p>
+                            <p class="timeline_links">
+                                <a href="https://coinmarketcal.com/en/event/minter-hub-2-launch-95561" target="_blank" rel="nofollow">Calendar Event</a>
+                                <a href="https://t.me/minterdev/253" target="_blank" rel="nofollow">Read More</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="tech" id="tech">
             <div class="tech_t">Tech side</div>
             <div class="tech_e">In our docs, we’ve covered everything you need to know in order to start maintaining the Minter network, build services and applications on top of it, or integrate it into your organization’s operations.</div>

@@ -362,6 +362,95 @@ export default {
                 <img src="/bipx/images/map.png" srcset="/bipx/images/map@2x.png 2x" alt="Minter roadmap"/>
             </div>
         </div>
+        <div class="completed" id="completed">
+            <div class="completed_t">Завершено в 2021</div>
+            <div class="completed_timeline">
+                <div class="completed_outer">
+                    <div class="completed_card" id="timeline_1">
+                        <div class="completed_info">
+                            <div class="completed_title">Запуск Minter 2</div>
+                            <p>12 апреля 2021 года в сети Minter было проведено масштабное обновление. Его основной целью было создание уникальной инфраструктуры для децентрализованной торговли, межсетевых переводов и возможностей заработка в DeFi (для поставщиков ликвидности, трейдеров, кредиторов и заемщиков).</p>
+                            <p>Minter как никогда приблизился к реализации своего первоначального видения эффективной архитектуры Интернета денег на основе блокчейна.</p>
+                            <p class="timeline_links">
+                                <a href="https://coinmarketcal.com/en/event/minter-2-launch-58690" target="_blank" rel="nofollow">Событие в календаре</a>
+                                <a href="https://daniillashin.medium.com/minter-2-on-chain-automated-market-maker-with-order-book-5c98869682c9" target="_blank" rel="nofollow">Подробнее</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="completed_card" id="timeline_2">
+                        <div class="completed_info">
+                            <div class="completed_title">Сжигание</div>
+                            <p>15 мая 2021 года MDF (Minter Development Foundation) сожгла 385 000 000 BIP, или 9.3% от текущего предложения (~8 млн долларов США на тот момент).</p>
+                            <p>Этот объем был навсегда изъят из обращения и никогда не попадет в рынок.</p>
+                            <p>Дефляционные механизмы, такие как ограниченное предложение, сжигание монет и постепенное уменьшение вознаграждения за создание новых блоков, доказали свою эффективность в укреплении токеномики многих блокчейнов.</p>
+                            <p class="timeline_links">
+                                <a href="https://coinmarketcal.com/en/event/300-million-bip-burn-66859" target="_blank" rel="nofollow">Событие в календаре</a>
+                                <a href="https://minterteam.medium.com/%D1%81%D0%B6%D0%B8%D0%B3%D0%B0%D0%BD%D0%B8%D0%B5-385-%D0%BC%D0%B8%D0%BB%D0%BB%D0%B8%D0%BE%D0%BD%D0%BE%D0%B2-bip-%D0%BA%D0%BE-%D0%B4%D0%BD%D1%8E-%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA%D0%B0-%D1%81%D0%B5%D1%82%D0%B8-6a56ef33a235" target="_blank" rel="nofollow">Подробнее</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="completed_card" id="timeline_3">
+                        <div class="completed_info">
+                            <div class="completed_title">Выпуск токена BIPX/div>
+                            <p>BIPx — это обернутая версия BIP в Ethereum и Binance Smart Chain. BIPx открывает лучшие возможности глобальных децентрализованных финансов (DeFi) и помогает пользователям зарабатывать в любом из кошельков Minter.</p>
+                            <p class="timeline_links">
+                                <a href="https://coinmarketcal.com/en/event/token-launch-71586" target="_blank" rel="nofollow">Событие в календаре</a>
+                                <a href="https://minterteam.medium.com/%D0%BA%D0%B0%D0%BA-bipx-%D0%BF%D0%BE%D0%BC%D0%BE%D0%B6%D0%B5%D1%82-%D0%B7%D0%B0%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D1%82%D1%8C-%D0%B2-defi-9e54b5e625fa" target="_blank" rel="nofollow">Подробнее</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="completed_card" id="timeline_4">
+                        <div class="completed_info">
+                            <div class="completed_title">Релиз HONEE Wallet</div>
+                            <p>Альфа-запуск HONEE — простейшего крипто-кошелька, помогающего зарабатывать.</p>
+                            <p class="timeline_links">
+                                <a href="https://coinmarketcal.com/en/event/honee-wallet-launch-88666" target="_blank" rel="nofollow">Событие в календаре</a>
+                                <a href="https://zen.yandex.ru/media/id/61485e9a943d3a04b62ca078/honee-kriptokoshelek-pomogaiuscii-tebe-zarabatyvat-614863e6e8623024eb221a6b" target="_blank" rel="nofollow">Подробнее</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="completed_card" id="timeline_5">
+                        <div class="completed_info">
+                            <div class="completed_title">Листинг популярных криптовалют в Minter</div>
+                            <p>Запуск моста Minter Hub позволил перемещать токены между сетями. На конец 2021 года была добавлена поддержка следующих популярных монет:<br>
+                            BTC, ETH, BNB, USDT, USDС, 1INCH, TON COIN, SHIB, METAVERSE INDEX, DAI, PAX, BUSD, BIP, HUB и других.</p>
+                            <p class="timeline_links">
+                                <a href="https://minterteam.medium.com/%D0%BB%D0%B8%D1%81%D1%82%D0%B8%D0%BD%D0%B3-%D1%82%D0%BE%D0%BA%D0%B5%D0%BD%D0%BE%D0%B2-%D0%B2-minter-c7f4bc797e7d" target="_blank" rel="nofollow">Подробнее</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="completed_card" id="timeline_6">
+                        <div class="completed_info">
+                            <div class="completed_title">Обновление Minter 2.6</div>
+                            <p>Этим апдейтом Minter совершил революцию в области DeFi-протоколов, представив On-Chain Automated Market Maker with Order Book (AMMOB).</p>
+                            <p>Будучи маркетплейсом децентрализованных активов, Minter теперь позволяет пользователям размещать и исполнять лимитные ордера, чтобы покупать или продавать любую криптовалюту по заранее установленному курсу. Лимитные ордера находятся внутри самих пулов ликвидности.</p>
+                            <p class="timeline_links">
+                                <a href="https://coinmarketcal.com/en/event/minter-update-95562" target="_blank" rel="nofollow">Событие в календаре</a>
+                                <a href="https://t.me/MinterNetwork/2394" target="_blank" rel="nofollow">Подробнее</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="completed_card" id="timeline_7">
+                        <div class="completed_info">
+                            <div class="completed_title">Запуск Minter Hub 2</div>
+                            <p>
+                                <ul>
+                                    <li><b>Простое модульное подключение блокчейнов</b> <br>открывает доступ к активам, ликвидности и DeFi-инструментам других сетей без переписывания кода. Новый релиз уже содержит в себе интегрированный BSC.</li>
+                                    <li><b>Переработанный механизм взимания комиссий</b> <br>за кросс-чейн переводы сокращает издержки. Система возвращает пользователю "кэшбек", если комиссия вышла меньше ожидаемой.</li>
+                                    <li><b>Поддержка нативного ETH</b> <br>позволяет забыть о конвертации в wETH.</li>
+                                    <li><b>Скидки для держателей HUB</b> <br>просты — держите токен HUB на балансе и платите меньшую комиссию за переводы токенов в другие сети.</li>
+                                    <li><b>Кросс-чейн DeFi</b> <br>и полное взаимодействие с другими блокчейнами позволяют совершать не только переводы, но и любые другие операции, в том числе фарминг, стейкинг, лотереи, кредиты и так далее. А комиссию все так же можно оплатить любой ликвидной монетой в сети Minter.</li>
+                                </ul>
+                            </p>
+                            <p class="timeline_links">
+                                <a href="https://coinmarketcal.com/en/event/minter-hub-2-launch-95561" target="_blank" rel="nofollow">Событие в календаре</a>
+                                <a href="https://t.me/minterdev/253" target="_blank" rel="nofollow">Подробнее</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="tech" id="tech">
             <div class="tech_t">Техническая сторона</div>
             <div class="tech_e">В документации вы найдете все, чтобы начать работу с блокчейном Minter, разрабатывать на нем сервисы и приложения или интегрировать его во внутренние процессы вашей организации.</div>

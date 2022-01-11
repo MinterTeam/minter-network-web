@@ -676,6 +676,128 @@ header {
 	}
 
 
+.completed {
+	width: 728px;
+	margin: 0 auto;
+	padding: 0 0 96px 0;
+}
+.completed_t {
+	margin: 0 0 24px 0;
+	font-size: 24px;
+	line-height: 29px;
+	font-weight: bold;
+}
+.completed_timeline {
+	margin: 0 auto;
+	padding: 0 0 0 10px;
+}
+.completed_outer {
+	border-left: 4px dotted #D15C22;
+}
+.completed_card {
+	position: relative;
+	margin: 0 0 25px 36px;
+}
+.completed_info {
+	display: flex;
+	flex-direction: column;
+}
+.completed_info p {
+	margin: 0 0 16px 0;
+}
+.completed_info p+p {
+	margin-top: 0;
+}
+.completed_info p.timeline_links a {
+	font-weight: 700;
+	margin: 0 16px 0 0;
+}
+.completed_info ul {
+	display: block;
+	list-style-type: disc;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	padding-inline-start: 26px;
+}
+.completed_info ul li {
+	margin: 0 0 16px 0;
+}
+.completed_title {
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 22px;
+	padding: 0 0 8px 0;
+	position: relative;
+}
+.completed_title::before {
+	content: "";
+	position: absolute;
+	width: 37px;
+	height: 37px;
+	background: #D15C22;
+	border-radius: 20px;
+	left: -56px;
+	top: -6px;
+	border: 6px solid #17112e;
+}
+#timeline_1:before {
+	content: "1";
+	color: #fff;
+	font-weight: 700;
+	position: absolute;
+	left: -43px;
+	z-index: 1;
+}
+#timeline_2:before {
+	content: "2";
+	color: #fff;
+	font-weight: 700;
+	position: absolute;
+	left: -43px;
+	z-index: 1;
+}
+#timeline_3:before {
+	content: "3";
+	color: #fff;
+	font-weight: 700;
+	position: absolute;
+	left: -43px;
+	z-index: 1;
+}
+#timeline_4:before {
+	content: "4";
+	color: #fff;
+	font-weight: 700;
+	position: absolute;
+	left: -43px;
+	z-index: 1;
+}
+#timeline_5:before {
+	content: "5";
+	color: #fff;
+	font-weight: 700;
+	position: absolute;
+	left: -43px;
+	z-index: 1;
+}
+#timeline_6:before {
+	content: "6";
+	color: #fff;
+	font-weight: 700;
+	position: absolute;
+	left: -43px;
+	z-index: 1;
+}
+#timeline_7:before {
+	content: "7";
+	color: #fff;
+	font-weight: 700;
+	position: absolute;
+	left: -43px;
+	z-index: 1;
+}
+
+
 .compare {
 	width: 728px;
 	margin: 0 auto 56px auto;
