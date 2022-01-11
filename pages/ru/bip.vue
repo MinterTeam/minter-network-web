@@ -391,7 +391,7 @@ export default {
                     </div>
                     <div class="completed_card" id="timeline_3">
                         <div class="completed_info">
-                            <div class="completed_title">Выпуск токена BIPX/div>
+                            <div class="completed_title">Выпуск токена BIPX</div>
                             <p>BIPx — это обернутая версия BIP в Ethereum и Binance Smart Chain. BIPx открывает лучшие возможности глобальных децентрализованных финансов (DeFi) и помогает пользователям зарабатывать в любом из кошельков Minter.</p>
                             <p class="timeline_links">
                                 <a href="https://coinmarketcal.com/en/event/token-launch-71586" target="_blank" rel="nofollow">Событие в календаре</a>
