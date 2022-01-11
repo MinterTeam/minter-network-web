@@ -405,6 +405,7 @@ export default {
                             <p class="timeline_links">
                                 <a href="https://coinmarketcal.com/en/event/honee-wallet-launch-88666" target="_blank" rel="nofollow">Calendar Event</a>
                                 <a href="https://medium.com/@honeeapp/honee-crypto-wallet-that-helps-users-earn-e6ae3088963d" target="_blank" rel="nofollow">Read More</a>
+                                <a href="https://honee.app/" target="_blank">Try HONEE</a>
                             </p>
                         </div>
                     </div>

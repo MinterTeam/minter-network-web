@@ -350,6 +350,29 @@ blockquote cite {
 	background-color: #1058FB;
 	}
 
+.btn-img {
+	-webkit-box-align: center;
+	align-items: center;
+	display: inline-flex;
+	cursor: pointer;
+	-webkit-box-pack: center;
+	justify-content: center;
+	width: auto;
+	height: 40px;
+	padding: 8px 12px 8px 8px;
+	font-size: 14px;
+}
+.btn-img img {
+	width: 24px;
+	height: 24px;
+	-webkit-box-align: center;
+	align-items: center;
+	display: flex;
+	-webkit-box-pack: center;
+	justify-content: center;
+	margin-left: 0px;
+	margin-right: 8px;
+}
 /* END FORM */
 
 
@@ -429,7 +452,9 @@ header {
 	padding: 102px 252px 160px 0;
 	text-align: left;
 	}
-
+.home_top b {
+	color: #fff;
+}
 
 .figures {
 	padding: 0 0 52px 0;
