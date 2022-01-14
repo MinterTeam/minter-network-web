@@ -1562,6 +1562,10 @@ This is why delegators should do their own research on validators before delegat
 
 ## Community SDKs
 
+### JavaScript SDK
+- [FunFaSy/minter-sdk-js](https://github.com/FunFaSy/minter-sdk-js) - A JavaScript/TypeScript library for development of DApps on the Minter platform 
+- [FunFaSy/nestjs-minter-rpc](https://github.com/FunFaSy/nestjs-minter-rpc) - A Minter blockchain RPC Api provider for NestJs Framework.
+
 ### Java/Kotlin SDK
 - [counters/minter-kotlin-sdk](https://github.com/counters/minter-kotlin-sdk) – Support read-only methods synchronously and asynchronously (Coroutines, Java Thread) via HTTP and gRPC transport. Return as JSON, gRPC and Kotlin Data class
 
