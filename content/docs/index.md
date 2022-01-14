@@ -1563,7 +1563,7 @@ This is why delegators should do their own research on validators before delegat
 ## Community SDKs
 
 ### JavaScript SDK
-- [FunFaSy/minter-sdk-js](https://github.com/FunFaSy/minter-sdk-js) - A JavaScript/TypeScript library for development of DApps on the Minter platform 
+- [FunFaSy/minter-sdk-js](https://github.com/FunFaSy/minter-sdk-js) - A JavaScript/TypeScript library for development of DApps on the Minter platform
 - [FunFaSy/nestjs-minter-rpc](https://github.com/FunFaSy/nestjs-minter-rpc) - A Minter blockchain RPC Api provider for NestJs Framework.
 
 ### Java/Kotlin SDK
@@ -1571,24 +1571,59 @@ This is why delegators should do their own research on validators before delegat
 
 
 ## Node API
+- [Source code](https://github.com/MinterTeam/minter-go-node)
 
 ### HTTP
-- [Documentation](https://minterteam.github.io/node-grpc-gateway/)
-- Testnet base url: `https://node-api.testnet.minter.network/v2/`
+- Documentation: [Swagger](https://minterteam.github.io/node-grpc-gateway/) / [ReDoc](https://minterteam.github.io/node-gateway-api-v2-doc/)
+- Testnet base URL: `https://node-api.testnet.minter.network/v2/`
 
 ### gRPC
 - [Protobuf](https://github.com/MinterTeam/node-grpc-gateway)
 - Testnet gRPC address: `node-api.testnet.minter.network:28842`
 
+### Community public mainnet nodes
+- [api.minter.one](https://api.minter.one/v2/openapi-ui/)
+- [mnt.funfasy.dev](https://mnt.funfasy.dev/v2/status) ([rate limits](https://funfasy.dev/info/docs/#section/Restrictions))
+
+
+## Minter Hub API
+Cross-chain bridge that connects Minter with other network: Ethereum, BSC and more
+
+- [Source code](https://github.com/MinterTeam/mhub2)
+
+### HTTP
+- [OpenAPI raw files](https://github.com/MinterTeam/mhub2/tree/master/module/swagger)
+  - [mhub2/v1/query](http://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/mhub2/httpserv/module/swagger/mhub2/v1/query.swagger.json)
+  - [oracle/v1/query](http://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/mhub2/httpserv/module/swagger/oracle/v1/query.swagger.json)
+- Base URL: `https://hub-api.minter.network`
+
+### gRPC
+- [Protobuf](https://github.com/MinterTeam/mhub2/tree/master/module/proto)
+- Base URL: `https://hub-api.minter.network/grpc/`
+
+
 ## Other public services
 ### Explorer API
+- [Source code](https://github.com/MinterTeam/minter-explorer-api)
 - [Documentation](https://app.swaggerhub.com/apis-docs/GrKamil/minter-explorer_api)
-- Testnet base url: `https://explorer-api.testnet.minter.network/api/v2/`
-- Mainnet base url: `https://explorer-api.minter.network/api/v2/`
+- Mainnet base URL: `https://explorer-api.minter.network/api/v2/`
+- Testnet base URL: `https://explorer-api.testnet.minter.network/api/v2/`
 
-### Gate API (v2)
+### Explorer RTM
+WebSocket service to notify about Minter blockchain events. Use [Centrifugal](https://github.com/centrifugal/) clients to connect.
+
+- [Source code](https://github.com/MinterTeam/minter-explorer-extender/tree/master/broadcast)
+- [Documentation](https://github.com/MinterTeam/rtm-explorer-doc)
+- Mainnet URL: `wss://explorer-rtm.minter.network/connection/websocket`
+- Testnet URL: `wss://explorer-rtm.testnet.minter.network/connection/websocket`
+
+### Gate API
 Minter Gate is a service to publish prepared transactions to the Minter Network. Preferable to be used instead of node, because it provides load balancing and automatical check of transaction success.
 
+- [Source code](https://github.com/MinterTeam/explorer-gate)
 - [Documentation](https://minterteam.github.io/minter-gate-docs/#section/Introduction)
-- Testnet base url: `https://gate-api.testnet.minter.network/api/v2/`
-- Mainnet base url: `https://gate-api.minter.network/api/v2/`
+- Mainnet base URL: `https://gate-api.minter.network/api/v2/`
+- Testnet base URL: `https://gate-api.testnet.minter.network/api/v2/`
+
+### Hub Explorer API
+[HUB holders](https://explorer-hub-api.minter.network/api/tokens/1902/holders)
