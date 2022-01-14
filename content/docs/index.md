@@ -1559,6 +1559,13 @@ This is why delegators should do their own research on validators before delegat
 - [cpp-minter](https://github.com/MinterTeam/cpp-minter) - build and sign any transaction, generate mnemonic with private and public key
 - [example projects](https://github.com/MinterTeam/cpp-minter#examples)
 
+
+## Community SDKs
+
+### Java/Kotlin SDK
+- [counters/minter-kotlin-sdk](https://github.com/counters/minter-kotlin-sdk) – Support read-only methods synchronously and asynchronously (Coroutines, Java Thread) via HTTP and gRPC transport. Return as JSON, gRPC and Kotlin Data class
+
+
 ## Node API
 
 ### HTTP
