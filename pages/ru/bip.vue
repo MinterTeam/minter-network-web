@@ -266,6 +266,42 @@ export default {
                 </div>
             </div>
         </div>
+        <div class="compare" id="compare_orders">
+            <div class="compare_t">Сравните лимитные ордера</div>
+            <div class="compare_tab">
+                <div class="compare_ths">
+                    <div class="compare_1_2">DEX</div>
+                    <div class="compare_4">Скорость</div>
+                    <div class="compare_5">Комиссия</div>
+                    <div class="compare_6">Ончейн</div>
+                    <div class="compare_7">Комиссии в</div>
+                </div>
+                <div class="compare_tds">
+                    <div class="compare_1"><img src="/img/minter-logo-circle.svg" width="24" height="24" /></div>
+                    <div class="compare_2">Minter</div>
+                    <div class="compare_4">5 сек.</div>
+                    <div class="compare_5"><a href="https://explorer.minter.network/transactions/Mteddd4fae853bb7af419d253f1b7227d5d69c9dfd0c669c3bdfcd509d9710d652" target="_blank" rel="nofollow">$0.1</a></div>
+                    <div class="compare_6">Да</div>
+                    <div class="compare_7">Любой монете</div>
+                </div>
+                <div class="compare_tds">
+                    <div class="compare_1"><img src="/bipx/images/logos/1inch.png" srcset="/bipx/images/logos/1inch@2x.png 2x, /bipx/images/logos/1inch@3x.png 3x" /></div>
+                    <div class="compare_2">1INCH (Ethereum)</div>
+                    <div class="compare_4">30 сек.</div>
+                    <div class="compare_5"><a href="https://etherscan.io/tx/0xd96a1d5e30ae4bdd79dccc5a7155678fa655f8dceb9a3aa61334f3d1629e42d5" target="_blank" rel="nofollow">$33.3</a></div>
+                    <div class="compare_6">Нет</div>
+                    <div class="compare_7">Только ETH</div>
+                </div>
+                <div class="compare_tds">
+                    <div class="compare_1"><img src="/bipx/images/logos/1inch.png" srcset="/bipx/images/logos/1inch@2x.png 2x, /bipx/images/logos/1inch@3x.png 3x" /></div>
+                    <div class="compare_2">1INCH (BSC)</div>
+                    <div class="compare_4">6 сек.</div>
+                    <div class="compare_5"><a href="https://bscscan.com/tx/0xb1e8099b6cc7d04137f4ad15f3390e0a4e6a7a72f19bd42969ed25e64ca23f58" target="_blank" rel="nofollow">$0.41</a></div>
+                    <div class="compare_6">Нет</div>
+                    <div class="compare_7">Только BNB</div>
+                </div>
+            </div>
+        </div>
         <div class="farmings" id="yf" v-if="pools.length">
             <div class="farmings_t">Программы фарминга в Minter</div>
             <div class="farming">
