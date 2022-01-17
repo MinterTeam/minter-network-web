@@ -301,7 +301,7 @@ export default {
                 </div>
             </div>
         </div>
-        <!--<div class="farmings" id="yf" v-if="pools.length">
+        <div class="farmings" id="yf" v-if="pools.length">
             <div class="farmings_t">Yield farming on Minter</div>
             <div class="farming">
                 <div class="farming_top">
@@ -342,7 +342,7 @@ export default {
             <div class="farming farming_all">
                 <a href="https://explorer.minter.network/farming" target="_blank">View all</a>
             </div>
-        </div>-->
+        </div>
         <div class="staking" id="staking">
             <div class="minter_t">Staking</div>
             <div class="minter_li">
