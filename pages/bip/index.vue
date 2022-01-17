@@ -209,7 +209,7 @@ export default {
         </div>
 
         <!--<div class="simple-div">
-            <p>Trade top cryptocurrencies and tokens within a single network. <b>All decentralized.</b></p>
+            <p>Trade top cryptocurrencies within a single network. <b>All Decentralized. Low Fees. Fast Transactions.</b></p>
         </div>
         <div class="compare compare_tokens" id="tokens">
             <div class="compare_tab">
