@@ -207,6 +207,42 @@ export default {
                 BTC, ETH, USDT, USDС, 1INCH, TON COIN, SHIB, METAVERSE INDEX, DAI, PAX, BUSD, BIP, HUB, and many more.
             </div>
         </div>
+
+        <!--<div class="simple-div">
+            <p>Trade top cryptocurrencies and tokens within a single network. <b>All decentralized.</b></p>
+        </div>
+        <div class="compare compare_tokens" id="tokens">
+            <div class="compare_tab">
+                <div class="compare_ths">
+                    <div class="compare_1_2">Name</div>
+                    <div class="compare_3">Price</div>
+                    <div class="compare_4">24%</div>
+                    <div class="compare_5">Market Cap</div>
+                </div>
+                <div class="compare_tds">
+                    <div class="compare_1"><img src="https://explorer-static.minter.network/coins/2064.png" /></div>
+                    <div class="compare_2">Bitcoin <span class="ticker">BTC</span></div>
+                    <div class="compare_3">$41,670.17</div>
+                    <div class="compare_4"><span class="price_down">0.28%</span></div>
+                    <div class="compare_5">$788,643,019,700</div>
+                </div>
+                <div class="compare_tds">
+                    <div class="compare_1"><img src="/bipx/images/logos/1inch@2x.png" /></div>
+                    <div class="compare_2">1inch Network <span class="ticker">1INCH</span></div>
+                    <div class="compare_3">$41,670.17</div>
+                    <div class="compare_4"><span class="price_up">0.28%</span></div>
+                    <div class="compare_5">$788,643,019,700</div>
+                </div>
+                <div class="compare_tds">
+                    <div class="compare_1"><img src="https://explorer-static.minter.network/coins/3403.png" /></div>
+                    <div class="compare_2">Metaverse Index <span class="ticker">MVI</span></div>
+                    <div class="compare_3">$41,670.17</div>
+                    <div class="compare_4"><span class="price_down">0.28%</span></div>
+                    <div class="compare_5">$788,643,019,700</div>
+                </div>
+            </div>
+        </div>-->
+
         <div class="compare" id="compare">
             <div class="compare_t">Compare speed, fees, convenience</div>
             <div class="compare_tab">

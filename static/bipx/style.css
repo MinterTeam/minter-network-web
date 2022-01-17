@@ -621,6 +621,14 @@ header {
 	font-weight: bold;
 	}
 
+.simple-div {
+	box-sizing: border-box;
+	width: 715px;
+	margin: 0 auto;
+	padding: 0 0 17px 0;
+	font-size: 24px;
+	line-height: 29px;
+	}
 
 .minter_sup {
 	display: flex;
@@ -889,6 +897,28 @@ header {
 	width: 90px;
 	}
 
+.compare_tokens {
+	background: none;
+	box-shadow: none;
+	border: 2px solid #29204F;
+	padding: 16px 24px 0 24px;
+}
+.compare_tokens span.ticker {
+	font-weight: 400;
+	padding: 0 0 0 8px;
+}
+.price_down {
+	color: #BC5959;
+	background: url('images/down.svg') no-repeat 0px center;
+	vertical-align: middle;
+	padding-left: 20px;
+}
+.price_up {
+	color: #9EB21E;
+	background: url('images/up.svg') no-repeat 0px center;
+	vertical-align: middle;
+	padding-left: 20px;
+}
 
 .farmings {
 	display: flex;
