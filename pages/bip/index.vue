@@ -33,6 +33,11 @@ export default {
                 getPool('METAINDEX', 'BIP'),
                 getPool('HUB', 'BIP'),
                 getPool('BNB', 'BIP'),
+                getPool('BIP', 'USDTE'),
+                getPool('UNIBSC', 'BIP'),
+                getPool('DOGEBSC', 'BIP'),
+                getPool('MATICBSC', 'BIP'),
+                getPool('CAKEBSC', 'BIP'),
             ])
             .then((pools) => {
                 this.pools = pools;
@@ -357,14 +362,14 @@ export default {
                     <div>{{ pretty(apy(pools[7])) }}%</div>
                 </div>
             </div>
-                        <div class="farming">
+            <div class="farming">
                 <div class="farming_top">
-                    <div class="farming_icos"><img src="https://explorer-static.minter.network/coins/2107.png" /><img src="https://explorer-static.minter.network/coins/0.png" /></div>
-                    <div class="farming_t">BNB / BIP</div>
+                    <div class="farming_icos"><img src="https://explorer-static.minter.network/coins/0.png" /><img src="https://explorer-static.minter.network/coins/1993.png" /></div>
+                    <div class="farming_t">BIP / USDTE</div>
                 </div>
                 <div class="farming_param">
                     <div>Total value locked</div>
-                    <div>${{ prettyRound(usdPrice(pools[8].liquidityBip)) }}</div>
+                    <div>${{ prettyRound(usdPrice(pools[9].liquidityBip)) }}</div>
                 </div>
                 <div class="farming_param">
                     <div>Farming APR</div>
@@ -372,7 +377,79 @@ export default {
                 </div>
                 <div class="farming_param">
                     <div>Staking APY</div>
-                    <div>{{ pretty(apy(pools[8])) }}%</div>
+                    <div>{{ pretty(apy(pools[9])) }}%</div>
+                </div>
+            </div>
+            <div class="farming">
+                <div class="farming_top">
+                    <div class="farming_icos"><img src="https://explorer-static.minter.network/coins/3481.png" /><img src="https://explorer-static.minter.network/coins/0.png" /></div>
+                    <div class="farming_t">UNIBSC / BIP</div>
+                </div>
+                <div class="farming_param">
+                    <div>Total value locked</div>
+                    <div>${{ prettyRound(usdPrice(pools[10].liquidityBip)) }}</div>
+                </div>
+                <div class="farming_param">
+                    <div>Farming APR</div>
+                    <div>124%</div>
+                </div>
+                <div class="farming_param">
+                    <div>Staking APY</div>
+                    <div>{{ pretty(apy(pools[10])) }}%</div>
+                </div>
+            </div>
+            <div class="farming">
+                <div class="farming_top">
+                    <div class="farming_icos"><img src="https://explorer-static.minter.network/coins/3478.png" /><img src="https://explorer-static.minter.network/coins/0.png" /></div>
+                    <div class="farming_t">DOGEBSC / BIP</div>
+                </div>
+                <div class="farming_param">
+                    <div>Total value locked</div>
+                    <div>${{ prettyRound(usdPrice(pools[11].liquidityBip)) }}</div>
+                </div>
+                <div class="farming_param">
+                    <div>Farming APR</div>
+                    <div>124%</div>
+                </div>
+                <div class="farming_param">
+                    <div>Staking APY</div>
+                    <div>{{ pretty(apy(pools[11])) }}%</div>
+                </div>
+            </div>
+            <div class="farming">
+                <div class="farming_top">
+                    <div class="farming_icos"><img src="https://explorer-static.minter.network/coins/3606.png" /><img src="https://explorer-static.minter.network/coins/0.png" /></div>
+                    <div class="farming_t">MATICBSC / BIP</div>
+                </div>
+                <div class="farming_param">
+                    <div>Total value locked</div>
+                    <div>${{ prettyRound(usdPrice(pools[12].liquidityBip)) }}</div>
+                </div>
+                <div class="farming_param">
+                    <div>Farming APR</div>
+                    <div>124%</div>
+                </div>
+                <div class="farming_param">
+                    <div>Staking APY</div>
+                    <div>{{ pretty(apy(pools[12])) }}%</div>
+                </div>
+            </div>
+            <div class="farming">
+                <div class="farming_top">
+                    <div class="farming_icos"><img src="https://explorer-static.minter.network/coins/3607.png" /><img src="https://explorer-static.minter.network/coins/0.png" /></div>
+                    <div class="farming_t">CAKEBSC / BIP</div>
+                </div>
+                <div class="farming_param">
+                    <div>Total value locked</div>
+                    <div>${{ prettyRound(usdPrice(pools[13].liquidityBip)) }}</div>
+                </div>
+                <div class="farming_param">
+                    <div>Farming APR</div>
+                    <div>124%</div>
+                </div>
+                <div class="farming_param">
+                    <div>Staking APY</div>
+                    <div>{{ pretty(apy(pools[13])) }}%</div>
                 </div>
             </div>
             <div class="farming farming_all">
