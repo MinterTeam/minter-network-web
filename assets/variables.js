@@ -8,6 +8,7 @@ export const BITHUMB_API_URL = 'https://global-openapi.bithumb.pro/openapi/v1/';
 export const HOTBIT_API_URL = process.env.APP_HOTBIT_API_URL;
 export const COINSBLACK_API_URL = process.env.APP_COINSBLACK_API_URL;
 export const DAILYEXCHANGE_API_URL = process.env.APP_DAILYEXCHANGE_API_URL;
+export const MINTER_GARANT_API_URL = process.env.APP_MINTER_GARANT_API_URL;
 export const CMC_API_URL = process.env.APP_CMC_API_URL;
 export const CMC_API_KEY = '';
 export const BIPBANKER_API_URL = process.env.APP_BIPBANKER_API_URL;

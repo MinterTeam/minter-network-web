@@ -33,7 +33,7 @@ export default {
         //         this.averagePrice = price;
         //     });
 
-        const exchangePricePromiseList = ['bithumb', 'bipbanker', 'coinsblack', 'dailyexchange'].map((slug) => {
+        const exchangePricePromiseList = ['bithumb', 'bipbanker', 'coinsblack', 'dailyexchange', 'mintergarant'].map((slug) => {
             return getExchangePrice(slug)
                 .then((priceItem) => {
                     this.priceList.push({
@@ -171,6 +171,16 @@ export default {
                                     <div class="bip-trade__value">${{ getPrice('bipbanker') }}</div>
                                 </div>
                                 <p class="bip-trade__description">Удобный Telegram-бот с P2P торговлей. Позволяет приобретать и продавать BIP как за криптовалюту, так и за фиатные средства.</p>
+                            </div>
+                            <div class="u-cell u-cell--small--1-2">
+                                <div class="bip-trade__item">
+                                    <a class="bip-trade__link link--default" href="https://t.me/MinterGarantBot" target="_blank" rel="noopener">
+                                        <img class="bip-trade__icon" src="/img/bip-trade-garant-bot.jpg" srcset="/img/bip-trade-garant-bot@2x.jpg 2x" alt="" role="presentation">
+                                        <h4 class="bip-trade__title">Minter Garant Bot</h4>
+                                    </a>
+                                    <div class="bip-trade__value">${{ getPrice('mintergarant') }}</div>
+                                </div>
+                                <p class="bip-trade__description">Безопасный P2P Telegram-бот. Позволяет торговать BIP за фиат и криптовалюту. Имеет накопительную бонусную и многоуровневую реферальную схемы.</p>
                             </div>
                             <div class="u-cell u-cell--small--1-2">
                                 <div class="bip-trade__item">

@@ -35,7 +35,7 @@
                         ...locale,
                         code: DEFAULT_LOCALE,
                     };
-                })
+                });
             },
             currentLocale() {
                 const lang = this.lang || DEFAULT_LOCALE;
@@ -54,7 +54,6 @@
         },
         methods: {
             setLang(lang) {
-                console.log(lang, this.currentLocale.code)
                 const currentLang = this.currentLocale.code;
                 if (this.push && lang !== currentLang) {
                     const cleanPath = currentLang === DEFAULT_LOCALE
@@ -70,7 +69,7 @@
                 }
                 lang = lang === DEFAULT_LOCALE ? '' : lang;
                 this.$emit('update:lang', lang);
-            }
+            },
             // switchLocaleCookie(localeCode) {
             //     this.$store.commit('SET_PREFERRED_LOCALE', localeCode);
             //     const date = new Date();
