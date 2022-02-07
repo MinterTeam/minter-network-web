@@ -55,7 +55,7 @@ export function getExchangePrice(exchangeName) {
                 priceItem = Array.from(rates.children).find((item) => {
                     const from = item.getElementsByTagName('from')[0];
                     const to = item.getElementsByTagName('to')[0];
-                    if (from.textContent === 'USDTERC' && to.textContent === 'BIP') {
+                    if (from.textContent === 'USDTERC20' && to.textContent === 'BIP') {
                         return true;
                     }
                 });
