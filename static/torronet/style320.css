@@ -1,0 +1,89 @@
+.wrap {
+	width: 100%;
+	}
+
+
+header {
+	display: block;
+	width: auto;
+	margin: 0;
+	padding: 0;
+	}
+
+.lang-wrap {
+	width: 100%;
+	padding: 12px 24px;
+	}
+
+.container, .u-container {
+	padding: 0 40px !important;
+}
+.hello {
+	display: block;
+	height: auto;
+	width: 100%;
+	margin: 0;
+}
+.hello-content {
+	padding: 80px 0;
+	background: none;
+	max-width: 100%;
+}
+img.hello-image {
+	display: none;
+}
+.stats {
+    width: 100%;
+	padding: 24px 0 0 0;	
+}
+.stats-item {
+	width: 50%;
+}
+	
+@media screen and (max-width: 720px) {
+	.stats-item {
+		width: 100%;
+	}
+	h1, h2 {
+		font-size: 36px;
+		line-height: 40px;
+	}
+	h3 {
+		font-size: 24px;
+		line-height: 28px;
+	}
+	.drivers-item {
+		width: 100%;
+	}
+	.drivers-item img {
+		max-height: 110px;
+	}
+	.text .container {
+		font-size: 20px;
+		line-height: 24px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.container, .u-container {
+		padding: 0 24px !important;
+	}
+	h1, h2 {
+		font-size: 30px;
+		line-height: 34px;
+	}
+	h3 {
+		font-size: 20px;
+		line-height: 24px;
+	}
+	.text .container {
+		font-size: 18px;
+		line-height: 22px;
+	}
+	.btn {
+		min-width: 100%;
+	}
+	.drivers-item img {
+		max-height: 80px;
+	}
+}
