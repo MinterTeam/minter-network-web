@@ -1,6 +1,4 @@
 <script>
-import {getPool, getStatus} from '~/api/explorer.js';
-import {prettyRound, pretty, getApy} from '~/assets/utils.js';
 import {HOST} from '~/assets/variables.js';
 import trackClick from '~/assets/v-track-click.js';
 import Language from '~/layouts/_language.vue';
@@ -31,19 +29,22 @@ export default {
             ],
             link: [
                 { rel: 'canonical', href: `${HOST}/torronet`},
-                { rel: 'stylesheet', href: '/torronet/style.css?2', hid: 'torronet-style'},
-                { rel: 'stylesheet', href: '/torronet/style320.css?2', media: '(max-width: 1020px)', hid: 'torronet-style320'},
+                { rel: 'stylesheet', href: '/torronet/style.css', hid: 'torronet-style'},
+                { rel: 'stylesheet', href: '/torronet/style320.css', media: 'screen and (max-width: 1020px)', hid: 'torronet-style320'},
             ],
         };
     },
     mounted() {
         // move landing styles under global styles
         const style = document.querySelector('[data-hid="torronet-style"]');
-        if (!style) {
+        const style320 = document.querySelector('[data-hid="torronet-style320"]');
+        if (!style || !style320) {
             return;
         }
         style.parentNode.removeChild(style);
+        style320.parentNode.removeChild(style320);
         document.head.appendChild(style);
+        document.head.appendChild(style320);
     },
 };
 </script>
