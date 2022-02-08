@@ -61,7 +61,7 @@ export default {
                         <div class="logo"><a href="#"><img src="/img/minter-logo-circle.svg" width="60" height="60" alt="Minter 3"/></a></div>
                         <div class="torronet">Minter 3</div>
                         <h1>Grand <br />Tokenomics Update</h1>
-                        <p>Implementation of the best blockchain industry’s practices.</p>
+                        <p>Implementation of the best blockchain industry’s practices. Minter 3 Tokenomics Update Coming <b>Spring 2022</b>.</p>
                         <a class="btn" href="https://www.minter.network/how-to-buy-and-sell-bip" target="_blank" v-track-click="'buy-bipx'">Buy and Stake BIP</a>
                     </div>
                     <img class="hello-image" src="/torronet/images/hero-image.png" srcset="/torronet/images/hero-image@2x.png 2x" />
@@ -115,12 +115,12 @@ export default {
                     <div class="drivers-item">
                         <img src="/torronet/images/d1.svg" alt="Dynamic Mining">
                         <h3>Dynamic Mining</h3>
-                        <p>BIP’s price drops when the supply of coins on the market exceeds the demand. To make this less impactful, we introduce a block reward balancer that reacts by reducing block rewards when the BIP price falls, helping to >avoid further BIP surplus. At the same time, when the BIP price goes up, the balancer increases the rewards to maximize staking outcome.</p>
+                        <p>BIP’s price drops when the supply of coins on the market exceeds the demand. To make this less impactful, we introduce a block reward balancer that reacts by reducing block rewards when the BIP price falls, helping to avoid further BIP surplus. At the same time, when the BIP price goes up, the balancer increases the rewards to maximize staking outcome.</p>
                     </div>
                     <div class="drivers-item">
                         <img src="/torronet/images/d2.svg" alt="Auto-Redelegation">
                         <h3>Auto-Redelegation</h3>
-                        <p>Currently, all delegation rewards are sent to addresses of delegators about once every hour. Auto-redelegation will change things in a way that all rewards will be automatically delegated, increasing the stake as well as> the rewards. To claim rewards, the user will need to make a regular unbond transaction, specifying the number of coins they need.</p>
+                        <p>Currently, all delegation rewards are sent to addresses of delegators about once every hour. Auto-redelegation will change things in a way that all rewards will be automatically delegated, increasing the stake as well as the rewards. To claim rewards, the user will need to make a regular unbond transaction, specifying the number of coins they need.</p>
                     </div>
                     <div class="drivers-item">
                         <img src="/torronet/images/d3.svg" alt="Burning by Balancer">
@@ -140,7 +140,7 @@ export default {
                     <div class="drivers-item">
                         <img src="/torronet/images/d6.svg" alt="3-Year BIP Lock">
                         <h3>3-Year BIP Lock</h3>
-                        <p>A new staking option will be offered to users with Minter 3 Upgrade. They will be able to send their BIP into delegation with a 3-year lock and receive 3x rewards. At the same time, fees collected by validators will not increase. To apply this feature users won't need to unbond their stakes.</p>
+                        <p>A new staking option will be offered to users with Minter 3 Upgrade. They will be able to send their BIP into delegation with a 3-year lock and receive 3x rewards. At the same time, fees collected by validators will not increase. To apply this feature, users won’t need to unbond their stakes.</p>
                     </div>
                     <div class="drivers-item">
                         <img src="/torronet/images/d7.svg" alt="Stake Transfer">
