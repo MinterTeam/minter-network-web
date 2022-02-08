@@ -108,7 +108,7 @@ export default {
 <template>
     <div class="wrap">
         <div class="promo-top">
-            <div>Обновление токеномики Minter 3 уже весной 2022 г. <a href="https://minterteam.medium.com/minter-3-%D0%BE%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%82%D0%BE%D0%BA%D0%B5%D0%BD%D0%BE%D0%BC%D0%B8%D0%BA%D0%B8-bip-6a6da7a18fe7" target="_blank" rel="nofollow">Подробнее</a></div>
+            <div>Обновление токеномики Minter 3 уже весной 2022 г. <a href="https://www.minter.network/ru/torronet" target="_blank">Подробнее</a></div>
         </div>
         <div class="u-container u-container--full index-language lang-wrap">
             <language class="" :locales='[{"code":"","name":"English"},{"code":"ru","name":"Russian"}]' lang="ru" :push="true"/>
@@ -120,8 +120,8 @@ export default {
                 <div class="top_e">Minter — это единая децентрализованная сеть, позволяющая любому пользователю покупать, продавать, отправлять и зарабатывать такие цифровые активы, как BTC, ETH, BIP, USDT и многие другие.</div>
                 <p><b>Купить BIP в:</b></p>
                 <nuxt-link class="btn btn-img" to="/how-to-buy-and-sell-bip" v-track-click="'buy-bip'"><img src="/bipx/images/logos/minter_w.png" srcset="/bipx/images/logos/minter_w@2x.png 2x, /bipx/images/logos/minter_w@3x.png 3x" />Minter</nuxt-link>
-                <a class="btn btn_c2 btn-img" href="https://v2.info.uniswap.org/pair/0xb1700c93ddc26ce1d59441c24daef1035444d7b7" target="_blank" v-track-click="'buy-bipx'"><img src="/bipx/images/logos/uniswap_w.png" srcset="/bipx/images/logos/uniswap_w@2x.png 2x, /bipx/images/logos/uniswap_w@3x.png 3x" />Uniswap</a>
-                <a class="btn btn_c2 btn-img" href="https://pancakeswap.finance/info/pool/0xf51e1b34be6f2ddac9d3f4e6186b772ae4ae3855" target="_blank" v-track-click="'buy-bipx'"><img src="/bipx/images/logos/pancakeswap.png" srcset="/bipx/images/logos/pancakeswap@2x.png 2x, /bipx/images/logos/pancakeswap@3x.png 3x" />Pancake</a>
+                <a class="btn btn_c2 btn-img" href="https://v2.info.uniswap.org/pair/0xb1700c93ddc26ce1d59441c24daef1035444d7b7" target="_blank" v-track-click="'buy-bipx'"><img src="/bipx/images/logos/ethereum.svg" />Ethereum</a>
+                <a class="btn btn_c2 btn-img" href="https://pancakeswap.finance/info/pool/0xf51e1b34be6f2ddac9d3f4e6186b772ae4ae3855" target="_blank" v-track-click="'buy-bipx'"><img src="/bipx/images/logos/bsc.svg" />BSC</a>
                 <!--<a class="btn btn_c2 btn_nomargin" href="https://minterteam.medium.com/bipx-usdt-%D1%84%D0%B0%D1%80%D0%BC%D0%B8%D0%BD%D0%B3-0-2-%D0%BB%D0%BE%D1%82%D0%B5%D1%80%D0%B5%D1%8F-2d91d98fba71#0d32" target="_blank" v-track-click="'airdrop'">Airdrop</a>-->
             </div>
             <div class="top_l m-l-40"><img src="/bipx/images/header-bip.png" srcset="/bipx/images/header-bip@2x.png 2x, /bipx/images/header-bip@3x.png 3x" /></div>
