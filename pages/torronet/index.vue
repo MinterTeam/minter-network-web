@@ -97,7 +97,7 @@ export default {
                         <h4>Free Float</h4>
                     </div>
                     <div class="stats-item">
-                        <div class="stats-value">46</div>
+                        <div class="stats-value">47</div>
                         <h4>Active Validators</h4>
                     </div>
                     <div class="stats-item">
