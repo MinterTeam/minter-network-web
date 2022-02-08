@@ -53,12 +53,7 @@ a:hover {
 }
 .lang-wrap {
 	width: 1000px;
-}
-
-@media (max-width: 1000px) {
-.lang-wrap {
-	
-	}
+	z-index: 2;
 }
 
 /* END BASE */

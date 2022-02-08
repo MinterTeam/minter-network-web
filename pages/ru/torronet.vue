@@ -73,11 +73,11 @@ export default {
             <div class="container">
                 <div class="stats-content">
                     <div class="stats-item">
-                        <div class="stats-value">$15,132,113</div>
+                        <div class="stats-value">$14,354,516</div>
                         <h4>Рыночная капитализация</h4>
                     </div>
                     <div class="stats-item">
-                        <div class="stats-value">$27,425,575</div>
+                        <div class="stats-value">$27,485,793</div>
                         <h4>Капитализация при полной эмиссии</h4>
                     </div>
                     <div class="stats-item">
@@ -89,11 +89,11 @@ export default {
                         <h4>Максимальное предложение</h4>
                     </div>
                     <div class="stats-item">
-                        <div class="stats-value">5,423,536,352 (54%)</div>
+                        <div class="stats-value">5,427,996,860 (54%)</div>
                         <h4>Циркулирующее предложение</h4>
                     </div>
                     <div class="stats-item">
-                        <div class="stats-value">1,532,771,084 (15%)</div>
+                        <div class="stats-value">1,125,772,062 (21%)</div>
                         <h4>В свободном обращении</h4>
                     </div>
                     <div class="stats-item">
