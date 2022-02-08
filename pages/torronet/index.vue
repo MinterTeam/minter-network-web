@@ -27,7 +27,7 @@ export default {
                 { hid: 'og-title', name: 'og:title', content: title },
                 { hid: 'description', name: 'description', content: description },
                 { hid: 'og-description', name: 'og:description', content: description },
-                { hid: 'og-image', name: 'og:image', content: `/torronet/images/meta.jpg` },
+                { hid: 'og-image', name: 'og:image', content: `/torronet/images/meta.jpeg` },
             ],
             link: [
                 { rel: 'canonical', href: `${HOST}/torronet`},
