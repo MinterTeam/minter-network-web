@@ -38,6 +38,9 @@ export default {
                 getPool('DOGEBSC', 'BIP'),
                 getPool('MATICBSC', 'BIP'),
                 getPool('CAKEBSC', 'BIP'),
+                getPool('BNB', 'HUB'),
+                getPool('DOTBSC', 'BIP'),
+                getPool('ALPACA', 'BIP'),
             ])
             .then((pools) => {
                 this.pools = pools;
@@ -347,74 +350,56 @@ export default {
             </div>
             <div class="farming">
                 <div class="farming_top">
-                    <div class="farming_icos"><img src="https://explorer-static.minter.network/coins/3481.png" /><img src="https://explorer-static.minter.network/coins/0.png" /></div>
-                    <div class="farming_t">UNIBSC / BIP</div>
+                    <div class="farming_icos"><img src="https://explorer-static.minter.network/coins/2107.png" /><img src="https://explorer-static.minter.network/coins/1902.png" /></div>
+                    <div class="farming_t">BNB / HUB</div>
                 </div>
                 <div class="farming_param">
                     <div>Всего в ликвидности (TVL)</div>
-                    <div>${{ prettyRound(usdPrice(pools[10].liquidityBip)) }}</div>
+                    <div>${{ prettyRound(usdPrice(pools[14].liquidityBip)) }}</div>
                 </div>
                 <div class="farming_param">
                     <div>Доходность фарминга (APR)</div>
-                    <div>124%</div>
+                    <div>36.5%</div>
                 </div>
                 <div class="farming_param">
                     <div>Доходность стейкинга (APY)</div>
-                    <div>{{ pretty(apy(pools[10])) }}%</div>
+                    <div>{{ pretty(apy(pools[14])) }}%</div>
                 </div>
             </div>
             <div class="farming">
                 <div class="farming_top">
-                    <div class="farming_icos"><img src="https://explorer-static.minter.network/coins/3478.png" /><img src="https://explorer-static.minter.network/coins/0.png" /></div>
-                    <div class="farming_t">DOGEBSC / BIP</div>
+                    <div class="farming_icos"><img src="https://explorer-static.minter.network/coins/3483.png" /><img src="https://explorer-static.minter.network/coins/0.png" /></div>
+                    <div class="farming_t">DOTBSC / BIP</div>
                 </div>
                 <div class="farming_param">
                     <div>Всего в ликвидности (TVL)</div>
-                    <div>${{ prettyRound(usdPrice(pools[11].liquidityBip)) }}</div>
+                    <div>${{ prettyRound(usdPrice(pools[15].liquidityBip)) }}</div>
                 </div>
                 <div class="farming_param">
                     <div>Доходность фарминга (APR)</div>
-                    <div>124%</div>
+                    <div>124.1%</div>
                 </div>
                 <div class="farming_param">
                     <div>Доходность стейкинга (APY)</div>
-                    <div>{{ pretty(apy(pools[11])) }}%</div>
+                    <div>{{ pretty(apy(pools[15])) }}%</div>
                 </div>
             </div>
             <div class="farming">
                 <div class="farming_top">
-                    <div class="farming_icos"><img src="https://explorer-static.minter.network/coins/3606.png" /><img src="https://explorer-static.minter.network/coins/0.png" /></div>
-                    <div class="farming_t">MATICBSC / BIP</div>
+                    <div class="farming_icos"><img src="https://explorer-static.minter.network/coins/3493.png" /><img src="https://explorer-static.minter.network/coins/0.png" /></div>
+                    <div class="farming_t">ALPACA / BIP</div>
                 </div>
                 <div class="farming_param">
                     <div>Всего в ликвидности (TVL)</div>
-                    <div>${{ prettyRound(usdPrice(pools[12].liquidityBip)) }}</div>
+                    <div>${{ prettyRound(usdPrice(pools[16].liquidityBip)) }}</div>
                 </div>
                 <div class="farming_param">
                     <div>Доходность фарминга (APR)</div>
-                    <div>124%</div>
+                    <div>124.1%</div>
                 </div>
                 <div class="farming_param">
                     <div>Доходность стейкинга (APY)</div>
-                    <div>{{ pretty(apy(pools[12])) }}%</div>
-                </div>
-            </div>
-            <div class="farming">
-                <div class="farming_top">
-                    <div class="farming_icos"><img src="https://explorer-static.minter.network/coins/3607.png" /><img src="https://explorer-static.minter.network/coins/0.png" /></div>
-                    <div class="farming_t">CAKEBSC / BIP</div>
-                </div>
-                <div class="farming_param">
-                    <div>Всего в ликвидности (TVL)</div>
-                    <div>${{ prettyRound(usdPrice(pools[13].liquidityBip)) }}</div>
-                </div>
-                <div class="farming_param">
-                    <div>Доходность фарминга (APR)</div>
-                    <div>124%</div>
-                </div>
-                <div class="farming_param">
-                    <div>Доходность стейкинга (APY)</div>
-                    <div>{{ pretty(apy(pools[13])) }}%</div>
+                    <div>{{ pretty(apy(pools[16])) }}%</div>
                 </div>
             </div>
             <div class="farming farming_all">
