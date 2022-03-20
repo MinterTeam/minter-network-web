@@ -126,4 +126,37 @@ header {
 	.wallet-item {
 		width: 100%;
 	}
+	.hello p {
+		width: 100%;
+	}
+	.earn {
+		padding: 100px 0 50px 0;
+	}
+	.features {
+		padding: 50px 0 0 0;
+	}
+	.compare {
+		padding: 50px 0 50px 0;
+	}
+	.m-b-200 {
+		margin: 0 0 100px 0;
+	}
+	.wallets {
+		padding: 50px 0 50px 0;
+	}
+	.roadmap {
+		padding: 50px 0 50px 0;
+	}
+	.completed {
+		margin: 0 0 35px 0;
+	}
+	.tech {
+		padding: 0 0 50px 0;
+	}
+	.social {
+		padding: 50px 0;
+	}
+	.hub {
+		padding: 50px 0 0 0;
+	}
 }

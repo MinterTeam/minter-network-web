@@ -481,8 +481,8 @@ export default {
                         <p><b>$0.01</b> per transfer, <b>$0.03</b> + <b>0.2%</b> per swap, payable in any liquid coin or token</p>
                     </div>
                     <div class="features-item">
-                        <img src="/newnetwork/images/f4.svg" alt="Easy Access">
-                        <h3>Easy Access</h3>
+                        <img src="/newnetwork/images/f4.svg" alt="Fully Decentralized">
+                        <h3>Fully Decentralized</h3>
                         <p>Make decentralized deposits and withdrawals, easily</p>
                     </div>
                     <div class="features-item">
@@ -498,7 +498,7 @@ export default {
                     <div class="features-item">
                         <img src="/newnetwork/images/f3.svg" alt="Cross-Chain Swaps">
                         <h3>Cross-Chain Swaps</h3>
-                        <p>Send cross-chain transfers with swaps. For example, BUSD on Binance Smart Chain for USDC on Ethereum</p>
+                        <p>Send cross-chain transfers with swaps. For example, BUSD on BNB Smart Chain for USDC on Ethereum</p>
                         <p class="coming-soon">Coming 2022</p>
                     </div>
                     <div class="features-item">
@@ -540,8 +540,8 @@ export default {
                             <tr>
                                 <td class="flextd"><a href="https://console.minter.network/" target="_blank"><img src="/img/minter-logo-circle.svg" width="24" height="24" /> Minter</a></td>
                                 <td>5 sec</td>
-                                <td>$0.007</td>
-                                <td>1 (<a href="https://explorer.minter.network/transactions/Mt2b9425c1cb91640a8e0dd2207fcc8de8480480b692f4c18fd60f344cbe69b117" target="_blank">Tx</a>)</td>
+                                <td>$0.03</td>
+                                <td>1 (<a href="https://explorer.minter.network/transactions/Mtb9962f15b0740400b1965aacafd02ac5755a74eb1d8a5844ab971f0bcdd4c76e" target="_blank">Tx</a>)</td>
                                 <td>ANY</td>
                             </tr>
                             <tr>
@@ -705,7 +705,7 @@ export default {
                             <div class="completed_card" id="timeline_3">
                                 <div class="completed_info">
                                     <h4>BIPX Token Launch</h4>
-                                    <p>BIPx is a wrapped version of BIP on Ethereum and Binance Smart Chain. BIPx unlocks the best of global decentralized finance (DeFi) and helps users earn with just one of the Minter wallets at hand.</p>
+                                    <p>BIPx is a wrapped version of BIP on Ethereum and BNB Smart Chain. BIPx unlocks the best of global decentralized finance (DeFi) and helps users earn with just one of the Minter wallets at hand.</p>
                                     <p class="timeline_links">
                                         <a href="https://coinmarketcal.com/en/event/token-launch-71586" target="_blank" rel="nofollow">Calendar Event</a>
                                         <a href="https://minterteam.medium.com/how-to-make-money-on-defi-with-bipx-17905b034285" target="_blank" rel="nofollow">Read More</a>
@@ -823,7 +823,7 @@ export default {
                         <div class="completed-item" id="completed-item-8">
                             <small>End of 2020</small>
                             <h4>HUB token release</h4>
-                            <p>Minter Hub is a blockchain bridging Minter, Ethereum, and Binance Smart Chain (BSC). Solana, Cardano, Polygon, Terra, Tron, and other popular networks will be interconnected in the near future.</p>
+                            <p>Minter Hub is a blockchain bridging Minter, Ethereum, and BNB Smart Chain (BSC). Solana, Cardano, Polygon, Terra, Tron, and other popular networks will be interconnected in the near future.</p>
                             <p class="timeline_links">
                                 <a href="https://minterteam.medium.com/hub-token-of-the-minter-hub-blockchain-69a3f2605ffd" target="_blank" rel="nofollow">Read More</a>
                             </p>
@@ -877,11 +877,10 @@ export default {
                     <div class="discover-th">Current price <span>${{ pretty(hubPrice) }}</span></div>
                     <div class="discover-th">Start price <span>$0.11</span></div>
                     <div class="discover-th">Max supply <span>1 000 000</span></div>
-                    <div class="discover-th">Pools <span><a href="https://explorer.minter.network/pools/HUB/USDTE" target="_blank">Minter</a> <a href="https://v2.info.uniswap.org/pair/0x3796fee2b555da1356cdcd3e1861263b351a58a0" target="_blank" rel="nofollow">Ethereum</a></span></div>
+                    <div class="discover-th">Pools <span><a href="https://explorer.minter.network/pools/HUB/BNB" target="_blank">Minter</a> <a href="https://pancakeswap.finance/info/pool/0x45dfb47641109e2edb7fc4a0fb300b42c2d1f5b0" target="_blank" rel="nofollow">BNB Smart Chain</a></span></div>
                     <a class="btn" href="https://minter.network/hub" target="_blank" v-track-click="'hub'">Read More</a>
                 </div>
-                <p><a href="https://etherscan.io/token/0x8e9A29e7Ed21DB7c5B2E1cd75e676dA0236dfB45" target="_blank" rel="nofollow">HUB</a> is the native token of the Minter Hub blockchain that’s bridging Minter with Ethereum and Binance Smart Chain. HUB is a PoS token, so oracles receive 1% on the fees charged for cross-chain transfers. HUB also serves as reserve for DEX pools both on Minter and Ethereum/Binance Smart Chain.</p>
-                <p>For example, Uniswap v3 <a href="https://info.uniswap.org/#/pools/0x27878ae7f961a126755042ee8e5c074ea971511f" target="_blank" rel="nofollow">HUB-USDT</a>, Uniswap v2 <a href="https://v2.info.uniswap.org/pair/0x3796fee2b555da1356cdcd3e1861263b351a58a0" target="_blank" rel="nofollow">HUB-USDT</a>, Minter <a href="https://explorer.minter.network/pools/HUB/BIP" target="_blank">HUB-BIP</a>.</p>
+                <p><a href="https://etherscan.io/token/0x8e9A29e7Ed21DB7c5B2E1cd75e676dA0236dfB45" target="_blank" rel="nofollow">HUB</a> is the native token of the Minter Hub blockchain that’s bridging Minter with Ethereum and BNB Smart Chain. HUB is a PoS token, so oracles receive 1% on the fees charged for cross-chain transfers. HUB also serves as reserve for DEX pools both on Minter and Ethereum/BNB Smart Chain.</p>
             </div>
             <Footer class="footer--transparent"/>
         </section>

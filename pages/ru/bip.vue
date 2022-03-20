@@ -481,8 +481,8 @@ export default {
                         <p><b>$0.01</b> за перевод, <b>$0.03</b> + <b>0.2%</b> за обмен. Оплата в любом ликвидном токене с пересчетом в доллары</p>
                     </div>
                     <div class="features-item">
-                        <img src="/newnetwork/images/f4.svg" alt="Легкий доступ">
-                        <h3>Легкий доступ</h3>
+                        <img src="/newnetwork/images/f4.svg" alt="Полная децентрализация">
+                        <h3>Полная децентрализация</h3>
                         <p>Совершайте децентрализованные ввод и вывод активов с легкостью</p>
                     </div>
                     <div class="features-item">
@@ -540,8 +540,8 @@ export default {
                             <tr>
                                 <td class="flextd"><a href="https://console.minter.network/" target="_blank"><img src="/img/minter-logo-circle.svg" width="24" height="24" /> Minter</a></td>
                                 <td>5 секунд</td>
-                                <td>$0.007</td>
-                                <td>1 (<a href="https://explorer.minter.network/transactions/Mt2b9425c1cb91640a8e0dd2207fcc8de8480480b692f4c18fd60f344cbe69b117" target="_blank">Tx</a>)</td>
+                                <td>$0.07</td>
+                                <td>1 (<a href="https://explorer.minter.network/transactions/Mtb9962f15b0740400b1965aacafd02ac5755a74eb1d8a5844ab971f0bcdd4c76e" target="_blank">Tx</a>)</td>
                                 <td>Любой</td>
                             </tr>
                             <tr>
@@ -705,7 +705,7 @@ export default {
                             <div class="completed_card" id="timeline_3">
                                 <div class="completed_info">
                                     <h4>Выпуск токена BIPX</h4>
-                                    <p>BIPx — это обернутая версия BIP в Ethereum и Binance Smart Chain. BIPx открывает лучшие возможности глобальных децентрализованных финансов (DeFi) и помогает пользователям зарабатывать в любом из кошельков Minter.</p>
+                                    <p>BIPx — это обернутая версия BIP в Ethereum и BNB Smart Chain. BIPx открывает лучшие возможности глобальных децентрализованных финансов (DeFi) и помогает пользователям зарабатывать в любом из кошельков Minter.</p>
                                     <p class="timeline_links">
                                         <a href="https://coinmarketcal.com/en/event/token-launch-71586" target="_blank" rel="nofollow">Событие в календаре</a>
                                         <a href="https://minterteam.medium.com/%D0%BA%D0%B0%D0%BA-bipx-%D0%BF%D0%BE%D0%BC%D0%BE%D0%B6%D0%B5%D1%82-%D0%B7%D0%B0%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D1%82%D1%8C-%D0%B2-defi-9e54b5e625fa" target="_blank" rel="nofollow">Подробнее</a>
@@ -823,7 +823,7 @@ export default {
                         <div class="completed-item" id="completed-item-8">
                             <small>Конец 2020</small>
                             <h4>Выпуск токена HUB</h4>
-                            <p>Minter Hub — это блокчейн, соединяющий Minter, Ethereum и Binance Smart Chain (BSC). Solana, Cardano, Polygon, Terra, Tron и остальные популярные сети будут подключены в обозримом будущем.</p>
+                            <p>Minter Hub — это блокчейн, соединяющий Minter, Ethereum и BNB Smart Chain (BSC). Solana, Cardano, Polygon, Terra, Tron и остальные популярные сети будут подключены в обозримом будущем.</p>
                             <p class="timeline_links">
                                 <a href="https://minterteam.medium.com/hub-%D1%82%D0%BE%D0%BA%D0%B5%D0%BD-%D0%B1%D0%BB%D0%BE%D0%BA%D1%87%D0%B5%D0%B9%D0%BD%D0%B0-minter-hub-c0a86610f08f" target="_blank" rel="nofollow">Подробнее</a>
                             </p>
@@ -850,7 +850,7 @@ export default {
                     <a class="tech_api" href="https://www.minter.network/docs#node-api" target="_blank">API</a>
                     <a class="tech_sdk" href="https://www.minter.network/docs#minter-sdks" target="_blank">SDK</a>
                     <a class="tech_doc" href="https://www.minter.network/docs" target="_blank">Документация</a>
-                    <a class="tech_wp" href="https://www.minter.network/files/Minter_White_Paper.pdf" target="_blank">Whitepaper</a>
+                    <a class="tech_wp" href="https://www.minter.network/files/Minter_White_Paper_Russian.pdf" target="_blank">Whitepaper</a>
                     <a class="tech_cons" href="https://console.minter.network/" target="_blank">Консоль</a>
                 </div>
             </div>
@@ -877,11 +877,10 @@ export default {
                     <div class="discover-th">Текущая цена <span>${{ pretty(hubPrice) }}</span></div>
                     <div class="discover-th">Начальная цена <span>$0.11</span></div>
                     <div class="discover-th">Макс. эмиссия <span>1 000 000</span></div>
-                    <div class="discover-th">Пулы <span><a href="https://explorer.minter.network/pools/HUB/USDTE" target="_blank">Minter</a> <a href="https://v2.info.uniswap.org/pair/0x3796fee2b555da1356cdcd3e1861263b351a58a0" target="_blank" rel="nofollow">Ethereum</a></span></div>
-                    <a class="btn" href="https://minter.network/hub" target="_blank" v-track-click="'hub'">Подробнее</a>
+                    <div class="discover-th">Пулы <span><a href="https://explorer.minter.network/pools/HUB/BNB" target="_blank">Minter</a> <a href="https://pancakeswap.finance/info/pool/0x45dfb47641109e2edb7fc4a0fb300b42c2d1f5b0" target="_blank" rel="nofollow">BNB Smart Chain</a></span></div>
+                    <a class="btn" href="https://minter.network/ru/hub" target="_blank" v-track-click="'hub'">Подробнее</a>
                 </div>
-                <p><a href="https://etherscan.io/token/0x8e9A29e7Ed21DB7c5B2E1cd75e676dA0236dfB45" target="_blank" rel="nofollow">HUB</a> — это нативный токен в блокчейне Minter Hub, который, в свою очередь, является мостом, соединяющим Minter с Ethereum и Binance Smart Chain. HUB — это PoS-токен, и все оракулы получают 1% комиссии от переводов между сетями. HUB также служит резервом для пулов в Minter, Ethereum и Binance Smart Chain.</p>
-                <p>Например, Uniswap v3 <a href="https://info.uniswap.org/#/pools/0x27878ae7f961a126755042ee8e5c074ea971511f" target="_blank" rel="nofollow">HUB-USDT</a>, Uniswap v2 <a href="https://v2.info.uniswap.org/pair/0x3796fee2b555da1356cdcd3e1861263b351a58a0" target="_blank" rel="nofollow">HUB-USDT</a>, Minter <a href="https://explorer.minter.network/pools/HUB/BIP" target="_blank">HUB-BIP</a>.</p>
+                <p><a href="https://etherscan.io/token/0x8e9A29e7Ed21DB7c5B2E1cd75e676dA0236dfB45" target="_blank" rel="nofollow">HUB</a> — это нативный токен в блокчейне Minter Hub, который, в свою очередь, является мостом, соединяющим Minter с Ethereum и BNB Smart Chain. HUB — это PoS-токен, и все оракулы получают 1% комиссии от переводов между сетями. HUB также служит резервом для пулов в Minter, Ethereum и BNB Smart Chain.</p>
             </div>
             <Footer class="footer--transparent"/>
         </section>
