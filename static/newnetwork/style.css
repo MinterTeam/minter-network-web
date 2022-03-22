@@ -478,6 +478,13 @@ header {
 	width: 33.3%;
 	margin: 0 0 66px 0;
 	padding: 0 20px 0 0;
+	position: relative;
+}
+.features-item-bg {
+	position: absolute;
+	top: -10px;
+	left: -10px;
+	z-index: -1;
 }
 .features-item img {
 	width: 80px;

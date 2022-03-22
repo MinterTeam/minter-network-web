@@ -471,49 +471,58 @@ export default {
                 <h2>Network features</h2>
                 <div class="features-content">
                     <div class="features-item">
+                        <img src="/newnetwork/images/fb1.svg" class="features-item-bg">
                         <img src="/newnetwork/images/f1.svg" alt="Fast transactions">
                         <h3>Fast transactions</h3>
                         <p><b>5 seconds</b> with final blocks</p>
                     </div>
                     <div class="features-item">
+                        <img src="/newnetwork/images/fb2.svg" class="features-item-bg">
                         <img src="/newnetwork/images/f2.svg" alt="Low fees fixed in USD">
                         <h3>Low fees fixed in USD</h3>
                         <p><b>$0.01</b> per transfer, <b>$0.03</b> + <b>0.2%</b> per swap, payable in any liquid coin or token</p>
                     </div>
                     <div class="features-item">
+                        <img src="/newnetwork/images/fb4.svg" class="features-item-bg">
                         <img src="/newnetwork/images/f4.svg" alt="Fully Decentralized">
                         <h3>Fully Decentralized</h3>
                         <p>Make decentralized deposits and withdrawals, easily</p>
                     </div>
                     <div class="features-item">
+                        <img src="/newnetwork/images/fb5.svg" class="features-item-bg">
                         <img src="/newnetwork/images/f5.svg" alt="Limit Orders">
                         <h3>Limit Orders</h3>
                         <p>Place limit orders powered by a unique implementation at the core level of Minter blockchain</p>
                     </div>
                     <div class="features-item">
+                        <img src="/newnetwork/images/fb6.svg" class="features-item-bg">
                         <img src="/newnetwork/images/f6.svg" alt="Custom Tokens and Pools">
                         <h3>Custom Tokens & Pools</h3>
                         <p>Create your own tokens and liquidity pools in a couple of clicks</p>
                     </div>
                     <div class="features-item">
+                        <img src="/newnetwork/images/fb3.svg" class="features-item-bg">
                         <img src="/newnetwork/images/f3.svg" alt="Cross-Chain Swaps">
                         <h3>Cross-Chain Swaps</h3>
                         <p>Send cross-chain transfers with swaps. For example, BUSD on BNB Smart Chain for USDC on Ethereum</p>
                         <p class="coming-soon">Coming 2022</p>
                     </div>
                     <div class="features-item">
+                        <img src="/newnetwork/images/fb7.svg" class="features-item-bg">
                         <img src="/newnetwork/images/f7.svg" alt="Smart Contracts">
                         <h3>Smart Contracts</h3>
                         <p>Secure cross-chain smart contracts tailored to all users. Advanced mode for developers and non-dev mode for simple deployment.</p>
                         <p class="coming-soon">Coming 2022</p>
                     </div>
                     <div class="features-item">
+                        <img src="/newnetwork/images/fb8.svg" class="features-item-bg">
                         <img src="/newnetwork/images/f8.svg" alt="NFTs">
                         <h3>NFTs</h3>
                         <p>Create, sell, swap, and cross-chainNFTs with ease.</p>
                         <p class="coming-soon">Coming 2022</p>
                     </div>
                     <div class="features-item">
+                        <img src="/newnetwork/images/fb9.svg" class="features-item-bg">
                         <img src="/newnetwork/images/f9.svg" alt="Crypto Loans">
                         <h3>Crypto Loans</h3>
                         <p>Borrowing crypto through Minter is easy! Use your crypto as collateral to get a loan without impact to your credit score.</p>
@@ -838,7 +847,6 @@ export default {
                         </div>
                     </div>
                 </div>
-                <hr />
             </div>
         </section>
         <section class="tech" id="tech">
@@ -863,7 +871,7 @@ export default {
                     <div class="social-link"><img src="/newnetwork/images/social_md.svg" alt="Minter Medium"><a href="https://medium.com/@MinterTeam" target="_blank" rel="nofollow">Medium</a></div>
                     <div class="social-link"><img src="/newnetwork/images/social_rd.svg" alt="Minter Reddit"><a href="https://www.reddit.com/r/Minter/" target="_blank" rel="nofollow">Reddit</a></div>
                     <div class="social-link"><img src="/newnetwork/images/social_tw.svg" alt="Minter Twitter"><a href="https://twitter.com/MinterTeam" target="_blank" rel="nofollow">Twitter</a></div>
-                    <div class="social-link"><img src="/newnetwork/images/social_fb.svg" alt="Minter Facebook"><a href="https://www.facebook.com/MinterNetwork" target="_blank" rel="nofollow">Facebook</a></div>
+                    <!--<div class="social-link"><img src="/newnetwork/images/social_fb.svg" alt="Minter Facebook"><a href="https://www.facebook.com/MinterNetwork" target="_blank" rel="nofollow">Facebook</a></div>-->
                     <div class="social-link"><img src="/newnetwork/images/social_tc.svg" alt="Minter Telegram Channel"><a href="tg://resolve?domain=MinterTeam" target="_blank" rel="nofollow">Telegram Channel</a></div>
                     <div class="social-link"><img src="/newnetwork/images/social_tc.svg" alt="Minter Telegram Group"><a href="tg://join?invite=EafyERJSJZJ-nwH_139jLQ" target="_blank" rel="nofollow">Telegram Group</a></div>
                 </div>

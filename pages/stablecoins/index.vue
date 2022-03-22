@@ -354,7 +354,7 @@ export default {
                 <div class="social_a social_rd"><a href="https://www.reddit.com/r/Minter/" target="_blank">Reddit</a></div>
                 <div class="social_a social_tc"><a href="tg://resolve?domain=MinterTeam" target="_blank">Telegram Channel</a></div>
                 <div class="social_a social_tg"><a href="tg://join?invite=EafyERJSJZJ-nwH_139jLQ" target="_blank">Telegram Group</a></div>
-                <div class="social_a social_fb"><a href="https://www.facebook.com/MinterNetwork" target="_blank">Facebook</a></div>
+                <!--<div class="social_a social_fb"><a href="https://www.facebook.com/MinterNetwork" target="_blank">Facebook</a></div>-->
             </div>
         </div>
         <div class="discover">

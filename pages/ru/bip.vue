@@ -851,7 +851,7 @@ export default {
                     <a class="tech_sdk" href="https://www.minter.network/docs#minter-sdks" target="_blank">SDK</a>
                     <a class="tech_doc" href="https://www.minter.network/docs" target="_blank">Документация</a>
                     <a class="tech_wp" href="https://www.minter.network/files/Minter_White_Paper_Russian.pdf" target="_blank">Whitepaper</a>
-                    <a class="tech_cons" href="https://console.minter.network/" target="_blank">Консоль</a>
+                    <a class="tech_cons" href="https://console.minter.network/ru" target="_blank">Консоль</a>
                 </div>
             </div>
         </section>
@@ -863,7 +863,7 @@ export default {
                     <div class="social-link"><img src="/newnetwork/images/social_md.svg" alt="Minter Medium"><a href="https://medium.com/@MinterTeam" target="_blank" rel="nofollow">Medium</a></div>
                     <div class="social-link"><img src="/newnetwork/images/social_rd.svg" alt="Minter Reddit"><a href="https://www.reddit.com/r/Minter/" target="_blank" rel="nofollow">Reddit</a></div>
                     <div class="social-link"><img src="/newnetwork/images/social_tw.svg" alt="Minter Twitter"><a href="https://twitter.com/MinterTeam" target="_blank" rel="nofollow">Twitter</a></div>
-                    <div class="social-link"><img src="/newnetwork/images/social_fb.svg" alt="Minter Facebook"><a href="https://www.facebook.com/MinterNetwork" target="_blank" rel="nofollow">Facebook</a></div>
+                    <!--<div class="social-link"><img src="/newnetwork/images/social_fb.svg" alt="Minter Facebook"><a href="https://www.facebook.com/MinterNetwork" target="_blank" rel="nofollow">Facebook</a></div>-->
                     <div class="social-link"><img src="/newnetwork/images/social_tc.svg" alt="Telegram-канал"><a href="tg://resolve?domain=MinterNetwork" target="_blank" rel="nofollow">Telegram-канал</a></div>
                     <div class="social-link"><img src="/newnetwork/images/social_tc.svg" alt="Telegram-группа"><a href="tg://join?invite=EafyEVD-HEOxDcv8YyaqNg" target="_blank" rel="nofollow">Telegram-группа</a></div>
                 </div>

@@ -108,6 +108,9 @@ header {
 		font-size: 22px;
 		line-height: 26px;
 	}
+	#menu__toggle:checked ~ .menu__btn > span {
+		right: 24px;
+	}
 	.btn {
 		width: 100%;
 		margin: 10px 0 !important;
