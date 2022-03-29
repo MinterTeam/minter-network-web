@@ -74,35 +74,35 @@ export default {
                 <div class="stats-content">
                     <div class="stats-item">
                         <div class="stats-value">$14,354,516</div>
-                        <h4>Market Cap</h4>
+                        <h4>Market cap</h4>
                     </div>
                     <div class="stats-item">
                         <div class="stats-value">$27,485,793</div>
-                        <h4>Fully Diluted Market Cap</h4>
+                        <h4>Fully diluted market cap</h4>
                     </div>
                     <div class="stats-item">
                         <div class="stats-value">May 15, 2019</div>
-                        <h4>Mainnet Launch</h4>
+                        <h4>Mainnet launch</h4>
                     </div>
                     <div class="stats-item">
                         <div class="stats-value">10,000,000,000</div>
-                        <h4>Max. Supply</h4>
+                        <h4>Max. supply</h4>
                     </div>
                     <div class="stats-item">
                         <div class="stats-value">5,427,996,860 (54%)</div>
-                        <h4>Circulating Supply</h4>
+                        <h4>Circulating supply</h4>
                     </div>
                     <div class="stats-item">
                         <div class="stats-value">1,125,772,062 (21%)</div>
-                        <h4>Free Float</h4>
+                        <h4>Free float</h4>
                     </div>
                     <div class="stats-item">
                         <div class="stats-value">47</div>
-                        <h4>Active Validators</h4>
+                        <h4>Active validators</h4>
                     </div>
                     <div class="stats-item">
                         <div class="stats-value">12,747</div>
-                        <h4>Active Stakers</h4>
+                        <h4>Active stakers</h4>
                     </div>
                 </div>
             </div>
