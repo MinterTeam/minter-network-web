@@ -322,44 +322,46 @@ type MultiSignature struct {
 
 Type of transaction is determined by a single byte.
 
-|Type Name                           |Byte|
-|----------------------------------- |----|
-|[TypeSend](#send-transaction)                                          |0x01|
-|[TypeSellCoin](#sell-coin-transaction)                                 |0x02|
-|[TypeSellAllCoin](#sell-all-coin-transaction)                          |0x03|
-|[TypeBuyCoin](#buy-coin-transaction)                                   |0x04|
-|[TypeCreateCoin](#create-coin-transaction)                             |0x05|
-|[TypeDeclareCandidacy](#declare-candidacy-transaction)                 |0x06|
-|[TypeDelegate](#delegate-transaction)                                  |0x07|
-|[TypeUnbond](#unbond-transaction)                                      |0x08|
-|[TypeRedeemCheck](#redeem-check-transaction)                           |0x09|
-|[TypeSetCandidateOnline](#set-candidate-online-transaction)            |0x0A|
-|[TypeSetCandidateOffline](#set-candidate-offline-transaction)          |0x0B|
-|[TypeCreateMultisig](#create-multisig-address)                         |0x0C|
-|[TypeMultisend](#multisend-transaction)                                |0x0D|
-|[TypeEditCandidate](#edit-candidate-transaction)                       |0x0E|
-|[TypeSetHaltBlock](#set-halt-block-transaction)                        |0x0F|
-|[TypeRecreateCoin](#recreate-coin-transaction)                         |0x10|
-|[TypeEditTickerOwner](#edit-ticker-owner-transaction)                  |0x11|
-|[TypeEditMultisig](#edit-multisig-transaction)                         |0x12|
-|[TypePriceVote](#price-vote-transaction)                               |0x13|
-|[TypeEditCandidatePublicKey](#edit-candidate-public-key-transaction)   |0x14|
-|[TypeAddLiquidity](#add-liquidity-to-swap-pool-transaction)            |0x15|
-|[TypeRemoveLiquidity](#remove-liquidity-from-swap-pool-transaction)    |0x16|
-|[TypeSellSwapPool](#sell-from-swap-pool-transaction)                   |0x17|
-|[TypeBuySwapPool](#buy-from-swap-pool-transaction)                     |0x18|
-|[TypeSellAllSwapPool](#sell-all-from-swap-pool-transaction)            |0x19|
-|[TypeEditCandidateCommission](#edit-candidate-commission-transaction)  |0x1A|
-|[TypeMoveStake](#move-stake-transaction)                               |0x1B|
-|[TypeMintToken](#mint-token-transaction)                               |0x1C|
-|[TypeBurnToken](#burn-token-transaction)                               |0x1D|
-|[TypeCreateToken](#create-token-transaction)                           |0x1E|
-|[TypeRecreateToken](#recreate-token-transaction)                       |0x1F|
-|[TypeVoteCommission](#vote-for-commission-price-transaction)           |0x20|
-|[TypeVoteUpdate](#vote-for-network-update-transaction)                 |0x21|
-|[TypeCreateSwapPool](#create-swap-pool-transaction)                    |0x22|
-|[TypeAddLimitOrder](#add-limit-order-transaction)                    |0x23|
-|[TypeRemoveLimitOrder](#remove-limit-order-transaction)                    |0x24|
+| Type Name                                                             | Byte | Number |
+|-----------------------------------------------------------------------|------|--------|
+| [TypeSend](#send-transaction)                                         | 0x01 | 1      |
+| [TypeSellCoin](#sell-coin-transaction)                                | 0x02 | 2      |
+| [TypeSellAllCoin](#sell-all-coin-transaction)                         | 0x03 | 3      |
+| [TypeBuyCoin](#buy-coin-transaction)                                  | 0x04 | 4      |
+| [TypeCreateCoin](#create-coin-transaction)                            | 0x05 | 5      |
+| [TypeDeclareCandidacy](#declare-candidacy-transaction)                | 0x06 | 6      |
+| [TypeDelegate](#delegate-transaction)                                 | 0x07 | 7      |
+| [TypeUnbond](#unbond-transaction)                                     | 0x08 | 8      |
+| [TypeRedeemCheck](#redeem-check-transaction)                          | 0x09 | 9      |
+| [TypeSetCandidateOnline](#set-candidate-online-transaction)           | 0x0A | 10     |
+| [TypeSetCandidateOffline](#set-candidate-offline-transaction)         | 0x0B | 11     |
+| [TypeCreateMultisig](#create-multisig-address)                        | 0x0C | 12     |
+| [TypeMultisend](#multisend-transaction)                               | 0x0D | 13     |
+| [TypeEditCandidate](#edit-candidate-transaction)                      | 0x0E | 14     |
+| [TypeSetHaltBlock](#set-halt-block-transaction)                       | 0x0F | 15     |
+| [TypeRecreateCoin](#recreate-coin-transaction)                        | 0x10 | 16     |
+| [TypeEditTickerOwner](#edit-ticker-owner-transaction)                 | 0x11 | 17     |
+| [TypeEditMultisig](#edit-multisig-transaction)                        | 0x12 | 18     |
+| [TypePriceVote](#price-vote-transaction)                              | 0x13 | 19     |
+| [TypeEditCandidatePublicKey](#edit-candidate-public-key-transaction)  | 0x14 | 20     |
+| [TypeAddLiquidity](#add-liquidity-to-swap-pool-transaction)           | 0x15 | 21     |
+| [TypeRemoveLiquidity](#remove-liquidity-from-swap-pool-transaction)   | 0x16 | 22     |
+| [TypeSellSwapPool](#sell-from-swap-pool-transaction)                  | 0x17 | 23     |
+| [TypeBuySwapPool](#buy-from-swap-pool-transaction)                    | 0x18 | 24     |
+| [TypeSellAllSwapPool](#sell-all-from-swap-pool-transaction)           | 0x19 | 25     |
+| [TypeEditCandidateCommission](#edit-candidate-commission-transaction) | 0x1A | 26     |
+| [TypeMoveStake](#move-stake-transaction)                              | 0x1B | 27     |
+| [TypeMintToken](#mint-token-transaction)                              | 0x1C | 28     |
+| [TypeBurnToken](#burn-token-transaction)                              | 0x1D | 29     |
+| [TypeCreateToken](#create-token-transaction)                          | 0x1E | 30     |
+| [TypeRecreateToken](#recreate-token-transaction)                      | 0x1F | 31     |
+| [TypeVoteCommission](#vote-for-commission-price-transaction)          | 0x20 | 32     |
+| [TypeVoteUpdate](#vote-for-network-update-transaction)                | 0x21 | 33     |
+| [TypeCreateSwapPool](#create-swap-pool-transaction)                   | 0x22 | 34     |
+| [TypeAddLimitOrder](#add-limit-order-transaction)                     | 0x23 | 35     |
+| [TypeRemoveLimitOrder](#remove-limit-order-transaction)               | 0x24 | 36     |
+| [TypeLockStake](#lock-stake-transaction)                              | 0x25 | 37     |
+| [TypeLock](#lock-transaction)                                         | 0x26 | 38     |
     
 ### Send transaction
 
@@ -917,7 +919,7 @@ type EditCandidateCommissionData struct {
 
 Type: **0x1B**
 
-Reserved transaction, disabled in current version.
+Move stake from current validator to another. Has shorter lock period than `unbond` tx. 7d instead of 30d.
 
 *Data field contents:*
 
@@ -1082,6 +1084,9 @@ type VoteCommissionData struct {
 	FailedTX                *big.Int
 	AddLimitOrder           *big.Int
 	RemoveLimitOrder        *big.Int
+	MoveStake               *big.Int
+	LockStake               *big.Int
+	Lock                    *big.Int
 }
 ```
 Once there is a consensus, the event with the information about the new fees will occur at the corresponding block height.
@@ -1135,6 +1140,9 @@ type UpdateCommissionsEvent struct {
 	FailedTx                string `json:"failed_tx"`
 	AddLimitOrder           string `json:"add_limit_order"`
 	RemoveLimitOrder        string `json:"remove_limit_order"`
+	MoveStake               string `json:"move_stake"`
+	LockStake               string `json:"lock_stake"`
+	Lock                    string `json:"lock"`
 }
 ```
 
@@ -1198,8 +1206,6 @@ value of a liquidity pool share to $100, the attacker would need to donate $100,
 
 To see the total supply and balance of the provider, check out [SwapPool](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/1.3/docs/api.swagger.json#operation/SwapPool) and [SwapPoolProvider](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/MinterTeam/node-grpc-gateway/1.3/docs/api.swagger.json#operation/SwapPoolProvider) API v2 endpoints.
 
-### With Minter 2.6.0 released, there are a few new transactions:
-
 ### Add limit order transaction
 
 Type: **0x23**
@@ -1228,10 +1234,10 @@ The order expires automatically after 483 840 blocks (~28 days) since placement 
 
 ```go
 type OrderExpiredEvent struct {
-	ID      string        `json:"id"`
+	ID      string `json:"id"`
 	Address string `json:"address"`
-	Coin    string        `json:"coin"`
-	Amount  string        `json:"amount"`
+	Coin    string `json:"coin"`
+	Amount  string `json:"amount"`
 }
 ```
 
@@ -1250,6 +1256,42 @@ type RemoveLimitOrderData struct {
 ```
 
 - **ID** - id of the order to be closed
+
+
+### With Minter 3.0.0 released, there are a few new transactions:
+
+### Lock stake transaction
+
+Type: **0x25**
+
+Lock all your current and future stakes for 18921600 blocks (≈3 years) to receive increased delegation rewards (x3). Technically works as disabling unbond tx.
+
+*Data field contents is empty:*
+
+```go
+type LockStakeData struct {
+}
+```
+
+### Lock transaction
+
+Type: **0x26**
+
+Lock some of your coins on your balance for specified period.
+
+*Data field contents:*
+
+```go
+type LockData struct {
+    DueBlock uint32
+    Coin  uin32
+    Value *big.Int
+}
+```
+
+- **DueBlock** - block number, until which coins will be locked
+- **Coin** - id of the coin to lock
+- **Value** - quantity of the coin being lock
 
 
 ## Minter Check
@@ -1413,9 +1455,11 @@ Once every 720 blocks, the candidates' stakes are re-calculated. Those who do no
 ### Rewards
 Block rewards and fees are accumulated and proportionally (based on stake value) paid out once per `720 blocks` (approx. 1 hour) to all active validators (and their delegators).
 
-Block rewards are configured to decrease from 333 to 0 BIP (MNT) in \~7 years.
+Block rewards were configured to decrease from 333 to 0 BIP (MNT) in ≈7 years.  
+Since Minter 3 block reward amount is depend on the current price of BIP.  
+Also users who locked their stakes with LockStake tx will gain x3 increased block rewards. At the same time, fees collected by validators will not increase.
 
-Delegators receive their rewards at the same time after paying the fee to their validator automatically (this value is based on validator's settings).
+Delegators receive their rewards at the same time after paying the fee to their validator automatically (this value is based on validator's settings). Rewards go back to the stake automatically. 
 
 `10%` from reward goes to DAO address.
 
@@ -1491,18 +1535,22 @@ private_peer_ids = "ipaddress of validator nodes"
 ### Who's a delegator?
 People that cannot or do not want to run validator operations can still participate in the staking process as delegators. Indeed, validators are not chosen based on their own stake but based on their total stake, which is the sum of their own stake and the stakes that are delegated to them. This is an important property, as it makes delegators a safeguard against validators that exhibit bad behavior. If a validator misbehaves, its delegators will unbond and move their staked coins away from it, thereby reducing its stake. Eventually, if a validator's stake falls below that of the last top address, it will be excluded from the validators set.
 
-Delegators share the rewards of their validators, but they also share the risks. In terms of rewards, validators and delegators differ in that validators can apply a fee on the reward that goes to their delegators before it is distributed. This fee is known to delegators beforehand and can be changed since Minter 2.0. In terms of risks, delegators' coins can be slashed if their validator misbehaves. For more, see Risks section.
+Delegators share the rewards of their validators, but they also share the risks. In terms of rewards, validators and delegators differ in that validators can apply a fee on the reward that goes to their delegators before it is distributed. This fee can be changed by validator once in 90 days. In terms of risks, delegators' coins can be slashed if their validator misbehaves. For more, see Risks section.
 
-To become a delegator, the coin holder needs to send a "Delegate" transaction where they specify how many coins they want to bond and to which validator. Later, if a delegator wants to unbond part or all of their stake, they need to send an "Unbond" transaction. From there, the delegator will have to wait for 30 days to get their coins back.
+To become a delegator, the coin holder needs to send a "Delegate" transaction where they specify how many coins they want to bond and to which validator. Later, if a delegator wants to unbond part or all of their stake, they need to send an "Unbond" transaction. From there, the delegator will have to wait for 30 days to get their coins back. Also, delegator can transfer stake to another validator by "Move" transaction with shorter lock period: 7 days.
 
 ### Directives of delegators
 Being a delegator is not a passive task. Here are the main directives of a delegator:
 - Perform careful due diligence on validators before delegating. If a validator misbehaves, part of its total stake, which includes the stakes of its delegators, can be slashed. Delegators should therefore carefully select validators they think will behave correctly.
 - Actively monitor their validator after having delegated. Delegators should ensure that the validators they're delegating to behave properly, meaning they have good uptime, do not get hacked, and participate in governance. If a delegator is not satisfied with their validator, they can unbond and switch to another validator.
+
 ### Rewards
 Validators and delegators earn rewards in exchange for their services. These rewards are given in two forms:
 - Block rewards;
 - Transaction fees: each transaction on the Minter Network comes with transactions fees. Fees are distributed to validators and delegators in proportion to their stake.
+
+A new staking option will be offered to users with Minter 3 Upgrade. They will be able to send their BIP into delegation with a 3-year lock and receive 3x rewards.
+
 ### Validator commission
 Each validator's staking pool receives rewards in proportion to its total stake. Before these rewards are distributed to delegators inside the staking pool, however, the validator can apply a fee. In other words, delegators have to pay a fee to their validators on the rewards they earn.
 
@@ -1627,3 +1675,7 @@ Minter Gate is a service to publish prepared transactions to the Minter Network.
 
 ### Hub Explorer API
 [HUB holders](https://explorer-hub-api.minter.network/api/tokens/1902/holders)
+
+### Transaction debugger
+[minterteam.github.io/minter-tx-debug](https://minterteam.github.io/minter-tx-debug/)
+- [Source code](https://github.com/MinterTeam/minter-tx-debug)
