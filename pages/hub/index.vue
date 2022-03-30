@@ -47,7 +47,7 @@ export default {
             ],
             link: [
                 { rel: 'canonical', href: `${HOST}/hub`},
-                { rel: 'stylesheet', href: '/newnetwork/style.css', hid: 'newnetwork-style'},
+                { rel: 'stylesheet', href: '/newnetwork/style.css', hid: 'newnetwork-hub-style'},
                 { rel: 'stylesheet', href: '/newnetwork/hub.css', hid: 'newnetwork-hub-style'},
                 { rel: 'stylesheet', href: '/newnetwork/hub320.css', media: 'screen and (max-width: 732px)', hid: 'newnetwork-hub-style320'},
             ],
