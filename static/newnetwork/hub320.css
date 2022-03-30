@@ -1,0 +1,102 @@
+.wrap {
+	width: 100%;
+	}
+
+
+header {
+	display: block;
+	width: auto;
+	margin: 0;
+	padding: 0;
+	}
+
+.lang-wrap {
+	width: 100%;
+	padding: 12px 24px;
+	}
+
+.container {
+	padding: 0 40px !important;
+}
+.hello {
+	display: block;
+	height: auto;
+	width: 100%;
+	margin: 0;
+}
+.hello-content {
+	padding: 80px 0;
+	background: none;
+	max-width: 100%;
+}
+header {
+	background: url(/newnetwork/images/hub/header1.svg) left top/455px no-repeat;
+}
+.tool {
+	max-width: 230px;
+}
+#block-img-listing {
+	left: -40px;
+}
+
+@media screen and (max-width: 670px) {
+	.stat-item {
+		text-align: unset;
+		width: 50%;
+		padding: 0 0 24px 0;
+	}
+	.stat-bar {
+		padding: 16px 0 0 0;
+	}
+}
+
+@media screen and (max-width: 585px) {
+	.container {
+		padding: 0 24px !important;
+	}
+	h1 {
+		font-size: 35px;
+		line-height: 45px;
+	}
+	.half-block {
+		width: 100%;
+	}
+	.btn {
+		width: 100%;
+		margin: 10px 0 !important;
+		height: 50px;
+	}
+	.tool {
+		max-width: 100%;
+		width: 100%;
+		background-position-x: right;
+		background-position-y: top;
+		margin: 0 0 20px 0;
+	}
+	.hello p {
+		width: 100%;
+	}
+	.earn {
+		padding: 100px 0 50px 0;
+	}
+	.section-mob-reverse .half-content {
+		flex-direction: column-reverse;
+	}
+	.half-block-img img {
+		width: 25%;
+		top: 0;
+		right: 0;
+		left: 0 !important;
+		margin: 0 0 16px 0;
+	}
+	.product {
+		width: 100%;
+		padding: 0;
+	}
+}
+@media screen and (max-width: 585px) {
+	.hub-distribution-block {
+		width: 100%;
+		padding: 0 0 16px 0;
+	}
+}

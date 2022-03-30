@@ -10,36 +10,31 @@ export default {
     layout: 'simple',
     components: {
         Language,
-        // Footer,
+        Footer,
     },
     directives: {
         trackClick,
     },
     fetchOnServer: false,
-    fetch() {
-        // const bipPricePromise = getStatus()
-        //     .then((status) => {
-        //         this.bipPrice = status.bipPriceUsd;
-        //     });
 
+    fetch() {
         const poolsPromise = Promise.all([
-                // getPool('USDCE', 'USDTE'),
                 getPool('HUB', 'USDTE'),
-                // getPool('HUB', 'HUBABUBA'),
             ])
             .then((pools) => {
-                // this.pools = pools;
+                this.pools = pools;
                 this.hubPrice = pools[0].amount1 / pools[0].amount0;
             });
 
         return Promise.all([
-            // bipPricePromise,
+            bipPricePromise,
             poolsPromise,
         ]);
     },
+
     head() {
-        const title = 'Cross-Chain Bridge to Global Crypto Liquidity';
-        const description = 'Minter Hub is a blockchain bridging Minter, Ethereum, and Binance Smart Chain (BSC). Polkadot, Cardano, Solana, and other popular networks will be interconnected in the near future.';
+        const title = 'Cross-Chain Smart Contracts for Earning Crypto';
+        const description = 'Minter Hub is a bridge to global crypto liquidity, a standalone blockchain with the unique cross-chain smart contracts technology for earning crypto.';
         // const localeSuffix = this.$i18n.locale === 'en' ? '' : '-' + this.$i18n.locale;
 
         return {
@@ -48,26 +43,26 @@ export default {
                 { hid: 'og-title', name: 'og:title', content: title },
                 { hid: 'description', name: 'description', content: description },
                 { hid: 'og-description', name: 'og:description', content: description },
-                { hid: 'og-image', name: 'og:image', content: `/hub/images/meta.png` },
+                { hid: 'og-image', name: 'og:image', content: `/newnetwork/images/hub/meta_en.png` },
             ],
             link: [
                 { rel: 'canonical', href: `${HOST}/hub`},
-                { rel: 'stylesheet', href: '/hub/style.css', hid: 'hub-style'},
-                { rel: 'stylesheet', href: '/hub/style320.css', media: 'screen and (max-width: 730px)', hid: 'hub-style320'},
+                { rel: 'stylesheet', href: '/newnetwork/style.css', hid: 'newnetwork-style'},
+                { rel: 'stylesheet', href: '/newnetwork/hub.css', hid: 'newnetwork-hub-style'},
+                { rel: 'stylesheet', href: '/newnetwork/hub320.css', media: 'screen and (max-width: 732px)', hid: 'newnetwork-hub-style320'},
             ],
         };
     },
     data() {
         return {
-            // bipPrice: 0,
             hubPrice: 0,
-            // pools: [],
+            pools: [],
         };
     },
     mounted() {
         // move landing styles under global styles
-        const style = document.querySelector('[data-hid="hub-style"]');
-        const style320 = document.querySelector('[data-hid="hub-style320"]');
+        const style = document.querySelector('[data-hid="newnetwork-hub-style"]');
+        const style320 = document.querySelector('[data-hid="newnetwork-hub-style320"]');
         if (!style || !style320) {
             return;
         }
@@ -79,124 +74,219 @@ export default {
     methods: {
         pretty,
         prettyRound,
-        // apy(pool) {
-        //     return getApy(pool.tradeVolumeBip1D, pool.liquidityBip);
-        // },
+        apy(pool) {
+            if (!pool) {
+                return 0;
+            }
+            return getApy(pool.tradeVolumeBip1D, pool.liquidityBip);
+        },
     },
 };
 </script>
 
 <template>
-    <div class="page--hub">
-        <!--<div class="promo-top">
-            <div>Minter Hub 2 launch is going to happen on <b>Dec. 2, 2021</b>.</div>
-        </div>-->
-        <div class="bg_top">
-            <header>
-                <div class="logo"><img src="/hub/images/logo.svg" /></div>
-                <div class="lang"><language class="" :locales='[{"code":"","name":"English"},{"code":"ru","name":"Russian"}]' lang="" :push="true"/></div>
-            </header>
-            <div class="home_top">
-                <h1>Cross-Chain Bridge to Global Crypto Liquidity</h1>
-                <p>Minter Hub is a blockchain bridging Minter, Ethereum, and Binance Smart Chain (BSC). Solana, Cardano, Polygon, Terra, Tron, and other popular networks will be interconnected in the near future.</p>
-                <p><b>Buy HUB on:</b></p>
-                <a class="btn btn-img" href="https://my.honee.app/swap/HUB" target="_blank" v-track-click="'hub-buyhubminter'"><img src="/bipx/images/logos/minter_w.png" srcset="/bipx/images/logos/minter_w@2x.png 2x, /bipx/images/logos/minter_w@3x.png 3x" />Minter</a>
-                <a class="btn btn_alt btn-img" href="https://app.1inch.io/#/1/swap/USDT/0x8e9A29e7Ed21DB7c5B2E1cd75e676dA0236dfB45" target="_blank" v-track-click="'hub-buyhub'"><img src="/bipx/images/logos/ethereum.svg" />Ethereum</a>
-                <a class="btn btn_alt btn-img" href="https://pancakeswap.finance/swap?inputCurrency=0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c&outputCurrency=0x8ac0a467f878f3561d309cf9b0994b0530b0a9d2" target="_blank" v-track-click="'hub-buyhub'"><img src="/bipx/images/logos/bsc.svg" />BSC</a>
-            </div>
-        </div>
-        <div class="wrap figures" id="figures">
-            <h2>In Figures</h2>
-            <div class="figures_flx">
-                <div class="figure">
-                    <span>Launch</span>
-                    April 2021
+    <div class="wrap">
+        <header>
+            <div class="container">
+                <div class="top-bar">
+                    <div class="logo"><a href="/"><img src="/newnetwork/images/hub.svg" alt="Minter Hub"/> Minter Hub</a></div>
+                    <div class="menu">
+                        <language class="" :locales='[{"code":"","name":"English"},{"code":"ru","name":"Russian"}]' lang="" :push="true"/>
+                    </div>
                 </div>
-                <div class="figure">
-                    <span>Transaction Speed</span>
-                    20–60 seconds
-                </div>
-                <div class="figure">
-                    <span>Oracles</span>
-                    11
-                </div>
-                <div class="figure">
-                    <span>Cross-Chain Volume</span>
-                    Over $10 000 000
-                </div>
-                <div class="figure">
-                    <span>HUB Token Supply</span>
-                    1 000 000 HUB
-                </div>
-                <div class="figure">
-                    <span>HUB Pools’ Rewards</span>
-                    Up to 365% APY
-                </div>
-                <div class="figure">
-                    <span>Staking Rewards</span>
-                    Up to 1% from all cross-chain transactions
+                <div class="hello">
+                    <div class="hello-content">
+                        <h1>Cross-Chain Smart Contracts for Earning Crypto</h1>
+                        <div class="hello-buttons">
+                            <a class="btn" href="https://console.minter.network/" target="_blank" v-track-click="'start-earning'">Start Earning</a>
+                            <a class="btn btn-alt-2" href="https://my.honee.app/swap/HUB" target="_blank" v-track-click="'buy-hub'">Buy HUB</a>
+                        </div>
+                        <p>Minter Hub is a bridge to global crypto liquidity, a standalone blockchain with the unique cross-chain smart contracts technology for earning crypto.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="how" id="how">
-            <h2>How It Works</h2>
-            <p>Minter Hub is a standalone blockchain with its own validators (oracles) that are connected to all networks at once (Minter, Ethereum, BSC) and have access to the multi-signature wallets on each.</p>
-            <p>Oracles lock the coin on one network and issue its ‘mirrored’ version on the other.</p>
-        </div>
-        <div class="oracles" id="oracles">
-            <h2>Oracles</h2>
-            <p>Minter Hub was designed to have 16 oracles and run on the PoS consensus, which means using stake as collateral in order to vote on blocks. If necessary, however, the decision on changing the rules and code can be made by blockchain’s oracles.</p>
-            <p>Cross-chain transfers are the new era of sovereign blockchains. They ensure not only the communication among the networks, but also reliable, fast, and secure decentralized transactions that no one can cancel, alter, or censor.</p>
-        </div>
-        <div class="wrap speedcost" id="speedcost">
-            <h2>Speed and Cost</h2>
-            <p>For example, Minter ⇔ Ethereum transactions take an average <b>20–60 seconds</b>, which is pretty fast for cross-chain transfers. At the same time, it is quite expensive as truly decentralized processing requires a large amount of fees. On Ethereum, cross-chain fees are charged for each oracle’s signature, and on top of that, <b>1%</b> goes to Minter Hub oracles as a service fee.</p>
-        </div>
-        <div class="products" id="products">
-            <h2>Products</h2>
-            <div class="products_flx">
-                <div class="product">
-                    <div class="product_img"><img src="/hub/images/minter.svg" /></div>
-                    <p>Minter, a digital assets marketplace allowing anyone to buy, sell, send, and spend BTC, ETH, BIP, USDC, and more</p>
-                    <a class="btn btn_c2" href="https://www.minter.network/" v-track-click="'hub-minter'" target="_blank">Learn More</a>
-                </div>
-                <div class="product">
-                    <div class="product_img"><img src="/hub/images/honee.svg" /></div>
-                    <p>Honee, a crypto wallet that helps users earn. The alpha testing phase starts on Tuesday, September 28, 2021</p>
-                    <a class="btn btn_c2" href="https://honee.app/" v-track-click="'hub-honee'" target="_blank">Learn More</a>
+            <div class="stat-bar">
+                <div class="container">
+                    <div class="stat-items">
+                        <div class="stat-item">
+                            <small>Mainnet Launch</small>
+                            <div>April 2021</div>
+                        </div>
+                        <div class="stat-item">
+                            <small>Market Cap</small>
+                            <div>$42 000 000</div>
+                        </div>
+                        <div class="stat-item">
+                            <small>Circulating Supply</small>
+                            <div>5%</div>
+                        </div>
+                        <div class="stat-item">
+                            <small>HUB Staking</small>
+                            <div>Up to 1%</div>
+                            <div class="stat-item-explanation">from all cross-chain transactions</div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="listing" id="listing">
-            <h2>Cross-Chain Listing of Tokens</h2>
-            <p>Any existing project’s ERC-20 or BEP-20 token can be included in the list of cross-chain tokens. There are three main ways to make a cross-chain listing of an Ethereum or Binance Smart Chain token on Minter.</p>
-            <a class="btn btn_c2" href="https://minterteam.medium.com/cross-chain-listing-of-ethereums-erc-20-tokens-on-minter-e85e9f3bb028" v-track-click="'hub-listing'" target="_blank">Read More</a>
-        </div>
-        <div class="hubtoken_bg" id="token">
-            <div class="wrap hubtoken">
-                <div class="hubtoken_top">
-                    <div class="hubtoken_img"><img src="/hub/images/hub.svg" /></div>
-                    <div class="hubtoken_t"><span>HUB Token</span> HUB is the Minter Hub network’s native token, whose supply is 1,000,000 units.</div>
+        </header>
+        <section class="earn" id="earn">
+            <div class="container">
+                <h2>Earn crypto with Minter Hub Tools</h2>
+                <div class="earn-tools">
+                    <div class="tool earn-1">
+                        <img src="/newnetwork/images/hub-staking.svg" alt="HUB Staking">
+                        <h3>HUB Staking</h3>
+                        <p>Delegate HUB to oracles and receive portion of fees.</p>
+                        <a href="https://www.minter.network/earn/hub-staking" target="_blank" class="btn btn-alt">Read More</a>
+                    </div>
+                    <div class="tool earn-2">
+                        <img src="/newnetwork/images/farming.svg" alt="Farming">
+                        <h3>Farming</h3>
+                        <p>Get additional reward for the very fact of locking your assets.</p>
+                        <a href="https://www.minter.network/earn/farm" target="_blank" class="btn btn-alt">Read More</a>
+                    </div>
+                    <div class="tool earn-3">
+                        <img src="/newnetwork/images/hub/hubbnb.svg" alt="Liquidity Pools">
+                        <h3>Liquidity Pools</h3>
+                        <p>Let other traders make operations using your funds—and get your share out of each trade.</p>
+                        <a href="https://www.minter.network/earn/earn-liquidity-pools" target="_blank" class="btn btn-alt">Read More</a>
+                    </div>
+                    <div class="tool earn-4">
+                        <img src="/newnetwork/images/hub/bridge.svg" alt="Cross-chain Bridge">
+                        <h3>Cross-chain Bridge</h3>
+                        <p>Users who provide liquidity to the cross-chain bridge will earn on the commissions received for cross-chain transfers and swaps.</p>
+                        <div class="tool-soon">Coming 2022</div>
+                    </div>
+                    <div class="tool earn-5">
+                        <img src="/newnetwork/images/hub/single-asset.svg" alt="Crowd Pools">
+                        <h3>Crowd Pools</h3>
+                        <p>Into a pair of two tokens, provide only the one that you have.</p>
+                        <div class="tool-soon">Coming 2022</div>
+                    </div>
+                    <div class="tool earn-6">
+                        <img src="/newnetwork/images/hub/smarts.svg" alt="Smart Contracts">
+                        <h3>Smart Contracts</h3>
+                        <p>Secure cross-chain smart contracts tailored to all users. Advanced mode for developers and non-dev mode for simple deployment.</p>
+                        <div class="tool-soon">Coming 2022</div>
+                    </div>
                 </div>
-                <p>At the moment, HUB is minted on the Ethereum (ERC-20) and Minter networks with no lock-up periods or any other limitations, meaning the token is completely free to circulate.</p>
-                <p>It is impossible to increase the number of tokens (exceed the maximum supply). If tokens need to be burned or released, Minter Hub oracles take a vote.</p>
             </div>
-        </div>
-        <div class="wrap">
-            <h2 id="token-distribution">Current HUB distribution</h2>
-            <div class="figures_flx">
-                <div class="figure">
-                    <span>Fund</span>
-                    948,442 tokens
-                </div>
-                <div class="figure">
-                    <span>Minter community</span>
-                    51,558 tokens
+        </section>
+        <section class="half section-mob-reverse">
+            <div class="container">
+                <div class="half-content">
+                    <div class="half-block">
+                        <h2>Smart Contracts</h2>
+                        <p>Smart contracts will be based on a regular Ethereum node with a modified consensus—the Hub’s oracles will act as validators. The EVM itself will be without modifications, so all smart contracts can be deployed to the network without changes.</p>
+                        <p>The smart contracts will come in two modes: an advanced one for developers and a non-dev one for simple deployment.</p>
+                    </div>
+                    <div class="half-block half-block-img">
+                        <img src="/newnetwork/images/hub/block-smarts.svg" alt="Smart Contracts" id="block-img-smarts">
+                    </div>
                 </div>
             </div>
-            <div class="currenthub_txt">
+        </section>
+        <section class="half">
+            <div class="container">
+                <div class="half-content">
+                    <div class="half-block half-block-img">
+                        <img src="/newnetwork/images/hub/block-how.svg" alt="How It Works" id="block-img-how">
+                    </div>
+                    <div class="half-block">
+                        <h2>How It Works</h2>
+                        <p>Minter Hub is a standalone blockchain with its own validators (oracles) that are connected to all networks at once (Minter, Ethereum, BSC) and have access to the multi-signature wallets on each.</p>
+                        <p>Oracles lock the coin on one network and issue its ‘mirrored’ version on the other.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="half section-mob-reverse">
+            <div class="container">
+                <div class="half-content">
+                    <div class="half-block">
+                        <h2>Oracles</h2>
+                        <p>Minter Hub was designed to have 16 oracles and run on the PoS consensus, which means using stake as collateral in order to vote on blocks. If necessary, however, the decision on changing the rules and code can be made by blockchain’s oracles.</p>
+                        <p>Cross-chain transfers are the new era of sovereign blockchains. They ensure not only the communication among the networks, but also reliable, fast, and secure decentralized transactions that no one can cancel, alter, or censor.</p>
+                    </div>
+                    <div class="half-block half-block-img">
+                        <img src="/newnetwork/images/hub/block-oracles.svg" alt="Oracles" id="block-img-oracles">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="speed">
+            <div class="container">
+                <h2>Speed and Cost</h2>
+                <p>For example, Minter ⇔ Ethereum transactions take an average <b>20–60 seconds</b>, which is pretty fast for cross-chain transfers. At the same time, it is quite expensive as truly decentralized processing requires a large amount of fees. On Ethereum, cross-chain fees are charged for each oracle’s signature, and on top of that, <b>1%</b> goes to Minter Hub oracles as a service fee.</p>
+            </div>
+        </section>
+        <section class="products">
+            <div class="container">
+                <h2>Products</h2>
+                <div class="products-block">
+                    <div class="product">
+                        <h3><img src="/newnetwork/images/wallet-minter.svg" alt="Minter DEX" class="product-logo">Minter DEX</h3>
+                        <p>Minter, a digital assets marketplace allowing anyone to buy, sell, send, and spend BTC, ETH, BIP, USDC, and more</p>
+                        <a href="https://www.minter.network/" target="_blank" class="btn btn-alt">Learn More</a>
+                        <img src="/newnetwork/images/hub/p1.svg" alt="Minter DEX" class="product-bg" id="p1">
+                    </div>
+                    <div class="product">
+                        <h3><img src="/newnetwork/images/honee.svg" alt="Honee" class="product-logo">Honee</h3>
+                        <p>Honee, a wallet that makes crypto money easier for everyone—from students to small businesses</p>
+                        <a href="https://honee.app/" target="_blank" class="btn btn-alt">Learn More</a>
+                        <img src="/newnetwork/images/hub/p2.svg" alt="Honee" class="product-bg" id="p2">
+                    </div>
+                    <div class="product">
+                        <h3><img src="/newnetwork/images/hub-logo.svg" alt="Minter" class="product-logo">Cross-chain bridge DApp</h3>
+                        <p>A web interface letting you move tokens across the networks in a user-oriented environment</p>
+                        <div class="product-soon">Coming 2022</div>
+                        <img src="/newnetwork/images/hub/p3.svg" alt="Cross-chain bridge DApp" class="product-bg" id="p3">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="half">
+            <div class="container">
+                <div class="half-content">
+                    <div class="half-block half-block-img">
+                        <img src="/newnetwork/images/hub/block-listing.svg" alt="Cross-Chain Listing of Tokens" id="block-img-listing">
+                    </div>
+                    <div class="half-block">
+                        <h2>Cross-Chain Listing of Tokens</h2>
+                        <p>Any existing project’s ERC-20 token can be included in the list of cross-chain tokens. There are three main ways to make a cross-chain listing of an Ethereum token on Minter.</p>
+                        <a href="https://minterteam.medium.com/cross-chain-listing-of-ethereums-erc-20-tokens-on-minter-e85e9f3bb028" target="_blank" rel="nofollow" class="btn btn-alt">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="hub-section">
+            <div class="container">
+                <div class="hubtoken">
+                    <div class="hubtoken-top">
+                        <div class="hubtoken-img">
+                            <img src="/newnetwork/images/hub-logo.svg">
+                        </div>
+                        <div class="hubtoken-text">
+                            <h2>HUB Token</h2>
+                            <p>HUB is the Minter Hub network’s native token, whose supply is 1,000,000 units.</p>
+                        </div>
+                    </div>
+                    <p>At the moment, HUB is minted on the Ethereum (ERC-20) and Minter networks with no lock-up periods or any other limitations, meaning the token is completely free to circulate.</p>
+                    <p>It is impossible to increase the number of tokens (exceed the maximum supply). If tokens need to be burned or released, Minter Hub oracles take a vote.</p>
+                </div>
+                <h2>Current HUB distribution</h2>
+                <div class="hub-distribution">
+                    <div class="hub-distribution-block">
+                        <span>Fund</span>
+                        950,000 tokens
+                    </div>
+                    <div class="hub-distribution-block">
+                        <span>Minter community</span>
+                        50,000 tokens
+                    </div>
+                </div>
                 <p>In the future, tokens on the fund’s part can be sold to investors or customers, accrued as rewards, or credited as payment for services. Below is the list of prospective blockchain participants and HUB token holders as we see it:</p>
-                <ul class="list">
+                <ul>
                     <li>Team</li>
                     <li>Investors (with smart contract-based vesting of 3–5 years)</li>
                     <li>Oracles</li>
@@ -207,90 +297,11 @@ export default {
                 <p>In addition to the 50,000 tokens already in circulation, an additional 50,000 tokens (max.) may be issued in 2021. The fund and the team will jointly develop a specific supply distribution roadmap in the beginning of 2022 once the bridge’s main launch stages have been completed and blockchains, integrated.</p>
                 <p>It’s already become standard practice for DeFi projects—e.g., Uniswap and 1inch—to distribute initial supply to the community and customers for free and subsequent issuance, to the team, investors, partners, and other useful participants.</p>
             </div>
-        </div>
-        <div class="wrap">
-            <div class="tokenomics1">
-                <h2 id="token-tokenomics">Tokenomics</h2>
-                <p>In 2021, we see three main use cases for HUB tokens to create a growing blockchain economy and long-term balance of power: Staking, Fee Discounts & Tips.</p>
-            </div>
-            <div class="tokenomics2">
-                <div class="tokenomics_top">
-                    <div class="tokenomics_ico"><img src="/hub/images/tokenomics2.svg" /></div>
-                    <h3 class="tokenomics_t" id="tokenomics-staking">Staking</h3>
+        </section>
+        <section class="footer-section">
+            <div class="container">
+                <Footer class="footer--transparent"/>
                 </div>
-                <p>HUB holders may stake their tokens with oracles and receive up to 1% on all cross-chain transfers made via Minter Hub. For example, when someone transfers 100 USDT from Minter network to Ethereum, 1 USDT is paid out to oracles proportionally to their stake in Minter Hub.</p>
-                <p>In turn, Minter Hub oracles need to stake HUBs for transactions to be processed fairly and blocks to be formed. For that, they receive 1% of the fees charged for all transfers between the networks and share that income with their stakers.</p>
-            </div>
-            <div class="tokenomics3">
-                <div class="tokenomics_top">
-                    <div class="tokenomics_ico"><img src="/hub/images/tokenomics3.svg" alt=""/></div>
-                    <h3 class="tokenomics_t" id="tokenomics-discount">Discounts for HUB Holders</h3>
-                </div>
-                <p>Bearing in mind that the 1-percent cross-chain transfer fee could be high for professional players who trade in big volumes, we also realize that oracles need to be interested in maintaining the Minter Hub network in the long run. That is why we are going to introduce the following discount system for HUB holders.</p>
-                <p>The HUB token will reduce fees for cross-chain transfers across Minter, Ethereum, and Binance Smart Chain. Since all three addresses are managed by one seed phrase, it was proposed to lower the fees for those who hold HUB on any of them. By default, the fee is 1% for any transfer between the networks, but the availability of tokens (regular HODLing) will give the following discounts:</p>
-                <div class="tokenomics_lists">
-                    <div class="tokenomics_list"><div><span>1 HUB</span> -10%</div></div>
-                    <div class="tokenomics_list"><div><span>2 HUB</span> -20%</div></div>
-                    <div class="tokenomics_list"><div><span>4 HUB</span> -30%</div></div>
-                    <div class="tokenomics_list"><div><span>8 HUB</span> -40%</div></div>
-                    <div class="tokenomics_list"><div><span>16 HUB</span> -50%</div></div>
-                    <div class="tokenomics_list active"><div><span>32 HUB</span> -60%</div></div>
-                </div>
-            </div>
-            <div class="tokenomics4">
-                <div class="tokenomics_top">
-                    <div class="tokenomics_ico"><img src="/hub/images/tokenomics4.svg" /></div>
-                    <h3 class="tokenomics_t" id="tokenomics-tips">Tips</h3>
-                </div>
-                <p>An important element of tokenomics will be tips about trades and profitable operations carried out using Minter Hub. Any community member will receive tips if they have at least 1 HUB on their address on any of the networks. That way, we’ll help answer the main question of the DeFi market: “How to make money?”</p>
-                <p>A distinctive feature of decentralized finance in general is the ability of users to monitor the actions of various addresses and copy successful transactions. Until now, the so-called “social trading” was only available in closed apps or clubs and mainly in the field of trading. We plan to offer tips across the entire spectrum of financial services—from trading and liquidity management to loans and deposits.</p>
-            </div>
-        </div>
-        <div class="wrap pricing" id="price">
-            <h2>Pricing</h2>
-            <p>The initial supply of <b>50,000 tokens</b> was distributed to the community <b>for free</b>.</p>
-            <p>In the very first days, community members launched trading in the <a href="https://v2.info.uniswap.org/pair/0x3796fee2b555da1356cdcd3e1861263b351a58a0" target="_blank" v-track-click="'hub-hubpool'">HUB-USDT</a> pair on Uniswap, setting the starting price at $0.10. The first trade took place <a href="https://etherscan.io/tx/0x9e1e7f6e22022c03bb9e95505126c21644ce3f15b3b5ea1dbbd6d744151faa41" target="_blank">October 27, 2020</a>, when 9 HUBs were bought for $1.</p>
-            <div class="pricing_flx">
-                <div class="pricing_cur">Current Price <span>${{ pretty(hubPrice) }}</span></div>
-                <div class="pricing_buy"><a class="btn" href="https://app.1inch.io/#/1/swap/USDT/0x8e9A29e7Ed21DB7c5B2E1cd75e676dA0236dfB45" target="_blank" v-track-click="'hub-buyhub'">Buy HUB</a></div>
-            </div>
-            <p>The team does not exclude that it will support listings and integrations in one form or another, including rewards in HUB tokens. But it will not initiate such activities, giving the community complete freedom of action.</p>
-        </div>
-        <div class="investors" id="investors">
-            <h2>Investors</h2>
-            <p>Since the first announcements of Minter Hub, the fund (token holder) has been receiving offers from investors interested in long-term participation in the protocol. We are talking about both venture funds and those focused exclusively on blockchain projects.</p>
-            <p>We plan to sell only small portions of tokens, no more than 5% per fund, and always with a lock-up or vesting period of 3–7 years. The longer the period, the higher the discount at the time of purchase.</p>
-            <p>Speaking of investors, we mean only qualified legal entities that comply with all laws and regulations in the field of cryptocurrencies in their respective jurisdictions.</p>
-        </div>
-        <div class="technologies wrap" id="technologies">
-            <div class="technologies_top">
-                <div>
-                    <h2>Technologies</h2>
-                    <p>Minter Hub is based on Cosmos SDK and a modified Peggy solution that’s developed by the Cosmos team.</p>
-                </div>
-            </div>
-            <p>The project’s code can be accessed in a public repository: <a href="https://github.com/MinterTeam/minter-hub" target="_blank">https://github.com/MinterTeam/minter-hub</a>.</p>
-            <p>Minter Hub is supported by oracles. Here is what they launch on their servers:</p>
-            <ul class="list">
-                <li>Minter node</li>
-                <li>Ethereum node</li>
-                <li>Minter Hub node</li>
-                <li>Ethereum Orchestrator, software that monitors the events on the Ethereum network and broadcasts them onto Minter Hub. It’s also responsible for sending withdrawal transactions to Ethereum</li>
-                <li>Minter Orchestrator, software that monitors the events on the Minter network and broadcasts them onto Minter Hub. It’s also responsible for sending withdrawal transactions to Minter</li>
-            </ul>
-            <p>Mirrored coins are locked on the MultiSig accounts of Minter Hub validators up until they are requested to be withdrawn.</p>
-        </div>
-        <div class="bg_bot">
-            <footer>
-                <div class="logo_bot"><img src="/hub/images/minter.svg" alt=""></div>
-                <div class="copy">Copyright © 2019-2021 Minter Development Foundation. All rights reserved.</div>
-                <div class="bot_cont">
-                    75 Broadway, Suite 202, San Francisco, CA, 94111 <br>
-                    For correspondence: 548 Market St #32852, San Francisco, CA 94104-5401 <br>
-                    <a href="mailto:hello@minter.org">hello@minter.org</a>
-                </div>
-                <div class="clear"></div>
-            </footer>
-        </div>
+        </section>
     </div>
 </template>

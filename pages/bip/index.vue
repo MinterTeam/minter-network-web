@@ -103,7 +103,7 @@ export default {
                                         </div>
                                         <div class="sub-menu-item-content">
                                             <h4>Minter DEX</h4>
-                                            <p>Buy, sell, send, and earn digital assets fully desentalized. Low fees fixed in US dollars, fast transactions, unchain limit orders.</p>
+                                            <p>Buy, sell, send, and earn digital assets fully desentalized. Low fees fixed in US dollars, fast transactions, onchain limit orders.</p>
                                         </div>
                                     </a>
                                 </div>
@@ -253,7 +253,7 @@ export default {
                                         </div>
                                         <div class="sub-menu-item-content">
                                             <h4>Minter DEX</h4>
-                                            <p>Buy, sell, send, and earn digital assets fully desentalized. Low fees fixed in US dollars, fast transactions, unchain limit orders.</p>
+                                            <p>Buy, sell, send, and earn digital assets fully desentalized. Low fees fixed in US dollars, fast transactions, onchain limit orders.</p>
                                         </div>
                                     </a>
                                 </div>
