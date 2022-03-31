@@ -239,7 +239,7 @@ export default {
                     </div>
                     <div class="product">
                         <h3><img src="/newnetwork/images/hub-logo.svg" alt="Minter" class="product-logo">DApp кросс-чейн моста</h3>
-                        <p>A web interface letting you move tokens across the networks in a user-oriented environment</p>
+                        <p>Веб-интерфейс, позволяющий быстро и децентрализованно перемещать токены между сетями</p>
                         <div class="product-soon">Ожидается в 2022</div>
                         <img src="/newnetwork/images/hub/p3.svg" alt="DApp кросс-чейн моста" class="product-bg" id="p3">
                     </div>
