@@ -1457,7 +1457,8 @@ Block rewards and fees are accumulated and proportionally (based on stake value)
 
 Block rewards were configured to decrease from 333 to 0 BIP (MNT) in ≈7 years.  
 Since Minter 3 block reward amount is depend on the current price of BIP.  
-Also users who locked their stakes with LockStake tx will gain x3 increased block rewards. At the same time, fees collected by validators will not increase.
+Also users who locked their stakes with LockStake tx will gain x3 increased block rewards. At the same time, fees collected by validators will not increase.  
+[Dynamic mining and 3y lock in depth](https://minterteam.medium.com/minter-3-dynamic-mining-and-3y-stake-lockup-72d90740312)
 
 Delegators receive their rewards at the same time after paying the fee to their validator automatically (this value is based on validator's settings). Rewards go back to the stake automatically. 
 
