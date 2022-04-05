@@ -86,7 +86,7 @@ export default {
 <template>
     <div class="wrap">
         <div class="promo-top">
-            <div><b>Minter 3</b>: Обновление токеномики уже весной 2022. <a href="https://www.minter.network/ru/torronet" target="_blank">Узнать больше</a></div>
+            <div><b>Minter 3</b>: Обновление токеномики 12 апреля 2022. <a href="https://www.minter.network/ru/torronet" target="_blank">Узнать больше</a></div>
         </div>
         <header>
             <div class="container">
@@ -394,9 +394,9 @@ export default {
                         <div class="hello-buttons">
                             <a class="btn" href="https://console.minter.network/ru" target="_blank" v-track-click="'start-earning'">Начать зарабатывать</a>
                             <a class="btn btn-alt" href="https://www.minter.network/ru/how-to-buy-and-sell-bip" target="_blank" v-track-click="'buy-bipx'">Купить BIP</a>
-                            <a class="btn btn-alt" href="https://www.minter.network/ru/earn" target="_blank" v-track-click="'read-guides'">Читать гайды</a>
+                            <a class="btn btn-alt" href="https://www.minter.network/docs#minter-sdks" target="_blank" v-track-click="'build-defi-apps'">Начать разработку</a>
                         </div>
-                        <p>Minter — это единая децентрализованная сеть, позволяющая каждому покупать, продавать, отправлять и зарабатывать цифровые активы</p>
+                        <p>Minter — суверенный блокчейн, который предоставляет наиболее простые и эффективные способы создания, заработка, хранения, отправки и обмена крипты в полностью децентрализованном виде. Minter интегрирован с Ethereum и BNB Smart Chain, позволяя разработчикам строить эффективные приложения DeFi с использованием широкого набора SDK- и API-инструментов.</p>
                     </div>
                 </div>
             </div>

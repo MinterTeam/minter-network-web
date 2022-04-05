@@ -61,7 +61,7 @@ export default {
                         <div class="logo"><a href="#"><img src="/img/minter-logo-circle.svg" width="60" height="60" alt="Minter 3"/></a></div>
                         <div class="torronet">Minter 3</div>
                         <h1>Grand <br />Tokenomics Update</h1>
-                        <p>Implementation of the best blockchain industry’s practices. Minter 3 Tokenomics Update Coming <b>Spring 2022</b>.</p>
+                        <p>Implementation of the best blockchain industry’s practices. Minter 3 Tokenomics Update Coming on <b>April 12, 2022</b>.</p>
                         <a class="btn" href="https://www.minter.network/how-to-buy-and-sell-bip" target="_blank" v-track-click="'buy-bipx'">Buy and Stake BIP</a>
                     </div>
                     <img class="hello-image" src="/torronet/images/hero-image.png" srcset="/torronet/images/hero-image@2x.png 2x" />

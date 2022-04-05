@@ -86,7 +86,7 @@ export default {
 <template>
     <div class="wrap">
         <div class="promo-top">
-            <div><b>Minter 3</b>: Tokenomics Update Coming Spring 2022. <a href="https://www.minter.network/torronet" target="_blank">Learn more</a></div>
+            <div><b>Minter 3</b>: Tokenomics Update Coming on April 12, 2022. <a href="https://www.minter.network/torronet" target="_blank">Learn more</a></div>
         </div>
         <header>
             <div class="container">
@@ -394,9 +394,9 @@ export default {
                         <div class="hello-buttons">
                             <a class="btn" href="https://console.minter.network/" target="_blank" v-track-click="'start-earning'">Start Earning</a>
                             <a class="btn btn-alt" href="https://www.minter.network/how-to-buy-and-sell-bip" target="_blank" v-track-click="'buy-bipx'">Buy and Stake BIP</a>
-                            <a class="btn btn-alt" href="https://www.minter.network/earn" target="_blank" v-track-click="'read-guides'">Read Guides</a>
+                            <a class="btn btn-alt" href="https://www.minter.network/docs#minter-sdks" target="_blank" v-track-click="'build-defi-apps'">Build DeFi Apps</a>
                         </div>
-                        <p>Minter is a single decentralized network allowing anyone to buy, sell, send, and earn digital assets</p>
+                        <p>Minter is a sovereign blockchain that delivers the simplest and most effective ways to create, earn, store, send, and swap cryptos in a fully decentralized way. Interconnected with Ethereum and BNB Smart Chain, it allows developers to build efficient DeFi apps via a rich set of SDK and API tools.</p>
                     </div>
                 </div>
             </div>
