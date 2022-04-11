@@ -125,7 +125,7 @@ export default {
                     <div class="drivers-item">
                         <img src="/torronet/images/d3.svg" alt="Burning by Balancer">
                         <h3>Burning by Balancer</h3>
-                        <p>If the price of BIP goes down, it doesn’t slow down the mining of new coins, meaning the deadline for reaching total supply doesn’t change. In this case, undistributed rewards (down to the base value) will be burned via being sent to the 0th address.</p>
+                        <p>If there is a sharp drop in the price of BIP, the balancer stops distributing rewards to delegators who haven’t locked while block rewards are burned down to the base value. Once the price is no longer decreasing, block rewards return to their base values and are distributed as usual.</p>
                     </div>
                     <div class="drivers-item">
                         <img src="/torronet/images/d4.svg" alt="Burning of Ticker Fees">
