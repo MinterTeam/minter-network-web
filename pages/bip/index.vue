@@ -85,9 +85,9 @@ export default {
 
 <template>
     <div class="wrap">
-        <div class="promo-top">
+        <!--<div class="promo-top">
             <div><b>Minter 3</b>: Tokenomics Update Coming on April 12, 2022. <a href="https://www.minter.network/torronet" target="_blank">Learn more</a></div>
-        </div>
+        </div>-->
         <header>
             <div class="container">
                 <div class="top-bar">
@@ -409,15 +409,15 @@ export default {
                         </div>
                         <div class="stat-item">
                             <small>Market Cap</small>
-                            <div>$7 794 012</div>
+                            <div>$12 008 922</div>
                         </div>
                         <div class="stat-item">
                             <small>Circulating Supply</small>
-                            <div>56%</div>
+                            <div>57%</div>
                         </div>
                         <div class="stat-item">
-                            <small>BIP Staking</small>
-                            <div>~35% APY</div>
+                            <small>BIP Staking Up To</small>
+                            <div>~26% APY</div>
                         </div>
                     </div>
                 </div>

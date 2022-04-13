@@ -85,9 +85,9 @@ export default {
 
 <template>
     <div class="wrap">
-        <div class="promo-top">
+        <!--<div class="promo-top">
             <div><b>Minter 3</b>: Обновление токеномики 12 апреля 2022. <a href="https://www.minter.network/ru/torronet" target="_blank">Узнать больше</a></div>
-        </div>
+        </div>-->
         <header>
             <div class="container">
                 <div class="top-bar">
@@ -409,15 +409,15 @@ export default {
                         </div>
                         <div class="stat-item">
                             <small>Капитализация</small>
-                            <div>$7 794 012</div>
+                            <div>$12 008 922</div>
                         </div>
                         <div class="stat-item">
                             <small>Циркулирующее предложение</small>
-                            <div>56%</div>
+                            <div>57%</div>
                         </div>
                         <div class="stat-item">
-                            <small>Стейкинг BIP</small>
-                            <div>~35% APY</div>
+                            <small>Стейкинг BIP до</small>
+                            <div>~26% APY</div>
                         </div>
                     </div>
                 </div>
