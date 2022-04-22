@@ -94,7 +94,7 @@ export default {
                 <div class="top-banner-link"><a href="/ru/earn/bnb-yf" target="_blank">Как зарабатывать в Minter DEX 120% годовых</a></div>
             </div>
             <div class="top-banner-button">
-                <a href="https://console.minter.network/ru/hub" target="_blank" class="btn btn-banner">Перевести BNB</a>
+                <a href="https://console.minter.network/ru/hub?coin=BNB&chainId=56" target="_blank" class="btn btn-banner">Перевести BNB</a>
             </div>
         </div>
         <header>
