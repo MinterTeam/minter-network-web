@@ -549,7 +549,7 @@ export default {
                             <tr>
                                 <td class="flextd"><a href="https://console.minter.network/" target="_blank"><img src="/img/minter-logo-circle.svg" width="24" height="24" /> Minter</a></td>
                                 <td>5 секунд</td>
-                                <td>$0.07</td>
+                                <td>$0.03</td>
                                 <td>1 (<a href="https://explorer.minter.network/transactions/Mtb9962f15b0740400b1965aacafd02ac5755a74eb1d8a5844ab971f0bcdd4c76e" target="_blank">Tx</a>)</td>
                                 <td>Любой</td>
                             </tr>
