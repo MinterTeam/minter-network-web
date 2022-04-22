@@ -99,4 +99,12 @@ header {
 		width: 100%;
 		padding: 0 0 16px 0;
 	}
+	.top-banner {
+		background: url(/newnetwork/images/bnb.svg) -5px 45px/42px no-repeat,url(/newnetwork/images/bnb.svg) right 65px bottom -10px/42px no-repeat;
+		background-color: #2C2C2C;
+	}
+	.top-banner-content {
+		text-align: center;
+		margin: 0;
+	}
 }

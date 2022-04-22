@@ -337,3 +337,10 @@ header {
 .footer-section {
 	background: url(/newnetwork/images/hub/sb2.svg) center 38px/1134px no-repeat;
 }
+
+@media screen and (max-width: 900px) {
+	.top-banner {
+		background: url(/newnetwork/images/bnb.svg) -5px 45px/42px no-repeat,url(/newnetwork/images/bnb.svg) right -15px top -20px/94px no-repeat,url(/newnetwork/images/bnb.svg) right 120px top 25px/42px no-repeat,url(/newnetwork/images/bnb.svg) right 65px bottom -10px/42px no-repeat;
+		background-color: #2C2C2C;
+	}
+}

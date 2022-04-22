@@ -85,6 +85,15 @@ export default {
 
 <template>
     <div class="wrap">
+        <div class="top-banner">
+            <div class="top-banner-content">
+                <div class="top-banner-text">Withdraw your <span>BNB</span> from centralised exchanges before it’s too late!</div>
+                <div class="top-banner-link"><a href="/ru/earn/bnb-yf" target="_blank">Learn how to earn in Minter DEX 120% APR</a></div>
+            </div>
+            <div class="top-banner-button">
+                <a href="https://console.minter.network/hub" target="_blank" class="btn btn-banner">Deposit BNB Now!</a>
+            </div>
+        </div>
         <header>
             <div class="container">
                 <div class="top-bar">

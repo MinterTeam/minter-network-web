@@ -29,7 +29,14 @@ header {
 	background: none;
 	max-width: 100%;
 }
-	
+
+@media screen and (max-width: 900px) {
+	.top-banner {
+		background: url(/newnetwork/images/bnb.svg) -5px 45px/42px no-repeat,url(/newnetwork/images/bnb.svg) right -15px top -20px/94px no-repeat,url(/newnetwork/images/bnb.svg) right 120px top 25px/42px no-repeat,url(/newnetwork/images/bnb.svg) right 65px bottom -10px/42px no-repeat;
+		background-color: #2C2C2C;
+	}
+}
+
 @media screen and (max-width: 800px) {
 	h1 {
 		font-size: 70px;
@@ -161,5 +168,13 @@ header {
 	}
 	.hub {
 		padding: 50px 0 0 0;
+	}
+	.top-banner {
+		background: url(/newnetwork/images/bnb.svg) -5px 45px/42px no-repeat,url(/newnetwork/images/bnb.svg) right 65px bottom -10px/42px no-repeat;
+		background-color: #2C2C2C;
+	}
+	.top-banner-content {
+		text-align: center;
+		margin: 0;
 	}
 }

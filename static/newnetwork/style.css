@@ -243,6 +243,44 @@ header {
 	margin: 24px 0 0 0;
 	height: 70px;
 }
+
+.top-banner {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 16px;
+	color: #fff;
+	min-height: 112px;
+	padding: 20px;
+	background: url(/newnetwork/images/bnb.svg) 60px -20px/94px no-repeat,url(/newnetwork/images/bnb.svg) -5px 45px/42px no-repeat,url(/newnetwork/images/bnb.svg) 150px 85px/42px no-repeat,url(/newnetwork/images/bnb.svg) right -15px top -20px/94px no-repeat,url(/newnetwork/images/bnb.svg) right 120px top 25px/42px no-repeat,url(/newnetwork/images/bnb.svg) right 65px bottom -10px/42px no-repeat;
+	background-color: #2C2C2C;
+}
+.top-banner-content {
+	max-width: 360px;
+	margin: 0 32px 0 0;
+}
+.top-banner-text {
+	font-size: 20px;
+	line-height: 23px;
+	font-weight: 700;
+	margin: 0 0 8px 0;
+}
+.top-banner-text span {
+	color: #F0B90B;
+}
+.top-banner-link a {
+	font-size: 16px;
+	line-height: 18px;
+	font-weight: 500;
+	color: #D15C22;
+	border-bottom: 1px solid #D15C22;
+	text-decoration: none;
+}
+.top-banner-link a:hover {
+	border-bottom: 0;
+}
+
 .menu {
 	display: flex;
 	flex-direction: row;
