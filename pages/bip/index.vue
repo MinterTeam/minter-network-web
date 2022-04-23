@@ -88,7 +88,7 @@ export default {
         <!--<div class="promo-top">
             <div><b>Minter 3</b>: Tokenomics Update Coming on April 12, 2022. <a href="https://www.minter.network/torronet" target="_blank">Learn more</a></div>
         </div>-->
-        <div class="top-banner">
+        <!--<div class="top-banner">
             <div class="top-banner-content">
                 <div class="top-banner-text">Withdraw your <span>BNB</span> from centralised exchanges before it’s too late!</div>
                 <div class="top-banner-link"><a href="/ru/earn/bnb-yf" target="_blank">Learn how to earn in Minter DEX 120% APR</a></div>
@@ -96,7 +96,7 @@ export default {
             <div class="top-banner-button">
                 <a href="https://console.minter.network/hub?coin=BNB&chainId=56" target="_blank" class="btn btn-banner">Deposit BNB Now!</a>
             </div>
-        </div>
+        </div>-->
         <header>
             <div class="container">
                 <div class="top-bar">
