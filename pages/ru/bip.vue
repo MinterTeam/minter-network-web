@@ -399,13 +399,13 @@ export default {
                 </div>
                 <div class="hello">
                     <div class="hello-content">
-                        <h1>Блокчейн для заработка криптовалют</h1>
+                        <h1>DeFi-платформа для заработка криптовалют</h1>
                         <div class="hello-buttons">
                             <a class="btn" href="https://console.minter.network/ru" target="_blank" v-track-click="'start-earning'">Начать зарабатывать</a>
                             <a class="btn btn-alt" href="https://www.minter.network/ru/how-to-buy-and-sell-bip" target="_blank" v-track-click="'buy-bipx'">Купить BIP</a>
                             <a class="btn btn-alt" href="https://www.minter.network/docs#minter-sdks" target="_blank" v-track-click="'build-defi-apps'">Начать разработку</a>
                         </div>
-                        <p>Minter — суверенный блокчейн, который предоставляет наиболее простые и эффективные способы создания, заработка, хранения, отправки и обмена крипты в полностью децентрализованном виде. Minter интегрирован с Ethereum и BNB Smart Chain, позволяя разработчикам строить эффективные приложения DeFi с использованием широкого набора SDK- и API-инструментов.</p>
+                        <p>Minter —  DeFi-платформа с DEX, смарт-контрактами и кросс-чейн ликвидностью. Она предоставляет наиболее простые и эффективные способы создания, заработка, хранения и обмена криптовалют в полностью децентрализованном виде. Minter интегрирован с Ethereum и BNB Smart Chain, позволяя разработчикам строить эффективные приложения DeFi с использованием широкого набора SDK- и API-инструментов.</p>
                     </div>
                 </div>
             </div>

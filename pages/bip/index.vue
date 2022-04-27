@@ -399,13 +399,13 @@ export default {
                 </div>
                 <div class="hello">
                     <div class="hello-content">
-                        <h1>Blockchain for earning crypto</h1>
+                        <h1>DeFi platform <br />for earning crypto</h1>
                         <div class="hello-buttons">
                             <a class="btn" href="https://console.minter.network/" target="_blank" v-track-click="'start-earning'">Start Earning</a>
                             <a class="btn btn-alt" href="https://www.minter.network/how-to-buy-and-sell-bip" target="_blank" v-track-click="'buy-bipx'">Buy and Stake BIP</a>
                             <a class="btn btn-alt" href="https://www.minter.network/docs#minter-sdks" target="_blank" v-track-click="'build-defi-apps'">Build DeFi Apps</a>
                         </div>
-                        <p>Minter is a sovereign blockchain that delivers the simplest and most effective ways to create, earn, store, send, and swap cryptos in a fully decentralized way. Interconnected with Ethereum and BNB Smart Chain, it allows developers to build efficient DeFi apps via a rich set of SDK and API tools.</p>
+                        <p>Minter is a DeFi platform with DEX, smart contracts, and cross-chain liquidity. It delivers the simplest and most effective ways to create, earn, store, and exchange cryptos in a fully decentralized way. Minter is integrated with Ethereum and BNB Smart Chain to provide cross-chain transfers and swaps. It allows to build efficient DeFi apps via a rich set of SDK and API tools.</p>
                     </div>
                 </div>
             </div>
