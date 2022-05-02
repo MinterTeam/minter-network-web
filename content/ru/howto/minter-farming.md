@@ -1,5 +1,5 @@
 ---
-order: 4
+order: 3
 title: Фарминг-программы Minter
 description: >-
   Какие существуют программы фарминга в сети Minter?
