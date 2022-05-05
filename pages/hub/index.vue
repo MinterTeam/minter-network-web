@@ -104,12 +104,12 @@ export default {
                 </div>
                 <div class="hello">
                     <div class="hello-content">
-                        <h1>Cross-Chain Smart Contracts for Earning Crypto</h1>
+                        <h1>Welcome to Cross-Chain DeFi</h1>
                         <div class="hello-buttons">
                             <a class="btn" href="https://console.minter.network/" target="_blank" v-track-click="'start-earning'">Start Earning</a>
                             <a class="btn btn-alt-2" href="https://my.honee.app/swap/HUB" target="_blank" v-track-click="'buy-hub'">Buy HUB</a>
                         </div>
-                        <p>Minter Hub is a bridge to global crypto liquidity, a standalone blockchain with the unique cross-chain smart contracts technology for earning crypto.</p>
+                        <p>Minter Hub is a fully decentralized liquidity transport network with smart contracts to enable large scale cross-chain DeFi.</p>
                     </div>
                 </div>
             </div>

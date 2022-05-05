@@ -399,7 +399,7 @@ export default {
                 </div>
                 <div class="hello">
                     <div class="hello-content">
-                        <h1>DeFi platform <br />for earning crypto</h1>
+                        <h1>DeFi platform <br />for Earning Crypto</h1>
                         <div class="hello-buttons">
                             <a class="btn" href="https://console.minter.network/" target="_blank" v-track-click="'start-earning'">Start Earning</a>
                             <a class="btn btn-alt" href="https://www.minter.network/how-to-buy-and-sell-bip" target="_blank" v-track-click="'buy-bipx'">Buy and Stake BIP</a>
@@ -883,6 +883,8 @@ export default {
                     <!--<div class="social-link"><img src="/newnetwork/images/social_fb.svg" alt="Minter Facebook"><a href="https://www.facebook.com/MinterNetwork" target="_blank" rel="nofollow">Facebook</a></div>-->
                     <div class="social-link"><img src="/newnetwork/images/social_tc.svg" alt="Minter Telegram Channel"><a href="tg://resolve?domain=MinterTeam" target="_blank" rel="nofollow">Telegram Channel</a></div>
                     <div class="social-link"><img src="/newnetwork/images/social_tc.svg" alt="Minter Telegram Group"><a href="tg://join?invite=EafyERJSJZJ-nwH_139jLQ" target="_blank" rel="nofollow">Telegram Group</a></div>
+                    <div class="social-link"><img src="/newnetwork/images/social_cmc.svg" alt="Minter CoinMarketCap"><a href="https://coinmarketcap.com/currencies/minter-network/" target="_blank" rel="nofollow">CoinMarketCap</a></div>
+                    <div class="social-link"><img src="/newnetwork/images/social_cg.svg" alt="Minter CoinGecko"><a href="https://www.coingecko.com/en/coins/bip" target="_blank" rel="nofollow">CoinGecko</a></div>
                 </div>
             </div>
         </section>

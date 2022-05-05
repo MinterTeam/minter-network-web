@@ -105,13 +105,12 @@ export default {
                 </div>
                 <div class="hello">
                     <div class="hello-content">
-                        <h1>Кросс-чейн смарт-контракты для крипто-заработка</h1>
+                        <h1>Добро пожаловать в кросс-чейн DeFi</h1>
                         <div class="hello-buttons">
                             <a class="btn" href="https://console.minter.network/ru" target="_blank" v-track-click="'start-earning'">Начать зарабатывать</a>
                             <a class="btn btn-alt-2" href="https://my.honee.app/ru/swap/HUB" target="_blank" v-track-click="'buy-hub'">Купить HUB</a>
                         </div>
-                        <p>Minter Hub — это мост в глобальную криптоликвидность;<br>
-                            отдельный блокчейн с уникальной технологией кросс-чейн смарт-контрактов для заработка криптовалют.</p>
+                        <p>Minter Hub — это полностью децентрализованная сеть со смарт-контрактами для транспортировки ликвидности, позволяющая использовать DeFi в больших масштабах.</p>
                     </div>
                 </div>
             </div>
