@@ -318,8 +318,8 @@ export default {
                     <!--<div class="social-link"><img src="/newnetwork/images/social_fb.svg" alt="Minter Facebook"><a href="https://www.facebook.com/MinterNetwork" target="_blank" rel="nofollow">Facebook</a></div>-->
                     <div class="social-link"><img src="/newnetwork/images/social_tc.svg" alt="Telegram-канал"><a href="tg://resolve?domain=MinterNetwork" target="_blank" rel="nofollow">Telegram-канал</a></div>
                     <div class="social-link"><img src="/newnetwork/images/social_tc.svg" alt="Telegram-группа"><a href="tg://join?invite=EafyEVD-HEOxDcv8YyaqNg" target="_blank" rel="nofollow">Telegram-группа</a></div>
-                    <div class="social-link"><img src="/newnetwork/images/social_cmc.svg" alt="Minter CoinMarketCap"><a href="https://coinmarketcap.com/ru/currencies/minter-network/" target="_blank" rel="nofollow">CoinMarketCap</a></div>
-                    <div class="social-link"><img src="/newnetwork/images/social_cg.svg" alt="Minter CoinGecko"><a href="https://www.coingecko.com/ru/%D0%9A%D1%80%D0%B8%D0%BF%D1%82%D0%BE%D0%B2%D0%B0%D0%BB%D1%8E%D1%82%D1%8B/bip" target="_blank" rel="nofollow">CoinGecko</a></div>
+                    <div class="social-link"><img src="/newnetwork/images/social_cmc.svg" alt="Minter CoinMarketCap"><a href="https://coinmarketcap.com/ru/currencies/minter-hub/" target="_blank" rel="nofollow">CoinMarketCap</a></div>
+                    <div class="social-link"><img src="/newnetwork/images/social_cg.svg" alt="Minter CoinGecko"><a href="https://www.coingecko.com/ru/%D0%9A%D1%80%D0%B8%D0%BF%D1%82%D0%BE%D0%B2%D0%B0%D0%BB%D1%8E%D1%82%D1%8B/minter-hub" target="_blank" rel="nofollow">CoinGecko</a></div>
                     <div class="social-link"><img src="/newnetwork/images/social_github.svg" alt="Minter Github"><a href="https://github.com/MinterTeam" target="_blank" rel="nofollow">GitHub</a></div>
                 </div>
             </div>
