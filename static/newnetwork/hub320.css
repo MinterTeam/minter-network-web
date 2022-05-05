@@ -39,6 +39,10 @@ header {
 	left: -40px;
 }
 
+.social-link {
+    width: 50%;
+}
+
 @media screen and (max-width: 670px) {
 	.stat-item {
 		text-align: unset;

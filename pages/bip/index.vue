@@ -399,7 +399,7 @@ export default {
                 </div>
                 <div class="hello">
                     <div class="hello-content">
-                        <h1>DeFi platform <br />for Earning Crypto</h1>
+                        <h1>DeFi Platform <br />for Earning Crypto</h1>
                         <div class="hello-buttons">
                             <a class="btn" href="https://console.minter.network/" target="_blank" v-track-click="'start-earning'">Start Earning</a>
                             <a class="btn btn-alt" href="https://www.minter.network/how-to-buy-and-sell-bip" target="_blank" v-track-click="'buy-bipx'">Buy and Stake BIP</a>

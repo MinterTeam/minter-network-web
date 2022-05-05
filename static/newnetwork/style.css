@@ -53,8 +53,8 @@ p {
 	margin: 0 0 16px 0;
 }
 h1 {
-	font-size: 112px;
-	line-height: 112px;
+	font-size: 110px;
+	line-height: 110px;
 	margin: 0 0 40px 0;
 	}
 h2 {
@@ -855,7 +855,7 @@ p.coming-soon {
 	flex-wrap: wrap;
 	justify-content: flex-start;
 	font-size: 18px;
-	line-height: 48px;
+	line-height: 22px;
 	font-weight: bold;
 }
 .social-link {

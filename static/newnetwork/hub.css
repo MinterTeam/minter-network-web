@@ -17,8 +17,8 @@ b{
 	font-weight: 700;
 }
 h1 {
-	font-size: 100px;
-	line-height: 110px;
+	font-size: 82px;
+	line-height: 92px;
 	margin: 0 0 26px 0;
 	}
 h2 {
@@ -332,6 +332,16 @@ header {
 }
 .hub-section ul li:before {
 	content: none;
+}
+
+.social-link {
+	width: 33%;
+	padding: 0 0 16px 0;
+}
+.social-link img {
+    width: 48px;
+    height: 48px;
+    margin: 0 16px 0 0;
 }
 
 .footer-section {

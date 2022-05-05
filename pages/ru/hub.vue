@@ -34,7 +34,7 @@ export default {
 
     head() {
         const title = 'Кросс-чейн смарт-контракты для крипто-заработка';
-        const description = 'Minter Hub — это мост в глобальную криптоликвидность; отдельный блокчейн с уникальной технологией кросс-чейн смарт-контрактов для заработка криптовалют.';
+        const description = 'Minter Hub — это полностью децентрализованная сеть со смарт-контрактами для транспортировки ликвидности, позволяющая использовать DeFi в больших масштабах.';
         // const localeSuffix = this.$i18n.locale === 'en' ? '' : '-' + this.$i18n.locale;
 
         return {
@@ -108,7 +108,7 @@ export default {
                         <h1>Добро пожаловать в кросс-чейн DeFi</h1>
                         <div class="hello-buttons">
                             <a class="btn" href="https://console.minter.network/ru" target="_blank" v-track-click="'start-earning'">Начать зарабатывать</a>
-                            <a class="btn btn-alt-2" href="https://my.honee.app/ru/swap/HUB" target="_blank" v-track-click="'buy-hub'">Купить HUB</a>
+                            <a class="btn btn-alt-2" href="https://pancakeswap.finance/swap?inputCurrency=0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c&outputCurrency=0x8ac0a467f878f3561d309cf9b0994b0530b0a9d2" target="_blank" v-track-click="'buy-hub'">Купить HUB</a>
                         </div>
                         <p>Minter Hub — это полностью децентрализованная сеть со смарт-контрактами для транспортировки ликвидности, позволяющая использовать DeFi в больших масштабах.</p>
                     </div>
@@ -305,6 +305,23 @@ export default {
                 </ul>
                 <p>В 2021-м в дополнение к текущим 50 000 токенам, обращаемым в сообществе, добавятся еще максимум 50 000. Конкретные же планы по распределению эмиссии будут разрабатываться фондом и командой в начале 2022 года, когда пройдут основные этапы запуска моста и интеграции с блокчейнами.</p>
                 <p>Данная практика уже является стандартом для DeFi-проектов, например, Uniswap или 1inch, которые первые объемы эмиссии распределяют бесплатно среди участников сообщества и клиентов, а последующие — между командой, инвесторами, партнерами и другими полезными участниками.</p>
+            </div>
+        </section>
+        <section class="social" id="social">
+            <div class="container">
+                <h2>Полезные ссылки</h2>
+                <p>Следите за всеми нашими новостями, объявлениями и новым контентом в социальных сетях и мессенджерах.</p>
+                <div class="social-links">
+                    <div class="social-link"><img src="/newnetwork/images/social_md.svg" alt="Minter Medium"><a href="https://medium.com/@MinterTeam" target="_blank" rel="nofollow">Medium</a></div>
+                    <div class="social-link"><img src="/newnetwork/images/social_rd.svg" alt="Minter Reddit"><a href="https://www.reddit.com/r/Minter/" target="_blank" rel="nofollow">Reddit</a></div>
+                    <div class="social-link"><img src="/newnetwork/images/social_tw.svg" alt="Minter Twitter"><a href="https://twitter.com/MinterTeam" target="_blank" rel="nofollow">Twitter</a></div>
+                    <!--<div class="social-link"><img src="/newnetwork/images/social_fb.svg" alt="Minter Facebook"><a href="https://www.facebook.com/MinterNetwork" target="_blank" rel="nofollow">Facebook</a></div>-->
+                    <div class="social-link"><img src="/newnetwork/images/social_tc.svg" alt="Telegram-канал"><a href="tg://resolve?domain=MinterNetwork" target="_blank" rel="nofollow">Telegram-канал</a></div>
+                    <div class="social-link"><img src="/newnetwork/images/social_tc.svg" alt="Telegram-группа"><a href="tg://join?invite=EafyEVD-HEOxDcv8YyaqNg" target="_blank" rel="nofollow">Telegram-группа</a></div>
+                    <div class="social-link"><img src="/newnetwork/images/social_cmc.svg" alt="Minter CoinMarketCap"><a href="https://coinmarketcap.com/ru/currencies/minter-network/" target="_blank" rel="nofollow">CoinMarketCap</a></div>
+                    <div class="social-link"><img src="/newnetwork/images/social_cg.svg" alt="Minter CoinGecko"><a href="https://www.coingecko.com/ru/%D0%9A%D1%80%D0%B8%D0%BF%D1%82%D0%BE%D0%B2%D0%B0%D0%BB%D1%8E%D1%82%D1%8B/bip" target="_blank" rel="nofollow">CoinGecko</a></div>
+                    <div class="social-link"><img src="/newnetwork/images/social_github.svg" alt="Minter Github"><a href="https://github.com/MinterTeam" target="_blank" rel="nofollow">GitHub</a></div>
+                </div>
             </div>
         </section>
         <section class="footer-section">
