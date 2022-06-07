@@ -245,6 +245,12 @@ export default {
                         <img src="/newnetwork/images/hub/p2.svg" alt="Honee" class="product-bg" id="p2">
                     </div>
                     <div class="product">
+                        <h3><img src="/newnetwork/images/hub-logo.svg" alt="Minter" class="product-logo">Сommunity pool</h3>
+                        <p>Provide liquidity to the BNB-HUB pool with only one token to earn on pool commissions, farming rewards and assets growth</p>
+                        <a href="https://earn.minter.network/bnb-hub-community-pool" target="_blank" class="btn btn-alt">Learn More</a>
+                        <img src="/newnetwork/images/hub/p3.svg" alt="Сommunity poolp" class="product-bg" id="p3">
+                    </div>
+                    <div class="product">
                         <h3><img src="/newnetwork/images/hub-logo.svg" alt="Minter" class="product-logo">Cross-chain bridge DApp</h3>
                         <p>A web interface letting you move tokens across the networks in a user-oriented environment</p>
                         <div class="product-soon">Coming 2022</div>

@@ -246,6 +246,12 @@ export default {
                         <img src="/newnetwork/images/hub/p2.svg" alt="Minter DEX" class="product-bg" id="p2">
                     </div>
                     <div class="product">
+                        <h3><img src="/newnetwork/images/hub-logo.svg" alt="Minter" class="product-logo">Комьюнити-пул</h3>
+                        <p>Добавьте ликвидность в пул BNB-HUB всего лишь одним токеном и зарабатывайте на росте активов, комиссиях пула и других возможных программах фарминга</p>
+                        <a href="https://earn.minter.network/ru/bnb-hub-community-pool" target="_blank" class="btn btn-alt">Подробнее</a>
+                        <img src="/newnetwork/images/hub/p3.svg" alt="Комьюнити-пул" class="product-bg" id="p3">
+                    </div>
+                    <div class="product">
                         <h3><img src="/newnetwork/images/hub-logo.svg" alt="Minter" class="product-logo">DApp кросс-чейн моста</h3>
                         <p>Веб-интерфейс, позволяющий быстро и децентрализованно перемещать токены между сетями</p>
                         <div class="product-soon">Ожидается в 2022</div>

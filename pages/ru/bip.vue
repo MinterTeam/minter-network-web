@@ -651,6 +651,11 @@ export default {
                             <p>Самое простое решение для получения и отправки средств. Чтобы начать, достаточно иметь электронную почту</p>
                         </div>
                         <div class="wallet-item">
+                            <img src="/newnetwork/images/honee.svg" alt="Honee">
+                            <h4><a href="https://honee.app/ru" target="_blank">Honee</a></h4>
+                            <p>Honee — это крипто-кошелек, который помогает зарабатывать</p>
+                        </div>
+                        <div class="wallet-item">
                             <img src="/newnetwork/images/wallet-console.svg" alt="Console">
                             <h4><a href="https://console.minter.network/" target="_blank">Console</a></h4>
                             <p>Этот кошелек предлагает наиболее широкий спектр действий: помимо стандартного функционала, вы получаете возможность работать с чеками, выпускать монеты и токены, запускать и настраивать мастерноды, создавать MultiSig-адреса и пулы ликвидности и управлять ими, а также отправлять транзакции, подписанные офлайн</p>
