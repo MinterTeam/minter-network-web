@@ -9,7 +9,7 @@ export const status = axios.create({
 
 
 // 1 min cache
-const statusCache = new Cache({maxAge: 1 * 60 * 1000});
+const statusCache = new Cache({maxAge: 10 * 60 * 1000});
 
 export function getStatus(type) {
     return status.get('status', {

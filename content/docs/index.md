@@ -1680,3 +1680,18 @@ Minter Gate is a service to publish prepared transactions to the Minter Network.
 ### Transaction debugger
 [minterteam.github.io/minter-tx-debug](https://minterteam.github.io/minter-tx-debug/)
 - [Source code](https://github.com/MinterTeam/minter-tx-debug)
+
+
+## Blockchain history
+
+| Network          | Version | Blocks             | Data                                                                                                                                                              |
+|------------------|---------|--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| minter-mainnet-1 | v1.0    | 1 - 500000         | https://v10.history.api.minter.one/status <br/> https://chainik.io/block/v1.0/1                                                                                   |
+| minter-mainnet-2 | v1.1    | 1 - 450000         | https://v11.history.api.minter.one/v2/status <br/> https://chainik.io/block/v1.1/1                                                                                |
+| minter-mainnet-3 | v1.2    | 1 - 3278788        | https://v12.history.api.minter.one/v2/status [^bug-v12-minter-one] <br/> https://chainik.io/block/v1.2/1                                                          |
+| minter-mainnet-4 | v2.0    | 3278788 - 10197000 | https://v26.history.api.minter.one/v2/status [^bug-v26-minter-one] <br/> https://chainik.io/block/3278788 <br/> https://explorer-api.minter.network/api/v2/status |
+| minter-mainnet-5 | v3.0    | 10197001 - current | https://api.minter.one/v2/status <br/> https://chainik.io/block/10197001 <br/> https://explorer-api.minter.network/api/v2/status                                  |
+
+[^bug-v12-minter-one]: invalid genesis
+
+[^bug-v26-minter-one]: last available block is 10196883, invalid status

@@ -4,13 +4,13 @@ import {prettyRound, pretty, getApy} from '~/assets/utils.js';
 import {HOST} from '~/assets/variables.js';
 import trackClick from '~/assets/v-track-click.js';
 import Language from '~/layouts/_language.vue';
-import Footer from '~/layouts/_footer.vue';
+import TheFooter from '~/layouts/_footer.vue';
 
 export default {
     layout: 'simple',
     components: {
         Language,
-        Footer,
+        TheFooter,
     },
     directives: {
         trackClick,
@@ -27,7 +27,6 @@ export default {
             });
 
         return Promise.all([
-            bipPricePromise,
             poolsPromise,
         ]);
     },
@@ -86,7 +85,7 @@ export default {
 <template>
     <div class="wrap">
         <!--<div class="promo-top">
-            <div><b>Minter 3</b>: Tokenomics Update Coming on April 12, 2022. <a href="https://www.minter.network/torronet" target="_blank">Learn more</a></div>
+            <div><b>Minter 3</b>: Tokenomics Update Coming on April 12, 2022. <a href="https://www.minter.network/torronet" target="_blank">Learn more</a></div>
         </div>-->
         <!--<div class="top-banner">
             <div class="top-banner-content">
@@ -716,7 +715,7 @@ export default {
                             <div class="completed_card" id="timeline_2">
                                 <div class="completed_info">
                                     <h4>Token Burn</h4>
-                                    <p>On May 15, 2021, MDF (Minter Development Foundation) burned 385 000 000 BIP, or 9.3% of current supply (~$8,000,000 at the time).</p>
+                                    <p>On May 15, 2021, MDF&nbsp;(Minter Development Foundation) burned 385 000 000 BIP, or 9.3% of current supply (~$8,000,000 at the time).</p>
                                     <p>That volume was forever removed from circulation and therefore will never enter the market.</p>
                                     <p>Deflationary mechanisms such as limited supply, burn of coins, and gradual decrease of rewards for generating new blocks have proved efficient in strengthening the tokenomics of many blockchains.</p>
                                     <p class="timeline_links">
@@ -866,7 +865,7 @@ export default {
         <section class="tech" id="tech">
             <div class="container">
                 <h2>Tech Side</h2>
-                <p>In our docs, we’ve covered everything you need to know in order to start maintaining the Minter network, build services and applications on top of it, or integrate it into your organization’s operations.</p>
+                <p>In our docs, we’ve covered everything you need to know in order to start maintaining the Minter network, build services and applications on top of it, or integrate it into your organization’s operations.</p>
                 <div class="tech_a">
                     <a class="tech_git" href="https://github.com/MinterTeam" target="_blank" rel="nofollow">GitHub</a>
                     <a class="tech_api" href="https://www.minter.network/docs#node-api" target="_blank">API</a>
@@ -904,9 +903,9 @@ export default {
                     <div class="discover-th">Pools <span><a href="https://explorer.minter.network/pools/HUB/BNB" target="_blank">Minter</a> <a href="https://pancakeswap.finance/info/pool/0x45dfb47641109e2edb7fc4a0fb300b42c2d1f5b0" target="_blank" rel="nofollow">BNB Smart Chain</a></span></div>
                     <a class="btn" href="https://minter.network/hub" target="_blank" v-track-click="'hub'">Read More</a>
                 </div>
-                <p><a href="https://etherscan.io/token/0x8e9A29e7Ed21DB7c5B2E1cd75e676dA0236dfB45" target="_blank" rel="nofollow">HUB</a> is the native token of the Minter Hub blockchain that’s bridging Minter with Ethereum and BNB Smart Chain. HUB is a PoS token, so oracles receive 1% on the fees charged for cross-chain transfers. HUB also serves as reserve for DEX pools both on Minter and Ethereum/BNB Smart Chain.</p>
+                <p><a href="https://etherscan.io/token/0x8e9A29e7Ed21DB7c5B2E1cd75e676dA0236dfB45" target="_blank" rel="nofollow">HUB</a> is the native token of the Minter Hub blockchain that’s bridging Minter with Ethereum and BNB Smart Chain. HUB is a PoS token, so oracles receive 1% on the fees charged for cross-chain transfers. HUB also serves as reserve for DEX pools both on Minter and Ethereum/BNB Smart Chain.</p>
             </div>
-            <Footer class="footer--transparent"/>
+            <TheFooter class="footer--transparent"/>
         </section>
     </div>
 </template>
