@@ -23,7 +23,7 @@ export function getRankCmc() {
 }
 
 export function getRankCoingecko() {
-    return instance.get('coins/bip?localization=false&tickers=false&community_data=false&developer_data=false', {
+    return instance.get('coins/minter-network?localization=false&tickers=false&community_data=false&developer_data=false', {
             baseURL: COINGECKO_API_URL,
             cache: responseCache,
         })
