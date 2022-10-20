@@ -659,8 +659,8 @@ export default {
                             <p>The most simple solution to receive and send funds. You will only need an e-mail to get started</p>
                         </div>
                         <div class="wallet-item">
-                            <img src="/newnetwork/images/honee.svg" alt="Honee">
-                            <h4><a href="https://honee.app/" target="_blank">Honee</a></h4>
+                            <img src="/newnetwork/images/honee.svg" alt="Honee Crypto Wallet">
+                            <h4><a href="https://honee.app/" target="_blank" rel="dofollow">Honee Crypto Wallet</a></h4>
                             <p>Honee, a wallet that makes crypto money easier for everyone—from students to small businesses</p>
                         </div>
                         <div class="wallet-item">

@@ -651,8 +651,8 @@ export default {
                             <p>Самое простое решение для получения и отправки средств. Чтобы начать, достаточно иметь электронную почту</p>
                         </div>
                         <div class="wallet-item">
-                            <img src="/newnetwork/images/honee.svg" alt="Honee">
-                            <h4><a href="https://honee.app/ru" target="_blank">Honee</a></h4>
+                            <img src="/newnetwork/images/honee.svg" alt="Крипто-кошелек Honee">
+                            <h4><a href="https://honee.app/ru" target="_blank" rel="dofollow">Крипто-кошелек Honee</a></h4>
                             <p>Honee — это крипто-кошелек, который помогает зарабатывать</p>
                         </div>
                         <div class="wallet-item">
