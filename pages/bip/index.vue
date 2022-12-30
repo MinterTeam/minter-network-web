@@ -417,15 +417,15 @@ export default {
                         </div>
                         <div class="stat-item">
                             <small>Market Cap</small>
-                            <div>$12 008 922</div>
+                            <div>$3 000 000</div>
                         </div>
                         <div class="stat-item">
                             <small>Circulating Supply</small>
-                            <div>57%</div>
+                            <div>68%</div>
                         </div>
                         <div class="stat-item">
                             <small>BIP Staking Up To</small>
-                            <div>~26% APY</div>
+                            <div>~21% APY</div>
                         </div>
                     </div>
                 </div>

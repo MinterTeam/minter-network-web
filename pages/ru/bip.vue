@@ -418,15 +418,15 @@ export default {
                         </div>
                         <div class="stat-item">
                             <small>Капитализация</small>
-                            <div>$12 008 922</div>
+                            <div>$3 000 000</div>
                         </div>
                         <div class="stat-item">
                             <small>Циркулирующее предложение</small>
-                            <div>57%</div>
+                            <div>68%</div>
                         </div>
                         <div class="stat-item">
                             <small>Стейкинг BIP до</small>
-                            <div>~26% APY</div>
+                            <div>~21% APY</div>
                         </div>
                     </div>
                 </div>

@@ -122,16 +122,16 @@ export default {
                         </div>
                         <div class="stat-item">
                             <small>Market Cap</small>
-                            <div>$42 000 000</div>
+                            <div>$7 000 000</div>
                         </div>
                         <div class="stat-item">
                             <small>Circulating Supply</small>
-                            <div>5%</div>
+                            <div>6%</div>
                         </div>
                         <div class="stat-item">
                             <small>HUB Staking</small>
-                            <div>Up to 1%</div>
-                            <div class="stat-item-explanation">from all cross-chain transactions</div>
+                            <div>Up to 5%</div>
+                            <!--<div class="stat-item-explanation">from all cross-chain transactions</div>-->
                         </div>
                     </div>
                 </div>

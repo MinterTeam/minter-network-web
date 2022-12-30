@@ -123,16 +123,16 @@ export default {
                         </div>
                         <div class="stat-item">
                             <small>Капитализация</small>
-                            <div>$42 000 000</div>
+                            <div>$7 000 000</div>
                         </div>
                         <div class="stat-item">
                             <small>В свободном обороте</small>
-                            <div>5%</div>
+                            <div>6%</div>
                         </div>
                         <div class="stat-item">
                             <small>Стейкинг HUB</small>
-                            <div>До 1%</div>
-                            <div class="stat-item-explanation">от всех кросс-чейн транзакций</div>
+                            <div>До 5%</div>
+                            <!--<div class="stat-item-explanation">от всех кросс-чейн транзакций</div>-->
                         </div>
                     </div>
                 </div>
