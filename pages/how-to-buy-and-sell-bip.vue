@@ -154,8 +154,18 @@ export default {
                         <div class="u-grid u-grid--small u-grid--vertical-margin">
                             <div class="u-cell u-cell--small--1-2">
                                 <div class="bip-trade__item">
+                                    <a class="bip-trade__link link--default" href="https://my.honee.app/buy/BIP" target="_blank" rel="noopener">
+                                        <img class="bip-trade__icon" src="/newnetwork/images/honee.svg" alt="Honee" role="presentation" style="width: 52px; height: 52px;">
+                                        <h4 class="bip-trade__title">Honee</h4>
+                                    </a>
+                                    <div class="bip-trade__value">${{ coinPrice(bipPrice) }}</div>
+                                </div>
+                                <p class="bip-trade__description">Honee is focused on helping people to earn crypto.</p>
+                            </div>
+                            <div class="u-cell u-cell--small--1-2">
+                                <div class="bip-trade__item">
                                     <a class="bip-trade__link link--default" href="https://www.bithumb.pro/en-us/exchange/professional?q=BIP-USDT" target="_blank" rel="noopener">
-                                        <img class="bip-trade__icon" src="/img/bip-trade-bithumb.png" srcset="/img/bip-trade-bithumb@2x.png 2x" alt="" role="presentation">
+                                        <img class="bip-trade__icon" src="/img/bip-trade-bithumb.png" srcset="/img/bip-trade-bithumb@2x.png 2x" alt="Bithumb Global" role="presentation">
                                         <h4 class="bip-trade__title">Bithumb Global</h4>
                                     </a>
                                     <div class="bip-trade__value">${{ getPrice('bithumb') }}</div>
@@ -165,7 +175,7 @@ export default {
                             <div class="u-cell u-cell--small--1-2">
                                 <div class="bip-trade__item">
                                     <a class="bip-trade__link link--default" href="https://t.me/BIP_Banker_bot" target="_blank" rel="noopener">
-                                        <img class="bip-trade__icon" src="/img/bip-trade-banker-bot.png" srcset="/img/bip-trade-banker-bot@2x.png 2x" alt="" role="presentation">
+                                        <img class="bip-trade__icon" src="/img/bip-trade-banker-bot.png" srcset="/img/bip-trade-banker-bot@2x.png 2x" alt="Bip Banker Bot" role="presentation">
                                         <h4 class="bip-trade__title">Bip Banker Bot</h4>
                                     </a>
                                     <div class="bip-trade__value">${{ getPrice('bipbanker') }}</div>
@@ -175,14 +185,14 @@ export default {
                             <div class="u-cell u-cell--small--1-2">
                                 <div class="bip-trade__item">
                                     <a class="bip-trade__link link--default" href="https://t.me/MinterGarantBot" target="_blank" rel="noopener">
-                                        <img class="bip-trade__icon" src="/img/bip-trade-garant-bot.jpg" srcset="/img/bip-trade-garant-bot@2x.jpg 2x" alt="" role="presentation">
+                                        <img class="bip-trade__icon" src="/img/bip-trade-garant-bot.jpg" srcset="/img/bip-trade-garant-bot@2x.jpg 2x" alt="Minter Garant Bot" role="presentation">
                                         <h4 class="bip-trade__title">Minter Garant Bot</h4>
                                     </a>
                                     <div class="bip-trade__value">${{ getPrice('mintergarant') }}</div>
                                 </div>
                                 <p class="bip-trade__description">Secure P2P Telegram bot. Allows you to trade BIP for fiat and cryptocurrency. Has a cumulative bonus and multi-level referral scheme.</p>
                             </div>
-                            <div class="u-cell u-cell--small--1-2">
+                            <!--<div class="u-cell u-cell--small--1-2">
                                 <div class="bip-trade__item">
                                     <a class="bip-trade__link link--default" href="https://t.me/dailyexchangebot" target="_blank" rel="noopener">
                                         <img class="bip-trade__icon" src="/img/bip-trade-daily-exchange.png" srcset="/img/bip-trade-daily-exchange@2x.png 2x" alt="" role="presentation">
@@ -201,7 +211,7 @@ export default {
                                     <div class="bip-trade__value">${{ getPrice('coinsblack') }}</div>
                                 </div>
                                 <p class="bip-trade__description">Digital assets and currencies exchange service with various options to get BIP for fiat and crypto funds.</p>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                 </div>
