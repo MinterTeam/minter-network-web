@@ -555,7 +555,7 @@ type RedeemCheckData struct {
 ```
 
 - **Check** - check received from sender;
-- **Proof** - proof of owning a check: password signed with recipient's address. [Read more](https://docs.minter.network/#section/Minter-Check/Check-hijacking-protection)
+- **Proof** - proof of owning a check: password signed with recipient's address. [Read more](https://docs.minter.network/#check-hijacking-protection)
 
 Note that maximum GasPrice is limited to 1 to prevent fraud, because GasPrice is set by redeem tx sender, but the fee is charged to check issuer.
 
