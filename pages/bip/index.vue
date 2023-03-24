@@ -579,28 +579,26 @@ export default {
                         <img src="/newnetwork/images/f3.svg" alt="Cross-Chain Swaps">
                         <h3>Cross-Chain Swaps</h3>
                         <p>Send cross-chain transfers with swaps. For example, BUSD on BNB Smart Chain for USDC on Ethereum</p>
-                        <p class="coming-soon">Coming 2022</p>
                     </div>
                     <div class="features-item">
                         <img src="/newnetwork/images/fb7.svg" class="features-item-bg">
                         <img src="/newnetwork/images/f7.svg" alt="Smart Contracts">
                         <h3>Smart Contracts</h3>
                         <p>Secure cross-chain smart contracts tailored to all users. Advanced mode for developers and non-dev mode for simple deployment.</p>
-                        <p class="coming-soon">Coming 2022</p>
+                        <p class="coming-soon">Coming</p>
                     </div>
                     <div class="features-item">
                         <img src="/newnetwork/images/fb8.svg" class="features-item-bg">
                         <img src="/newnetwork/images/f8.svg" alt="NFTs">
                         <h3>NFTs</h3>
                         <p>Create, sell, swap, and cross-chainNFTs with ease.</p>
-                        <p class="coming-soon">Coming 2022</p>
+                        <p class="coming-soon">Coming</p>
                     </div>
                     <div class="features-item">
                         <img src="/newnetwork/images/fb9.svg" class="features-item-bg">
                         <img src="/newnetwork/images/f9.svg" alt="Crypto Loans">
                         <h3>Crypto Loans</h3>
                         <p>Borrowing crypto through Minter is easy! Use your crypto as collateral to get a loan without impact to your credit score.</p>
-                        <p class="coming-soon">Coming 2022</p>
                     </div>
                 </div>
             </div>

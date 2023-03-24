@@ -574,25 +574,23 @@ export default {
                         <img src="/newnetwork/images/f3.svg" alt="Кросс-чейн обмены">
                         <h3>Кросс-чейн обмены</h3>
                         <p>Совершайте кросс-чейн переводы с обменами. Например, BUSD из BNB Smart Chain на USDC в Ethereum</p>
-                        <p class="coming-soon">Ожидается в 2022-м</p>
                     </div>
                     <div class="features-item">
                         <img src="/newnetwork/images/f7.svg" alt="Смарт-контракты">
                         <h3>Смарт-контракты</h3>
                         <p>Безопасные кросс-чейн смарт-контракты для всех. Расширенный режим для разработчиков и обычный — для простой развертки</p>
-                        <p class="coming-soon">Ожидается в 2022-м</p>
+                        <p class="coming-soon">Ожидается</p>
                     </div>
                     <div class="features-item">
                         <img src="/newnetwork/images/f8.svg" alt="NFT">
                         <h3>NFT</h3>
                         <p>Легко выпускайте, продавайте, обменивайте и перемещайте NFT между сетями</p>
-                        <p class="coming-soon">Ожидается в 2022-м</p>
+                        <p class="coming-soon">Ожидается</p>
                     </div>
                     <div class="features-item">
                         <img src="/newnetwork/images/f9.svg" alt="Криптокредиты">
                         <h3>Криптокредиты</h3>
                         <p>Занимать крипту через Minter — просто! Используйте свою криптовалюту как залог, чтобы получить кредит без влияния на вашу кредитную историю</p>
-                        <p class="coming-soon">Ожидается в 2022-м</p>
                     </div>
                 </div>
             </div>
