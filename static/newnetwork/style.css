@@ -53,8 +53,8 @@ p {
 	margin: 0 0 16px 0;
 }
 h1 {
-	font-size: 110px;
-	line-height: 110px;
+	font-size: 80px;
+	line-height: 80px;
 	margin: 0 0 40px 0;
 	}
 h2 {
@@ -387,7 +387,7 @@ header {
 }
 .hello {
 	display: flex;
-	justify-content: flex-start;
+	justify-content: center;
 	align-content: center;
 	align-items: center;
 	position: relative;

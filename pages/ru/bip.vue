@@ -138,6 +138,39 @@ export default {
                                         </div>
                                     </a>
                                 </div>
+                                <div class="sub-menu-item">
+                                    <a href="https://honee.app/ru/metagarden" target="_blank">
+                                        <div class="sub-menu-item-image">
+                                            <img src="/newnetwork/images/mg.svg" alt="Metagarden">
+                                        </div>
+                                        <div class="sub-menu-item-content">
+                                            <h4>Metagarden</h4>
+                                            <p>Play-to-earn платформа с мини-играми.</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="sub-menu-item">
+                                    <a href="https://www.pinpon.io/ru" target="_blank">
+                                        <div class="sub-menu-item-image">
+                                            <img src="/newnetwork/images/pp.svg" alt="Pinpon">
+                                        </div>
+                                        <div class="sub-menu-item-content">
+                                            <h4>Pinpon</h4>
+                                            <p>Платформа для получения клиентов из соцсетей с помощью инновационных розыгрышей.</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="sub-menu-item">
+                                    <a href="https://stiqr.org/" target="_blank">
+                                        <div class="sub-menu-item-image">
+                                            <img src="/newnetwork/images/st.svg" alt="Stiqr">
+                                        </div>
+                                        <div class="sub-menu-item-content">
+                                            <h4>Stiqr</h4>
+                                            <p>Позволяет покупателям проверять подлинность товаров и читать отзывы реальных потребителей.</p>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                         <div class="menu-link">
@@ -288,6 +321,39 @@ export default {
                                         </div>
                                     </a>
                                 </div>
+                                <div class="sub-menu-item">
+                                    <a href="https://honee.app/ru/metagarden" target="_blank">
+                                        <div class="sub-menu-item-image">
+                                            <img src="/newnetwork/images/mg.svg" alt="Metagarden">
+                                        </div>
+                                        <div class="sub-menu-item-content">
+                                            <h4>Metagarden</h4>
+                                            <p>Play-to-earn платформа с мини-играми.</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="sub-menu-item">
+                                    <a href="https://www.pinpon.io/ru" target="_blank">
+                                        <div class="sub-menu-item-image">
+                                            <img src="/newnetwork/images/pp.svg" alt="Pinpon">
+                                        </div>
+                                        <div class="sub-menu-item-content">
+                                            <h4>Pinpon</h4>
+                                            <p>Платформа для получения клиентов из соцсетей с помощью инновационных розыгрышей.</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="sub-menu-item">
+                                    <a href="https://stiqr.org/" target="_blank">
+                                        <div class="sub-menu-item-image">
+                                            <img src="/newnetwork/images/st.svg" alt="Stiqr">
+                                        </div>
+                                        <div class="sub-menu-item-content">
+                                            <h4>Stiqr</h4>
+                                            <p>Позволяет покупателям проверять подлинность товаров и читать отзывы реальных потребителей.</p>
+                                        </div>
+                                    </a>
+                                </div>
                                 <hr>
                                 <h4>Сеть</h4>
                                 <div class="sub-menu-item">
@@ -399,13 +465,13 @@ export default {
                 </div>
                 <div class="hello">
                     <div class="hello-content">
-                        <h1>DeFi-платформа для заработка криптовалют</h1>
+                        <h1>Сверхбыстрый и надежный<br /> кросс-чейн DEX</h1>
                         <div class="hello-buttons">
                             <a class="btn" href="https://console.minter.network/ru" target="_blank" v-track-click="'start-earning'">Начать зарабатывать</a>
                             <a class="btn btn-alt" href="https://www.minter.network/ru/how-to-buy-and-sell-bip" target="_blank" v-track-click="'buy-bipx'">Купить BIP</a>
                             <a class="btn btn-alt" href="https://www.minter.network/docs#minter-sdks" target="_blank" v-track-click="'build-defi-apps'">Начать разработку</a>
                         </div>
-                        <p>Minter —  DeFi-платформа с DEX, смарт-контрактами и кросс-чейн ликвидностью. Она предоставляет наиболее простые и эффективные способы создания, заработка, хранения и обмена криптовалют в полностью децентрализованном виде. Minter интегрирован с Ethereum и BNB Smart Chain, позволяя разработчикам строить эффективные приложения DeFi с использованием широкого набора SDK- и API-инструментов.</p>
+                        <p>Minter — это сверхбыстрый и надежный кросс-чейн DEX со встроенным AMM и лимитными ордерами на базе собственного блокчейна. Minter предоставляет наиболее простые и эффективные способы создания, заработка, хранения и обмена криптовалют в полностью децентрализованном виде. Minter интегрирован с Ethereum и BNB Smart Chain, позволяя разработчикам строить эффективные приложения DeFi с использованием широкого набора SDK- и API-инструментов.</p>
                     </div>
                 </div>
             </div>
