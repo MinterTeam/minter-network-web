@@ -750,11 +750,10 @@ export default {
                     </div>
                 </div>
                 <div class="coming" id="coming">
-                    <h3>Coming in 2022–2023</h3>
+                    <h3>Coming in 2023</h3>
                     <ul>
                         <li>Smart Contracts</li>
                         <li>NFTs</li>
-                        <li>Crypto Loans</li>
                         <li>Honee Crypto Wallet Release</li>
                         <li>DApp for Cross-Chain Transfers</li>
                         <li>SDK for Metaverse Items and NFTs</li>

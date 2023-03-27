@@ -742,11 +742,10 @@ export default {
                     </div>
                 </div>
                 <div class="coming" id="coming">
-                    <h3>Планы на 2022–2023 г.</h3>
+                    <h3>Планы на 2023 г.</h3>
                     <ul>
                         <li>Смарт-контракты</li>
                         <li>NFT</li>
-                        <li>Криптокредиты</li>
                         <li>Релиз криптокошелька Honee</li>
                         <li>DApp для межсетевых переводов</li>
                         <li>SDK для Metaverse-предметов и NFT</li>
