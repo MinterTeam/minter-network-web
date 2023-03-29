@@ -145,7 +145,7 @@ export default {
                                         </div>
                                         <div class="sub-menu-item-content">
                                             <h4>Metagarden</h4>
-                                            <p>Play-to-earn платформа с мини-играми.</p>
+                                            <p>Play-to-earn платформа с мини-играми. Зарабатывайте крипту, играя против друзей или в одиночном режиме.</p>
                                         </div>
                                     </a>
                                 </div>
@@ -328,7 +328,7 @@ export default {
                                         </div>
                                         <div class="sub-menu-item-content">
                                             <h4>Metagarden</h4>
-                                            <p>Play-to-earn платформа с мини-играми.</p>
+                                            <p>Play-to-earn платформа с мини-играми. Зарабатывайте крипту, играя против друзей или в одиночном режиме.</p>
                                         </div>
                                     </a>
                                 </div>
@@ -488,16 +488,71 @@ export default {
                         </div>
                         <div class="stat-item">
                             <small>Циркулирующее предложение</small>
-                            <div>68%</div>
+                            <div>72%</div>
                         </div>
                         <div class="stat-item">
                             <small>Стейкинг BIP до</small>
-                            <div>~21% APY</div>
+                            <div>~20% APY</div>
                         </div>
                     </div>
                 </div>
             </div>
         </header>
+        <section class="products" id="products">
+            <div class="container">
+                <h2>Продукты на базе Minter</h2>
+                <div class="products-grid">
+                    <div class="product-item">
+                        <a href="https://console.minter.network/ru" target="_blank" class="product-preview">
+                            <img src="/newnetwork/images/p-1.png" srcset="/newnetwork/images/p-1@2x.png 2x" alt="Minter DEX" class="product-img-preview" />
+                            <img src="/newnetwork/images/wallet-minter.svg" alt="Minter DEX" class="product-logo">
+                        </a>
+                        <h3><a href="https://console.minter.network/ru" target="_blank">Minter DEX</a></h3>
+                        <p>Покупайте, продавайте, отправляйте и зарабатывайте цифровые активы полностью децентрализованно. Низкие комиссии, фиксированные в долларах США, быстрые транзакции, ончейн лимитные ордера.</p>
+                    </div>
+                    <div class="product-item">
+                        <a href="https://www.minter.network/ru/hub" target="_blank" class="product-preview">
+                            <img src="/newnetwork/images/p-2.png" srcset="/newnetwork/images/p-2@2x.png 2x" alt="Minter HUB" class="product-img-preview" />
+                            <img src="/newnetwork/images/hub-logo.svg" alt="Minter HUB" class="product-logo">
+                        </a>
+                        <h3><a href="https://www.minter.network/ru/hub" target="_blank">Minter HUB</a></h3>
+                        <p>Minter Hub — это мост в глобальную криптоликвидность, отдельный сайдчейн с уникальной технологией кросс-чейн смарт-контрактов.</p>
+                    </div>
+                    <div class="product-item">
+                        <a href="https://honee.app/ru" target="_blank" class="product-preview">
+                            <img src="/newnetwork/images/p-3.png" srcset="/newnetwork/images/p-3@2x.png 2x" alt="Honee Wallet" class="product-img-preview" />
+                            <img src="/newnetwork/images/honee.svg" alt="Honee Wallet" class="product-logo">
+                        </a>
+                        <h3><a href="https://honee.app/ru" target="_blank">Honee Wallet</a></h3>
+                        <p>Простейший криптокошелек, помогающий вам зарабатывать.</p>
+                    </div>
+                    <div class="product-item">
+                        <a href="https://honee.app/ru/metagarden" target="_blank" class="product-preview">
+                            <img src="/newnetwork/images/p-4.png" srcset="/newnetwork/images/p-4@2x.png 2x" alt="Metagarden" class="product-img-preview" />
+                            <img src="/newnetwork/images/mg.svg" alt="Metagarden" class="product-logo">
+                        </a>
+                        <h3><a href="https://honee.app/ru/metagarden" target="_blank">Metagarden</a></h3>
+                        <p>Play-to-earn платформа с мини-играми. Зарабатывайте крипту, играя против друзей или в одиночном режиме.</p>
+                    </div>
+                    <div class="product-item">
+                        <a href="https://www.pinpon.io/ru" target="_blank" class="product-preview">
+                            <img src="/newnetwork/images/p-5.png" srcset="/newnetwork/images/p-5@2x.png 2x" alt="Pinpon" class="product-img-preview" />
+                            <img src="/newnetwork/images/pp.svg" alt="Pinpon" class="product-logo">
+                        </a>
+                        <h3><a href="https://www.pinpon.io/ru" target="_blank">Pinpon</a></h3>
+                        <p>Платформа для получения клиентов из соцсетей с помощью инновационных розыгрышей.</p>
+                    </div>
+                    <div class="product-item">
+                        <a href="https://stiqr.org/" target="_blank" class="product-preview">
+                            <img src="/newnetwork/images/p-6.png" srcset="/newnetwork/images/p-6@2x.png 2x" alt="Stiqr" class="product-img-preview" />
+                            <img src="/newnetwork/images/st.svg" alt="Stiqr" class="product-logo">
+                        </a>
+                        <h3><a href="https://stiqr.org/" target="_blank">Stiqr</a></h3>
+                        <p>Позволяет покупателям проверять подлинность товаров и читать отзывы реальных потребителей.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section class="earn" id="earn">
             <div class="container">
                 <h2>Инструменты для заработка</h2>

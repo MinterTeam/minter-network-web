@@ -449,8 +449,51 @@ header {
 /* END HEADER */
 
 /* CONTENT */
-.earn {
+.products {
 	padding: 200px 0 100px 0;
+}
+.products h3 {
+	margin: 16px 0 8px 0;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 22px;
+}
+.products p {
+	margin: 0;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 19px;
+}
+.products-grid {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+.product-item {
+	max-width: 310px;
+	margin: 64px 0 0 0;
+}
+.product-preview {
+	position: relative;
+	width: 320px;
+	height: 228px;
+}
+.product-img-preview {
+	width: 320px;
+	height: 228px;
+}
+.product-logo {
+	width: 48px;
+    height: 48px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+	position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.earn {
+	padding: 100px 0 100px 0;
 }
 .earn-tools {
 	display: flex;
