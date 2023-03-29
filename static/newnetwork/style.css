@@ -450,7 +450,7 @@ header {
 
 /* CONTENT */
 .products {
-	padding: 200px 0 100px 0;
+	padding: 100px 0 40px 0;
 }
 .products h3 {
 	margin: 16px 0 8px 0;
@@ -472,7 +472,7 @@ header {
 }
 .product-item {
 	max-width: 310px;
-	margin: 64px 0 0 0;
+	margin: 0 0 64px 0;
 }
 .product-preview {
 	position: relative;
