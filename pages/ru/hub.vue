@@ -170,7 +170,6 @@ export default {
                         <img src="/newnetwork/images/hub/single-asset.svg" alt="Краудпулинг">
                         <h3>Краудпулинг</h3>
                         <p>Предоставляйте только один из двух токенов в пул ликвидности, чтобы зарабатывать на нем.</p>
-                        <div class="tool-soon">Ожидается в 2022</div>
                     </div>
                     <div class="tool earn-6">
                         <img src="/newnetwork/images/hub/smarts.svg" alt="Смарт-контракты">

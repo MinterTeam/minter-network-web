@@ -169,7 +169,6 @@ export default {
                         <img src="/newnetwork/images/hub/single-asset.svg" alt="Crowd Pools">
                         <h3>Crowd Pools</h3>
                         <p>Into a pair of two tokens, provide only the one that you have.</p>
-                        <div class="tool-soon">Coming 2022</div>
                     </div>
                     <div class="tool earn-6">
                         <img src="/newnetwork/images/hub/smarts.svg" alt="Smart Contracts">
