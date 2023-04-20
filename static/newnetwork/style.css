@@ -449,41 +449,41 @@ header {
 /* END HEADER */
 
 /* CONTENT */
-.products {
+.bip-products {
 	padding: 100px 0 40px 0;
 }
-.products h3 {
+.bip-products h3 {
 	margin: 16px 0 8px 0;
 	font-weight: 700;
 	font-size: 18px;
 	line-height: 22px;
 }
-.products p {
+.bip-products p {
 	margin: 0;
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 19px;
 }
-.products-grid {
+.bip-products-grid {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	gap: 20px;
 }
-.product-item {
+.bip-product-item {
 	max-width: 310px;
 	margin: 0 0 64px 0;
 }
-.product-preview {
+.bip-product-preview {
 	position: relative;
 	width: 320px;
 	height: 228px;
 }
-.product-img-preview {
+.bip-product-img-preview {
 	width: 320px;
 	height: 228px;
 }
-.product-logo {
+.bip-product-logo {
 	width: 48px;
     height: 48px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);

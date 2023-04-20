@@ -163,7 +163,7 @@ export default {
                         <img src="/newnetwork/images/hub/bridge.svg" alt="Cross-chain Bridge">
                         <h3>Cross-chain Bridge</h3>
                         <p>Users who provide liquidity to the cross-chain bridge will earn on the commissions received for cross-chain transfers and swaps.</p>
-                        <div class="tool-soon">Coming 2022</div>
+                        <div class="tool-soon">Coming</div>
                     </div>
                     <div class="tool earn-5">
                         <img src="/newnetwork/images/hub/single-asset.svg" alt="Crowd Pools">
@@ -174,7 +174,7 @@ export default {
                         <img src="/newnetwork/images/hub/smarts.svg" alt="Smart Contracts">
                         <h3>Smart Contracts</h3>
                         <p>Secure cross-chain smart contracts tailored to all users. Advanced mode for developers and non-dev mode for simple deployment.</p>
-                        <div class="tool-soon">Coming 2022</div>
+                        <div class="tool-soon">Coming</div>
                     </div>
                 </div>
             </div>
@@ -252,7 +252,7 @@ export default {
                     <div class="product">
                         <h3><img src="/newnetwork/images/hub-logo.svg" alt="Minter" class="product-logo">Cross-chain bridge DApp</h3>
                         <p>A web interface letting you move tokens across the networks in a user-oriented environment</p>
-                        <div class="product-soon">Coming 2022</div>
+                        <div class="product-soon">Coming</div>
                         <img src="/newnetwork/images/hub/p3.svg" alt="Cross-chain bridge DApp" class="product-bg" id="p3">
                     </div>
                 </div>

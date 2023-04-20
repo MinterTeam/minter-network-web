@@ -164,7 +164,7 @@ export default {
                         <img src="/newnetwork/images/hub/bridge.svg" alt="Кросс-чейн мост">
                         <h3>Кросс-чейн мост</h3>
                         <p>Пользователи, которые предоставляют ликвидность в кросс-чейн бридж будут зарабатывать на комиссиях, получаемых за кросс-чейн переводы и обмены.</p>
-                        <div class="tool-soon">Ожидается в 2022</div>
+                        <div class="tool-soon">Ожидается</div>
                     </div>
                     <div class="tool earn-5">
                         <img src="/newnetwork/images/hub/single-asset.svg" alt="Краудпулинг">
@@ -175,7 +175,7 @@ export default {
                         <img src="/newnetwork/images/hub/smarts.svg" alt="Смарт-контракты">
                         <h3>Смарт-контракты</h3>
                         <p>Безопасные кросс-чейн смарт-контракты для всех. Расширенный режим для разработчиков и обычный — для простой развертки.</p>
-                        <div class="tool-soon">Ожидается в 2022</div>
+                        <div class="tool-soon">Ожидается</div>
                     </div>
                 </div>
             </div>
@@ -253,7 +253,7 @@ export default {
                     <div class="product">
                         <h3><img src="/newnetwork/images/hub-logo.svg" alt="Minter" class="product-logo">DApp кросс-чейн моста</h3>
                         <p>Веб-интерфейс, позволяющий быстро и децентрализованно перемещать токены между сетями</p>
-                        <div class="product-soon">Ожидается в 2022</div>
+                        <div class="product-soon">Ожидается</div>
                         <img src="/newnetwork/images/hub/p3.svg" alt="DApp кросс-чейн моста" class="product-bg" id="p3">
                     </div>
                 </div>

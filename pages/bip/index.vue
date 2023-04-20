@@ -497,54 +497,54 @@ export default {
                 </div>
             </div>
         </header>
-        <section class="products" id="products">
+        <section class="bip-products" id="products">
             <div class="container">
                 <h2>Products powered by Minter</h2>
-                <div class="products-grid">
-                    <div class="product-item">
-                        <a href="https://console.minter.network" target="_blank" class="product-preview">
-                            <img src="/newnetwork/images/p-1.png" srcset="/newnetwork/images/p-1@2x.png 2x" alt="Minter DEX" class="product-img-preview" />
-                            <img src="/newnetwork/images/wallet-minter.svg" alt="Minter DEX" class="product-logo">
+                <div class="bip-products-grid">
+                    <div class="bip-product-item">
+                        <a href="https://console.minter.network" target="_blank" class="bip-product-preview">
+                            <img src="/newnetwork/images/p-1.png" srcset="/newnetwork/images/p-1@2x.png 2x" alt="Minter DEX" class="bip-product-img-preview" />
+                            <img src="/newnetwork/images/wallet-minter.svg" alt="Minter DEX" class="bip-product-logo">
                         </a>
                         <h3><a href="https://console.minter.network" target="_blank">Minter DEX</a></h3>
                         <p>Buy, sell, send, and earn digital assets fully desentalized. Low fees fixed in US dollars, fast transactions, onchain limit orders.</p>
                     </div>
-                    <div class="product-item">
-                        <a href="https://www.minter.network/hub" target="_blank" class="product-preview">
-                            <img src="/newnetwork/images/p-2.png" srcset="/newnetwork/images/p-2@2x.png 2x" alt="Minter HUB" class="product-img-preview" />
-                            <img src="/newnetwork/images/hub-logo.svg" alt="Minter HUB" class="product-logo">
+                    <div class="bip-product-item">
+                        <a href="https://www.minter.network/hub" target="_blank" class="bip-product-preview">
+                            <img src="/newnetwork/images/p-2.png" srcset="/newnetwork/images/p-2@2x.png 2x" alt="Minter HUB" class="bip-product-img-preview" />
+                            <img src="/newnetwork/images/hub-logo.svg" alt="Minter HUB" class="bip-product-logo">
                         </a>
                         <h3><a href="https://www.minter.network/hub" target="_blank">Minter HUB</a></h3>
                         <p>Minter Hub is a bridge to global crypto liquidity, a standalone sidechain with the unique cross-chain smart contracts technology.</p>
                     </div>
-                    <div class="product-item">
-                        <a href="https://honee.app" target="_blank" class="product-preview">
-                            <img src="/newnetwork/images/p-3.png" srcset="/newnetwork/images/p-3@2x.png 2x" alt="Honee Wallet" class="product-img-preview" />
-                            <img src="/newnetwork/images/honee.svg" alt="Honee Wallet" class="product-logo">
+                    <div class="bip-product-item">
+                        <a href="https://honee.app" target="_blank" class="bip-product-preview">
+                            <img src="/newnetwork/images/p-3.png" srcset="/newnetwork/images/p-3@2x.png 2x" alt="Honee Wallet" class="bip-product-img-preview" />
+                            <img src="/newnetwork/images/honee.svg" alt="Honee Wallet" class="bip-product-logo">
                         </a>
                         <h3><a href="https://honee.app" target="_blank">Honee Wallet</a></h3>
                         <p>The simplest crypto wallet that helps you earn.</p>
                     </div>
-                    <div class="product-item">
-                        <a href="https://honee.app/metagarden" target="_blank" class="product-preview">
-                            <img src="/newnetwork/images/p-4.png" srcset="/newnetwork/images/p-4@2x.png 2x" alt="Metagarden" class="product-img-preview" />
-                            <img src="/newnetwork/images/mg.svg" alt="Metagarden" class="product-logo">
+                    <div class="bip-product-item">
+                        <a href="https://honee.app/metagarden" target="_blank" class="bip-product-preview">
+                            <img src="/newnetwork/images/p-4.png" srcset="/newnetwork/images/p-4@2x.png 2x" alt="Metagarden" class="bip-product-img-preview" />
+                            <img src="/newnetwork/images/mg.svg" alt="Metagarden" class="bip-product-logo">
                         </a>
                         <h3><a href="https://honee.app/metagarden" target="_blank">Metagarden</a></h3>
                         <p>A play-to-earn platform with mini games. Earn crypto by playing games in solo mode or against friends.</p>
                     </div>
-                    <div class="product-item">
-                        <a href="https://www.pinpon.io" target="_blank" class="product-preview">
-                            <img src="/newnetwork/images/p-5.png" srcset="/newnetwork/images/p-5@2x.png 2x" alt="Pinpon" class="product-img-preview" />
-                            <img src="/newnetwork/images/pp.svg" alt="Pinpon" class="product-logo">
+                    <div class="bip-product-item">
+                        <a href="https://www.pinpon.io" target="_blank" class="bip-product-preview">
+                            <img src="/newnetwork/images/p-5.png" srcset="/newnetwork/images/p-5@2x.png 2x" alt="Pinpon" class="bip-product-img-preview" />
+                            <img src="/newnetwork/images/pp.svg" alt="Pinpon" class="bip-product-logo">
                         </a>
                         <h3><a href="https://www.pinpon.io" target="_blank">Pinpon</a></h3>
                         <p>A platform for acquiring customers on social media via innovative blockchain draws.</p>
                     </div>
-                    <div class="product-item">
-                        <a href="https://stiqr.org/" target="_blank" class="product-preview">
-                            <img src="/newnetwork/images/p-6.png" srcset="/newnetwork/images/p-6@2x.png 2x" alt="Stiqr" class="product-img-preview" />
-                            <img src="/newnetwork/images/st.svg" alt="Stiqr" class="product-logo">
+                    <div class="bip-product-item">
+                        <a href="https://stiqr.org/" target="_blank" class="bip-product-preview">
+                            <img src="/newnetwork/images/p-6.png" srcset="/newnetwork/images/p-6@2x.png 2x" alt="Stiqr" class="bip-product-img-preview" />
+                            <img src="/newnetwork/images/st.svg" alt="Stiqr" class="bip-product-logo">
                         </a>
                         <h3><a href="https://stiqr.org/" target="_blank">Stiqr</a></h3>
                         <p>Allows shoppers to authenticate products and read reviews from real consumers.</p>
