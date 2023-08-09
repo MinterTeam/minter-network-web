@@ -139,12 +139,12 @@ export default {
                                     </a>
                                 </div>
                                 <div class="sub-menu-item">
-                                    <a href="https://honee.app/ru/metagarden" target="_blank">
+                                    <a href="https://metagarden.io/ru" target="_blank">
                                         <div class="sub-menu-item-image">
                                             <img src="/newnetwork/images/mg.svg" alt="Metagarden">
                                         </div>
                                         <div class="sub-menu-item-content">
-                                            <h4>Metagarden</h4>
+                                            <h4>Крипто-игры в Telegram</h4>
                                             <p>Play-to-earn платформа с мини-играми. Зарабатывайте крипту, играя против друзей или в одиночном режиме.</p>
                                         </div>
                                     </a>
@@ -322,12 +322,12 @@ export default {
                                     </a>
                                 </div>
                                 <div class="sub-menu-item">
-                                    <a href="https://honee.app/ru/metagarden" target="_blank">
+                                    <a href="https://metagarden.io/ru" target="_blank">
                                         <div class="sub-menu-item-image">
                                             <img src="/newnetwork/images/mg.svg" alt="Metagarden">
                                         </div>
                                         <div class="sub-menu-item-content">
-                                            <h4>Metagarden</h4>
+                                            <h4>Крипто-игры в Telegram</h4>
                                             <p>Play-to-earn платформа с мини-играми. Зарабатывайте крипту, играя против друзей или в одиночном режиме.</p>
                                         </div>
                                     </a>
@@ -465,13 +465,13 @@ export default {
                 </div>
                 <div class="hello">
                     <div class="hello-content">
-                        <h1>Сверхбыстрый и надежный<br /> кросс-чейн DEX</h1>
+                        <h1>Сверхбыстрый, надежный и экономичный блокчейн 1 уровня с встроенным AMM, DEX и ордерами</h1>
                         <div class="hello-buttons">
                             <a class="btn" href="https://console.minter.network/ru" target="_blank" v-track-click="'start-earning'">Начать зарабатывать</a>
                             <a class="btn btn-alt" href="https://www.minter.network/ru/how-to-buy-and-sell-bip" target="_blank" v-track-click="'buy-bipx'">Купить BIP</a>
                             <a class="btn btn-alt" href="https://www.minter.network/docs#minter-sdks" target="_blank" v-track-click="'build-defi-apps'">Начать разработку</a>
                         </div>
-                        <p>Minter — это сверхбыстрый и надежный кросс-чейн DEX со встроенным AMM и лимитными ордерами на базе собственного блокчейна. Minter предоставляет наиболее простые и эффективные способы создания, заработка, хранения и обмена криптовалют в полностью децентрализованном виде. Minter интегрирован с Ethereum и BNB Smart Chain, позволяя разработчикам строить эффективные приложения DeFi с использованием широкого набора SDK- и API-инструментов.</p>
+                        <p>Minter предоставляет самые простые и эффективные способы создания, заработка, хранения и обмена криптовалют в полностью децентрализованном режиме. Minter интегрирован с Ethereum и BNB Smart Chain для обеспечения кросс-чейн переводов и обменов. Он позволяет создавать эффективные DeFi-приложения с помощью богатого набора SDK и API-инструментов.</p>
                     </div>
                 </div>
             </div>
@@ -527,11 +527,11 @@ export default {
                         <p>Простейший криптокошелек, помогающий вам зарабатывать.</p>
                     </div>
                     <div class="bip-product-item">
-                        <a href="https://honee.app/ru/metagarden" target="_blank" class="bip-product-preview">
+                        <a href="https://metagarden.io/ru" target="_blank" class="bip-product-preview">
                             <img src="/newnetwork/images/p-4.png" srcset="/newnetwork/images/p-4@2x.png 2x" alt="Metagarden" class="bip-product-img-preview" />
                             <img src="/newnetwork/images/mg.svg" alt="Metagarden" class="bip-product-logo">
                         </a>
-                        <h3><a href="https://honee.app/ru/metagarden" target="_blank">Metagarden</a></h3>
+                        <h3><a href="https://metagarden.io/ru" target="_blank">Крипто-игры в Telegram</a></h3>
                         <p>Play-to-earn платформа с мини-играми. Зарабатывайте крипту, играя против друзей или в одиночном режиме.</p>
                     </div>
                     <div class="bip-product-item">
