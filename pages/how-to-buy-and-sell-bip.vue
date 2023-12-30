@@ -114,15 +114,17 @@ export default {
                         <div class="bip-cap__value">#{{ rank.cmc }}</div>
                     </div>
                 </div>
-                <div class="u-cell u-cell--small--auto">
+                <!--
+                <div class="u-cell u-cell&#45;&#45;small&#45;&#45;auto">
                     <div class="bip-cap__item">
-                        <a class="bip-cap__link link--default" href="https://www.coingecko.com/en/coins/bip" target="_blank" rel="noopener">
+                        <a class="bip-cap__link link&#45;&#45;default" href="https://www.coingecko.com/en/coins/bip" target="_blank" rel="noopener">
                             <img class="bip-cap__icon" src="/img/bip-price-coingecko.png" srcset="/img/bip-price-coingecko@2x.png 2x" alt="" role="presentation">
                             <h4 class="bip-cap__title">Coingecko.com</h4>
                         </a>
                         <div class="bip-cap__value">#{{ rank.coingecko }}</div>
                     </div>
                 </div>
+                -->
             </div>
 
             <section class="bip-trade__panel">
@@ -162,9 +164,10 @@ export default {
                                 </div>
                                 <p class="bip-trade__description">Honee is focused on helping people to earn crypto.</p>
                             </div>
-                            <div class="u-cell u-cell--small--1-2">
+                            <!--
+                            <div class="u-cell u-cell&#45;&#45;small&#45;&#45;1-2">
                                 <div class="bip-trade__item">
-                                    <a class="bip-trade__link link--default" href="https://www.bithumb.pro/en-us/exchange/professional?q=BIP-USDT" target="_blank" rel="noopener">
+                                    <a class="bip-trade__link link&#45;&#45;default" href="https://www.bithumb.pro/en-us/exchange/professional?q=BIP-USDT" target="_blank" rel="noopener">
                                         <img class="bip-trade__icon" src="/img/bip-trade-bithumb.png" srcset="/img/bip-trade-bithumb@2x.png 2x" alt="Bithumb Global" role="presentation">
                                         <h4 class="bip-trade__title">Bithumb Global</h4>
                                     </a>
@@ -172,6 +175,7 @@ export default {
                                 </div>
                                 <p class="bip-trade__description">Cryptocurrency exchange where BIP is traded most actively. Ranks 16th on CoinGecko, no KYC required.</p>
                             </div>
+                            -->
                             <div class="u-cell u-cell--small--1-2">
                                 <div class="bip-trade__item">
                                     <a class="bip-trade__link link--default" href="https://t.me/BIP_Banker_bot" target="_blank" rel="noopener">
@@ -182,9 +186,10 @@ export default {
                                 </div>
                                 <p class="bip-trade__description">Convenient P2P trading Telegram bot. Allows you to purchase and sell BIP for both crypto and fiat currencies.</p>
                             </div>
-                            <div class="u-cell u-cell--small--1-2">
+                            <!--
+                            <div class="u-cell u-cell&#45;&#45;small&#45;&#45;1-2">
                                 <div class="bip-trade__item">
-                                    <a class="bip-trade__link link--default" href="https://t.me/MinterGarantBot" target="_blank" rel="noopener">
+                                    <a class="bip-trade__link link&#45;&#45;default" href="https://t.me/MinterGarantBot" target="_blank" rel="noopener">
                                         <img class="bip-trade__icon" src="/img/bip-trade-garant-bot.jpg" srcset="/img/bip-trade-garant-bot@2x.jpg 2x" alt="Minter Garant Bot" role="presentation">
                                         <h4 class="bip-trade__title">Minter Garant Bot</h4>
                                     </a>
@@ -192,6 +197,7 @@ export default {
                                 </div>
                                 <p class="bip-trade__description">Secure P2P Telegram bot. Allows you to trade BIP for fiat and cryptocurrency. Has a cumulative bonus and multi-level referral scheme.</p>
                             </div>
+                            -->
                             <!--<div class="u-cell u-cell--small--1-2">
                                 <div class="bip-trade__item">
                                     <a class="bip-trade__link link--default" href="https://t.me/dailyexchangebot" target="_blank" rel="noopener">
