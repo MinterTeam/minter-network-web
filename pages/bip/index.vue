@@ -797,7 +797,7 @@ export default {
                     <div class="roadmap-content">
                         <h2>Roadmap</h2>
                         <p>In light of the changes that leading blockchains have recently made in their tokenomics, Minter Team is proposing a large-scale update of the network. Its goal is to improve the economic model and implement deflationary and counter-inflationary mechanisms, stimulating the strengthening of BIP.</p>
-                        <p>The Minter team has started to design mechanisms outlined below. We plan to gradually roll them out in 2023.</p>
+                        <p>The Minter team has started to design mechanisms outlined below.</p>
                         <a href="https://minterteam.medium.com/minter-3-bip-tokenomics-update-c6e81264e33c" target="_blank" rel="nofollow" class="btn btn-alt">Read More</a>
                     </div>
                     <div class="roadmap-image">
@@ -805,14 +805,12 @@ export default {
                     </div>
                 </div>
                 <div class="coming" id="coming">
-                    <h3>Coming in 2023</h3>
+                    <h3>Coming</h3>
                     <ul>
                         <li>Smart Contracts</li>
                         <li>NFTs</li>
                         <li>Honee Crypto Wallet Release</li>
                         <li>DApp for Cross-Chain Transfers</li>
-                        <li>SDK for Metaverse Items and NFTs</li>
-                        <li>MultiSwap/MultiTransaction Functionality</li>
                     </ul>
                 </div>
                 <div class="completed" id="completed">

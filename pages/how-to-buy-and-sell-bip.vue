@@ -128,7 +128,7 @@ export default {
             </div>
 
             <section class="bip-trade__panel">
-                <h2 class="u-h2 u-mb-10">Buy BIP for ETH. Fully decentralized</h2>
+                <h2 class="u-h2 u-mb-10">Buy BIP fully decentralized</h2>
                 <div class="u-grid u-grid--small u-grid--vertical-margin">
                     <div class="u-cell u-cell--medium--2-3">
                         <p>Use our cross-chain bridge to buy BIP in a fully decentralized way. Just log in to Console, click “Buy BIP,” and follow instructions.</p>
@@ -146,7 +146,7 @@ export default {
                 </div>
             </section>
 
-            <section class="bip-trade__panel">
+            <!--<section class="bip-trade__panel">
                 <div class="u-grid">
                     <div class="u-cell u-cell--medium--1-3">
                         <h2 class="u-h2 u-mb-05">Elsewhere</h2>
@@ -164,7 +164,6 @@ export default {
                                 </div>
                                 <p class="bip-trade__description">Honee is focused on helping people to earn crypto.</p>
                             </div>
-                            <!--
                             <div class="u-cell u-cell&#45;&#45;small&#45;&#45;1-2">
                                 <div class="bip-trade__item">
                                     <a class="bip-trade__link link&#45;&#45;default" href="https://www.bithumb.pro/en-us/exchange/professional?q=BIP-USDT" target="_blank" rel="noopener">
@@ -175,7 +174,6 @@ export default {
                                 </div>
                                 <p class="bip-trade__description">Cryptocurrency exchange where BIP is traded most actively. Ranks 16th on CoinGecko, no KYC required.</p>
                             </div>
-                            -->
                             <div class="u-cell u-cell--small--1-2">
                                 <div class="bip-trade__item">
                                     <a class="bip-trade__link link--default" href="https://t.me/BIP_Banker_bot" target="_blank" rel="noopener">
@@ -186,7 +184,6 @@ export default {
                                 </div>
                                 <p class="bip-trade__description">Convenient P2P trading Telegram bot. Allows you to purchase and sell BIP for both crypto and fiat currencies.</p>
                             </div>
-                            <!--
                             <div class="u-cell u-cell&#45;&#45;small&#45;&#45;1-2">
                                 <div class="bip-trade__item">
                                     <a class="bip-trade__link link&#45;&#45;default" href="https://t.me/MinterGarantBot" target="_blank" rel="noopener">
@@ -197,8 +194,7 @@ export default {
                                 </div>
                                 <p class="bip-trade__description">Secure P2P Telegram bot. Allows you to trade BIP for fiat and cryptocurrency. Has a cumulative bonus and multi-level referral scheme.</p>
                             </div>
-                            -->
-                            <!--<div class="u-cell u-cell--small--1-2">
+                            <div class="u-cell u-cell--small--1-2">
                                 <div class="bip-trade__item">
                                     <a class="bip-trade__link link--default" href="https://t.me/dailyexchangebot" target="_blank" rel="noopener">
                                         <img class="bip-trade__icon" src="/img/bip-trade-daily-exchange.png" srcset="/img/bip-trade-daily-exchange@2x.png 2x" alt="" role="presentation">
@@ -217,13 +213,13 @@ export default {
                                     <div class="bip-trade__value">${{ getPrice('coinsblack') }}</div>
                                 </div>
                                 <p class="bip-trade__description">Digital assets and currencies exchange service with various options to get BIP for fiat and crypto funds.</p>
-                            </div>-->
+                            </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </section>-->
 
-            <h2 class="u-h2 u-mt-35 u-mb-05">Where to store</h2>
+            <!--<h2 class="u-h2 u-mt-35 u-mb-05">Where to store</h2>
             <p class="u-mb-15">Manage your BIP in one of these user-friendly wallets:</p>
             <div class="u-grid u-grid--small u-grid--vertical-margin">
                 <div class="u-cell u-cell--medium--1-3">
@@ -253,7 +249,7 @@ export default {
                         <p class="bip-wallets__description">Full-fledged operational tool for the most advanced users.</p>
                     </div>
                 </div>
-            </div>
+            </div>-->
 
             <hr class="hr--divider">
 
