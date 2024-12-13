@@ -483,15 +483,15 @@ export default {
                         </div>
                         <div class="stat-item">
                             <small>Market Cap</small>
-                            <div>$3 000 000</div>
+                            <div>$7 000 000</div>
                         </div>
                         <div class="stat-item">
                             <small>Circulating Supply</small>
-                            <div>72%</div>
+                            <div>84%</div>
                         </div>
                         <div class="stat-item">
                             <small>BIP Staking Up To</small>
-                            <div>~20% APY</div>
+                            <div>~18% APY</div>
                         </div>
                     </div>
                 </div>
@@ -1002,7 +1002,6 @@ export default {
                     <div class="social-link"><img src="/newnetwork/images/social_tw.svg" alt="Minter Twitter"><a href="https://twitter.com/MinterTeam" target="_blank" rel="nofollow">Twitter</a></div>
                     <!--<div class="social-link"><img src="/newnetwork/images/social_fb.svg" alt="Minter Facebook"><a href="https://www.facebook.com/MinterNetwork" target="_blank" rel="nofollow">Facebook</a></div>-->
                     <div class="social-link"><img src="/newnetwork/images/social_tc.svg" alt="Minter Telegram Channel"><a href="tg://resolve?domain=MinterTeam" target="_blank" rel="nofollow">Telegram Channel</a></div>
-                    <div class="social-link"><img src="/newnetwork/images/social_tc.svg" alt="Minter Telegram Group"><a href="tg://join?invite=EafyERJSJZJ-nwH_139jLQ" target="_blank" rel="nofollow">Telegram Group</a></div>
                     <div class="social-link"><img src="/newnetwork/images/social_cmc.svg" alt="Minter CoinMarketCap"><a href="https://coinmarketcap.com/currencies/minter-network/" target="_blank" rel="nofollow">CoinMarketCap</a></div>
                     <div class="social-link"><img src="/newnetwork/images/social_cg.svg" alt="Minter CoinGecko"><a href="https://www.coingecko.com/en/coins/bip" target="_blank" rel="nofollow">CoinGecko</a></div>
                 </div>
